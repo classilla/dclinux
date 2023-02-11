@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# On error, bomb out
+set -e
+
+dpkg --assert-working-epoch 2>&- || {
+    echo -e "\nYou must upgrade dpkg before installing this package.\n"
+    false
+}
+

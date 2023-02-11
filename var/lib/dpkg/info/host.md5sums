@@ -1,0 +1,17 @@
+f96245d271f2504992a0b1228db549ef  usr/bin/host
+f96245d271f2504992a0b1228db549ef  usr/bin/mx
+f96245d271f2504992a0b1228db549ef  usr/bin/ns
+f96245d271f2504992a0b1228db549ef  usr/bin/soa
+f96245d271f2504992a0b1228db549ef  usr/bin/zone
+f96245d271f2504992a0b1228db549ef  usr/bin/aaaa
+f96245d271f2504992a0b1228db549ef  usr/bin/txt
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/mx.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/ns.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/soa.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/aaaa.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/txt.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/host.1.gz
+552aea8e7dab58dd928df0ff4b34143a  usr/share/man/man1/zone.1.gz
+1414a4c34c0e3ff41cc98b9408d8ab0d  usr/share/doc/host/copyright
+15f0d2d1c3258fd7355890d2969a2e50  usr/share/doc/host/RELEASE_NOTES.gz
+9a2abbedc49c1b631eadc69f4b7c3c77  usr/share/doc/host/changelog.Debian.gz

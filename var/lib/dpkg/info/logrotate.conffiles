@@ -1,0 +1,3 @@
+/etc/logrotate.conf
+/etc/logrotate.conf
+/etc/cron.daily/logrotate

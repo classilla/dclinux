@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+dpkg --assert-working-epoch 2>/dev/null || {
+    echo -e "\nYou must upgrade dpkg before installing this package.\n"
+    false
+}
+
+

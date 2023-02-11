@@ -1,0 +1,25 @@
+#!/usr/bin/perl --
+
+system("/etc/init.d/atd stop") if -x "/etc/init.d/atd";
+$etc='/etc';
+$seqfile='/var/spool/cron/atjobs/.SEQ';
+
+$re='\*[^\s]*\s+(\*\s+){3}(\*|\d+)\s+root\s+atrun\s';
+
+open(OI,"$etc/crontab") || exit 0;
+open(NI,">$etc/crontab.prermnew") || die "Creating new crontab: $!\n";
+while(<OI>) {
+    if (m/^$re/o) { $mod++; next; }
+    print NI || die "Writing new crontab: $!\n";
+}
+close(NI) || die "Closing new crontab: $!\n";
+if ($mod) {
+    rename("$etc/crontab.prermnew","$etc/crontab") ||
+        die "Installing new crontab: $!\n"; # 
+} else {
+    unlink("$etc/crontab.prermnew") || die "Aborting new crontab: $!\n";
+}
+
+# Save the old sequence number, if it's there...
+rename($seqfile, $seqfile . "-old");
+exit 0;

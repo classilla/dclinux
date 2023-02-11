@@ -1,0 +1,22 @@
+This is the Debian-Linux prepackaged version of the Linux console font and
+keytable utilities.  
+
+This package was put together by Yann Dirson <dirson@debian.org>, from
+sources you can get from:
+ http://lct.sourceforge.net/
+
+
+`console-tools' is a improved version of the kbd package.  It is
+maintained by Yann Dirson <dirson@debian.org>.
+
+The Linux Console Tools are covered by the GPL
+(see /usr/share/common-licenses/GPL for details).
+
+The copyright notice for the original `kbd' package tells that
+loadkeys, dumpkeys and showkey were derived from Risto Kankkunen's
+kbd-0.81.  The font loading code goes back to the codepage package by
+Joel Hoffman (joel@wam.umd.edu).  (He told that the original reference
+is: "From: p. 307 of _Programmer's Guide to PC & PS/2 Video Systems_
+by Richard Wilton. 1987.  Microsoft Press".)  The kernel and user
+interface for the font loading closely used to follow Eugene Crosser's
+intl_con package, but that may not be true anymore.

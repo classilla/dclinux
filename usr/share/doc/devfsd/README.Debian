@@ -1,0 +1,18 @@
+devfsd for Debian
+=================
+
+The /etc/init.d/devfs script does two things other than starting devfsd: it
+creates extra symlinks and devices from the configuration files in
+/etc/devfs.
+
+The purpose of this is to support devices which are not created
+automatically by the drivers as yet.
+
+Also in the Debian version, the configuration file is moved into
+/etc/devfs/devfsd.conf instead of /etc/devfsd.conf, and includes a
+file /etc/devfs/perms which as installed contains the standard permissions
+used by /sbin/MAKEDEV.
+
+New packages which need to create devices and/or symlinks may place
+files in the same formats as /etc/devfs/devices and /etc/devfs/symlinks under
+/etc/devfs/devices.d and /etc/devfs/symlinks.d.

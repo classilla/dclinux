@@ -1,0 +1,17 @@
+#!/bin/sh
+
+case "$1" in
+	remove)
+		install-info --quiet --remove ipc
+		;;
+        purge)
+                update-rc.d hwclock.sh remove >/dev/null
+                ;;
+	*)
+		;;
+esac
+
+if [ -x /usr/sbin/update-mime ]; then
+	update-mime
+fi
+

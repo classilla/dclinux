@@ -1,0 +1,498 @@
+/*
+ * History
+ *
+ * $FreeBSD: src/usr.bin/calendar/calendars/calendar.history,v 1.13 1999/12/18 01:26:38 cpiazza Exp $
+ */
+
+#ifndef _calendar_history_
+#define _calendar_history_
+
+Jan 01	Anniversary of the Triumph of the Revolution in Cuba
+Jan 01	Castro expels Cuban President Batista, 1959
+Jan 01	Churchill delivers his "Iron Curtain" speech, 1947
+Jan 01	First Rose Bowl; Michigan 49 - Stanford 0, 1902
+Jan 04	Quadrantid meteor shower (look north)
+Jan 05	-50 degrees F, Strawberry UT, 1913
+Jan 05	Fellowship enters Moria  (LOTR)
+Jan 05	The FCC hears the first demonstration of FM radio, 1940
+Jan 05	Twelfth night
+Jan 06	Millard Fillmore's birthday (let's party!)
+Jan 08	Battle of New Orleans
+Jan 09	Fellowship reaches Lorien (LOTR)
+Jan 09	Plough Monday
+Jan 10	First meeting of United Nations General Assembly in London, 1946
+Jan 10	Thomas Paine's Common Sense published, 1776
+Jan 11	Anniversary of the Peoples Republic of Albania
+Jan 11	De Hostos' Birthday in Puerto Rico
+Jan 11	Milk delivered in bottles for first time, 1878
+Jan 11	Prithvi Jayanti in Nepal
+Jan 11	Surgeon General condemned cigarettes, 1964
+Jan 11	The Whiskey-A-Go-Go opens on Sunset Boulevard in Los Angeles, 1963
+Jan 14	The first "Be-In" is held in Golden Gate Park, 1967
+Jan 16	Prohibition begins, 1920
+Jan 17	Passing of Gandalf (LOTR)
+Jan 18	Grey whale migration, California
+Jan 20	St. Agnes Eve (Ah, bitter chill it was...)
+Jan 24	Eskimo Pie patented by Christian Nelson, 1922
+Jan 24	Gold discovered in California at Sutter's Mill, 1848
+Jan 26	Sydney Aust. settled, 1788
+Jan 27	Grissom, White and Chaffe burned to death in Apollo 1, 1967
+Jan 27	Vietnam War cease-fire signed, 1973
+Jan 28	First ski tow, Woodstock VT, 1914
+Jan 28	Space Shuttle Challenger (51-L) explodes 74 seconds after liftoff
+	killing Scobee, Smith, McNair, Resnick, Jarvis, Onizuka and McAuliffe,
+	1986
+Jan 30	Mohandas Gandhi assassinated in New Delhi by Hindu fanatic, 1948
+Jan 30	Tet Offensive, 1968
+Jan 31	"Ham" the chimpanzee soars into space aboard Mercury-Redstone 2, 1961
+Jan 31	Explorer I launched, 1958.  Van Allen Belt discovered
+Jan 31	Irving Langmuir, 1881, invented tungsten filament lamp
+Feb 01	First TV soap: Secret Storm, 1954
+Feb 01	Forces led by Khomeini take over Iran, 1979
+Feb 04	Cybernet inaugurated, 1969
+Feb 04	Patricia Hearst kidnaped by Symbionese Liberation Army, 1974
+Feb 07	Fellowship leaves Lorien (LOTR)
+Feb 08	1963 Revolution Anniversary in Iraq
+Feb 09	-51 degrees F, Vanderbilt MI, 1934
+Feb 12	Lincoln's real birthday
+Feb 12	Santa Barbara oil leak, 1969
+Feb 14	Bombing of Dresden, 1945
+Feb 15	Chicago Seven convicted, 1970
+Feb 16	Nylon patented, 1937
+Feb 16	Stephen Decatur burns US frigate in Tripoli, 1804
+Feb 17	Death of Boromir (LOTR)
+Feb 18	Pluto discovered by Clyde Tombaugh, Lowell Observatory, AZ, 1930
+Feb 19	US Marines land on Iwo Jima, 1945
+Feb 20	John Glenn orbits the Earth 3 times, 1962
+Feb 20	Meriadoc & Pippin meet Treebeard (LOTR)
+Feb 21	Battle of Verdun begins, 1916 1M casualties
+Feb 21	First telephone directory, New Haven, Connecticut, 1878
+Feb 21	Malcom X shot to death in Harlem, 1965
+Feb 22	Passing of King Ellesar (LOTR)
+Feb 23	Lt. Calley confesses, implicates Cpt. Medina, 1971
+Feb 24	Ents destroy Isengard (LOTR)
+Feb 24	Impeachment proceedings against Andrew Johnson begin, 1868
+Feb 26	Aragorn takes the Paths of the Dead (LOTR)
+Feb 28	The "French Connection" drug bust occurs in Marseilles, 1972
+Feb 29	French and Indian raid on Deerfield MA, 1704
+Mar 01	Sarah Goode, Sarah Osborne, and Tituba arrested for witchcraft
+	in Salem, Massachusetts, 1692
+Mar 02	Blackthorn winds (New England) (Does anyone know what this is?)
+Mar 04	First meeting of Congress, 1789, in N.Y.C.
+Mar 05	Frodo & Samwise encounter Shelob (LOTR)
+Mar 06	Hindenburg explodes and burns upon landing at Lakehurst, NJ, 1939
+Mar 08	Deaths of Denethor & Theoden (LOTR)
+Mar 13	"Striptease" introduced, Paris, 1894
+Mar 14	Teddy Roosevelt excludes Japanese laborers from continental US, 1907
+Mar 15	Day of the 1848 revolution in Hungary
+Mar 15	Buzzards return to Hinckley OH
+Mar 15	France assumes protectorate over Vietnam, 1874
+Mar 15	Watts, Los Angeles, riots kill two, injure 25, 1966
+Mar 16	First liquid-fuel-powered rocket flight, 1926
+Mar 16	MyLai Massacre; 300 non-combatant villagers killed by U.S. infantrymen
+Mar 16	Robert Goddard launches first liquid-fueled rocket, Auburn MA, 1926
+Mar 17	Vanguard I launched, 1958.  Earth proved pear-shaped
+Mar 18	Aleksei Leonov performs first spacewalk, 1965
+Mar 18	Destruction of the Ring (LOTR)
+Mar 19	Swallows return to Capistrano
+Mar 20	Radio Caroline, the original British pirate radio station, sinks, 1980
+Mar 24	Construction of New York subway system begins, 1900
+Mar 25	Triangle Shirt Waist Fire, 1911
+Mar 26	Popeye statue unveiled, Crystal City TX Spinach Festival, 1937
+Mar 27	Khrushchev becomes Premier of Soviet Union, 1958
+Mar 28	Three Mile Island releases radioactive gas, 1979
+Mar 29	Flowering of the Mallorn (LOTR)
+Mar 29	Swedish settled Christiana (Wilmington) DE, 1638
+Mar 30	Alaska purchased from Russia for $7.2 million, 1867
+Mar 30	Five rings around Uranus discovered, 1977
+Mar 30	Pencil with eraser patented, 1858
+Apr 01	People of superb intelligence, savoir-faire, etc. born this day.
+Apr 04	Gandalf visits Bilbo (LOTR)
+Apr 04	Martin Luther King assassinated in Memphis, Tennessee, 1968
+Apr 04	NATO Established, 1949
+Apr 06	Joseph Smith founds Mormon Church, 1830
+Apr 07	Albert Hofmann synthesizes LSD in Switzerland, 1943
+Apr 07	Alewives run, Cape Cod
+Apr 09	Lee surrenders to Grant at Appomattox Courthouse, 1865
+Apr 12	Confederate troops fire first shots of Civil War at Ft Sumter, 1861
+Apr 12	Space Shuttle Columbia launched, 1981
+Apr 12	Yuri Gagarin becomes the first man in space, 1961
+Apr 13	Laotian New Year (3 days) in Laos
+Apr 14	Lincoln shot in Ford's Theatre by John Wilkes Booth, 1865
+Apr 14	Titanic hits iceberg and sinks, 1912
+Apr 15	Lincoln dies, 1865
+Apr 15	Ray Kroc opens first McDonalds in Des Plaines, IL, 1955
+Apr 17	An unexpected party (LOTR)
+Apr 17	Bay of Pigs invasion crushed by Castro forces, 1961
+Apr 18	Einstein's Death, 1955
+Apr 18	First Laundromat opens, Fort Worth Texas, 1934
+Apr 18	San Francisco earthquake, 1906
+Apr 19	Landing of the "33" in Uruguay
+Apr 19	Warsaw Ghetto uprising, 1943
+Apr 20	Supreme Court unanimously rules in favor of busing, 1971
+Apr 21	Lyrid meteor shower
+Apr 23	Crowning of King Ellesar (LOTR)
+Apr 23	Hank Aaron hits his first home run, 1954
+Apr 26	William Shakespeare baptized in Stratford-on-Avon, England, 1564,
+	birthdate unknown
+Apr 27	Magellan killed in Philippines, 1521
+Apr 29	Zipper patented by Gideon Sindback, 1913
+May 01	Beltaine; Feast of the god Bel, sun god
+May 03	Anti-war protest disrupts business in Washington, 1971
+May 04	Four Kent State students are shot down by the National Guard, 1970
+May 05	John Scopes arrested for teaching evolution, Dayton, TN, 1925
+May 07	Germany surrenders after WWII, 1945
+May 08	Beginning of ostrich mating season
+May 08	US institutes mining of Haiphong Harbor, 1972
+May 09	94 degrees, New York, 1979
+May 10	Germany invades Low Countries, 1940
+May 10	Nazi bookburning, 1933
+May 14	Beginning of Lewis and Clark Expedition, 1804
+May 14	Nation of Israel proclaimed, 1948
+May 15	Asylum for Inebriates founded, Binghamton NY, 1854
+May 17	24" rain in 11 hours, Pearl River, S. China, 1982
+May 17	Six SLA members killed in televised gun fight, 1974
+May 18	Battle of Las Piedras in Uruguay
+May 18	Napoleon crowned Emperor, 1804
+May 19	Arwen leaves Lorian to wed King Ellesar (LOTR)
+May 21	Battle of Iquique in Chile
+May 21	US explodes first hydrogen bomb, 1956
+May 22	US Civil War ends, 1865
+May 23	Israeli raid into Argentina to capture Adolf Eichmann, 1960
+May 23	Two Yetis sighted, Mt. Everest, 1953
+May 24	Battle of Pinchincha in Ecuador
+May 25	Oral Roberts sees 900 foot tall Jesus Christ, Tulsa OK, 1980
+May 25	Successful test of the limelight in Purfleet, England, 1830
+May 26	Congress sets first immigration quotas, 1924
+May 27	Golden Gate Bridge opens, 1937
+May 29	Edmund Hillary and Tenzing Norkay climb Mt. Everest, 1953
+May 29	First food stamps issued, 1961
+May 30	US Marines sent to Nicaragua, 1912
+Jun 02	Native Americans "granted" citizenship, 1924
+Jun 04	Roquefort cheese developed, 1070
+Jun 05	Robert Kennedy assassinated, 1968
+Jun 05	US leaves the Gold Standard, 1933
+Jun 06	First drive-in movie, 1933
+Jun 06	Normandy landing, 1944
+Jun 10	Death of Alexander the Great, 323 B.C.
+Jun 10	Denver police tear gas Jethro Tull and 2000 fans at Red Rocks, 1971
+Jun 11	Greeks seize Troy, 1184BC
+Jun 11	Sauron attacks Osgilliath (LOTR)
+Jun 13	Bilbo returns to Bag End (LOTR)
+Jun 13	Pioneer flies past Neptune, and therefore out of the Solar System
+Jun 14	Sandpaper invented by I. Fischer, Jr., 1834
+Jun 15	Ben Franklin's kite experiment, 1752
+Jun 15	Magna Carta signed, 1215
+Jun 15	Series of photographs by Edward Muggeridge prove to Leland Stanford
+	that all the hooves of a horse are off the ground during the gallop,
+	1878
+Jun 16	"The Blues Brothers" premieres in Chicago, 1980
+Jun 17	China explodes its first Hydrogen bomb, 1967
+Jun 17	Watergate Democratic National Committee break-in, 1972
+Jun 19	Julius and Ethel Rosenberg are executed in Sing-Sing prison, 1953
+Jun 19	Lizzie Bordon acquitted, 1893
+Jun 20	Victoria crowned, 1837
+Jun 21	Berlin airlift begins, 1948
+Jun 21	Sun rises over Heelstone at Stonehenge
+Jun 22	Civil rights workers disappear in Mississippi, 1964
+Jun 23	Slavery abolished in England, 1772
+Jun 23	Wedding of Ellesar & Arwen (LOTR)
+Jun 24	Senate repeals Gulf of Tonkin resolution, 1970
+Jun 25	Custer's Last Stand at Little Big Horn, 1876
+Jun 25	North Korea invades South Korea, 1950
+Jun 26	Battle of Gettysburg, 1863
+Jun 26	St. Lawrence Seaway dedicated by Eisenhower & Queen Elizabeth II, 1959
+Jun 26	Toothbrush invented, 1498
+Jun 27	100 degrees, Fort Yukon, 1915
+Jun 27	Bill Graham closes the Fillmore East, 1971
+Jun 28	Supreme Court decides in favor of Alan Bakke, 1978
+Jun 30	"That" explosion in Siberia, 1908
+Jun 30	China and Soviet Union announce split over ideology, 1960
+Jul 01	Battle of Gettysburg begins, 1863
+Jul 03	Dog days begin
+Jul 04	Battles of Vicksburg and Gettysburg won by Union forces, 1863
+Jul 04	Cloudy, 76 degrees, Philadelphia PA, 1776
+Jul 04	Gandalf imprisoned by Saruman (LOTR)
+Jul 04	New York abstains on Declaration of Independence vote, 1776
+Jul 04	Thoreau enters woods, 1845
+Jul 06	First `talkie' (talking motion picture) premiere in New York, 1928
+Jul 06	Lawrence of Arabia captures Aqaba, 1917
+Jul 07	First radio broadcast of "Dragnet", 1949
+Jul 08	First public reading of the Declaration of Independence, 1776
+Jul 08	Liberty Bell cracks while being rung at funeral of John Marshall, 1835
+Jul 09	10-hour working day set by law, NH, 1847
+Jul 10	134 degrees in Death Valley, 1913
+Jul 12	Minimum wages established: 40 cents/hour, 1933
+Jul 13	Women first compete in Olympic games, 1908
+Jul 16	Detonation of the first atomic bomb at Alamagordo, NM, 1945
+Jul 17	Disneyland opens, 1955
+Jul 18	Ty Cobb gets 4000th base hit, 1927
+Jul 19	Five Massachusetts women executed for witchcraft, 1692
+Jul 20	Armstrong and Aldrin land on moon, 1969
+Jul 21	First Train Robbery, Jesse James gets $3000 near Adair, Iowa, 1873
+Jul 21	Vietnam divided at 17th parallel, 1954
+Jul 23	Ice cream cone introduced, St. Louis MO, 1904
+Jul 24	Scopes Monkey Trial, 1925
+Jul 24	The ring comes to Bilbo (LOTR)
+Jul 26	Bilbo rescued from Wargs by Eagles (LOTR)
+Jul 30	"In God We Trust" made U.S. motto, 1956
+Jul 31	Harry S. Truman dedicates N.Y. Int'l Airport @ Idlewild Field, 1948,
+	later JFK
+Aug 01	Lughnasa; Feast of the god Lugh, a 30 day Celtic feast centers on
+	this day
+Aug 03	Columbus sets sail for Cathay, 1492
+Aug 03	Funeral of King Theoden (LOTR)
+Aug 03	USS Nautilus crosses under north polar ice cap, 1958
+Aug 04	Axe murder of Andrew and Abbey Borden, 1892
+Aug 04	Bombing of N. Vietnam begins, 1964
+Aug 04	Britain declares war on Germany starting World War I, 1914
+Aug 06	Atomic bomb dropped on Hiroshima, 1945
+Aug 06	Caricom in Barbados
+Aug 06	Cy Young pitches first game, 1890
+Aug 08	Montenegro declares war on Germany, 1914
+Aug 08	Richard Nixon resigns the US presidency, 1974
+Aug 08	The Great Train Robbery -- $7,368,000, 1963
+Aug 09	Helter Skelter... the Charles Manson murders take place, 1969
+Aug 09	Persia defeats Spartan King Leonidas at Thermopylae, 480 BC
+Aug 09	US/Canada border defined in the Webster-Ashburton Treaty, 1842
+Aug 09	Atomic bomb dropped on Nagasaki, 1945
+Aug 10	Chicago incorporated as a village of 300 people, 1833
+Aug 10	US and Panama agree to transfer the canal in the year 2000, 1977
+Aug 11	Dog days end
+Aug 11	France Ends War in Indochina, 1954
+Aug 11	Perseid meteor shower (look north; three days)
+Aug 12	First test flight of Space Shuttle "Enterprise" from 747, 1977
+Aug 12	Last U.S. ground troops out of Vietnam, 1972
+Aug 13	Berlin wall erected, 1961
+Aug 13	Li'l Abner debut, 1934
+Aug 14	Social Security begins in U.S., 1935
+Aug 15	Gandhi's movement obtains independence for Pakistan and India, 1947
+Aug 15	Hurricane hits Plymouth Plantation, 1635
+Aug 16	Roller Coaster patented, 1898
+Aug 17	First public bath opened in N.Y., 1891
+Aug 18	Anti-Cigarette League of America formed
+Aug 19	Air Force cargo plane snares payload from Discoverer 14 spy satellite,
+	marking start of practical military reconnaissance from space, 1960
+Aug 19	Gail Borden patents condensed milk, 1856
+Aug 22	Death of King Richard III, 1485, Last of the Plantagenets
+Aug 22	Joe Walker sets X-15 all time altitude mark (67 miles), 1963
+Aug 22	St. Columbia reports seeing monster in Loch Ness, 565
+Aug 23	Sacco and Vanzetti executed, 1927
+Aug 24	"Alice's Restaurant" premieres in New York and Los Angeles, 1969
+Aug 24	-126.9 F at Vostok, Antarctica, 1960
+Aug 24	British troops burn Washington, 1814
+Aug 25	Gen. De Gaulle leads French forces into Paris, 1944
+Aug 26	Women get the vote, 1920
+Aug 27	"Tarzan of the Apes" published, 1912
+Aug 27	Krakatoa, Java explodes with a force of 1,300 megatons, 1883
+Aug 28	King leads over 200K in civil rights rally in Washington, DC, 1963
+Aug 29	Star in Cygnus goes nova and becomes 4th brightest in sky, 1975;
+	Nova Cygni 1975.
+Aug 29	Saruman enters the Shire (LOTR)
+Aug 30	75 cents a pound tariff set on opium, 1842
+Aug 30	Japan Stationery Co. sells first felt-tipped pen, 1960
+Aug 30	St. Rose of Lima in Peru
+Aug 30	Washington-to-Moscow hot line connected, 1963
+Aug 31	269 people killed after Korean Airlines 747 shot down by USSR, 1983
+Aug 31	Mary Anne Nichols becomes Jack the Ripper's first victim, 1888
+Aug 31	Non-aggression pact signed by USSR and Afghanistan, 1926
+Sep 01	Bobby Fischer defeats Boris Spassky in World Chess Match, 1972
+Sep 01	Joshua A. Norton proclaims himself 'Emperor Norton I', 1859
+Sep 02	Great Britain adopts Gregorian Calendar, 1752
+Sep 02	Japan signs unconditional surrender on US battleship `Missouri', 1945
+Sep 03	The Lionheart crowned, 1189
+Sep 03	Anniversary of the Founding of the Republic in San Marino
+Sep 05	Kennedy orders resumption of underground nuclear tests, 1961
+Sep 05	The first Continental Congress was convened in Philadelphia, 1774
+Sep 06	149 Pilgrims set forth from England aboard the Mayflower, 1620
+Sep 06	First Star Trek episode (The Man Trap) aired 1966
+Sep 06	Pres. McKinley shot, 1901
+Sep 06	Somhlolo in Swaziland
+Sep 08	"Star Trek" debuts on NBC (1966)
+Sep 08	Jack the Ripper kills again, Annie Chapman is second victim, 1888
+Sep 08	President Ford pardons Richard M. Nixon, 1974
+Sep 09	California becomes the 31st state, 1850
+Sep 09	United Colonies is renamed the United States, 1776
+Sep 10	Gandalf escapes from Orthanc (LOTR)
+Sep 10	Mountain Meadows Massacre.  Mormons kill Gentile wagon train, 1857
+Sep 12	German paratroopers rescue Mussolini from captivity, 1943
+Sep 12	Germany annexes Sudentenland, 1938
+Sep 13	136.4 F at el Azizia, Libya, 1922
+Sep 13	British defeat the French at Abraham near Quebec City, 1788
+Sep 13	Building of Hadrian's Wall begun, 122
+Sep 13	Chiang Kai-Shek becomes president of China, 1943
+Sep 14	Benjamin Franklin is sent to France as an American minister, 1778
+Sep 14	Frodo & Bilbo's birthday (LOTR)
+Sep 14	Salem, Massachusetts, is founded, 1629
+Sep 14	The Selective Service Act establishes the first peacetime draft, 1940
+Sep 15	Black riders enter the Shire (LOTR)
+Sep 15	Soviet Premier Nikita Khrushchev begins his 13 day tour of the US, 1959
+Sep 15	The U.S. Foreign Affairs Dept. becomes the U.S. State Department, 1789
+Sep 16	The village of Shawmut, Massachusetts, becomes the city of Boston, 1630
+Sep 17	Battle of Antietam, 1862
+Sep 18	Frodo and company rescued by Bombadil (LOTR)
+Sep 18	Victory of Uprona in Burundi
+Sep 20	Equal Rights Party nominates Belva Lockwood for President, 1884
+Sep 20	First meeting of the American Association for the Advancement of
+	Science, 1848
+Sep 20	First meeting of the National Research Council, 1916
+Sep 20	Magellan leaves Spain on the first Round the World passage, 1519
+Sep 20	The Roxy Theater opens in Hollywood, 1973
+Sep 22	Allied forces form the independent nation West Germany, 1953
+Sep 22	President Lincoln issues the Emancipation Proclamation, 1862
+Sep 22	Special prosecutor Leon Jeworski subpoenas President Nixon, 1974
+Sep 22	The first Soviet atomic bomb explodes, 1949
+Sep 23	Philippine President Ferdinand Marcos declares martial law, 1972
+Sep 23	The New York Knickerbockers becomes the first U.S. Baseball club, 1845
+Sep 23	V.P. Nixon denies campaign fund fraud with his "Checkers" speech, 1952
+Sep 25	Sandra Day O'Connor becomes first woman on US Supreme Court, 1981
+Sep 27	The first passenger was hauled in a locomotive in England, 1825
+Sep 28	"Pilgrim's Progress" published, 1678
+Sep 28	A Greek soldier runs 26+ miles after the Persian defeat at Marathon,
+	490BC
+Sep 28	Frodo wounded at Weathertop (LOTR)
+Sep 30	Red Jack kills 2, Elizabeth Stride (#3) and Catherine Eddowes (#4),
+	1888
+Sep 30	The first tooth is extracted under anesthesia in Charleston, Mass, 1846
+Sep 30	The verdicts of the Nuremberg trials are announced, 1946
+Oct 01	NASA officially begins operations, 1958
+Oct 02	Thurgood Marshall sworn as the first black Supreme Court Justice, 1967
+Oct 04	Crimean war begins, 1853
+Oct 04	First space vehicle, Sputnik I, launched, 1957
+Oct 04	Sputnik 1, world's first orbiting satellite launched, 1957
+Oct 05	Frodo crosses bridge of Mitheithel
+Oct 06	Antioch College is the first public school to admit men and women, 1853
+Oct 06	Egyptian President Anwar Sadat is assassinated in Cairo, 1981
+Oct 06	Israel is attacked by the alliance of Egypt and Syria, 1973
+Oct 07	Foundation of the GDR in 1949 in German Democratic Republic
+Oct 07	Georgia Tech. beats Cumberland Univ. 222-0, 1916
+Oct 07	Maryland Governor Marvin Mandel sent to prison on fraud charges, 1977
+Oct 07	Mother Teresa of Calcutta awarded the Nobel Peace Prize, 1979
+Oct 07	Police stop Wilbur Mills car, Fanne Fox jumps into water, 1974
+Oct 08	Great Chicago Fire, 1871
+Oct 09	First two-way telephone conversation, 1876
+Oct 10	Beginning of the Wars for Independence in Cuba
+Oct 10	Foundation of the Workers Party in North Korea
+Oct 10	Mercury at Superior Conjunction with Sun.  Moves into night sky. (1984)
+Oct 10	Spiro T. Agnew resigns as Vice-President due to income tax fraud, 1973
+Oct 11	"Saturday Night Live" premiers on NBC-TV, 1975
+Oct 11	The Gang of Four are arrested in Peking, 1976
+Oct 11	The first steam powered ferry ran between New York and Hoboken, 1811
+Oct 11	The second Vatican Ecumenical Council opens in Rome, 1962
+Oct 11	First broadcast of Saturday Night Live, 1975
+Oct 12	Bahama Natives discover Columbus of Europe lost on their shores, 1492
+Oct 12	Khrushchev pounds his desk with shoe during a speech to the UN, 1960
+Oct 12	Man O'War's last race, 1920
+Oct 12	Native Americans discover Columbus of Europe lost on their shores, 1492
+Oct 13	Italy declares war on Germany, 1943
+Oct 13	U.S. Navy born, 1775, authorized by the Second Continental Congress
+Oct 14	Battle of Hastings won by William the Conqueror and the Normans, 1066
+Oct 14	Chuck Yeager breaks sound barrier, 1947
+Oct 15	First draft card burned, 1965
+Oct 16	Boromir reaches Rivendell (LOTR)
+Oct 17	Council of Elrond (LOTR)
+Oct 18	Boston Shoemakers form first U.S. labor org., 1648
+Oct 18	Soviets announce their probe took photos of the Moon's far side, 1959
+Oct 19	Mao Tse-tung establishes the People's Republic of China, 1949
+Oct 19	Napoleon's beaten army begins the long retreat from Moscow, 1812
+Oct 20	"Saturday Night Massacre", 1973
+Oct 20	OPEC embargo, 1973
+Oct 21	Edison makes the first practical incandescent lamp, 1879
+Oct 21	Guggenheim Museum opens, 1959
+Oct 23	Battle of Leyte Gulf begins, 1944
+Oct 23	Day of the 1956 revolution in Hungary
+Oct 23	Earth created at 6:30 AM, 4004BC.
+Oct 23	Swallows leave Capistrano
+Oct 25	End of War of the Ring (LOTR)
+Oct 25	The UN removes Taiwan and admits the People's Republic of China, 1971
+Oct 26	UN's World Health Organization declares smallpox eradicated, 1978
+Oct 27	New York's Boss Tweed is arrested on fraud charges, 1871
+Oct 27	The first New York Subway is opened, 1904
+Oct 28	Columbus discovers Cuba, 1492
+Oct 28	Constantine's army defeats forces of Maxentius at Mulvian Bridge, 312
+Oct 28	Harvard was founded in Massachusetts, 1636
+Oct 28	Statue of Liberty was dedicated on Bedloe's Island, 1886
+Oct 29	Stock Market Crash, 1929
+Oct 30	Orson Welles' "War of the Worlds" broadcast, 1938
+Oct 31	Luther nails 95 Theses to door of Castle Church, Wittenberg, 1517
+Nov 01	Austria-Hungary become two separate nations, 1918
+Nov 01	Puerto Rican nationalists try to kill Truman at the Blair House, 1950
+Nov 02	Luftwaffe completes 57 consecutive nights of bombing of London, 1940
+Nov 02	Two Frenchmen make the first free hot air balloon flight, 1783
+Nov 03	Beef rises to 3 cents a pound, IL, 1837
+Nov 03	Linus Pauling wins Nobel Chemistry Prize, 1954
+Nov 03	Sputnik II launched, 1957, bearing space dog Laika
+Nov 04	Iranian militants seize US embassy personnel in Teheran, 1979
+Nov 04	Soviet forces crush the anti-communist revolt in Hungary, 1956
+Nov 05	Guy Fawkes' Plot, 1605
+Nov 06	Anniversary of the October Socialist Revolution (2 days) in U.S.S.R.
+Nov 07	Abolitionist newspaperman Elijah P. Lovejoy murdered by mob, 1837
+Nov 07	Lewis and Clark Expedition in sight of the Pacific Ocean, 1805
+Nov 09	Blackout of New York, New England, and Eastern Canada, 1965
+Nov 09	Giant panda discovered (?!), China, 1927
+Nov 09	Jack the Ripper kills fifth and final victim, Jane Kelly, 1888
+Nov 09	Margaret Sanger forms American Birth Control League, 1921
+Nov 09	Roosevelt establishes the Civil Works Administration, 1933
+Nov 10	41 Women arrested in suffragette demonstrations near White House, 1917
+Nov 10	Cpt. Wirz, commandant of Andersonville Prison hanged, 1865
+Nov 10	Henry Stanley asks David Livingston, "Dr. Livingston, I presume?", 1871
+Nov 11	Washington becomes the 42nd state, 1889
+Nov 12	Dr. Sun Yat-sen's Birthday in Taiwan
+Nov 12	U.S. first exports oil to Europe, 1861
+Nov 14	Quarter Pounder price raised from $0.53 to $0.55 in violation of Nixon
+	price controls (but okayed by Price Commission after formal request
+	from McDonald's), 1971
+Nov 15	Niagara Falls power plant startup, 1896
+Nov 16	Bilbo reaches the Lonely Mountain (LOTR)
+Nov 16	Opening of the Suez Canal, 1869
+Nov 17	46,000 meteoroids fall over AZ in 20 minutes, 1966
+Nov 17	Richard Nixon says "I am not a crook.", 1973
+Nov 18	First hydrogen bomb blasts Enewetok, 1952
+Nov 18	Local standard time zones established for US, 1883
+Nov 19	Gettysburg Address delivered, 1863
+Nov 21	Announcement of 18 1/2 minute gap on Watergate tape, 1973
+Nov 22	Kennedy shot in Dallas, Texas by Lee Harvey Oswald, 1963
+Nov 23	First broadcast of Dr. Who (longest running TV series), 1963
+Nov 24	Lee Harvey Oswald killed by Jack Ruby, 1963
+Nov 25	Alfred Nobel invents dynamite, 1867
+Nov 27	Alfred Nobel establishes Nobel Prize, 1895
+Nov 27	Friction match invented, England, 1826
+Nov 27	Hoosac Railroad Tunnel completed, 1873, in NW Massachusetts
+Nov 29	King Tut's tomb opened, 1922
+Dec 01	First national corn-husking championship, Alleman IA, 1924
+Dec 01	Martin Luther King Jr., leads black boycott of Montgomery buses, 1955
+Dec 01	Rosa Parks refuses to move to back of the bus (Montgomery, AL), 1953
+Dec 03	First neon light display, Paris, 1910
+Dec 03	First successful human heart transplant led by Dr. Barnard, 1967
+Dec 03	The Montreux Casino burns down during a Frank Zappa concert, 1971
+Dec 04	Washington takes leave of his officers at Fraunce's Tavern, NYC, 1783
+Dec 05	Death of Smaug (LOTR)
+Dec 05	End of Prohibition, 1933 (at least the alcohol part)
+Dec 05	Phi Beta Kappa founded, 1776
+Dec 05	The Eighteenth Amendment repealed, ending Prohibition, 1933
+Dec 07	Japan bombs Pearl Harbor, 1941
+Dec 09	Ball-bearing roller skates patented, 1884
+Dec 10	Metric system established in France, 1799
+Dec 10	Nobel Peace Prize awarded each year
+Dec 12	First wireless message sent across Atlantic by Marconi, 1901
+Dec 13	Apollo 17 leaves the moon, with "last" men to walk on moon aboard, 1972
+Dec 13	Dartmouth College chartered, 1769
+Dec 13	Geminid meteor shower (look south)
+Dec 15	Argo Merchant oil spill, 1976
+Dec 15	Bill of Rights adopted, 1791
+Dec 15	James Naismith invents basketball, Canada, 1891
+Dec 15	Sitting Bull shot in head while submitting to arrest, 1890
+Dec 16	Fellowship begins Quest (LOTR)
+Dec 20	U.S. buys ~1,000,000 sq. miles of Louisiana for ~$20/sq.mi.
+Dec 21	Phileas Fogg completes his trip around the world in less than 80 days
+Dec 24	KKK formed in Pulaski, Tenn, 1865
+Dec 26	DPMA founded, 1951
+Dec 27	APT report published, 1956
+Dec 27	Ether first used as anesthetic in childbirth, 1845
+Dec 28	Comet Kohoutek at perihelion, 1973
+Dec 29	Battle of Wounded knee, 1890
+Dec 30	First Los Angeles freeway dedicated, 1940
+Dec 31	St. Sylvester in Switzerland
+Dec 31	Winterland closes its doors, 1978
+
+#endif /* !_calendar_history_ */

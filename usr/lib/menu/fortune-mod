@@ -1,0 +1,12 @@
+?package(fortune-mod):\
+  needs=x11\
+  section=Apps/Text\
+  title="Fortune"\
+  command="sh -c 'while fortune | col -x | xmessage -center -buttons OK:1,Another:0 -default OK -file - ; do :; done'"
+
+?package(fortune-mod):\
+  needs=text\
+  section=Apps/Text\
+  title="Fortune"\
+  command="sh -c 'fortune; echo; echo Press return to continue; read'"
+

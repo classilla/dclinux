@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/perl-base -a -d /usr/share/doc/perl-base ]; then
+		ln -sf ../share/doc/perl-base /usr/doc/perl-base
+	fi
+fi
+# End automatically added section

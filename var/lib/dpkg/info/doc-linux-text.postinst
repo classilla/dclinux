@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+L=en
+
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/doc-linux-text \
+       -a -d /usr/share/doc/doc-linux-text ]; then
+    ln -sf ../share/doc/doc-linux-text /usr/doc/doc-linux-text
+  fi
+fi
+
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/HOWTO/${L}-txt \
+       -a -d /usr/share/doc/HOWTO/${L}-txt ]; then
+    ln -sf ../../share/doc/HOWTO/${L}-txt /usr/doc/HOWTO/${L}-txt
+  fi
+fi
+

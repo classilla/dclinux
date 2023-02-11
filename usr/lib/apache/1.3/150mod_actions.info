@@ -1,0 +1,7 @@
+LoadModule: action_module /usr/lib/apache/1.3/mod_actions.so
+Directives:
+ Action
+ Script
+Handles:
+ action-name
+Description: Support for filetype-based scripts

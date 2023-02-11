@@ -1,0 +1,13 @@
+4fef06339b35aacbaf3fd40b3b4006fd  usr/sbin/tcpd
+cdca746b59565949392fd95ddf437719  usr/sbin/tcpdchk
+a9fab31f2f6fa55eb1f9f3161420523c  usr/sbin/tcpdmatch
+d63d92045c84a38cb9d9ac925270bf56  usr/sbin/try-from
+8df050c268a1ab3a6c0677523d7ff308  usr/sbin/safe_finger
+1e2757cf2a08a5fff619021f85d98708  usr/share/man/man8/tcpdmatch.8.gz
+203121cdb7109c37018f8a2984a48130  usr/share/man/man8/try-from.8.gz
+e1e2e452f6938cf0ded2101138a78c91  usr/share/man/man8/safe_finger.8.gz
+8d19fe92492ab0b94c39cbb1b928486d  usr/share/man/man8/tcpd.8.gz
+8107e78b44237a5b7b4fc1b11f849a37  usr/share/man/man8/tcpdchk.8.gz
+c800a6332bc14ffbfc57ff5370614365  usr/share/doc/tcpd/copyright
+80e33d7258686c9e8b894fded32ddde4  usr/share/doc/tcpd/changelog.gz
+a87abca09c786cfc9ef8dcb6a56a8c19  usr/share/doc/tcpd/changelog.Debian.gz

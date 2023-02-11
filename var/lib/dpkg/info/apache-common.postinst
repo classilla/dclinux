@@ -1,0 +1,29 @@
+#!/bin/sh -e
+if [ "$1" != configure ]
+then
+    exit 0
+fi
+if [ -e /etc/suid.conf -a -x /usr/sbin/suidregister ]
+then
+    suidregister -s apache-common /usr/bin/htpasswd root root 755
+    suidregister -s apache-common /usr/lib/apache/suexec root root 4755
+else
+    chown root.root /usr/lib/apache/suexec
+    chmod 4755 /usr/lib/apache/suexec
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/apache-common -a -d /usr/share/doc/apache-common ]; then
+		ln -sf ../share/doc/apache-common /usr/doc/apache-common
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/apache-common -a -d /usr/share/doc/apache-common ]; then
+		ln -sf ../share/doc/apache-common /usr/doc/apache-common
+	fi
+fi
+# End automatically added section
+

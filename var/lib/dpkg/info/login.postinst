@@ -1,0 +1,126 @@
+#!/bin/sh
+set -e
+
+# can't use this with PAM yet, but we leave it here for now
+update-rc.d logoutd defaults > /dev/null
+
+# Taken from debhelper
+if [ "$1" = "configure" ]; then
+        if [ -d /usr/doc -a ! -e /usr/doc/login -a -d /usr/share/doc/login ]; then
+                ln -sf ../share/doc/login /usr/doc/login
+        fi
+fi
+
+# Some files not needed since we now have PAM
+[ "$1" = configure -a "$2" ] \
+    && dpkg --compare-versions $2 lt 19990827-1 \
+    || [ -z "$2" ] \
+    || exit 0
+
+need_conf=
+
+for oldconf in limits login.access porttime
+do
+    if [ -f /etc/${oldconf} ] ; then
+	cat > /etc/${oldconf}$$ <<EOF
+# WARNING: This file isn't used by the current version of login
+# which has been converted to use PAM. Similar functionality is
+# available via the /etc/pam.d/login file.
+#
+# You may safely remove this file after configuring the PAM service.
+#
+# Note about /etc/porttime and logoutd. You *must* move your porttime
+# configuration to /etc/security/time.conf. The syntax is different only
+# in that the field seperator is ';' instead of ':'. Also the first field
+# (which is used by pam_time.so) is ignored by logoutd.
+#
+EOF
+	cat /etc/${oldconf} >> /etc/${oldconf}$$
+	mv -f /etc/${oldconf}$$ /etc/${oldconf}
+	if egrep -vqn '^#|^ *$' /etc/${oldconf} ; then
+	    need_conf="${need_conf} /etc/${oldconf}"
+	fi
+    fi
+done
+
+# Just in case they are replacing secure-su
+if [ -f /etc/suauth ] ; then
+    cat > /etc/suauth$$ <<EOF
+# WARNING: This file isn't used by the current version of su
+# which has been converted to use PAM. Similar functionality is
+# available via the /etc/pam.d/su file.
+#
+# You may safely remove this file after configuring the PAM service.
+#
+EOF
+    cat /etc/suauth >> /etc/suauth$$
+    mv -f /etc/suauth$$ /etc/suauth
+
+    if egrep -vqn '^#|^ *$' /etc/suauth ; then
+	need_conf="${need_conf} /etc/suauth"
+    fi
+fi
+
+if [ "x${need_conf}" != "x" ] ; then cat <<EOF
+
+The latest packages from shadow (login and passwd) are now compiled
+using the PAM (Pluggable Authentication Module) framework. Because
+PAM takes over the responsibility of some of the functionality
+previously handled directly by shadow, some configuration files are
+no longer needed. However, it seems that you have configured the
+following files for usage:
+
+EOF
+    echo ${need_conf}
+
+    cat <<EOF
+
+In order to regain the functionality from these files, please read and
+and edit the /etc/pam.d/login or /etc/pam.d/su file (and possibly other
+files related to the modules used there in). This message has also been
+prepended to the old configuration files noted above for future reference.
+You will have to do some configuration to regain functionality.
+
+Please hit return to confirm.
+EOF
+
+    read foo
+fi
+
+# Old but maybe still needed
+[ "$1" = configure -a "$2" ] \
+    && dpkg --compare-versions $2 lt 961025 \
+    || [ -z "$2" ] \
+    || exit 0
+
+if [ -f /etc/usertty ] ; then
+    cat > /etc/usertty$$ <<EOF
+# WARNING: This file isn't used by the current version of login.
+# Similiar functionality is available in /etc/login.defs. You may
+# safely remove this file after reconfiguring.
+#
+EOF
+    cat /etc/usertty >> /etc/usertty$$
+    mv -f /etc/usertty$$ /etc/usertty
+
+    if egrep -vqn '^#|^ *$' /etc/usertty ; then cat <<EOF
+You've configured /etc/usertty, but the current version of login no
+longer supports it.  Similiar functionality is available in other
+files, which you will have to configure for your purposes.
+
+A more detailed explanation has been prepended to /etc/usertty.
+You'll have to do some configuration later.
+
+Please hit return to confirm.
+EOF
+
+	read foo
+    fi
+fi
+
+if [ ! -f /var/log/faillog ] ; then
+    touch /var/log/faillog
+    chown root:root /var/log/faillog
+    chmod 644 /var/log/faillog
+fi
+

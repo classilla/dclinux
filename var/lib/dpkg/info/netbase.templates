@@ -1,0 +1,129 @@
+Template: netbase/upgrade-note/radius-ports-pre-3.05
+Type: note
+Description: Important hint for users of radius software
+ The official port numbers of the radius service have been changed
+ from 1645 and 1646 to 1812 and 1813. If you use the radius service
+ please make sure that the client and server software both use the
+ same port numbers.
+Description-it: Suggerimento importante per chi usa software radius
+ I numeri di porta ufficiali del servizio radius sono stati cambiati
+ da 1645 e 1646 a 1812 e 1813. Se usate il servizio radius assicuratevi
+ che il software di client e quello di server usino gli stessi numeri
+ di porta.
+
+Template: netbase/upgrade-note/portmap-restart-pre-3.11-2
+Type: note
+Description: The old portmapper is still running.
+ The old portmapper is still running. This will cause problems, mainly that
+ "/etc/init.d/portmap stop" won't actually do anything. To fix this, I'm
+ going to try to forcibly stop portmap, and then restart it.
+Description-it: Il vecchio portmapper sta ancora girando.
+ Il vecchio portmapper sta ancora girando, e questo potra' causare dei
+ problemi; principalmente, "/etc/init.d/portmap stop" non
+ funzionera'. Per correggerlo, cerchero' di fermare forzatamente
+ portmap e poi riavviarlo.
+
+Template: netbase/upgrade-note/init.d-split-pre-3.16-1
+Type: note
+Description: /etc/init.d/netbase has been split.
+ /etc/init.d/netbase is no longer required or used.
+ .
+ /etc/init.d/portmap (provided by the portmap package) now handles
+ stopping and starting the portmapper, /etc/init.d/inetd (provided by
+ the netkit-inetd package) handles stopping and starting inetd, and
+ /etc/init.d/networking handles spoof protection.
+Description-it: /etc/init.d/netbase e' stato diviso.
+ /etc/init.d/netbase non e' piu' necessario, ne' viene usato.
+ .
+ /etc/init.d/portmap ora gestisce l'avvio e lo spengimento del portmapper,
+ /etc/init.d/inetd gestisce l'avvio e lo spengimento di inetd, e
+ /etc/ini.d/networking la protezione contro lo spoofing.
+
+Template: netbase/upgrade-note/etc-network-interfaces-pre-3.17-1
+Type: note
+Description: /etc/init.d/network superceded by /etc/network/interfaces
+ /etc/init.d/network is no longer directly supported. You may, of course,
+ continue using it to setup your networking, however new Debian installs
+ will use the ifup/ifdown commands to configure network interfaces based
+ on the settings in /etc/network/interfaces.
+ .
+ If you do convert to using /etc/network/interfaces in place of
+ /etc/init.d/network you will probably want to remove /etc/init.d/network
+ and the /etc/rcS.d/S40network symlink. These will not be touched by
+ netbase or other Debian packages in future.
+ .
+ Note that the old default /etc/init.d/network used to add a route for the
+ loopback interface. This is no longer necessary for 2.2.x series kernels,
+ and will result in a (non-fatal) SIOCADDRT error message at bootup.
+Description-it: /etc/init.d/network sostituito da /etc/network/interfaces
+ /etc/init.d/network non viene piu' supportato direttamente. Potete,
+ ovviamente, continuare ad usarlo per impostare la rete, ma le nuove
+ installazioni di Debian useranno i comandi ifup/ifdown per configurare
+ le interfacce di retre, basandosi sulle impostazioni in
+ /etc/network/interfaces.
+ .
+ Notate che lo script /etc/init.d/network di default aggiunge una route
+ per l'interfaccia di loopback. Per i kernel della serie 2.2.x questo
+ non e' piu' necessario, e portera' ad un errore SIOCADDRT all'avvio del
+ sistema.
+ .
+ Il vecchio default /etc/init.d/network aggiungeva una route anche per
+ l'interfaccia di loopback, che non e' piu' necessaria per i kernel
+ 2.2.x, e portera' ad un errore SIOCADDRT all'avvio del sistema,
+ anche se non da' problemi.
+
+Template: netbase/ipv6-hosts
+Type: boolean
+Default: true
+Description: Would you like IPv6 addresses added to /etc/hosts?
+ Sooner or later, Debian will include out-of-the box support
+ for IPv6 (see http://www.ipv6.org/). As such, you might like
+ to start playing with this, and seeing what things break as
+ we try to add support for IPv6.
+Description-it: Volete aggiungere gli indirizzi IPV6 ad /etc/hosts?
+ Prima o poi, Debian includera' il supporto per IPV6 nella normale
+ configurazione (vedere http://www.ipv6.org/). Al momento potreste
+ voler cominciare a giocarci, ed a vedere cosa si rompe a mano a mano
+ che aggiungiamo il supporto per l'IPV6.
+
+Template: netbase/spoofprot
+Type: note
+Description: Spoof protection for pre-2.2 kernels
+ If you are running a pre-2.2 series kernel, IP spoof 
+ protection cannot be enabled without special configuration,
+ found in /etc/network/spoof-protect and provided by answering
+ the following questions. 
+ .
+ For 2.2.x and later kernels, this information will be determined
+ automatically at boot time, so you don't need to enter anything here
+ unless you also use pre-2.2 kernels.
+Description-it: Protezione dallo spoofing per i kernel pre-2.2
+ Se state usando un kernel di una serie precedente alla 2.2, la protezione
+ allo spoofing IP non puo' essere abilitata senza una configurazione
+ speciale, che si trova in /etc/network/spoof-protect e che viene fornita
+ rispondendo alle seguenti domande.
+ .
+ Per i kernel 2.2.x e successivi, questa informazione verra' determinata
+ automaticamente al momento del boot, quindi non avete bisogno di
+ indicarla qui a meno che non usiate anche kernel pre-2.2.
+
+Template: netbase/spoofprot/pre-2.2-ip
+Type: string
+Default: 127.0.0.1/8
+Description: What IP addresses (or address ranges) should be considered local?
+ IP addresses and ranges should be listed in any order, and separated by 
+ spaces. Addresses should be specified as a dotted quad, while ranges should
+ be specified in CIDR-style. So the class C network 192.168.42.0-192.168.42.255
+ would be specified as 192.168.42.0/24.
+Description-it: Quali indirizzi IP (o intervalli) devono essere considerati locali?
+ Gli indirizzi IP e gli intervalli di indirizzi possono essere elencati in
+ qualsiasi ordine, separati da spazi. Gli indirizzi devono essere indicati
+ in notazione normale, mentre gli indirizzi vanno indicati in stile CIDR, 
+ quindi la rete di classe C 192.168.42.0-192.168.42.255 deve essere indicata
+ come 192.168.42.0/24.
+
+Template: netbase/spoofprot/pre-2.2-interfaces
+Type: string
+Default: eth0 eth1 ppp0
+Description: What remote interfaces does this host have?
+Description-it: Quali interfacce remote ha questo host?

@@ -1,0 +1,176 @@
+#! /bin/sh
+# postinst.skeleton
+# Skeleton maintainer script showing all the possible cases.
+# Written by Charles Briscoe-Smith, March-June 1998.  Public Domain.
+
+# Abort if any command returns an error value
+set -e
+
+# This script is called as the last step of the installation of the
+# package.  All the package's files are in place, dpkg has already done
+# its automatic conffile handling, and all the packages we depend of
+# are already fully installed and configured.
+
+# The following idempotent stuff doesn't generally need protecting
+# against being run in the abort-* cases.
+
+# Install info files into the dir file
+
+install-info --quiet --section "Development" "Development" \
+ --description="The GNU make utility."  /usr/share/info/make.info.gz
+
+package_name=make
+
+
+
+if [ -z "package_name" ]; then
+    print >&2 "Internal Error. Please report a bug."
+    exit 1;
+fi
+
+#perl -e 'print readlink("/usr/doc/'$package_name'"), "\n"; '
+case "$1" in
+  configure)
+    # Configure this package.  If the package must prompt the user for
+    # information, do it here.
+
+    if [ -d /usr/doc ]; then
+	# Well, we still need to handle this. At this point, /usr/doc
+	# can be a symlink
+	
+	if [  -d /usr/share/doc/$package_name ]; then
+	    # So the new doc dir exists, goody
+	    
+	    # well, either one of these is a symlink, they can be
+	    # pointing off _anywhere_
+	    cd /usr/doc/;
+	    target_dir=$(/bin/pwd);
+	    cd /usr/share/doc 
+	    starget_dir=$(/bin/pwd);
+	    cd /
+
+            link_target="../share/doc/$package_name";
+            cd /usr/doc/;
+            if [ -d ../share/doc/ ]; then
+                cd ../share/doc/
+                ltarget=$(/bin/pwd);
+                if [ "$starget_dir" = "$ltarget" ]; then
+                    link_target="../share/doc/$package_name";
+                else
+                    link_target="/usr/share/doc/$package_name";
+                fi
+            else
+                link_target="/usr/share/doc/$package_name"
+            fi
+
+
+	    # Well, make sure that we do not get tripped up by the symlink
+	    if [ -L /usr/doc/$package_name ]; then
+		rm -f /usr/doc/$package_name
+	    fi
+
+	    if [ "$target_dir" != "$starget_dir" ]; then
+		# Ok. The directories are in different locations
+	    	if [ -d /usr/doc/$package_name ]; then
+		    echo "Yikes! The old directory, /usr/doc/$package_name,"
+		    echo "has not ben removed! This is an error; attempting"
+		    echo "repairs."
+		    find /usr/doc/$package_name/ -type f -name .dhelp \
+			-exec rm {} \;
+		    find /usr/doc/$package_name/ -type d -depth \
+                	 -exec rmdir --ignore-fail-on-non-empty {} \;
+
+		    if [ -d /usr/doc/$package_name ]; then
+			cat <<EOF 
+Failed repairs. There are old files in /usr/doc/$package_name/ created
+by you or another script. I can copy them over to the new location
+/usr/share/doc/$package_name, if you wish, preserving your versions of
+the files.  No files shall be over written, instead, backup versions
+shall be created in /usr/share/doc/$package_name as needed.
+
+Shall I copy the files over [Yn]?
+EOF
+			read answer;
+			case "$answer" in
+			    [Nn]*)
+				echo "Not copying over, aborting";
+				exit 1;
+				;;	
+			    *)
+				cp -a --backup=t /usr/doc/$package_name  \
+				    /usr/share/doc/$package_name/.. ;
+				rm -rf /usr/doc/$package_name;
+			esac
+		    fi
+		fi
+
+		if [ -e /usr/doc/$package_name ]; then
+		    echo "/usr/doc/$package_name still exists"
+		    if [ -L /usr/doc/$package_name ]; then
+			echo "it is a symbolic link, overwriting"
+			ln -sf $link_target /usr/doc/$package_name
+		    else
+			echo "This is an error. Aborting"
+			exit 1
+		    fi
+		fi
+		# File unexists. Free to go ahead and create link
+		ln -sf $link_target /usr/doc/$package_name
+
+	    fi
+	fi
+    fi
+
+ 
+    # There are three sub-cases:
+    if test "${2+set}" != set; then
+      # We're being installed by an ancient dpkg which doesn't remember
+      # which version was most recently configured, or even whether
+      # there is a most recently configured version.
+      :
+
+    elif test -z "$2" -o "$2" = "<unknown>"; then
+      # The package has not ever been configured on this system, or was
+      # purged since it was last configured.
+      :
+
+    else
+      # Version $2 is the most recently configured version of this
+      # package.
+      :
+
+    fi ;;
+  abort-upgrade)
+    # Back out of an attempt to upgrade this package FROM THIS VERSION
+    # to version $2.  Undo the effects of "prerm upgrade $2".
+    :
+
+    ;;
+  abort-remove)
+    if test "$2" != in-favour; then
+      echo "$0: undocumented call to \`postinst $*'" 1>&2
+      exit 0
+    fi
+    # Back out of an attempt to remove this package, which was due to
+    # a conflict with package $3 (version $4).  Undo the effects of
+    # "prerm remove in-favour $3 $4".
+    :
+
+    ;;
+  abort-deconfigure)
+    if test "$2" != in-favour -o "$5" != removing; then
+      echo "$0: undocumented call to \`postinst $*'" 1>&2
+      exit 0
+    fi
+    # Back out of an attempt to deconfigure this package, which was
+    # due to package $6 (version $7) which we depend on being removed
+    # to make way for package $3 (version $4).  Undo the effects of
+    # "prerm deconfigure in-favour $3 $4 removing $6 $7".
+    :
+
+    ;;
+  *) echo "$0: didn't understand being called with \`$1'" 1>&2
+     exit 0;;
+esac
+
+exit 0

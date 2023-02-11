@@ -1,0 +1,116 @@
+#! /bin/sh
+
+set -e
+
+create_gpm_conf ()
+{
+ ARCH=$(dpkg --print-installation-architecture)
+ case $ARCH in 
+    m68k)
+	device=/dev/mouse;
+	type=bm;;
+    alpha)
+	device=/dev/psmouse
+	type=ps2;;
+    sparc)
+	device=/dev/sunmouse;
+	type=sun;;
+    i386|*)
+	device=/dev/psaux;
+	type=ps2;;
+ esac;
+ cat > /etc/gpm.conf <<EOF
+#  /etc/gpm.conf - configuration file for gpm(1)
+#
+#  If mouse response seems to be to slow, try using
+#  responsiveness=15. append can contain any random arguments to be
+#  appended to the commandline.  
+#
+#  If you edit this file by hand, please be aware it is sourced by
+#  /etc/init.d/gpm and thus all shell meta characters must be
+#  protected from evaluation (i.e. by quoting them).
+#
+#  This file is used by /etc/init.d/gpm and can be modified by
+#  /usr/sbin/gpmconfig.
+#
+device=$device
+responsiveness=
+repeat_type=ms3
+type=$type
+append=""
+sample_rate=
+
+EOF
+
+}
+ 
+check_gpm_conf ()
+{
+
+ if grep -q "^append.*~/00-2630-6670-77" /etc/gpm.conf; then
+   echo "Your gpm.conf has a bad append line because of a bug"
+   echo -n "in earlier versions of gpmconfig.  May I fix it? (Y/n) "
+   read answer
+   if [ ! "$answer" = "n" -a ! "$answer" = "N" ]; then
+     sed -e "s/^append=.*/append=\"-l \\\\\"a-zA-Z0-9_.:~\/\\\\300-\\\\326\\\\330-\\\\366\\\\370-\\\\377\\\\\"\"/" < /etc/gpm.conf > /etc/gpm.conf.new
+     mv -f /etc/gpm.conf.new /etc/gpm.conf
+     echo "Okay, fixed."
+   else
+     echo "Okay, I've not done it."
+   fi
+ fi
+
+}
+
+case "$1" in
+  configure)
+    #
+    # If there is no /etc/gpm.conf then create a default
+    # and run gpmconfig
+    #
+    if [ ! -f /etc/gpm.conf ]; then
+      create_gpm_conf
+      /usr/sbin/gpmconfig --norestart
+      echo
+      echo "If you want to change the configuration you can call \`gpmconfig'"
+      echo "or edit /etc/gpm.conf manually."
+      echo
+    else
+      check_gpm_conf
+    fi
+    ;;
+esac
+
+install-info --quiet --section ".*Console*" "Console utilities" /usr/share/info/gpm.info
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/gpm -a -d /usr/share/doc/gpm ]; then
+		ln -sf ../share/doc/gpm /usr/doc/gpm
+	fi
+fi
+update-rc.d gpm defaults >/dev/null
+
+if gpm_has_mouse_control; then
+  restart="yes";
+else
+  cat <<EOF
+
+You seem to be installing or upgrading GPM under X.
+
+Normally we want to start/restart GPM when installing/upgrading, however
+doing such under X may cause problems.
+
+(Note, switching to the console and then back to X generally fixes the
+problem)
+EOF
+  echo -n "Do you wish to start/restart gpm at this time? (Y/n)"; read answer
+  if [ "$answer" = "N" -o "$answer" = "n" ]; then
+    restart="no";
+  else
+    restart="yes";
+  fi
+fi
+
+if [ "$restart" = "yes" ]; then
+  # Note, yes, this is restart, its ment to be..
+  /etc/init.d/gpm restart
+fi

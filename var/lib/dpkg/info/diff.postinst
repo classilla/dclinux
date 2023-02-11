@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+install-info --quiet --section "General commands" "General commands:" \
+ --description="GNU diff and related utilities" /usr/share/info/diff.info
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/diff -a -d /usr/share/doc/diff ]; then
+    ln -sf ../share/doc/diff /usr/doc/diff
+  fi
+fi

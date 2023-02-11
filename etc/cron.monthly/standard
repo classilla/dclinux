@@ -1,0 +1,4 @@
+#!/bin/sh
+# /etc/cron.monthly/standard: standard monthly maintenance script
+
+# rotation of wtmp and btmp taken over by logrotate

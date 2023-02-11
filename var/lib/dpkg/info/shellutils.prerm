@@ -1,0 +1,8 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --remove sh-utils
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/shellutils ]; then
+	rm -f /usr/doc/shellutils
+fi

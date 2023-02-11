@@ -1,0 +1,31 @@
+
+This is Debian/GNU Linux's prepackaged version of the FSF's GNU time utility.
+`time' is a program that measures many of the CPU resources, such as time and
+memory, that other programs use. It was written by David MacKenzie.
+
+This package was put together by Dirk Eddelbuettel <edd@debian.org> from the
+previous Debian package time-1.6-2 (from ftp.debian.org) and the GNU sources
+for time-1.6 (from ftp.cs.ubc.ca/mirror2/gnu, a mirror of ftp.gnu.org).
+Changes are the Debian package maintenance system and a small patch to the
+configure script.
+
+GNU time is Copyright (C) Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program;  if not, write to the Free Software Foundation, 
+   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+
+

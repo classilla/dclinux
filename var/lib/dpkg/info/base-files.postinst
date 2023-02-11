@@ -1,0 +1,129 @@
+#!/bin/sh
+set -e
+
+install_from_default() {
+  if [ ! -f $2 ]; then
+    cp -p $1 $2
+  fi
+}
+
+install_directory() {
+  if [ ! -d /$1 ]; then
+    mkdir /$1
+    chown root.$3 /$1
+    chmod $2 /$1
+  fi
+}
+
+preserve_directory() {
+  if [ -f /etc/base-files.create-$1 ]; then
+    install_directory $1 755 root
+    rm -f /etc/base-files.create-$1
+  fi
+}
+
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/base-files -a -d /usr/share/doc/base-files ]; then
+    ln -sf ../share/doc/base-files /usr/doc/base-files
+  fi
+fi
+
+if [ "$1" = "configure" ] && [ "$2" = "" ]; then
+  install_from_default /usr/share/base-files/dot.profile /root/.profile
+  install_from_default /usr/share/base-files/dot.bashrc  /root/.bashrc
+  install_directory floppy    755 root
+  install_directory cdrom     755 root
+  install_directory initrd    755 root
+  install_directory var/mail 2775 mail
+  if [ ! -L /var/spool/mail ]; then
+    ln -s ../mail /var/spool/mail
+  fi
+
+  if [ ! -d /usr/local ]; then
+    mkdir -p /usr/local
+    chown root.staff /usr/local 2> /dev/null || true
+    chmod 2775 /usr/local 2> /dev/null || true
+    for d in share bin man lib include sbin src; do
+      cd /usr/local && mkdir -p $d
+      chown root.staff /usr/local/$d 2> /dev/null || true
+      chmod 2775 /usr/local/$d 2> /dev/null || true
+    done
+  fi
+fi
+
+if [ "$1" = "configure" ] && [ "$2" != "" ]; then
+  if [ ! -d /var/spool/mail ] && [ ! -L /var/spool/mail ]; then
+    if [ -f /etc/base-files.mailsymlink ]; then
+      ln -sf `cat /etc/base-files.mailsymlink` /var/spool/mail
+    else
+      install_directory var/spool/mail 2775 mail
+    fi
+  fi
+  if [ ! -L /var/mail ] && [ ! -d /var/mail ]; then
+    ln -sf spool/mail /var/mail
+  fi
+fi
+
+preserve_directory floppy
+preserve_directory cdrom
+preserve_directory initrd
+
+if [ ! -f /etc/adjtime ]; then
+  echo "0.000000 809290814 0.000000" > /etc/adjtime
+  chmod 644 /etc/adjtime
+fi
+
+if [ ! -f /var/run/utmp ]; then
+  echo -n>/var/run/utmp
+fi
+if [ ! -f /var/log/wtmp ]; then
+  echo -n>/var/log/wtmp
+fi
+if [ ! -f /var/log/lastlog ]; then
+  echo -n>/var/log/lastlog
+fi
+chown root.utmp /var/run/utmp /var/log/wtmp /var/log/lastlog
+chmod 664 /var/run/utmp /var/log/wtmp /var/log/lastlog
+
+if [ ! -d /var/lib/dpkg ]; then
+  mkdir -m 755 -p /var/lib/dpkg
+  chown root.root /var/lib/dpkg
+fi
+if [ ! -f /var/lib/dpkg/status ]; then
+  echo > /var/lib/dpkg/status
+  chmod 644 /var/lib/dpkg/status
+  chown root.root /var/lib/dpkg/status
+fi
+
+if [ ! -f /usr/info/dir -a ! -f /usr/share/info/dir ]; then
+  install_from_default /usr/share/base-files/info.dir /usr/info/dir
+  chmod 644 /usr/info/dir
+  chown root.root /usr/info/dir
+fi
+rm -f /etc/base-files.mailsymlink
+
+if [ -f /etc/motd ]; then
+  oldmd=`awk 'NR > 2' /etc/motd | md5sum`
+  newmd=`awk 'NR > 2' /usr/share/base-files/motd | md5sum`
+  if [ "$oldmd" != "$newmd" ]; then
+    if grep -q "$oldmd" /usr/share/base-files/motd.md5sums; then
+      awk 'NR <= 2' /etc/motd > /etc/motd.new
+      awk 'NR > 2' /usr/share/base-files/motd >> /etc/motd.new
+      mv /etc/motd /etc/motd.old
+      mv /etc/motd.new /etc/motd
+    fi
+  fi
+fi
+
+if [ -f /var/lib/dpkg/info/base.list ]; then
+  :> /var/lib/dpkg/info/base.list
+  rm -f /var/lib/dpkg/info/base.conffiles
+  echo
+  echo "Note: You have the old \`base' package installed"
+  echo "It is very important that you do not try to remove this package"
+  echo "using dpkg. Please read /usr/doc/base-files/README.base to get rid of"
+  echo "the \`base' package completely in a safe way."
+  echo
+  echo -n "Press <Return> to continue "
+  read dummy
+fi

@@ -1,0 +1,12 @@
+#! /bin/sh -e
+
+install-info --quiet --section "Miscellaneous" "Miscellaneous" \
+  --description="GNU Readline Library API" /usr/share/info/rluserman.info.gz
+
+if [ "$1" = "configure" ]; then
+    pkg="`basename $0 .postinst`"
+    if [ -d /usr/doc -a ! -e /usr/doc/$pkg -a -d /usr/share/doc/$pkg ]; then
+        ln -sf ../share/doc/$pkg /usr/doc/$pkg
+    fi
+    ldconfig
+fi

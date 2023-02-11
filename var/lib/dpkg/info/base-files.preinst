@@ -1,0 +1,21 @@
+#!/bin/sh
+set -e
+if dpkg --compare-versions "$2" lt-nl "2.1.6"; then
+  if [ -d /floppy ]; then
+    touch /etc/base-files.create-floppy
+  fi
+  if [ -d /cdrom ]; then
+    touch /etc/base-files.create-cdrom
+  fi
+  if [ -d /initrd ]; then
+    touch /etc/base-files.create-initrd
+  fi
+fi
+if dpkg --compare-versions "$2" lt-nl "2.1.16"; then
+  if [ -L /var/spool/mail ]; then
+    find /var/spool/mail -printf "%l\n" > /etc/base-files.mailsymlink
+  fi
+fi
+if dpkg --compare-versions "$2" lt-nl "2.2.6"; then
+  echo "testing/unstable" > /etc/debian_version
+fi

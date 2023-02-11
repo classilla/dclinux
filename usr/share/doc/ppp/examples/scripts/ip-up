@@ -1,0 +1,45 @@
+#!/bin/sh
+#
+# $Id: ip-up,v 1.1 1997/12/16 11:37:26 phil Exp $
+#
+# This script is run by the pppd after the link is established.
+# It should be used to add routes, set IP address, run the mailq
+# etc.
+#
+# This script is called with the following arguments:
+#    Arg  Name               Example
+#    $1   Interface name     ppp0
+#    $2   The tty            ttyS1
+#    $3   The link speed     38400
+#    $4   Local IP number    12.34.56.78
+#    $5   Peer  IP number    12.34.56.99
+
+# The  environment is cleared before executing this script
+# so the path must be reset
+PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin
+export PATH
+# These variables are for the use of the scripts run by run-parts
+PPP_IFACE="$1"
+PPP_TTY="$2"
+PPP_SPEED="$3"
+PPP_LOCAL="$4"
+PPP_REMOTE="$5"
+export PPP_IFACE PPP_TTY PPP_SPEED PPP_LOCAL PPP_REMOTE
+
+# as an additional convienince, $PPP_TTYNAME is set to the tty name,
+# stripped of /dev/ (if present) for easier matching.
+PPP_TTYNAME=`/usr/bin/basename "$2"`
+export PPP_TTYNAME
+
+# Main Script starts here
+
+run-parts /etc/ppp/ip-up.d
+
+# if pon was called with the "quick" arg, stop ppp now
+if [ -r /var/run/ppp-quick ]
+then
+    wait
+    /usr/bin/poff
+fi
+
+# last line

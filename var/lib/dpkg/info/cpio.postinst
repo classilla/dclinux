@@ -1,0 +1,34 @@
+#!/bin/sh -e
+
+# movedoc - function to make the transition /usr/doc -> /usr/share/doc
+movedoc()
+{
+    PKG=cpio
+    OLD=/usr/doc/$PKG
+    NEW=/usr/share/doc/$PKG
+    if test -d $OLD -a ! -h $OLD -a ! $OLD -ef $NEW; then
+	rm -f $OLD/.dhelp
+	if test -e $OLD && ! rmdir $OLD 2>/dev/null; then
+	    VERSION_CONTROL=t \
+	    cp -ab $OLD $NEW/..
+	    rm -rf $OLD
+	fi
+    fi
+    if test -d /usr/doc -a ! -e $OLD -a -d $NEW; then
+	ln -s $NEW $OLD
+    fi
+}
+
+if [ "$1" = configure ]; then
+    # Fix some screwup in old package
+    case "$2" in
+    2.4.2-3[45]) update-alternatives --remove mt /bin/gmt; esac
+    update-alternatives --install /bin/mt mt /bin/mt-gnu 10 \
+      --slave \
+	/usr/share/man/man1/mt.1.gz mt.1.gz /usr/share/man/man1/mt-gnu.1.gz
+    install-info --quiet \
+      --description="A program to manage archives of files." \
+      --section "General Commands" "General Commands" /usr/info/cpio.info
+    test -f /sbin/rmt || ln -s ../usr/sbin/rmt /sbin/rmt
+    movedoc
+fi

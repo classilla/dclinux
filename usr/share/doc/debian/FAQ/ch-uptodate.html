@@ -1,0 +1,331 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - Keeping Your Debian System Up To Date</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-pkgtools.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-kernel.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 8 Keeping Your Debian System Up To Date
+</h1>
+
+<hr>
+
+<p>
+One of Debian goals is to provide a consistant upgrade path and a secure
+upgrade process, and we always do our best to make the new release smoothly
+upgradable from the previous ones.  In case there's some important note to add
+to the upgrade process, the packages will alert the user, and often provide a
+solution to a possible problem.
+
+<p>
+You should also read the Release Notes, document that describes the details of
+specific upgrades, shipped on all Debian CDs, and available on the WWW at
+<code><a
+href="http://www.debian.org/releases/stable/i386/release-notes/">http://www.debian.org/releases/stable/i386/release-notes/</a></code>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-libc5to6upgrade">8.1 How can I upgrade my Debian 1.3.1 (or earlier) distribution, based on libc5, to 2.0 (or later), based on libc6?</a>
+</h2>
+
+<p>
+There are several ways to upgrade:
+
+<ul>
+
+<p>
+<li>
+Using a simple shell script called <samp>autoup.sh</samp> which upgrades the
+most important packages.  After <samp>autoup.sh</samp> has done his job, you
+may use dselect to install the remaining packages <em>en masse</em>.  This is
+probably the recommended method, but not the only one.
+
+<p>
+Currently, the latest release of <samp>autoup.sh</samp> may be found on the
+following locations:
+
+<ul>
+
+<p>
+<li>
+<code><a
+href="http://www.debian.org/releases/2.0/autoup/">http://www.debian.org/releases/2.0/autoup/</a></code>
+</li>
+
+<p>
+<li>
+<code><a
+href="http://www.taz.net.au/autoup/">http://www.taz.net.au/autoup/</a></code>
+</li>
+
+<p>
+<li>
+<code><a
+href="http://csanders.vicnet.net.au/autoup/">http://csanders.vicnet.net.au/autoup/</a></code>
+</li>
+
+</ul>
+</li>
+
+<p>
+<li>
+Following closely the <code><a
+href="ftp://ftp.debian.org/pub/debian/doc/libc5-libc6-Mini-HOWTO.txt">libc5-libc6-Mini-HOWTO</a></code>
+and upgrade the most important packages by hand.  <samp>autoup.sh</samp> is
+based on this Mini-HOWTO, so this method should work more or less like using
+<samp>autoup.sh</samp>.
+</li>
+
+<p>
+<li>
+Using a libc5-based <samp>apt</samp>.  APT stands for A Package Tool, and it
+might replace dselect some day.  Currently, it works just as a command-line
+interface, or as a dselect access method.  You will find a libc5 version in the
+<samp>dists/slink/main/upgrade-older-i386</samp> directory at the Debian
+archives.
+</li>
+
+<p>
+<li>
+Using just dselect, without upgrading any package by hand first.  It is highly
+recommended that you do NOT use this method if you can avoid it, because
+dselect alone currently does not install packages in the optimal order.  APT
+works much better and it is safer.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-howtocurrent">8.2 How can I keep my Debian system current?</a>
+</h2>
+
+<p>
+One could simply execute an anonymous ftp call to a Debian archive, then peruse
+the directories until he finds the desired file, and then fetch it, and finally
+install it using <samp>dpkg</samp>.  Note that <samp>dpkg</samp> will install
+upgrade files in place, even on a running system.  Sometimes, a revised package
+will require the installation of a newly revised version of another package, in
+which case the installation will fail until/unless the other package is
+installed.
+
+<p>
+Many people find this approach much too time-consuming, since Debian evolves so
+quickly -- typically, a dozen or more new packages are uploaded every week.
+This number is larger just before a new major release.  To deal with this
+avalanche, many people prefer to use an automated programs.  Several different
+packages are available for this purpose:
+</p>
+
+<hr>
+
+<h3>
+<a name="s-apt">8.2.1 APT</a>
+</h3>
+
+<p>
+APT is a management system for software packages, namely Debian binary and
+source packages.  apt-get is the command-line tool for handling packages, and
+APT dselect method is an interface to APT through <code>dselect</code>, both of
+which provide a simpler, safer way to install and upgrade packages.
+
+<p>
+APT features complete installation ordering, multiple source capability and
+several other unique features, see the User's Guide in
+<samp>/usr/share/doc/apt/guide.html/index.html</samp>.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dpkg-ftp">8.2.2 dpkg-ftp</a>
+</h3>
+
+<p>
+This is an access method for <code>dselect</code>.  It can be invoked from
+within <code>dselect</code>, thereby allowing a user the ability to download
+files and install them directly in one step.  To do this, bring up the
+<code>dselect</code> program, choose option &quot;0&quot; (&quot;Choose the
+access method to use&quot;), highlight the option &quot;ftp&quot; then specify
+the remote hostname and directory.  <code>dpkg-ftp</code> will then
+automatically download the files that are selected (either in this session of
+<code>dselect</code> or earlier ones).
+
+<p>
+Note that, unlike the <code>mirror</code> program, <code>dpkg-ftp</code> does
+not grab everything at a mirror site.  Rather, it downloads only those files
+which you have selected (when first starting up <code>dpkg-ftp</code>), and
+which need to be updated.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-mirror">8.2.3 mirror</a>
+</h3>
+
+<p>
+This Perl script, and its (optional) manager program called
+<code>mirror-master</code>, can be used to fetch user-specified parts of a
+directory tree from a specified host <em>via</em> anonymous FTP.
+
+<p>
+<code>mirror</code> is particularly useful for downloading large volumes of
+software.  After the first time files have been downloaded from a site, a file
+called <samp>.mirrorinfo</samp> is stored on the local host.  Changes to the
+remote filesystem are tracked automatically by <code>mirror</code>, which
+compares this file to a similar file on the remote system and downloads only
+changed files.
+
+<p>
+The <code>mirror</code> program is generally useful for updating local copies
+of remote directory trees.  The files fetched need not be Debian files.  (Since
+<code>mirror</code> is a Perl script, it can also run on non-Unix systems.)
+Though the <code>mirror</code> program provides mechanisms for excluding files
+names of which match user-specified strings, this program is most useful when
+the objective is to download whole directory trees, rather than selected
+packages.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dftp">8.2.4 dftp</a>
+</h3>
+
+<p>
+This Perl script can be used to fetch user-specified Debian packages from a
+specified host.  It begins by downloading the Packages.gz files for the
+directories specified by the user (e.g.  stable, contrib, non-free) and
+presents him with a list of packages.  These are placed in various sections:
+new upgrades, downgrades, new packages, ignored upgrades, and ignored packages.
+The user then selects the packages he wants and dftp downloads and installs
+them.  This makes it very easy to have your Debian system 100% current all the
+time without downloading packages that you are not going to install.
+
+<p>
+<code>dftp</code> can be used to call <code>dselect</code> (see <a
+href="ch-pkgtools.html#s-dselect">dselect, Section 7.1.2</a>), thereby
+providing an integrated way to fetch and update the Debian packages on one's
+system.  When the installation is finished, another <code>dftp</code> command
+can be used to remove the package archive (&quot;.deb&quot;) files.  Changes to
+the remote filesystem are tracked automatically by <code>dftp</code>, which
+compares the local Packages.gz file to the files on the remote system.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dpkg-mountable">8.2.5 dpkg-mountable</a>
+</h3>
+
+<p>
+dpkg-mountable adds an access method called `mountable' to dselect's list,
+which allows you to install of any filesystem specified in /etc/fstab (e.g.  a
+normal hard disk partition, or an NFS server), which it will automatically
+mount and umount for you if necessary.
+
+<p>
+It also has some extra features not found in the standard dselect methods, such
+as provision for a local file tree (either parallel to the main distribution or
+totally separate), and only getting packages which are required, rather than
+the time-consuming recursive directory scan, as well as logging of all dpkg
+actions in the install method.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-upgradesingle">8.3 Must I go into single user mode in order to upgrade a package?</a>
+</h2>
+
+<p>
+No.  Packages can be upgraded in place, even in running systems.  Debian has a
+<samp>start-stop-daemon</samp> program that is invoked to stop, then restart
+running process if necessary during a package upgrade.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-savedebs">8.4 Do I have to keep all those .deb archive files on my disk?</a>
+</h2>
+
+<p>
+No.  If you have downloaded the files to your disk (which is not absolutely
+necessary, see above for dpkg-ftp or dftp descriptions), then after you have
+installed the packages, you can remove them from your system.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-keepingalog">8.5 How can I keep a log of the packages I added to the system?</a>
+</h2>
+
+<p>
+<code>dpkg</code> keeps a record of the packages that have been unpacked,
+configured, removed, and/or purged, but does not (currently) keep a log of
+terminal activity that occured while a package was being so manipulated.  Some
+users overcome this simply by using <code>tee</code>, like this:
+
+<pre>
+     dpkg -iGOEB -R main/binary non-free/binary contrib/binary | \
+         tee -a /root/dpkg.log
+</pre>
+
+<p>
+The same command written using long options:
+
+<pre>
+     dpkg --install --refuse-downgrade --selected-only \
+       --skip-same-version --auto-deconfigure \
+       --recursive main/binary non-free/binary contrib/binary | \
+         tee -a /root/dpkg.log
+</pre>
+</p>
+
+<hr>
+
+[ <a href="ch-pkgtools.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-kernel.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

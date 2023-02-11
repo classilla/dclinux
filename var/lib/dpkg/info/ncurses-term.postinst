@@ -1,0 +1,18 @@
+#! /bin/sh
+
+# Make sure errors report (since we try to weed out potential spurious ones)
+set -e
+
+# Create links for ncurses3.0 compatability.
+if [ ! -e /usr/lib/terminfo ]; then
+  ln -sf ../share/terminfo /usr/lib/terminfo
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ncurses-term -a -d /usr/share/doc/ncurses-term ]; then
+		ln -sf ../share/doc/ncurses-term /usr/doc/ncurses-term
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,2 @@
+/etc/init.d/inetd
+/etc/cron.daily/netkit-inetd

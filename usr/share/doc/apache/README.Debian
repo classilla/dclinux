@@ -1,0 +1,33 @@
+Notes for Apache for Debian
+--------------------------
+
+
+* The default webpages are owned by root.root by default (*not*
+  www-data.www-data), so hackers will have a harder time defacing the
+  site.
+
+  -- Johnie Ingram <johnie@netgod.net>, Thu, 10 Aug 2000 09:47:11 -0700
+
+
+* This apache does not pass the HTTP_AUTHORIZATION CGI header
+  (i.e. -DSECURITY_HOLE_PASS_AUTHORIZATION was not defined), but 
+  if you really need it this can be simulated with mod_rewrite:
+
+    RewriteEngine   On
+    RewriteCond     %{HTTP:Authorization}   ^(.*)$ [NC]
+    RewriteRule     /.*             -       [E=HTTP_AUTHORIZATION:%1]
+
+  [Thanks to Miquel van Smoorenburg for this tip.]
+
+  -- Johnie Ingram <johnie@netgod.net>, Fri, 20 Aug 1999 23:57:39 -0500
+
+* This apache uses a modified regex ABI:
+
+  <drow> the problem is... posix says regoff_t == int
+  <drow> apache says it's an off_t
+  <drow> but off_t... off_t BAD!
+  <drow> off_t == changes size with LFS on
+  <drow> thus, bewm
+
+  -- Johnie Ingram <johnie@netgod.net>, Wed,  6 Dec 2000 15:18:14 -0800
+

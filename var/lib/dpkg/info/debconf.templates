@@ -1,0 +1,782 @@
+Template: debconf/showold
+Type: boolean
+Default: false
+Description: Show all old questions again and again?
+ Debconf normally only asks you any given question once. Then it remembers
+ your answer and never asks you that question again. If you prefer, debconf
+ can ask you questions over and over again, each time you upgrade or
+ reinstall a package that asks them.
+ .
+  Note that no matter what you choose here, you can see old questions again
+ by using the dpkg-reconfigure program.
+Description-de: Zeige alle alten Fragen wieder und wieder?
+ Debconf fragt normal jede Frage nur einmal. Danach erinnert es sich an
+ Ihre Antwort und fragt Sie diese Frage nie mehr. Wenn Sie es vorziehen,
+ kann debconf Sie die Fragen immer wieder stellen wenn das entsprechende
+ Paket installiert oder erneuert wird.
+ .
+  Beachten Sie: egal was Sie hier auswählen, Sie können alte Fragen mit den
+ Programm dpkg-reconfigure erneut stellen lassen.
+Description-es: ¿Mostrar las preguntas antiguas una y otra vez?
+ Normalmente debconf hace una determinada pregunta una sola vez. A partir
+ de ahí recuerda su respuesta y no vuelve a repetir la pregunta más. Si
+ usted prefiere, debconf puede repetir las preguntas una y otra vez cada
+ vez que actualice o reinstale un paquete que las haga.
+ .
+  Observe que independiente de lo que escoja aquí, puede ver las preguntas
+ antiguas de nuevo usando dpkg-reconfigure .
+Description-fi: Näytetäänkö vanhat kysymykset aina uudelleen?
+ Yleensä debconf kysyy kunkin kysymyksen vain kerran, muistaa antamasi
+ vastauksen eikä enää kysy samaa kysymystä uudestaan. Jos haluat, debconf
+ voi kysyä kaikki kysymykset uudelleen aina paketteja päivitettäessä tai
+ uudelleenasennettaessa. 
+ .
+  Riippumatta valinnastasi nyt voit vastata kaikkiin kysymyksiin uudestaan
+ ajamalla "dpkg-reconfigure"-ohjelman. 
+Description-fr: Poser de nouveau les anciennes questions ?
+ Normalement, debconf ne pose chaque question qu'une seule fois. Ensuite,
+ il se  souvient de la réponse que vous avez donnée, et ne repose jamais
+ cette question. Si vous préférez, debconf peut reposer chaque question
+ encore et encore, chaque fois qu'un paquet ayant besoin de cette réponse
+ est installé ou mis à jour.  
+ .
+  Notez que quel que soit votre choix ici, vous pouvez revoir la
+ configuration  d'un paquet avec le programme dpkg-reconfigure.  
+Description-gl: ¿Ve-las preguntas antigas unha e outra vez?
+ Normalmente, debconf faille cada pregunta unha soa vez. Despois lembra a
+ resposta e nunca lle volve face-la pregunta. Se o prefire, debconf pódelle
+ face-las preguntas unha e outra vez, cada vez que actualice ou reinstale
+ un paquete que as pregunta.
+Description-it: Mostrare sempre le vecchie domande?
+ Debconf normalmente pone le domande una sola volta, ricorda le risposte
+ date e non pone più la stessa domanda. Se preferite potete ora scegliere
+ che vi venga posta la stessa domanda ogni volta che aggiornate o
+ reinstallate un pacchetto.
+ .
+  Notate che non importa la scelta fatta qui, potete vedere di nuovo le
+ vecchie domande usando il programma dpkg-reconfigure.
+Description-ja: °ÊÁ°¤ËÌä¤¤¹ç¤ï¤»¤¿¼ÁÌä¤ò¤¹¤Ù¤Æ²¿ÅÙ¤âÉ½¼¨¤·¤Ş¤¹¤«?
+ ÄÌ¾ï¡¢debconf ¤Ï¤¤¤«¤Ê¤ë¼ÁÌä¤â 1 ²ó¤·¤«Ìä¤¤¹ç¤ï¤»¤Ş¤»¤ó¡£debconf ¤Ï¡¢°Ê
+ Á°¤Î²óÅú¤òµ­²±¤·¤Æ¡¢ºÆÅÙÆ±¤¸¼ÁÌä¤Ï¤·¤Ê¤¤¤è¤¦¤Ë¤Ê¤Ã¤Æ¤¤¤Ş¤¹¡£¤·¤«¤·¡¢¤ª
+ Ë¾¤ß¤Ê¤é¡¢Æ±¤¸¥Ñ¥Ã¥±¡¼¥¸¤Î¥¢¥Ã¥×¥°¥ì¡¼¥É»ş¤äºÆ¥¤¥ó¥¹¥È¡¼¥ë»ş¤Ë·«¤êÊÖ¤·
+ ºÆÅÙ¼ÁÌä¤ò¤µ¤»¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+ .
+  Ãí°Õ: ¤³¤³¤Ç²¿¤òÁªÂò¤·¤Æ¤â¡¢°ÊÁ°¤Ë¹Ô¤Ê¤Ã¤¿¼ÁÌä¤Ï dpkg-reconfigure ¥×¥í
+ ¥°¥é¥à¤ò»ÈÍÑ¤·¤ÆÉ½¼¨¤Ç¤­¤Ş¤¹¡£
+Description-ko: ¿¹ÀüÀÇ Áú¹® ¸ğµÎ¸¦ ¹İº¹ÇØ¼­ º¸¿©ÁÙ±î¿ä?
+ º¸Åë debconf´Â ÁÖ¾îÁø Áú¹®ÀÌ ¹«¾ùÀÌµç ÇÑ¹ø¸¸ ¹°¾îº¾´Ï´Ù. ±×·¯¸é ±× ´ë´äÀ»
+ ±â¾ïÇÏ°í ±× Áú¹®À» Àı´ë·Î ´Ù½Ã ¹¯Áö ¾Ê½À´Ï´Ù. ¿øÇÑ´Ù¸é, debconf°¡ °è¼Ó
+ ¹İº¹ÇØ¼­ Áú¹®À» ÇÏµµ·Ï ÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é ÆĞÅ°Áö¸¦ ¾÷±×·¹ÀÌµåÇÏ°Å³ª
+ ´Ù½Ã ¼³Ä¡ÇÒ ¶§¸¶´Ù Áú¹®À» ÇÒ °ÍÀÔ´Ï´Ù.
+ .
+  ¿©±â¿¡¼­ ¾î¶² °ÍÀ» ¼±ÅÃÇÏ´õ¶óµµ, dpkg-reconfigure ÇÁ·Î±×·¥À» »ç¿ëÇØ¼­
+ ¿¹ÀüÀÇ Áú¹®À» ´Ù½Ã º¼ ¼ö ÀÖ´Ù´Â °ÍÀ» ÁÖÀÇÇÏ¼¼¿ä.
+Description-nl: Alle oude vragen blijven herhalen?
+ Debconf vraagt u normaal gesproken alle vragen slechts een maal. Daarna
+ onthoudt het uw antwoord en vraagt u die vraag niet meer. Als u dat liever
+ heeft, kan debconf u bij elke upgrade of herinstallatie van een pakket de
+ vragen opnieuw stellen.
+ .
+  Los van wat u hier antwoord, kunt u oude vragen altijd opnieuw zien door
+ het dpkg-reconfigure programma te gebruiken.
+Description-pl: Czy zawsze zadawaæ stare pytania?
+ Normalnie debconf zadaje dane pytanie tylko raz. Zapamiêtuje odpowied¼ i
+ nigdy wiêcej nie zadaje tego samego pytania. Je¶li chcesz, debconf mo¿e
+ zadawaæ pytania za przy ka¿dym uaktualnieniu lub reinstalacji danego
+ pakietu.
+ .
+  Zwróæ uwagê, ¿e bez wzglêdu na odpowied¼ na to pytanie mo¿esz zobaczyæ
+ dowolne pytanie jeszcze raz u¿ywaj±c programu dpkg-reconfigure.
+Description-pt_BR: Mostrar as perguntas antigas sempre?
+ O Debconf normalmente só faz uma pergunta uma vez. Ele então se lembra da
+ sua resposta e nunca mais faz a mesma pergunta. Se você preferir, o
+ debconf pode perguntar toda vez que você atualizar ou reinstalar um pacote
+ que que tem perguntas.
+Description-ru: ğÏËÁÚÙ×ÁÔØ ×ÏĞÒÏÓÙ, ÏÔ×ÅÔ ÎÁ ËÏÔÏÒÙÅ ÂÙÌ ÕÖÅ ĞÏÌÕŞÅÎ?
+ ïÂÙŞÎÏ ËÁÖÄÙÊ ×ÏĞÒÏÓ ĞÁËÅÔÏÍ debconf ÚÁÄÁÅÔÓÑ ÔÏÌØËÏ ÏÄÉÎ ÒÁÚ.  ëÁÖÄÙÊ
+ ÏÔ×ÅÔ ÚÁĞÏÍÉÎÁÅÔÓÑ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ ÂÏÌØÛÅ ÎÅ ÚÁÄÁ×ÁÔØ ÜÔÏÔ ×ÏĞÒÏÓ.  åÓÌÉ ×Ù
+ ÈÏÔÉÔÅ, ÔÏ ĞÁËÅÔ debconf ÍÏÖÅÔ ÚÁÄÁ×ÁÔØ ×ÓÅ ×ÏĞÒÏÓÙ ËÁÖÄÙÊ ÒÁÚ, ËÏÇÄÁ ×Ù
+ ÏÂÎÏ×ÌÑÅÔÅ ÉÌÉ ĞÅÒÅÕÓÔÁÎÁ×ÌÉ×ÁÅÔÅ ĞÁËÅÔ.
+ .
+  úÁÍÅÔØÔÅ, ŞÔÏ ÎÅÚÁ×ÉÓÉÍÏ ÏÔ ÚÎÁŞÅÎÉÑ ÜÔÏÇÏ ĞÁÒÁÍÅÔÒÁ, ×Ù ÍÏÖÅÔÅ Õ×ÉÄÅÔØ
+ ×ÓÅ ×ÏĞÒÏÓÙ, ÚÁĞÕÓÔÉ× ĞÒÏÇÒÁÍÍÕ dpkg-reconfigure.
+Description-sv: Visa alla gamla frågor igen och igen?
+ Debconf frågar normalt sett bara varje given fråga en gång, och kommer
+ sedan ihåg dina svar så att frågan inte behöver ställas igen. Om du så
+ önskar, kan debconf ställa frågor åter och åter igen, varje gång du
+ uppgraderar eller ominstallerar ett paket som ställer dem. 
+ .
+  Observera: oavsett vad du väljer här kan du se gamla frågor igen genom
+ att använda programmet dpkg-reconfigure. 
+Description-zh_CN: ÊÇ·ñ×ÜÊÇÒªÏÔÊ¾ÀÏÎÊÌâ£¿
+ Debconf Í¨³£Ö»½«ËùÉæ¼°µÄÎÊÌâÎÊ½ö½öÒ»±é£®ËüÄÜ¼Ç×¡ÄúµÄ»Ø´ğ£¬ÕâÑùÒÔºó¾ÍÔÙÒ²²»
+ ÏòÄúÌá³öÏàÍ¬µÄÎÊÌâÁË£®µ±È»£¬Èç¹ûÄúÀÖÒâ£¬Debconf Ò²¿ÉÒÔÔÚÄúÉı¼¶Èí¼ş°ü£¬»òÕß
+ ÖØĞÂ°²×°µÄÊ±ºò£¬ÖØ¸´µÄÎÊÄúÕâĞ©ÀÏÎÊÌâ£®
+Description-zh_TW: ¬O§_Á`¬O­nÅã¥Ü¦Ñ°İÃD¡H
+ Debconf ³q±`¥u±N©Ò¯A¤Îªº°İÃD°İ¶È¶È¤@¹M¡D¥¦¯à°O¦í±zªº¦^µª¡A³o¼Ë¥H«á´N¦A¤]¤£
+ ¦V±z´£¥X¬Û¦Pªº°İÃD¤F¡D·íµM¡A¦pªG±z¼Ö·N¡ADebconf ¤]¥i¥H¦b±z¤É¯Å³n¥ó¥]¡A©ÎªÌ
+ ­«·s¦w¸Ëªº®É­Ô¡A­«´_ªº°İ±z³o¨Ç¦Ñ°İÃD¡D
+
+Template: debconf/switch-to-slang
+Type: boolean
+Default: true
+Description: Switch to the new, full-featured slang frontend?
+ You are currently using debconf's dialog frontend. This frontend has been
+ superceded by a new frontend, called the slang frontend, that does
+ everything the dialog frontend does and more. It lets you see and answer
+ multiple questions at a time, and is generally more flexable and pleasant
+ to use. If you'd like, you can switch to that frontend now.
+Description-de: Wechseln zum neuen funktionsreichen slang Frontend?
+ Sie benutzen zur Zeit debconf's dialog Frontend. Dieses Frontend wurde
+ durch ein neues Frontend ersetzt. Dieses slang Frontend kann alles was das
+ dialog Frontend kann und mehr. Es zeigt Ihnen mehrere Fragen gleichzeitig
+ und ist im Allgemeinen flexibler und angenehmer. Wenn Sie möchten können
+ Sie jetzt zu diesen Frontend wechseln.
+Description-es: ¿Cambiar a la nueva interfaz, basada en slang?
+ Actualmente está usando la interfaz dialog de debconf. Esta interfaz ha
+ sido suplantada por un nuevo interfaz, llamado interfaz slang, que hace
+ todo lo que hace dialog y más. Le permite ver y responder a múltiples
+ preguntas a la vez, y es en general más flexible y confortable de usar. Si
+ lo desea, puede cambiar a ese interfaz ahora.
+Description-fi: Vaihdetaanko uuteen slang-käyttöliittymään?
+ Käytät nyt debconf:n dialog-käyttöliittymää. Tälle liittymälle on tullut
+ parempi vaihtoehto, slang-liittymä, jossa on kaikki samat ominaisuudet ja
+ muutama lisääkin. Slang-liittymä antaa mahdollisuuden nähdä monta
+ kysymystä ja niiden vastaukset yhtä aikaa ja on muutenkin joustavampi ja
+ mukavampi käyttää. Voit nyt vaihtaa siihen, jos haluat. 
+Description-fr: Utiliser la nouvelle interface slang ?
+ Vous utilisez en ce moment l'interface 'Dialogue'. Celle ci est maintenant
+  remplacée par une nouvelle interface nommée 'slang'. Elle fait tout ce
+  que 'Dialogue' fait, et plus encore. Par exemple, elle vous permet de
+ visualiser plusieurs questions à la fois, ce qui est plus agréable. Vous
+ pouvez choisir de changer d'interface maintenant.  
+Description-gl: ¿Cambiar á nova interface slang?
+ Agora está usando a interface dialog de debconf. Esta interface foi
+ substituída por unha nova interface, chamada a interface slang, que fai
+ todo o que facía a interface dialog, e máis. Permítelle ver e contestar
+ varias preguntas ao mesmo tempo, e é máis flexible e agradable de usar. Se
+ quere, pode cambiar a esta interface agora.
+Description-it: Passare alla nuova interfaccia slang?
+ Al momento state usando l'interfaccia dialog di debconf, che è stata
+ sostituita da una nuova, basata sulle slang, che fa tutto quello che
+ faceva la vecchia e qualcosa di più: vi permette di vedere e rispondere a
+ più risposte contemporaneamente, ed in generale è più flessibile e
+ gradevole da usare. Se volete, potete passare ora alla nuova interfaccia.
+Description-ja: ¿·¤·¤¤¹âµ¡Ç½ slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤ËÀÚ¤êÂØ¤¨¤Ş¤¹¤«?
+ ¸½ºß»ÈÍÑ¤·¤Æ¤¤¤ë¤Î¤Ï¡¢debconf ¤Î¥À¥¤¥¢¥í¥°¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ç¤¹¡£¤³¤Î¥Õ¥í
+ ¥ó¥È¥¨¥ó¥É¤Ï¡¢slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤È¸Æ¤Ğ¤ì¤ë¡¢¿·¤·¤¤¥Õ¥í¥ó¥È¥¨¥ó¥É¤ËÃÖ
+ ¤­´¹¤ï¤ê¤Ş¤·¤¿¡£¥À¥¤¥¢¥í¥°¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ë¤Ç¤­¤ë¤³¤È¤Ï¤¹¤Ù¤Æ²ÄÇ½¤Ç¡¢¤½
+ ¤ì°Ê¾å¤Î¤³¤È¤â¤Ç¤­¤Ş¤¹¡£Ê£¿ô¤Î¼ÁÌä¤ò°ìÅÙ¤ËÉ½¼¨¤·¤Æ²óÅú¤¹¤ë¤³¤È¤¬²ÄÇ½¤Ë
+ ¤Ê¤ê¡¢ÂçÂÎ¤Ë¤ª¤¤¤Æ¤è¤ê½ÀÆğ¤Ç²÷Å¬¤Ç¤¹¡£¤´´õË¾¤Ê¤é¡¢¤³¤³¤Ç¥Õ¥í¥ó¥È¥¨¥ó¥É
+ ¤òÀÚ¤êÂØ¤¨¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+Description-ko: »õ·Ó°í, ±â´ÉÀÌ Ç³ºÎÇÑ slang frontend·Î ¹Ù²Ü±î¿ä?
+ Áö±İ debconfÀÇ ´ëÈ­»óÀÚ frontend¸¦ »ç¿ëÇÏ°í ÀÖ½À´Ï´Ù. ÀÌ frontend´Â slang
+ frontend¶ó°í ºÒ¸®´Â »õ·Î¿î frontend·Î ±³Ã¼µÇ¾ú½À´Ï´Ù. ÀÌ°ÍÀº ´ëÈ­»óÀÚ
+ frontendº¸´Ù ±â´ÉÀÌ ¸¹°í ¸ğµç °ÍÀ» ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ¿©·¯°¡Áö Áú¹®À»
+ ÇÑ¹ø¿¡ º¸¸é¼­ ´ë´äÇÒ ¼ö ÀÖ°í, º¸Åë Á» ´õ À¶Åë¼ºÀÖ°í Áñ°Ì°Ô »ç¿ëÇÒ ¼ö ÀÖ°Ô
+ ÇØÁİ´Ï´Ù. ¿øÇÑ´Ù¸é, ÀÌ frontend·Î Áö±İ ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.
+Description-nl: Overgaan naar de nieuwe, uitgebreide 'slang' schil?
+ U gebruikt momenteel debconf's 'dialog' schil. Deze heeft nu een opvolger
+ genaamd 'slang', die alles kan wat 'dialog' kan en meer. U kunt hiermee
+ meerdere vragen tegelijk zien en beantwoorden. Verder is ze over het
+ algemeen flexibeler en prettiger in gebruik. Als u wilt, kunt u nu
+ overstappen op de nieuwe schil.
+Description-pl: Czy prze³±czyæ siê na now± nak³adkê slang?
+ U¿ywasz obecnie nak³adki `dialog' dla debconfa. Zosta³a ona zast±piona
+ now±, lepsz± nak³adk± `slang'. Potrafi ona robiæ to wszystko, co `dialog',
+ a nawet wiêcej. Pozwala widzieæ i odpowiadaæ na kilka pytañ na raz, i jest
+ ogólnie wygodniejsza i bardziej elastyczna w u¿yciu. Je¶li chcesz, mo¿esz
+ teraz prze³±czyæ siê na t± nak³adkê.
+Description-pt_BR: Mudar para o novo front-end completo slang?
+ Você está atualmente usando o frontend dialog. Esse frontend foi
+ ultrapassado por um novo frontend, chamado de slang, que faz tudo que o
+ dialog faz e mais. Ele permite a você responder múltiplas perguntas de uma
+ vez e é normalmente mais flexível e agradável de usar. Se quiser pode
+ mudar para esse frontend agora.
+Description-ru: éÓĞÏÌØÚÏ×ÁÔØ ÎÏ×ÕÀ ×ÅÒÓÉÀ slang-ÉÎÔÅÒÆÅÊÓÁ?
+ óÅÊŞÁÓ ×Ù ÉÓĞÏÌØÚÕÅÔÅ dialog-ÉÎÔÅÒÅÆÅÊÓ.  äÌÑ ÜÔÏÇÏ ÉÎÔÅÒÆÅÊÓÁ ÓÕİÅÓÔ×ÕÅÔ
+ ÎÏ×ÁÑ ×ÅÒÓÉÑ, ËÏÔÏÒÁÑ ÎÁÚÙ×ÁÅÔÓÑ slang-ÉÎÔÅÒÆÅÊÓ, ËÏÔÏÒÙÊ ĞÏ×ÚÏÌÑÅÔ ÄÅÌÁÔØ
+ ÂÏÌØÛÅ ŞÅÍ ÔÏ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ dialog-ÉÎÔÅÒÆÅÊÓ.  ÷ ŞÁÓÔÎÏÓÔÉ, ÏÎ ĞÏÚ×ÏÌÑÅÔ
+ ×ÁÍ Õ×ÉÄÅÔØ É ÏÔ×ÅÔÉÔØ ÓÒÁÚÕ ÎÁ ÎÅÓËÏÌØËÏ ×ÏĞÒÏÓÏ×.  åÓÌÉ ×Ù ÈÏÔÉÔÅ, ×Ù
+ ÍÏÖÅÔÅ ĞÅÒÅËÌÀŞÉÔØÓÑ ÎÁ slang-ÉÎÔÅÒÆÅÊÓ ÓÅÊŞÁÓ.
+Description-sv: Byta till det nya, fullt fungerade slangskalet?
+ Du använder just nu debconfs dialogskal. Detta skal har ersatts med ett
+ nytt skal, kallat slangskalet, som gör allting dialogskalet gör, och mer
+ därtill. Det låter dig se och besvara flera frågor samtidigt, och är
+ oftast mer flexibelt och trevligt att använda. Om du så önskar kan du byta
+ till det skalet nu. 
+Description-zh_CN: ÇĞ»»µ½ĞÂµÄ£¬È«¹¦ÄÜµÄ Slang Ç°¶Ë½çÃæÂğ£¿
+ ÄúÕıÔÚÊ¹ÓÃ Debconf µÄ Dialog Ç°¶ËÓÃ»§½çÃæ£®Õâ¸ö½çÃæÒÑ¾­±»ĞÂµÄÇ°¶Ë½çÃæ
+ Slang ËùÈ¡´úÁË£¬Slang ¿ÉÒÔ×öµ½ Dialog µÄÈ«²¿µÄĞ§¹û£¬²¢ÇÒ×öµÃ¸üºÃ£®Ëü¿É
+ ÒÔÈÃÄúÒ»´Î¿´µ½¶à¸öÎÊÌâ£¬¶øÇÒ¸ü¼ÓÁé»îºÍÉÍĞÄÔÃÄ¿£®Èç¹ûÄú¾õµÃºÏÊÊµÄ»°£¬¿É
+ ÒÔ¿¼ÂÇÇĞ»»µ½Õâ¸ö½çÃæÉÏÀ´£®
+Description-zh_TW: ¤Á´«¨ì·sªº¡A¥ş¥\¯àªº Slang «eºİ¬É­±¶Ü¡H
+ ±z¥¿¦b¨Ï¥Î Debconf ªº Dialog «eºİ¥Î¤á¬É­±¡D³o­Ó¬É­±¤w¸g³Q·sªº«eºİ¬É­±
+ Slang ©Ò¨ú¥N¤F¡ASlang ¥i¥H°µ¨ì Dialog ªº¥ş³¡ªº®ÄªG¡A¨Ã¥B°µ±o§ó¦n¡D¥¦¥i
+ ¥HÅı±z¤@¦¸¬İ¨ì¦h­Ó°İÃD¡A¦Ó¥B§ó¥[ÆF¬¡©M½à¤ß®®¥Ø¡D¦pªG±zÄ±±o¦X¾Aªº¸Ü¡A¥i
+ ¥H¦Ò¼{¤Á´«¨ì³o­Ó¬É­±¤W¨Ó¡D
+
+Template: debconf/priority
+Type: select
+Choices: critical, high, medium, low
+Choices-es: crítica, alta, media, baja
+Choices-fi: kriittinen, tärkeä, tavallinen, vähäpätöinen
+Choices-fr: critique, haut, moyen, bas
+Choices-gl: crítica, alta, media, baixa
+Choices-it: critica, alta, media, bassa
+Choices-ja: ½ÅÍ×, ¹â, É¸½à, Äã
+Choices-ko: Áß¿ä, ³ôÀ½, º¸Åë, ³·À½
+Choices-nl: kritiek, hoog, gemiddeld, laag
+Choices-pl: najwy¿szy, wysoki, ¶redni, niski
+Choices-pt_BR: crítica, alta, média, baixa
+Choices-ru: ËÒÁÊÎÅ ×ÁÖÎÙÊ, ×ÁÖÎÙÊ, ÏÂÙŞÎÙÊ, ÄÏĞÏÌÎÉÔÅÌØÎÙÊ
+Choices-sv: kritisk, hög, medium, låg
+Choices-zh_CN: ¹Ø¼ü, ¸ß, ÖĞ, µÍ
+Choices-zh_TW: ÃöÁä, °ª, ¤¤, §C
+Default: medium
+Description: Ignore questions with a priority less than..
+ Packages that use debconf for configuration prioritize the questions they
+ might ask you. Only questions with a certain priority or higher are
+ actually shown to you; all less important questions are skipped.
+ .
+  You can select the lowest priority of question you want to see: 
+   - `critical' is for items that will probably break the system
+     without user intervention.
+   - `high' is for items that don't have reasonable defaults.
+   - `medium' is for normal items that have reasonable defaults.
+   - `low' is for trivial items that have defaults that will work in the
+     vast majority of cases.
+ .
+  For example, this question is of medium priority, and if your priority
+ were  already `high' or `critical', you wouldn't see this question.
+ .
+  If you are new to the Debian GNU/Linux system choose `critical' now, so
+ you only see the most important questions.
+Description-de: Ignoriere Fragen mit einer kleineren Priorität als ...
+ Pakete die debconf benutzen geben den möglichen Frage eine Priorität. Nur
+ Fragen mit der gewählten oder höheren Priorität werden Ihnen gestellt.
+ Weniger Wichtigere Fragen werden übergangen.
+ .
+  Sie können die Priorität wählen, ab welcher Ihnen die Fragen gestellt
+ werden sollen:
+   - `critical' ist für Einzelheiten, die ohne Ihre Angaben vielleicht 
+     das System stören.
+   - `high' ist für Fragen, die keine vernünftige Vorgaben haben.
+   - `medium' ist für normale Fragen, die gute vorgegebene Antworten
+     haben.
+   - `low' ist für einfachste Einzelheiten, die Vorgaben haben, die
+     für eine Vielzahl von System gültig sind.
+ .
+  So hat zum Beispiel diese Frage die Priorität `medium' und wenn Sie schon
+ `high' oder `critical' ausgewählt hätten, würden Sie diese Frage nicht
+ sehen.
+ .
+  Wenn Sie neu bei Debian GNU/Linux sind, wählen Sie jetzt bitte
+ `critical'. Damit sehen Sie dann nur die wichtigsten Fragen.
+Description-es: No mostrar preguntas con una prioridad mejor que..
+ Los que paquetes que usan debconf para la configuración le asignan una
+ prioridad a las preguntas que hacen. Sólo se mostrarán las preguntas con
+ una cierta prioridad o superior; no se mostrarán las preguntas menos
+ importantes.
+ .
+  Puede escoger la prioridad más baja para las preguntas que desea ver:
+   - `crítica' es para asuntos que probablemente romperán el sistema si
+     el usuario no interviene. 
+   - `alta' es para asuntos para los que no hay valores predeterminados
+     razonables. 
+   - `media' es para asuntos normales, que tienen valores predeterminados
+     razonables.
+   - `baja' es para asuntos triviales, que tienen valores predeterminados
+ que
+     funcionarán en la inmensa mayoría de casos.
+  Por ejemplo, esta pregunta es de prioridad media, y si el valor escogido
+ para la prioridad fuese `alta' o `crítica', usted no habría visto esta
+ pregunta.
+ .
+  Si usted es un principiante en el sistema Debian GNU/Linux, escoja
+ `crítica' por ahora, para ver sólo las preguntas más importantes.
+Description-fi: Kuinka tärkeät kysymykset haluat nähdä?
+ Debconf:ia käyttävät paketit määrittävät kunkin kysymänsä kysymyksen
+ tärkeyden. Sinulle näytetään vain valitsemasi tasoiset ja niitä tärkeämmät
+ kysymykset; kaikille muille käytetään oletusasetuksia. 
+ .
+  Kysymysten tärkeystasot ja niiden merkitykset ovat 
+  - "kriittinen" asioille, jotka luultavasti rikkovat järjestelmän,
+    jos niille ei valita sopivaa vaihtoehtoa,
+  - "tärkeä" asioille, joille ei ole järkevää oletusasetusta,
+  - "tavallinen" asioille, joille on järkevä oletusasetus,
+  - "vähäpätöinen" asioille, joiden järkevä oletusasetus on kelvollinen
+    lähes kaikissa tapauksissa
+ .
+  Tämä kysymys on tasoltaan tavallinen, joten jos olisit aiemmin valinnut
+ omaksi tasoksesi "kriittinen" tai "tärkeä", et edes näkisi tätä. 
+ .
+  Jos olet uusi Debian GNU/Linux -järjestelmän käyttäjä, valitse
+ "kriittinen", jolloin joudut vastaamaan vain tärkeimpiin kysymyksiin. 
+Description-fr: Ignorer les questions de priorité inférieure à...
+ Les paquets utilisant debconf pour leur configuration indiquent la
+ priorité des questions qu'ils vous posent. Le système ne vous pose que
+ celles de priorité supérieure à un certain seuil. Toutes les questions
+ moins importantes sont ignorées.  
+ .
+  Vous pouvez choisir la priorité la plus basse des questions que vous 
+ souhaitez voir :  
+  - les points `critiques' risquent de casser le système si l'utilisateur 
+    n'intervient pas.
+  - les points de priorité `haute' ont des valeur par défaut inacceptable
+    dans la plupart des cas.
+  - les points de priorité `moyenne' sont standards, et ont des valeurs
+    par défaut généralement acceptables.
+  - les questions de priorité `base' sont triviales, et ont des valeurs par
+    défaut fonctionnelles dans la grande majorité des cas.
+ .
+  Par exemple, cette question est de priorité moyenne, et si votre seuil
+ était déjà règlé à `critique' ou `haut', cette question ne vous aurait pas
+ été posée.  
+ .
+  Si vous faites vos premiers pas dans le monde Debian GNU/Linux,
+ choisissez `critique' afin de ne voir que les questions les plus
+ importantes.  
+Description-gl: Ignora-las preguntas de prioridade menor que...
+ Os paquetes que empregan debconf para a súa configuración asígnanlle unha
+ prioridade ás preguntas que lle poden facer. Só se lle amosan as preguntas
+ que teñen unha certa prioridade, ou unha maior; omítense as preguntas
+ menos importantes.
+ .
+  Pode escolle-la prioridade mínima das preguntas para velas:
+   - `crítica' é para elementos que han corrompe-lo sistema sen
+     intervención do usuario.
+   - `alta' é para elementos sen valores por defecto razoables.
+   - `media' é para elementos normais con valores por defecto razoables.
+   - `baixa' é para elementos triviais con valores por defecto que
+     funcionan na maioría dos casos.
+ .
+  Por exemplo, esta pregunta é de prioridade media, e se a súa prioridade
+ fora `alta' ou `crítica', non vería esta pregunta.
+ .
+  Se é novo no sistema Debian GNU/Linux escolla `crítica', para ver só as
+ preguntas máis importantes.
+Description-it: Ignorare le domande con una priorità più bassa di..
+ I pacchetti che usano debconf per la configurazione assegnano una priorità
+ alle domande che vi vengono fatte, e solo quelle con una priorità più alta
+ di quella scelta vi vengono poste; tutte le altre, che sono meno
+ importanti, vengono saltate.
+ .
+  Potete scegliere la priorità più bassa per le domande che volete vedere:
+    - `critica' è per le domande che rovinerebbero il sistema se non ci
+ fosse
+       l'intervento dell'utente
+    - `alta' è per quelle che non hanno default ragionevoli
+    - `media'  è per le normali domande che hanno  default ragionevoli
+    - `bassa' è per tutte le domande banali che hanno default validi per la
+       maggior parte dei casi
+ .
+  Ad esempio, questa domanda è di priorità media, e se aveste già priorità 
+ `alta' o `critica' non la vedreste.
+ .
+  Se è la prima volta che utilizzate il sistema GNU/Linux scegliete
+ `critica', in modo che vi vengano poste solo le domande più importanti.
+Description-ja: °Ê²¼¤Î¤â¤Î¤è¤ê¤â½ÅÍ×ÅÙ¤ÎÄã¤¤¼ÁÌä¤òÌµ»ë¤¹¤ë
+ ÀßÄê¤Ë debconf ¤ò»ÈÍÑ¤¹¤ë¥Ñ¥Ã¥±¡¼¥¸¤Ï¡¢¥æ¡¼¥¶¤ËÂĞ¤¹¤ë¼ÁÌä¤Ë½ÅÍ×ÅÙ¤òÉÕ¤±
+ ¤Æ¤¤¤Ş¤¹¡£¤¢¤ë½ÅÍ×ÅÙ°Ê¾å¤Î¼ÁÌä¤Î¤ß¤¬¼Âºİ¤Ë¹Ô¤Ê¤ï¤ì¤Ş¤¹¤¬¡¢¤½¤ì¤è¤ê¤â½Å
+ Í×ÅÙ¤ÎÄã¤¤¼ÁÌä¤ÏÈô¤Ğ¤µ¤ì¤Ş¤¹¡£
+ .
+  ¼ÁÌä¤Î½ÅÍ×ÅÙ¤¬ºÇÄã¤Î¤â¤Î¤âÁªÂò¤Ç¤­¤Ş¤¹¡£
+  - ¡Ö½ÅÍ×¡×¤Ï¡¢¥æ¡¼¥¶¤¬²ğºß¤·¤Ê¤¤¤È¥·¥¹¥Æ¥à¤òÇË²õ¤·¤«¤Í¤Ê¤¤¤è¤¦¤Ê¹àÌÜÍÑ
+    ¤Ç¤¹¡£
+  - ¡Ö¹â¡×¤Ï¡¢Å¬ÀÚ¤Ê¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤¬¤Ê¤¤¤è¤¦¤Ê¹àÌÜÍÑ¤Ç¤¹¡£
+  - ¡ÖÉ¸½à¡×¤Ï¡¢Å¬ÀÚ¤Ê¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤¬¤¢¤ë¤è¤¦¤ÊÉáÄÌ¤Î¹àÌÜÍÑ¤Ç¤¹¡£
+  - ¡ÖÄã¡×¤Ï¡¢¤Û¤È¤ó¤É¤Î¾ì¹ç¤Ë¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤Ç¹½¤ï¤Ê¤¤¤è¤¦¤Ê¡¢¤µ¤µ¤¤¤Ê
+    ¹àÌÜÍÑ¤Ç¤¹¡£
+  ¤¿¤È¤¨¤Ğ¡¢¤¢¤ë¼ÁÌä¤Î½ÅÍ×ÅÙ¤¬É¸½à¤Ç¡¢½ÅÍ×ÅÙ¤ÎÀßÄê¤¬¤¹¤Ç¤Ë¡Ö¹â¡×¤ä¡Ö½ÅÍ×¡×
+ ¤Ë¤Ê¤Ã¤Æ¤¤¤ë¤È¡¢¤½¤Î¼ÁÌä¤Ï¹Ô¤Ê¤ï¤ì¤Ş¤»¤ó¡£
+ .
+  ¤â¤·¤¢¤Ê¤¿¤¬ Debian GNU/Linux ¥·¥¹¥Æ¥à¤Î½é¿´¼Ô¤Ê¤é¤Ğ¡¢¤³¤³¤Ç¡Ö½ÅÍ×¡×¤ò
+ ÁªÂò¤¹¤ì¤Ğ¡¢Èó¾ï¤Ë½ÅÍ×¤Ê¼ÁÌä¤Î¤ß¤¬¹Ô¤Ê¤ï¤ì¤Ş¤¹¡£
+Description-ko: ¼±ÅÃÇÑ °Í º¸´Ù ³·Àº ¿ì¼±¼øÀ§ÀÇ Áú¹®Àº ¹«½ÃÇÕ´Ï´Ù.
+ ¼³Á¤ÇÏ±â À§ÇØ¼­ debconf¸¦ »ç¿ëÇÏ´Â ÆĞÅ°Áö´Â Áú¹®¿¡ ¿ì¼±¼øÀ§¸¦ ºÎ¿©ÇÕ´Ï´Ù.
+ ¿ÀÁ÷ Æ¯Á¤ÇÑ ¿ì¼±¼øÀ§ ¶Ç´Â ±×º¸´Ù ³ôÀº Áú¹®¸¸ÀÌ º¸ÀÏ °ÍÀÔ´Ï´Ù; ´ú Áß¿äÇÑ
+ ¸ğµç Áú¹®Àº °Ç³Ê ¶İ´Ï´Ù.
+ .
+  º¸°í ½ÍÀº Áú¹®ÀÇ ÃÖ¼Ò ¿ì¼±¼øÀ§¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù:
+   - `Áß¿ä'´Â »ç¿ëÀÚÀÇ Á¶Á¤ ¾øÀÌ´Â ½Ã½ºÅÛÀÌ ¸Á°¡Áú ¼öµµ ÀÖ´Â Ç×¸ñ¿¡
+     ´ëÇÑ °ÍÀÔ´Ï´Ù.
+   - `³ôÀ½'Àº Àû´çÇÑ ±âº»°ªÀÌ ¾ø´Â Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.
+   - `º¸Åë'Àº Àû´çÇÑ ±âº»°ªÀÌ ÀÖ´Â º¸ÅëÀÇ Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.
+   - `³·À½'Àº ´ëºÎºĞÀÇ °æ¿ì¿¡ Àß ÀÛµ¿ÇÏ´Â ±âº»°ªÀ» °¡Áö°í ÀÖ´Â Æò¹üÇÑ
+     Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.
+ .
+  ¿¹¸¦ µé¾î, ÀÌ Áú¹®Àº º¸ÅëÀÇ ¿ì¼±¼øÀ§ÀÌ±â ¶§¹®¿¡, ¸¸¾à ÀÌÀü¿¡ ¼±ÅÃÇÑ
+ ¿ì¼±¼øÀ§°¡ `³ôÀ½'ÀÌ³ª `Áß¿ä'¿´´Ù¸é, ÀÌ Áú¹®Àº º¸Áö ¸øÇßÀ» °ÍÀÔ´Ï´Ù.
+ .
+  ¸¸¾à µ¥ºñ¾È GNU/Linux ½Ã½ºÅÛ¿¡ Ã³À½ÀÌ¶ó¸é `Áß¿ä'¸¦ ¼±ÅÃÇÏ¼¼¿ä, ±×·¯¸é
+ °¡Àå Áß¿äÇÑ Áú¹®¸¸ º¼ °ÍÀÔ´Ï´Ù.
+Description-nl: Negeer vragen met een prioriteit lager dan..
+ Pakketten die debconf gebruiken voor het instellen, prioriteren de vragen
+ die ze u kunnen stellen. Alleen vragen met een bepaalde prioriteit of
+ hoger worden u daadwerkelijk voorgelegd; alle minder belangrijke vragen
+ worden overgeslagen.
+ .
+  U kunt selecteren wat de laagste prioriteit is die u wilt zien:
+  - 'kritiek' is voor vragen die waarschijnlijk uw systeem onbruikbaar
+    maken zonder interventie door de gebruiker
+  - 'hoog' is voor vragen die onredelijke standaardwaarden hebben
+  - 'gemiddeld' is voor vragen met redelijke standaardwaarden
+  - 'laag' is voor triviale vragen met standaardwaarden die in bijna
+    alle voorkomende gevallen werken
+ .
+  Deze vraag bijvoorbeeld is van gemiddelde prioriteit en als uw
+ prioritering al op 'hoog' of 'kritiek' staat, dan had u deze vraag niet
+ gezien.
+ .
+  Indien u Debian GNU/Linux voor het eerst gebruikt, kunt u het beste voor
+ 'kritiek' kiezen nu. U krijgt dan alleen de meest belangrijke vragen te
+ zien.
+Description-pl: Nie zadawaj pytañ o priorytecie ni¿szym ni¿..
+ Pakiety u¿ywaj±ce do konfiguracji debconfa mog± wybraæ priorytet dla
+ ka¿dego pytania. Zadawane s± tylko pytania o priorytecie równym, lub
+ wy¿szym od pewnego wybranego. Wszystkie mniej wa¿ne pytania s± pomijane i
+ za odpowiedzi przyjmowane s± warto¶ci domy¶lne.
+ .
+  Mo¿esz wybraæ najni¿szy priorytet pytañ, które chcesz zobaczyæ. `niski'
+ to ma³o istotne pytania, dla których odpowiedzi domy¶lne bêd± dzia³a³y w
+ wiêkszo¶ci przypadków. `¶redni' to zwyk³e pytania, które posiadaj± dobre
+ odpowiedzi domy¶lne. `wysoki' odpowiada pytaniom, które nie posiadaj±
+ dobrych odpowiedzi domy¶lnych. `najwy¿szy' odpowiada pytaniom, na które
+ musisz udzieliæ odpowiedzi, poniewa¿ w przeciwnym wypadku system mo¿e
+ przestaæ dzia³aæ poprawnie. Na przyk³ad to pytanie posiada priorytet
+ `¶redni' i nie zosta³oby zadane, gdyby progowy priorytet by³ ustalony na
+ `najwy¿szy' lub `wysoki'.
+ .
+  Je¶li jeste¶ nowym u¿ytkownikiem systemu Debian, wybierz priorytet
+ `najwy¿szy', aby widzieæ tylko najwa¿niejsze pytania.
+Description-pt_BR: Ignorar perguntas com prioridade menor que...
+ Os pacotes que usam o debconf para configuração priorizam as perguntas que
+ podem fazer a você. Apenas as perguntas com uma certa prioridade ou maior
+ são realmente mostradas a você; todas as perguntas menos  importantes são
+ deixadas.
+ .
+  Você pode selecionar a menor prioridade de perguntas que você quer ver:
+   - `crítica' é para itens que irão provavelmente quebrar seu sistema
+     sem intervenção do usuário.
+   - `alta' é para itens que não tem padrões razoáveis.
+   - `média' é para itens normais que têm padrões razoáveis.
+   - `baixa' é para itens triviais que tem padrões que funcionarão na
+     vasta maioria dos casos.
+ .
+  Se você é novo no Debian GNU/Linux escolha `crítica' agora, para ver
+ apenas as perguntas mais importantes.
+Description-ru: ğÏËÁÚÙ×ÁÔØ ÔÏÌØËÏ ×ÏĞÒÏÓÙ ĞÒÉÏÒÉÔÅÔÁ ÎÅ ÎÉÖÅ, ŞÅÍ...
+ ğÁËÅÔÙ, ÉÓĞÏÌØÚÕÀİÉÅ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔ debconf, ÍÏÇÕÔ ÕËÁÚÙ×ÁÔØ
+ ĞÒÉÏÒÉÔÅÔÙ ÄÌÑ ËÁÖÄÏÇÏ ÉÚ ×ÏÚÍÏÖÎÙÈ ×ÏĞÒÏÓÏ×.  ôÏÌØËÏ ×ÏĞÒÏÓÙ
+ ÏĞÒÅÄÅÌÅÎÎÏÇÏ ĞÒÉÏÒÉÔÅÔÁ ÉÌÉ ×ÙÛÅ ÂÕÄÕÔ ĞÏËÁÚÁÎÙ ÎÁ ÜÔÁĞÅ ÎÁÓÔÒÏÊËÉ.  ÷ÓÅ
+ ×ÏĞÒÏÓÙ ÂÏÌÅÅ ÂÏÌÅÅ ÎÉÚËÏÇÏ ĞÒÉÏÒÉÔÅÔÁ ÂÕÄÕÔ ĞÒÏĞÕİÅÎÙ, Á × ËÁŞÅÓÔ×Å
+ ÏÔ×ÅÔÏ× ÎÁ ÎÉÈ ÂÕÄÕÔ ÉÓĞÏÌØÚÏ×ÁÎÙ ÚÎÁŞÅÎÉÑ ĞÏ ÕÍÏÌŞÁÎÉÀ.
+ .
+  ÷Ù ÍÏÖÅÔÅ ÕËÁÚÁÔØ ÎÁÉÍÅÎØÛÉÊ ĞÒÉÏÒÉÔÅÔ ×ÏĞÒÏÓÏ×, ËÏÔÏÒÙÅ ×Ù ÈÏÔÉÔÅ
+ ×ÉÄÅÔØ. `ÄÏĞÏÌÎÉÔÅÌÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÚÎÁŞÅÎÉÑ ĞÏ
+ ÕÍÏÌŞÁÎÉÀ ÂÕÄÕÔ ÒÁÂÏÔÁÔØ × ĞÏÄÁ×ÌÑÀİÅÍ ÂÏÌØÛÉÎÓÔ×Å ÓÌÕŞÁÅ×. `ÏÂÙŞÎÙÊ' --
+ ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÓÕİÅÓÔ×ÕÀÔ ĞÒÉÅÍÌÅÍÙÅ ÚÎÁŞÅÎÉÑ ĞÏ ÕÍÏÌŞÁÎÉÀ.
+ `×ÁÖÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÎÅ ÓÕİÅÓÔ×ÕÅÔ ĞÒÉÅÍÌÅÍÙÈ ÚÎÁŞÅÎÉÊ
+ ĞÏ ÕÍÏÌŞÁÎÉÀ. `ËÒÁÊÎÅ ×ÁÖÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÚÎÁŞÅÎÉÑ ÄÌÑ ËÏÔÏÒÙÈ
+ ÄÏÌÖÎÏ ××ÏÄÉÔØÓÑ ĞÏÌØÚÏ×ÁÔÅÌÅÍ.  îÁĞÒÉÍÅÒ, ÜÔÏÔ ĞÁÒÁÍÅÔÒ ÉÍÅÅÔ ĞÒÉÏÒÉÔÅÔ
+ `ÏÂÙŞÎÙÊ' É, ÅÓÌÉ ÂÙ ÚÎÁŞÅÎÉÅ ÄÌÑ ÜÔÏÇÏ ĞÁÒÁÍÅÔÒÁ ÕÖÅ ÂÙÌÏ ÕËÁÚÁÎÏ
+ ÚÎÁŞÅÎÉÅ `ËÒÁÊÎÅ ×ÁÖÎÙÊ' ÉÌÉ `×ÁÖÎÙÊ', ×Ù ÂÙ ÎÅ Õ×ÉÄÅÌÉ ÜÔÏÔ ×ÏĞÒÏÓ.
+ .
+  åÓÌÉ ×Ù ÎÏ×ÉŞÏË × Debian GNU/Linux, ÉÓĞÏÌØÚÕÊÔÅ × ËÁŞÅÓÔ×Å ÚÎÁŞÅÎÉÑ
+ `ËÒÁÊÎÅ ×ÁÖÎÙÊ', ŞÔÏ ĞÏÚ×ÏÌÉÔ ×ÁÍ Õ×ÉÄÅÔØ ÔÏÌØËÏ ÔÅ ×ÏĞÒÏÓÙ, ÄÌÑ ËÏÔÏÒÙÈ
+ ×ÁÍ ÎÅÏÂÈÏÄÉÍÏ ŞÔÏ-ÔÏ ××ÅÓÔÉ.
+Description-sv: Ignorera frågor med en prioritet lägre än..
+ Paket som använder debconf för konfigurering prioriterar de frågor de kan
+ fråga dig. Endast frågor med en viss prioritet eller högre visas faktiskt
+ för dig; alla mindra viktiga frågor hoppas över. 
+ .
+  Du kan välja den lägsta prioritet vars frågor du vill se: 
+   - "kritisk" är för frågor som sannolikt kan ge stora problem för
+     systemet om användaren inte intervenerar.
+   - "hög" är för frågor som saknar rimliga förval.
+   - "medium" är för vanliga frågor som har rimliga förval.
+   - "låg" är för triviala frågor som har förval som fungerar i de
+     allra flesta fall.
+ .
+  Som ett exempel har denna fråga prioriteten "medium", och om din
+ prioritet redan vore "hög" eller "kritisk" skulle du inte se denna fråga. 
+ .
+  Om du är nybörjade på Debian GNU/Linux-systemet, välj "kritisk" nu, så
+ får du bara se de viktigaste frågorna. 
+Description-zh_CN: ºöÂÔµÍÓÚÖ¸¶¨ÓÅÏÈ¼¶µÄÎÊÌâ
+ Ê¹ÓÃ Debconf µÄÈí¼ş°üÎªËüÃÇ½«ÒªÏòÄúÌá³öµÄÎÊÌâÖ¸¶¨ÁËÓÅÏÈ¼¶±ğ£®Ö»ÓĞÓÅÏÈ¼¶
+ ±ğ´ïµ½Ò»¶¨³Ì¶ÈµÄÎÊÌâ²Å»áÕæÕıÏòÄúÌá³öÀ´£»ÆäËüÏà¶Ô²»ÄÇÃ´ÖØÒªµÄÎÊÌâ¶¼»á±»ºö
+ ÂÔ¹ıÈ¥£®
+ .
+  Äú¿ÉÒÔÖ¸¶¨ÄúÏ£Íû¿´µ½µÄÎÊÌâÖÁÉÙ¾ßÓĞÏÂÁĞÄÄÒ»ÓÅÏÈ¼¶±ğ£º
+ ¡¡£­¡®¹Ø¼ü¡¯¼¶±ğµÄÎÊÌâÈç¹ûµÃ²»µ½ÄúµÄ»Ø´ğ£¬ÔòÓĞ¿ÉÄÜÔì³ÉÏµÍ³ËğÉË£®
+ ¡¡£­¡®¸ß¡¯¼¶±ğÎÊÌâÒ»°ãÃ»ÓĞºÏÀíµÄÄ¬ÈÏ»Ø´ğ£®
+ ¡¡£­¡®ÖĞ¡¯¼¶±ğÎÊÌâÍ¨³£»áÓĞºÏÀíµÄÄ¬ÈÏ»Ø´ğ£®
+ ¡¡£­¡®µÍ¡¯¼¶±ğÎÊÌâµÄÄ¬ÈÏµÄ»Ø´ğÔÚ¾ø´ó¶àÊıÇé¿öÏÂ¶¼ÊÇ¿ÉÒÔµÄ£®
+ .
+  ±ÈÈçËµ£¬±¾ÎÊÌâ¾ÍÊÇ¡®ÖĞ¡¯¼¶±ğµÄ£¬Èç¹ûÄúÏÈÇ°Éè¶¨ËùÏ£ÍûµÄÓÅÏÈ¼¶±ğÊÇ¡®¸ß¡¯»ò
+ ÕßÊÇ¡®¹Ø¼ü¡¯µÄ»°£¬Äú¾Í²»»á¿´µ½±¾ÎÊÌâÏòÄúÌá³öÀ´£®
+ .
+  Èç¹ûÄúÊÇ Debian GNU/Linux ÏµÍ³µÄĞÂÊÖµÄ»°£¬½¨ÒéÄúÔÚÕâÀïÑ¡Ôñ¡®¹Ø¼ü¡¯¼¶±ğ£¬
+ ÕâÑùÄú½«Ö»»áÓöµ½×îÖØÒªµÄÄÇĞ©ÎÊÌâ£®
+Description-zh_TW: ©¿²¤§C¤_«ü©wÀu¥ı¯Åªº°İÃD
+ ¨Ï¥Î Debconf ªº³n¥ó¥]¬°¥¦­Ì±N­n¦V±z´£¥Xªº°İÃD«ü©w¤FÀu¥ı¯Å§O¡D¥u¦³Àu¥ı¯Å
+ §O¹F¨ì¤@©wµ{«×ªº°İÃD¤~·|¯u¥¿¦V±z´£¥X¨Ó¡F¨ä¥¦¬Û¹ï¤£¨º»ò­«­nªº°İÃD³£·|³Q©¿
+ ²¤¹L¥h¡D
+ .
+  ±z¥i¥H«ü©w±z§Æ±æ¬İ¨ìªº°İÃD¦Ü¤Ö¨ã¦³¤U¦C­ş¤@Àu¥ı¯Å§O¡G
+ ¡@¡Ğ¡¥ÃöÁä¡¦¯Å§Oªº°İÃD¦pªG±o¤£¨ì±zªº¦^µª¡A«h¦³¥i¯à³y¦¨¨t²Î·l¶Ë¡D
+ ¡@¡Ğ¡¥°ª¡¦¯Å§O°İÃD¤@¯ë¨S¦³¦X²zªºÀq»{¦^µª¡D
+ ¡@¡Ğ¡¥¤¤¡¦¯Å§O°İÃD³q±`·|¦³¦X²zªºÀq»{¦^µª¡D
+ ¡@¡Ğ¡¥§C¡¦¯Å§O°İÃDªºÀq»{ªº¦^µª¦bµ´¤j¦h¼Æ±¡ªp¤U³£¬O¥i¥Hªº¡D
+ .
+  ¤ñ¦p»¡¡A¥»°İÃD´N¬O¡¥¤¤¡¦¯Å§Oªº¡A¦pªG±z¥ı«e³]©w©Ò§Æ±æªºÀu¥ı¯Å§O¬O¡¥°ª¡¦©Î
+ ªÌ¬O¡¥ÃöÁä¡¦ªº¸Ü¡A±z´N¤£·|¬İ¨ì¥»°İÃD¦V±z´£¥X¨Ó¡D
+ .
+  ¦pªG±z¬O Debian GNU/Linux ¨t²Îªº·s¤âªº¸Ü¡A«ØÄ³±z¦b³o¸Ì¿ï¾Ü¡¥ÃöÁä¡¦¯Å§O¡A
+ ³o¼Ë±z±N¥u·|¹J¨ì³Ì­«­nªº¨º¨Ç°İÃD¡D
+
+Template: debconf/frontend
+Type: select
+Choices: Slang, Text, Editor, Dialog, Noninteractive
+Choices-es: Slang, Texto, Editor, Dialog, No-interactiva
+Choices-fi: Slang, Teksti, Editori, Dialog, Automaattinen
+Choices-fr: Slang, Texte, Éditeur, Dialogue, Non-interactif
+Choices-gl: Slang, Texto, Editor, Dialog, Non-Interactiva
+Choices-it: Slang, Testo, Editor, Dialogo, NonInterattiva
+Choices-ja: Slang, ¥Æ¥­¥¹¥È, ¥¨¥Ç¥£¥¿, ¥À¥¤¥¢¥í¥°, Á´¼«Æ°
+Choices-ko: Slang, ÅØ½ºÆ®, ÆíÁı±â, ´ëÈ­»óÀÚ, Noninteractive
+Choices-pl: Slang, Tekst, Edytor, Dialog, Automat, WWW
+Choices-pt_BR: Slang, Texto, Editor, Dialog, Não-interativo
+Choices-ru: slang-ÉÎÔÅÒÆÅÊÓ, ÔÅËÓÔÏ×ÙÊ ÉÎÔÅÒÆÅÊÓ, ÒÅÄÁËÔÏÒ, dialog-ÉÎÔÅÒÆÅÊÓ, Á×ÔÏÍÁÔÉŞÅÓËÉÊ, ×ÅÂ-ÉÎÔÅÒÆÅÊÓ
+Choices-sv: Slang, Text, Textbehandlare, Dialog, Ickeinteraktiv
+Choices-zh_CN: Slang, ÎÄ±¾, ±à¼­Æ÷, Dialog, ·Ç½»»¥Ê½
+Choices-zh_TW: Slang, ¤å¥», ½s¿è¾¹, Dialog, «D¥æ¤¬¦¡
+Default: Dialog
+Description: What interface should be used for configuring packages?
+ Packages that use debconf for configuration share a common look and feel.
+ You can select the type of user interface they use.
+ .
+  The slang frontend provides a colorful, full-screen, character based
+ windowing interface, while the text frontend uses a more traditional plain
+ text interface. The editor frontend lets you configure things using your
+ favorite text editor. The noninteractive frontend never asks you any
+ questions. The dialog frontend is a primitive frontend that is being
+ phased out.
+Description-de: Welches Interface soll für die Konfiguration benutzt werden?
+ Pakete, die debconf zur Konfiguration benutzen, verwenden alle das gleiche
+ `look and feel'. Sie können das Interface hier auswählen.
+ .
+  Das slang Frontend bietet ein farbiges, bildschirmfüllendes,
+ zeichenbasiertes Interface. Während das text Frontend ein ehrer einfaches
+ traditionelles Textinterface ist. Das editor Frontend benutzt Ihren
+ bevorzugten Texteditor. Das noninteractive Frontend fragt Sie niemals eine
+ Frage.
+Description-es: ¿Qué interfaz debo usar para configurar los paquetes?
+ Puede escoger el tipo de interfaz de usuario que usar.
+ .
+  Slang suministra una interfaz de ventanas de texto, a color, a pantalla
+ completa. Texto es una interfaz tradicional, de solo texto. Editor le 
+ permite configurar el sistema usando su editor favorito. No-interactiva no
+ hace ninguna pregunta.
+Description-fi: Mitä käyttöliittymää pakkausten asetusten säätöön käytetään?
+ Debconf yhdenmukaistaa sitä käyttävien pakettien asetuskäyttöliittymän.
+ Voit itse valita mieluisesi liittymän muutamasta vaihtoehdosta. 
+ .
+  Slang on värikäs, ruudun täyttävä, päätteellä näkyvä graafinen liittymä.
+ Teksti on perinteisempi, paljasta tekstiä käyttävä liittymä. Editori
+ käyttää asetusten säätöön lempieditoriasi. Automaattinen liittymä ei
+ koskaan kysy kysymyksiä. Dialog on vanhempi liittymä, josta ollaan
+ luopumassa. 
+Description-fr: Quelle interface utiliser pour configurer les paquets ?
+ Les paquets utilisant debconf pour leur configuration partagent la même
+ apparence et ergonomie. Vous pouvez choisir leur interface utilisateur.  
+ .
+  'Slang' est une interface couleur en plein écran basée sur une interface 
+ fenêtrée en mode caractère. 'Texte' est une interface en mode texte, plus
+ traditionnelle et sans fioriture. L'interface 'Éditeur' vous permet de 
+ faire vos configurations depuis votre éditeur favori. Si vous choisissez 
+ 'Non-interactif', le système ne vous posera jamais de question. 'Dialogue'
+ est une interface primitive et dépassée. 
+Description-gl: ¿Que interface se debería empregar para configura-los paquetes?
+ Os paquetes que empregan debconf para a configuración comparten unha
+ aparencia común. Pode escolle-lo tipo de interface de usuario que usan.
+ .
+  A interface de slang proporciona unha interface de fiestras a toda cor,
+ en pantalla completa, en modo texto, mentres que a interface de texto usa
+ unha interface de só texto máis tradicional. A interface de editor
+ permítelle configura-las cousas co seu editor de texto favorito. A
+ interface non interactiva nunca lle fai preguntas. A interface de dialog é
+ unha interface primitiva que se está retirando.
+Description-it: Quale interfaccia devo usare per configurare i pacchetti?
+ I pacchetti che usano debconf hanno lo stesso aspetto per la
+ configurazione. Qui potete scegliere quale tipo di interfaccia usano.
+ .
+  Slang fornisce un'interfaccia a finestre testuale, colorata e a tutto
+ schermo, mentre l'interfaccia Testo è più tradizionale. Editor permette di
+ configurare tutto usando il proprio editor preferito, e NonInterattiva non
+ chiede niente. Dialog è un'interfaccia primitiva che verrà presto
+ dismessa.
+Description-ja: ¥Ñ¥Ã¥±¡¼¥¸¤ÎÀßÄê¤Ë¤É¤Î¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤ò»ÈÍÑ¤·¤Ş¤¹¤«?
+ ÀßÄê¤Ë debconf ¤ò»ÈÍÑ¤¹¤ë¥Ñ¥Ã¥±¡¼¥¸¤Ï¡¢¶¦ÄÌ¤Î³°´Ñ¤ÈÁàºîÂÎ·Ï¤òÍøÍÑ¤·¤Ş¤¹¡£
+ ¤½¤³¤ÇÍøÍÑ¤µ¤ì¤ë¥æ¡¼¥¶¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤Î¼ïÎà¤òÁªÂò¤Ç¤­¤Ş¤¹¡£
+ .
+  slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ï¡¢¥«¥é¥Õ¥ë¤Ç¥Õ¥ë¥¹¥¯¥ê¡¼¥ó¤Î¡¢¥­¥ã¥é¥¯¥¿¥Ù¡¼¥¹¤Î
+ ¥¦¥£¥ó¥É¥¦¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òÄó¶¡¤·¤Ş¤¹¡£¤Ş¤¿¡¢¥Æ¥­¥¹¥È¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ç
+ ¤Ï¡¢¤è¤êÅÁÅıÅª¤ÊÁÇ¤Î¥Æ¥­¥¹¥È¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤ò»ÈÍÑ¤·¤Ş¤¹¡£¥¨¥Ç¥£¥¿¥Õ¥í
+ ¥ó¥È¥¨¥ó¥É¤Ç¤Ï¡¢¹¥¤­¤Ê¥¨¥Ç¥£¥¿¤ò»ÈÍÑ¤·¤ÆÀßÄê¤ò¹Ô¤Ê¤¤¤Ş¤¹¡£Á´¼«Æ°¥Õ¥í¥ó
+ ¥È¥¨¥ó¥É¤Ï¡¢°ìÀÚ¤Î¼ÁÌä¤ò¹Ô¤Ê¤¤¤Ş¤»¤ó¡£
+Description-ko: ÆĞÅ°Áö¸¦ ¼³Á¤ÇÏ±â À§ÇØ ¾î¶² ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÒ±î¿ä?
+ ¼³Á¤ÇÏ±â À§ÇØ¼­ debconf¸¦ »ç¿ëÇÏ´Â ÆĞÅ°Áö´Â °øÅëÀÇ °Ñ¸ğ½À°ú ´À³¦À»
+ °øÀ¯ÇÕ´Ï´Ù. ±×°ÍÀÌ »ç¿ëÇÒ »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½ºÀÇ À¯ÇüÀ» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ .
+  Slang frontend´Â È­·ÁÇÏ°í ÀüÃ¼È­¸éÀÎ ¹®ÀÚ ±â¹İÀÇ Ã¢ ÀÎÅÍÆäÀÌ½ºÀÎ ¹İ¸é,
+ ÅØ½ºÆ® frontend´Â Á» ´õ ÀüÅëÀûÀÎ ´Ü¼øÇÑ ÅØ½ºÆ® ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÕ´Ï´Ù.
+ ÆíÁı±â frontend´Â ¼±È£ÇÏ´Â ÅØ½ºÆ® ÆíÁı±â¸¦ »ç¿ëÇØ¼­ ¼³Á¤ÇÒ ¼ö ÀÖ°Ô
+ ÇØÁİ´Ï´Ù. Noninteractive frontend´Â ¾î¶°ÇÑ Áú¹®µµ ¹¯Áö ¾Ê½À´Ï´Ù.
+Description-nl: Welke interface moet gebruikt worden bij het instellen van pakketten?
+ Pakketten die debconf gebruiken voor hun configuratie delen een
+ gezamelijke look-and-feel. U kunt selecteren welk type interface u wilt
+ gebruiken.
+ .
+  De 'slang' interface gebruikt een kleurrijke, volschermse,
+ karaktergebaseerde interface, terwijl de 'text' interface een meer
+ traditionele tekst interface gebruikt. De 'editor' interface laat u uw
+ favoriete editor gebruiken om de pakketten in te stellen. De
+ 'noninteractive' interface stelt u in het geheel geen vragen. De 'dialog'
+ schil is een primitieve schil en wordt binnenkort verwijderd.
+Description-pl: Jakiego interfejsu chcesz u¿ywaæ, aby konfigurowaæ pakiety?
+ Konfiguracja pakietów u¿ywaj±cych do tego celu debconfa wygl±da podobnie.
+ Mo¿esz wybraæ wspólny interfejs, którego bêd± u¿ywaæ.
+ .
+  Nak³adka `slang' to kolorowy, tekstowy, pe³noekranowy interfejs; `tekst'
+ -- bardziej tradycyjny, prosty, tekstowy. Nak³adka `edytor' pozwala na
+ konfiguracjê przy pomocy Twojego ulubionego edytora tekstowego. Nak³adka
+ `automat' nigdy nie zadaje ¿adnych pytañ. Nak³adka `www' pozwala na
+ konfiguracjê za pomoc± przegl±darki stron www.
+Description-pt_BR: Que interface deve ser usada para configurar os pacotes?
+ Pacotes que usam o debconf para configuração têm um visual comum. Você
+ pode selecionar o tipo de interface de usuário que eles verão.
+ .
+  O frontend slang provê uma interface de janelas baseadas em caracteres em
+ tela cheia, colorida, enquanto o frontend texto usa uma interface  mais
+ padrão de texto. O frontend editor permite que você configure as coisas
+ com seu editor favorito. O frontend não interativo nunca pergunta nada. O
+ frontend dialog é um frontend primitivo que está acabando.
+Description-ru: ëÁËÏÊ ÔÉĞ ÉÎÔÅÒÆÅÊÓÁ ×Ù ÈÏÔÉÔÅ ÉÓĞÏÌØÚÏ×ÁÔØ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔÏ×?
+ ğÁËÅÔÙ, ÉÓĞÏÌØÚÕÀİÉÅ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔ debconf, ÉÍÅÀÔ ÏÄÉÎÁËÏ×ÙÊ ÓÔÉÌØ
+ ÉÎÔÅÒÆÅÊÓÁ; ËÁËÏÊ ÉÍÅÎÎÏ, ×Ù ÍÏÖÅÔÅ ÕËÁÚÁÔØ, ÏÔ×ÅÔÉ× ÎÁ ÜÔÏÔ ×ÏĞÒÏÓ.
+ .
+  slang-ÉÎÔÅÒÆÅÊÓ ÉÓĞÏÌØÚÕÅÔ ÍÎÏÇÏÃ×ÅÔÎÙÅ ĞÏÌÎÏÜËÒÁÎÎÙÅ ÏËÎÁ × ÔÅËÓÔÏ×ÏÍ
+ ÒÅÖÉÍÅ. `ÔÅËÓÔÏ×ÙÊ ÉÎÔÅÒÆÅÊÓ' ĞÒÅÄÓÔÁ×ÌÑÅÔ ÓÏÂÏÊ ÂÏÌÅÅ ÔÒÁÄÉÃÉÏÎÎÙÊ. ÷
+ ÓÌÕŞÁÅ `ÒÅÄÁËÔÏÒÁ' ×Ù ÓÍÏÖÅÔÅ ÏÔ×ÅŞÁÔØ ÎÁ ×ÏĞÒÏÓÙ, ÉÓĞÏÌØÚÕÑ ×ÁÛ ÌÀÂÉÍÙÊ
+ ÔÅËÓÔÏ×ÙÊ ÒÅÄÁËÔÏÒ.  á×ÔÏÍÁÔÉŞÅÓËÉÊ ÉÎÔÅÒÆÅÊÓ ÎÉËÏÇÄÁ ÎÅ ÚÁÄÁÅÔ ÎÉËÁËÉÈ
+ ×ÏĞÒÏÓÏ×.  ÷ ÓÌÕŞÁÅ `×ÅÂ-ÉÎÔÅÒÆÅÊÓÁ' ×Ù ÍÏÖÅÔÅ ×ÏĞÓÏÌØÚÏ×ÁÔØÓÑ Ó×ÏÉÍ
+ ÌÀÂÉÍÙÍ ×ÅÂ-ÂÒÁÕÚÅÒÏÍ.
+Description-sv: Vilket gränssnitt skall användas för att konfigurera paket?
+ Paket som använder debconf för konfiguration delar ett gemensamt utseende
+ och känsla. Du kan välja vilken sorts användargränssnitt de använder. 
+ .
+  Slang-skalet ger en färgfullt, helskärms, teckenbaserat
+ fönstergränssnitt, medan textskalet använder ett mer traditionellt
+ gränssnitt med ren text. Textbehandlarskalet låter dig konfigurera saker
+ med din favorittextbehandlare. Det ickeinteraktiva skalet frågar dig
+ aldrig någonting. Dialogskalet är ett primitivt skal som är på väg att
+ fasas ut.
+Description-zh_CN: ÔÚÅäÖÃÈí¼ş°üµÄÊ±ºòÓ¦Ê¹ÓÃÊ²Ã´ÑùµÄ½çÃæ£¿
+ Ê¹ÓÃ Debconf À´ÅäÖÃµÄÈí¼ş°ü¿ÉÒÔÊ¹ÓÃÏàÍ¬·ç¸ñµÄÓÃ»§½çÃæ£®Äã¿ÉÒÔÔÚÕâÀïÑ¡Ôñ
+ µ½µ×Ê¹ÓÃÄÄÒ»ÖÖ½çÃæ£®
+ .
+  »ùÓÚ Slang µÄÓÃ»§½çÃæÊÇÒ»¸ö²ÊÉ«µÄ£¬È«ÆÁÄ»µÄ£¬»ùÓÚ×Ö·ûµÄ´°¿Ú½çÃæ£»ÖÁÓÚ
+ Text µÄÇ°¶ËÓÃ»§½çÃæ£¬ÔòÊÇ¸üÎª´«Í³µÄ¼òµ¥µÄÎÄ±¾½çÃæ£®ÃûÎª Editor
+ µÄÓÃ»§½çÃæ¿ÉÒÔÈÃ
+ ÄãÔÚ×Ô¼º×îÂúÒâµÄ±à¼­Æ÷ÖĞ½øĞĞÅäÖÃ¹¤×÷£®·Ç½»»¥Ê½µÄÇ°¶Ë½çÃæÔò¾ø²»»áÏòÄãÎÊÈÎºÎ
+ ÎÊÌâ£®
+Description-zh_TW: ¦b°t¸m³n¥ó¥]ªº®É­ÔÀ³¨Ï¥Î¤°»ò¼Ëªº¬É­±¡H
+ ¨Ï¥Î Debconf ¨Ó°t¸mªº³n¥ó¥]¥i¥H¨Ï¥Î¬Û¦P­·®æªº¥Î¤á¬É­±¡D§A¥i¥H¦b³o¸Ì¿ï¾Ü
+ ¨ì©³¨Ï¥Î­ş¤@ºØ¬É­±¡D
+ .
+  °ò¤_ Slang ªº¥Î¤á¬É­±¬O¤@­Ó±m¦âªº¡A¥ş«Ì¹õªº¡A°ò¤_¦r²Åªºµ¡¤f¬É­±¡F¦Ü¤_
+ Text ªº«eºİ¥Î¤á¬É­±¡A«h¬O§ó¬°¶Ç²ÎªºÂ²³æªº¤å¥»¬É­±¡D¦W¬° Editor
+ ªº¥Î¤á¬É­±¥i¥HÅı
+ §A¦b¦Û¤v³Ìº¡·Nªº½s¿è¾¹¤¤¶i¦æ°t¸m¤u§@¡D«D¥æ¤¬¦¡ªº«eºİ¬É­±«hµ´¤£·|¦V§A°İ¥ô¦ó
+ °İÃD¡D
+
+Template: debconf/helpvisible
+Type: boolean
+Default: true
+Description: Should debconf display extended help for questions?
+ Debconf can display extended help for questions. Some frontends allow this
+ display to be turned off, which may make them run a bit faster, or be less
+ cluttered. This is mostly useful for experts.
+Description-de: Soll debconf erweiterte Hilfen anzeigen?
+ Debconf kann erweiterte Hilfen zu den Fragen anzeigen. Einige Frontends
+ erlauben das Abschalten dieser Hilfen. Dieses macht diese etwas schneller
+ oder etwas aufgeräumter. Das ist meistens für Experten hilfreich.
+Description-es: ¿Debe debconf mostrar ayuda extendida para las preguntas?
+ Debconf puede mostrar ayuda extendida para las preguntas. Algunos
+ interfaces permiten desactivar esto, lo que hara que se ejecuten algo más
+ rápido o estén menos congestionados. Esto es útil principalmente para los
+ expertos.
+Description-fi: Pitäisikö debconf:n näyttää laaja apu kysymyksille?
+ Debconf voi näyttää kysymyksille laajan avustustekstin. Jotkut liittymät
+ mahdollistavat tämän näytön poiskytkemisen, mikä voi nopeuttaa niitä tai
+ siistiä näyttöä. Tämä poiskytkentä on hyödyllinen lähinnä
+ asiantuntijoille. 
+Description-fr: Debconf doit-il afficher les textes étendus d'aide ?
+ Debconf peut afficher des messages d'aide pour certaines questions.
+ Certaines interfaces permettent de NE PAS le faire, ce qui leur permet de
+ s'exécuter  un peu plus vite, ou d'être moins bavard. Ce réglage est
+ surtout utile aux experts.  
+Description-gl: ¿Debería debconf amosar axuda extendida nas preguntas?
+ Debconf pode amosar axuda extendida nas preguntas. Algunhas interfaces
+ permiten desactivala, o que as pode facer máis rápidas, ou coa pantalla
+ menos saturada. Isto é útil sobre todo para os expertos.
+Description-it: Usare l'help esteso per le domande?
+ Debconf può visualizzare l'help esteso per le domande. Alcune interfacce
+ permettono di disabilitare questa caratteristica, cosa che permette loro
+ una maggiore velocità e una minore confusione. E' utile in particolare per
+ gli esperti.
+Description-ja: debconf ¤Î¼ÁÌä»ş¤Ë¾ÜºÙ¥Ø¥ë¥×¤òÉ½¼¨¤·¤Ş¤¹¤«?
+ debconf ¤Ï¼ÁÌä¤Ë´Ø¤¹¤ë¾ÜºÙ¥Ø¥ë¥×¤òÉ½¼¨¤¹¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£¥Õ¥í¥ó¥È¥¨¥ó
+ ¥É¤Ë¤è¤Ã¤Æ¤ÏÉ½¼¨¤·¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¤³¤È¤â²ÄÇ½¤Ç¡¢¤½¤ÎÊı¤¬Æ°ºî¤â¼ã´³¹âÂ®¤Ç
+ ¤¢¤Ã¤¿¤ê¡¢¤è¤ê¤¹¤Ã¤­¤ê¤·¤¿É½¼¨¤Ë¤Ê¤ê¤Ş¤¹¡£¤³¤ì¤Ï¡¢¼ç¤Ë¾åµé¼Ô¤ËÍ­ÍÑ¤Ç¤·¤ç
+ ¤¦¡£
+Description-ko: Debconf°¡ Áú¹®¿¡ ´ëÇÑ È®Àå µµ¿ò¸»À» Ç¥½ÃÇÏ°Ô ÇÒ±î¿ä?
+ Debconf´Â Áú¹®¿¡ ´ëÇÑ È®Àå µµ¿ò¸»À» Ç¥½ÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ¸î¸î frontend´Â
+ Á¶±İ ´õ ºü¸£°Ô ÇÏ°Å³ª, È¥ÀâÇÏÁö ¾Ê°Ô ÇÏ±â À§ÇØ ÀÌ Ç¥½Ã¸¦ ²ø ¼ö ÀÖ½À´Ï´Ù.
+ ÀÌ°ÍÀº º¸Åë Àü¹®°¡¿¡°Ô À¯¿ëÇÕ´Ï´Ù.
+Description-nl: Moet debconf uitgebreide hulp tonen voor vragen?
+ Debconf kan uitgebreide hulp tonen voor vragen. Sommige schillen staan toe
+ dat deze functie uitgeschakeld wordt, waardoor ze iets sneller uitgevoerd
+ worden of er minder opeengepakt uitzien. Dit is met name voor experts
+ handig.
+Description-pl: Czy debconf powinien wy¶wietlaæ rozszerzon± pomoc do pytañ?
+ Debconf mo¿e wy¶wietlaæ rozszerzon± pomoc do pytañ. Niektóre nak³adki
+ pozwalaj± wy³±czyæ t± opcjê, dziêki czemu bêd± dzia³aæ nieco szybciej lub
+ bêd± bardziej uporz±dkowane. Wy³±czyæ t± opcjê mog± chcieæ g³ównie
+ eksperci.
+Description-pt_BR: O Debconf deve mostrar ajuda extendida para as pergunas?
+ O Debconf pode mostrar ajuda extendida para as perguntas. Alguns frontends
+ permitem que isso esteja desligado, o que pode fazê-los rodar um pouco
+ mais rápido. Isso é útil para experts.
+Description-ru: ğÏËÁÚÙ×ÁÔØ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ ÉÎÆÏÒÍÁÃÉÀ Ï ×ÏĞÒÏÓÁÈ?
+ äÌÑ ËÁÖÄÏÇÏ ×ÏĞÒÏÓÁ ĞÁËÅÔ debconf ÍÏÖÅÔ ĞÏËÁÚÙ×ÁÔØ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ
+ ÉÎÆÏÒÍÁÃÉÀ. îÅËÏÔÏÒÙÅ ÉÎÔÅÒÆÅÊÓÙ ĞÏÚ×ÏÌÑÀÔ ÎÅ ×Ù×ÏÄÉÔØ ÜÔÕ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ
+ ÉÎÆÏÒÍÁÃÉÀ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ ĞÒÏÉÚ×ÅÓÔÉ ÎÁÓÔÒÏÊËÕ ĞÁËÅÔÏ× ÂÙÓÔÒÅÅ É ÍÅÎÅÅ
+ ÓÕÍÁÔÏÛÎÏ.
+ .
+  üÔÏ × ÏÓÎÏ×ÎÏÍ ÒÁÓŞÉÔÁÎÏ ÎÁ ÜËÓĞÅÒÔÏ×.
+Description-sv: Skall debconf visa utökad hjälp för frågor?
+ Debconf kan visa utökad hjälp för frågor. Vissa skal gör det möjligt att
+ stänga av denna visning, vilket kan göra att de körs snabbare, eller inte
+ är lika "skräpiga". Detta är huvudsakligen användbart för experter. 
+Description-zh_CN: Debconf Ó¦¸ÄÎªÎÊÌâÏÔÊ¾Ïê¾¡µÄ°ïÖúĞÅÏ¢Âğ£¿
+ Debconf ¿ÉÒÔÎªÌá³öµÄÎÊÌâÏÔÊ¾Ïê¾¡µÄ°ïÖúĞÅÏ¢£®Ò»²¿·İ·ç¸ñµÄÇ°¶ËÓÃ»§½çÃæ¿ÉÒÔ²»
+ ÏÔÊ¾ÕâĞ©°ïÖúĞÅÏ¢£¬ÕâÑù¿ÉÒÔÈÃËüÃÇÔËĞĞµÄ¸ü¿ìÒ»Ğ©£¬»òÕß¿ÉÄÜ¸ü¼ÓÇåË¬Ò»Ğ©£®Õâ¿É
+ ÄÜÖ»ÊÇ¶ÔÒ»Ğ©×¨¼Ò»áÓĞËù°ïÖú£®
+Description-zh_TW: Debconf À³§ï¬°°İÃDÅã¥Ü¸ÔºÉªºÀ°§U«H®§¶Ü¡H
+ Debconf ¥i¥H¬°´£¥Xªº°İÃDÅã¥Ü¸ÔºÉªºÀ°§U«H®§¡D¤@³¡¥÷­·®æªº«eºİ¥Î¤á¬É­±¥i¥H¤£
+ Åã¥Ü³o¨ÇÀ°§U«H®§¡A³o¼Ë¥i¥HÅı¥¦­Ì¹B¦æªº§ó§Ö¤@¨Ç¡A©ÎªÌ¥i¯à§ó¥[²M²n¤@¨Ç¡D³o¥i
+ ¯à¥u¬O¹ï¤@¨Ç±M®a·|¦³©ÒÀ°§U¡D

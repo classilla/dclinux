@@ -1,0 +1,24 @@
+#!/bin/sh -e
+
+# The pre-4.00 prerm will have incorrectly stopped inetd. If so, restart
+# it.
+#if [ "$1" = "upgrade" ] && `dpkg --compare-versions "$2" -lt "4.00"`; then
+#  if [ -e /etc/init.d/inetd ]; then
+#    /etc/init.d/inetd restart
+#  fi
+#fi
+
+if [ ! -d /etc/network ]; then
+  mkdir -p /etc/network
+fi
+
+# create a new /etc/network/options file if it doesn't already exist
+if [ ! -f /etc/network/options ]; then
+  cat <<EOC >/etc/network/options
+ip_forward=no
+spoofprotect=yes
+syncookies=no
+EOC
+fi
+
+

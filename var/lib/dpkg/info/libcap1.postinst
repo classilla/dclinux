@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure*)
+	ldconfig
+	;;
+    *)
+	;;
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libcap1 -a -d /usr/share/doc/libcap1 ]; then
+		ln -sf ../share/doc/libcap1 /usr/doc/libcap1
+	fi
+fi
+# End automatically added section
+
+

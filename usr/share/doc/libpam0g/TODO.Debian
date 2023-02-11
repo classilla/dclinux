@@ -1,0 +1,4 @@
+- make pam_unix.so modules have some means of allowing other than root
+  to auth users via unix_chkpwd (maybe unix_chkpwd needs a secure conf
+  file?)
+- Put in some of the Hurd related fixes

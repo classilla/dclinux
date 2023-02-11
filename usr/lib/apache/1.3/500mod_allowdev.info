@@ -1,0 +1,5 @@
+LoadModule: allowdev_module /usr/lib/apache/1.3/mod_allowdev.so
+Directives:
+ AllowDev
+ AllowDevDynamic
+Description: Support for device-based access control

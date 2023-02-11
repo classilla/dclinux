@@ -1,0 +1,6 @@
+LoadModule: cern_meta_module /usr/lib/apache/modules/mod_cern_meta.so
+LoadModule: cern_meta_module /usr/lib/apache/1.3/mod_cern_meta.so
+Directives:
+ MetaDir
+ MetaSuffix
+Description: Support for HTTP header metafiles

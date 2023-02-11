@@ -1,0 +1,70 @@
+			The RAW file-format
+
+		(C) 1997 Yann Dirson <dirson@debian.org>
+
+
+ This file documents the RAW font-file-format, as understood by the Linux
+console utilities ('kbd').
+
+ This file has revision number 1.0, and is dated 1997/09/02.
+
+
+0. Changes
+
+1998/08/20: updated author's e-mail.
+
+
+1. Summary
+
+ A RAW file only contains one 8-pixels-wide 256-characters font, ie. each
+scanline in a character occupies 1 byte.
+
+ It may contain characters of any height between 0 and 255, though character
+heights lower than 8 or greater than 32 are not attested to exist or even be
+useful [more info needed on this]; the file's size is used to determine the
+font's height when reading it.
+
+ WARNING: no program can reliably ensure a file it reads is in this format;
+it can only recognize when the file's size makes it obvious it is not. Thus
+some files can be wrongly assumed to be raw font-files. For this reason, you
+are strongly encouraged to use other formats, like PSF, which can be
+identified by magic-number.
+
+
+2. History
+
+ Unknown. This file-format probably cannot evolve.
+
+
+3. Known programs understanding this file-format.
+
+ The following program in the Linux console utilities can read and/or write
+RAW files:
+
+	setfont (R/W)
+
+
+4. Technical data
+
+ The file format is described here in sort-of EBNF notation. Upper-case
+WORDS represent terminal symbols, ie. C types; lower-case words represent
+non-terminal symbols, ie. symbols defined in terms of other symbols.
+ [sym] is an optional symbol
+ {sym} is a symbol that can be repeated 0 or more times
+ {sym}*N is a symbol that must be repeated N times
+ Comments are introduced with a # sign.
+
+
+# The data (U_SHORT's) are stored in LITTLE_ENDIAN byte order.
+
+raw_file =	raw_fontdata
+
+raw_fontdata =	{char_data}*256
+
+char_data =	{BYTE}*<fontheight>
+
+# This makes the file have a size of 256*<fontheight> bytes; thus only files
+# whose size has 0 as less significant byte can be interpreted as a raw font.
+# One might even want to extend these lower 8 bits to 10 (resp. 11) to ensure
+# that no file is wrongly assumed to be a (quite rare!) less-than-4 (resp. 8)
+# scanlines font.

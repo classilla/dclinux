@@ -1,0 +1,83 @@
+#! /usr/bin/perl -w
+# -*- PERL -*-
+# $Id: magic2mime,v 1.1 1998/02/15 23:18:53 christos Exp $
+# Copyright (c) 1996, 1997 vax@linkdead.paranoia.com (VaX#n8)
+#
+# Usage: echo 'your-file-output-here' | file_to_ctype.pl
+#        file -b files... | file_to_ctype.pl
+# It acts like a filter, reading from STDIN and any files on the command
+# line, printing to STDOUT.
+
+## refs
+# http://www.faqs.org/faqs/mail/mime-faq/part1/index.html
+#  comp.mail.mime FAQ
+# ftp://ftp.isi.edu/in-notes/iana/assignments/media-types/media-types
+#  assigned content-types
+# ftp://ftp.uu.net/inet/rfc/rfc-index
+#  RFC index; search for MIME
+
+@mapping =
+(
+	# defaults
+    'data' => 'application/octet-stream',
+    'text' => 'text/plain',
+	# more specific
+	'^Rich Text Format data' => 'text/richtext',
+	'^(ASCII |ISO-8859 )?HTML document text' => 'text/html',
+	'^exported SGML document text' => 'text/sgml',
+	'mail text' => 'message/rfc822',
+	'news text' => 'message/news',
+	'^PostScript document text.*type EPS' => 'image/eps',
+	'^PostScript document text' => 'application/postscript',
+	'^PDF document' => 'application/pdf',
+	'^Rich Text Format' => 'application/rtf',
+	'^TeX DVI file' => 'application/x-dvi',
+	'^BinHex binary text' => 'application/mac-binhex40',
+	'^Zip archive data' => 'application/zip',
+	'Microsoft Word[ 0-9.]*document data' => 'application/msword',
+	'^PGP key' => 'application/pgp-keys',
+	'^PGP encrypted' => 'application/pgp-encrypted',
+	'^PGP armored data signature' => 'application/pgp-signature',
+    '^JPEG image' => 'image/jpeg',
+    '^GIF image' => 'image/gif',
+	'^PNG image' => 'image/png',
+    '^TIFF image' => 'image/tiff',
+	'Computer Graphics Metafile' => 'image/cgf',
+	'^Sun/NeXT audio data' => 'audio/basic',
+    '^MPEG.*layer 3 audio' => 'audio/mpeg',
+    '^MPEG' => 'video/mpeg',
+    '^Apple QuickTime movie' => 'video/quicktime',
+    '^X pixmap image' => 'image/x-xpixmap',
+	# made up by me
+    '^bitmap' => 'image/x-bitmap',
+    '^PC bitmap data, Windows 3.x format' => 'image/x-msw3bmp',
+    '^FLI' => 'video/x-fli',
+    '^FLC' => 'video/x-flc',
+    'AVI data' => 'video/x-avi',
+    'WAVE' => 'audio/x-wav',
+    'VOC' => 'audio/x-voc',
+	'Debian binary package' => 'application/x-debian-package',
+	'compiled Java class data' => 'application/x-java',
+	'MPEG.*audio stream data' => 'audio/mpeg',
+	'Standard MIDI data' => 'audio/midi',
+);
+
+my($mimetype,$index,$found);
+while (<>)
+  {
+    chop;
+    $index = $#mapping - 1;
+    $found = 0;
+    $mimetype = "application/octet-stream";
+    while ($index > -1 && !$found)
+      {
+         if(/$mapping[$index]/)
+         {
+		$mimetype = $mapping[$index + 1];
+		$found=1;
+         }
+         $index -= 2;
+      }
+    print "$mimetype\n";
+  }
+0;

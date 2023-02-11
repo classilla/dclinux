@@ -1,0 +1,61 @@
+Template: ppp/maxfail
+Type: note
+Description: Default number of redial attempts has changed.
+ Default value for number of redial attempts with `persist' option was
+ changed from infinity to 10, by introducing a new `maxfail' option.
+ .
+ If you used the `persist' option in your pppd settings, you will have to
+ add `maxfail 0' to get the old behaviour back.
+ .
+ Details about this can be found in /usr/share/doc/ppp/README.Debian.gz
+ file and in pppd(8) manual page.
+Description-sv: Antalet återuppringningsförsök har ändrats. 
+ Antalet återuppringsningsförsök som görs när `persist' flaggan används
+ har ändrats från oändlighet till 10, genom att introducera `maxfail`
+ flaggan.
+ .
+ Om du har använt `persist' flaggan måste du lägga till `maxfail 0' för
+ att det ska fungera som tidigare.
+ .
+ Detaljer om detta kan du hitta i filen /usr/share/doc/ppp/README.Debian.gz
+ och i pppd(8) manual sidan.
+Description-de: Die Standart Anzahl von Neuanwahl Versuchen hat sich geändert.
+ Der Standart Wert für Neuanwahl Versuche mit `persist' Option wurde, durch
+ Einführung einer neuen Option `maxfail', von unendlich auf 10 geändert.
+ .
+ Wenn Sie die `persist' Option in Ihren pppd Einstellungen benutzt haben,
+ dann werden Sie `maxfail 0' hinzufügen müssen, um das alte Verhalten
+ beizubehalten.
+ .
+ Details finden Sie in der Datei /usr/share/doc/ppp/README.Debian.gz und
+ im pppd(8) Handbuch (manpage).
+Description-fr: Le nombre de tentatives de renumerotation par defaut a changé.
+ Le nombre de tentatives de renumerotation par defaut pour l'option
+ `persist' a été passé de l'infini a 10, en introduisant une nouvelle
+ option `maxfail'.
+ .
+ Si vous utilisiez l'option `persist' dans vos réglages pppd, vous aurez à
+ ajouter `maxfail 0' pour retrouver le comportement précédent.
+ .
+ Plus d'information sont disponibles dans /usr/share/doc/ppp/README.Debian.gz
+ et dans la page de manuel pppd(8).
+Description-nl: Standaard aantal inbelpogingen is veranderd.
+ De standaardwaarde voor het aantal nieuwe inbelpogingen bij gebruik
+ van `persist' is veranderd van oneindig vaak naar 10, door
+ introductie van de nieuwe `maxfail' optie.
+ .
+ Als u de `persist' optie gebruikte in uw pppd instellingen, moet u
+ `maxfail 0' toevoegen om de oude werking weer terug te krijgen.
+ .
+ Details hierover staan in /usr/share/doc/ppp/README.Debian.gz en in
+ de pppd(8) handleiding.
+Description-pt_BR: Número de tentativas de rediscagem padrão mudou.
+ O valor padrão do número de tentativas de rediscagem com a opção
+ 'persist' foi mudado do infinito para 10, com a introdução de uma nova
+ opção chamada 'maxfail'.
+ .
+ Se você usava a opção 'persist' nas suas configurações do pppd, você vai
+ ter que adicionar 'maxfail 0' para o pppd se comportar como antes.
+ .
+ Detalhes sobre isso podem ser encontrados no arquivo /usr/share/doc/ppp/
+ README.Debian.gz e no manual do pppd(8).

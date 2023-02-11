@@ -1,0 +1,4 @@
+LoadModule: headers_module /usr/lib/apache/1.3/mod_headers.so
+Directives:
+ Header
+Description: Support for arbitrary HTTP headers

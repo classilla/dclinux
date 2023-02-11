@@ -1,0 +1,37 @@
+#! /bin/sh
+# /etc/init.d/modutils: loads the appropriate modules in `boot'.
+
+
+PATH="/sbin:/bin:/usr/sbin:/usr/bin"
+
+[ -f /proc/modules ] || exit 0
+[ -e /sbin/depmod ] || exit 0
+
+echo -n "Calculating module dependencies... "
+depmod -a > /dev/null
+echo "done."
+
+# Loop over every line in /etc/modules.
+echo -n 'Loading modules: '
+(cat /etc/modules; echo) | # make sure there is a LF at the end
+while read module args
+do
+	case "$module" in
+		\#*|"") continue ;;
+	esac
+	echo -n "$module "
+	modprobe $module $args
+done
+echo
+
+#
+# Just in case a sysadmin prefers generic symbolic links in
+# /lib/modules/boot for boot time modules we will load these modules
+#
+if [ -n "`modprobe -l -t boot`" ]
+then
+        modprobe -a -t boot \*
+fi
+
+exit 0
+

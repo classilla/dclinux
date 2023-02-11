@@ -1,0 +1,12 @@
+#! /bin/sh -e
+
+
+if [ "$1" = "configure" ]; then
+    if [ -d /usr/doc -a ! -e /usr/doc/mime-support -a -d /usr/share/doc/mime-support ]; then
+	ln -sf ../share/doc/mime-support /usr/doc/mime-support
+    fi
+fi
+
+
+# Remove the old status directory
+rm -rf /var/lib/mime

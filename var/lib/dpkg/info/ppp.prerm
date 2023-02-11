@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+# If we are removing ppp we have to stop all ppp's
+
+if [ "$1" = remove ]; then
+  echo -n "Stopping all PPP connections..."
+  start-stop-daemon --stop --oknodo --exec /usr/sbin/pppd
+  echo "done."
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/ppp ]; then
+	rm -f /usr/doc/ppp
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/ppp" -a "$1" = remove ]; then
+	/etc/init.d/ppp stop
+fi
+# End automatically added section
+

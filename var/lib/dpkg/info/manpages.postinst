@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/manpages -a -d /usr/share/doc/manpages ]; then
+		ln -sf ../share/doc/manpages /usr/doc/manpages
+	fi
+fi
+# End automatically added section

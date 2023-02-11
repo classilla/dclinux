@@ -1,0 +1,38 @@
+#!/bin/sh
+#
+# This is the prerm script for the Debian GNU/Linux time package
+#
+# Written by Dirk Eddelbuettel <edd@debian.org>   
+
+set -e
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/time ]; then
+	rm -f /usr/doc/time
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = remove -o "$1" = upgrade ] && \
+   command -v install-docs >/dev/null 2>&1; then
+	install-docs -r time
+fi
+# End automatically added section
+
+
+case "$1" in
+    upgrade)
+	;;
+    remove|purge)
+#         if command -v install-docs >/dev/null 2>&1 
+# 	then
+# 	    install-docs -r time
+#         fi
+	;;
+    failed-upgrade|abort-install|abort-upgrade|disappear)
+	;;
+    *)
+	echo "prerm called with unknown argument \`$1'" >&2
+	;;
+esac
+
+exit 0

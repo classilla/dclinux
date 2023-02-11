@@ -1,0 +1,11 @@
+c72a0a3c0cd17f9c42f8e3e34b264a08  usr/bin/file
+86cf906780582a3c2b3f395af58e07df  usr/bin/magic2mime
+1e0707da497eb2be0b5ca8a63f94c23e  usr/share/man/man1/file.1.gz
+7b066375fe696d692bc9a92b0389a5b6  usr/share/man/man1/magic2mime.1.gz
+10ee0a41a3b26c44b618d79e136e357d  usr/share/man/man5/magic.5.gz
+7144ccbb34af8c3e6277e4205f1bd3ed  usr/share/misc/magic
+9562958d977ba3deb61dea2ed74a81ca  usr/share/misc/magic.mime
+63302ed664bf982c4fc34532e02d65a7  usr/share/doc/file/README
+9c31d5c113fb1e163359a5c8bce7e89f  usr/share/doc/file/copyright
+69b0fb20995142fcdbb05470c854b217  usr/share/doc/file/changelog.gz
+1d5af8ede0db51f028f2e8821f22af88  usr/share/doc/file/changelog.Debian.gz

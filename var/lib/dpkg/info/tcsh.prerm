@@ -1,0 +1,13 @@
+#! /bin/sh
+# $Id: prerm,v 1.2 1998/04/20 11:43:30 luisgh Exp $
+if [ $1 != "upgrade" ]
+then
+  update-alternatives --remove csh /bin/tcsh
+fi
+
+# Change the docs to the new FHS
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) \
+       -a -L /usr/doc/tcsh ]; then
+        rm -f /usr/doc/tcsh
+fi
+exit 0

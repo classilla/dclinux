@@ -1,0 +1,20 @@
+#!/bin/sh
+
+set -e
+
+case "$1" in
+    configure*)
+	ldconfig
+	;;
+    *)
+	;;
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/slang1 -a -d /usr/share/doc/slang1 ]; then
+		ln -sf ../share/doc/slang1 /usr/doc/slang1
+	fi
+fi
+# End automatically added section
+

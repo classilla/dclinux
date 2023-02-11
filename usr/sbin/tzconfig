@@ -1,0 +1,121 @@
+#! /bin/sh
+
+show_continents() {
+
+cat <<EOF
+
+Please enter the number of the geographic area in which you live:
+
+
+	1) Africa			7) Australia
+
+	2) America			8) Europe
+
+	3) US time zones		9) Indian Ocean
+
+	4) Canada time zones		10) Pacific Ocean
+
+	5) Asia				11) Use System V style time zones
+
+	6) Atlantic Ocean		12) None of the above
+
+
+Then you will be shown a list of cities which represent the time zone
+in which they are located. You should choose a city in your time zone.
+
+EOF
+
+}
+
+zone_info()
+{
+    extra_info=
+    for i in 1 2 3 4 5 6 7 8
+    do
+	TZdate=$(LANG=C TZ="$timezone" date)
+	UTdate=$(LANG=C TZ=UTC0 date)
+	TZsec=$(expr "$TZdate" : '.*:\([0-5][0-9]\)')
+	UTsec=$(expr "$UTdate" : '.*:\([0-5][0-9]\)')
+	case $TZsec in
+	    $UTsec)
+		    extra_info="
+Local time is now:      $TZdate.
+Universal Time is now:  $UTdate."
+		    break
+	    esac
+	done
+}
+
+TIMEZONES=$(tempfile -p time) || TIMEZONES=/etc/timezone.$$
+
+if [ -f /etc/timezone ]; then
+	echo "Your current time zone is set to `cat /etc/timezone`"
+	echo -n "Do you want to change that? [n]: "
+	read ans
+	if [ "x$ans" = "x" -o "$ans" = "n" -o "$ans" = "no" ]; then
+		echo "Your time zone will not be changed"
+		exit 0
+	fi
+elif [ -L /etc/localtime ]; then
+	old_timezone=$(readlink /etc/localtime | sed 's%^/usr/share/zoneinfo/%%')
+	echo "Your current time zone is set to $oldtimezone"
+	echo -n "Do you want to change that? [n]: "
+	read ans
+	if [ "x$ans" = "x" -o "$ans" = "n" -o "$ans" = "no" ]; then
+		echo "Your time zone will not be changed"
+		exit 0
+	fi
+fi
+
+
+( cd /usr/share/zoneinfo ; find . -type f | sed -e 's/^.\///' | sort > $TIMEZONES )
+valid=no
+while [ $valid = no ]; do
+	show_continents
+	echo -n "Number: " ; read area
+	case $area in
+		1) continent=Africa ; valid=yes ;;
+		2) continent=America ; valid=yes ;;
+		3) continent=US ; valid=yes ;;
+		4) continent=Canada ; valid=yes ;;
+		5) continent=Asia ; valid=yes ;;
+		6) continent=Atlantic ; valid=yes ;;
+		7) continent=Australia ; valid=yes ;;
+		8) continent=Europe ; valid=yes ;;
+		9) continent=Indian ; valid=yes ;;
+		10) continent=Pacific ; valid=yes ;;
+		11) continent=SystemV ; valid=yes ;;
+		12) continent=Etc ; valid=yes ;;
+	esac
+done
+
+if [ -x /usr/bin/fmt ]; then fmt_bin=/usr/bin/fmt
+else fmt_bin=/bin/more ; fi
+
+valid=no
+zone=""
+
+while [ $valid = no ]; do
+	if [ -n "$zone" ]; then
+		number=`grep -i -c "^$continent/$zone" $TIMEZONES`
+		if [ $number -eq 1 ] || grep -i -q "^$continent/$zone"'$' $TIMEZONES; then
+			timezone=`grep -i "^$continent/$zone"'$' $TIMEZONES`
+			zone_info
+			echo "Your default time zone is set to '$timezone'.$extra_info"
+			valid=yes
+			break
+		fi
+	fi
+	echo
+	grep -i "^$continent/$zone" $TIMEZONES | cut -d/ -f2- | $fmt_bin
+	echo
+	echo "Please enter the name of one of these cities or zones"
+	echo "You just need to type enough letters to resolve ambiguities"
+	echo "Press Enter to view all of them again"
+	echo -n "Name: [$zone] " ; read zone
+done
+
+echo $timezone > /etc/timezone 
+#zic -l $timezone 
+rm -f /etc/localtime && ln -sf /usr/share/zoneinfo/$timezone /etc/localtime
+trap 'rm -f $TIMEZONES' 0 1 2 3 13 15

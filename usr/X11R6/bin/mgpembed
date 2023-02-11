@@ -1,0 +1,132 @@
+#! /usr/bin/perl
+#
+# generate "embedded" mgp file:
+#     o image/bimage filenames are replaced and corresponding uuencoded
+#	(gzipped if applicable) files are concatenated in %embed/%endembed
+#     o resolve %include directives
+#     - each image should be searched in the paths specified in ~/.xloadimagerc
+#	and app-defaults/Xloadimage
+#     - do we need work for .mgprc ?
+#     - scramble file names when desired
+
+$cat = "/bin/cat";
+$gzip = "/bin/gzip";
+$uuencode = "/usr/bin/uuencode";
+if (! -x $gzip || ! -x $uuencode) {
+	die "external program not found. manual configuration required.\n"
+}
+
+require 'getopts.pl';
+
+# specify suffixes we should gzip files before uuencoding
+@gzipsuffix = (".ps", ".xbm");
+
+do Getopts('o:');
+
+if ($#ARGV != 0) {
+	do usage();
+	# NOTREACHED
+}
+
+$infname = $ARGV[0];
+
+undef %files;
+
+if (defined($opt_o)) {
+	$outfname = $opt_o;
+	die "$outfname already exists\n" if -f $outfname;
+	die "$outfname is specified for both input/output\n"
+		if ($outfname eq $infname);
+	open(OUT, "> $outfname") || die "Can not open $outfname: $!";
+} else {
+	open(OUT, ">& STDOUT");
+}
+
+# read the file, process %include directives
+
+do readfile($infname, 'INPUT000');
+
+# append embedded files using %embed/%endembed directives
+
+foreach $efile (keys %files) {
+	# check if gzipped first
+	$docompress = 0;
+	foreach $suffix (@gzipsuffix) {
+		if ($efile =~ /$suffix$/) {
+			$docompress = 1;
+			last;
+		}
+	}
+	if ($docompress) {
+		$target = "$efile.gz";
+		$compress = "$gzip -c $files{$efile}";
+	} else {
+		$target = "$efile";
+		$compress = "$cat $files{$efile}";
+	}
+	print OUT "\n\%embed \"$target\"\n";
+	open(PIPE, "$compress | $uuencode $target |") ||
+		die "Can not execute uuencode on $target";
+	while (<PIPE>) {
+		next if (/^begin/ || /^end/);
+		print OUT;
+	}
+	print OUT "%endembed\n";
+}
+close(OUT);
+
+sub readfile {
+	local($filename, $input) = @_;
+	local($fname, $fname0);
+	$input++;
+	open($input, $filename) || die "Can not open $filename: $!\n";
+	while (<$input>) {
+		if (/^%%/) {
+			print OUT;
+			next;
+		}
+		if (/^%(.*)image\s+([^,\s]+)/i) {
+			$a = $1; $fname0 = $fname = $2; $b = $';
+			if ($fname =~ /^\"([^"]*)\"/) {
+				$fname = $1;
+			} elsif ($fname =~ /^(\S+)/) {
+				$fname = $1;
+			}
+			$base = $fname;
+			$base =~ s/^.+\///;
+			#
+			# check $base uniqueness here
+			#
+			$orgbase = $base;
+			$index = 0;
+			while (defined($files{$base})) {
+				$base = $orgbase . "-" . "$index";
+				$index++;
+			}
+			$files{$base} = $fname;
+			$embfn = "EMBEDDIR/" . $base;
+			$fname0 =~ s/$fname/$embfn/;
+			print OUT '%';
+			print OUT "$a";
+			print OUT "image $fname0";
+			print OUT "$b";
+		} elsif (/^%(.*)include\s+(\S+)(.*)$/i) {
+			$incfname = $2;
+			if ($incfname =~ /^\"(.+)\"$/) {
+				$incfname = $1;
+			}
+			print OUT "\%\%\%\%\%\%\%\%\%\%INCLUDE $incfname\n";
+			do readfile($incfname, $input);
+			print OUT "\%\%\%\%\%\%\%\%\%\%INCLUDE-END $incfname\n";
+		} else {
+			print OUT;
+			next;
+		}
+	}
+	close($input);
+}
+
+sub usage {
+	print STDERR "usage: mgpembed [-o outfile ] mgpfile\n";
+	exit -1;
+}

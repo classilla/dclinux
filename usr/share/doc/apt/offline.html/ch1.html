@@ -1,0 +1,76 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>Using APT Offline - Introduction</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch2.html">次のページ</a> ]
+
+<hr>
+
+<h1>
+Using APT Offline<br>
+章 1 Introduction
+</h1>
+
+<hr>
+
+<h2>
+<a name="s1.1">1.1 Overview</a>
+</h2>
+
+<p>
+Normally APT requires direct access to a Debian archive, either from a local
+media or through a network.  Another common complaint is that a Debian machine
+is on a slow link, such as a modem and another machine has a very fast
+connection but they are physically distant.
+
+<p>
+The solution to this is to use large removable media such as a Zip disc or a
+SuperDisk disc.  These discs are not large enough to store the entire Debian
+archive but can easily fit a subset large enough for most users.  The idea is
+to use APT to generate a list of packages that are required and then fetch them
+onto the disc using another machine with good connectivity.  It is even
+possible to use another Debian machine with APT or to use a completely
+different OS and a download tool like wget.
+
+<p>
+This is achieved by creatively manipulating the APT configuration file.  The
+essential premis to tell APT to look on a disc for it's archive files.  Note
+that the disc should be formated with a filesystem that can handle long file
+names such as ext2, fat32 or vfat.
+</p>
+
+<hr>
+
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch2.html">次のページ</a> ]
+
+<hr>
+
+Using APT Offline<br>
+
+<address>
+$Id: offline.sgml,v 1.3 2001/02/20 07:03:17 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code>
+</address>
+
+</body>
+
+</html>
+

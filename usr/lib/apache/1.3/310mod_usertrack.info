@@ -1,0 +1,5 @@
+LoadModule: usertrack_module /usr/lib/apache/1.3/mod_usertrack.so
+Directives:
+ CookieExpires
+ CookieTracking
+Description: Support for clickstream logs

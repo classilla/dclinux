@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/debconf-utils -a -d /usr/share/doc/debconf-utils ]; then
+		ln -sf ../share/doc/debconf-utils /usr/doc/debconf-utils
+	fi
+fi
+# End automatically added section

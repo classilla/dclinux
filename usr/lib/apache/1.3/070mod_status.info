@@ -1,0 +1,7 @@
+LoadModule: status_module /usr/lib/apache/modules/mod_status.so
+LoadModule: status_module /usr/lib/apache/1.3/mod_status.so
+Handles:
+ server-status
+Directives:
+ ExtendedStatus
+Description: Support for server status info

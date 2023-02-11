@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" -a -d /usr/doc ]; then
+  if [ ! -e /usr/doc/doc-debian -a -d /usr/share/doc/doc-debian ]; then
+    ln -sf ../share/doc/doc-debian /usr/doc/doc-debian
+  fi
+  if [ ! -e /usr/doc/debian -a -d /usr/share/doc/debian ]; then
+    ln -sf ../share/doc/debian /usr/doc/debian
+  fi
+fi
+
+if command -v install-docs >/dev/null 2>&1; then
+  install-docs -i /usr/share/doc-base/debian-faq
+  install-docs -i /usr/share/doc-base/debian-constitution-text
+  install-docs -i /usr/share/doc-base/debian-reporting-bugs
+  install-docs -i /usr/share/doc-base/debian-manifesto
+  install-docs -i /usr/share/doc-base/debian-mailing-lists
+  install-docs -i /usr/share/doc-base/debian-social-contract
+fi

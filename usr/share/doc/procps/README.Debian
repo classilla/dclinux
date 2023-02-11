@@ -1,0 +1,15 @@
+README for Debian package of procps
+===================================
+
+XConsole gone
+-------------
+ XConsole and other X-based programs have been finally removed.  Look in
+ the x packages for their equivalents.
+
+pgrep
+-----
+pgrep is a new program, using the Unix standard name for something that
+greps for processes.  If you are looking for Perl compatible regular
+expression grep, it is called pcregrep.
+
+ Craig Small <csmall@debian.org>

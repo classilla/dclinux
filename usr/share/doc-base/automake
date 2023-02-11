@@ -1,0 +1,12 @@
+Document: automake
+Title: automake
+Abstract: Automake is a tool for automatically generating `Makefile.in's from
+ files called `Makefile.am'.  The `Makefile.am' is basically a series of
+ `make' macro definitions (with rules being thrown in occasionally).
+ The generated `Makefile.in's are compliant with the GNU Makefile
+ standards.
+Section: Apps/programming
+
+Format: info
+Index: /usr/share/info/automake.info.gz
+Files: /usr/share/info/automake.info*

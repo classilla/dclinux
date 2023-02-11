@@ -1,0 +1,17 @@
+/.
+/etc
+/lib
+/lib/libhistory.so.4.2
+/lib/libreadline.so.4.2
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libreadline4
+/usr/share/doc/libreadline4/USAGE
+/usr/share/doc/libreadline4/copyright
+/usr/share/doc/libreadline4/changelog.gz
+/usr/share/doc/libreadline4/changelog.Debian.gz
+/usr/share/info
+/usr/share/info/rluserman.info.gz
+/lib/libhistory.so.4
+/lib/libreadline.so.4

@@ -1,0 +1,132 @@
+#! /bin/sh
+
+set -e
+
+# Rename old local keymaps dir if any
+if [ -d /usr/local/share/keytables ]
+then
+    if [ -d "`readlink -f /usr/local/share/keymaps`" ]
+    then
+	files=`find /usr/local/share/keytables -mindepth 1 -maxdepth 1`
+        [ "$files" ] && mv $files /usr/local/share/keymaps/
+        rmdir /usr/local/share/keytables
+    elif [ -e /usr/local/share/keymaps ]
+    then
+        echo >&2 "/usr/local/share/keymaps is buggy - please check it"
+        ls -ld /usr/local/share/keymaps >&2
+        echo >&2 "Press RETURN to continue"
+        read foo
+    else
+        mv /usr/local/share/keytables /usr/local/share/keymaps
+    fi
+elif [ -e /usr/local/share/keytables ]
+then
+    echo >&2 <<EOF
+/usr/local/share/keytables is not a dir.  I won\'t try to mess
+with it and you will surely want to do something with it, as the
+new location for local keymaps is now /usr/local/share/keymaps/.
+
+Press RETURN to continue
+EOF
+    read foo
+fi
+
+
+# Import local files from obsolete /usr/lib/kbd directory
+if [ -d /usr/lib/kbd ]
+then
+    echo >&2 Importing local files from obsolete /usr/lib/kbd directory into /usr/local/:
+    set +e	# there may be no files in those directories !
+    for d in keytables consolefonts consoletrans videomodes; do
+	# if the dir exists and is not a link (into /usr/share)
+	if [ -d /usr/lib/kbd/${d} -a ! -L /usr/lib/kbd/${d} ]
+	then
+	    # maybe create local dir
+	    test -d /usr/local/share/${d} || mkdir -p /usr/local/share/${d}
+	    files=`find /usr/lib/kbd/${d} -mindepth 1 -maxdepth 1`
+	    [ "$files" ] && mv $files /usr/local/share/${d}/
+	    rmdir /usr/lib/kbd/${d}
+	fi
+	# remove an eventual symlink
+	rm -f /usr/lib/kbd/${d}
+    done
+    set -e
+    echo >&2 " done importing."
+    # try to remove the old dir, but be nice when not empty
+    rmdir /usr/lib/kbd 2>/dev/null || echo >&2 <<EOF 
+WARNING: /usr/lib/kbd/ not removed - other files there ?
+Check this and remove it by hand.
+EOF
+fi
+
+
+# Is there a chance that a user-provided keymap has to imported ?
+# Let's cross our fingers... it should never break, but...
+if [ -x /usr/share/console/getkmapchoice.pl ]
+then
+    # This has to be loaded or templates don't get loaded
+    . /usr/share/debconf/confmodule
+    
+    choice="$(/usr/share/console/getkmapchoice.pl 2>&1)"
+else
+    # if getkmapchoice is not there, assume the user never had the
+    # oportunity to select no keymap to be installed using the
+    # console-common framework
+    choice="useless"
+fi
+
+
+# Maybe import boottime keymap
+
+if [ "$choice" != KERNEL -a "$choice" != NONE -a ! -r /etc/console/boottime.kmap.gz ]
+then
+    # if we have to move a file, we need this dir
+    mkdir -p /etc/console
+
+    if [ "$(dpkg --status console-tools | grep '^Status: .* installed$')" ]
+    then
+	# take it from console-tools
+
+	if [ -r /etc/console-tools/default.kmap.gz ]
+	then
+	    mv /etc/console-tools/default.kmap.gz /etc/console/boottime.kmap.gz
+	elif [ -r /etc/console-tools/default.kmap ]
+	then
+	    gzip -9f /etc/console-tools/default.kmap
+	    mv /etc/console-tools/default.kmap.gz /etc/console/boottime.kmap.gz
+	fi
+
+	if [ -r /etc/console/boottime.kmap.gz ]
+	then
+	    echo >&2 "Imported boot-time keymap from old console-tools settings"
+	fi
+
+    elif [ "$(dpkg --status kbd | grep '^Status: .* installed$')" ]
+    then
+	# take it from kbd
+
+	if [ -r /etc/kbd/default.kmap.gz ]
+	then
+	    mv /etc/kbd/default.kmap.gz /etc/console/boottime.kmap.gz
+	elif [ -r /etc/kbd/default.kmap ]
+	then
+	    gzip -9f /etc/kbd/default.kmap
+	    mv /etc/kbd/default.kmap.gz /etc/console/boottime.kmap.gz
+	elif [ -r /etc/kbd/default.map.gz ]
+	then
+	    mv /etc/kbd/default.map.gz /etc/console/boottime.kmap.gz
+	elif [ -r /etc/kbd/default.map ]
+	then
+	    gzip -9f /etc/kbd/default.map
+	    mv /etc/kbd/default.map.gz /etc/console/boottime.kmap.gz
+	fi
+
+	if [ -r /etc/console/boottime.kmap.gz ]
+	then
+	    echo >&2 "Imported boot-time keymap from old kbd settings"
+	fi
+
+    fi
+fi
+
+

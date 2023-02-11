@@ -1,0 +1,143 @@
+          Introduction to the bug control and manipulation mailserver
+
+   In addition to the mailserver on request@bugs.debian.org which allows
+   the retrieval of bug data and documentation by email, there is another
+   server on control@bugs.debian.org which also allows bug reports to be
+   manipulated in various ways.
+
+   The control server works just like the request server, except that it
+   has some additional commands; in fact, it's the same program. The two
+   addresses are only separated to avoid users making mistakes and
+   causing problems while merely trying to request information.
+
+   Please see the introduction to the request server available on the
+   World Wide Web, in the file bug-log-mailserver.txt, or by sending help
+   to either mailserver, for details of the basics of operating the
+   mailservers and the common commands available when mailing either
+   address.
+
+   The reference card for the mailservers is available via the WWW, in
+   bug-mailserver-refcard.txt or by email using the refcard command).
+
+               Commands available only at the control mailserver
+
+   close bugnumber
+          Close bug report #bugnumber.
+
+          A notification is sent to the user who reported the bug, but
+          (in contrast to mailing bugnumber-done@bugs) the text of the
+          mail which caused the bug to be closed is not included in that
+          notification. The maintainer who closes a report should ensure,
+          probably by sending a separate message, that the user who
+          reported the bug knows why it is being closed.
+
+   reassign bugnumber package
+          Records that bug #bugnumber is a bug in package. This can be
+          used to set the package if the user forgot the pseudo-header,
+          or to change an earlier assignment. No notifications are sent
+          to anyone (other than the usual information in the processing
+          transcript).
+
+   reopen bugnumber [ originator-address | = | ! ]
+          Reopens #bugnumber if it is closed.
+
+          By default, or if you specify =, the original submitter is
+          still as the originator of the report, so that they will get
+          the ack when it is closed again.
+
+          If you supply an originator-address the originator will be set
+          to the address you supply. If you wish to become the new
+          originator of the reopened report you can use the ! shorthand
+          or specify your own email address.
+
+          It is usually a good idea to tell the person who is about to be
+          recorded as the originator that you're reopening the report, so
+          that they will know to expect the ack which they'll get when it
+          is closed again.
+
+          If the bug is not closed then reopen won't do anything, not
+          even change the originator. There is no way to change the
+          originator of an open bug report (this is deliberate, so that
+          you can't have a bug be closed and then deleted 28 days later
+          without someone being told about it).
+
+   forwarded bugnumber address
+          Notes that bugnumber has been forwarded to the upstream
+          maintainer at address. This does not actually forward the
+          report. This can be used to change an existing incorrect
+          forwarded-to address, or to record a new one for a bug that
+          wasn't previously noted as having been forwarded.
+
+   notforwarded bugnumber
+          Forgets any idea that bugnumber has been forwarded to any
+          upstream maintainer. If the bug was not recorded as having been
+          forwarded then this will do nothing.
+
+   retitle bugnumber new-title
+          Changes the title of a bug report to that specified (the
+          default is the Subject mail header from the original report.
+
+          Unlike most of the other bug-manipulation commands when used on
+          one of a set of merged reports this will change the title of
+          only the individual bug requested, and not all those with which
+          it is merged.
+
+   severity bugnumber severity
+          Set the severity level for bug report #bugnumber to severity.
+          No notification is sent to the user who reported the bug.
+
+          Severities are critical, grave, normal, important, and
+          wishlist. For their meanings please consult the general
+          developers' documentation for the bug system.
+
+   merge bugnumber bugnumber ...
+          Merges two or more bug reports. When reports are merged
+          opening, closing, marking or unmarking as forwarded and
+          reassigning any of the bugs to a new package will have an
+          identical effect on all of the merged reports.
+
+          Before bugs can be merged they must be in exactly the same
+          state: either all open or all closed, with the same
+          forwarded-to upstream author address or all not marked as
+          forwarded, and all assigned to the same package or package(s)
+          (an exact string comparison is done on the package to which the
+          bug is assigned). If they don't start out in the same state you
+          should use reassign, reopen and so forth to make sure that they
+          are before using merge.
+
+          If any of the bugs listed in a merge command is already merged
+          with another bug then all the reports merged with any of the
+          ones listed will all be merged together. Merger is like
+          equality: it is reflexive, transitive and symmetric.
+
+          Merging reports causes a note to appear on each report's logs;
+          on the WWW pages this is includes links to the other bugs.
+
+          Merged reports are all expired simultaneously, and only when
+          all of the reports each separately meet the criteria for
+          expiry.
+
+   unmerge bugnumber
+          Disconnects a bug report from any other reports with which it
+          may have been merged. If the report listed is merged with
+          several others then they are all left merged with each other;
+          only their associations with the bug explicitly named are
+          removed.
+
+          If many bug reports are merged and you wish to split them into
+          two separate groups of merged reports you must unmerge each
+          report in one of the new groups separately and then merge them
+          into the required new group.
+
+          You can only unmerge one report with each unmerge command; if
+          you want to disconnect more than one bug simply include several
+          unmerge commands in your message.
+     _________________________________________________________________
+
+    Darren Benham / owner@bugs.debian.org. 12 Sep 1999.
+    Debian bug tracking system
+    copyright 1999 Darren O. Benham, 1994-7 Ian Jackson, 1997 nCipher
+    Corporation Ltd, 1995 Steven Brenner.
+    Available under the GPL.
+     _________________________________________________________________
+

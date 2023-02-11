@@ -1,0 +1,65 @@
+#!/bin/sh -e
+# $Id: telnetd.postinst,v 1.12 2001/03/15 11:46:51 herbert Exp $
+
+update_inetd_entry() {
+	if [ $2 ]; then
+		if [ -n "$1" ]; then
+			update-inetd --remove "$rootent"
+		fi
+		update-inetd --group STANDARD --add "$telnetdent"
+	else
+		update-inetd --group STANDARD --add "$rootent"
+	fi
+}
+
+if ! id -u telnetd >/dev/null 2>&1; then
+	if sg telnetd -c true 2>/dev/null; then
+		adduser --quiet --system --ingroup telnetd \
+			--home /usr/lib/telnetd telnetd
+	else
+		adduser --quiet --system --group --home /usr/lib/telnetd \
+			telnetd
+	fi
+	adduser --quiet --system --group --home /usr/lib/telnetd telnetd
+fi
+adduser --quiet telnetd utmp
+
+if [ -z "$(dpkg-statoverride --list /usr/lib/telnetlogin)" ]; then
+	chown root.telnetd /usr/lib/telnetlogin
+	chmod 4754 /usr/lib/telnetlogin
+fi
+
+rootent="telnet		stream	tcp	nowait	root	/usr/sbin/tcpd	/usr/sbin/in.telnetd"
+telnetdent="telnet		stream	tcp	nowait	telnetd.telnetd	/usr/sbin/tcpd	/usr/sbin/in.telnetd"
+
+if grep -q "^devpts " /proc/mounts; then
+	devpts=yes
+else
+	devpts=
+fi
+
+case "$1" in
+abort-upgrade | abort-deconfigure | abort-remove)
+	update-inetd --enable telnet
+	;;
+configure)
+	if [ -z "$2" ] || dpkg --compare-versions "$2" lt 0.14-1; then
+		update_inetd_entry "$2" $devpts
+	else
+		update-inetd --enable telnet
+	fi
+	;;
+*)
+	printf "$0: incorrect arguments: $*\n" >&2
+	exit 1
+	;;
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/telnetd -a -d /usr/share/doc/telnetd ]; then
+		ln -sf ../share/doc/telnetd /usr/doc/telnetd
+	fi
+fi
+# End automatically added section
+

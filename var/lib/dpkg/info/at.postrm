@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+if [ "$1" = purge ]
+then
+	update-rc.d atd remove >/dev/null;
+	rm -rf /var/spool/atjobs /var/spool/atspool
+fi
+if [ -f /etc/suid.conf -a -x /usr/sbin/suidunregister ]; then
+        suidunregister -s at /usr/bin/at
+fi
+

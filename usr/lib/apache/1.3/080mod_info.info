@@ -1,0 +1,5 @@
+LoadModule: info_module /usr/lib/apache/modules/mod_info.so
+LoadModule: info_module /usr/lib/apache/1.3/mod_info.so
+Handles:
+ server-info
+Description: Support for server configuration info

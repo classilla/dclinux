@@ -1,0 +1,10 @@
+LoadModule: mime_module /usr/lib/apache/1.3/mod_mime.so
+Directives:
+ AddEncoding
+ AddHandler
+ AddLanguage
+ AddType
+ ForceType
+ SetHandler
+ TypesConfig
+Description: Support for determining document types

@@ -1,0 +1,97 @@
+procmail QuickStart
+===================
+
+* procmail is not an `interactive' program. It has to run automatically
+when the mail arrives. Therefore the first thing to do is to tell our MTA
+that we want procmail to "eat" all our mail messages. The way of doing
+this depends on the MTA we are using. For example, if we are using
+sendmail, it will suffice to have a .forward file like this in our home
+directory:
+
+"|exec /usr/bin/procmail"
+
+(don't forget the quotes, they are needed in this case).
+
+If you are using exim, use this instead as your .forward file:
+
+|/usr/bin/procmail
+
+The step of creating a .forward file is not needed if the MTA already
+performs the delivery using procmail. For example, Debian sendmail will
+automatically use procmail for mail delivering if the sendmail.cf is
+generated from a sendmail.mc file containing this line:
+
+FEATURE(local_procmail)dnl
+
+
+* If we have a stand-alone system with no permanent net connection (like
+PPP), and we are using fetchmail to get mail from a server, we don't
+really need a MTA.  Just adding  --mda "formail -s procmail"  to the
+fetchmail command line (or using the `mda' keyword) will tell it to
+deliver through procmail.
+
+
+* Next, we have to write a ~/.procmailrc file in our home directory. This
+file is a set of filtering rules, based on regular expressions. The
+complete syntax is explained in procmailrc(5). Let's see a real example
+just to get started. Let's suppose you are subscribed to the following two
+mailing lists:
+
+linux-kernel@vger.kernel.org
+debian-user@lists.debian.org
+
+The first list is managed by Majordomo. Messages coming from a Majordomo
+list often include a header field "Sender: " which allow easy filtering.
+
+The second list is managed my SmartList. Messages coming from a SmartList
+list may include several headers that can be used to filter it. One of
+them (in fact, the only that it is not X-whatever) is "Resent-Sender: ".
+
+So the following .procmailrc will first filter the mailing lists, and
+any remaining message will go to the default folder:
+
+*--------------------------------->8------------------------------------
+PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin
+MAILDIR=$HOME/mail             # you'd better make sure it exists
+DEFAULT=$MAILDIR/mbox          # completely optional
+LOGFILE=$MAILDIR/procmail.log  # recommended
+
+:0:
+* ^Sender:.*linux-kernel-owner@vger.kernel.org
+linux-kernel
+
+:0:
+* ^Resent-Sender.*debian-user-request@lists.debian.org
+debian-user
+*--------------------------------->8------------------------------------
+
+From this example additional rules for mailing lists may be created
+easily.
+
+
+* Once you have received lots of messages you will want to know where
+did they go. That's what the LOGFILE is for. There is a tool named
+mailstat which parses this file and shows a summary:
+
+mailstat procmail.log
+
+The mailstat command that this package provides does really come from the
+examples directory and it is installed by default. You may have your own
+modified copy in $HOME/bin, if you like.
+
+
+If you have to refilter an old mail folder according to your current
+~/.procmailrc file, you may do the following:
+
+cat mbox | formail -s procmail
+
+But of course if your mbox file is the target of a procmail recipe you should
+do this instead:
+
+mv mbox whatever
+cat whatever | formail -s procmail
+
+See formail(1) for details.
+
+
+Santiago Vila <sanvila@debian.org>

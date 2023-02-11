@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+dpkg --assert-support-predepends ||
+  ( echo -e "\nPlease upgrade to a newer version of dpkg\n"; exit 1 )
+
+#cat <<EOF
+#
+#  The package manager might ask you if you want to install new versions
+#  of the /etc/init.d/whatever files. This is generally a good idea
+#  (so reply with \`\`y'') unless you really changed any of these files.
+#
+#EOF
+

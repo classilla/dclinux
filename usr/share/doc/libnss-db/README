@@ -1,0 +1,31 @@
+This directory contains the 2.2 release of the Berkeley DB NSS module.
+
+See the file NEWS for the user-visible changes from previous releases.
+
+For general building and installation instructions, see the file INSTALL.
+
+The Berkeley DB NSS module provides an alternative means for storing
+configuration information traditionally kept in several plain-text
+files in `/etc' (e.g. `/etc/passwd').  The module uses the Berkeley DB
+Library to store this information in several database files in
+`/var/db' (e.g. `/var/db/passwd.db').  Using these databases can lead
+to a considerable speedup if the files in `/etc' are large (e.g. on a
+system with a lot of accounts).  Currently the module support the
+`aliases', `ethers', `group', `netgroup', `protocols', `passwd',
+`rpc', `services' and `shadow' databases.
+
+The Berkeley DB NSS module used to be an integral part of the GNU C
+Library.  However, starting with version 2.2, the Berkeley DB Library
+is no longer part of the GNU C Library, and the Berkeley DB NSS module
+was moved into its own package.  Unbundling the module has the
+additional advantage that it is no longer tied to the specific version
+of Berkeley DB that comes with the GNU C Library.  This version of the
+module can be built with Berkeley DB version 2 and version 3.
+
+*Warning*: If you use this module with a version of Berkeley DB that's
+not installed on the root partition the module won't be available
+until the partition that contains the Berkeley DB Library has been
+mounted.  Therefore you should make sure that all essential
+information is available via another NSS module (i.e. by duplicating
+the information in the files in `/etc'), or install Berkeley DB on the
+root partition.

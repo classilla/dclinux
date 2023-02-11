@@ -1,0 +1,6 @@
+/etc/checksecurity.conf
+/etc/crontab
+/etc/init.d/cron
+/etc/cron.daily/standard
+/etc/cron.monthly/standard
+/etc/pam.d/cron

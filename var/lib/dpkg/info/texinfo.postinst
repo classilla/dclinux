@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" -o "$1" = "upgrade" ]; then
+  install-info --quiet /usr/share/info/texinfo
+fi
+
+if [ "$1" = "configure" -a -z "$2" ] && command -v mktexlsr >/dev/null 2>&1; then
+  mktexlsr /usr/share/texmf >/dev/null
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/texinfo -a -d /usr/share/doc/texinfo ]; then
+		ln -sf ../share/doc/texinfo /usr/doc/texinfo
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,11 @@
+bab509c1ecf2ad0a6838d71c53907920  bin/tcsh
+27b31b3b0a475f428a23d6929b8716b6  usr/share/doc/tcsh/examples/example.cshrc
+0d1365b400174cd3e34149af5a1e5c30  usr/share/doc/tcsh/examples/example.alias
+ab42cb03c00b97a36c94070faef50d4b  usr/share/doc/tcsh/examples/complete.tcsh.gz
+1255c50b86e7b3a6008bfe26031a86ec  usr/share/doc/tcsh/README
+4a16ad47b8ff7c7369bae600e2cdc688  usr/share/doc/tcsh/copyright
+593868f87d082fc56fe59b2bbd476aea  usr/share/doc/tcsh/changelog.gz
+d0489d231f542231328812af1d55e145  usr/share/doc/tcsh/changelog.Debian.gz
+ce4326d173518d2f96ec6bc752462dc9  usr/share/man/man1/tcsh.1.gz
+d1fbe536e1cb25d4a3c30ca02ee3d666  usr/share/man/man3/glob.3tcsh.gz
+36c8c9ac2d4258761875725e08d81a60  usr/lib/menu/tcsh

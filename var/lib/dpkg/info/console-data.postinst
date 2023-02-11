@@ -1,0 +1,19 @@
+#!/bin/sh -e
+# Automatically added by dh_consoledata
+if [ "$1" = "configure" ]
+then
+    . /usr/share/debconf/confmodule
+    echo >&2 "Looking for keymap to install:"
+    if /usr/share/console/getkmapchoice.pl
+    then
+	/usr/sbin/install-keymap `/usr/share/console/getkmapchoice.pl 2>&1`
+    fi
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/console-data -a -d /usr/share/doc/console-data ]; then
+		ln -sf ../share/doc/console-data /usr/doc/console-data
+	fi
+fi
+# End automatically added section

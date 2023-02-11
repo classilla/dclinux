@@ -1,0 +1,4 @@
+LoadModule: dir_module /usr/lib/apache/1.3/mod_dir.so
+Directives:
+ DirectoryIndex
+Description: Support for index.html indices

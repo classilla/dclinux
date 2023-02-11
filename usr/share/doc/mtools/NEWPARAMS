@@ -1,0 +1,25 @@
+Attention:
+
+Since version xxx, certain parameters have changed, in order to more
+closely match the parameters in MS-DOS:
+
+
+*) Filename clash options are now introduced by -D <option> instead of
+just -<option> in order to free up the option letters used by MS-DOS
+I.e. use `mcopy -D o toto a:' rather than `mcopy -o toto a:' to copy
+toto to a: and overwrite any a:toto file that already exists.
+
+*) Recursive operation is now introduced by -s instead of -/.
+Exception: mattrib still uses -/, because -s is already taken to mean
+"remove system flag".
+
+*) mdir "batch" listing has now option -b
+
+*) mformat
+
+   - now uses -L for the fat length, because -f is now taken for size
+   - now uses -n for number of sectors, rather than -s
+   - now uses -N to set a given serial number rather than -n
+   - now uses -v to set the volume label, rather than -l
+   - now uses -3 to say "don't use 2m mode" rather than -1
+   - now supports MS-DOS' option -1, -4, and -8

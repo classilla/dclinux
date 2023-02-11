@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -x /etc/init.d/nfs-common ] && /etc/init.d/nfs-common stop
+
+rm -f /usr/doc/nfs-common
+
+exit 0

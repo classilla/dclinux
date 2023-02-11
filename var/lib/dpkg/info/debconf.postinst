@@ -1,0 +1,49 @@
+#!/bin/sh -e
+
+# This directory unexpectedly lingered around for two people, still
+# containing .pm files that broke debconf upgrades. I don't know why.
+if [ -d /usr/lib/perl5/Debconf ]; then
+	rm -rf /usr/lib/perl5/Debconf
+fi
+
+# Transition from old database format before debconf starts up.
+if [ -z "$DEBIAN_HAS_FRONTEND" -a "$1" = configure ] && \
+   dpkg --compare-versions "$2" lt 0.9.00; then
+	if [ -e /var/lib/debconf/config.db -o -e /var/lib/debconf/templates.db ]; then
+		/usr/share/debconf/transition_db.pl
+	fi
+	# This package used to add itself to apt.conf. That could result in
+	# a zero-byte file, since it no longer does. Detect that and remove
+	# the file.
+	if [ ! -s /etc/apt/apt.conf ]; then
+		rm -f /etc/apt/apt.conf
+	fi
+fi
+
+# Remove old debconf database, and associated cruft in /var/lib/debconf.
+# In fact, the whole directory can go! Earlier versions of debconf in the
+# 0.9.x series kept it just in case, so make sure to delete it on upgrade
+# from any of those versions, or even older versions.
+if [ "$1" = configure ] && dpkg --compare-versions "$2" lt 0.9.50; then
+	rm -rf /var/lib/debconf
+fi
+
+. /usr/share/debconf/confmodule
+
+# Kill accidential db cruft.
+if [ "$1" = configure ] && dpkg --compare-versions "$2" lt 0.5.49; then
+	# It may not be present, if upgrading from long ago.
+	db_unregister foo/bar || true
+fi
+
+# This file is long obsolete, and was a conffile, so wasn't auto-removed.
+rm -f /etc/debconf.cfg
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/debconf -a -d /usr/share/doc/debconf ]; then
+		ln -sf ../share/doc/debconf /usr/doc/debconf
+	fi
+fi
+# End automatically added section
+

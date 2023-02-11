@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+if [ -d /usr/doc -a ! -e /usr/doc/bsdutils -a -d /usr/share/doc/bsdutils ]; then
+        ln -sf ../share/doc/bsdutils /usr/doc/bsdutils
+fi

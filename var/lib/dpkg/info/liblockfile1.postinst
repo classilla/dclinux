@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+	ldconfig
+        if [ -d /usr/doc -a ! -e /usr/doc/liblockfile1 -a -d /usr/share/doc/liblockfile1 ]; then
+                ln -sf ../share/doc/liblockfile1 /usr/doc/liblockfile1
+        fi
+fi
+

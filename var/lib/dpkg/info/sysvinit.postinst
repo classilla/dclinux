@@ -1,0 +1,262 @@
+#! /bin/sh
+#
+# debian.postinst
+#		Creates /dev/initctl if not already there.
+#		Also checks /etc/inittab for single user entry.
+#
+# Version:	debian.postinst  2.78-2  05-Jun-2000  miquels@cistron.nl
+#
+
+
+case "$1" in
+	configure)
+		oldver=$2
+		;;
+	abort-upgrade|abort-remove|abort-deconfigure)
+		exit 0
+		;;
+esac
+umask 022
+
+# Compatibility symlinks into /usr/doc
+if [ -d /usr/doc -a ! -e /usr/doc/sysvinit \
+	-a -d /usr/share/doc/sysvinit ]
+then
+	ln -sf ../share/doc/sysvinit /usr/doc/sysvinit
+fi
+
+#
+#	Check /dev/initctl
+#
+if [ ! -p /dev/initctl ]
+then
+	echo "Creating /dev/initctl"
+	rm -f /dev/initctl
+	mknod -m 600 /dev/initctl p
+fi
+
+#
+#	Restore network and inittab files.
+#	Should be taken out for woody, I guess as this is for
+#	backwards compat with Debian 1.1 (see preinst as well)
+#
+if [ ! -f /etc/init.d/network ]
+then
+	if [ -f /etc/init.d/network.saved ]
+	then
+		cp -a /etc/init.d/network.saved /etc/init.d/network
+	fi
+fi
+rm -f /etc/init.d/network.saved
+if [ ! -f /etc/inittab ]
+then
+	if [ -f /etc/inittab.saved ]
+	then
+		cp -a /etc/inittab.saved /etc/inittab
+	else
+		cp -a /usr/doc/sysvinit/examples/inittab /etc/inittab
+	fi
+fi
+rm -f /etc/inittab.saved
+if [ ! -f /etc/default/rcS ]
+then
+	#
+	#	Install sample rcS file.
+	#
+	cp /usr/doc/sysvinit/examples/default.rcS /etc/default/rcS
+else
+	#
+	#	Change GMT=-u to UTC=yes etc in existing rcS file.
+	#
+	if grep -q ^GMT /etc/default/rcS
+	then
+		cp /etc/default/rcS /etc/default/rcS.TMP
+		sed	-e "s/^GMT=.*\(-u\|--utc\).*/UTC=yes/" \
+			-e "s/^GMT=.*/UTC=no/" \
+			-e 's/# Set GMT="-u".*/# Set UTC to yes or no/' \
+			< /etc/default/rcS.TMP > /etc/default/rcS
+		if [ -s /etc/default/rcS ]
+		then
+			rm -f /etc/default/rcS.TMP
+		fi
+	fi
+fi
+
+#
+#	See if there were saved variables.
+#
+if [ -f /etc/default/rcS.sed ]
+then
+	cp /etc/default/rcS /etc/default/rcS.TMP
+	sed -f /etc/default/rcS.sed < /etc/default/rcS.TMP > /etc/default/rcS
+	if [ -s /etc/default/rcS ]
+	then
+		rm -f /etc/default/rcS.TMP
+	fi
+	rm -f /etc/default/rcS.sed
+fi
+
+#
+#	Check single user entry in /etc/inittab
+#
+if ! grep -q '^[^:]\{1,4\}:S:' /etc/inittab
+then
+	cat <<EOF
+
+WARNING: you don't have a single user entry in /etc/inittab. Consider
+         adding an entry like this after installation:
+
+         ~~:S:wait:/sbin/sulogin
+
+EOF
+	echo -n "Hit Enter key to continue...."
+	read junk
+fi
+
+#
+#	Fix up /etc/inittab for the new rcS
+#
+if grep -q '/etc/init.d/boot$' /etc/inittab
+then
+	sed -e 's!^.*\(sysinit\|boot\|bootwait\):/etc/init.d/boot.*$!si::sysinit:/etc/init.d/rcS!' < /etc/inittab > /etc/inittab.tmp
+	if [ ! -s /etc/inittab.tmp ]
+	then
+		echo "$0: installation severely fubared !! HELP" >&2
+		exit 1
+	fi
+	mv /etc/inittab.tmp /etc/inittab
+fi
+
+#
+#	Fix the call to shutdown in /etc/inittab (add -a).
+#
+if grep -q 'ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now$' /etc/inittab
+then
+	sed -e 's!ca:12345:ctrlaltdel:/sbin/shutdown -t1 -r now$!ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now!' < /etc/inittab > /etc/inittab.tmp
+	if [ ! -s /etc/inittab.tmp ]
+	then
+		echo "$0: installation severely fubared !! HELP" >&2
+		exit 1
+	fi
+	mv /etc/inittab.tmp /etc/inittab
+fi
+
+#
+# Bugs 2.72 -> 2.73
+# 1. mv settime.sh hwclock.sh
+# 2. mv mdinit.sh mdutils.sh
+#
+rm -f /etc/init.d/settime.sh /etc/rcS.d/S??settime.sh
+rm -f /etc/init.d/mdinit.sh /etc/rcS.d/S??mdinit.sh
+#
+#	Remove the old S20halt and S20 reboot links.
+#
+rm -f /etc/rc0.d/S20halt   /etc/rc0.d/S05halt
+rm -f /etc/rc6.d/S20reboot /etc/rc6.d/S05reboot
+
+#
+#	Function like update-rc.d but simpler & faster.
+#	Usage: updatercd basename start|stop NN runlevel .
+#
+#	Uses the real update-rc.d if file-rc is detected.
+#
+updatercd() {
+
+	if [ ! -f /etc/init.d/$1 ]
+	then
+		return
+	fi
+
+	if [ -d /usr/lib/file-rc/. ]
+	then
+		update-rc.d "$@" > /dev/null
+		return $?
+	fi
+
+	base=$1
+	shift
+	while [ "$1" != "" ]
+	do
+		if [ "$1" = stop ]
+		then
+			tlet=K
+		else
+			tlet=S
+		fi
+		lev=$2
+		shift 2
+		while [ "$1" != "." ]
+		do
+			cd /etc/rc$1.d
+			tmp="`echo $tlet??$base`"
+			case "$tmp" in
+				"$tlet??$base")
+					# Not present yet.
+					ln -s ../init.d/$base $tlet$lev$base
+					;;
+				*)
+					# Already present.
+					;;
+			esac
+			shift
+		done
+		shift
+	done
+}
+
+#
+#	Okay, we could do this with update-rc.d, but that would probably
+#	be pretty slow. This way we win some speed.
+#	DO NOT FOLLOW THIS EXAMPLE IN OTHER PACKAGES.
+#
+#updatercd bootlogd	start 5 S .
+updatercd checkroot.sh	start 10 S .
+updatercd modutils	start 20 S .
+updatercd checkfs.sh	start 30 S .
+updatercd mountall.sh	start 35 S .
+updatercd hostname.sh	start 40 S .
+updatercd network	start 40 S .
+updatercd mountnfs.sh	start 45 S .
+updatercd bootmisc.sh	start 55 S .
+updatercd urandom	start 55 S . start 30 0 6 .
+
+#
+#	Links in "normal" runlevels.
+#
+updatercd sendsigs	start 20 0 6 .
+updatercd umountnfs.sh	start 31 0 6 .
+updatercd umountfs	start 40 0 6 .
+updatercd halt		start 90 0 .
+updatercd reboot	start 90 6 .
+updatercd rmnologin	start 99 2 3 4 5 .
+updatercd single        start 20 1 .
+#updatercd stop-bootlogd	start 99 2 3 4 5 .
+
+#
+#	Upgrade init if possible. There was a bug in all versions
+#	up to and including 2.75-4, which didn't affect i386 but
+#	did affect most other architectures.
+#
+case "`uname -m`" in
+	i?86)
+		badver="2.[0-6]*|2.7[0-3]*"
+		;;
+	*)
+		badver="2.[0-6]*|2.7[0-4]*|2.75-*"
+		;;
+esac
+eval "case \"$oldver\" in
+	$badver)
+		;;
+	*)
+		init u
+		sleep 1
+esac"
+
+#
+#	Tell init to re-read inittab.
+#
+init q
+
+exit 0
+

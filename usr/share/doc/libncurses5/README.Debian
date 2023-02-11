@@ -1,0 +1,17 @@
+Ncurses for Debian
+------------------
+
+The ncurses package is split into five parts:
+
+libncurses	The ncurses shared libraries
+libncurses-dev	Development environment
+libncurses-dbg	Debugging libraries
+
+ncurses-bin	Various small applications (clear, reset, tic, etc.)
+ncurses-term	All the rest of the terminal entries
+
+All debian systems should have libncurses and ncurses-bin installed.
+The -dev and -dbg packages are only useful for developers wishing
+to compile programs which use ncurses. ncurses-term is the full contents
+of the terminfo database, and includes many strange and obsolete terminals.
+

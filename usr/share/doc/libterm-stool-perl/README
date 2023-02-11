@@ -1,0 +1,7 @@
+Term::Stool is a toolkit to let you implement one of the things all hackers
+detest and avoid: character-based menu interfaces.
+
+(http://www.tuxedo.org/~esr/jargon/html/Things-Hackers-Detest-and-Avoid.html)
+
+To see a demo of one of those nasty things, try 'perl Makefile.PL; make demo"
+

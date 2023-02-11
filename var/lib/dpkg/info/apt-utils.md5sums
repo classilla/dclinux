@@ -1,0 +1,6 @@
+d7237e2d4373017143a0aa8cbbf4e0a7  usr/lib/libapt-inst-libc6.2-3.so.1.0.0
+2ce5fab4e299a33a897ae291e8fd2bcc  usr/bin/apt-ftparchive
+4b2ab58250a5be029eb63b561d438db7  usr/bin/apt-sortpkgs
+ca98cd3512316d726fad41142570b16e  usr/bin/apt-extracttemplates
+88a74b84d11d5087feda56b9e6a06efd  usr/share/doc/apt-utils/copyright
+27189f6e648df9588652cf6c78827791  usr/share/doc/apt-utils/changelog.gz

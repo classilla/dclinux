@@ -1,0 +1,188 @@
+/*
+ * Music
+ *
+ * $FreeBSD: src/usr.bin/calendar/calendars/calendar.music,v 1.8 1999/08/28 00:59:23 peter Exp $
+ */
+
+#ifndef _calendar_music_
+#define _calendar_music_
+
+Jan 01	Country Joe McDonald is born in El Monte, California, 1942
+Jan 03	Steven Stills is born in Dallas, 1945
+Jan 04	Jazz great Charlie Mingus dies at 57 in Cuernavaca, Mexico, 1979
+Jan 08	Elvis Presley born, 1935
+Jan 08	David Bowie (then David Robert Jones) is born in London, 1947
+Jan 09	James Patrick Page (Led Zeppelin) is born in Middlesex, England, 1945
+Jan 10	Blues guitarist Howlin' Wolf dies in Chicago, 1976
+Jan 10	Jim Croce is born in Philadelphia, 1943
+Jan 10	Pat Benatar is born in Long Island, 1952
+Jan 10	Rod Stewart is born in Glasgow, Scotland, 1945
+Jan 13	Eric Clapton plays the "Rainbow Concert" in London, 1973
+Jan 17	Led Zeppelin's first album is released, 1969
+Jan 19	Janis Joplin is born in Port Arthur, Texas, 1943
+Jan 22	Sam Cooke is born in Chicago, 1935
+Jan 24	Warren Zevon is born, 1947
+Jan 25	Bob Dylan plays the second "Hurricane" benefit, in the Astrodome, 1978
+Jan 27	Bobby "Blue" Bland (Robert Calvin Bland) is born in Tennessee, 1930
+Jan 27	Wolfgang Amadeus Mozart born in Salzburg, 1756
+Jan 28	Jimi Hendrix headlines Madison Square Garden, 1970
+Jan 30	Lightnin' Hopkins, the most-recorded blues artist ever, dies, 1982
+Jan 31	The Grateful Dead are busted in New Orleans, 1970
+Feb 01	RCA Victor unveils the 45 rpm record playing system, 1949
+Feb 02	Graham Nash is born in Lancashire, England, 1942
+Feb 03	The Day The Music Died; Buddy Holly, Richie Valens, and the Big
+	Bopper are killed in a plane crash outside Mason City, Iowa, 1959
+Feb 07	Beatles land at JFK airport to begin first U.S. tour, 1964
+Feb 07	Steven Stills makes the first digitally recorded rock album, 1979
+Feb 09	Carole King (Carole Klein) is born in Brooklyn, 1941
+Feb 12	The Beatles play Carnegie Hall in New York City, 1964
+Feb 17	Jazz great Thelonius Monk dies in Englewood, New Jersey, 1982
+Feb 18	Yoko Ono Lennon is born in Tokyo, 1933
+Feb 19	Paul McCartney's "Give Ireland Back to the Irish" is banned in
+	Britain, 1972
+Feb 19	William "Smokey" Robinson is born in Detroit, 1940
+Feb 20	J. Geils (J. Geils Band) is born, 1946
+Feb 20	Yes sells out Madison Square Garden...without advertising, 1974
+Feb 23	Handel born, 1685
+Feb 23	Johnny Winter is born in Leland, Mississippi, 1944
+Feb 29	Jimmy Dorsey born, 1904
+Mar 01	Jim Morrison is busted for obscenity in Miami, 1969
+Mar 02	Blues guitarist Rory Gallagher is born in Ballyshannon, Ireland, 1949
+Mar 03	Buffalo Springfield is formed in Los Angeles, 1966
+Mar 04	Antonio Vivaldi born in Venice, Italy, 1678
+Mar 07	Last Gilbert & Sullivan opera produced, 1896
+Mar 08	Ron "Pigpen" McKernan (Grateful Dead) dies in California, 1973
+Mar 09	Robin Trower is born in London, 1945
+Mar 13	The Allman Brothers record their live album at the Fillmore East, 1971
+Mar 15	Sly Stone born, 1944
+Mar 17	Paul Kantner (Jefferson Airplane) is born in San Francisco, 1942
+Mar 21	J.S. Bach born, 1685
+Mar 22	Ten Years After plays their last concert, 1974
+Mar 25	Aretha Franklin is born in Detroit, 1943
+Mar 26	Emerson, Lake, and Palmer record "Pictures at an Exhibition" live, 1971
+Mar 29	Dr. Hook gets a group picture on the cover of "Rolling Stone", 1973
+Mar 30	Eric Clapton is born in Surrey, England, 1945
+Apr 02	Marvin Gaye is born in Washington, D.C., 1939
+Apr 04	Muddy Waters (McKinley Morganfield) is born in Rolling Fork,
+	Mississippi, 1915
+Apr 09	Paul Robeson born, 1898
+Apr 10	Paul McCartney announces that he's quitting the Beatles, 1970
+Apr 14	Ritchie Blackmore (Deep Purple, Rainbow) is born, 1945
+Apr 18	Yes breaks up after 13 years, 1981
+Apr 25	Blues guitarist Albert King is born, 1925
+Apr 25	Ella Fitzgerald born, 1918
+Apr 26	Carol Burnett born in San Antonio, Texas, 1933
+Apr 29	"Hair" premiers on Broadway, 1968
+May 01	Kate Smith born, 1909
+May 03	Bob Seger is born in Ann Arbor, Michigan, 1945
+May 07	Johannes Brahms born in Hamburg, 1833
+May 07	Tchaikowsky born, 1840
+May 10	Dave Mason is born in Worcester, England, 1945
+May 11	Bob Marley dies in his sleep in Miami, 1981
+May 12	Pink Floyd performs the first quadrophonic concert, 1977
+May 18	Rick Wakeman is born in West London, England, 1949
+May 19	Pete Townshend is born in London, 1945
+May 20	The Jimi Hendrix Experience is signed by Reprise Records, 1967
+May 22	Johann Sebastian Bach born in Eisenach, Germany, 1665
+May 23	Blues great Elmore James dies, 1963
+May 24	Bob Dylan (Robert Zimmerman) is born in Duluth, 1941
+May 26	Al Jolson born, 1886
+May 31	The Who perform the loudest concert ever -- 76,000 watts of PA, 1976
+Jun 01	The Beatles release "Sgt. Pepper", 1967
+Jun 06	"Rock Around The Clock" makes Billboard's #1 slot, 1955
+Jun 07	Blind Faith debuts in concert at London's Hyde Park, 1969
+Jun 09	Les Paul (Lester Polfus) is born in Waukesha, Wisconsin, 1923
+Jun 10	Howlin' Wolf (Chester Burnett) is born in West Point, Mississippi, 1910
+Jun 10	Judy Garland born, 1922
+Jun 15	Harry Nilsson is born in Brooklyn, 1941
+Jun 16	The Monterey Pop festival opens, 1967
+Jun 18	Paul McCartney born in Liverpool, England, 1942
+Jun 21	Columbia records announces the first mass production of LP's, 1948
+Jun 22	Todd Rundgren is born in Upper Darby, Pennsylvania, 1948
+Jun 24	Jeff Beck is born in Surrey, England, 1944
+Jul 02	Felix Pappalardi and Leslie West form Mountain, 1969
+Jul 03	Jim Morrison dies in Paris, 1971
+Jul 06	The Jefferson Airplane is formed in San Francisco, 1965
+Jul 07	Ringo Starr (Richard Starkey) born in Liverpool, England, 1940
+Jul 12	Chicago DJ Steve Dahl holds "Disco Demolition" at Kamisky Park, 1979
+Jul 14	Woodie Guthrie born, 1912
+Jul 16	Cream forms in the U.K., 1966
+Jul 16	Harry Chapin dies on Long Island Expressway, 1981
+Jul 17	"Yellow Submarine" premieres at the London Pavilion, 1968
+Jul 20	Carlos Santana is born in Autlan, Mexico, 1947
+Jul 25	Bob Dylan goes electric at the Newport Folk Festival, 1965
+Jul 25	Crosby, Stills, Nash & Young debut at the Fillmore East, 1969
+Jul 26	Mick Jagger is born in Kent, England, 1943
+Jul 28	Bach dies, 1750
+Jul 28	The Watkins Glen "Summer Jam" opens, 1973
+Aug 01	The Concert for Bangla Desh takes place at Madison Square Garden, 1971
+Aug 04	John Lennon points out that "the Beatles are more popular than Jesus",
+	1966
+Aug 10	Ian Anderson (Jethro Tull) is born in Edinburgh, Scotland, 1947
+Aug 13	Dan Fogelberg is born in Peoria, Illinois, 1951
+Aug 15	Beatles replace drummer Pete Best with Richard Starkey
+Aug 15	The Beatles play Shea Stadium in New York, 1965
+Aug 15	Woodstock Festival, Max Yasgur's farm, 1969
+Aug 26	Jimi Hendrix gives his last performance at the Isle of Wight, 1970
+Aug 26	Jimi Hendrix's Electric Ladyland Studios opens in New York, 1970
+Sep 07	Keith Moon (The Who) dies in London of a drug overdose, 1978
+Sep 08	Antonin Dvorak born in Nelahozeves, Czechoslovakia, 1841
+Sep 08	Ron "Pigpen" McKernan (Grateful Dead) is born in San Bruno,
+	California, 1945
+Sep 14	Francis Scott Key writes words to "Star Spangled Banner", 1814
+Sep 16	B.B. King is born in Itta Bena, Mississippi, 1925
+Sep 19	Simon & Garfunkel reunite to play New York's Central Park, 1981
+Sep 20	Jim Croce dies in a plane crash, 1973
+Sep 23	"Paul is dead" rumors sweep the country, 1969
+Sep 23	Bruce "The Boss" Springsteen is born in Freehold, New Jersey, 1949
+Sep 25	John Bonham (Led Zeppelin) dies of alcohol poisoning, 1980
+Sep 26	George Gershwin born in Brooklyn, NY
+Oct 04	Janis Joplin dies of a heroin overdose in Hollywood, 1970
+Oct 05	Steve Miller is born in Dallas, 1943
+Oct 07	First Bandstand (later, American Bandstand) broadcast, 1957
+Oct 09	John Lennon born in Liverpool, England, 1940
+Oct 10	John Prine is born in Maywood, Illinois, 1946
+Oct 12	The Jimi Hendrix Experience is formed in London, 1966
+Oct 16	Bob Weir (Grateful Dead) is born in San Francisco, 1947
+Oct 17	"Hair" opens at New York's Public Theater, 1967
+Oct 18	Chuck Berry is born in San Jose, California, 1926
+Oct 20	Three members of Lynyrd Skynyrd die in a plane crash, 1977
+Oct 22	Franz Liszt born, 1811
+Oct 25	Jon Anderson (Yes) is born in Lancashire, England, 1944
+Oct 25	The Rolling Stones appear on The Ed Sullivan Show, 1964
+Oct 29	Duane Allman dies in motorcycle crash near Macon, Georgia, 1971
+Oct 30	Grace Slick is born in Chicago, 1939
+Nov 02	Jimi Hendrix's "Electric Ladyland" enters US charts at #1, 1968
+Nov 02	Keith Emerson is born, 1944
+Nov 03	James Taylor and Carly Simon are married in Manhattan, 1972
+Nov 07	Joni Mitchell (Roberta Joan Anderson) is born in Alberta, Canada, 1943
+Nov 08	Patti Page born, 1927
+Nov 09	The first issue of "Rolling Stone" is published, 1967
+Nov 10	Greg Lake is born in Bournemouth, England, 1948
+Nov 12	Neil Young is born in Toronto, 1945
+Nov 13	Paul Simon born, 1942
+Nov 16	Bill Ham first demonstrates his psychedelic "Light Show", 1965
+Nov 20	Duane Allman is born in Nashville, Tennessee, 1946
+Nov 20	Joe Walsh is born in Cleveland, 1947
+Nov 24	Scott Joplin born, 1868
+Nov 25	"The Last Waltz" concert is played by The Band at Winterland, 1976
+Nov 25	Johann Strauss, Jr., writes `On the Beautiful Blue Danube', 1867
+Nov 26	Cream performs their farewell concert at Royal Albert Hall, 1968
+Nov 27	Jimi Hendrix (Johnny Allen Hendrix) is born in Seattle, 1942
+Dec 05	Mozart dies, 1791
+Dec 06	First sound recording made by Thomas Edison, 1877
+Dec 06	The Rolling Stones play Altamont Speedway near San Francisco, 1969
+Dec 07	Harry Chapin is born in New York City, 1942
+Dec 08	Jim Morrison is born in Melbourne, Florida, 1943
+Dec 08	John Lennon is shot and killed in New York City, 1980
+Dec 09	The Who's "Tommy" premieres in London, 1973
+Dec 13	Ted Nugent, the motor city madman, born in Detroit, 1949
+Dec 15	Thomas Edison receives patent on the phonograph, 1877
+Dec 16	Don McLean's "American Pie" is released, 1971
+Dec 16	Ludwig van Beethoven christened in Bonn, Germany, 1770
+Dec 21	Frank Zappa is born in Baltimore, 1940
+Dec 23	First G&S collaboration, Thespis, 1871
+Dec 28	Edgar Winter is born in Beaumont, Texas, 1946
+Dec 31	Jimi Hendrix introduces the Band of Gypsies at the Fillmore East, 1969
+
+#endif /* !_calendar_music_ */

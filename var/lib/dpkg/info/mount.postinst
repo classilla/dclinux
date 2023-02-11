@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+if [ -d /usr/doc -a ! -e /usr/doc/mount -a -d /usr/share/doc/mount ]; then
+        ln -sf ../share/doc/mount /usr/doc/mount
+fi

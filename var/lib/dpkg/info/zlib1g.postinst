@@ -1,0 +1,15 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = configure ]; then
+    ldconfig
+fi
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/zlib1g -a -d /usr/share/doc/zlib1g ]; then
+		ln -sf ../share/doc/zlib1g /usr/doc/zlib1g
+	fi
+fi
+# End automatically added section
+

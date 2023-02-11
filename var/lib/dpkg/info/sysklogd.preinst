@@ -1,0 +1,16 @@
+#! /bin/sh
+
+set -e
+
+dpkg --assert-support-predepends
+
+if [ "$1" = "upgrade" -a -f /etc/init.d/sysklogd ]; then
+    if [ -f /etc/init.d/sysklogd ]
+    then
+	set +e
+	sh /etc/init.d/sysklogd stop
+	set -e
+    fi
+fi
+
+exit 0

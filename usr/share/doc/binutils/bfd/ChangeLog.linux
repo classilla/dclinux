@@ -1,0 +1,43 @@
+2001-04-27  H.J. Lu  <hjl@gnu.org>
+
+	* elf.c (_bfd_elf_link_hash_hide_symbol): Set dynindx to -1
+	only for ELF_LINK_FORCED_LOCAL.
+	* elf32-hppa.c (elf32_hppa_hide_symbol): Likewise.
+	* elf32-mips.c (_bfd_mips_elf_hide_symbol): Likewise.
+	* elfxx-ia64.c (elfNN_ia64_hash_hide_symbol): Likewise.
+
+	* elflink.h (elf_fix_symbol_flags): Set ELF_LINK_FORCED_LOCAL
+	if the symbol has hidden or internal visibility.
+
+2000-11-08  H.J. Lu  <hjl@gnu.org>
+
+	* elflink.h (elf_link_add_archive_symbols): For the default
+	version, check references with only one `@' first.
+
+2000-06-24  H.J. Lu  <hjl@gnu.org>
+
+	* bfd/cofflink.c (_bfd_coff_generic_relocate_section): Undo
+	the last change.
+
+2000-06-24  H.J. Lu  <hjl@gnu.org>
+
+	* bfd/cofflink.c (_bfd_coff_generic_relocate_section):
+	Compensate global relocations between .text$* sections within
+	the same file.
+
+2000-06-16  H.J. Lu  <hjl@gnu.org>
+
+	* reloc.c (bfd_adjust_relocation): Undo the change made on
+	2000-06-15.
+	* bfd-in2.h: Likewise.
+
+2000-06-15  H.J. Lu  <hjl@gnu.org>
+
+	* reloc.c (bfd_adjust_relocation): New function to adjust
+	relocation from one format to another.
+	* bfd-in2.h: Regenerated.
+
+Thu Jan 13 13:29:40 2000  H.J. Lu  <hjl@gnu.org>
+
+	* configure.in (AC_OUTPUT): Add ../binutils.spec.
+	* configure: Regenerated.

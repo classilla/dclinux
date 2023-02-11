@@ -1,0 +1,6 @@
+LoadModule: referer_log_module /usr/lib/apache/modules/mod_log_referer.so
+LoadModule: referer_log_module /usr/lib/apache/disabled/mod_log_referer.so
+Directives:
+ RefererIgnore
+ RefererLog
+Description: Support for referer log (obsolete)

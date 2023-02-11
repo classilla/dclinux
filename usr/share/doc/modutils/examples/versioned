@@ -1,0 +1,20 @@
+#!/bin/sh -e
+# This sample demonstrates how to use a script in /etc/modules.
+#
+# This scripts adds support for kernel-specific modules. It checks if
+# there is a subdirectory for your specific kernel (for example
+# /etc/modutils/2.0.34) and adds all files in there. Then it checks if
+# there is a subdirectory for your kernel-family (for example
+# /etc/modutils/2.0) and adds all files in there.
+
+scandir() {
+	if [ -d $1 ]; then
+		for i in [ $1/* ]; do
+			cat $i
+		done
+	fi
+}
+
+scandir /etc/modutils/`uname -r`
+scandir /etc/modutils/`kernelversion`
+

@@ -1,0 +1,130 @@
+#! /bin/bash
+
+MYVERSION="1.1.2"
+
+help()
+{
+    exec 1>&2
+    echo `basename $0` v$MYVERSION: Script to restore firewall chains from stdin.
+    echo
+    echo "   With the -v option, prints out every rule."
+    echo "   With the -f option, clears chains without asking."
+    echo "   With the -p option, creates empty referred-to chains."
+
+    exit 1
+}
+
+IPCHAINS=/sbin/ipchains
+#IPCHAINS=echo
+
+IP_CHAINNAMES_FILE=/proc/net/ip_fwnames
+#IP_CHAINNAMES_FILE=ip_fwnames.dummy
+
+VERBOSE=0
+FORCE=0
+AUTOCREATE=0
+
+bugreport()
+{
+    echo "$@"
+    echo This is $0 v$MYVERSION
+    echo If this is the latest version of ipchains-restore, and the input
+    echo was created using the latest version of ipchains-save, then I\'d
+    echo really appreciate a bug report.  Please send the input you used,
+    echo and all the output from this program to the author,
+    echo \`ipchains@rustcorp.com\' with \`BUG-REPORT\' in the subject
+    echo line so I know to read the message.
+    echo
+    echo Apologies for the inconvenience,
+    echo Paul \`\`Rusty\'\' Russell.
+    exit 1
+}
+
+try_create()
+{
+    EXPECT_CHAIN=0
+    for arg
+    do
+	if [ $EXPECT_CHAIN = 1 ]; then
+	    case "$arg"
+	    in
+		REJECT) ;;
+		DENY) ;;
+		ACCEPT) ;;
+		REDIRECT) ;;
+		MASQ) ;;
+		*) $IPCHAINS -N $arg 2>/dev/null >/dev/null && if [ $VERBOSE ]; then echo Auto-creating chain $arg; fi
+	    esac
+	    return
+	elif [ x"$arg" = x"-j" ]; then
+	    EXPECT_CHAIN=1
+	fi
+    done
+}
+
+for arg
+do
+    case "$arg"
+    in
+	-v) VERBOSE=1 ;;
+	-f) FORCE=1 ;;
+	-p) AUTOCREATE=1 ;;
+	*) help ;;
+    esac
+done
+
+SKIP=""
+grep -v '^#' |
+while read LINE
+do
+    case "$LINE"
+    in
+	:*) CHAIN=`echo $LINE | cut -c2- | cut -d\  -f1`
+	    SKIP=0
+	    if [ $CHAIN = input -o $CHAIN = output -o $CHAIN = forward ]
+	    then
+		[ $VERBOSE = 1 ] && echo Setting policy for \`$CHAIN\'.
+		POLICY=`echo $LINE | cut -c2- | cut -d\  -f2`
+		case "$POLICY" 
+		in
+		# Old-style (numeric) policies.
+		    -1) $IPCHAINS -P $CHAIN REJECT ;;
+		    1) $IPCHAINS -P $CHAIN DENY ;;
+		    2) $IPCHAINS -P $CHAIN ACCEPT ;;
+		    3) $IPCHAINS -P $CHAIN REDIRECT ;;
+		    4) $IPCHAINS -P $CHAIN MASQ ;;
+		    *) $IPCHAINS -P $CHAIN $POLICY ;;
+		esac
+	    elif grep -q "^$CHAIN " $IP_CHAINNAMES_FILE
+	    then
+		if [ $FORCE = 1 ]; then REPL='f'
+		else
+		    echo -n Chain \`$CHAIN\' already exists.  "Skip or flush? [S/f]? "
+		    read REPL < /dev/tty
+		fi
+		case $REPL
+		in
+		    [fF]*) $IPCHAINS -F $CHAIN 
+			[ $FORCE = 1 ] || echo Flushing \`$CHAIN\'.
+			;;
+		    *) SKIP="$SKIP $CHAIN"
+			[ $VERBOSE = 1 ] || echo Skipping \`$CHAIN\'. ;;
+		esac
+	    else
+		echo Creating chain \`$CHAIN\'.
+		$IPCHAINS -N $CHAIN
+	    fi
+	    ;;
+
+	*)  if echo $SKIP | fgrep -w -q -e `echo $LINE | cut -d' ' -f2`
+	    then
+		[ $VERBOSE = 1 ] && echo SKIPPING $IPCHAINS $LINE 1>&2
+	    else
+		# If line contains -j <chain>, we may need to create it.
+		[ $AUTOCREATE = 1 ] && try_create $LINE
+		[ $VERBOSE = 1 ] && echo $IPCHAINS $LINE 1>&2
+		$IPCHAINS $LINE || bugreport "ipchains command $LINE failed"
+	    fi
+	    ;;
+    esac
+done

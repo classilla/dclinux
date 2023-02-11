@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.7.3">
+ <TITLE>The Linux Console Tools: What is Unicode</TITLE>
+ <LINK HREF="lct-5.html" REL=next>
+ <LINK HREF="lct-3.html" REL=previous>
+ <LINK HREF="lct.html#toc4" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="lct-5.html">Next</A>
+<A HREF="lct-3.html">Previous</A>
+<A HREF="lct.html#toc4">Contents</A>
+<HR>
+<H2><A NAME="sec-unicode"></A> <A NAME="s4">4.</A> <A HREF="lct.html#toc4">What is Unicode</A></H2>
+
+<P>Traditionnaly, character encodings use 8 bits, and thus are limited to 256
+characters.  This causes problems because:
+<OL>
+<LI> it's not enough for some languages;</LI>
+<LI> people speaking languages using different encodings have to
+choose which one they use, and have to switch the system's state when
+changing the language, which makes it difficult to mix several languages in
+the same file;</LI>
+<LI> etc...</LI>
+</OL>
+</P>
+<P>Thus the UCS (Universal Character Set), also know as <EM>Unicode</EM> was
+created to handle and mix all of our world's scripts.  This is a
+32-bit (4 bytes) encoding, otherwise known as UCS4 because of the size
+of its characters, which is normalised by ISO as the 10646-1 standard.
+The most widely used characters from UCS are contained in the UCS2
+16-bit subset of UCS; this is the subset used by the Linux console.</P>
+<P>For convenience, the UTF8 encoding was designed as a variable-length
+encoding (with 8 bytes of maximum length) with ASCII compatibility;
+all chars that have a UCS4 encoding can be expressed as a UTF8
+sesquence, and vice-versa.</P>
+<P>
+<A HREF="http://unicode.org">The Unicode consortium</A> defines
+additional properties for UCS2 characters.</P>
+<P>See: <CODE>unicode(7)</CODE>, <CODE>utf-8(7)</CODE>.</P>
+
+<HR>
+<A HREF="lct-5.html">Next</A>
+<A HREF="lct-3.html">Previous</A>
+<A HREF="lct.html#toc4">Contents</A>
+</BODY>
+</HTML>

@@ -1,0 +1,39 @@
+#! /bin/sh
+
+set -e
+
+test -x /usr/sbin/install-docs && install-docs -i /usr/share/doc-base/lct || true
+
+# This has to be loaded or templates don't get loaded
+. /usr/share/debconf/confmodule
+
+if [ "$1" = "configure" ] &&
+	echo >&2 "Looking for keymap to install:" &&
+	/usr/share/console/getkmapchoice.pl
+then
+    /usr/sbin/install-keymap `env LC_ALL=POSIX /usr/share/console/getkmapchoice.pl 2>&1`
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/console-tools -a -d /usr/share/doc/console-tools ]; then
+		ln -sf ../share/doc/console-tools /usr/doc/console-tools
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = configure ] && command -v install-docs >/dev/null 2>&1; then
+	install-docs -i /usr/share/doc-base/lct
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/console-screen.sh" ]; then
+	update-rc.d console-screen.sh start 48 S . >/dev/null
+	if [ "$1" = "configure" ]; then
+		if [ -z "$2" -o "$2" = "<unknown>" ]; then
+			/etc/init.d/console-screen.sh start
+		fi
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,150 @@
+#!/bin/sh -e
+
+action="$1"
+
+# fixup after ppp-connect removed (unless this is an abort-* action) 
+expr "${action}" : abort- >/dev/null || {
+  if [ -f /etc/ppp/ppp-connect ] ; then
+    echo
+    echo "The file /etc/ppp/ppp-connect is no longer part of the ppp"
+    echo -n "package, do you want to remove it [y/n]: "
+    read answer
+    if [ "$answer" = y ] ; then
+      rm /etc/ppp/ppp-connect
+    fi
+  fi
+}
+
+# fixup after old update-rc.d
+if [ -f /etc/rc2.d/K20ppp ] ; then
+  echo Fixing up start/stop scripts
+  rm -f /etc/rc2.d/K20ppp
+  rm -f /etc/rc3.d/K20ppp
+  rm -f /etc/rc4.d/K20ppp
+  rm -f /etc/rc5.d/K20ppp
+fi
+
+# get rid of old /etc/cron.daily/ppp
+test -f /etc/cron.daily/ppp && rm -f /etc/cron.daily/ppp
+
+
+
+# install /etc/ppp/pap-secrets and /etc/ppp/chap-secrets from examples,
+# if necessary
+# FIXME ---- this needs to be installed from elsewhere, /usr/share/doc may
+# not be always present (future dpkg rumour)
+for i in pap-secrets chap-secrets; do
+  test -f /etc/ppp/$i || install -m 600 /usr/share/doc/ppp/examples/$i /etc/ppp
+done
+test -f /etc/ppp/peers/provider || \
+  install -g dip -m 640 /usr/share/doc/ppp/examples/provider.peer /etc/ppp/peers/provider
+test -f /etc/chatscripts/provider || \
+  install -g dip -m 640 /usr/share/doc/ppp/examples/provider.chatscript /etc/chatscripts/provider
+
+# setup hostname in /etc/ppp/pap-secrets and /etc/ppp/options.ttyXX
+HOST="`hostname`"
+for i in /etc/ppp/pap-secrets /etc/ppp/options.ttyXX; do
+  if grep -q hostname $i; then
+    tmp=$i.tmp-$$
+    cp $i $tmp
+    sed -e "s/hostname/$HOST/g" <$tmp  >$i
+    rm $tmp
+  fi
+done
+
+if [ -f /etc/ppp.options_out -a -f /etc/ppp.chatscript ]; then
+  echo "Converting old dialup setup to new setup"
+  mv /etc/ppp.chatscript /etc/chatscripts/provider
+  X=`cat /etc/ppp.options_out`
+  cat >/etc/ppp/peers/provider <<-!EOF!
+	# The chatscript (be sure to edit that file too)
+	connect "/usr/sbin/chat -v -f /etc/chatscripts/provider"
+	$X
+!EOF!
+  rm /etc/ppp.options_out
+  chmod 640 /etc/chatscripts/provider /etc/ppp/peers/provider
+  chgrp dip /etc/chatscripts/provider /etc/ppp/peers/provider
+fi
+
+if [ -f /var/log/ppp.log ]; then
+  chown root.adm /var/log/ppp.log
+  chmod 640 /var/log/ppp.log
+fi
+if [ -f /var/log/ppp-connect-errors ]; then
+  chown root.adm /var/log/ppp-connect-errors
+  chmod 640 /var/log/ppp-connect-errors
+fi
+
+if [ ! -c /dev/ppp ] && [ ! -c /dev/.devfsd ]; then
+  mknod /dev/ppp c 108 0
+  chmod 600 /dev/ppp
+  chown root.dip /dev/ppp
+fi
+
+# fix the perms on all sensitive files.
+# FIXME - this could be bad :) (if you dont see why, you're a moron)
+if [ -e /etc/ppp/pap-secrets ]; then
+        chown root.dip /etc/ppp/pap-secrets
+        chmod 0600 /etc/ppp/pap-secrets
+fi
+if [ -e /etc/ppp/chap-secrets ]; then
+        chown root.dip /etc/ppp/chap-secrets
+        chmod 0600 /etc/ppp/chap-secrets
+fi
+if [ -e /etc/ppp/peers/provider ]; then
+        chown root.dip /etc/ppp/peers/provider
+        chmod 0640 /etc/ppp/peers/provider
+fi
+if [ -e /etc/chatscripts/provider ]; then
+        chown root.dip /etc/chatscripts/provider
+        chmod 0640 /etc/chatscripts/provider
+fi
+
+
+if [ "$1" = "configure" ] && [ -n "$2" ] && dpkg --compare-versions $2 lt 2.3.9 ; then
+  if [ -f /usr/share/debconf/confmodule ]; then # debconf exists
+    # source debconf library
+    . /usr/share/debconf/confmodule
+    # display the maxfail note
+    db_get ppp/maxfail
+  else # debconf doesn't exist, revert to old type of note
+    cat <<END >&2
+ If you used the \`persist' option in your pppd settings, you will notice
+ that pppd will not redial infinitely anymore, instead it will redial
+ ten times, and quit.
+
+ A new \`maxfail' option was introduced to change this. To get the old
+ behaviour, you will have to add \`maxfail 0' to your pppd settings.
+
+ Details about this can be found in /usr/share/doc/ppp/README.Debian.gz
+ file and in pppd(8) manual page.
+
+ Please press <enter> to continue...
+END
+    read KEYPRESS
+  fi # debconf or not
+fi # configure before 2.3.9
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ppp -a -d /usr/share/doc/ppp ]; then
+		ln -sf ../share/doc/ppp /usr/doc/ppp
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installmodules
+if [ "$1" = "configure" ]; then
+	update-modules
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/ppp" ]; then
+	update-rc.d ppp start 14 2 3 4 5 . stop 14 0 1 6 . >/dev/null
+	if [ "$1" = "configure" ]; then
+		if [ -z "$2" -o "$2" = "<unknown>" ]; then
+			/etc/init.d/ppp start
+		fi
+	fi
+fi
+# End automatically added section
+

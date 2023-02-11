@@ -1,0 +1,37 @@
+/*
+ * hrvatski praznici
+ *
+ * $FreeBSD: src/usr.bin/calendar/calendars/hr_HR.ISO_8859-2/calendar.praznici,v 1.6 1999/08/28 00:59:28 peter Exp $
+ */
+
+#ifndef _hr_HR_ISO_8859_2_praznici
+#define _hr_HR_ISO_8859_2_praznici
+
+LANG=hr_HR.ISO_8859-2
+
+/* slobodni dr¾avni praznici */
+Jan 01	Nova godina
+May 01	Prvi maj
+ 
+ 
+/* slobodni kr¹æanski praznici */
+Easter-2	Veliki petak
+Easter		Uskrs
+Easter+1 	Uskrsni ponedjeljak
+Easter+49	Duhovi
+Easter+50	Duhovni ponedjeljak
+Easter+39	Uza¹a¹æe
+Dec 25   Bo¾iæ
+Dec 26   Stjepandan
+
+/* godi¹nja doba */
+Mar 21*	Poèetak proljeæa
+Jun 21*	Poèetak ljeta
+Sep 21*	Poèetak jesena
+Dec 21*	Poèetak zime
+ 
+/* ljetno vrijeme */
+03/NedjeljaLast	Poèetak ljetnog vremena
+10/NedjeljaLast	Kraj ljetnog vremena
+
+#endif /* !_hr_HR_ISO_8859_2_praznici */

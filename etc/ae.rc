@@ -1,0 +1,127 @@
+AE's Default Debian Configuration File
+
+Derived from work done by Anthony Howe and Jim Mitha, this configuration
+file uses emacs keybindings, primarily because of their control key
+orientation. This gives ae full functionality on most remote, limited
+function, terminals, as well as the full featured console or xterm.
+
+The arrow keys still work, as do the Page Up and Page Down keys. Home and End 
+do a top and bottom of file as well as the advertised escape sequences.
+
+Copyright Dale Scheetz 1998, licensed under the GPL and free for all use
+
+1:\
+File read and write  \^X I ^X^W      Left, down, up, right   ^B  ^N  ^P  ^F\n\
+Quit save, Abort     ^X^C ^Q        Word left and right     <esc>B  <esc>F\n\
+Macros, Version      \^M ^X^V        Page down and up        ^V      <esc>V\n\
+Help on and off      \^X\^H           Front and end of line   ^A      ^E\n\
+Redraw               \^L             Top and end of file     <esc><  <esc>>\n\
+Insert               typed keys     Delete left and right   BACKSPACE DEL\n\
+Literal escape       \^[             Block, cut, paste       \^@   \^W   \^Y\n\
+Undo                 ^_             Invert case             <esc>C\n
+
+# generate an error
+.check this file before using it. It hasn't been carefully verified.
+#.help_off
+.literal	^\[
+.cursor_up	$(ku)
+.cursor_down	$(kd)
+.cursor_left	$(kl)
+.cursor_right	$(kr)
+.page_up	$(kP)
+.page_up	$(K3)
+.page_down	$(kN)
+.page_down	$(K5)
+.file_top	$(kh)
+.file_top	$(K1)
+.file_bottom	$(ke)
+.file_bottom	$(K4)
+.delete_left	$(kb)
+.delete_left	^H
+.delete_left	^?
+.delete_right	$(kD)
+.cursor_up	^[[A
+.cursor_up	^P
+.cursor_down	^[[B
+.cursor_down	^N
+.cursor_left	^[[D
+.cursor_left	^B
+.cursor_right	^[[C
+.cursor_right	^F
+.page_up	^[[5~
+.page_up	^[V
+.page_up	^[v
+.page_down	^[[6~
+.page_down	^V
+.word_left	^[B
+.word_left	^[b
+.word_right	^[F
+.word_right	^[f
+.line_left	^A
+.line_right	^E
+.file_top	^[[1~
+.file_top	[H
+.file_top	<
+.file_bottom	^[[4~
+.file_bottom    [F
+.file_bottom    >
+.delete_left	^?
+.delete_right	^[[3~
+.help		^X^H
+.block		^@
+.cut		^W
+.paste		^Y
+.flip_case	^[C
+.flip_case	^[c
+.undo		^_
+.file_read	^XI
+.file_read	^Xi
+.file_write	^X^W
+.redraw		^L
+.quit_ask	^X^C
+.quit		^Q
+.show_version	^X^V
+.macro		^M
+.macro_define
+.macro_define
+.macro_define
+.macro_define
+.macro_define
+
+2:%s: Terminated successfully.\n
+3:%s: Unspecified error.\n
+4:usage: %s [-f <config>] [file]\n
+5:%s: Failed to initialize the screen.\n
+6:%s: Problem with configuration file.\n
+7:%s: Failed to allocate required memory.\n
+8:Ok.
+9:An error occured.
+10:No more memory available.
+11:File \"%s\" is too big to load.
+12:Scrap is empty.  Nothing to paste.
+13:Failed to find file \"%s\".
+14:Failed to open file \"%s\".
+15:Failed to close file \"%s\".
+16:Failed to read file \"%s\".
+17:Failed to write file \"%s\".
+18:Not a portable POSIX file name.
+19:File \"%s\" %ld bytes.
+20:File \"%s\" %ld bytes saved.
+21:File \"%s\" %ld bytes read.
+22:File \"%s\" modified.
+23:Invalid control character or \\number not 0..255.
+24:No such macro defined.
+25:No more macro space.
+26:Interrupt.
+27:<< EOF >>
+28:Macro :
+29:File not saved.  Quit (y/n) ?
+30:[ Press a key to continue. ]
+31:Read file :
+32:Write file :
+33:Write block :
+34:\smore\s
+35:\sy\b
+36:\sn\b
+37:\sq\b
+38:Nothing to undo.

@@ -1,0 +1,20 @@
+#!/bin/sh -e
+
+# movedoc - function to make the transition /usr/doc -> /usr/share/doc
+movedoc()
+{
+    PKG=cpio
+    OLD=/usr/doc/$PKG
+    if test -h $OLD; then
+	rm -f $OLD
+    fi
+}
+
+if [ "$1" = remove ]; then 
+    update-alternatives --remove mt /bin/mt-gnu
+    install-info --quiet --remove /usr/info/cpio.info
+    if test -L /sbin/rmt -a /sbin/rmt -ef /usr/sbin/rmt; then
+	rm -f /sbin/rmt
+    fi
+    movedoc
+fi

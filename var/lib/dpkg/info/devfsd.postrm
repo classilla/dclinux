@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ "$1" = "purge" ]; then
+	#update-rc.d devfsd.startup.sh remove >/dev/null
+	update-rc.d devfsd remove >/dev/null
+fi
+# Automatically added by dh_installmodules
+update-modules
+# End automatically added section
+

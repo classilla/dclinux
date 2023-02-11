@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+      if [ -d /usr/doc -a ! -e /usr/doc/ed \
+          -a -d /usr/share/doc/ed ]; then
+              ln -sf ../share/doc/ed /usr/doc/ed
+      fi
+fi
+
+case "$1" in
+       configure|abort-upgrade|abort-remove|abort-deconfigure)
+               #
+               #       Install the info documentation
+               #
+	       install-info --section "General commands" "General commands" \
+			    --quiet /usr/share/info/ed.info.gz
+	       update-alternatives --quiet --install /usr/bin/editor editor /bin/ed -100
+               ;;
+esac

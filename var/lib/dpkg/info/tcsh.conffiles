@@ -1,0 +1,5 @@
+/etc/csh.cshrc
+/etc/csh.login
+/etc/csh.logout
+/etc/skel/.cshrc
+/etc/skel/.alias

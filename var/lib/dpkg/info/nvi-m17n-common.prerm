@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nvi-m17n-common ]; then
+	rm -f /usr/doc/nvi-m17n-common
+fi
+# End automatically added section
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nvi-m17n-common ]; then
+	rm -f /usr/doc/nvi-m17n-common
+fi
+# End automatically added section
+   
+

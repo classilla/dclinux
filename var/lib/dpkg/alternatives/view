@@ -1,0 +1,12 @@
+auto
+/usr/bin/view
+view.1.gz
+/usr/share/man/man1/view.1.gz
+
+/usr/bin/nview
+30
+/usr/share/man/man1/nview.1.gz
+/usr/bin/nview-m17n
+30
+/usr/share/man/man1/nview-m17n.1.gz
+

@@ -1,0 +1,7 @@
+Although there a lots of manpages included here, some are still missing.
+If you're familiar with programming or libc source or if you're
+interested to learn anything about libc and how it works it would
+be a good idea trying to form a manual page for the following topics.
+If you have done so, please send the completed page either
+to Nicolás Lichtmaier <nick@feedback.com.ar> or to
+Andries Brouwer <aeb@cwi.nl>.

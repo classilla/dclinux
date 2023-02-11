@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/procmail -a -d /usr/share/doc/procmail ]; then
+    ln -sf ../share/doc/procmail /usr/doc/procmail
+  fi
+fi

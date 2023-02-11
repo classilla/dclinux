@@ -1,0 +1,11 @@
+#!/bin/sh -e
+# $Id: prerm,v 1.1 1999/04/16 07:00:29 herbert Exp $
+
+update-inetd --pattern '/usr/sbin/in\.ftpd' --disable ftp
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/ftpd ]; then
+	rm -f /usr/doc/ftpd
+fi
+# End automatically added section
+

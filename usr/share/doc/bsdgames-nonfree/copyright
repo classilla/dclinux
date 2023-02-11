@@ -1,0 +1,24 @@
+This is a Debian prepackaged version of the BSD games package, non-free
+section.
+
+This package was put together by Joey Hess <joeyh@master.debian.org>, using
+sources from:
+	ftp://metalab.unc.edu:/pub/Linux/games/bsd-games-non-free-2.8.tar.gz
+
+Copyrights of the games in this package follow.
+
+Rogue: 
+
+Standard BSD copyright plus the following:
+
+/*                                                                              
+ * main.c                                                                       
+ *                                                                              
+ * This source herein may be modified and/or distributed by anybody who         
+ * so desires, with the following restrictions:                                 
+ *    1.)  No portion of this notice shall be removed.                          
+ *    2.)  Credit shall not be taken for the creation of this source.           
+ *    3.)  This code is not to be traded, sold, or used for personal            
+ *         gain or profit.                                                      
+ *                                                                              
+ */

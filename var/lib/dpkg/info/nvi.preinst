@@ -1,0 +1,42 @@
+#! /bin/sh
+#
+#
+set -e
+
+#
+# If:
+#  we are upgrading, and the oldversion is < 1.79-6, and
+# there is a /etc/rc.boot/nvi but no /etc/init.d/nviboot, and
+# if it looks like the files have changed, 
+#
+# Then:
+# copy the old config file to the new location -- dpkg will detect this
+# as a user change config file, and complain.
+#
+# Else:
+# don't do anything - the new init.d/nviboot will be installed, and
+# the old rc.boot/nvi will be rm'd in the postinst.
+#
+
+case $1 in 
+    upgrade|install)
+	if [ "$2" ] ; then
+	    oldver=$2
+	    if dpkg --compare-versions "$oldver" lt "1.79-6" ; then
+		if [ -f /etc/rc.boot/nvi -a ! -f /etc/init.d/nviboot ] ; then
+		    oldsum=`grep /etc/rc.boot/nvi /var/lib/dpkg/status |awk  '{print $2}'`
+		    cursum=`md5sum /etc/rc.boot/nvi | awk  '{print $1}'`
+		    
+		    if [ $oldsum != $cursum ] ; then
+			# It appears the file is different. Let
+			# dpkg deal with it. 
+			(cd /etc/init.d ; ln ../rc.boot/nvi /etc/init.d/nviboot \
+			|| cp ../rc.boot/nvi nviboot)
+		    fi
+		    
+		fi
+	    fi
+	fi
+    ;;
+esac
+

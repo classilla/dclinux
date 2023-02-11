@@ -1,0 +1,6 @@
+#!/bin/sh -e
+case "$1" in
+configure)
+	update-inetd --enable biff
+	;;
+esac

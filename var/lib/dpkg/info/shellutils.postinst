@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --section "General commands" "General commands" \
+ /usr/share/info/sh-utils.info.gz
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/shellutils -a -d /usr/share/doc/shellutils ]; then
+		ln -sf ../share/doc/shellutils /usr/doc/shellutils
+	fi
+fi

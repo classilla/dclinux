@@ -1,0 +1,62 @@
+                         Mail servers' reference card
+
+   Full documentation of the mail servers is available on the WWW, in the
+   files bug-log-mailserver.txt and bug-maint-mailcontrol.txt or by
+   sending the word help to each mailserver.
+
+Synopsis of commands available at request@bugs.debian.org
+
+     * send bugnumber
+     * send-detail bugnumber
+     * index [full]
+     * index-summary by-package
+     * index-summary by-number
+     * index-maint
+     * index maint maintainer-substring
+     * index-packages
+     * index packages package-substring
+     * send-unmatched [this|0]
+     * send-unmatched last|-1
+     * send-unmatched old|-2
+     * getinfo filename (see below)
+     * help
+     * refcard
+     * quit|stop|thank...|--...
+     * #... (comment)
+     * debug level
+
+  List of info files for getinfo
+
+     * maintainers
+     * override.distribution
+     * override.distribution.non-free
+     * override.distribution.contrib
+     * override.experimental
+     * pseudo-packages.description
+     * pseudo-packages.maintainers
+
+Synopsis of extra commands available at control mailserver
+
+     * close bugnumber (you must separately tell originator why)
+     * reassign bugnumber package
+     * severity bugnumber severity
+     * reopen bugnumber [ originator-address | = | ! ]
+     * forwarded bugnumber address
+     * notforwarded bugnumber
+     * retitle bugnumber new-title
+     * merge bugnumber bugnumber ...
+     * unmerge bugnumber
+
+   reopen with = or no originator address leaves the originator as the
+   original submitter; ! sets it to you, the person doing the reopen.
+
+   Severities are critical, grave, normal, important, and wishlist.
+     _________________________________________________________________
+
+    Darren Benham / owner@bugs.debian.org. 12 Sep 1999.
+    Debian bug tracking system
+    copyright 1999 Darren O. Benham, 1994-7 Ian Jackson, 1997 nCipher
+    Corporation Ltd, 1995 Steven Brenner.
+    Available under the GPL.
+     _________________________________________________________________
+

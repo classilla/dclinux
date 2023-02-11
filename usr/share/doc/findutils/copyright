@@ -1,0 +1,39 @@
+This is the Debian GNU/Linux prepackaged version of GNU find, xargs
+and locate.  GNU find was originally written by Eric Decker, with
+enhancements by David MacKenzie, Jay Plett and Tim Wood.  GNU xargs
+was originally written by Mike Rendell, with enhancements by David
+MacKenzie.  GNU locate and its associated utilities were originally
+written by James Woods, with enhancements by David MacKenzie.  The
+idea for `find -print0' and `xargs -0' came from Dan Bernstein.
+
+This package was put together by Ian Murdock <imurdock@debian.org>,
+from sources obtained from:
+ ftp.gnu.org:/pub/gnu/findutils-4.1.tar.gz
+
+Changes:
+ * added Debian GNU/Linux package maintenance system files
+ * added cron script to update `find.codes' database daily
+ * fixed locate, and removed declaration of various string functions
+ * add "--existing" option to locate to ignore files which no longer exist
+
+GNU findutils are Copyright (C) 1990, 1991, 1992, 1993, 1994, 1999,
+2000 Free Software Foundation, Inc.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, 59 Temple Place - Suite 330,
+Boston, MA 02111-1307, USA.
+
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

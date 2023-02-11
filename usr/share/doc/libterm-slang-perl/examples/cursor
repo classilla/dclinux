@@ -1,0 +1,65 @@
+#!/usr/bin/perl -w
+
+# $Id: cursor,v 1.2 1999/09/01 18:04:10 daniel Exp $
+
+use strict;
+use ExtUtils::testlib;
+use Term::Slang qw(:all);
+
+SLtt_get_terminfo();
+SLang_init_tty(-1,0,1);
+SLsig_block_signals();
+SLsmg_init_smg;
+SLsig_unblock_signals();
+SLkp_init();
+
+my ($s_rows,$s_cols) = SLtt_get_screen_size();
+my  $r = 10;
+
+SLsmg_normal_video();
+SLsmg_gotorc($r,0);
+
+print "Version: $Term::Slang::VERSION\n";
+print "Use the up and down arrows to continue\n";
+print "Press any key ('q' quits).\n";
+
+while(my $key = SLkp_getkey()) {
+
+	last if $key == 113;
+
+	# Up 258
+	if ($key == 258) {
+		SLsmg_gotorc($r,0);
+		SLsmg_erase_eol();
+		$r++;
+		SLsmg_gotorc($r,0);
+		SLsmg_write_string("-> $r - $key");
+		SLsmg_refresh();
+		if ($r >= $s_rows) {
+			SLtt_beep();
+			$r = $s_rows - 1;
+			next;
+		}
+	}
+
+	# Down 257
+	if ($key == 257) {
+		SLsmg_gotorc($r,0);
+		SLsmg_erase_eol();
+		$r--;
+		SLsmg_gotorc($r,0);
+		SLsmg_write_string("-> $r - $key");
+		SLsmg_refresh();
+		if ($r <= 0) {
+			SLtt_beep();
+			$r = 1;
+			next;
+		}
+	}
+}
+
+SLsmg_refresh();
+SLang_reset_tty();
+SLsmg_reset_smg();
+
+__END__

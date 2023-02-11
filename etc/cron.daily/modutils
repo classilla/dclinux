@@ -1,0 +1,5 @@
+#! /bin/sh
+
+[ -e /sbin/insmod_ksymoops_clean ] || exit 0
+/sbin/insmod_ksymoops_clean
+

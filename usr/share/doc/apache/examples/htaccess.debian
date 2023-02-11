@@ -1,0 +1,13 @@
+ServerSignature on
+IndexOptions StudlyIndexing \
+             BodyColor=#ffffff TextColor=#000000 \
+             HeaderColor=#df0451 ReadmeColor=#00ff00 \
+             SidebarColor=#bbddff MainColor=#ffffff \
+             FooterColor=#ffffff
+SidebarName /icons/debian/banner_v.html
+
+# HeaderName HEADER.html
+# ReadmeName README.html
+# BodyName HEADER.html
+# FooterName FOOTER.html
+

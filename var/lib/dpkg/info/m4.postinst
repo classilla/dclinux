@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+install-info --quiet --section "Development" "Development" \
+  --description='The GNU m4 macro preprocessor.' /usr/share/info/m4.info
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/m4 -a -d /usr/share/doc/m4 ]; then
+    ln -sf ../share/doc/m4 /usr/doc/m4
+  fi
+fi

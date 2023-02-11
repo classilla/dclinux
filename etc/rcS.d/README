@@ -1,0 +1,15 @@
+
+The scripts in this directory are executed when booting the system. They
+are executed even when going into single user mode. The files are all symbolic
+links, the real files are located in /etc/init.d/ For a more general
+discussion of this technique, see /etc/init.d/README.
+
+The following sequence points are defined at this time:
+
+* After the S40 scripts have executed, all local file systems are mounted
+  and networking is available. All device drivers have been initialized.
+
+* After the S60 scripts have executed, the system clock has been set, NFS
+  filesystems have been mounted (unless the system depends on the automounter,
+  which is started later) and the filesystems have been cleaned.
+

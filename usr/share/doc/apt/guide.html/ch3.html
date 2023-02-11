@@ -1,0 +1,139 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>APT User's Guide - DSelect</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch2.html">前のページ</a> ]
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch4.html">次のページ</a> ]
+
+<hr>
+
+<h1>
+APT User's Guide<br>
+章 3 DSelect
+</h1>
+
+<hr>
+
+<p>
+The APT <code>dselect</code> method provides the complete APT system with the
+<code>dselect</code> package selection GUI.  <code>dselect</code> is used to
+select the packages to be installed or removed and APT actually installs them.
+
+<p>
+To enable the APT method you need to to select [A]ccess in <code>dselect</code>
+and then choose the APT method.  You will be prompted for a set of
+<em>Sources</em> which are places to fetch archives from.  These can be remote
+Internet sites, local Debian mirrors or CDROMs.  Each source can provide a
+fragment of the total Debian archive, APT will automatically combine them to
+form a complete set of packages.  If you have a CDROM then it is a good idea to
+specify it first and then specify a mirror so that you have access to the
+latest bug fixes.  APT will automatically use packages on your CDROM before
+downloading from the Internet.
+
+<pre>
+        Set up a list of distribution source locations
+     	 
+      Please give the base URL of the debian distribution.
+      The access schemes I know about are: http file
+     	   
+      For example:
+           file:/mnt/debian,
+           ftp://ftp.debian.org/debian,
+           http://ftp.de.debian.org/debian,
+           
+           
+      URL [http://llug.sep.bnl.gov/debian]:
+</pre>
+
+<p>
+The <em>Sources</em> setup starts by asking for the base of the Debian archive,
+defaulting to a HTTP mirror.  Next it asks for the distribution to get.
+
+<pre>
+      Please give the distribution tag to get or a path to the
+      package file ending in a /. The distribution
+      tags are typically something like: stable unstable frozen non-US
+        
+      Distribution [stable]:
+</pre>
+
+<p>
+The distribution refers to the Debian version in the archive, <em>stable</em>
+refers to the latest released version and <em>unstable</em> refers to the
+developmental version.  <em>non-US</em> is only available on some mirrors and
+refers to packages that contain encryption technology or other things that
+cannot be exported from the United States.  Importing these packages into the
+US is legal however.
+
+<pre>
+      Please give the components to get
+      The components are typically something like: main contrib non-free
+       
+      Components [main contrib non-free]:
+</pre>
+
+<p>
+The components list refers to the list of sub distributions to fetch.  The
+distribution is split up based on software licenses, main being DFSG free
+packages while contrib and non-free contain things that have various
+restrictions placed on their use and distribution.
+
+<p>
+Any number of sources can be added, the setup script will continue to prompt
+until you have specified all that you want.
+
+<p>
+Before starting to use <code>dselect</code> it is necessary to update the
+available list by selecting [U]pdate from the menu.  This is a super-set of
+<samp>apt-get update</samp> that makes the fetched information available to
+<code>dselect</code>.  [U]pdate must be performed even if <samp>apt-get
+update</samp> has been run before.
+
+<p>
+You can then go on and make your selections using [S]elect and then perform the
+installation using [I]nstall.  When using the APT method the [C]onfig and
+[R]emove commands have no meaning, the [I]nstall command performs both of them
+together.
+
+<p>
+By default APT will automatically remove the package (.deb) files once they
+have been successfully installed.  To change this behavior place
+<samp>Dselect::clean &quot;prompt&quot;;</samp> in /etc/apt/apt.conf.
+</p>
+
+<hr>
+
+[ <a href="ch2.html">前のページ</a> ]
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch4.html">次のページ</a> ]
+
+<hr>
+
+APT User's Guide<br>
+
+<address>
+$Id: guide.sgml,v 1.4 2001/04/10 07:02:55 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code>
+</address>
+
+</body>
+
+</html>
+

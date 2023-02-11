@@ -1,0 +1,17 @@
+b2e923361c1325d5a6c4eed99c6b3d26  usr/bin/rz
+5ff4f8682441edb05e740804460ef647  usr/bin/sz
+5ff4f8682441edb05e740804460ef647  usr/bin/sb
+5ff4f8682441edb05e740804460ef647  usr/bin/sx
+b2e923361c1325d5a6c4eed99c6b3d26  usr/bin/rb
+b2e923361c1325d5a6c4eed99c6b3d26  usr/bin/rx
+01ef8771db28d4ddc682a82c4698d697  usr/share/locale/de/LC_MESSAGES/lrzsz.mo
+98b6f00540122aa863b5c7547f5dcb76  usr/share/man/man1/rz.1.gz
+4fa344dd2297dbdf2392e917baf97909  usr/share/man/man1/sz.1.gz
+d46c75d90a1a83260d16f5fad8bc4ce3  usr/share/doc/lrzsz/README
+e17506df728e0026c20af6068f9633eb  usr/share/doc/lrzsz/README.cvs
+183535a65ee4823d2746b2883da0de25  usr/share/doc/lrzsz/README.isdn4linux
+31bdafbb81fb7651ca9a8e4611d48f72  usr/share/doc/lrzsz/TODO
+05065bc535b0d5868fb6ba77df1c1797  usr/share/doc/lrzsz/copyright
+6c0949206fd0ecbf77d4553d5d83e1a0  usr/share/doc/lrzsz/changelog.gz
+483271492a93f8aa24797f4c4128f625  usr/share/doc/lrzsz/NEWS.gz
+6407d312d9e2d79d32bd9142f5fbd8ad  usr/share/doc/lrzsz/changelog.Debian.gz

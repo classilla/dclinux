@@ -1,0 +1,7 @@
+0fd610f41427d85d6255ad8bf7f69351  usr/bin/rpcinfo
+9e3c3433900c66a3b4b29d83ec2c9bda  usr/bin/rpcgen
+3431f049c425f186bf59aa9c64706657  usr/share/man/man1/rpcgen.1.gz
+32e3dd91f4cc64512afef1c7dfefa2c7  usr/share/man/man8/rpcinfo.8.gz
+adb67f0c227b24257a8e4110c7b744a4  usr/share/doc/netkit-rpc/copyright
+1d84df64602910ba5a27d70d259dd6eb  usr/share/doc/netkit-rpc/changelog.gz
+3900151571194b859a83b57e11e945f0  usr/share/doc/netkit-rpc/changelog.Debian.gz

@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --section "General Commands" "General Commands" \
+	/usr/share/info/gzip.info.gz
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/gzip -a -d /usr/share/doc/gzip ]; then
+		ln -sf ../share/doc/gzip /usr/doc/gzip
+	fi
+fi
+# End automatically added section
+

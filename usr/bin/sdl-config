@@ -1,0 +1,89 @@
+#!/bin/sh
+
+prefix=/usr
+exec_prefix=${prefix}
+exec_prefix_set=no
+
+usage="\
+Usage: sdl-config [--prefix[=DIR]] [--exec-prefix[=DIR]] [--version] [--libs] [--cflags]"
+
+if test $# -eq 0; then
+      echo "${usage}" 1>&2
+      exit 1
+fi
+
+while test $# -gt 0; do
+  case "$1" in
+  -*=*) optarg=`echo "$1" | sed 's/[-_a-zA-Z0-9]*=//'` ;;
+  *) optarg= ;;
+  esac
+
+  case $1 in
+    --prefix=*)
+      prefix=$optarg
+      if test $exec_prefix_set = no ; then
+        exec_prefix=$optarg
+      fi
+      ;;
+    --prefix)
+      echo $prefix
+      ;;
+    --exec-prefix=*)
+      exec_prefix=$optarg
+      exec_prefix_set=yes
+      ;;
+    --exec-prefix)
+      echo $exec_prefix
+      ;;
+    --version)
+      echo 1.2.0
+      ;;
+    --cflags)
+      if test ${prefix}/include != /usr/include ; then
+          # Handle oddities in Win32 path handling (assumes prefix)
+          prefix=`echo ${prefix} | sed 's,^//\([A-Z]\),\1:,'`
+
+          includes=-I${prefix}/include
+      fi
+      echo $includes -I${prefix}/include/SDL  -D_REENTRANT
+      ;;
+    --libs)
+	  libdirs="-L${exec_prefix}/lib"
+	  arch=`dpkg --print-architecture`
+	  if [ $arch = "m68k" -o $arch = "mips" ]; then
+	    echo $libdirs -lSDL -lpthread -L/usr/X11R6/lib -lXxf86dga -lXxf86vm
+	  else
+	    echo $libdirs -lSDL -lpthread
+	  fi
+	  ;;
+    --static-libs)
+#    --libs|--static-libs)
+	  libdirs="-L${exec_prefix}/lib -lSDL -lpthread  -lm  -L/home/superh/root/debian-unstable/usr/X11R6/lib -lX11 -lXext -lXxf86vm -lXxf86dga"
+	  case `dpkg --print-architecture` in
+	    m68k)
+	      echo $libdirs -L/usr/X11R6/lib -lXxf86dga -lXxf86vm | sed "s/-lggi//;s/-lgii//;s/-lgg//;s/-lvga//"
+	      ;;
+	    mips)
+	      echo $libdirs -L/usr/X11R6/lib -lXxf86dga -lXxf86vm | sed "s/-lggi//;s/-lgii//;s/-lgg//;s/-lvga//"
+	      ;;
+	    sparc)
+	      echo $libdirs | sed "s/-lvga//"
+	      ;;
+	    powerpc)
+	      echo $libdirs | sed "s/-lvga//"
+	      ;;
+	    arm)
+	      echo $libdirs | sed "s/-lvga//"
+	      ;;
+	    *)
+	      echo $libdirs
+	      ;;
+	  esac
+      ;;
+    *)
+      echo "${usage}" 1>&2
+      exit 1
+      ;;
+  esac
+  shift
+done

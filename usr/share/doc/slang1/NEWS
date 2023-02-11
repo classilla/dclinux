@@ -1,0 +1,21 @@
+-*- text -*-
+Version 1.4 NEWS (See changes.txt for more details)
+  * A new home page: www.s-lang.org
+
+  * Support for multiple namespaces (both public and private)
+
+  * Dynamic linking of modules via 'import' (See modules/README).
+
+  * The interpreter now supports all basic C integer and floating
+    point types.
+    
+  * Many more built-in intrinsic functions and improved documentation.
+  
+  * Associative Arrays
+  
+  * Binary Strings, i.e., the interpreter allows strings to contain
+    embedded \0 chracters.
+    
+  * A slang-shell program called slsh that can run slang scripts (See
+    slsh subdirectory).
+

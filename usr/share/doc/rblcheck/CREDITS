@@ -1,0 +1,47 @@
+General thanks to...
+
+Paul Vixie <paul@vix.com>: For the original RBL, a fantastic tool for
+        the prevention of spam. Often duplicated, never repeated, and
+        all that jazz.
+
+The MAPS project <URL:http://maps.vix.com/>: A great gathering point for
+        protection services regarding email. Everyone there should be
+        given a pat on the back for the thankless hours they put into
+        maintaining an excellent resource for everyone.
+
+Stephen R. van den Berg <srb@cuci.nl>: For writing Procmail, a nifty
+        little mail filtering tool. While certainly not the only place
+        to use rblcheck, it's certainly one of the more useful.
+
+Dire Straits: For writing good music to write code to. ;-) I wonder if
+        spam qualifies as a symptom of industrial disease?
+
+-- IDEA PEOPLE:
+
+Russell Nelson <nelson@crynwr.com>
+Frank Tegtmeyer <fte@iqweb.de>
+Anders Eriksson <aer@cdt.luth.se>
+Kevin Kadow <kadokev@ripco.com>
+Ronald F. Guilmette <rfg@monkeys.com>
+era eriksson <era@iki.fi>
+
+-- CODE PEOPLE:
+
+Ophir Ronen <ophir@internap.com>
+Brian Willoughby <brianw@sounds.wa.com>
+Jeff A. Earickson <jaearick@colby.edu>
+Gerald Pfeifer <pfeifer@dbai.tuwien.ac.at>
+Pat Myrto <pat@rwing.COM>
+William Yang <wyang@freenet.columbus.oh.us>
+Dougal Campbell <dougal@advicom.net>
+Jason Gunthorpe <jgg@gpu.srv.ualberta.ca>
+
+-- BUG PEOPLE:
+
+Timothy J Luoma <luomat@peak.org>
+Adam Shand <larry@alaska.net>
+Andrew Kelley <kelleya@dimensional.com>
+Thomas Meyer <tmeyer@ifi.unizh.ch>
+Jonathan Bradshaw <jonathan@NrgUp.Com>
+Jacques Distler <distler@golem.ph.utexas.edu>
+Harlan Stenn <Harlan.Stenn@pfcs.com>

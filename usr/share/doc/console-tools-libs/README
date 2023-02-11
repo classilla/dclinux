@@ -1,0 +1,45 @@
+This is the README file for console-tools version 0.2.3.
+
+You may find more information at:
+
+	http://www.multimania.com/ydirson/en/lct/
+
+
+This package contains utilities compatible with kernel version 1.1.54
+and later.  consolechars(1) requires 1.1.92 or later.
+
+You will find the data files (keymaps, fonts, and unicode tables),
+which used to be part of this package, in the console-data package.
+
+
+To compile, you just need the standard make+gcc+libc suite.  To format
+the docs, you'll need sgmltools (formerly linuxdoc-sgml).
+
+It is mainly tested for libc 6.1 (aka glibc 2.1), so there may be
+minor problems with libc5, or even libc 6.0.
+
+IMPORTANT NOTE: if you still use libc5, you'll need a recent version.
+5.4.33 and above seem to work fine, whereas 5.3.12 is know to have a
+bug that causes problems to console-tools.
+
+
+To install this package:
+
+1) unpack it somewhere
+
+2) invoke "./configure --help" to look at configuration parameters
+
+2) invoke "./configure" with any chosen options
+
+3) "make" and "make install". This copies by default the utilities to
+/usr/bin, man pages to /usr/man/man? and data files to the subdirectories
+keytables, consolefonts, consoletrans and videomodes of /usr/share/.
+
+
+Then have a look at the `lct' document, available in the source
+distribution as doc/lct.txt.
+
+
+Report problems with this package to:  Yann Dirson <dirson@debian.org>.
+
+August 31th 1999.

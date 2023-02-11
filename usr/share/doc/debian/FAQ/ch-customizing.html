@@ -1,0 +1,467 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - Customizing your installation of Debian GNU/Linux</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-kernel.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-support.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 10 Customizing your installation of Debian GNU/Linux
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-papersize">10.1 How can I ensure that all programs use the same paper size?</a>
+</h2>
+
+<p>
+The file <samp>/etc/papersize</samp> contains the name of the system-wide
+default paper size (i.e.  letter or A4).  It can be overwritten using the
+<samp>PAPERSIZE</samp> environment variable.  For details see the manual page
+<samp>papersize(5)</samp>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-hardwareaccess">10.2 How can I provide access to hardware peripherals, without compromising security?</a>
+</h2>
+
+<p>
+Many device files in the <samp>/dev</samp> directory belong to some predefined
+groups.  For example, <samp>/dev/fd0</samp> belongs to the <samp>floppy</samp>
+group, and <samp>/dev/dsp</samp> belongs to the <samp>audio</samp> group.
+
+<p>
+If you want a certain user to have access to one of these devices, just add the
+user to the group the device belongs to, i.e.  do:
+
+<pre>
+     adduser user group
+</pre>
+
+<p>
+This way you won't have to chmod the device file.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-consolefont">10.3 How do I load a console font on startup the Debian way?</a>
+</h2>
+
+<p>
+The <code>kbd</code> and <code>console-tools</code> packages support this, edit
+<samp>/etc/kbd/config</samp> or <samp>/etc/console-tools/config</samp> files.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-appdefaults">10.4 How can I configure an X11 program's application defaults?</a>
+</h2>
+
+<p>
+Debian's X11 installation expects you to leave the files in
+<samp>/usr/X11R6/lib/X11/app-defaults/</samp> unchanged.  If you want to
+customise X applications globally, put your customizations in
+<samp>/etc/X11/Xresources</samp>.  This file is marked as a configuration file,
+so its contents will be preserved during upgrades.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-booting">10.5 Every distribution seems to have a different boot-up method. Tell me about Debian's.</a>
+</h2>
+
+<p>
+Like all Unices, Debian boots up by executing the program <samp>init</samp>.
+The configuration file for <samp>init</samp> (which is
+<samp>/etc/inittab</samp>) specifies that the first script to be executed
+should be <samp>/etc/init.d/rcS</samp>.  This script checks and mounts file
+systems, loads modules, starts the network services, sets the clock, performs
+other initialization, and then runs all of the scripts (except those with a `.'
+in the filename) in <samp>/etc/rc.boot/</samp>.  Any scripts in the latter
+directory are usually reserved for system administrator use, and using them in
+packages is deprecated.
+
+<p>
+After completing the boot process, <samp>init</samp> executes all start scripts
+in a directory specified by the default runlevel (this runlevel is given by the
+entry for <samp>id</samp> in <samp>/etc/inittab</samp>).  Like most System V
+compatible Unices, Linux has 7 runlevels:
+
+<ul>
+
+<p>
+<li>
+0 (halt the system),
+</li>
+
+<p>
+<li>
+1 (single-user mode),
+</li>
+
+<p>
+<li>
+2 through 5 (various multi-user modes), and
+</li>
+
+<p>
+<li>
+6 (reboot the system).
+</li>
+
+</ul>
+
+<p>
+Debian systems come with id=2, which indicates that the default runlevel will
+be '2' when the multi-user state is entered, and the scripts in
+<samp>/etc/rc2.d/</samp> will be run.
+
+<p>
+In fact, the scripts in any of the directories, <samp>/etc/rcN.d/</samp> are
+just symbolic links back to scripts in <samp>/etc/init.d/</samp>.  However, the
+<em>names</em> of the files in each of the <samp>/etc/rcN.d/</samp> directories
+are selected to indicate the <em>way</em> the scripts in
+<samp>/etc/init.d/</samp> will be run.  Specifically, before entering any
+runlevel, all the scripts beginning with 'K' are run; these scripts kill
+services.  Then all the scripts beginning with 'S' are run; these scripts start
+services.  The two-digit number following the 'K' or 'S' indicates the order in
+which the script is run.  Lower numbered scripts are executed first.
+
+<p>
+This approach works because the scripts in <samp>/etc/init.d/</samp> all take
+an argument which can be either `start', `stop', `reload', `restart' or
+`force-reload' and will then do the task indicated by the argument.  These
+scripts can be used even after a system has been booted, to control various
+processes.
+
+<p>
+For example, with the argument `reload' the command
+
+<pre>
+     /etc/init.d/sendmail reload
+</pre>
+
+<p>
+sends the sendmail daemon a signal to reread its configuration file.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-custombootscripts">10.6 It looks as if Debian does not use <samp>rc.local</samp> to customize the boot process; what facilities are provided?</a>
+</h2>
+
+<p>
+Suppose a system needs to execute script <samp>foo</samp> on start-up, or on
+entry to a particular (System V) runlevel.  Then the system administrator
+should:
+
+<ul>
+
+<p>
+<li>
+Enter the script <samp>foo</samp> into the directory <samp>/etc/init.d/</samp>.
+</li>
+
+<p>
+<li>
+Run the Debian command <samp>update-rc.d</samp> with appropriate arguments, to
+set up links between the (command-line-specified) directories rc?.d and
+<samp>/etc/init.d/foo</samp>.  Here, '?'  is a number from 0 through 6 and
+corresponds to each of the System V runlevels.
+</li>
+
+<p>
+<li>
+Reboot the system.
+</li>
+
+</ul>
+
+<p>
+The command <samp>update-rc.d</samp> will set up links between files in the
+directories rc?.d and the script in <samp>/etc/init.d/</samp>.  Each link will
+begin with a 'S' or a 'K', followed by a number, followed by the name of the
+script.  Scripts beginning with 'S' in <samp>/etc/rcN.d/</samp> are executed
+when runlevel <samp>N</samp> is entered.  Scripts beginning with a 'K' are
+executed when leaving runlevel <samp>N</samp>.
+
+<p>
+One might, for example, cause the script <samp>foo</samp> to execute at
+boot-up, by putting it in <samp>/etc/init.d/</samp> and installing the links
+with <samp>update-rc.d foo defaults 19</samp>.  The argument 'defaults' refers
+to the default runlevels, which are 2 through 5.  The argument '19' ensures
+that <samp>foo</samp> is called before any scripts containing numbers 20 or
+larger.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-interconffiles">10.7 How does the package management system deal with packages that contain configuration files for other packages?</a>
+</h2>
+
+<p>
+Some users wish to create, for example, a new server by installing a group of
+Debian packages and a locally generated package consisting of configuration
+files.  This is not generally a good idea, because <code>dpkg</code> will not
+know about those configuration files if they are in a different package, and
+may write conflicting configurations when one of the initial &quot;group&quot;
+of packages is upgraded.
+
+<p>
+Instead, create a local package that modifies the configuration files of the
+&quot;group&quot; of Debian packages of interest.  Then <code>dpkg</code> and
+the rest of the package management system will see that the files have been
+modified by the local &quot;sysadmin&quot; and will not try to overwrite them
+when those packages are upgraded.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-divert">10.8 How do I override a file installed by a package, so that a different version can be used instead?</a>
+</h2>
+
+<p>
+Suppose a sysadmin or local user wishes to use a program
+&quot;login-local&quot; rather than the program &quot;login&quot; provided by
+the Debian <code>login</code> package.
+
+<p>
+Do <strong>not</strong>:
+
+<ul>
+
+<p>
+<li>
+Overwrite <samp>/bin/login</samp> with <samp>login-local</samp>.
+</li>
+
+</ul>
+
+<p>
+The package management system will not know about this change, and will simply
+overwrite your custom <samp>/bin/login</samp> whenever <samp>login</samp> (or
+any package that provides <samp>/bin/login</samp>) is installed or updated.
+
+<p>
+Rather, do
+
+<ul>
+
+<p>
+<li>
+Execute:
+
+<pre>
+     dpkg-divert --divert /bin/login.debian /bin/login
+</pre>
+
+<p>
+in order to cause all future installations of the Debian <code>login</code>
+package to write the file <samp>/bin/login</samp> to
+<samp>/bin/login.debian</samp> instead.
+</li>
+
+<p>
+<li>
+Then execute:
+
+<pre>
+     cp login-local /bin/login
+</pre>
+
+<p>
+to move your own locally-built program into place.
+</li>
+
+</ul>
+
+<p>
+Details are given in the manual page <code>dpkg-divert(8)</code>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-localpackages">10.9 How can I have my locally-built package included in the list of available packages that the package management system knows about?</a>
+</h2>
+
+<p>
+You can do this in either of two ways:
+
+<ul>
+
+<p>
+<li>
+Use <samp>dselect</samp>, and reselect the access method.  You will be asked
+for a directory where your local packages reside.
+</li>
+
+<p>
+<li>
+Execute the command <samp>dpkg-scanpackages BIN_DIR OVERRIDE_FILE [PATHPREFIX]
+&gt; Packages.new</samp> where:
+
+<ul>
+
+<p>
+<li>
+BIN-DIR is a directory where Debian archive files (which usually have an
+extension of &quot;.deb&quot;) are stored.
+</li>
+
+<p>
+<li>
+OVERRIDE_FILE is a file that is edited by the distribution maintainers and is
+usually stored on a Debian FTP archive at <samp>indices/override.main.gz</samp>
+for the Debian packages in the &quot;main&quot; distribution.  You can ignore
+this for local packages.
+</li>
+
+<p>
+<li>
+PATHPREFIX is an optional string that can be prepended to the Packages.new file
+being produced.
+</li>
+
+</ul>
+</li>
+
+<p>
+<li>
+Once you have built the file <samp>Packages.new</samp>, tell the package
+management system about it by using the command <samp>dpkg --update-avail
+Packages.new</samp>.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-diverse">10.10 Some users like mawk, others like gawk; some like vim, others like elvis; some like trn, others like tin; how does Debian support diversity?</a>
+</h2>
+
+<p>
+There are several cases where two packages provide two different versions of a
+program, both of which provide the same core functionality.  Users might prefer
+one over another out of habit, or because the user interface of one package is
+somehow more pleasing than the interface of another.  Other users on the same
+system might make a different choice.
+
+<p>
+Debian uses a &quot;virtual&quot; package system to allow system administrators
+to choose (or let users choose) their favorite tools when there are two or more
+that provide the same basic functionality, yet satisfy package dependency
+requirements without specifying a particular package.
+
+<p>
+For example, there might exist two different versions of newsreaders on a
+system.  The news server package might 'recommend' that there exist
+<em>some</em> news reader on the system, but the choice of <samp>tin</samp> or
+<samp>trn</samp> is left up to the individual user.  This is satisfied by
+having both the <code>tin</code> and <code>trn</code> packages provide the
+virtual package <code>news-reader</code>.  <em>Which</em> program is invoked is
+determined by a link pointing from a file with the virtual package name
+<samp>/etc/alternatives/news-reader</samp> to the selected file, e.g.,
+<samp>/usr/bin/trn</samp>.
+
+<p>
+A single link is insufficient to support full use of an alternate program;
+normally, manual pages, and possibly other supporting files must be selected as
+well.  The Perl script <samp>update-alternatives</samp> provides a way of
+ensuring that all the files associated with a specified package are selected as
+a system default.
+
+<p>
+For example, to check what executables provide `x-window-manager', run:
+
+<pre>
+     update-alternatives --display x-window-manager
+</pre>
+
+<p>
+If you want to change it, run:
+
+<pre>
+     update-alternatives --config x-window-manager
+</pre>
+
+<p>
+And follow the instructions on the screen (basically, press the number next to
+the entry you'd like better).
+
+<p>
+If a package doesn't register itself as a window manager for some reason (file
+a bug if it's in error), or if you use a window manager from /usr/local
+directory, the selections on screen won't contain your preferred entry.  You
+can update the link through command line options, like this:
+
+<pre>
+     update-alternatives --install /usr/bin/x-window-manager \
+       x-window-manager /usr/local/bin/wmaker-cvs 50
+</pre>
+
+<p>
+The first argument to `--install' option is the symlink that points to
+/etc/alternatives/NAME, where NAME is the second argument.  The third argument
+is the program to which /etc/alternatives/NAME should point to, and the fourth
+argument is the priority (larger value means the alternative will more probably
+get picked automatically).
+
+<p>
+To remove an alternative you added, simply run:
+
+<pre>
+     update-alternatives --remove x-window-manager /usr/local/bin/wmaker-cvs
+</pre>
+</p>
+
+<hr>
+
+[ <a href="ch-kernel.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-support.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

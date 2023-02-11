@@ -1,0 +1,12 @@
+This version of procmail supports Maildir folders.
+
+To make procmail to deliver into a Maildir folder, just append
+a slash (/) to the name of the maildir folder in your ~/.procmailrc file.
+For example, the following rule:
+
+:0:
+* ^Resent-Sender.*debian-user-request@lists.debian.org
+debian-user/
+
+will deliver all mail from the debian-user mailing list to the Maildir
+folder "debian-user".

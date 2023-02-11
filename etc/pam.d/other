@@ -1,0 +1,13 @@
+#
+# /etc/pam.d/other - specify the PAM fallback behaviour
+#
+
+# We fall back to the pam_unix modules. If this is not secure
+# enough for your purpose, consider specifying pam_deny.so
+# instead.
+# 
+
+auth     required       pam_unix.so
+account  required       pam_unix.so
+password required       pam_unix.so
+session  required       pam_unix.so

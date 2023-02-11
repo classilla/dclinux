@@ -1,0 +1,14 @@
+nvi for DEBIAN
+----------------------
+
+This package was debianized by Steve Greenland
+<stevegr@master.debian.org> on Tue, 29 Oct 1996, using
+the new source format. Much of it is based on previous work by Robert
+Sanders <Robert.Sanders@linux.org> or <rsanders@mindspring.com>, and
+Ian Murdock <imurdock@debian.org>.
+
+It was downloaded from ftp://mongoose.bostic.com/pub/nvi.tar.gz,
+which seems to be the new home site: ftp.cs.berkeley.edu no longer
+archives nvi.
+
+Steve Greenland <stevegr@master.debian.org>, Sat, 15 Nov 1997

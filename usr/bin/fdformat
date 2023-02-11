@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo '
+Note: /usr/bin/fdformat is obsolete and is no longer available.
+Please use /usr/bin/superformat instead (make sure you have the 
+fdutils package installed first).  Also, there had been some
+major changes from version 4.x.  Please refer to the documentation.
+'
+

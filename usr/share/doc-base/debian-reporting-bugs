@@ -1,0 +1,8 @@
+Document: debian-reporting-bugs
+Title: How to report a bug in Debian
+Author: Ian Jackson, Steven Brenner and Darren Benham
+Abstract: Description on how to properly report a bug in Debian GNU/Linux.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/debian/bug-reporting.txt

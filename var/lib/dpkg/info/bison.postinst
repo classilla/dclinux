@@ -1,0 +1,25 @@
+#!/bin/sh
+
+set -e
+
+if [ $1 != "upgrade" ] ; then
+
+        update-alternatives --install /usr/bin/yacc yacc /usr/bin/bison.yacc 100 \
+               --slave /usr/share/man/man1/yacc.1.gz yaccman /usr/share/man/man1/bison.1.gz
+
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/bison -a -d /usr/share/doc/bison ]; then
+		ln -sf ../share/doc/bison /usr/doc/bison
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinfo
+if [ "$1" = "configure" ]; then
+	install-info --quiet /usr/share/info/bison.info
+fi
+# End automatically added section
+
+

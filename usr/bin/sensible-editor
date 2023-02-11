@@ -1,0 +1,8 @@
+#!/bin/bash
+shopt -s execfail
+exec ${VISUAL:-${EDITOR:-editor}} "$@"
+exec ae "$@"
+exec vi "$@"
+echo "Couldn't find an editor!" 1>&2
+echo "Set the \$EDITOR environment variable to your desired editor." 1>&2
+exit 1

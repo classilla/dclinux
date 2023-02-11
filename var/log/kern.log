@@ -1,0 +1,1877 @@
+May 21 08:21:37 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+May 21 08:21:38 dreamcast kernel: Cannot find map file.
+May 21 08:21:38 dreamcast kernel: No module symbols loaded.
+May 21 08:21:38 dreamcast kernel: Linux version 2.4.5-pre2 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #87 2001年 5月 21日 月曜日 01:00:46 JST
+May 21 08:21:38 dreamcast kernel: SEGA Dreamcast support.
+May 21 08:21:38 dreamcast kernel: On node 0 totalpages: 4096
+May 21 08:21:38 dreamcast kernel: zone(0): 4096 pages.
+May 21 08:21:38 dreamcast kernel: zone(1): 0 pages.
+May 21 08:21:38 dreamcast kernel: zone(2): 0 pages.
+May 21 08:21:38 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on nfsroot=192.168.0.254:/home/superh/root/base-sh3
+May 21 08:21:38 dreamcast kernel: CPU clock: 200.00MHz
+May 21 08:21:38 dreamcast kernel: Bus clock: 100.00MHz
+May 21 08:21:38 dreamcast kernel: Module clock: 50.00MHz
+May 21 08:21:38 dreamcast kernel: Interval = 125000
+May 21 08:21:38 dreamcast kernel: Console: colour dummy device 80x25
+May 21 08:21:38 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+May 21 08:21:38 dreamcast kernel: Memory: 14548k/16384k available (1137k kernel code, 1836k reserved, 60k data, 184k init)
+May 21 08:21:38 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+May 21 08:21:38 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+May 21 08:21:38 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+May 21 08:21:38 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+May 21 08:21:38 dreamcast kernel: CPU: SH7750/SH7751
+May 21 08:21:38 dreamcast kernel: POSIX conformance testing by UNIFIX
+May 21 08:21:38 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+May 21 08:21:38 dreamcast kernel: Linux NET4.0 for Linux 2.4
+May 21 08:21:38 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+May 21 08:21:38 dreamcast kernel: Starting kswapd v1.8
+May 21 08:21:38 dreamcast kernel: Dreamcast video cable detected: VGA.
+May 21 08:21:38 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+May 21 08:21:38 dreamcast kernel: fb0: SEGA Dreamcast frame buffer device
+May 21 08:21:38 dreamcast kernel: block: queued sectors max/low 9562kB/3187kB, 64 slots per queue
+May 21 08:21:38 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+May 21 08:21:38 dreamcast kernel: loop: loaded (max 8 devices)
+May 21 08:21:38 dreamcast kernel: SuperH SCI(F) driver initialized
+May 21 08:21:38 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+May 21 08:21:38 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+May 21 08:21:38 dreamcast kernel: Real Time Clock Driver v1.10d
+May 21 08:21:38 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+May 21 08:21:38 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+May 21 08:21:38 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 11
+May 21 08:21:38 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+May 21 08:21:38 dreamcast kernel: mice: PS/2 mouse device common for all mice
+May 21 08:21:38 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+May 21 08:21:38 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+May 21 08:21:38 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+May 21 08:21:38 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+May 21 08:21:38 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+May 21 08:21:38 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+May 21 08:21:38 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+May 21 08:21:38 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+May 21 08:21:38 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+May 21 08:21:38 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+May 21 08:21:38 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+May 21 08:21:38 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+May 21 08:21:38 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+May 21 08:21:38 dreamcast kernel: maple(0,0): Connected(function 0x40)
+May 21 08:21:38 dreamcast kernel: keybdev.c: Adding keyboard: input0
+May 21 08:21:38 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+May 21 08:21:38 dreamcast kernel: maple(1,0): Connected(function 0x200)
+May 21 08:21:38 dreamcast kernel: mouse0: PS/2 mouse device for input1
+May 21 08:21:38 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+May 21 08:21:38 dreamcast kernel: maple(3,0): Connected(function 0x1)
+May 21 08:21:38 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+May 21 08:21:38 dreamcast kernel: Sending DHCP requests ., OK
+May 21 08:21:38 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+May 21 08:21:38 dreamcast kernel: IP-Config: Complete:
+May 21 08:21:38 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+May 21 08:21:38 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+May 21 08:21:38 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+May 21 08:21:38 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+May 21 08:21:38 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+May 21 08:21:38 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+May 21 08:21:38 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+May 21 08:21:38 dreamcast kernel: Freeing unused kernel memory: 184k freed
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+May 21 08:21:38 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+May 21 08:21:39 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+May 21 08:21:39 dreamcast last message repeated 4 times
+May 21 08:44:25 dreamcast kernel: Out of Memory: Killed process 62 (portmap).
+May 21 08:44:27 dreamcast kernel: Out of Memory: Killed process 2396 (dselect).
+May 21 08:44:27 dreamcast last message repeated 34 times
+May 21 08:48:47 dreamcast kernel: Out of Memory: Killed process 2773 (apache).
+May 21 08:48:50 dreamcast kernel: Out of Memory: Killed process 2774 (apache).
+May 21 08:48:50 dreamcast kernel: Out of Memory: Killed process 2775 (apache).
+May 21 08:49:04 dreamcast kernel: Out of Memory: Killed process 2772 (apache).
+May 21 08:49:05 dreamcast kernel: Out of Memory: Killed process 2776 (apache).
+May 21 08:49:12 dreamcast kernel: Out of Memory: Killed process 2788 (apache).
+May 21 16:16:43 dreamcast kernel: Out of Memory: Killed process 2866 (apache).
+May 21 16:16:44 dreamcast kernel: Out of Memory: Killed process 2868 (apache).
+May 21 16:16:44 dreamcast kernel: Out of Memory: Killed process 3123 (localedef).
+May 21 16:18:09 dreamcast kernel: Out of Memory: Killed process 3157 (localedef).
+Jan  1 09:01:01 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:01 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:01 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:01 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #2 2001年 5月 28日 月曜日 23:48:56 JST
+Jan  1 09:01:01 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:01 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:01 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:01 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:01 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:01 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:01 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:01 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:01 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:01 dreamcast kernel: Interval = 125000
+Jan  1 09:01:01 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:01 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:01 dreamcast kernel: Memory: 14532k/16384k available (1153k kernel code, 1852k reserved, 56k data, 184k init)
+Jan  1 09:01:01 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:01 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:01 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:01 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:01 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:01 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:01 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:02 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:02 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:02 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:02 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:02 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:02 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:02 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:02 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:02 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:02 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:02 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:02 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:02 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:02 dreamcast kernel: block: queued sectors max/low 9549kB/3183kB, 64 slots per queue
+Jan  1 09:01:02 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:02 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:02 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:02 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:02 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:02 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:02 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:02 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:02 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:02 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:02 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:02 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:02 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:02 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:02 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:01:02 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:01:02 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:02 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:02 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:02 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:02 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:02 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:02 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:02 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:01:02 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:01:02 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:02 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:02 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:02 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:02 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:02 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:02 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:02 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:02 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:02 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:02 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:02 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:58 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:58 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:58 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:58 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #5 2001年 5月 29日 火曜日 00:06:36 JST
+Jan  1 09:00:58 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:58 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:58 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:58 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:58 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:58 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on /etc/profile
+Jan  1 09:00:58 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:58 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:58 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:58 dreamcast kernel: Interval = 125000
+Jan  1 09:00:58 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:58 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:58 dreamcast kernel: Memory: 14520k/16384k available (1161k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:58 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:58 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:58 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:58 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:58 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:58 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:58 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:58 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:58 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:58 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:58 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:58 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:58 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:58 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 300k/8192k of video memory
+Jan  1 09:00:58 dreamcast kernel: fb0: Mode 640x240-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:58 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:58 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:58 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:58 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:58 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:58 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:00:58 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:58 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:58 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:58 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:58 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:58 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:58 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:00:58 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:58 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:58 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:58 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:58 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:58 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:58 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:59 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:59 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:59 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:59 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:59 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:59 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:59 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:59 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:59 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:59 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:59 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:59 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:59 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:59 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:59 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:59 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:59 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:59 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:59 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:59 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:59 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:59 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:59 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:59 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:59 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:59 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #5 2001年 5月 29日 火曜日 00:06:36 JST
+Jan  1 09:00:59 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:59 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:59 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:59 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:59 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:59 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:00:59 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:59 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:59 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:59 dreamcast kernel: Interval = 125000
+Jan  1 09:00:59 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:59 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:59 dreamcast kernel: Memory: 14520k/16384k available (1161k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:59 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:59 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:59 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:59 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:59 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:59 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:59 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:59 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:59 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:59 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:59 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:59 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:59 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:59 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 300k/8192k of video memory
+Jan  1 09:00:59 dreamcast kernel: fb0: Mode 640x240-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:59 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:59 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:59 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:59 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:59 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:59 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:01:00 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:00 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:00 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:00 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:00 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:00 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:00 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:00 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:00 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:00 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:00 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:00 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:00 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:00 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:00 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:01:00 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:01:00 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:00 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:00 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:00 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:00 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:00 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:00 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:00 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:01:00 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:01:00 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:00 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:00 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:00 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:00 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:00 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:00 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:00 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:00 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:00 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:00 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:00 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:55 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:55 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:55 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:55 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #6 2001年 5月 29日 火曜日 00:21:21 JST
+Jan  1 09:00:55 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:55 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:55 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:55 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:55 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:55 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on video=pvr2:output:VGA
+Jan  1 09:00:55 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:55 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:55 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:55 dreamcast kernel: Interval = 125000
+Jan  1 09:00:55 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:55 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:55 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:55 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:55 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:55 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:55 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:55 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:55 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:55 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:55 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:55 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:55 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:55 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:55 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:55 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:55 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 300k/8192k of video memory
+Jan  1 09:00:55 dreamcast kernel: fb0: Mode 640x240-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:55 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:55 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:55 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:55 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:55 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:55 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:55 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:55 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:55 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:00:55 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:55 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:55 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:55 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:55 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:55 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:56 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:56 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:56 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:56 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:56 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:56 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:56 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:56 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:56 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:56 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:56 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:56 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:56 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:56 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:56 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:56 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:56 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:56 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:56 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:56 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:56 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:57 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:57 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:57 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:57 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #8 2001年 5月 29日 火曜日 00:47:37 JST
+Jan  1 09:00:57 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:57 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:57 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:57 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:57 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:57 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:57 dreamcast kernel: Interval = 125000
+Jan  1 09:00:57 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:57 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:57 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:57 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:57 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:57 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:57 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:57 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:57 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:57 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:57 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:57 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:57 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:57 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:57 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 300k/8192k of video memory
+Jan  1 09:00:57 dreamcast kernel: fb0: Mode 640x240-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:57 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:57 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:57 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:57 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:57 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:57 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:00:57 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:57 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:57 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:57 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:57 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:57 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:57 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:57 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:57 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:57 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:57 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:57 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:57 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:57 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:57 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:57 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:57 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:58 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:58 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:58 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:58 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:58 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:58 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:58 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:58 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:58 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:58 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:58 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:56 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:56 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:56 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:56 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #9 2001年 5月 29日 火曜日 00:53:59 JST
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:56 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:56 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:56 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:56 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:56 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:56 dreamcast kernel: Interval = 125000
+Jan  1 09:00:56 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:56 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:56 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:56 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:56 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:56 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:56 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:56 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:56 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:56 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:56 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:56 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:56 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-16@60
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-16@60
+Jan  1 09:00:56 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:56 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 600k/8192k of video memory
+Jan  1 09:00:56 dreamcast kernel: fb0: Mode 640x480-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:56 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:56 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:56 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:56 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:56 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:56 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:00:56 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:56 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:56 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:56 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:56 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:56 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:56 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:56 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:56 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:56 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:56 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:56 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:56 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:56 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:56 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:57 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:57 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:57 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:57 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:57 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:57 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:57 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:57 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:57 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:57 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:57 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:57 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:57 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:57 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:57 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:57 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:57 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:57 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:57 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:57 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:57 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #10 2001年 5月 29日 火曜日 01:03:46 JST
+Jan  1 09:00:57 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:57 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:57 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:57 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:57 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:57 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:57 dreamcast kernel: Interval = 125000
+Jan  1 09:00:57 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:57 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:57 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:57 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:57 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:57 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:57 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:57 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:57 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:57 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:57 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:57 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:57 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:57 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:58 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-16@60
+Jan  1 09:00:58 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:58 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-16@60
+Jan  1 09:00:58 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:58 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 600k/8192k of video memory
+Jan  1 09:00:58 dreamcast kernel: fb0: Mode 640x480-16 pitch = 1280 cable: VGA video output: VGA
+Jan  1 09:00:58 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:58 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:58 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:58 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:58 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:58 dreamcast kernel: block: queued sectors max/low 9258kB/3086kB, 64 slots per queue
+Jan  1 09:00:58 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:58 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:58 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:58 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:58 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:58 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:58 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:58 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:58 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:58 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:58 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:58 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:58 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:58 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:58 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:58 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:58 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:58 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:58 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:58 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:58 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:58 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:58 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:58 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:58 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:58 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:58 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:58 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:58 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:58 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:58 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:58 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:58 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:58 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #11 2001年 5月 29日 火曜日 01:09:24 JST
+Jan  1 09:00:58 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:58 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:58 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:58 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:58 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:58 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:58 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:58 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:58 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:58 dreamcast kernel: Interval = 125000
+Jan  1 09:00:58 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:58 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:58 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:58 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:58 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:58 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:58 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:58 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:58 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:58 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:58 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:58 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:58 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:58 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:58 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:58 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:58 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-32@60
+Jan  1 09:00:58 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:58 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-32@60
+Jan  1 09:00:58 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:58 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:58 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:58 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:58 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:58 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:58 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:58 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:58 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:58 dreamcast kernel: block: queued sectors max/low 9514kB/3171kB, 64 slots per queue
+Jan  1 09:00:58 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:58 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:58 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:58 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:58 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:58 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:58 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:58 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:59 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:59 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:59 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:59 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:59 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:59 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:59 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:59 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:59 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:59 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:59 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:59 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:59 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:59 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:59 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:59 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:59 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:59 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:59 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:59 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:59 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:59 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:59 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:59 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:59 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:59 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:59 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:02:15 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:15 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:02:15 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:02:16 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:16 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:16 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:02:32 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:32 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:32 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:02:32 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:42 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:02:42 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:50 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:02:50 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:00:56 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:56 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:56 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:56 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #12 2001年 5月 29日 火曜日 01:28:39 JST
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:56 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:56 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:56 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:56 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:56 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:56 dreamcast kernel: Interval = 125000
+Jan  1 09:00:56 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:56 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:56 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:56 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:56 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:56 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:56 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:56 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:56 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:56 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:56 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:56 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:56 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-32@60
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-32@60
+Jan  1 09:00:56 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:56 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:56 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:56 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:56 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:56 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:56 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:56 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:56 dreamcast kernel: block: queued sectors max/low 9514kB/3171kB, 64 slots per queue
+Jan  1 09:00:56 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:56 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:56 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:56 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:56 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:56 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:56 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:57 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:57 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:57 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:57 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:57 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:57 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:57 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:57 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:57 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:57 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:57 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:57 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:57 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:57 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:57 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:57 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:57 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:57 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:57 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:57 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:57 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:57 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:57 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:57 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:57 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:57 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:57 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:57 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:57 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #14 2001年 5月 29日 火曜日 01:38:09 JST
+Jan  1 09:00:57 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:57 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:57 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:57 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on debug
+Jan  1 09:00:57 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:57 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:57 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:57 dreamcast kernel: Interval = 125000
+Jan  1 09:00:57 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:57 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:57 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:57 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:57 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:57 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:57 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:57 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:57 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:57 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:57 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:57 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:57 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:57 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:57 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:57 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-32@60
+Jan  1 09:00:57 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:57 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-32@60
+Jan  1 09:00:57 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x240 640x240-32@60
+Jan  1 09:00:57 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:57 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 600k/8192k of video memory
+Jan  1 09:00:57 dreamcast kernel: fb0: Mode 640x240-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:57 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:57 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:57 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:57 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:57 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:57 dreamcast kernel: block: queued sectors max/low 9514kB/3171kB, 64 slots per queue
+Jan  1 09:00:57 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:57 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:57 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:57 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:57 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:57 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:57 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:57 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:57 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:57 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:57 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:57 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:57 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:57 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:57 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:58 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:58 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:58 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:58 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:58 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:58 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:58 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:58 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:58 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:58 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:58 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:58 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:58 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:58 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:58 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:58 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:58 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:55 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:56 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:56 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:56 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #15 2001年 5月 29日 火曜日 01:43:03 JST
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:56 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:56 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:56 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on debug
+Jan  1 09:00:56 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:56 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:56 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:56 dreamcast kernel: Interval = 125000
+Jan  1 09:00:56 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:56 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:56 dreamcast kernel: Memory: 14520k/16384k available (1158k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:56 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:56 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:56 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:56 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:56 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:56 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:56 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:56 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:56 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:56 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:56 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-32@60
+Jan  1 09:00:56 dreamcast kernel: pvr2_decode_var: Invalid pixclock value 38
+Jan  1 09:00:56 dreamcast kernel: fb_find_mode: Trying all modes
+Jan  1 09:00:56 dreamcast kernel: __fb_try_mode: Trying mode ntsc_640x480i 640x480-32@60
+Jan  1 09:00:56 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:56 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:56 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:56 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:56 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:56 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:56 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:56 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:56 dreamcast kernel: block: queued sectors max/low 9514kB/3171kB, 64 slots per queue
+Jan  1 09:00:56 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:56 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:56 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:56 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:56 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:56 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:56 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:56 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:56 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:56 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:56 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:56 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:56 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:56 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:56 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:56 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:56 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:56 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:56 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:56 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:56 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:56 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:56 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:56 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:56 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:56 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:57 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:59 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:59 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:59 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:59 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #16 2001年 5月 29日 火曜日 02:05:00 JST
+Jan  1 09:00:59 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:59 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:59 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:59 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:59 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:59 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on debug
+Jan  1 09:00:59 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:59 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:59 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:59 dreamcast kernel: Interval = 125000
+Jan  1 09:00:59 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:59 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:59 dreamcast kernel: Memory: 14516k/16384k available (1162k kernel code, 1868k reserved, 56k data, 188k init)
+Jan  1 09:00:59 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:59 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:59 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:59 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:59 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:59 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:59 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:59 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:59 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:59 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:59 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:59 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:59 dreamcast kernel: fb_find_mode: Trying default video mode
+Jan  1 09:00:59 dreamcast kernel: __fb_try_mode: Trying mode vga_640x480 640x480-32@60
+Jan  1 09:00:59 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:59 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:59 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:59 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:59 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:59 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:59 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:59 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:59 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:59 dreamcast kernel: block: queued sectors max/low 9512kB/3170kB, 64 slots per queue
+Jan  1 09:00:59 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:59 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:59 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:59 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:59 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:59 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:59 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:00:59 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:00 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:00 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:00 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:00 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:00 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:00 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:00 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:01:00 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:01:00 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:00 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:00 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:00 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:00 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:00 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:00 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:00 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:01:00 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:01:00 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:00 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:00 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:00 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:00 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:00 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:00 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:00 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:00 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:00 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:00 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:00 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:00:55 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:55 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:55 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:55 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #17 2001年 5月 29日 火曜日 02:09:58 JST
+Jan  1 09:00:55 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:55 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:55 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:55 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:55 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:55 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 console=tty0 ip=on
+Jan  1 09:00:55 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:55 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:55 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:55 dreamcast kernel: Interval = 125000
+Jan  1 09:00:55 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:55 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:55 dreamcast kernel: Memory: 14520k/16384k available (1161k kernel code, 1864k reserved, 56k data, 184k init)
+Jan  1 09:00:55 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:55 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:55 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:55 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:55 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:55 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:55 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:55 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:55 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:55 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:55 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:55 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:55 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:55 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:55 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:55 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:55 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:56 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:56 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:56 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:56 dreamcast kernel: block: queued sectors max/low 9514kB/3171kB, 64 slots per queue
+Jan  1 09:00:56 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:56 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:56 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:56 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:56 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:56 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:56 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:00:56 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:56 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:56 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:56 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:56 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:56 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:56 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:56 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:56 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:56 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:00:56 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:00:56 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:00:56 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:00:56 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:00:56 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:00:56 dreamcast kernel: maple(3,0): Connected(function 0x1)
+Jan  1 09:00:56 dreamcast kernel: input2: controller(0x700fe): Racing Controller
+Jan  1 09:00:56 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:56 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:56 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:56 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:56 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:56 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:56 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:56 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:56 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:00:56 dreamcast kernel: maple(3,0): Disconnected
+Jan  1 09:00:56 dreamcast kernel: maple(1,0): Disconnected
+Jan  1 09:00:56 dreamcast kernel: maple(0,0): Disconnected
+Jan  1 09:00:56 dreamcast kernel: keybdev.c: Removing keyboard: input0
+Jan  1 09:01:27 dreamcast kernel: ISO 9660 Extensions: Microsoft Joliet Level 1
+Jan  1 09:01:28 dreamcast kernel: ISO 9660 Extensions: RRIP_1991A
+Jan  1 09:02:09 dreamcast kernel: ISO 9660 Extensions: Microsoft Joliet Level 1
+Jan  1 09:02:10 dreamcast kernel: ISO 9660 Extensions: RRIP_1991A
+Jan  1 09:00:53 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:00:54 dreamcast kernel: Cannot find map file.
+Jan  1 09:00:54 dreamcast kernel: No module symbols loaded.
+Jan  1 09:00:54 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #17 2001年 5月 29日 火曜日 02:09:58 JST
+Jan  1 09:00:54 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:00:54 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:00:54 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:00:54 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:00:54 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:00:54 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:00:54 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:00:54 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:00:54 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:00:54 dreamcast kernel: Interval = 125000
+Jan  1 09:00:54 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:00:54 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:00:54 dreamcast kernel: Memory: 10424k/16384k available (1161k kernel code, 5960k reserved, 56k data, 184k init)
+Jan  1 09:00:54 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:00:54 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:00:54 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:00:54 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:00:54 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:00:54 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:00:54 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:00:54 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:00:54 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:00:54 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:00:54 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:00:54 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:00:54 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:00:54 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:00:54 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:00:54 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:00:54 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:00:54 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:00:54 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:00:54 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:00:54 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:00:54 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:00:54 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:00:54 dreamcast kernel: block: queued sectors max/low 6784kB/2261kB, 64 slots per queue
+Jan  1 09:00:54 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:00:54 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:00:54 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:00:54 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:00:54 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:00:54 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:00:54 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:00:54 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:00:54 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:00:54 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:00:54 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:00:54 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:00:54 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:00:54 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:00:54 dreamcast kernel: pci_alloc_consistent: 6144 bytes at 0x01840000
+Jan  1 09:00:54 dreamcast kernel: pci_alloc_consistent: 18448 bytes at 0x01842000
+Jan  1 09:00:54 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:00:54 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:00:54 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:00:54 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:00:54 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:00:54 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:00:54 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:00:54 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:00:54 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:00:54 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:00:54 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:00:54 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:00:54 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:00:54 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:00:54 dreamcast kernel: Freeing unused kernel memory: 184k freed
+Jan  1 09:03:56 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:13:34 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:13:35 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:24:08 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:24:08 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 09:28:33 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:32:00 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:33:06 dreamcast kernel: Out of Memory: Killed process 86 (portmap).
+Jan  1 09:33:16 dreamcast kernel: Out of Memory: Killed process 191 (dselect).
+Jan  1 09:33:17 dreamcast kernel: Out of Memory: Killed process 191 (dselect).
+Jan  1 09:01:00 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:00 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:00 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:00 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #21 2001年 5月 30日 水曜日 05:10:07 JST
+Jan  1 09:01:00 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:00 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:00 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:00 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:00 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:00 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:00 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:00 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:00 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:01 dreamcast kernel: Interval = 125000
+Jan  1 09:01:01 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:01 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:01 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:01 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:01 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:01 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:01 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:01 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:01 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:01 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:01 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:01 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:01 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:01 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:01 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:01 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:01 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:01 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:01 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:01 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:01 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:01 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:01 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:01 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:01 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:01 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:01 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:01 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:01 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:01 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:01 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:01 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:01 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:01 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:01 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:01 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:01 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:01 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:01 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:01 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:01 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:01 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:01 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:01 dreamcast kernel: input0: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:01 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:01 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:01 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:01 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:01 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:01 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:01 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:01 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:01 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:01 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:01 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:01 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:01 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:01 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:01 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:30 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:30 dreamcast kernel: keybdev.c: Adding keyboard: input1
+Jan  1 09:01:30 dreamcast kernel: input1: keyboard(0x1020080): Keyboard
+Jan  1 09:11:26 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:11:26 dreamcast kernel: mouse0: PS/2 mouse device for input2
+Jan  1 09:11:26 dreamcast kernel: input2: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:36:19 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:55:07 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 11:13:16 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 11:19:14 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0010.
+Jan  1 11:19:14 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 11:26:15 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 11:33:58 dreamcast kernel: Out of Memory: Killed process 91 (portmap).
+Jan  1 11:33:58 dreamcast kernel: Out of Memory: Killed process 759 (dpkg).
+Jan  1 11:37:10 dreamcast kernel: Out of Memory: Killed process 783 (dpkg).
+Jan  1 11:51:11 dreamcast kernel: Out of Memory: Killed process 833 (dpkg).
+Jan  1 11:52:10 dreamcast kernel: Out of Memory: Killed process 847 (dpkg).
+Jan  1 09:01:05 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:05 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:05 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:05 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #21 2001年 5月 30日 水曜日 05:10:07 JST
+Jan  1 09:01:05 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:05 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:05 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:05 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:05 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:05 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:05 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:05 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:05 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:05 dreamcast kernel: Interval = 125000
+Jan  1 09:01:05 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:05 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:05 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:05 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:05 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:05 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:05 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:05 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:05 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:05 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:05 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:05 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:05 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:05 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:05 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:05 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:05 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:05 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:05 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:05 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:05 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:05 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:05 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:05 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:05 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:05 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:05 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:05 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:05 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:05 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:05 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:05 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:05 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:05 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:05 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:05 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:05 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:05 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:05 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:05 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:05 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:05 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:05 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:06 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:06 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:06 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:06 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:06 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:06 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:06 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:06 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:06 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:06 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:06 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:06 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:06 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:06 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:06 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:06 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:06 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:06 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:02 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:02 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:02 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:02 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #25 2001年 5月 30日 水曜日 09:14:47 JST
+Jan  1 09:01:02 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:02 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:02 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:02 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:02 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:02 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:02 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:02 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:02 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:03 dreamcast kernel: Interval = 125000
+Jan  1 09:01:03 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:03 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:03 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:03 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:03 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:03 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:03 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:03 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:03 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:03 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:03 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:03 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:03 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:03 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:03 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:03 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:03 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:03 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:03 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:03 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:03 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:03 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:03 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:03 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:03 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:03 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:03 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:03 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:03 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:03 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:03 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:03 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:03 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:03 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:03 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:03 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:03 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:03 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:03 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:03 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:03 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:03 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:03 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:03 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:03 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:03 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:03 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:03 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:03 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:03 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:03 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:03 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:03 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:03 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:03 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:03 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:03 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:03 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:03 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:03 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:03 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:03 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:04 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:04 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:04 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:03:55 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:06:50 dreamcast kernel: eth0: Too much work at interrupt, IntrStatus=0x0040.
+Jan  1 09:01:06 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:06 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:06 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:06 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #25 2001年 5月 30日 水曜日 09:14:47 JST
+Jan  1 09:01:06 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:06 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:06 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:06 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:06 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:06 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:06 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:06 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:06 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:06 dreamcast kernel: Interval = 125000
+Jan  1 09:01:06 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:06 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:06 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:06 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:06 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:06 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:06 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:06 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:06 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:06 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:06 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:06 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:06 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:06 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:06 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:06 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:06 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:06 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:06 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:06 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:06 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:06 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:06 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:06 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:06 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:06 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:06 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:06 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:06 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:06 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:06 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:06 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:06 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:06 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:06 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:06 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:06 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:06 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:06 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:06 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:06 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:06 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:06 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:07 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:07 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:07 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:07 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:07 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:07 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:07 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:07 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:07 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:07 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:07 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:07 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:07 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:07 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:07 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:07 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:07 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:07 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:07 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:07 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:18:25 dreamcast kernel: Out of Memory: Killed process 92 (portmap).
+Jan  1 09:18:26 dreamcast kernel: Out of Memory: Killed process 248 (frontend).
+Jan  1 09:01:16 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:16 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:16 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:16 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #25 2001年 5月 30日 水曜日 09:14:47 JST
+Jan  1 09:01:16 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:16 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:16 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:16 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:16 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:16 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:16 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:16 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:16 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:16 dreamcast kernel: Interval = 125000
+Jan  1 09:01:16 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:16 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:16 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:16 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:16 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:16 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:16 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:16 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:16 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:16 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:16 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:16 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:16 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:16 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:16 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:16 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:16 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:16 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:16 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:16 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:16 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:16 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:16 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:16 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:16 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:16 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:16 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:16 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:16 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:16 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:17 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:17 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:17 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:17 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:17 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:17 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:17 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:17 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:17 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:17 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:17 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:17 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:17 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:17 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:17 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:17 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:17 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:17 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:17 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:17 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:17 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:17 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:17 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:17 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:17 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:17 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:17 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:17 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:17 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:17 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:17 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:17 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:17 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:17 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:17 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:08 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:09 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:09 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:09 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #25 2001年 5月 30日 水曜日 09:14:47 JST
+Jan  1 09:01:09 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:09 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:09 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:09 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:09 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:09 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:09 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:09 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:09 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:09 dreamcast kernel: Interval = 125000
+Jan  1 09:01:09 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:09 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:09 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:09 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:09 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:09 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:09 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:09 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:09 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:09 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:09 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:09 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:09 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:09 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:09 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:09 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:09 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:09 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:09 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:09 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:09 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:09 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:09 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:09 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:09 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:09 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:09 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:09 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:09 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:09 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:09 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:09 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:09 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:09 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:09 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:09 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:09 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:09 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:09 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:09 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:09 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:09 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:09 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:09 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:09 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:09 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:09 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:09 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:09 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:09 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:09 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:09 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:09 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:09 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:09 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:09 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:09 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:10 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:10 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:10 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:10 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:10 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:10 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:10 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:10 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:05 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:05 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:05 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:05 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #26 2001年 5月 31日 木曜日 06:52:25 JST
+Jan  1 09:01:05 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:05 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:05 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:05 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:05 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:05 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:05 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:05 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:05 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:05 dreamcast kernel: Interval = 125000
+Jan  1 09:01:05 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:05 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:05 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:05 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:05 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:05 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:05 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:05 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:05 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:05 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:05 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:05 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:05 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:05 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:05 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:05 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:05 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:05 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:05 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:05 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:05 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:05 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:05 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:05 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:05 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:05 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:06 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:06 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:06 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:06 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:06 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:06 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:06 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:06 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:06 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:06 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:06 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:06 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:06 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:06 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:06 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:06 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:06 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:06 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:06 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:06 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:06 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:06 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:06 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:06 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:06 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:06 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:06 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:06 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:06 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:06 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:06 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:06 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:06 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:06 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:06 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:06 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:32 dreamcast kernel: ISO 9660 Extensions: RRIP_1991A
+Jan  1 09:01:04 dreamcast kernel: klogd 1.4.1#2, log source = /proc/kmsg started.
+Jan  1 09:01:04 dreamcast kernel: Cannot find map file.
+Jan  1 09:01:04 dreamcast kernel: No module symbols loaded.
+Jan  1 09:01:04 dreamcast kernel: Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #27 Thu May 31 07:06:51 JST 2001
+Jan  1 09:01:04 dreamcast kernel: SEGA Dreamcast support.
+Jan  1 09:01:04 dreamcast kernel: On node 0 totalpages: 4096
+Jan  1 09:01:04 dreamcast kernel: zone(0): 4096 pages.
+Jan  1 09:01:04 dreamcast kernel: zone(1): 0 pages.
+Jan  1 09:01:04 dreamcast kernel: zone(2): 0 pages.
+Jan  1 09:01:04 dreamcast kernel: Kernel command line: mem=16M console=ttySC1,115200 ip=on
+Jan  1 09:01:04 dreamcast kernel: CPU clock: 200.00MHz
+Jan  1 09:01:04 dreamcast kernel: Bus clock: 100.00MHz
+Jan  1 09:01:04 dreamcast kernel: Module clock: 50.00MHz
+Jan  1 09:01:04 dreamcast kernel: Interval = 125000
+Jan  1 09:01:04 dreamcast kernel: Console: colour dummy device 80x25
+Jan  1 09:01:04 dreamcast kernel: Calibrating delay loop... 199.47 BogoMIPS
+Jan  1 09:01:04 dreamcast kernel: Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Jan  1 09:01:04 dreamcast kernel: Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Jan  1 09:01:04 dreamcast kernel: Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Jan  1 09:01:04 dreamcast kernel: Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Jan  1 09:01:04 dreamcast kernel: Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Jan  1 09:01:04 dreamcast kernel: CPU: SH7750/SH7751
+Jan  1 09:01:04 dreamcast kernel: POSIX conformance testing by UNIFIX
+Jan  1 09:01:04 dreamcast kernel: PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Jan  1 09:01:04 dreamcast kernel: Linux NET4.0 for Linux 2.4
+Jan  1 09:01:04 dreamcast kernel: Based upon Swansea University Computer Society NET3.039
+Jan  1 09:01:04 dreamcast kernel: Starting kswapd v1.8
+Jan  1 09:01:04 dreamcast kernel: devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+Jan  1 09:01:04 dreamcast kernel: devfs: boot_options: 0x0
+Jan  1 09:01:04 dreamcast kernel: Console: switching to colour frame buffer device 80x30
+Jan  1 09:01:04 dreamcast kernel: fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+Jan  1 09:01:04 dreamcast kernel: fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+Jan  1 09:01:04 dreamcast kernel: pty: 256 Unix98 ptys configured
+Jan  1 09:01:04 dreamcast kernel: SuperH SCI(F) driver initialized
+Jan  1 09:01:04 dreamcast kernel: ttySC0 at 0xffe00000 is a SCI
+Jan  1 09:01:04 dreamcast kernel: ttySC1 at 0xffe80000 is a SCIF
+Jan  1 09:01:04 dreamcast kernel: maple: registered driver: Dreamcast controller (function 0x1)
+Jan  1 09:01:04 dreamcast kernel: maple: registered driver: Dreamcast keyboard (function 0x40)
+Jan  1 09:01:04 dreamcast kernel: maple: registered driver: Dreamcast mouse (function 0x200)
+Jan  1 09:01:04 dreamcast kernel: Real Time Clock Driver v1.10d
+Jan  1 09:01:05 dreamcast kernel: block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+Jan  1 09:01:05 dreamcast kernel: RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+Jan  1 09:01:05 dreamcast kernel: loop: loaded (max 8 devices)
+Jan  1 09:01:05 dreamcast kernel: 8139too Fast Ethernet driver 0.9.17
+Jan  1 09:01:05 dreamcast kernel: PCI: enabling device 00:00.0 (0006 -> 0007)
+Jan  1 09:01:05 dreamcast kernel: eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+Jan  1 09:01:05 dreamcast kernel: eth0:  Identified 8139 chip type 'RTL-8139C'
+Jan  1 09:01:05 dreamcast kernel: GDROM: Dreamcast GD-ROM Drive found.
+Jan  1 09:01:05 dreamcast kernel: mice: PS/2 mouse device common for all mice
+Jan  1 09:01:05 dreamcast kernel: SEGA Dreamcast MAPLE Bus drivers
+Jan  1 09:01:05 dreamcast kernel: maple: registered driver: Dummy (function 0x0)
+Jan  1 09:01:05 dreamcast kernel: NET4: Linux TCP/IP 1.0 for NET4.0
+Jan  1 09:01:05 dreamcast kernel: IP Protocols: ICMP, UDP, TCP
+Jan  1 09:01:05 dreamcast kernel: IP: routing cache hash table of 512 buckets, 4Kbytes
+Jan  1 09:01:05 dreamcast kernel: TCP: Hash tables configured (established 1024 bind 2048)
+Jan  1 09:01:05 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+Jan  1 09:01:05 dreamcast kernel: maple(0,0): Connected(function 0x40)
+Jan  1 09:01:05 dreamcast kernel: keybdev.c: Adding keyboard: input0
+Jan  1 09:01:05 dreamcast kernel: input0: keyboard(0x1020080): Keyboard
+Jan  1 09:01:05 dreamcast kernel: maple(1,0): Connected(function 0x200)
+Jan  1 09:01:05 dreamcast kernel: mouse0: PS/2 mouse device for input1
+Jan  1 09:01:05 dreamcast kernel: input1: mouse(0xe0700): Dreamcast Mouse
+Jan  1 09:01:05 dreamcast kernel: maple(2,0): Connected(function 0x1)
+Jan  1 09:01:05 dreamcast kernel: input2: controller(0xf06fe): Dreamcast Controller
+Jan  1 09:01:05 dreamcast kernel: Sending DHCP requests ., OK
+Jan  1 09:01:05 dreamcast kernel: IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+Jan  1 09:01:05 dreamcast kernel: IP-Config: Complete:
+Jan  1 09:01:05 dreamcast kernel:       device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+Jan  1 09:01:05 dreamcast kernel:      host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+Jan  1 09:01:05 dreamcast kernel:      bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+Jan  1 09:01:05 dreamcast kernel: NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+Jan  1 09:01:05 dreamcast kernel: RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Jan  1 09:01:05 dreamcast kernel: Freeing initrd memory: 4096k freed
+Jan  1 09:01:05 dreamcast kernel: Looking up port of RPC 100003/2 on 192.168.0.254
+Jan  1 09:01:05 dreamcast kernel: Looking up port of RPC 100005/2 on 192.168.0.254
+Jan  1 09:01:05 dreamcast kernel: VFS: Mounted root (nfs filesystem).
+Jan  1 09:01:05 dreamcast kernel: Mounted devfs on /dev
+Jan  1 09:01:05 dreamcast kernel: Freeing unused kernel memory: 188k freed
+Jan  1 09:01:05 dreamcast kernel: eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.

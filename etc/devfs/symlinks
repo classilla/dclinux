@@ -1,0 +1,10 @@
+# symlinks
+# format: original linkname
+
+# configure these how you want them... these are the defaults
+video0		video
+vbi0		vbi
+radio0		radio
+ram1		ram
+qft0		ftape
+nqft0		nftape

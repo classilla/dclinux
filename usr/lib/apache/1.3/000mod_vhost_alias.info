@@ -1,0 +1,7 @@
+LoadModule: vhost_alias_module /usr/lib/apache/1.3/mod_vhost_alias.so
+Directives:
+ VirtualDocumentRoot
+ VirtualDocumentRootIP
+ VirtualScriptAlias
+ VirtualScriptAliasIP
+Description: Support for dynamic mass virtual hosting

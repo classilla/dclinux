@@ -1,0 +1,169 @@
+#!/bin/sh
+
+usage()
+{
+    echo >&2 "Usage: $(basename $0) [-v] [--tty=<device>] G0|G1 [cp437|iso01|vt100|user|<acm_name>]"
+}
+
+usage_exit()
+{
+    usage
+    exit 1
+}
+
+tty_out()
+{
+    /bin/echo -en >&3 $*
+}
+
+verbose()
+{
+    test $VERBOSE = 1 && echo >&2 $*
+}
+
+error()
+{
+    echo >&2 $*
+}
+
+activate_charset()
+{
+    verbose "Switching to $1 charset"
+    case $1 in
+    G0)
+	tty_out "\017"
+	;;
+    G1)
+	tty_out "\016"
+	;;
+    esac
+}
+
+# parse command-line
+
+CHARSET=
+ACM=
+INTERNAL_ACM=
+ACM_NAME=
+TTY=/dev/tty
+
+VERBOSE=0
+
+GOT_CHARSET=0
+GOT_ACM=0
+
+while [ $# -gt 0 ]
+do
+    case $1 in
+    -v)
+	VERBOSE=1
+	shift
+	;;
+    --tty)
+	TTY=$2
+	shift
+	shift
+	;;
+    --tty=*)
+	TTY=${1#--tty=}
+	shift
+	;;
+    G0|G1)
+	test ${GOT_CHARSET} = 1 && usage_exit
+	CHARSET=$1
+	GOT_CHARSET=1
+	shift
+	;;
+    iso01)
+	test ${GOT_ACM} = 1 && usage_exit
+	INTERNAL_ACM=B
+	ACM_NAME=$1
+	GOT_ACM=1
+	shift
+	;;
+    vt100)
+	test ${GOT_ACM} = 1 && usage_exit
+	INTERNAL_ACM=0
+	ACM_NAME=$1
+	GOT_ACM=1
+	shift
+	;;
+    cp437)
+	test ${GOT_ACM} = 1 && usage_exit
+	INTERNAL_ACM=U
+	ACM_NAME=$1
+	GOT_ACM=1
+	shift
+	;;
+    user)
+	test ${GOT_ACM} = 1 && usage_exit
+	INTERNAL_ACM=K
+	ACM_NAME="user-defined"
+	GOT_ACM=1
+	shift
+	;;
+    *)
+	test ${GOT_ACM} = 1 && usage_exit
+	INTERNAL_ACM=K
+	ACM_NAME="user-defined"
+	ACM=$1
+	GOT_ACM=1
+	shift
+	;;
+    esac
+done
+
+# open requested tty
+test -c "$TTY" && exec 3<>$TTY
+
+# if specified ACM is not available internally, get it from file
+if [ "$ACM" != "" ]
+then
+    case $CHARSET in
+    G0)
+	OPT=
+	;;
+    G1)
+	OPT=--g1
+	;;
+    esac
+    
+    verbose -n "Loading $ACM ACM into user-defined slot..."
+    consolechars $OPT --tty=${TTY} -m $ACM && verbose "done."
+fi
+
+if [ "$INTERNAL_ACM" -a "$CHARSET" ]
+then # make $CHARSET point to $INTERNAL_ACM
+    if [ "$TTY" ]
+    then
+	ONTTY=" on $TTY"
+    else
+	ONTTY=""
+    fi
+	
+    if [ "$ACM" ]
+    then
+	verbose "Making ${CHARSET}${ONTTY} point to $ACM_NAME ACM (file $ACM)"
+    else
+	verbose "Making ${CHARSET}${ONTTY} point to internal ACM $ACM_NAME"
+    fi
+    case $CHARSET in
+    G0)
+	tty_out "\033($INTERNAL_ACM"
+	;;
+    G1)
+	tty_out "\033)$INTERNAL_ACM"
+	;;
+    esac
+    activate_charset $CHARSET
+elif [ "$CHARSET" -a -z "$INTERNAL_ACM" ]
+then # make $CHARSET current
+    activate_charset $CHARSET
+elif [ "$INTERNAL_ACM" -a -z "$CHARSET" ]
+then # set current charset to $ACM
+    error "Don't know (yet ?) how to determine current charset."
+    error "Please specify G0 or G1"
+    exit 1
+else
+    usage
+fi

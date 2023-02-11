@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [ $1 != "upgrade" ] ; then
+	install-info --quiet --remove /usr/info/bison.info
+fi

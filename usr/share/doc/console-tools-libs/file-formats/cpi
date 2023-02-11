@@ -1,0 +1,149 @@
+			The CPI file-format
+
+		(C) 1997 Yann Dirson <dirson@debian.org>
+
+
+ This file documents the CPI font-file-format, as understood by version 0.94
+and above of the Linux console utilities ('kbd').
+
+ This file has revision number 1.0, and is dated 1997/09/02.
+ Any useful additionnal information on CPI files would be great.
+
+
+0. Changes
+
+1998/08/20: updated author's e-mail.
+
+
+1. Summary
+
+ The CPI file format is used by MS-DOS to store its fonts. This description
+comes from reverse-ingeneering on codepage(1), so it's very incomplete. Any
+complement would be greatly appreciated.
+
+ A CPI file contains fonts for several MS-DOS code-pages, each in possibly
+several sizes (typically 08, 14, 16). Each of these fonts is designed for a
+particular device, which can be either a screen or a printer device.
+
+ There is also a DR-DOS CPI format, for which I have even less documentation.
+
+ MS-DOS 6.22 provides the following CPI files containing screen (EGA) fonts:
+
+	iso.cpi
+	ega.cpi
+	ega2.cpi
+	ega3.cpi
+	
+ The 3 latter files just contain selected codepages from the first one, in
+sizes 08, 14 and 16, but the first one only contains size 16.
+
+
+2. History
+
+ Unknown.
+
+
+3. Known programs understanding this file-format.
+
+ The following program in the Linux console utilities can read and/or write
+PSF files:
+
+	codepage (R)
+
+
+4. Technical data
+
+ The file format is described here in sort-of EBNF notation. Upper-case
+WORDS represent terminal symbols, ie. C types; lower-case words represent
+non-terminal symbols, ie. symbols defined in terms of other symbols.
+ [sym] is an optional symbol
+ {sym} is a symbol that can be repeated 0 or more times
+ {sym}*N is a symbol that must be repeated N times
+ Comments are introduced with a # sign.
+
+
+
+# The data (U_SHORT's) are stored in LITTLE_ENDIAN byte order.
+
+ms_cpi_file =
+(off = 0)	ms_cpi_file_header
+(off = 23)	font_info_header
+(off = 25)	cp_entry_header
+(off = 53)	<more>				# chained data in no special order
+
+ms_cpi_file_header =
+(off = 0)	ms_cpi_id
+(off = 8)	font_res	# ?
+(off = 16)	num_pointers	# ?
+(off = 18)	p_type		# ?
+(off = 19)	offset
+ (size = 23)
+			
+ms_cpi_id	= {CHAR}*8 = 0xFF "FONT   "	# cpi_id is a 8-bytes "magic number" string
+ (size = 8)
+font_res	= {CHAR}*8
+ (size = 8)
+num_pointers	= U_SHORT
+ (size = 2)
+p_type		= CHAR
+ (size = 1)
+offset		= U_LONG
+ (size = 4)
+
+font_info_header = nb-codepages
+ (size = 2)
+
+nb-codepages = U_SHORT
+ (size = 2)
+
+#
+
+# The header's normal size is 28 bytes. However, it is said there happens to
+# be 26-bytes headers. What happens in this case ? Is font_offset still valid ?
+cp_entry_header =
+(off = 0)	cp_header_size 
+(off = 2)	next_header_offset 
+(off = 6)	device_type
+(off = 8)	device_name
+(off = 16)	cp_number
+(off = 18)	cp_res			# ?
+(off = 24)	font_offset
+ (size = 28)
+
+cp_header_size		= U_SHORT		# size of the codepage_header
+ (size = 2)
+next_header_offset	= U_LONG
+ (size = 4)
+device_type		= U_SHORT = 1 | 2	# 1 = screen ; 2 = printer
+ (size = 2)
+device_name		= {CHAR}*8		# eg. "EGA     "
+ (size = 8)
+cp_number		= U_SHORT
+ (size = 2)
+cp_res			= {CHAR}*6
+ (size = 6)
+font_offset		= U_LONG
+ (size = 4)
+
+<AT FONT-OFFSET>: cp_info_header cp_fontdata
+
+#
+
+cp_info_header =
+(off = 0)	U_SHORT		# reserved
+(off = 2)	num_fonts
+(off = 4)	bitmap_size	# size of font data (all <num_fonts> sizes)
+ (size = 6)
+
+num_fonts	= U_SHORT
+ (size = 2)
+bitmap_size	= U_SHORT		# eg. for width=8 :  16->4102  08,14,16->9746 (!?)
+ (size = 2)
+
+cp_fontdata	= {raw_fontdata}	# font data for all <num_fonts> sizes
+
+#
+
+raw_fontdata =	{char_data}*256
+
+char_data =	{BYTE}*<fontheight>

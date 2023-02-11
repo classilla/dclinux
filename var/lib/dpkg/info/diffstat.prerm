@@ -1,0 +1,15 @@
+#! /bin/sh
+# prerm script for diffstat
+
+set -e
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/diffstat ]; then
+	rm -f /usr/doc/diffstat
+fi
+# End automatically added section
+
+
+exit 0
+
+

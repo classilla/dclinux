@@ -1,0 +1,79 @@
+#!/bin/sh -e
+
+if [ "$1" = "install" ]; then
+	# package is being newly installed or reinstalled, so inetd might
+	# still be netbase's, in which case, since we're replacing it,
+	# it won't have been shutdown like it needs to have been. Fix that.
+	if [ -x /etc/init.d/inetd ]; then
+		/etc/init.d/inetd stop
+	fi
+fi
+if [ "$1" = "upgrade" ] && dpkg --compare-versions "$2" lt "0.10-5"; then
+	# old packages were buggy, and wouldn't properly stop inetd.
+	# make *sure* it's stopped now, if at all possible
+	if [ -x /etc/init.d/inetd ]; then
+		/etc/init.d/inetd stop
+	fi
+	pids=`ps x --user=0 | grep [/]usr/sbin/inetd | awk '{print $1}'`
+	if [ "$pids" != "" ]; then
+		echo -n "Killing extraneous inetd processes:"
+		for pid in $pids; do
+			echo -n " $pid"
+			kill -9 $pid
+		done
+		echo "."
+	fi
+fi
+
+# create a new /etc/inetd.conf file if it doesn't already exist
+if [ ! -f /etc/inetd.conf ]; then
+	cat <<EOF >/etc/inetd.conf
+# /etc/inetd.conf:  see inetd(8) for further informations.
+#
+# Internet server configuration database
+#
+#
+# Lines starting with "#:LABEL:" or "#<off>#" should not
+# be changed unless you know what you are doing!
+#
+# If you want to disable an entry so it isn't touched during
+# package updates just comment it out with a single '#' character.
+#
+# Packages should modify this file by using update-inetd(8)
+#
+# <service_name> <sock_type> <proto> <flags> <user> <server_path> <args>
+#
+#:INTERNAL: Internal services
+#echo		stream	tcp	nowait	root	internal
+#echo		dgram	udp	wait	root	internal
+#chargen	stream	tcp	nowait	root	internal
+#chargen	dgram	udp	wait	root	internal
+discard		stream	tcp	nowait	root	internal
+discard		dgram	udp	wait	root	internal
+daytime		stream	tcp	nowait	root	internal
+#daytime	dgram	udp	wait	root	internal
+time		stream	tcp	nowait	root	internal
+#time		dgram	udp	wait	root	internal
+
+#:STANDARD: These are standard services.
+
+#:BSD: Shell, login, exec and talk are BSD protocols.
+
+#:MAIL: Mail, news and uucp services.
+
+#:INFO: Info services
+
+#:BOOT: Tftp service is provided primarily for booting.  Most sites
+# run this only on machines acting as "boot servers."
+
+#:RPC: RPC based services
+
+#:HAM-RADIO: amateur-radio services
+
+#:OTHER: Other services
+
+EOF
+	chmod 644 /etc/inetd.conf
+fi
+
+##

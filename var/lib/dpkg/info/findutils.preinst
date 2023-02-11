@@ -1,0 +1,30 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+  install|upgrade)
+      dpkg --assert-support-predepends
+      if [ -n "$2" ]; then
+	version=$2
+	if dpkg --compare-versions $version le-nl 4.1-15 ; then
+	  echo /etc/cron.daily/find has a new format.
+	  echo Consider using the new /etc/cron.daily/find
+	  echo and modifing /etc/updatedb.conf
+	  echo Old versions of /etc/cron.daily/find may not work
+	fi
+      fi
+      ;;
+
+  abort-upgrade)
+      ;;
+
+  *)
+     echo "preinst called with unknown argument \`$1'" >&2
+     exit 0
+     ;;
+esac
+
+  
+
+

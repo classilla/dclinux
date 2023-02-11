@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+install-info --quiet --section "General Commands" "General Commands" \
+  /usr/share/info/sharutils.info
+install-info --quiet --section "General Commands" "General Commands" \
+ --description="Synchronize remote files" /usr/share/info/remsync.info
+if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/sharutils -a -d /usr/share/doc/sharutils ]; then
+    ln -sf ../share/doc/sharutils /usr/doc/sharutils
+  fi
+fi

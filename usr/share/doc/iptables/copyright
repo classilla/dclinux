@@ -1,0 +1,30 @@
+
+The HOWTOs and the sourcecode for iptables were downloaded from
+http://netfilter.kernelnotes.org. Some modifications were made to the
+Makefiles. Christoph Lameter (christoph@lameter.com) created the Debian
+package March 26, 2000.
+
+The copyright of iptables is the GPL (see /usr/share/common-licenses/GPL).
+
+iptables grew out of the netfilter software whose ancestor in turn was the
+ipchains software. A large number of people contributed to the software over
+the years.
+
+The core team developing iptables consisted of:
+
+Marc Boucher and Rusty Russell
+
+Other contributors:
+
+ James Morris 
+ Patrick Mullen 
+ Markus Hennig 
+ Peter Benie 
+ bert hubert 
+ Kevin Moore 
+ Yon Uriarte 
+ Jozsef Kadlecsik 
+ Emmanuel Roger 
+ Adam Kumiszcza
+
+

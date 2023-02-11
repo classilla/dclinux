@@ -1,0 +1,9 @@
+auto
+/bin/csh
+csh.1.gz
+/usr/share/man/man1/csh.1.gz
+
+/bin/tcsh
+20
+/usr/share/man/man1/tcsh.1.gz
+

@@ -1,0 +1,3 @@
+/etc/cron.weekly/cvs
+/etc/cvs-cron.conf
+/etc/cvs-pserver.conf

@@ -1,0 +1,8 @@
+inetd:
+	- will shut down services respawning too fast. Should bring them 
+	  up again after a few minutes.
+	- I'd appreciate if someone could try the Phrack inetd-killer of
+	  a couple of months ago and let me know the results, if any.
+
+rpcgen:
+	- should look for cpp in more places (eg, /usr/bin, /usr/libexec)

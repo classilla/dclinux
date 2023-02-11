@@ -1,0 +1,23 @@
+#!/bin/sh
+# Small script to get the kernel version
+# Made by W.Akkerman <wichert@liacs.nl> for the Debian modules package.
+
+# Helper functions from Bruce Perens to replace cut
+
+pick1() {
+    eval 'echo $'"$pick_index"
+}
+pick() {
+    OLD_IFS=IFS
+    local delimiter="$1"
+    shift
+    pick_index="$1"
+    shift
+    IFS=" "$delimiter
+    pick1 $*
+    IFS=$OLD_IFS
+    unset pick_index
+}
+
+version=$(uname -r)
+echo `pick . 1 $version`.`pick . 2 $version`

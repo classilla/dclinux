@@ -1,0 +1,23 @@
+#! /bin/sh
+#
+# single	executed by init(8) upon entering runlevel 1 (single).
+#
+# Version:	@(#)single  1.10  22-Jun-1998  miquels@cistron.nl
+#
+
+PATH="/sbin:/bin:/usr/sbin:/usr/bin"
+
+# Kill all processes.
+echo -n "Sending all processes the TERM signal... "
+killall5 -15
+echo "done."
+sleep 5
+echo -n "Sending all processes the KILL signal... "
+killall5 -9
+echo "done."
+
+# We start update here, since we just killed it.
+update
+
+echo "Entering single-user mode..."
+exec init -t1 S

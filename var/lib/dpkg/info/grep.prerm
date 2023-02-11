@@ -1,0 +1,20 @@
+#! /bin/sh
+
+pkg=grep
+
+set -e
+
+if [ ! \( "$1" = "upgrade" -o "$1" = "remove" \) ]; then
+	exit 0
+fi
+
+if [ -e /usr/info/grep.info.gz ]; then 
+	install-info --quiet --remove /usr/share/info/grep.info.gz
+elif [ -e /usr/share/info/grep.info.gz ]; then 
+	install-info --quiet --remove /usr/share/info/grep.info.gz
+fi
+
+if [ -L /usr/doc/$pkg ]; then
+	rm -f /usr/doc/$pkg
+fi
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Nano
+Name[es]=Nano
+Name[ca]=Nano
+Name[gl]=Nano
+Comment=Pico-like text editor
+Comment[es]=Editor de textos parecido a Pico
+Comment[ca]=Editor de textes semblant a Pico
+Comment[gl]=Editor de textos semellante ó Pico
+Exec=nano
+Icon=/usr/share/nano/nano.xpm
+Terminal=1
+Type=Application

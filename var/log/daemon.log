@@ -1,0 +1,191 @@
+Jan  1 09:32:51 dreamcast init: Switching to runlevel: 0
+Jan  1 09:02:30 dreamcast init: Re-reading inittab
+Apr  9 05:00:24 dreamcast rpc.statd[322]: Version 0.3.1 Starting
+Apr  9 05:26:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.3/modules.dep (No such file or directory)
+Apr  9 05:26:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.3/modules.dep (No such file or directory)
+Apr  9 05:33:20 dreamcast init: Switching to runlevel: 0
+Jan  1 09:00:29 dreamcast rpc.statd[102]: Version 0.3.1 Starting
+Jan  1 09:01:02 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:31 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:40 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:01 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:07 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:19 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:41 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:41 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:31:03 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:31:03 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:32:08 dreamcast last message repeated 2 times
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:39 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:03:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:03:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:38 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:37 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:49 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:03:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:06:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:06:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:09 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:39 dreamcast last message repeated 3 times
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:55 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:55 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:48 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:48 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:23 dreamcast last message repeated 2 times
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:16 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:14 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:02 dreamcast last message repeated 2 times
+Jan  1 09:02:29 dreamcast last message repeated 3 times
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:32 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:59 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:59 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:04:17 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:17 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:08:35 dreamcast in.telnetd[154]: connect from aragorn.ta.keshi.org
+Jan  1 09:08:36 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:09:25 dreamcast in.telnetd[157]: connect from aragorn.ta.keshi.org
+Jan  1 09:09:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:49 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:03:51 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:15 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:15 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:23:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:23:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:26:28 dreamcast in.telnetd[145]: connect from aragorn.ta.keshi.org
+Jan  1 09:26:28 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:02:52 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:52 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+May 21 05:18:06 dreamcast init: Re-reading inittab
+May 21 12:28:09 dreamcast in.telnetd[2889]: connect from aragorn.ta.keshi.org
+May 21 12:28:10 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 12:29:17 dreamcast in.telnetd[2896]: connect from elbereth.ta.keshi.org
+May 21 12:29:17 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 12:31:05 dreamcast in.ftpd[2928]: connect from elbereth.ta.keshi.org
+May 21 12:31:12 dreamcast in.telnetd[2929]: connect from elbereth.ta.keshi.org
+May 21 12:31:13 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 12:32:25 dreamcast in.ftpd[2939]: connect from elbereth.ta.keshi.org
+May 21 12:33:55 dreamcast in.telnetd[2941]: connect from elbereth.ta.keshi.org
+May 21 12:33:55 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 13:18:52 dreamcast in.telnetd[3062]: connect from elbereth.ta.keshi.org
+May 21 13:18:53 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 13:59:58 dreamcast in.telnetd[3085]: connect from aragorn.ta.keshi.org
+May 21 13:59:58 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 16:15:07 dreamcast in.telnetd[3096]: connect from elbereth.ta.keshi.org
+May 21 16:15:07 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+May 21 16:21:41 dreamcast in.telnetd[3166]: connect from elbereth.ta.keshi.org
+May 21 16:21:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:03 dreamcast rpc.statd[143]: Version 0.3.1 Starting
+Jan  1 09:01:00 dreamcast rpc.statd[144]: Version 0.3.1 Starting
+Jan  1 09:01:01 dreamcast rpc.statd[144]: Version 0.3.1 Starting
+Jan  1 09:00:57 dreamcast rpc.statd[143]: Version 0.3.1 Starting
+Jan  1 09:00:58 dreamcast rpc.statd[145]: Version 0.3.1 Starting
+Jan  1 09:00:58 dreamcast rpc.statd[145]: Version 0.3.1 Starting
+Jan  1 09:03:54 dreamcast init: Id "SC1" respawning too fast: disabled for 5 minutes
+Jan  1 09:00:59 dreamcast rpc.statd[146]: Version 0.3.1 Starting
+Jan  1 09:02:20 dreamcast init: Re-reading inittab
+Jan  1 09:02:20 dreamcast init: /etc/inittab[61]: id field too long (max 4 characters)
+Jan  1 09:02:56 dreamcast init: Re-reading inittab
+Jan  1 09:02:56 dreamcast init: /etc/inittab[61]: id field too long (max 4 characters)
+Jan  1 09:03:14 dreamcast init: Re-reading inittab
+Jan  1 09:01:00 dreamcast rpc.statd[145]: Version 0.3.1 Starting
+Jan  1 09:00:58 dreamcast rpc.statd[146]: Version 0.3.1 Starting
+Jan  1 09:00:59 dreamcast rpc.statd[146]: Version 0.3.1 Starting
+Jan  1 09:00:57 dreamcast rpc.statd[145]: Version 0.3.1 Starting
+Jan  1 09:01:01 dreamcast rpc.statd[147]: Version 0.3.1 Starting
+Jan  1 09:00:57 dreamcast rpc.statd[144]: Version 0.3.1 Starting
+Jan  1 09:01:27 dreamcast modprobe: modprobe: Can't locate module nls_iso8859-1
+Jan  1 09:02:10 dreamcast last message repeated 2 times
+Jan  1 09:02:10 dreamcast modprobe: modprobe: Can't locate module nls_iso8859-1
+Jan  1 09:00:55 dreamcast rpc.statd[144]: Version 0.3.1 Starting
+Jan  1 09:01:02 dreamcast rpc.statd[149]: Version 0.3.1 Starting
+Jan  1 09:53:02 dreamcast modprobe: modprobe: Can't locate module binfmt-0000
+Jan  1 09:53:35 dreamcast last message repeated 16 times
+Jan  1 09:54:16 dreamcast last message repeated 9 times
+Jan  1 10:45:34 dreamcast pumpd[86]: SO_BINDTODEVICE eth0 (4) failed: Invalid argument
+Jan  1 10:45:34 dreamcast pumpd[86]: renewed lease for interface eth0
+Jan  1 09:01:06 dreamcast rpc.statd[158]: Version 0.3.1 Starting
+Jan  1 09:01:04 dreamcast rpc.statd[160]: Version 0.3.1 Starting
+Jan  1 09:01:08 dreamcast rpc.statd[162]: Version 0.3.1 Starting
+Jan  1 09:01:18 dreamcast rpc.statd[163]: Version 0.3.1 Starting
+Jan  1 09:01:11 dreamcast rpc.statd[163]: Version 0.3.1 Starting
+Jan  1 09:01:07 dreamcast rpc.statd[168]: Version 0.3.1 Starting
+Jan  1 09:01:06 dreamcast rpc.statd[162]: Version 0.3.1 Starting

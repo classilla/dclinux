@@ -1,0 +1,42 @@
+#! /bin/sh
+# start/stop logoutd
+
+set -e
+
+case "$1" in
+    start)
+	if [ -x /usr/sbin/logoutd -a -f /etc/security/time.conf ] && \
+		egrep -vq '^#|^ *$' /etc/security/time.conf; then
+	    echo -n "Starting login time and port restriction enforcer: "
+	    start-stop-daemon --start --quiet --exec /usr/sbin/logoutd
+	    echo "logoutd."
+	else
+	    # If the old conf is there and enabled, make a little noise
+	    test -f /etc/porttime && egrep -vq '^#|^ *$' /etc/porttime && \
+		cat << EOF
+Not starting logoutd. You will need to convert your existing /etc/porttime
+to the new /etc/security/time.conf format (very small change in format).
+EOF
+	fi
+	;;
+    stop)
+	pid=`pidof -o %PPID logoutd` || true
+	if [ -n "$pid" ]; then
+	    echo -n "Stopping login time and port restriction enforcer: "
+	    kill $pid >/dev/null 2>&1
+	    echo "logoutd."
+	fi
+	;;
+    restart|reload|force-reload)
+	echo Restarting logoutd...
+	echo -n "  " && $0 stop
+	sleep 1
+	echo -n "  " && $0 start
+	;;
+    *)
+	echo "Usage: /etc/init.d/logoutd start|stop|restart"
+	exit 1
+	;;
+esac
+
+exit 0

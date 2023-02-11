@@ -1,0 +1,34 @@
+TODO file (? means the feature may be implemented, but not definitely)
+-----------------------------------------------------------------------------
+
+Current Version:
+- Implement Spelling [DONE]
+- Implement Help [DONE]
+- Internationalization [In progress, translators welcome!]
+- Allow nano to be resized in X. [DONE]
+- On page up/down, put the cursor on the first line (like Pico), not the
+  center line [DONE]
+- Rewrite edit_refresh, if at all possible [DONE]
+- Implement justify function [DONE]
+- Cut to end of line [DONE]
+- Built-in speller command [needed for version 1.0] [DONE]
+- Better statusbar interaction (scrolling, tab completion for filename)
+  [needed for version 1.0] [DONE]
+- Now do username completion [DONE].
+- Unjustify command (^U after ^J) [DONE =-].
+- Username completion (~user) [DONE =-].
+
+For Next Version:
+- Undo/Redo key?
+- Single line scroll up/down?
+- Color syntax highlighting? (certainly seems like there's a demand for it.)
+- .nanorc ?????
+- Backup making (filename~)?
+- Search (etc) string history [1.1]
+- Implent Pico's -j and -g flags, as they are pretty easy to do.
+- Make mouse support work with clicking on the shortcuts (-m).  Must
+  make global variable pointing to current shortcut list to determine what
+  keystroke to ungetch().
+- Implement -o (chroot of sorts)
+
+$Id: TODO,v 1.14 2001/03/30 22:37:37 astyanax Exp $

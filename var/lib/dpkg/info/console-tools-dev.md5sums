@@ -1,0 +1,15 @@
+8084565c9ce31d08d2eb2a4c730f061e  usr/include/lct/console.h
+23cb9f9dda1d71301f2c0fab84d1bc3c  usr/include/lct/cyrillic.syms.h
+decb4af273a13626236f454f4c567bea  usr/include/lct/ethiopic.syms.h
+dfbc2746a2561e4142039c6f520df512  usr/include/lct/font.h
+750d250f1e53f97a25f7820d03a9a3a7  usr/include/lct/ksyms.h
+4d2ca7be6095ec1ba75d2118d5257861  usr/include/lct/latin8.syms.h
+21fa1c3c8d73c019f470ce1702df7a39  usr/include/lct/modifiers.h
+6c97796fe0dd6f3e4fcfb7107726967d  usr/include/lct/unicode.h
+4c5813b59300f8528d38a2d35b0874b2  usr/include/lct/utils.h
+07c1ffe056c8f078fa7837dc965583c6  usr/lib/libcfont.a
+21f6f4ea1434491bd3da73a705847230  usr/lib/libcfont.la
+9496b49d38dc2d550e353eab021610c1  usr/lib/libconsole.a
+f8716e67800edbe877df25ade1975e0b  usr/lib/libconsole.la
+3c153dff05a990763b2817030794dcc9  usr/lib/libctutils.a
+93f3dfa1ddee3497b0ab79f49a51d004  usr/lib/libctutils.la

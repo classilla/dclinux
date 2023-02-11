@@ -1,0 +1,33 @@
+
+README for netbase
+==================
+
+ * ifup(8), ifdown(8), and interfaces(5)
+
+Debian has traditionally used a free-form /bin/sh script called
+/etc/init.d/network to configure networking (usually run from
+/etc/rcS.d/S40netwok). This was created at a first install, and then
+left to the admin to update as necessary.
+
+From potato (Debian release 2.2) onwards, this is augmented by the ifup
+and ifdown commands, and the configuration file /etc/network/interfaces,
+which allow common networking configurations to be setup in a somewhat
+simpler method, and to be forward compatible as the programs used to
+configure networking get updated.
+
+ifup -a is called from /etc/init.d/networking as part of the bootup
+process.
+
+ * /etc/network/options
+
+This file allows you to configure some basic networking options easily.
+They will be setup when /etc/init.d/networking is run as part of the
+bootup process.
+
+ * The new ip(8) command
+
+Linux version 2.2 and above (when compiled with CONFIG_NETLINK) allow the
+use of the new ip(8) suite of commands for configuring network interfaces.
+These are not included in the netbase package, but instead are in the
+iproute package.
+

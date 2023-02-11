@@ -1,0 +1,25 @@
+#!/usr/bin/perl
+
+while(<STDIN>) {
+	$hunpack = unpack("H*", $_);
+	if ($_ eq '/' || $_ eq "/\r\n" || $_ eq '1/' || $_ eq "1/\r\n" ||
+		$_ eq '' || $_ eq "\r\n" || $_ eq "\n" || $_ eq "1/\n" ||
+		$_ eq "/\n") {
+			chomp($hostname = `/bin/hostname`);
+			chomp($uname = `/bin/uname`);
+			chomp($uname ||= `/usr/bin/uname`);
+			$ttime = scalar localtime;
+		print STDOUT <<"EOF";
+iWelcome to the Dreamcast demo gopher server.		error.host	1
+iI am $uname on ${hostname}.		error.host	1
+iThe time is $ttime.		error.host	1
+EOF
+		exit;
+	}
+	chomp;
+	print STDOUT <<"EOF";
+iSelector $_ not yet supported.		error.host	1
+i$hunpack		error.host	1
+EOF
+	exit;
+}

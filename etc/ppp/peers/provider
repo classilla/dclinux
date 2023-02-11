@@ -1,0 +1,21 @@
+# These are the options to dial out to your default service provider.
+# Please customize them correctly. Only the "provider" file will be
+# handled by poff and pon (unless with extra command line arguments).
+
+# You usually need this if there is no PAP authentication
+noauth
+
+# The chat script (be sure to edit that file, too!)
+connect "/usr/sbin/chat -v -f /etc/chatscripts/provider"
+
+# Set up routing to go through this PPP link
+defaultroute
+
+# Default modem (you better replace this with /dev/ttySx!)
+/dev/modem
+
+# Speed
+38400
+
+# Keep modem up even if connection fails
+persist

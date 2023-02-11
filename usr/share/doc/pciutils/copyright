@@ -1,0 +1,17 @@
+This package was debianized by Remco van de Meent remco@debian.org on
+Sat,  6 Feb 1999 15:10:15 +0100.
+
+It was downloaded from ftp://atrey.karlin.mff.cuni.cz/pub/linux/pci/
+
+Upstream Author(s): Martin Mares <mj@atrey.karlin.mff.cuni.cz>
+
+Copyright:
+
+Copyright (c) 1997--1999 Martin Mares <mj@atrey.karlin.mff.cuni.cz>
+
+All files in this package can be freely distributed and used according
+to the terms of the GNU General Public License, either version 2 or
+(at your opinion) any newer version. This is the same distribution
+policy as for the Linux kernel itself -- see /usr/src/linux/COPYING
+for details.
+

@@ -1,0 +1,18 @@
+This is the Debian GNU/Linux prepackaged version of the Lynx Hypertext
+navigation system.  Lynx was written by Lou Montulli, it's currently
+maintained by Foteos Macrides <macrides@sci.wfeb.edu>. The original source
+can be found under http://lynx.isc.org/release/
+
+   Lynx is copyrighted by the University of Kansas and is distributed
+   under the GNU General Public License. Any questions concerning
+   licensing or usage should be directed to Michael Grobe
+   <grobe@ukans.edu>.
+
+   Lynx was built over an early version of the Common Code Library
+   developed by the CERN WWW Project. That code is copyrighted by CERN.
+   Lynx contains other sections of code that are copyrighted by other
+   institutions or individuals. The Lynx copyright does not override or
+   invalidate those copyrights.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

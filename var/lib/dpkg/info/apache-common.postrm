@@ -1,0 +1,10 @@
+#!/bin/sh -e
+if [ "$1" != "remove" ] && [ "$1" != "purge" ]
+then
+    exit 0
+fi
+if [ -e /etc/suid.conf -a -x /usr/sbin/suidunregister ]
+then
+    suidunregister -s apache-common /usr/bin/htpasswd
+    suidunregister -s apache-common /usr/lib/apache/suexec
+fi

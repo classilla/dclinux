@@ -1,0 +1,44 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "configure" ] ; then
+
+  update-alternatives --install /usr/share/dict/words dictionary \
+                                /usr/share/dict/american-english 50 ;
+
+
+ OLDLANG=/usr/dict/english
+ NEWLANG=/usr/share/dict/american-english
+
+ if test -h /etc/dictionary; then
+
+  dict="$(perl -e 'print readlink "/etc/dictionary"')"
+  newdict="$(perl -e 'print readlink "/etc/alternatives/dictionary"')"
+
+  if test "$dict" = "$OLDLANG" -o "$dict" = "..$OLDLANG"; then
+
+    if ! test "$newdict" = "$NEWLANG"; then
+      echo "Forcing new symlink /etc/alternatives/dictionary to point"
+      echo "to $NEWLANG..."
+      update-alternatives --install /usr/share/dict/words dictionary / 1000 >/dev/null
+      ln -snf $NEWLANG /etc/alternatives/dictionary
+      update-alternatives --remove dictionary /
+    fi
+
+    echo "Cleaning up old symlink /etc/dictionary -> $dict..."
+    rm -f /etc/dictionary
+  fi
+
+ fi
+
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/wenglish -a -d /usr/share/doc/wenglish ]; then
+		ln -sf ../share/doc/wenglish /usr/doc/wenglish
+	fi
+fi
+# End automatically added section
+

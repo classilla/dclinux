@@ -1,0 +1,34 @@
+This is the Debian GNU/Linux prepackaged version of System V Init.  Init
+was written by Miquel van Smoorenburg <miquels@drinkel.cistron.nl>.
+
+This package was put together by Bruce Perens <Bruce@Pixar.com> from pre-
+distribution sources. Ian Murdock <imurdock@debian.org> integrated it into
+the base system maintained it until the end of 1995. Miquel van Smoorenburg
+<miquels@cistron.nl> has integrated debian support into the base package.
+
+Changes:
+ 29-January-1995 Bruce Perens <Bruce@Pixar.com>
+	Added Debian GNU/Linux package maintenance system files.
+ 25-February-1995 Ian Murdock <imurdock@debian.org>
+	Finished integration of Sys V Init into the base system.
+ 28-December-1995 Miquel van Smoorenburg <miquels@cistron.nl>
+	Added debian support to sysvinit.
+	For further changes see the ChangeLog file.
+
+Init is Copyright (C) Miquel van Smoorenburg
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program;  if not, write to the Free Software
+   Foundation, Inc., 675 Mass Ave., Cambridge, MA 02139, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/doc/copyright/GPL'.

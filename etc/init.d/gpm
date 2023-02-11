@@ -1,0 +1,62 @@
+#!/bin/sh
+#
+# Start Mouse event server
+
+PIDFILE=/var/run/gpm.pid
+GPM=/usr/sbin/gpm
+CFG=/etc/gpm.conf
+
+test -x $GPM || exit 0
+
+if [ "$(id -u)" != "0" ]
+then
+  echo "You must be root to start, stop or restart gpm."
+  exit 1
+fi
+ 
+
+cmdln=
+if [ -f $CFG ]; then
+  . $CFG
+  if [ -n "$device" ]; then cmdln="$cmdln -m $device"; fi
+  if [ -n "$type" ]; then cmdln="$cmdln -t $type"; fi
+  if [ -n "$responsiveness" ]; then cmdln="$cmdln -r $responsiveness"; fi
+  if [ -n "$sample_rate" ]; then cmdln="$cmdln -s $sample_rate"; fi
+  if [ -n "$repeat_type" ]; then cmdln="$cmdln -R$repeat_type"; fi
+  # Yes, this /IS/ correct! There is no space after -R!!!!!!
+  # I reserve the right to throw manpages at anyone who disagrees.
+  if [ -n "$append" ]; then cmdln="$cmdln $append"; fi
+fi
+
+gpm_start () {
+  echo -n "Starting mouse interface server: gpm"
+  start-stop-daemon --start --quiet --exec $GPM -- $cmdln
+  echo "."
+  return 0
+}
+
+gpm_stop () {
+  echo -n "Stopping mouse interface server: gpm"
+  /usr/sbin/gpm -k
+  echo "."
+}
+
+
+case "$1" in
+  start)
+     gpm_start
+     ;;
+  stop)
+     gpm_stop
+     ;;
+  force-reload|restart)
+     gpm_stop
+     sleep 3
+     gpm_start
+     ;;
+  *)
+     echo "Usage: /etc/init.d/gpm {start|stop|restart|force-reload}"
+     exit 1
+esac
+
+exit 0

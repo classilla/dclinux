@@ -1,0 +1,46 @@
+#! /bin/sh
+
+case "$1" in
+	configure)
+		;;
+	abort-upgrade|abort-remove|abort-deconfigure)
+		exit 0
+		;;
+esac
+umask 022
+
+#
+#	elvis-tiny moved from /usr/bin/elvis-tiny to
+#	/bin/elvis-tiny, so adjust symlink if nessecary
+#
+#	We don't need to adjust the 'editor' alternative since
+#	it didn't exist in packages before the move.
+#
+link=
+if [ -L /etc/alternatives/vi ]
+then
+	link=`/bin/ls -ld /etc/alternatives/vi | sed -e 's/^.*-> //'`
+fi
+if [ "$link" = "/usr/bin/elvis-tiny" ]
+then
+	ln -sf /etc/alternatives/vi /bin/elvis-tiny
+	update-alternatives --auto vi
+fi
+
+# Alternative for /usr/bin/vi
+update-alternatives --install /usr/bin/vi vi /bin/elvis-tiny 10 \
+  --slave /usr/share/man/man1/vi.1.gz vi.1.gz \
+	/usr/share/man/man1/elvis-tiny.1.gz
+
+# Alternative for /usr/bin/editor
+update-alternatives --install /usr/bin/editor editor /bin/elvis-tiny 10 \
+  --slave /usr/share/man/man1/editor.1.gz editor.1.gz \
+	/usr/share/man/man1/elvis-tiny.1.gz
+
+# Compatibility symlinks into /usr/doc
+if [ -d /usr/doc -a ! -e /usr/doc/elvis-tiny \
+        -a -d /usr/share/doc/elvis-tiny ]
+then
+        ln -sf ../share/doc/elvis-tiny /usr/doc/elvis-tiny
+fi
+

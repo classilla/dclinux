@@ -1,0 +1,35 @@
+#! /bin/sh -e
+# pre remove script for the Debian GNU/Linux modutils package
+
+set -e
+
+pkg=modutils
+
+if [ ! \( "$1" = "upgrade" -o "$1" = "remove" \) ]; then
+	exit 0
+fi
+
+# Do the FHS-documentation-symlink-trick
+if [ -L /usr/doc/$pkg ]; then
+	rm -f /usr/doc/$pkg
+fi
+
+
+if [ "$1" = "remove" ]; then
+	if [ -f /proc/modules ] ; then
+		echo "WARNING: Kernel was compiled with modules support!"
+		echo "Removing the modutils package could result in an unusable"
+		echo "system if you use modules. Remove this package only if you"
+		echo "are really sure of what you are doing."
+		echo ""
+		echo -n "If you really want to remove modutils type 'yes': "
+		read ANSWER
+		if [ "$ANSWER" != "yes" ]; then
+			echo "Aborting removal of modutils package"
+			exit 1
+		fi
+	fi
+fi
+
+exit 0
+

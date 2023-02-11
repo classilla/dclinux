@@ -1,0 +1,415 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - The Debian FTP archives</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-software.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-pkg_basics.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 5 The Debian FTP archives
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-dirtree">5.1 What are all those directories at the Debian FTP archives?</a>
+</h2>
+
+<p>
+The software that has been packaged for Debian GNU/Linux is available in one of
+several directory trees on each Debian mirror site.
+
+<p>
+The directory <samp>dists</samp> contains the &quot;distributions&quot;, and it
+is the canonical way to access the currently available Debian releases (and
+pre-releases).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-dists">5.2 How many Debian distributions are there in the <samp>dists</samp> directory?</a>
+</h2>
+
+<p>
+Normally there are two distributions, the &quot;stable&quot; distribution and
+the &quot;unstable&quot; distribution.  Sometimes there is also a
+&quot;frozen&quot; distribution (see <a
+href="ch-ftparchives.html#s-frozen">What about &quot;frozen&quot;?, Section
+5.4</a>).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-codenames">5.3 What are all those names like slink, potato, etc.?</a>
+</h2>
+
+<p>
+They are just &quot;codenames&quot;.  When a Debian distribution is in the
+development stage, it has no version number but a codename.  The purpose of
+these codenames is to make easier the mirroring of the Debian distributions (if
+a real directory like <samp>unstable</samp> suddenly changed its name to
+<samp>stable</samp>, a lot of stuff would have to be needlessly downloaded
+again).
+
+<p>
+Currently, <samp>stable</samp> is a symlink to <samp>potato</samp> (i.e.
+Debian GNU/Linux 2.2) and <samp>unstable</samp> is a symlink to
+<samp>woody</samp>, which means that <samp>potato</samp> is the current stable
+distribution and <samp>woody</samp> is the current unstable distribution.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-frozen">5.4 What about &quot;frozen&quot;?</a>
+</h2>
+
+<p>
+When the unstable distribution is mature enough, it becomes frozen, meaning no
+new code is accepted anymore, just bugfixes, if necessary.  Also, a new
+unstable tree is created in the <samp>dists</samp> directory, having a new
+codename.  The frozen distribution passes through a few months of testing, with
+intermittent updates and deep freezes called `test cycles'.  We keep a record
+of bugs in the frozen distribution that can hold off a package from being
+released or bugs that can hold back the whole release.  Once that bug count
+lowers to maximum acceptable values, the frozen distribution becomes stable, it
+is released, and the previous stable distribution becomes obsolete (and moves
+to the archive).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-oldcodenames">5.5 Which other codenames have been used in the past?</a>
+</h2>
+
+<p>
+Other codenames that have been already used are: <samp>buzz</samp> for release
+1.1, <samp>rex</samp> for release 1.2, <samp>bo</samp> for releases 1.3.x,
+<samp>hamm</samp> for release 2.0, and <samp>slink</samp> for release 2.1.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-sourceforcodenames">5.6 Where do these codenames come from?</a>
+</h2>
+
+<p>
+So far they have been characters taken from the movie &quot;Toy Story&quot; by
+Pixar.
+
+<ul>
+
+<p>
+<li>
+<em>buzz</em> (Buzz Lightyear) was the spaceman,
+</li>
+
+<p>
+<li>
+<em>rex</em> was the tyrannosaurus,
+</li>
+
+<p>
+<li>
+<em>bo</em> (Bo Peep) was the girl who took care of the sheep,
+</li>
+
+<p>
+<li>
+<em>hamm</em> was the piggy bank,
+</li>
+
+<p>
+<li>
+<em>slink</em> (Slinky Dog) was the toy dog,
+</li>
+
+<p>
+<li>
+<em>potato</em> was, of course, Mr. Potato,
+</li>
+
+<p>
+<li>
+<em>woody</em> was the cowboy.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-sid">5.7 What about &quot;sid&quot;?</a>
+</h2>
+
+<p>
+It is a special distribution for architectures which haven't yet been released
+for the first time.
+
+<p>
+When sid did not exist, the FTP site organization had one major flaw: there was
+an assumption that when an architecture is created in the current unstable, it
+will be released when that distribution becomes the new stable.  For many
+architectures that isn't the case, with the result that those directories had
+to be moved at release time, chewing up lots of bandwidth.
+
+<p>
+For those architectures not yet released, the first time they are released
+there will be a link from the current stable to sid, and from then on they will
+be created inside the unstable tree as normal.  sid will never be released nor
+even accessed directly - only through symlinks in the current stable, frozen,
+or unstable trees.  It is a mix of released and unreleased architectures.
+
+<p>
+The name &quot;sid&quot; also comes from the &quot;Toy Story&quot; animated
+motion picture: Sid was the boy next door who destroyed toys :-)
+</p>
+
+<hr>
+
+<h2>
+<a name="s-stable">5.8 What does the stable directory contain?</a>
+</h2>
+
+<ul>
+
+<p>
+<li>
+stable/main/: This directory contains the packages which formally constitute
+the most recent release of the Debian GNU/Linux system.
+
+<p>
+These packages all comply with the <code><a
+href="http://www.debian.org/social_contract.html#guidelines">Debian Free
+Software Guidelines</a></code>, and are all freely usable and distributable.
+</li>
+
+<p>
+<li>
+stable/non-free/: This directory contains packages distribution of which is
+restricted in a way that requires that distributors take careful account of the
+specified copyright requirements.
+
+<p>
+For example, some packages have licenses which prohibit commercial
+distribution.  Others can be redistributed but are in fact shareware and not
+freeware.  The licenses of each of these packages must be studied, and possibly
+negotiated, before the packages are included in any redistribution (e.g., in a
+CD-ROM).
+</li>
+
+<p>
+<li>
+stable/contrib/: This directory contains packages which are DFSG-free and
+<em>freely distributable</em> themselves, but somehow depend on a package that
+is <em>not</em> freely distributable and thus available only in the non-free
+section.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-unstable">5.9 What does the unstable directory contain?</a>
+</h2>
+
+<p>
+The `unstable' directory contains a snapshot of the current development system.
+Users are welcome to use and test these packages, but are warned about their
+state of readiness.  The advantage of using the unstable distribution is that
+you are always up-to-date with the latest in GNU/Linux software industry, but
+if it breaks: you get to keep both parts :-)
+
+<p>
+There are also main, contrib and non-free subdirectories in `unstable',
+separated on the same criteria as in `stable'.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-archsections">5.10 What are all those directories inside <samp>dists/stable/main</samp>?</a>
+</h2>
+
+<p>
+Within each of the major directory trees (<samp>dists/stable/main</samp>,
+<samp>dists/stable/contrib</samp>, <samp>dists/stable/non-free</samp>, and
+<samp>dists/unstable/main/</samp>, etc.  but not
+<samp>project/experimental/</samp>, which is too small to subdivide), the
+binary packages reside in sub-directories whose names indicate the chip
+architecture for which they were compiled:
+
+<ul>
+
+<p>
+<li>
+binary-all/, for packages which are architecture-independent.  These include,
+for example, Perl scripts, or pure documentation.
+</li>
+
+<p>
+<li>
+binary-i386/, for packages which execute on 80x86 PC machines.
+</li>
+
+<p>
+<li>
+binary-m68k/, for packages which execute on machines based on one of the
+Motorola 680x0 processors.  Currently this is done mainly for Atari and Amiga
+computers, and also for some VME based industry standard boards.
+</li>
+
+<p>
+<li>
+binary-sparc/, for packages which execute on Sun SPARCStations.
+</li>
+
+<p>
+<li>
+binary-alpha/, for packages which execute on DEC Alpha machines.
+</li>
+
+<p>
+<li>
+binary-powerpc/, for packages which execute on PowerPC machines.
+</li>
+
+<p>
+<li>
+binary-arm/, for packages which execute on ARM machines.
+</li>
+
+</ul>
+
+<p>
+See <a href="ch-compat.html#s-arches">On what hardware architectures/systems
+does Debian GNU/Linux run?, Section 3.1</a> for more information.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-source">5.11 Where is the source code?</a>
+</h2>
+
+<p>
+Source code is included for everything in the Debian system.  Moreover, the
+license terms of most programs in the system <em>require</em> that source code
+be distributed along with the programs, or that an offer to provide the source
+code accompany the programs.
+
+<p>
+Normally the source code is distributed in the &quot;source&quot; directories,
+which are parallel to all the architecture-specific binary directories.
+
+<p>
+Source code may or may not be available for packages in the &quot;contrib&quot;
+and &quot;non-free&quot; directories, which are not formally part of the Debian
+system.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-otherdirs">5.12 Ok, what about the other directories, not inside <samp>dists</samp>?</a>
+</h2>
+
+<p>
+There are the following supplementary directories:
+
+<dl>
+
+<p>
+<dt><em>/tools/</em>:</dt>
+<dd>
+DOS utilities for creating boot disks, partitioning your disk drive,
+compressing/decompressing files, and booting Linux.
+</dd>
+
+<p>
+<dt><em>/doc/</em>:</dt>
+<dd>
+Debian documentation, Debian FAQ, instructions on how to submit bug reports.
+</dd>
+
+<p>
+<dt><em>/indices/</em>:</dt>
+<dd>
+Various indices, maintainers, Packages-master files, override files.
+</dd>
+
+<p>
+<dt><em>/project/</em>:</dt>
+<dd>
+mostly developer-only materials, such as:
+
+<dl>
+
+<p>
+<dt><em>project/experimental/</em>:</dt>
+<dd>
+This directory contains packages and tools which are still being developed, and
+are still in the alpha testing stage.  Users shouldn't be using packages from
+here, because they can be dangerous and harmful even for most experienced
+people.
+</dd>
+
+<p>
+<dt><em>project/orphaned/</em>:</dt>
+<dd>
+Packages that have been orphaned by their old maintainers, and withdrawn from
+the distribution.
+</dd>
+
+</dl>
+</dd>
+
+</dl>
+</p>
+
+<hr>
+
+[ <a href="ch-software.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-pkg_basics.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

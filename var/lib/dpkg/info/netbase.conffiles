@@ -1,0 +1,5 @@
+/etc/init.d/networking
+/etc/gateways
+/etc/protocols
+/etc/services
+/etc/rpc

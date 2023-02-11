@@ -1,0 +1,467 @@
+#! /usr/bin/perl
+
+#
+# Copyright (C) 1997 and 1998 WIDE Project.  All rights reserved.
+# 
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+# 3. Neither the name of the project nor the names of its contributors
+#    may be used to endorse or promote products derived from this software
+#    without specific prior written permission.
+# 
+# THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE PROJECT OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $Id: mgpnet.in,v 1.4 1998/08/26 05:30:13 itojun Exp $
+#
+
+# configurations
+$tmpdir = '/tmp';
+$httpdatestr = "env LC_ALL=C date '+\%a, \%d \%b \%Y \%H:\%M:\%S \%Z'";
+$seltimeout = 1;
+$refreshtimeout = 10;
+$debug = 0;
+$port = 9999;
+# it looks that "charset" parameter for Content-type makes many browsers
+# unhappy.  it is a shame.
+$usecharset = 0;
+
+# do not edit beyond here
+$hostname = `hostname`;
+$hostname =~ s/\n$//;
+
+# portable?
+if (scalar(@ARGV) == 0) {
+	open(IN, "ifconfig -a | grep 'inet '|") && do {
+		do {
+			$hostname = (split(/\s+/, <IN>))[2];
+		} while ($hostname =~ /^127\./);
+		close(IN);
+	};
+	$hostname =~ s/^addr://; # for GNU/Linux, by ukai
+	print "http://$hostname:$port/\n";
+	exit 0;
+}
+
+# greeting
+print STDERR "welcome to MagicPoint Netserver...\n";
+
+# parameter parsing
+$tmpseed = 0;
+$checkfile = &tmpname;
+if (grep($ARGV[$_] eq '-T', 0 .. scalar(@ARGV) - 1)) {
+	$checkfile = $ARGV[$_ + 1];
+} else {
+	@ARGV = ('-T', $checkfile, @ARGV);
+}
+
+$imagefile = &tmpname;
+$checkcontent = '';
+
+# OS parameter
+&guessparam;
+if (!defined $AF_INET || !defined $PF_INET || !defined $SOCK_STREAM
+ || !defined $sockaddr || !defined $WNOHANG) {
+	print STDERR "could not guess system parameter. edit by hand.\n";
+	exit 1;
+}
+
+# HTTP/1.0 related
+$tmp = <<EOF;
+200	OK
+201	Created
+202	Accepted
+204	No Content
+301	Moved Permanently
+302	Moved Temporarily
+304	Not Modified
+400	Bad Request
+401	Unauthorized
+403	Forbidden
+404	Not Found
+500	Internal Server Error
+501	Not Implemented
+502	Bad Gateway
+503	Service Unavailable
+EOF
+foreach $i (split(/\n/, $tmp)) {
+	($j, $k) = split(/\t/, $i);
+	$httpmsg{$j} = $k;
+}
+
+# setting up socket.
+$anyinaddr = pack('C4', 0, 0, 0, 0);
+if ($havesinlen) {
+	$mysockaddr = pack($sockaddr, 14, $AF_INET, $port, $anyinaddr);
+	$hissockaddr = pack($sockaddr, 14, $AF_INET, $port, $anyinaddr);
+} else {
+	$mysockaddr = pack($sockaddr, $AF_INET, $port, $anyinaddr);
+	$hissockaddr = pack($sockaddr, $AF_INET, $port, $anyinaddr);
+}
+$proto = (getprotobyname('tcp'))[2];
+socket(S, $PF_INET, $SOCK_STREAM, $proto) || die "socket: $!";
+if (defined $SOL_SOCKET && defined $SO_REUSEPORT) {
+	setsockopt(S, $SOL_SOCKET, $SO_REUSEPORT, 1);
+}
+bind(S, $mysockaddr) || die "bind: $!";
+listen(S, 5) || die "listen: $!";
+
+# fork/exec mgp
+$mgppid = fork;
+if ($mgppid < 0) {
+	print STDERR "could not invoke MagicPoint (fork): $!\n";
+	exit -1;
+}
+$SIG{'CHLD'} = 'chldhandler';
+if ($mgppid == 0){
+	close(S);
+	exec 'mgp', @ARGV;
+	print STDERR "could not invoke MagicPoint (exec): $!\n"
+}
+
+$SIG{'TERM'} = 'IGNORE';
+print STDERR "waiting for connection on port $port.\n";
+$acceptstat = 0;
+while (1) {
+	if (waitpid($mgppid, $WNOHANG) == -1) {
+		print STDERR "MagicPoint terminated.\n";
+		last;
+	}
+
+	# page changed?
+	&checkimgfile;
+
+	# wait for an event...
+	$rin = $win = $ein = '';
+	vec($rin, fileno(S), 1) = 1;
+	vec($win, fileno(S), 1) = 1;
+	$ewin = $rin | $win;
+	print STDERR "waiting for connection...\n" if ($debug);
+	($nfound, $timeleft) = 
+		select($rout = $rin, $wout = $win, $eout = $ein, $seltimeout);
+	next if ($nfound <= 0);
+	if (vec($rout, fileno(S), 1)) {
+		print STDERR "accepting connection...\n" if ($debug);
+		accept(NS, S) || do {
+			print STDERR "server: accept fail\n" if ($debug);
+			next;
+		};
+
+		$acceptstat++;
+		print STDERR "connection accepted...\n" if ($debug);
+
+		$pid = fork;
+		if ($pid < 0) {
+			print STDERR "server: fork fail\n" if ($debug);
+			close(NS);
+			next;
+		} elsif ($pid) {
+			print STDERR "server: fork success\n" if ($debug);
+			close(NS);
+			next;
+		}
+
+		# http server task
+		print STDERR "http server task started...\n" if ($debug);
+		select(NS); $/ = "\n"; $| = 1;
+		&httpserver;
+		close(NS);
+		close(S);
+		exit;
+	}
+}
+print STDERR "leaving MagicPoint Netserver...\n";
+print STDERR "accepted $acceptstat connections so far.\n";
+close(NS);
+close(S);
+unlink($imagefile);
+exit 0;
+
+sub checkimgfile {
+	local($junk, $t);
+	local($imgtmp);
+	local($pid, $errout);
+	open(CHK, "< $checkfile") || return;
+	$junk = select(CHK); $/ = ''; $| = 1; select($junk);
+	$t = <CHK>;
+	close(CHK);
+	if ($checkcontent ne $t) {
+		print STDERR "page updated.\n";
+		$checkcontent = $t;
+		$pid = fork;
+		return if (0 < $pid);	# if fork success, parent returns.
+		if ($pid == 0) {
+			print STDERR "window grab: fork success.\n" if ($debug);
+		} else {
+			print STDERR "window grab: fork fail, ".
+				"process without fork.\n" if ($debug);
+		}
+
+		$imgtmp = &tmpname;
+		$errout = ($debug ? '' : '2>&-');
+		system "xwintoppm -silent -name MagicPoint | ".
+			"ppmquant 256 $errout | pnmtopng $errout > $imgtmp";
+		if (-z $imgtmp) {
+			unlink $imgtmp;
+			$checkcontent = '';
+		} else {
+			unlink $imagefile;
+			link($imgtmp, $imagefile);
+			unlink $imgtmp;
+			$checkcontent = $t;
+		}
+		print STDERR 'window grab: done with ' .
+			($checkcontent eq '' ? 'failure' : 'success') . ".\n";
+		if ($pid == 0) {
+			print STDERR "window grab: forked process dies.\n"
+				if ($debug);
+			# if fork success, child dies.
+			exit 0;
+		}
+	}
+}
+
+sub chldhandler {
+	local($sig) = @_;
+	return if ($sig ne 'CHLD');
+	wait;
+}
+
+sub httpserver {
+	local($httpreq, $httpmethod, $httppath, $httpver, $httphost);
+	local($httpagent);
+	local($imgplace, $imgwidth, $imgheight, $buf, $imglen);
+	local($cthtml, $ctpng);
+
+	$cthtml = ($usecharset ? 'text/html; charset=us-ascii' : 'text/html');
+	$ctpng = 'image/png';
+
+	$httpreq = <NS>;
+	print STDERR 'HTTP in> ' . $httpreq if ($debug);
+	$httpreq =~ s/[\r\n]+$//;
+	$httpmethod = $httppath = $httpver = '';
+	($httpmethod, $httppath, $httpver) = split(/\s+/, $httpreq);
+	$httppath =~ s/http:\/\/[^:\/]+(:\d+)\//\//;
+	if ($httpver eq '' || $httpver =~ m'HTTP/1.[01]') {
+		;	# ok
+	} else {
+		&httpheader(501, $cthtml) if ($httpver);
+
+		print <<EOF;
+<HEAD><TITLE>Version not implemented</TITLE></HEAD>
+<BODY><H1>Version not implemented</H1>
+HTTP protocol version $httpversion not supported.<P>
+</BODY>
+EOF
+		return;
+	}
+
+	$httphost = "$hostname:$port";
+	if ($httpver) {
+		while (<NS>) {
+			$_ =~ s/[\r\n]+$//;
+			$httphost = $1 if ($_ =~ /^Host:\s*(\S+)$/i);
+			$httpagent = $1 if ($_ =~ /^User-Agent:\s*(\S+)$/i);
+			last if ($_ eq '');
+			print STDERR 'HTTP in> ' . $_ . "\n" if ($debug);
+		}
+	}
+
+	if ($httpmethod !~ /^(GET|HEAD)$/) {
+		&httpheader(501, $cthtml) if ($httpver);
+
+		print <<EOF;
+<HEAD><TITLE>Method not implemented</TITLE></HEAD>
+<BODY><H1>Method not implemented</H1>
+$httpmethod to $httppath not supported.<P>
+</BODY>
+EOF
+		return;
+	}
+
+	$imgwidth = $imgheight = 0;
+	if ($httppath =~ /^\/(\d+)x(\d+)\.html$/) {
+		$imgwidth = $1;
+		$imgheight = $2;
+		$httppath = '/index.html';
+	}
+
+	if ($httppath eq '/' || $httppath eq '/index.html') {
+		if ($imgwidth && $imgheight) {
+			$imgplace = "WIDTH=$imgwidth HEIGHT=$imgheight ";
+		} else {
+			$imgplace = '';
+		}
+
+		&httpheader(200, $cthtml) if ($httpver);
+		return if ($httpmethod ne 'GET');
+
+		if ($refreshtimeout) {
+			print <<EOF;
+<META HTTP-EQUIV=\"Refresh\" CONTENT=$refreshtimeout>
+EOF
+		}
+		print <<EOF;
+<HEAD><TITLE>MagicPoint Netserver</TITLE></HEAD>
+<BODY>
+<IMG SRC=\"/presentation.png\" ALT=\"presentation image\"
+$imgplace ALIGN=left><BR>
+<TABLE border=0>
+<TR><TD NOWRAP><A HREF=/index.html>normal</A>
+<TR><TD NOWRAP><A HREF=/800x600.html>800x600</A>
+<TR><TD NOWRAP><A HREF=/640x480.html>640x480</A>
+<TR><TD NOWRAP><A HREF=/400x300.html>400x300</A>
+<TR><TD NOWRAP><A HREF=/100x75.html>100x75</A>
+</TABLE>
+<BR CLEAR=left>
+<HR>
+<TABLE border=0>
+<TR><TD NOWRAP ROWSPAN=2>
+	<FONT SIZE=+5><I>MagicPoint</I> Netserver</FONT>
+<TD>
+	Presented by <A HREF=http://www.itojun.org/>itojun.org</A>
+<TR><TD NOWRAP>
+	Supported by <A HREF=http://www.mew.org/mgp/>MagicPoint Project,</A>
+	<A HREF=http://www.wide.ad.jp/>WIDE Internet</A>
+</TABLE>
+</BODY></HTML>
+EOF
+	} elsif ($httppath eq '/presentation.png') {
+		open(IMG, "< $imagefile") || do {
+			$checkcontent = '';	# invalidate
+			&httpheader(404, $cthtml) if ($httpver);
+			return if ($httpmethod ne 'GET');
+
+			print <<EOF;
+<HEAD><TITLE>File Not found</TITLE></HEAD>
+<BODY><H1>File Not found</H1>
+The requested URL $httppath was not found on this server.<P>
+Looks like a mistake in configuration.
+Contact the administrator.<P>
+</BODY>
+EOF
+			return;
+		};
+		&httpheader(200, $ctpng) if ($httpver);
+		return if ($httpmethod ne 'GET');
+
+		while (0 < ($imglen = sysread(IMG, $buf, 4096))) {
+			syswrite(NS, $buf, $imglen);
+		}
+		close(IMG);
+	} else {
+		&httpheader(404, $cthtml) if ($httpver);
+		return if ($httpmethod ne 'GET');
+
+		print <<EOF;
+<HEAD><TITLE>File Not found</TITLE></HEAD>
+<BODY><H1>File Not found</H1>
+The requested URL $httppath was not found on this server.<P>
+</BODY>
+EOF
+	}
+}
+
+sub httpheader {
+	local($code, $ct) = @_;
+	local($tmp);
+	local($date);
+
+	$date = `$httpdatestr`;
+	$date =~ s/[\r\n]+//;
+	$tmp = <<EOF;
+HTTP/1.0 $code $httpmsg{$code}
+Date: $date
+Expires: $date
+Server: MagicPointNetserver
+Pragma: no-cache
+Content-type: $ct
+EOF
+
+	$tmp .= "\n";
+	$tmp =~ s/\n/\r\n/g;
+	print $tmp;
+
+	if ($debug) {
+		$tmp =~ s/\r\n/\n/g;
+		$tmp = join("\nHTTP out> ", split(/\n/, $tmp));
+		$tmp = 'HTTP out> ' . $tmp . "\n";
+		print STDERR $tmp;
+	}
+}
+
+#------------------------------------------------------------
+
+sub guessparam {
+	local($tmpnam, $tmp, @tmp1, @tmp2);
+	local(%varnames);
+
+	%varnames = (
+'XXX1', 'AF_INET',	'XXX2', 'PF_INET',	'XXX3', 'SOL_SOCKET',
+'XXX4', 'SO_REUSEPORT',	'XXX5', 'SOCK_STREAM',	'XXX6', 'WNOHANG',
+);
+	$tmpnam = &tmpname;
+	open(CPP, "| sh3-linux-gcc -E - >$tmpnam") || return;
+	print CPP "#include <sys/socket.h>\n";
+	print CPP "#include <sys/wait.h>\n";
+	foreach $tmp (keys %varnames) {
+		print CPP "$tmp $varnames{$tmp}\n";
+	}
+	close(CPP) || return;
+
+	$tmp = '';
+	open(CPP, "< $tmpnam") || return;
+	while (<CPP>) {
+		$tmp .= $_;
+	}
+	close(CPP);
+	unlink $tmpnam;
+
+	@tmp1 = split(/\n/, $tmp);
+
+	if (grep($_ =~ /sin_len/, @tmp1)) {
+		$havesinlen = 1; $sockaddr = 'C C n a4 x8';
+	} else {
+		$havesinlen = 0; $sockaddr = 'S n a4 x8';
+	}
+
+	use Socket;
+	foreach $i (keys %varnames) {
+		if (@tmp2 = grep($_ =~ /^$i/, @tmp1)) {
+			$tmp = (split(/\s+/, @tmp2[0]))[1];
+			$tmp = oct($tmp) if ($tmp =~ /^0/);
+			if ($tmp =~ /^[0-9]+$/) {
+			    eval "\$$varnames{$i} = \$tmp;";
+			} else {
+			    # some constant defined by enum, so we can not
+			    # always use cpp as above. I believe use Socket
+			    # is more reliable in these days.
+			    eval "\$$varnames{$i} = &$varnames{$i};";
+			}
+		}
+	}
+}
+
+sub tmpname {
+	local($fname);
+
+	do {
+		$fname = $tmpdir . '/' . time . '.' . $$ . '.' . $tmpseed++;
+	} while (-e $fname);
+	return $fname;
+}

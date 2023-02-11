@@ -1,0 +1,9 @@
+Document: debian-constitution-text
+Title: Debian Constitution
+Author: The Debian Project
+Abstract: This document contains the complete text of Debian Project
+ Constitution (v1.0), in text format.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/debian/constitution.txt

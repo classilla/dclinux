@@ -1,0 +1,1 @@
+application/x-troff-man; /usr/bin/nroff -mandoc -Tlatin1; copiousoutput; print=/usr/bin/nroff -mandoc -Tlatin1 | print text/plain:-

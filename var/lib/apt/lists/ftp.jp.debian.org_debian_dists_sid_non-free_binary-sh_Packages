@@ -1,0 +1,3476 @@
+Package: a2ps-perl-ja
+Priority: optional
+Section: non-free/text
+Installed-Size: 44
+Maintainer: Ryuichi Arafune <arafune@debian.org>
+Architecture: all
+Version: 1.44-2
+Depends: perl5
+Conflicts: a2ps-ja
+Filename: dists/woody/non-free/binary-all/text/a2ps-perl-ja_1.44-2.deb
+Size: 11892
+MD5sum: c2fab400928aa1e579195f012cffa8a5
+Description: perl version of Miguel Santana's a2ps (support KANJI)
+ This program is perl version of Miguel Santana's a2ps.  Postscript
+ kanji enhancement was done by Naoki Kanazawa <kanazawa@sra.co.jp>.
+ Converted to perl and enhanced by Kazumasa Utashiro.  B4 support
+ and punchmark was contributed by Masami Ueno
+
+Package: abc2mtex
+Priority: optional
+Section: non-free/tex
+Installed-Size: 344
+Maintainer: Anthony Fok <foka@debian.org>
+Architecture: sh
+Version: 1.6.1-5
+Depends: libc6 (>= 2.2.1-2), tetex-bin (>= 0.9.990310-1)
+Recommends: musixtex (>= 1:0.93-2), tetex-base (>= 0.9.990311-1)
+Filename: pool/non-free/a/abc2mtex/abc2mtex_1.6.1-5_sh.deb
+Size: 150468
+MD5sum: 0fbd49bccfea29abbc10c15bbe580207
+Description: An easy way of transcribing folk and traditional music
+ ABC2MTeX is a package written to typeset tunes stored in an ascii
+ format or abc notation.  It was designed primarily for folk and
+ traditional tunes of Western European origin (such as Irish, English
+ and Scottish) which can be written on one stave in standard classical
+ notation.  However, it can act as a fast preprocessor for multi-stave
+ music and should be extendible to many other types of music.
+ .
+ The package is small, easy to use and features, amongst other things,
+ the ability to transpose both the music and the abc notation.  It
+ will also create an index of all the tunes you have transcribed.
+ .
+ The ability to write tunes in abc notation means that they can be
+ easily and portably stored or transported electronically.  This
+ package allows you to typeset them easily too.  In addition the
+ notation is not specifically tied to MusicTeX and similar packages
+ have been written to translate to other formats such as postscript
+ and MIDI.
+ .
+  (Note: MusicTeX is not packaged for Debian because MusicTeX is old.
+         Please the new-and-better MusiXTeX package instead.  :)
+ .
+  Author: Chris Walshaw <C.Walshaw@gre.ac.uk>
+  Homepage: http://www.gre.ac.uk/~c.walshaw/abc/
+  Source-URL: http://www.gre.ac.uk/~c.walshaw/abc2mtex/
+              http://celtic.stanford.edu/pub/tunes/abc2mtex/
+
+Package: abuse-sfx
+Priority: optional
+Section: non-free/games
+Installed-Size: 1140
+Maintainer: Arto Jantunen <viiru@debian.org>
+Architecture: all
+Version: 2.00-8
+Depends: abuse-frabs | abuse-lib (>= 2.00-12)
+Filename: pool/non-free/a/abuse-sfx/abuse-sfx_2.00-8_all.deb
+Size: 685336
+MD5sum: e58617800908e33a2a1504ba74059414
+Description: Sound effects for Abuse
+ This package contains sound effects for the Abuse game. The sound effects
+ are not required to play Abuse, but they do contribute to the mood of the
+ game, and give you the advantage of being able to hear the nasty creature
+ that's lurking around the next corner.
+
+Package: agrep
+Priority: optional
+Section: non-free/text
+Installed-Size: 124
+Maintainer: Michael-John Turner <mj@debian.org>
+Architecture: sh
+Version: 2.04-1
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: glimpse
+Filename: pool/non-free/a/agrep/agrep_2.04-1_sh.deb
+Size: 36332
+MD5sum: 18e00b343f2893f82094378092801498
+Description: Text search tool with support for approximate patterns
+ agrep is a version of standard UNIX grep with the following
+ enhancements:
+ o the ability to search for approximate patterns
+ o it is record oriented rather than just line oriented
+ o multiple patterns with AND (or OR) logic queries
+
+Package: amiwm
+Priority: optional
+Section: non-free/x11
+Installed-Size: 336
+Maintainer: Jorgen Schaefer <forcer@debian.org>
+Architecture: sh
+Version: 0.20.48-3
+Provides: x-window-manager
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3), xfonts-75dpi
+Filename: pool/non-free/a/amiwm/amiwm_0.20.48-3_sh.deb
+Size: 89676
+MD5sum: 421b661bf07ea8a3789291288f0b7437
+Description: The Amiga look-alike window manager
+ This is amiwm, an X window manager that tries to make your workstation
+ look like an Amiga.  "Why?" you ask.  Because the author wanted it to.
+ So there!
+
+Package: amp
+Priority: optional
+Section: non-free/sound
+Installed-Size: 164
+Maintainer: Fredrik Hallenberg <hallon@debian.org>
+Architecture: sh
+Version: 0.7.6-7
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/a/amp/amp_0.7.6-7_sh.deb
+Size: 66856
+MD5sum: 3196fbbf039f8eb8933484bbb21664e5
+Description: The Audio MPEG Player
+ amp is an MPEG audio file player.
+ .
+ amp can play MPEG1 or MPEG2 files, layers 2 and 3.
+
+Package: arabtex
+Priority: optional
+Section: non-free/tex
+Installed-Size: 1277
+Maintainer: Clint Adams <schizo@debian.org>
+Architecture: all
+Version: 3.09-3
+Depends: tetex-base
+Filename: dists/potato/non-free/binary-all/tex/arabtex_3.09-3.deb
+Size: 327728
+MD5sum: 100c425d71b720c3876bdec62317a8d9
+Description: Arabic/Hebrew macros for TeX/LaTeX
+ ArabTeX is a package extending the capabilities of TeX/LaTeX to generate
+ the arabic writing from an ASCII transliteration for texts in several
+ languages using the arabic script.
+ .
+ It consists of a TeX macro package and an arabic font in several sizes,
+ presently only available in the Naskhi style. ArabTeX will run with Plain
+ TeX and also with LaTeX; other additions to TeX have not been tried.
+ .
+ ArabTeX is primarily intended for generating the arabic writing, but the
+ scientific transcription can be also easily generated. For other languages
+ using the arabic script limited support is available.
+
+Package: bass
+Priority: optional
+Section: non-free/admin
+Installed-Size: 148
+Maintainer: Javier Fernandez-Sanguino Pen~a <jfs@computer.org>
+Architecture: sh
+Version: 1.0.7-2
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/b/bass/bass_1.0.7-2_sh.deb
+Size: 58096
+MD5sum: ab48203ef5ead2b248b225b7b002f148
+Description: Bulk Auditing Security Scanner
+ Allows you to scan the internet for a variety of well known exploits. It
+ was basically a proof of concept that the Internet is not secure.
+ .
+ This was the tool used by The Internet Auditing Project.
+
+Package: btoa
+Priority: optional
+Section: non-free/utils
+Installed-Size: 72
+Maintainer: Nicolás Lichtmaier <nick@debian.org>
+Architecture: sh
+Version: 5.2.1-6
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/b/btoa/btoa_5.2.1-6_sh.deb
+Size: 13018
+MD5sum: d1cc61ec30d253e613b520453128cf24
+Description: Convert binary to ascii and vice versa
+ Btoa converts 4 binary characters to 5 ascii ones, causing a 25%
+ expansion. Spaces will not be used, which should make it safe
+ to send files over Usenet without risking that blanks become
+ tabs.
+
+Package: bulkmail
+Priority: extra
+Section: non-free/mail
+Installed-Size: 88
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Architecture: sh
+Version: 1.13-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/b/bulkmail/bulkmail_1.13-1_sh.deb
+Size: 21468
+MD5sum: 8432d9a1c1993af0d80abedd879880fe
+Description: Speed up delivery of e-mail to large numbers of recipients.
+ This is a C program to do "bulk" mailing.  For input, it takes a file
+ of recipient addresses (one address per line) and a message (with
+ headers already attached) to be sent to the recipients.  It sorts the
+ recipient list by reversed domain (so similar ones sort together),
+ splits up the recipients into several groups containing no more than N
+ domains each, creates an SMTP envelope for each group of recipients,
+ and feeds that envelope to "/usr/lib/sendmail -bs".
+ .
+ Smartlist also contains a bulkmail-style tool.
+
+Package: cadubi
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 112
+Maintainer: Javier Fernandez-Sanguino Pen~a <jfs@computer.org>
+Architecture: all
+Version: 1.1b1-4
+Depends: perl5, libterm-readkey-perl
+Filename: pool/non-free/c/cadubi/cadubi_1.1b1-4_all.deb
+Size: 16746
+MD5sum: 26446b3929fb7ad7a59e329befbf5540
+Description: Creative ASCII Drawing Utility By Ian
+ CADUBI is an application written in Perl that allows you to draw
+ text-based images that are viewable on typical unix-based consoles.
+ Usually the applications that emulate these consoles support various
+ text modes, such as background and foreground colors, bold, and inverse.
+ .
+ This text art, commonly called "ASCII art," is used in various places
+ such as online BBSes, email and login prompts.
+
+Package: calctool
+Priority: optional
+Section: non-free/math
+Installed-Size: 172
+Maintainer: Peter Crystal <darke@debian.org>
+Architecture: sh
+Version: 2.4.9-19
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Filename: pool/non-free/c/calctool/calctool_2.4.9-19_sh.deb
+Size: 46244
+MD5sum: 3c5f27bd17a12892d8f2a80cc7046a0f
+Description: An X window version of the popular Open Look calculator.
+ Internal arithmetic is done with double precision and floating
+ point numbers. The calculator reverts to scientific notation
+ when the number is larger than the display. The base of operation
+ can be changed between binary, octal, decimal and hexadecimal.
+
+Package: cedictb5
+Priority: extra
+Section: non-free/text
+Installed-Size: 980
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Version: 1998.11.01-1.1
+Recommends: cedicttools
+Filename: pool/non-free/c/cedictb5/cedictb5_1998.11.01-1.1_all.deb
+Size: 409924
+MD5sum: eb2d50053e57a3d709fd47e3e0255a08
+Description: Chinese/English dictionary data file (Big5)
+ This package contains the Chinese/English dictionary data file
+ produces by the voluntary CEDICT Project. This is the Big5
+ (Traditional Chinese) version.
+
+Package: cedictgb
+Priority: extra
+Section: non-free/text
+Installed-Size: 980
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Version: 1998.11.01-1.1
+Recommends: cedicttools
+Filename: pool/non-free/c/cedictgb/cedictgb_1998.11.01-1.1_all.deb
+Size: 412506
+MD5sum: 7890d8a379d60af867e7be01a7f70971
+Description: Chinese/English dictionary data file (GB)
+ This package contains the Chinese/English dictionary data file
+ produces by the voluntary CEDICT Project. This is the GB
+ (Simplified Chinese) version.
+
+Package: clustalw
+Priority: optional
+Section: non-free/science
+Installed-Size: 328
+Maintainer: Dr. Guenter Bechly <gbechly@debian.org>
+Architecture: sh
+Version: 1.7-8
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/c/clustalw/clustalw_1.7-8_sh.deb
+Size: 140830
+MD5sum: be52d5b13c27ed402bc70a0bcce0ef04
+Description: [Biology] A multiple sequence alignment program
+ This interactive console program allows simultaneous alignment
+ of many nucleotide or amino acid sequences. It recognizes which
+ format is being used and whether the sequences are nucleic acid
+ (DNA/RNA) or amino acid (proteins). It outputs alignments in
+ various formats such as the Phylip one.
+
+Package: cmap-adobe-cns1
+Priority: optional
+Section: non-free/misc
+Installed-Size: 995
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0+20000816-2
+Depends: defoma, debconf (>= 0.2.26)
+Filename: pool/non-free/c/cmap-adobe-cns1/cmap-adobe-cns1_0+20000816-2_all.deb
+Size: 275490
+MD5sum: 1dd4a0f6a181dddad42faabe85c3fef4
+Description: CMaps for Adobe-CNS1.
+ CMap is a sort of a mapping table used for converting a certain
+ charset/encoding-specific charcode to CID code.
+ .
+ This package contains CMap files for Adobe-CNS1 character collection,
+ which stands for Adobe-defined one, and including Traditional-Chinese
+ charsets.
+ .
+ It is used by gs-cjk (ghostscript with CJK-TrueType extension) to
+ handle Traditional-Chinese TrueType fonts.
+
+Package: cmap-adobe-gb1
+Priority: optional
+Section: non-free/misc
+Installed-Size: 1015
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0+20000816-2
+Depends: defoma, debconf (>= 0.2.26)
+Filename: pool/non-free/c/cmap-adobe-gb1/cmap-adobe-gb1_0+20000816-2_all.deb
+Size: 315984
+MD5sum: f45997ab6b6100b1f0c65cfa380a3a16
+Description: CMaps for Adobe-GB1.
+ CMap is a sort of a mapping table used for converting a certain
+ charset/encoding-specific charcode to CID code.
+ .
+ This package contains CMap files for Adobe-GB character collection,
+ which stands for Adobe-defined one, and including standard
+ Simplified-Chinese charsets.
+ .
+ It is used by gs-cjk (ghostscript with CJK-TrueType extension) to
+ handle Simplified-Chinese TrueType fonts.
+
+Package: cmap-adobe-japan1
+Priority: optional
+Section: non-free/misc
+Installed-Size: 771
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0+20000913-2
+Depends: defoma, debconf (>= 0.2.26)
+Filename: pool/non-free/c/cmap-adobe-japan1/cmap-adobe-japan1_0+20000913-2_all.deb
+Size: 187198
+MD5sum: 0859e9c1c279b25a54aba29826a1871c
+Description: CMaps for Adobe-Japan1.
+ CMap is a sort of a mapping table used for converting a certain
+ charset/encoding-specific charcode to CID code.
+ .
+ This package contains CMap files for Adobe-Japan1 character collection,
+ which stands for Adobe-defined one, and including standard Japanese
+ charsets.
+ .
+ It is used by gs-cjk (ghostscript with CJK-TrueType extension) to
+ handle Japanese TrueType fonts.
+
+Package: cmap-adobe-japan2
+Priority: optional
+Section: non-free/misc
+Installed-Size: 254
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0+19990527-3
+Depends: defoma
+Filename: pool/non-free/c/cmap-adobe-japan2/cmap-adobe-japan2_0+19990527-3_all.deb
+Size: 71548
+MD5sum: 69afb60f6947d0df6472b6054cce3218
+Description: CMaps for Adobe-Japan2.
+ CMap is a sort of a mapping table used for converting a certain
+ charset-specific charcode to CID code.
+ .
+ This package contains CMap files for Adobe-Japan2 character collection,
+ which stands for Adobe-defined one, and including additional Japanese
+ charsets.
+ .
+ It is used by gs-cjk (ghostscript with CJK-TrueType extension) to
+ handle Japanese TrueType fonts.
+
+Package: cmap-adobe-korea1
+Priority: optional
+Section: non-free/misc
+Installed-Size: 615
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0+20000816-3
+Depends: defoma, debconf (>= 0.2.26)
+Filename: pool/non-free/c/cmap-adobe-korea1/cmap-adobe-korea1_0+20000816-3_all.deb
+Size: 178736
+MD5sum: 09f97863cc550a5b1419d19dcdf71212
+Description: CMaps for Adobe-Korea1.
+ CMap is a sort of a mapping table used for converting a certain
+ charset-specific charcode to CID code.
+ .
+ This package contains CMap files for Adobe-Korea1 character collection,
+ which stands for Adobe-defined one, and including standard Korean
+ charsets.
+ .
+ It is used by gs-cjk (ghostscript with CJK-TrueType extension) to
+ handle Korean TrueType fonts.
+
+Package: communicator-nethelp-47
+Priority: optional
+Section: non-free/web
+Installed-Size: 653
+Maintainer: Adam Heath <doogie@debian.org>
+Architecture: all
+Source: netscape4.7
+Version: 4.7-14
+Depends: netscape-base-47, communicator-base-47, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/communicator-nethelp-47_4.7-14.deb
+Size: 181198
+MD5sum: dddb314ad045734c8400559ee584aa41
+Description: Communicator online help for version 4.7
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with communicator.
+
+Package: communicator-nethelp-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 655
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-476, communicator-base-476, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/communicator-nethelp-476_4.76-1.deb
+Size: 181394
+MD5sum: 51f3f4b9f2a23b6edf6442f9b73985dc
+Description: Communicator online help for version 4.76
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with communicator.
+
+Package: communicator-nethelp-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 924
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Recommends: netscape-base-477, communicator-base-477, netscape-base-4
+Filename: pool/non-free/n/netscape4.77/communicator-nethelp-477_4.77-2_all.deb
+Size: 181410
+MD5sum: 5f4f17e5d21c223bfeee1e9a39fbc6ea
+Description: Communicator online help for version 4.77
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with communicator.
+
+Package: communicator-spellchk-47
+Priority: optional
+Section: non-free/web
+Installed-Size: 331
+Maintainer: Adam Heath <doogie@debian.org>
+Architecture: all
+Source: netscape4.7
+Version: 4.7-14
+Depends: netscape-base-47, communicator-base-47, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/communicator-spellchk-47_4.7-14.deb
+Size: 280618
+MD5sum: 8288dd96c958a0352de7f74bc69ea29f
+Description: Popular World-Wide-Web browser software (spelling dictionary)
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want to spell check your email in messenger, netscape's email client,
+ which is part of communicator, then install this package.
+
+Package: communicator-spellchk-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 333
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-476, communicator-base-476, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/communicator-spellchk-476_4.76-1.deb
+Size: 280802
+MD5sum: f1768483837f207cb37ad291002130a3
+Description: Popular World-Wide-Web browser software (spelling dictionary)
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want to spell check your email in messenger, netscape's email client,
+ which is part of communicator, then install this package.
+
+Package: communicator-spellchk-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 376
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Recommends: netscape-base-477, communicator-base-477, netscape-base-4
+Filename: pool/non-free/n/netscape4.77/communicator-spellchk-477_4.77-2_all.deb
+Size: 280804
+MD5sum: 1f09a094490933e871188db7dd9de254
+Description: Popular World-Wide-Web browser software (spelling dictionary)
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want to spell check your email in messenger, netscape's email client,
+ which is part of communicator, then install this package.
+
+Package: csound-dev
+Priority: extra
+Section: non-free/devel
+Installed-Size: 36
+Maintainer: Guenter Geiger <geiger@debian.org>
+Architecture: all
+Source: csound
+Version: 1:4.0.5.0a-1
+Depends: csound (>= 3.53.0.1d)
+Filename: dists/woody/non-free/binary-all/devel/csound-dev_4.0.5.0a-1.deb
+Size: 9702
+MD5sum: 334bd8666386486a3932f6ce310a5c94
+Description: Development files for CSound.
+ This package has to be installed if CScore is used within csound.
+ It provides the necessary headers and libraries.
+
+Package: csound-doc
+Priority: extra
+Section: non-free/doc
+Installed-Size: 1488
+Maintainer: Guenter Geiger <geiger@debian.org>
+Architecture: all
+Version: 3.47b2-2
+Depends: doc-base
+Filename: pool/non-free/c/csound-doc/csound-doc_3.47b2-2_all.deb
+Size: 251866
+MD5sum: 07197710e9d00c88fbd3578d800d451c
+Description: Documentation for Csound.
+ This package contains documentation for CSound, which is distributed
+ separately.
+
+Package: cucipop
+Priority: optional
+Section: non-free/net
+Installed-Size: 312
+Maintainer: Norbert Tretkowski <nobse@debian.org>
+Architecture: sh
+Version: 1.31-15.5
+Provides: pop3-server
+Depends: netbase, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1)
+Conflicts: pop3-server, qpopper
+Filename: pool/non-free/c/cucipop/cucipop_1.31-15.5_sh.deb
+Size: 40402
+MD5sum: 5b97273a4bae2d910fb020de668f1b46
+Description: Cubic Circle's POP3 daemon
+ A fast, robust implementation of the RFC1939 POP3 protocol,
+ It does not use temporary files, it works reliably over NFS,
+ and it includes an option to defeat "leave mail on server"
+ clients.  Cucipop can run from inetd or as a standalone daemon
+ (the default).
+
+Package: cxhextris
+Priority: optional
+Section: non-free/games
+Installed-Size: 152
+Maintainer: Jerome Marant <jerome@debian.org>
+Architecture: sh
+Version: 1.0-18
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3), debconf
+Filename: pool/non-free/c/cxhextris/cxhextris_1.0-18_sh.deb
+Size: 21314
+MD5sum: 577b4bc2633128a6d79cad9668fcb411
+Description: Color version of hextris
+ Hexagonal pieces give this version of tetris a new twist.
+
+Package: cxterm-big5
+Priority: optional
+Section: non-free/x11
+Installed-Size: 1502
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: cxterm
+Version: 5.1p1-7
+Depends: cxterm-common, xfonts-intl-chinese | intlfonts-chinese (>= 1.1-5)
+Filename: pool/non-free/c/cxterm/cxterm-big5_5.1p1-7_all.deb
+Size: 843050
+MD5sum: 979e5f0006731f1cfa90fda06af812c9
+Description: Big5 (Traditional Chinese) supporting files for CXterm
+ You need this package in order to input Big5 characters in CXTerm.
+ To launch the term, just type 'cxtermb5'.
+
+Package: cxterm-gb
+Priority: optional
+Section: non-free/x11
+Installed-Size: 1332
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: cxterm
+Version: 5.1p1-7
+Depends: cxterm-common, xfonts-base (>> 4.0) | xfonts-cjk (>= 3.3.3.1-4)
+Suggests: xfonts-intl-chinese | intlfonts-chinese (>= 1.1-5)
+Filename: pool/non-free/c/cxterm/cxterm-gb_5.1p1-7_all.deb
+Size: 697392
+MD5sum: f4aac767028306bdcb31113a25ed4a22
+Description: GB (Simplified Chinese) supporting files for CXterm
+ You need this package in order to input GB characters in CXTerm.
+ To launch the term, just type 'cxtermgb'.
+
+Package: cxterm-jis
+Priority: optional
+Section: non-free/x11
+Installed-Size: 47
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: cxterm
+Version: 5.1p1-7
+Depends: cxterm-common, xfonts-base (>> 4.0) | xfonts-cjk (>= 3.3.3.1-4)
+Suggests: xfonts-intl-japanese | intlfonts-japanese (>= 1.1-5)
+Filename: pool/non-free/c/cxterm/cxterm-jis_5.1p1-7_all.deb
+Size: 11508
+MD5sum: 8a060d163b73ed79aed918bf125e5506
+Description: JIS supporting files for CXterm
+ You need this package in order to input JIS characters in CXTerm.
+ To launch the term, just type 'cxtermjis'.
+
+Package: cxterm-ks
+Priority: optional
+Section: non-free/x11
+Installed-Size: 109
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: cxterm
+Version: 5.1p1-7
+Depends: cxterm-common, xfonts-base (>> 4.0) | xfonts-cjk (>= 3.3.3.1-4)
+Filename: pool/non-free/c/cxterm/cxterm-ks_5.1p1-7_all.deb
+Size: 49276
+MD5sum: 1f7fea7fc741fe02c420d212f0b95a23
+Description: KS supporting files for CXterm
+ You need this package in order to input KS characters in CXTerm.
+ To launch the term, just type 'cxtermks'.
+
+Package: doc-html-w3
+Priority: optional
+Section: non-free/doc
+Installed-Size: 11362
+Maintainer: Marco Budde <Budde@tu-harburg.de>
+Architecture: all
+Version: 2000.11-0.1
+Filename: dists/woody/non-free/binary-all/doc/doc-html-w3_2000.11-0.1.deb
+Size: 3142956
+MD5sum: 1c07caac5b9eea69cb7e575485f9f78f
+Description: Recommendations of the W3
+ This package includes the W3C Recommendations covering the different
+ technologies related to web development:
+ .
+     * HTML 4.01
+     * Cascading Style Sheets, level 1 & 2
+     * Document Object Model, level 1 & 2
+     * XML 1.0
+     * XSL Transformations 1.0 (XSLT)
+     * XML Path 1.0 (XPATH)
+     * PICSRules 1.1
+     * Rating Services and Rating Systems
+     * PICS Label Distribution
+     * MathML 1.1
+     * SMIL 1.0
+
+Package: doom-wad-shareware
+Priority: optional
+Section: non-free/games
+Installed-Size: 4156
+Maintainer: Joe Drew <hoserhead@woot.net>
+Architecture: all
+Version: 1.9-1
+Provides: doom-wad
+Recommends: doom-engine
+Filename: dists/potato/non-free/binary-all/games/doom-wad-shareware_1.9-1.deb
+Size: 1761420
+MD5sum: a0f2200fc3e3d6dca682ef86f9a5ef8a
+Description: Shareware game files for the 3D game DOOM
+ This is the shareware wad file for DOOM 1. It's required for games such
+ as lxdoom if you don't own your own copy of the commercial wad files.
+
+Package: dot-forward-src
+Priority: extra
+Section: non-free/mail
+Installed-Size: 57
+Maintainer: Debian QA Group <debian-qa@lists.debian.org>
+Architecture: all
+Source: dot-forward
+Version: 0.71-3
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make
+Filename: dists/woody/non-free/binary-all/mail/dot-forward-src_0.71-3.deb
+Size: 38448
+MD5sum: 4f171b27dfe9c9bf2e8e6687512006eb
+Description: .forward-compatibility for qmail (source)
+ This is a source only package for building dot-forward binary
+ package from source, because Dan Bernstein (dot-forward's author)
+ only gives permission for dot-forward to be distributed in source form.
+ .
+ dot-forward reads sendmail's .forward files under qmail. You can run it
+ in the qmail startup script to support all your existing .forward files
+ automatically. Individual users can switch to the .qmail mechanism at
+ their leisure.
+ .
+ dot-forward supports forwarding, program deliveries, and comments. It
+ does not support file deliveries or :include:. (However, it recognizes
+ file delivery attempts, and defers delivery to give you a chance to set
+ up a .qmail file.)
+
+Package: dvi2tty
+Priority: optional
+Section: non-free/tex
+Installed-Size: 132
+Maintainer: Kenshi Muto <kmuto@debian.org>
+Architecture: sh
+Version: 5.1-13
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/d/dvi2tty/dvi2tty_5.1-13_sh.deb
+Size: 26382
+MD5sum: 8df038a4a61654e954d4aa29b91765b8
+Description: Previewing dvi-files on text-only devices
+ If no options are passed output will be send to the pager defined in
+ PAGER if specified. If no pager specified the output will go to pager.
+
+Package: echo-linux
+Priority: extra
+Section: non-free/doc
+Installed-Size: 2775
+Maintainer: Debian QA Group <debian-qa@lists.debian.org>
+Architecture: all
+Version: 1998.03-3
+Recommends: www-browser | httpd
+Filename: pool/non-free/e/echo-linux/echo-linux_1998.03-3_all.deb
+Size: 2158666
+MD5sum: e3f63f4fd636daedf902006a1479ed15
+Description: French on-line magazine "L'Echo de Linux"
+ This package installs articles from the french on-line magazine
+ "L'Echo de Linux" on your Debian system. The version number
+ reflects the month in which this package was created.
+ .
+ You can also read "L'Echo de Linux" at http://echo-linux.alienor.fr/
+ This magazine is also available at ftp://ftp.lip6.fr/pub/Linux/french/echo-linux
+ (with version in postscript formats).
+
+Package: edict
+Priority: optional
+Section: non-free/text
+Installed-Size: 2901
+Maintainer: Hayao Nakahara <nakahara@debian.org>
+Architecture: all
+Version: 2000.06.22-1
+Filename: pool/non-free/e/edict/edict_2000.06.22-1_all.deb
+Size: 1143680
+MD5sum: 30194549c20c89975caf68b7120dfd92
+Description: English/Japanese dictionary.
+ The EDICT file is the outcome of a  voluntary  project  to  produce a freely
+ available Japanese/English  Dictionary  in  machine-readable  form.
+
+Package: edict-fpw
+Priority: optional
+Section: non-free/text
+Installed-Size: 24484
+Maintainer: Masato Taruishi <taru@debian.org>
+Architecture: all
+Version: 1.2.1-1
+Depends: ndtpd | lookup-el
+Filename: dists/woody/non-free/binary-all/text/edict-fpw_1.2.1-1.deb
+Size: 7783900
+MD5sum: 8ae565a44c06acb0ce7068db1fb20179
+Description: English/Japanese Dictionary (JIS X 4081 format)
+ The EDICT file is the outcome of a  voluntary  project  to  produce a freely
+ available Japanese/English  Dictionary  in  machine-readable  form.
+ .
+ This package contains a preformatted edict data for JIS X 4081.
+
+Package: eemu-client
+Priority: optional
+Section: non-free/admin
+Installed-Size: 84
+Maintainer: Fernando Sanchez <fer@debian.org>
+Architecture: sh
+Source: eemu
+Version: 2.34.1-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/e/eemu/eemu-client_2.34.1-1_sh.deb
+Size: 17320
+MD5sum: dc9ba2560483be18b8c4f0b5003b333a
+Description: enterprise Event Management Utility
+ eEMU is a software package that manages, displays and actions messages sent
+ by various monitoring agents. eEMU provides/complements event management
+ functionality of commercially available packages such as Patrol or TNG
+ Event Management.
+ .
+ This is the client part, which is the only thing you need to install in a
+ system which is going to be monitorized. Some useful example scripts are
+ also provided with this package.
+
+Package: eemu-server
+Priority: optional
+Section: non-free/admin
+Installed-Size: 157
+Maintainer: Fernando Sanchez <fer@debian.org>
+Architecture: all
+Source: eemu
+Version: 2.34.1-1
+Depends: perl5, eemu-client
+Filename: dists/woody/non-free/binary-all/admin/eemu-server_2.34.1-1.deb
+Size: 37446
+MD5sum: 240e7440728b1f5025e87dde5f43ff94
+Description: enterprise Event Management Utility
+ eEMU is a software package that manages, displays and actions messages sent
+ by various monitoring agents. eEMU provides/complements event management
+ functionality of commercially available packages such as Patrol or TNG
+ Event Management.
+ .
+ This is the server part, which needs the client to be installed in order to
+ get the event browser working.
+ .
+ Emu...
+ .
+  - is an event management framework
+  - is a distributed, multi-tier and highly scalable solution
+  - message agent is easy to use and available for every TCP/IP platform
+  - uses new heuristic algorithms for message handling
+  - provides central management and monitoring
+  - allows to automate problem detection and take corrective actions from a
+    central place
+  - is the most secure monitoring software
+  - acts as a good console output consolidator or generic message
+    consolidator
+  - supports central software distribution
+  - provides easy logging and statistical reporting
+  - integrates well with the leading Enterprise management Systems
+  - provides password based security
+  - does not require extra training
+
+Package: ezmlm-src
+Priority: optional
+Section: non-free/mail
+Installed-Size: 643
+Maintainer: Roberto Lumbreras <rover@debian.org>
+Architecture: all
+Source: ezmlm
+Version: 0.53-4
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make
+Filename: dists/woody/non-free/binary-all/mail/ezmlm-src_0.53-4.deb
+Size: 635172
+MD5sum: 0e10434c8b2ef2c29aac5959d57ac840
+Description: easy-to-use high-speed mailing list manager for qmail (source)
+ This is a source only package for building serialmail binary
+ package from source, because Dan Bernstein (serialmail's author)
+ only gives permission for qmail to be distributed in source form,
+ or binary for by approval.
+ .
+ Written by Dan J. Bernstein, ezmlm is a powerful mailing list
+ manager for qmail. This package includes ezmlm-idx patches by
+ Fred Lindberg, providing to ezmlm moderation, indexing, digests...
+ .
+ ezmlm features:
+  -cryptographic cookies are used to protect users against false
+   subscription requests: forged (un)subscriptions are not possible
+  -automatic processing of subscription and unsubscription requests
+  -maintains a list archive for automatic retrieval
+  -automatic handling of bounce messages (yes, AUTOMATIC)
+  -a user only is unsubscribed if his email is unreachable for 10 days
+  -forwarding loops detection
+  -reliable, even in the face of system crashes
+  -can be used for a sublist, redistributing messages from another list
+  -huge mailing lists are not a problem
+ .
+ ezmlm-idx features:
+  -subscription/message moderation and remote administration
+  -easy moderation, without passwords or special headers to send
+  -forged moderations are not possible (cryptographic cookies)
+  -any number of moderators is possible
+  -threaded archive retrieval
+  -digest lists
+  -remote administrators can retrieve a subscriber list
+  -restricted posting to list subscribers
+
+Package: fastforward-src
+Priority: extra
+Section: non-free/mail
+Installed-Size: 71
+Maintainer: Debian QA Group <debian-qa@lists.debian.org>
+Architecture: all
+Source: fastforward
+Version: 0.51-4
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make
+Filename: dists/woody/non-free/binary-all/mail/fastforward-src_0.51-4.deb
+Size: 53360
+MD5sum: 51a826176cd9cace0c59d66b37cead2f
+Description: aliases-style mail forwarding for qmail (source)
+ This is a source only package for building fastforward binary
+ package from source, because Dan Bernstein (fastforward's author)
+ only gives permission for fastforward to be distributed in source form.
+ .
+ fastforward handles qmail forwarding according to a cdb database. It can
+ create forwarding databases from a sendmail-style /etc/aliases or from
+ user-oriented virtual-domain tables.
+ .
+ fastforward supports external mailing lists, stored in a binary format
+ for fast access. It has a tool to convert sendmail-style include files
+ into binary lists.
+ .
+ fastforward is more reliable than sendmail. sendmail can't deal with
+ long aliases, or deeply nested aliases, or deeply nested include files;
+ fastforward has no limits other than memory. sendmail can produce
+ corrupted alias files if the system crashes; fastforward is crashproof.
+ .
+ fastforward's database-building tools are much faster than sendmail's
+ newaliases. Even better, fastforward deliveries don't pause while the
+ database is being rebuilt.
+ .
+ fastforward does not support insecure sendmail-style program deliveries
+ from include files; you can use qmail's secure built-in mechanisms
+ instead. fastforward does support program deliveries from /etc/aliases.
+
+Package: fdclone
+Priority: optional
+Section: non-free/utils
+Installed-Size: 464
+Maintainer: Taketoshi Sano <sano@debian.org>
+Architecture: sh
+Version: 1.03r-1
+Depends: libc6 (>= 2.2.1-2), libncurses5, lv
+Filename: pool/non-free/f/fdclone/fdclone_1.03r-1_sh.deb
+Size: 230836
+MD5sum: 80b58376568b80763cd58a8fac80c560
+Description: A console-base lightweight file manager
+ FD(FD represents "File and Directory") is an easy-to-use
+ file management tool for Un*x newbies.  As its name shows,
+ this is a rewrite from scratch - the original version was written
+ by Atsushi Idei for MS-DOS(tm) and once very popular in Japan.
+ Messages are available either in English or in Japanese.
+
+Package: festlex-oald
+Priority: optional
+Section: non-free/sound
+Installed-Size: 5256
+Maintainer: David Huggins-Daines <dhd@debian.org>
+Architecture: all
+Version: 1.4.0-1
+Depends: festival (>= 1.4.0)
+Conflicts: festvox-rablpc16k (<< 1.3.1), festvox-rablpc8k (<< 1.3.1)
+Filename: dists/potato/non-free/binary-all/sound/festlex-oald_1.4.0-1.deb
+Size: 744676
+MD5sum: 4ddaa06b337fb0ffdd7bcb06531a8edb
+Description: Festival lexicon from Oxford Advanced Learners' Dictionary
+ A festival lexicon derived from the Oxford Advanced Learners' Dictionary.
+ .
+ This is a pronunciation dictionary that helps festival pronounce english
+ text, with a British accent.
+
+Package: festvox-ellpc11k
+Priority: optional
+Section: non-free/sound
+Installed-Size: 2140
+Maintainer: David Huggins-Daines <dhd@debian.org>
+Architecture: all
+Version: 1.4.0-1
+Replaces: festvox-ellpc16k
+Depends: festival (>= 1.3.0)
+Conflicts: festvox-ellpc16k
+Filename: dists/potato/non-free/binary-all/sound/festvox-ellpc11k_1.4.0-1.deb
+Size: 1471494
+MD5sum: 67dcd4d27bbbfac52f97dea982c991a4
+Description: Castilian Spanish male speaker for Festival
+ This is a Castilian Spanish male speaker for the Festival speech synthesis
+ system.
+
+Package: figfonts
+Priority: optional
+Section: non-free/text
+Installed-Size: 560
+Maintainer: Francesco Tapparo <f.tapparo@vi.nettuno.it>
+Architecture: all
+Version: 2.2-4
+Replaces: figlet
+Depends: figlet (>=2.2-9)
+Filename: dists/potato/non-free/binary-all/text/figfonts_2.2-4.deb
+Size: 437270
+MD5sum: 0405cdc02a07009d32e620f37cb7f611
+Description: User contributed fonts for figlet
+ This package contains independently contributed fonts for
+ the `figlet' program. These fonts do not have consistent
+ copyrights and so are distributed separately from figlet.
+
+Package: figfonts-cjk
+Priority: optional
+Section: non-free/text
+Installed-Size: 3321
+Maintainer: Francesco Tapparo <f.tapparo@vi.nettuno.it>
+Architecture: all
+Source: figfonts
+Version: 2.2-4
+Depends: figlet (>= 2.2-1)
+Filename: dists/potato/non-free/binary-all/text/figfonts-cjk_2.2-4.deb
+Size: 3300080
+MD5sum: a69780fc4e5b88feb618d5681091219d
+Description: Chinese-Japanese-Korean fonts for figlet
+ This package contains independently contributed fonts for
+ the `figlet' program. These fonts do not have consistent
+ copyrights and so are distributed separately from figlet.
+ .
+ The following fonts are provided:
+  gb16fs   - Chinese fang song ti font
+  gb16st   - Chinese song ti font
+  jiskan16 - Japanese font
+  hanglg16 - Korean Gothic font
+  kanglm16 - Korean Mincho font
+  cns      - Traditional Chinese font
+ .
+ The following controlfiles are provided:
+  unshift - maps 94 x 94 font in GR space (0xA1A1 - 0xFEFE) to
+  iso2022 - strips off ISO 2022 character set information
+  big5 - maps Taiwan Big-5 character set to CNS
+
+Package: foiltex
+Priority: optional
+Section: non-free/tex
+Installed-Size: 271
+Maintainer: Atsuhito Kohda <kohda@pm.tokushima-u.ac.jp>
+Architecture: all
+Version: 2.1.3-2
+Depends: tetex-bin
+Filename: dists/woody/non-free/binary-all/tex/foiltex_2.1.3-2.deb
+Size: 74346
+MD5sum: 88bc9e4fa1c20c5557895d588d01c5f1
+Description: A collection of LaTeX files for making foils.
+ A number of features are built-in including large sans serif font as normal
+ font, options for setting normalsize at 20pt (default), 17pt, 25pt or
+ 30pt, new macros for starting new foils, for special environments like
+ Theorem and Proof, simple macros to control the headline and footline.
+
+Package: fractxtra
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 3188
+Maintainer: Riku Voipio <riku.voipio@iki.fi>
+Architecture: all
+Version: 6-5
+Recommends: xfractint
+Filename: dists/potato/non-free/binary-all/graphics/fractxtra_6-5.deb
+Size: 585720
+MD5sum: ad940903dc365a4f5c729142ef967940
+Description: Fractint Extras Collection
+ A huge collection of files to be included in xfractint by Dan Goldwater.
+
+Package: freefont
+Priority: optional
+Section: non-free/x11
+Installed-Size: 2666
+Maintainer: Dr. Guenter Bechly <gbechly@debian.org>
+Architecture: all
+Version: 0.10-10
+Depends: xutils
+Filename: pool/non-free/f/freefont/freefont_0.10-10_all.deb
+Size: 2370840
+MD5sum: 8ecea7b8f67667f1c0a6385f3067d214
+Description: Freeware font selection for X11
+ A collection of 79 scalable type 1 fonts for X11. The fonts are all freeware
+ but some of them are not to be sold or have other redistribution
+ limitations.
+ .
+ Restart your X Server to activate the fonts.
+ Instructions on how to get ghostscript to use it are also included.
+
+Package: gap4-doc-dvi
+Priority: optional
+Section: non-free/math
+Installed-Size: 1064
+Maintainer: Markus Hetzmannseder <hetzi@hetzi.at>
+Architecture: all
+Version: 4.1-1.1
+Suggests: gap4
+Filename: dists/potato/non-free/binary-all/math/gap4-doc-dvi_4.1-1.1.deb
+Size: 1030190
+MD5sum: 4c395b044023bb7f406caafc53041bce
+Description: DVI-Docu files for GAP4
+ Contains the DVI version of the GAP4 books and manual.
+
+Package: gap4-doc-html
+Priority: optional
+Section: non-free/math
+Installed-Size: 4300
+Maintainer: Markus Hetzmannseder <hetzi@hetzi.at>
+Architecture: all
+Version: 4.1-1.1
+Suggests: gap4
+Filename: dists/woody/non-free/binary-all/math/gap4-doc-html_4.1-1.1.deb
+Size: 826316
+MD5sum: 172c3db27fcdbf053a7af8d5d7e18b00
+Description: HTML Documentation for GAP4
+ Contains the HTML version of the GAP4 books and manual.
+
+Package: gap4-doc-ps
+Priority: optional
+Section: non-free/math
+Installed-Size: 3000
+Maintainer: Markus Hetzmannseder <hetzi@hetzi.at>
+Architecture: all
+Version: 4.1-1.1
+Suggests: gap4
+Filename: dists/potato/non-free/binary-all/math/gap4-doc-ps_4.1-1.1.deb
+Size: 3008514
+MD5sum: f79c2a349a3844367d20e005c8a1ca29
+Description: Postscript Documentation for GAP4
+ Contains the postscript version of the GAP4 books and manual.
+
+Package: gap4-gdat
+Priority: optional
+Section: non-free/math
+Installed-Size: 32267
+Maintainer: Markus Hetzmannseder <hetzi@hetzi.at>
+Architecture: all
+Version: 4.1-1
+Depends: gap4
+Filename: dists/woody/non-free/binary-all/math/gap4-gdat_4.1-1.deb
+Size: 5941164
+MD5sum: 38d30c604f413b1700b69da087031a85
+Description: Group data libraries for GAP4
+ Contains the libraries of small groups, transitive groups und
+ primitive groups.
+
+Package: gap4-tdat
+Priority: optional
+Section: non-free/math
+Installed-Size: 34414
+Maintainer: Markus Hetzmannseder <hetzi@hetzi.at>
+Architecture: all
+Version: 4.1-1
+Depends: gap4
+Filename: dists/woody/non-free/binary-all/math/gap4-tdat_4.1-1.deb
+Size: 6516168
+MD5sum: b1cbc7645776b63b8ad160aabe063db3
+Description: Table data libraries for GAP4
+ Contains the character tables and tables of marks.
+
+Package: gbdk-dev
+Priority: optional
+Section: non-free/devel
+Installed-Size: 560
+Maintainer: Masato Taruishi <taru@debian.org>
+Architecture: all
+Source: gbdk
+Version: 2.0.17-3.1
+Suggests: gbdk, gbdk-examples
+Filename: pool/non-free/g/gbdk/gbdk-dev_2.0.17-3.1_all.deb
+Size: 45548
+MD5sum: bfda9b14b336dca864814be7045d4377
+Description: GameBoy Developer's kit - development package
+ The GameBoy Developer's Kit (GBDK), is a set of tools that enable to
+ develop programs for the Nintendo GameBoy system, either in C or in
+ assembly. GBDK includes a set of libraries for the most common
+ requirements and generates image files for use with a real GameBoy or
+ with an emulator like VGB or no3gmb.
+ .
+ This package contains a set of libraries.
+
+Package: gbdk-examples
+Priority: optional
+Section: non-free/devel
+Installed-Size: 284
+Maintainer: Masato Taruishi <taru@debian.org>
+Architecture: all
+Source: gbdk
+Version: 2.0.17-3.1
+Suggests: gbdk, gbdk-dev
+Filename: pool/non-free/g/gbdk/gbdk-examples_2.0.17-3.1_all.deb
+Size: 48934
+MD5sum: 6bfe9d3c731c58d0a378b3b8acf67b4a
+Description: GameBoy Developer's kit - example package
+ The GameBoy Developer's Kit (GBDK), is a set of tools that enable to
+ develop programs for the Nintendo GameBoy system, either in C or in
+ assembly. GBDK includes a set of libraries for the most common
+ requirements and generates image files for use with a real GameBoy or
+ with an emulator like VGB or no3gmb.
+ .
+ This package contains example programs in assembly and in C.
+
+Package: gettyps
+Priority: optional
+Section: non-free/comm
+Installed-Size: 252
+Maintainer: Herbert Xu <herbert@debian.org>
+Architecture: sh
+Version: 2.0.7j-9
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Filename: pool/non-free/g/gettyps/gettyps_2.0.7j-9_sh.deb
+Size: 88458
+MD5sum: dbf446368d5bff75988b3f87c179d21a
+Description: Replacement for getty.
+ This is a powerful replacement for getty.  It supports features like ringback
+ and others.
+
+Package: giflib-bin
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 504
+Maintainer: Larry Daffner <vizzie@airmail.net>
+Architecture: sh
+Source: giflib
+Version: 3.0-6
+Replaces: libungif-bin, giflib3g
+Provides: libungif-bin
+Depends: giflib3g (= 3.0-6), libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Conflicts: libgif3-bin, giflib-bin, libungif-bin
+Filename: pool/non-free/g/giflib/giflib-bin_3.0-6_sh.deb
+Size: 135008
+MD5sum: 8b05a6e157561adedaf14a93377b93b9
+Description: programs to convert GIF images
+ These are some programs that use giflib to convert images.
+ .
+ The Graphics Interchange Format(c) specification is the copyrighted
+ property of CompuServe Incorporated.  Unfortunately, it used LZW
+ compression for compressed GIFs, which is covered by a patent held
+ by Unisys.  As this package existed before UniSys's lawyeritis attack
+ of New Years' Day 1995, it is grandfathered in under their license
+ terms and you do not have to pay fees for using it.
+ .
+ Alternatively, you may choose to install the libungif package which
+ is available in the main Debian distribution.  The libungif package
+ is a variant of giflib with the offending patented LZW compression
+ code snipped out, so it can only save uncompressed GIFs.
+
+Package: giflib3g
+Priority: optional
+Section: non-free/libs
+Installed-Size: 84
+Maintainer: Larry Daffner <vizzie@airmail.net>
+Architecture: sh
+Source: giflib
+Version: 3.0-6
+Replaces: libungif3g
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Conflicts: libgif3g, libgif2, libungif3g
+Filename: pool/non-free/g/giflib/giflib3g_3.0-6_sh.deb
+Size: 24668
+MD5sum: 696e750517281112f9af3798f34155bc
+Description: shared library for GIF images (runtime lib)
+ This is a shared library for working with GIF images.
+ .
+ The Graphics Interchange Format(c) specification is the copyrighted
+ property of CompuServe Incorporated.  Unfortunately, it used LZW
+ compression for compressed GIFs, which is covered by a patent held
+ by Unisys.  As this package existed before UniSys's lawyeritis attack
+ of New Years' Day 1995, it is grandfathered in under their license
+ terms and you do not have to pay fees for using it.
+ .
+ Alternatively, you may choose to install the libungif package which
+ is available in the main Debian distribution.  The libungif package
+ is a variant of giflib with the offending patented LZW compression
+ code snipped out, so it can only save uncompressed GIFs.
+
+Package: giflib3g-dev
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 92
+Maintainer: Larry Daffner <vizzie@airmail.net>
+Architecture: sh
+Source: giflib
+Version: 3.0-6
+Replaces: libungif3g-dev, giflib3g
+Provides: giflib-dev
+Depends: libc6-dev, giflib3g (= 3.0-6)
+Conflicts: giflib-dev, libungif3g-dev, libgif-dev, libgif3g-dev, libgif2-dev
+Filename: pool/non-free/g/giflib/giflib3g-dev_3.0-6_sh.deb
+Size: 25134
+MD5sum: e2ee8b377800fa329e2fba17a0d21194
+Description: shared library for GIF images (development files)
+ This package contains header files needed to compile programs that use
+ giflib.
+ .
+ The Graphics Interchange Format(c) specification is the copyrighted
+ property of CompuServe Incorporated.  Unfortunately, it used LZW
+ compression for compressed GIFs, which is covered by a patent held
+ by Unisys.  As this package existed before UniSys's lawyeritis attack
+ of New Years' Day 1995, it is grandfathered in under their license
+ terms and you do not have to pay fees for using it.
+ .
+ Alternatively, you may choose to install the libungif package which
+ is available in the main Debian distribution.  The libungif package
+ is a variant of giflib with the offending patented LZW compression
+ code snipped out, so it can only save uncompressed GIFs.
+
+Package: gifsicle
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 268
+Maintainer: Eduardo Marcel Macan <macan@debian.org>
+Architecture: sh
+Version: 1.23-2
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Filename: pool/non-free/g/gifsicle/gifsicle_1.23-2_sh.deb
+Size: 124016
+MD5sum: d070ac88179a2ff614d98a8ce1b0bfca
+Description: Powerful program for manipulationg GIF images.
+ Gifsicle is a powerful command-line program for manipulating GIF image files.
+ Extensive options let you control what exactly it does. It has good support
+ for transparency and colormap manipulation, simple image transformations
+ (cropping, flipping), and creating, deconstructing, and editing GIF
+ animations, which it can also optimize for space.
+
+Package: gimp-nonfree
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 112
+Maintainer: Ben Gertzfield <che@debian.org>
+Architecture: sh
+Source: gimp
+Version: 1.0.4-3
+Depends: gimp (= 1.0.4-3), libc6 (>= 2.2.1-2), libgimp1, libglib1.2 (>= 1.2.0), libgtk1.2 (>= 1.2.10-1), libtiff3g, xlibs (>> 4.0.3)
+Filename: pool/non-free/g/gimp/gimp-nonfree_1.0.4-3_sh.deb
+Size: 33816
+MD5sum: 4d7c6a2c82cef2e0784975bab13112ab
+Description: GIF and TIFF support for the GNU Image Manipulation Program
+ This package includes the gif and tiff support for The GNU Image
+ Manipulation Program. These files are not freely available; their
+ use is disallowed by the UNISYS patent on LZW compression.
+ .
+ Use at your own legal risk.
+
+Package: gs-aladdin-manual
+Priority: optional
+Section: non-free/doc
+Installed-Size: 525
+Maintainer: Marco Pistore <pistore@di.unipi.it>
+Architecture: all
+Version: 1.3-1
+Depends: pdf-viewer
+Suggests: gs | gs-aladdin
+Filename: dists/potato/non-free/binary-all/doc/gs-aladdin-manual_1.3-1.deb
+Size: 385982
+MD5sum: e31d396e54f18f9f32825ca4e4b87237
+Description: The Ghostscript user manual by Thomas Merz (English)
+ The manual, in PDF format, covers many aspects of Ghostscript, including
+ installation, configuration, build process, applications, and
+ troubleshooting.
+ It also includes a complete list of display, printer, and file format
+ drivers supplied with Ghostscript.
+ It is updated for version 5.01 of Ghostscript.
+ .
+ Please notice that some of the contents of the manual dos not apply to the
+ Debian distribution of Ghostscript.
+
+Package: gs-aladdin-manual-de
+Priority: extra
+Section: non-free/doc
+Installed-Size: 506
+Maintainer: Marco Pistore <pistore@di.unipi.it>
+Architecture: all
+Version: 1.3-1
+Depends: pdf-viewer
+Suggests: gs | gs-aladdin
+Filename: dists/potato/non-free/binary-all/doc/gs-aladdin-manual-de_1.3-1.deb
+Size: 361828
+MD5sum: 39b911275eb916e23e13b4b2653fce68
+Description: The Ghostscript user manual by Thomas Merz (German edition)
+ The manual, in PDF format, covers many aspects of Ghostscript, including
+ installation, configuration, build process, applications, and
+ troubleshooting.
+ It also includes a complete list of display, printer, and file format
+ drivers supplied with Ghostscript.
+ It is updated for version 5.01 of Ghostscript.
+ .
+ Please notice that some of the contents of the manual dos not apply to the
+ Debian distribution of Ghostscript.
+
+Package: gsfonts-other
+Priority: optional
+Section: non-free/text
+Installed-Size: 1728
+Maintainer: Torsten Landschoff <torsten@debian.org>
+Architecture: all
+Version: 5.10-2
+Depends: gsfonts (>= 5.10a-1)
+Conflicts: gsfonts (<< 5.10a-1)
+Filename: dists/potato/non-free/binary-all/text/gsfonts-other_5.10-2.deb
+Size: 797116
+MD5sum: 6606f95c3a67b670794e3e083a3e5ba9
+Description: Additional fonts for the ghostscript interpreter
+ This package contains a miscellaneous set of fonts, including
+ Cyrillic, kana, and fonts derived from the free Hershey fonts, with
+ improvements (such as adding accented characters) by Thomas Wolff.
+
+Package: gsn-curses
+Priority: optional
+Section: non-free/games
+Installed-Size: 328
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 16-7
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/g/gsn-curses/gsn-curses_16-7_all.deb
+Size: 191150
+MD5sum: c4d848f3a8ddcc231bcccecefc6ce6e1
+Description: Curses, An Interactive Diversion by Graham Nelson
+ As "Curses" opens, you're hunting about in the attic of your family home,
+ looking for a tatty old map of Paris (you're going on holiday tomorrow) and
+ generally trying to avoid all the packing.  Aunt Jemima is potting daisies
+ and sulking; the attics are full of endless distractions and secrets; Greek
+ myths, horoscopes, sixth-century politics, a less than altogether helpful
+ demon, a mysterious bomb plot, photography, ritual, poetry and a dream or
+ two all get in your way; and somehow you keep being reminded of your family
+ through the ages, and all its Curses...
+ .
+ -- could it be that even you are Cursed?
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: gsn-jigsaw
+Priority: optional
+Section: non-free/games
+Installed-Size: 368
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 3-8
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/g/gsn-jigsaw/gsn-jigsaw_3-8_all.deb
+Size: 219134
+MD5sum: 73344b061af8d4ab2b5f664754f4bf22
+Description: Jigsaw, An Interactive History by Graham Nelson
+ New Year's Eve, 1999, a quarter to midnight and where else to be but
+ Century Park! Fireworks cascade across the sky, your stomach rumbles
+ uneasily, music and lasers howl across the parkland... Not exactly your
+ ideal party (especially as that rather attractive stranger in black
+ has slipped back into the crowds) - but cheer up, you won't live to
+ see the next.
+ .
+ "Jigsaw" begins at the very end of the Twentieth Century, but the action
+ ranges over the past hundred years, covering the most critical historical
+ moments of the period: from assassinations to world war, from pop music
+ to the space race.  But throughout it all, just WHO is Black?
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: gumshoe
+Priority: optional
+Section: non-free/games
+Installed-Size: 208
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 1-8
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/g/gumshoe/gumshoe_1-8_all.deb
+Size: 89138
+MD5sum: 6633197b79ed30757a29e5fa971d5c4e
+Description: An Interactive Investigation by Mike Oliphant
+ In Gumshoe, you take on the role of Joe Gumshoe, private investigator.
+ After a month with no work, you're down-and-out, drinking and gambling
+ and in serious debt.  Then, you're handed what looks like an easy job,
+ for a good price.  But you're caught between Jimmy Voigt's boys, out to
+ collect debts, and Detective Lester Boggs, your nemesis in the force.
+ Can you keep body and soul together while you find and deliver the
+ evidence?
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: hwb
+Priority: optional
+Section: non-free/doc
+Installed-Size: 2318
+Maintainer: Marco Budde <budde@debian.org>
+Architecture: all
+Version: 1.3-5
+Conflicts: dhelp (<< 0.3.14)
+Filename: dists/potato/non-free/binary-all/doc/hwb_1.3-5.deb
+Size: 490680
+MD5sum: c594d110cfb4aa3cedf679c06024de3c
+Description: The Hardware Book
+ The Hardware Book contains misc technical information about computers
+ and other electronic devices. You'll find the pinout to most common
+ (and uncommon) connectors available, as well as info about how to build
+ cables.
+
+Package: ilisp
+Priority: optional
+Section: non-free/devel
+Installed-Size: 706
+Maintainer: Craig Brozefsky <craig@debian.org>
+Architecture: all
+Version: 5.10.1-1
+Depends: emacsen
+Filename: pool/non-free/i/ilisp/ilisp_5.10.1-1_all.deb
+Size: 167856
+MD5sum: cb54ad091414d92d56403f0df6f826eb
+Description: Package for interacting with LISPs using EMACSes
+ ILISP is a powerful GNU Emacs interface to many dialects of Lisp,
+ including Lucid, Allegro, Harlequin LispWorks, GCL, KCL, AKCL, ECL,
+ IBCL, and CMUCL.  Also some Scheme implementations are supported as
+ well as a preliminary version of Xlisp/XlispStat.
+
+Package: inform-docs
+Priority: optional
+Section: non-free/devel
+Installed-Size: 489
+Maintainer: Mark Baker <mbaker@iee.org>
+Architecture: all
+Source: inform
+Version: 6.21-2
+Depends: inform
+Filename: pool/non-free/i/inform/inform-docs_6.21-2_all.deb
+Size: 443502
+MD5sum: 620f23c96fd85f78115833f26add6a24
+Description: Supplementary documentation for inform
+ This includes the main user manual in .dvi format, a tutorial, a guide for
+ translators, and "The craft of adventure", a file with tips for game
+ designers.
+
+Package: its4
+Priority: optional
+Section: non-free/devel
+Installed-Size: 176
+Maintainer: Andreas Schuldei <andreas@schuldei.org>
+Architecture: sh
+Version: 1.1.1-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/i/its4/its4_1.1.1-1_sh.deb
+Size: 49728
+MD5sum: 62b2063e45fb1a8017aaa00806c587be
+Description: scans C(++) source for potential security vulnerabilities.
+ ITS4 is a tool that statically scans C and C++ source code
+ for potential security vulnerabilities. ITS4 scans
+ code, looking for function calls that are potentially
+ dangerous. For some calls, ITS4 tries to perform some code
+ analysis to determine how risky the call is. In each case,
+ ITS4 provides a problem report, including a short
+ description of the potential problem and suggestions on how
+ to fix the code.
+
+Package: jbibtex-base
+Priority: optional
+Section: non-free/tex
+Installed-Size: 424
+Maintainer: Masayuki Hatta <mhatta@debian.org>
+Architecture: all
+Source: ptex-base
+Version: 1:1.10-1
+Depends: tetex-base, tetex-bin
+Suggests: jbibtex-bin
+Filename: pool/non-free/p/ptex-base/jbibtex-base_1.10-1_all.deb
+Size: 94606
+MD5sum: 5e4b1c8ecd13f6199c88f063f5f27af9
+Description: make a bibliography for ASCII p(La)TeX / NTT j(La)TeX
+ This is JBibTeX, a Japanized BibTeX based on the original BibTeX 0.99c.
+ JBibTeX can handle Kanji characters (EUC-JP).
+ .
+ This package contains library files for JBibTeX.  You need to install
+ jbibtex-bin to use JBibTeX.
+ .
+ This is a part of ASCII pTeX distribution,  but you can use this
+ program not only with ASCII p(La)TeX but also with NTT j(La)TeX.
+
+Package: jpeg2ps
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 96
+Maintainer: Kenshi Muto <kmuto@debian.org>
+Architecture: sh
+Version: 1.8-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/j/jpeg2ps/jpeg2ps_1.8-1_sh.deb
+Size: 22080
+MD5sum: 9bbd3a6140b31c104130fa1ace8a521d
+Description: Convert JPEG compressed images to PostScript Level 2
+ jpeg2ps converts JPEG files to PostScript Level 2 or 3 EPS. In fact, jpeg2ps
+ is not really a converter but a "wrapper": it reads the image parameters
+ (width, height, number of color components) in a JPEG file, writes the
+ according EPS header and then copies the compressed JPEG data to the output
+ file. Decompression is done by the PostScript interpreter (only PostScript
+ Level 2 and 3 interpreters support JPEG compression and decompression).
+ If you have a slow communication channel and a fast printer, sending
+ compressed image data is a big win.
+
+Package: kanjidic
+Priority: optional
+Section: non-free/text
+Installed-Size: 509
+Maintainer: Hayao Nakahara <nakahara@debian.org>
+Architecture: all
+Version: 2000.03.25-1
+Filename: pool/non-free/k/kanjidic/kanjidic_2000.03.25-1_all.deb
+Size: 492180
+MD5sum: a545e628be278f5d4d8b7f8d7c3d5925
+Description: A Kanji Dictionary
+ with near 6350 entries. The documentation also contains
+ lot of information on the kanji classifications.
+
+Package: lasg
+Priority: extra
+Section: non-free/doc
+Installed-Size: 708
+Maintainer: Martin Bialasinski <martinb@debian.org>
+Architecture: all
+Source: lasg-snapshot
+Version: 20000119-1
+Filename: dists/woody/non-free/binary-all/doc/lasg_20000119-1.deb
+Size: 199062
+MD5sum: 477a46e1aff82ba12f93dc979bb8368a
+Description: Linux Administrator's Security Guide
+ The LASG is a non distribution specific guide on securing Linux
+ systems and networks.
+ .
+ Topics covered include virtual private networking, shadow passwords,
+ user and system administration, specific security information for
+ network services such as Sendmail, Apache, Wu-FTPD and more.
+ .
+ Author: Kurt Seifried <seifried@seifried.org>
+ Homepage: http://www.securityportal.com/lasg/
+
+Package: lfocus-de-1998.03
+Priority: extra
+Section: non-free/doc
+Installed-Size: 2113
+Maintainer: Marco Budde <budde@debian.org>
+Architecture: all
+Version: 1-2
+Conflicts: dhelp (<< 0.3.13)
+Filename: dists/potato/non-free/binary-all/doc/lfocus-de-1998.03_1-2.deb
+Size: 1642058
+MD5sum: bb992cce3e9586944a7351cdae522cfe
+Description: Linux Focus 3/98 (German)
+ This package installs the German version of the online Linux magazine
+ Linux Focus 3/98.
+
+Package: lfocus-en-1997.11
+Priority: optional
+Section: non-free/doc
+Installed-Size: 948
+Maintainer: Marco Budde <budde@debian.org>
+Architecture: all
+Version: 1-2
+Conflicts: dhelp (<< 0.3.14)
+Filename: dists/potato/non-free/binary-all/doc/lfocus-en-1997.11_1-2.deb
+Size: 781908
+MD5sum: 3d5b4e2fa936ee1c33b5e6513216842c
+Description: Linux Focus 11/97 (English)
+ This package installs the English version of the online Linux magazine
+ Linux Focus 11/97.
+
+Package: lfocus-en-1998.03
+Priority: optional
+Section: non-free/doc
+Installed-Size: 1937
+Maintainer: Marco Budde <Budde@tu-harburg.de>
+Architecture: all
+Version: 1-2
+Conflicts: dhelp (<< 0.3.14)
+Filename: dists/potato/non-free/binary-all/doc/lfocus-en-1998.03_1-2.deb
+Size: 1562268
+MD5sum: d792961474d3a2d62372b93ab8abdb77
+Description: Linux Focus 3/98 (English)
+ This package installs the English version of the online Linux magazine
+ Linux Focus 3/98.
+
+Package: lfocus-en-1998.05
+Priority: optional
+Section: non-free/doc
+Installed-Size: 3320
+Maintainer: Marco Budde <budde@debian.org>
+Architecture: all
+Version: 1-2
+Conflicts: dhelp (<< 0.3.14)
+Filename: dists/potato/non-free/binary-all/doc/lfocus-en-1998.05_1-2.deb
+Size: 2526866
+MD5sum: 9aeb29a54523e25a845b9bcfea82eff8
+Description: Linux Focus 5/98 (English)
+ This package installs the English version of the online Linux magazine
+ Linux Focus 5/98.
+
+Package: lha
+Priority: optional
+Section: non-free/utils
+Installed-Size: 136
+Maintainer: Steve McIntyre <stevem@chiark.greenend.org.uk>
+Architecture: sh
+Version: 1.14e-2
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/l/lha/lha_1.14e-2_sh.deb
+Size: 46634
+MD5sum: 6acaf8375da92c06dc51828cebfcb071
+Description: lzh archiver
+ The famous lzh archiver, known from DOS.  When mixing DOS and Unix
+ you might need it.  (Especially for fido <--> rfc conversions.)
+
+Package: libapache-mod-fastcgi
+Priority: optional
+Section: non-free/web
+Installed-Size: 208
+Maintainer: Davide Puricelli (evo) <evo@debian.org>
+Architecture: sh
+Version: 2.2.10-3
+Depends: apache-common (>= 1.3.14-2), libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Filename: pool/non-free/liba/libapache-mod-fastcgi/libapache-mod-fastcgi_2.2.10-3_sh.deb
+Size: 66602
+MD5sum: 49ecd2a0b8888e97795c20ed5ba58d84
+Description: FastCGI module for Apache.
+ This package contains a FastCGI module for the Apache web server.
+ .
+ FastCGI is an extension to CGI, which can reduce web server load on
+ servers answering to many calls of CGI scripts.
+
+Package: libforms-doc
+Priority: optional
+Section: non-free/doc
+Installed-Size: 1668
+Maintainer: Peter S Galbraith <psg@debian.org>
+Architecture: all
+Version: 0.89-1
+Replaces: xforms0
+Suggests: libforms-dev
+Filename: dists/woody/non-free/binary-all/doc/libforms-doc_0.89-1.deb
+Size: 763860
+MD5sum: c17bb597481d16f9e91ff6de188e3b49
+Description: Documentation for the XForms graphical interface library
+ This package contains PostScript and HTML documentation for the
+ XForms library.  The postscript manual covers version 0.89 but the HTML is
+ older, and covers version 0.88.
+ .
+ The HTML version packaged here is available on-line at:
+   http://www.westworld.com/~dau/xforms/forms.index.shtml
+
+Package: libtsp3
+Priority: extra
+Section: non-free/libs
+Installed-Size: 220
+Maintainer: Johnie Ingram <johnie@debian.org>
+Architecture: sh
+Source: libtsp
+Version: 3r0-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/libt/libtsp/libtsp3_3r0-1_sh.deb
+Size: 83286
+MD5sum: 97761f7f7365d2db2ecdfcb4fe5d1d96
+Description: signal processing library -- runtime
+ The libtsp package is a library of routines for signal processing.
+ It also includes a number of general purpose routines useful for
+ program development.  The library is used in advanced applications
+ like the ISO reference code for MPEG-4.
+
+Package: libtsp3-dev
+Priority: extra
+Section: non-free/devel
+Installed-Size: 1264
+Maintainer: Johnie Ingram <johnie@debian.org>
+Architecture: sh
+Source: libtsp
+Version: 3r0-1
+Provides: libtsp-dev
+Depends: libtsp3, libc6-dev
+Conflicts: libtsp-dev
+Filename: pool/non-free/libt/libtsp/libtsp3-dev_3r0-1_sh.deb
+Size: 179818
+MD5sum: b732831b2d85cb41285cb9308bbfd766
+Description: signal processing library -- development
+ The Telecommunications and Signal Processing library includes
+ transform routines and a number of general purpose routines useful
+ for program development.
+ .
+  - Fast Fourier transform (complex and real)
+  - Discrete cosine transform
+  - Calculate covariance or autocorrelation from a block of data
+  - Convert between linear prediction parameters (error filter coefficients,
+    predictor coefficients, cepstral coefficients, line spectral frequencies,
+    reflection coefficients, autocorrelation coefficients)
+  - Solve for linear prediction coefficients (covariance and autocorrelation
+    methods)
+  - Calculate the mean-square filtering error
+  - Distance measures (Itakura-Saito and RMS log LPC)
+  - Quantize a value given a table of boundaries (binary search)
+
+Package: mcvert
+Priority: optional
+Section: non-free/otherosfs
+Installed-Size: 100
+Maintainer: Dr. Guenter Bechly <gbechly@debian.org>
+Architecture: sh
+Version: 2.16-8
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/m/mcvert/mcvert_2.16-8_sh.deb
+Size: 31310
+MD5sum: 2a8ca749bc34a6b05a2b40b4c16cb125
+Description: A Mac to Unix file converter
+ The mcvert program translates files between MacBinary format
+ and other formats often used in exchanging Macintosh files.
+ (e.g. MacBinary {I,II}, Binhex 4.0, PackIt archives and the
+ data/rsrc/info three file format).
+ .
+ mcvert can also translate Mac line endings (CR) to unix line
+ endings (LF) and vice versa.
+ .
+ By default it converts Binhex to Macbinary, but many other
+ conversions can be done.
+
+Package: mendexk
+Priority: optional
+Section: non-free/tex
+Installed-Size: 168
+Maintainer: Masayuki Hatta <mhatta@debian.org>
+Architecture: sh
+Version: 2.4f-3
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/m/mendexk/mendexk_2.4f-3_sh.deb
+Size: 56096
+MD5sum: a0baf36a04c64196145610d6122419f4
+Description: a replacement for makeindex with many enhancements
+ This is an upper-compatible(but slow) substitute for the makeindex program
+ which forms part of standard TeX distribution.  Mendex feautures better
+ Japanese(EUC) support and more.
+
+Package: mmix-src
+Priority: optional
+Section: non-free/devel
+Installed-Size: 317
+Maintainer: Mike Goldman <whig@by.net>
+Architecture: all
+Version: 19991019-4
+Recommends: devscripts, make, cweb (>= 3.43), tetex-bin
+Filename: dists/potato/non-free/binary-all/devel/mmix-src_19991019-4.deb
+Size: 308480
+MD5sum: 439d6b00345bd34f75859c0fab29eea0
+Description: Assembler and Simulator for Knuth's MMIX
+ MMIX is the new computer and associated assembly language that Donald
+ Knuth will be using to specify the algorithms in the next edition of his
+ series, The Art of Computer Programming.  Currently three volumes have
+ been published, and more are in preparation.  Knuth will use MMIX as the
+ low-level programming language in the "ultimate" edition of his opus.
+ .
+ Due to license considerations, this package will only extract the source
+ code for MMIX onto your system.  After installation, you will have to build
+ mmix and separately install it.
+
+Package: moria
+Priority: optional
+Section: non-free/games
+Installed-Size: 612
+Maintainer: Rene Weber <rene_debmaint@elvenlord.com>
+Architecture: sh
+Version: 5.5.2-3
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/m/moria/moria_5.5.2-3_sh.deb
+Size: 300678
+MD5sum: 4fd34c1bf30c77c80b7690ceeb6faa92
+Description: A roguelike game with an infinite dungeon
+ NOTE: despite the package name, this is actually UMORIA 5.5.2.
+ .
+ A single player roguelike game with a regenerating dungeon, moria is the
+ predecessor of angband with a full-screen, text-based, turn-based
+ interface.  It features scrolling maps, and an infinite (constantly
+ regenerated) dungeon.
+ .
+ Moria's dungeons are populated by monsters, some of which are inspired by
+ J.R.R. Tolkien's books.  The goal of the game is to find and kill the
+ Balrog, whereupon the player is crowned King.  Your player can be created
+ from a combination of 8 races (human, half-elf, elf, halfling, gnome,
+ dwarf, half-orc, half-troll) and 6 classes (warrior, mage, priest, rogue,
+ ranger, paladin), and is measured by 6 attributes (strength, dexterity,
+ intelligence, wisdom, constitution, and charisma).
+
+Package: motif-doc
+Priority: extra
+Section: non-free/doc
+Installed-Size: 5644
+Maintainer: Gerd Knorr <kraxel@debian.org>
+Architecture: all
+Source: openmotif
+Version: 2.1.30-3
+Filename: pool/non-free/o/openmotif/motif-doc_2.1.30-3_all.deb
+Size: 5280604
+MD5sum: 7fa5db3ef2519a7d86a343236c4a8b7f
+Description: Open Motif - PostScript documentation
+ Open Motif comes with a lot of Documentation in PostScript
+ format.  You'll find these files in this package.
+
+Package: mp3asm
+Priority: optional
+Section: non-free/sound
+Installed-Size: 72
+Maintainer: Paul Haggart <phaggart@debian.org>
+Architecture: sh
+Version: 0.01-2
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/m/mp3asm/mp3asm_0.01-2_sh.deb
+Size: 14710
+MD5sum: cd63923c213c7a743e536fe6abb0e1e1
+Description: MP3 diagnostic tool
+ mp3asm is a small but useful tool which can be used for the following:
+  * Finding errors in MPEG audio (.mp3) files.
+  * Fixing broken mp3 files.
+  * Cutting and re-assembling mp3 files.
+
+Package: mrouted
+Priority: optional
+Section: non-free/net
+Installed-Size: 236
+Maintainer: Christoph Martin <christoph.martin@uni-mainz.de>
+Architecture: sh
+Version: 3.9-beta3-1.1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/m/mrouted/mrouted_3.9-beta3-1.1_sh.deb
+Size: 81306
+MD5sum: 02e1264c99ad06e77b4165823c6f5d0a
+Description: Multicast routing daemon to connect MBone to your subnet
+ Mrouted is an implementation of the Distance-Vector Multicast Routing
+ Protocol (DVMRP), an earlier version of which is specified in
+ RFC-1075.  In order to support multicasting among subnets that are
+ separated by (unicast) routers that do not support IP multicasting,
+ mrouted includes support for "tunnels", which are virtual
+ point-to-point links between pairs of mrouteds located anywhere in an
+ internet.
+
+Package: mush
+Priority: optional
+Section: non-free/mail
+Installed-Size: 520
+Maintainer: Pawel Wiecek <coven@debian.org>
+Architecture: sh
+Version: 7.2.5unoff2-11
+Provides: mail-reader
+Depends: libc6 (>= 2.2.1-2), libncurses5, mail-transport-agent, mime-support, c-shell, debconf
+Recommends: metamail
+Filename: pool/non-free/m/mush/mush_7.2.5unoff2-11_sh.deb
+Size: 251516
+MD5sum: e26367e18612922361ec572f72c94e1b
+Description: The mail user shell
+ Mush is a powerful yet simple mail user agent which features an
+ optional curses interface. Mush also provides powerful macro and
+ key binding facilities to the user, and a scripting language.
+ .
+ Mush is nearly fully compatible with mailx and Mail and it will
+ correctly read their configuration files at startup, making it
+ easy to replace these programs with the mail user shell. (A know
+ exception is the handling of mail got via the Post Office Protocol
+ which uses different keywords.)
+ .
+ This package contains an unofficial version of mush, with many
+ changes for making it work on a Debian Linux system and a revamped
+ Post Office Protocol support. It also contains support for sending
+ MIME messages.
+
+Package: musixtex-doc
+Priority: optional
+Section: non-free/tex
+Installed-Size: 324
+Maintainer: Anthony Fok <foka@debian.org>
+Architecture: all
+Source: musixtex
+Version: 1:0.99-1
+Suggests: musixtex, postscript-viewer
+Filename: dists/woody/non-free/binary-all/tex/musixtex-doc_0.99-1.deb
+Size: 288960
+MD5sum: b6092f8ebc5d6a936d36a0c08f4d5fc6
+Description: MusiXTeX PostScript Manual (A4, 300dpi)
+ This package contains the MusiXTeX User's Manual in PostScript format.
+ It is prepared for printing on A4-sized paper with a 300dpi printer.
+ MusiXTeX is a TeX music typesetting package.
+ .
+ Note: The musixtex package already contains the manual in both LaTeX
+ source and DVI formats.  You might prefer generating your own MusiXTeX
+ PostScript manual to suit your printer and paper size.  In that case,
+ you do not need to install this package.
+
+Package: navigator-nethelp-47
+Priority: optional
+Section: non-free/web
+Installed-Size: 264
+Maintainer: Adam Heath <doogie@debian.org>
+Architecture: all
+Source: netscape4.7
+Version: 4.7-14
+Depends: netscape-base-47, navigator-base-47, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/navigator-nethelp-47_4.7-14.deb
+Size: 67192
+MD5sum: 647f2b638225d1a81b883ddff7bbf65f
+Description: Navigator online help for version 4.7
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with navigator.
+
+Package: navigator-nethelp-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 266
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-476, navigator-base-476, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/navigator-nethelp-476_4.76-1.deb
+Size: 67464
+MD5sum: 6337e59ef4d86319cfea697d86915e77
+Description: Navigator online help for version 4.76
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with navigator.
+
+Package: navigator-nethelp-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 452
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Recommends: netscape-base-477, navigator-base-477, netscape-base-4
+Filename: pool/non-free/n/netscape4.77/navigator-nethelp-477_4.77-2_all.deb
+Size: 67452
+MD5sum: 98283871e97a81f77685b512534190d9
+Description: Navigator online help for version 4.77
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want online help, then install this package.  This package only
+ works with navigator.
+
+Package: ncompress
+Priority: optional
+Section: non-free/utils
+Installed-Size: 84
+Maintainer: Adam Klein <aklein@debian.org>
+Architecture: sh
+Version: 4.2.4-9
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/n/ncompress/ncompress_4.2.4-9_sh.deb
+Size: 20234
+MD5sum: 911a0e577ba1dab238c95b7989b9227c
+Description: Original Compress / Uncompress for News Transfers etc.
+ Compress is a fast, simple LZW file compressor.  Compress does not have
+ the highest compression rate, but it is one of the fastest programs to
+ compress data.  Compress is the defacto standard in the UNIX community
+ for compressing files.
+ .
+ This package contains a copyright notice from one of the original author in
+ the file /usr/doc/ncompress/copyright.
+
+Package: netscape-ja-resource-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 2382
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-4 (>= 1:4.76-1), netscape-base-476, locales (>= 2.1.94-1) | locale-ja, xfonts-a12k12
+Recommends: xfonts-cjk
+Conflicts: communicator-smotif-476-libc5, netscape-smotif-476-libc5
+Filename: dists/potato/non-free/binary-all/web/netscape-ja-resource-476_4.76-1.deb
+Size: 595492
+MD5sum: 7be0252f271e7a3a6ac80fdb827ce4da
+Description: Netscape 4.76 Japanese resources.
+ This version-specific package provides Japanese support routines for all
+ libc6-based Netscape version 4.76 packages.
+
+Package: netscape-ja-resource-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 2448
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Depends: locales (>= 2.1.94-1) | locale-ja, xfonts-a12k12
+Recommends: xfonts-cjk, netscape-base-4 (>= 1:4.77-1), netscape-base-477
+Filename: pool/non-free/n/netscape4.77/netscape-ja-resource-477_4.77-2_all.deb
+Size: 594656
+MD5sum: cff3dc5d24df436632e0c1dc92ceff2c
+Description: Netscape 4.77 Japanese resources.
+ This version-specific package provides Japanese support routines for all
+ libc6-based Netscape version 4.77 packages.
+
+Package: netscape-java-47
+Priority: optional
+Section: non-free/web
+Installed-Size: 6362
+Maintainer: Adam Heath <doogie@debian.org>
+Architecture: all
+Source: netscape4.7
+Version: 4.7-14
+Depends: netscape-base-47, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/netscape-java-47_4.7-14.deb
+Size: 5709212
+MD5sum: c0bf396afda874d768d43ca7a1319951
+Description: Netscape Java support for version 4.7
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want your 4.7 browser to run java programs(javascript is
+ part of the browser binary), then install this package.
+
+Package: netscape-java-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 6424
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-476, netscape-base-4
+Filename: dists/potato/non-free/binary-all/web/netscape-java-476_4.76-1.deb
+Size: 5766786
+MD5sum: aaa9a82812dd2418e6a985b01a583b04
+Description: Netscape Java support for version 4.76
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want your 4.76 browser to run java programs(javascript is
+ part of the browser binary), then install this package.
+
+Package: netscape-java-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 6492
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Recommends: netscape-base-477, netscape-base-4
+Filename: pool/non-free/n/netscape4.77/netscape-java-477_4.77-2_all.deb
+Size: 5767326
+MD5sum: bddae3d1510b7f68de8e8f75c7682d05
+Description: Netscape Java support for version 4.77
+ Netscape (pronounced "Mozilla") is a graphical World-Wide-Web browser
+ with many features.  It supports advanced features of HTML and new
+ technologies such as "Java" from Sun Microsystems.
+ .
+ If you want your 4.77 browser to run java programs(javascript is
+ part of the browser binary), then install this package.
+
+Package: netscape-ko-resource-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 651
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-4 (>= 1:4.76-1), netscape-base-476, locales (>= 2.1.94-1) | locale-ko, xfonts-baekmuk
+Conflicts: netscape-base-ko-473, communicator-smotif-476-libc5, netscape-smotif-476-libc5
+Filename: dists/potato/non-free/binary-all/web/netscape-ko-resource-476_4.76-1.deb
+Size: 181330
+MD5sum: f335fa75890781eea59415db3a4dcb09
+Description: Netscape 4.76 Korean resources.
+ This version-specific package provides Korean support routines for all
+ libc6-based Netscape version 4.76 packages.
+
+Package: netscape-ko-resource-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 728
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Depends: locales (>= 2.1.94-1) | locale-ko, xfonts-baekmuk
+Recommends: netscape-base-4 (>= 1:4.77-1), netscape-base-477
+Conflicts: netscape-base-ko-473
+Filename: pool/non-free/n/netscape4.77/netscape-ko-resource-477_4.77-2_all.deb
+Size: 181336
+MD5sum: 389dd4d9ecbb70c3ea1e733cf0951a20
+Description: Netscape 4.77 Korean resources.
+ This version-specific package provides Korean support routines for all
+ libc6-based Netscape version 4.77 packages.
+
+Package: netscape-zh-resource-476
+Priority: optional
+Section: non-free/web
+Installed-Size: 1064
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.76
+Version: 4.76-1
+Depends: netscape-base-4 (>= 1:4.76-1), netscape-base-476, locales (>= 2.1.94-1) | locale-zh
+Recommends: xfonts-arphic-bsmi00lp, xfonts-arphic-gbsn00lp, xfonts-cjk, xfonts-intl-chinese
+Conflicts: communicator-smotif-476-libc5, netscape-smotif-476-libc5
+Filename: dists/potato/non-free/binary-all/web/netscape-zh-resource-476_4.76-1.deb
+Size: 272526
+MD5sum: 632b5f7fbb8923a2b7754fe9828e6e67
+Description: Netscape 4.76 Chinese resources.
+ This version-specific package provides Chinese support routines for all
+ libc6-based Netscape version 4.76 packages.
+ .
+ For the Chinese menu to display properly, you also need to install:
+  * xfonts-arphic-bsmi00lp   for  traditional Chinese (Big5)
+  * xfonts-arphic-gbsn00lp   for  simplified  Chinese (GB)
+
+Package: netscape-zh-resource-477
+Priority: optional
+Section: non-free/web
+Installed-Size: 1124
+Maintainer: Ryan Murray <rmurray@debian.org>
+Architecture: all
+Source: netscape4.77
+Version: 4.77-2
+Depends: locales (>= 2.1.94-1) | locale-zh
+Recommends: netscape-base-4 (>= 1:4.77-1), netscape-base-477, xfonts-arphic-bsmi00lp, xfonts-arphic-gbsn00lp, xfonts-cjk, xfonts-intl-chinese
+Filename: pool/non-free/n/netscape4.77/netscape-zh-resource-477_4.77-2_all.deb
+Size: 273028
+MD5sum: 80934ce5eb228e4177d4ffd6c528bded
+Description: Netscape 4.77 Chinese resources.
+ This version-specific package provides Chinese support routines for all
+ libc6-based Netscape version 4.77 packages.
+ .
+ For the Chinese menu to display properly, you also need to install:
+  * xfonts-arphic-bsmi00lp   for  traditional Chinese (Big5)
+  * xfonts-arphic-gbsn00lp   for  simplified  Chinese (GB)
+
+Package: newsgate
+Priority: extra
+Section: non-free/news
+Installed-Size: 220
+Maintainer: Herbert Xu <herbert@debian.org>
+Architecture: sh
+Version: 1.6-13
+Depends: libc6 (>= 2.2.1-2), mail-transport-agent, inews
+Filename: pool/non-free/n/newsgate/newsgate_1.6-13_sh.deb
+Size: 79526
+MD5sum: 07c87390b2cca86a29281fadd6685f1b
+Description: Mail to News and News to Mail Gateway
+ This is a hodge-podge of tools to gate news. Nothing for beginners.
+ Assembly required. Among others things this contains:
+ .
+ This kit provides two programs for "linking" RFC822 Mail messages and
+ RFC1036 Usenet News articles.  Each half of the conversion is handled by a
+ different program, mail2news or news2mail.  A few utility programs are
+ also included.
+ .
+ With these programs and the right set of mail aliases and news sys and
+ active file entries, it is possible to build any set of moderated,
+ unmoderated, one-way, or bi-directional gateways between any set of news
+ and mail groups and lists that your little heart desires.
+
+Package: nntpcache-dev-doc
+Priority: extra
+Section: non-free/news
+Installed-Size: 4156
+Maintainer: Herbert Xu <herbert@debian.org>
+Architecture: all
+Source: nntpcache
+Version: 1:2.3.3-3
+Replaces: nntpcache-doc
+Provides: nntpcache-doc
+Conflicts: nntpcache-doc
+Filename: dists/potato/non-free/binary-all/news/nntpcache-dev-doc_2.3.3-3.deb
+Size: 374838
+MD5sum: 671d5281dfee191eccebca5f86ce198c
+Description: NNTPCACHE source code documentation
+ This package contains HTML documentation for the source code of NNTPCACHE.
+
+Package: opustex
+Priority: optional
+Section: non-free/tex
+Installed-Size: 1252
+Maintainer: Anthony Fok <foka@debian.org>
+Architecture: sh
+Version: 0.84-5
+Depends: libc6 (>= 2.2.1-2), tetex-base (>= 1.0-1), tetex-bin (>= 1.0.5-1)
+Filename: pool/non-free/o/opustex/opustex_0.84-5_sh.deb
+Size: 450186
+MD5sum: 1ced0b1237910f16b9f9839420034331
+Description: Typeset music scores with TeX
+ This is OpusTeX beta-test Version 0.84 (February 1998).  This package
+ contains the OpusTeX macros, musixflex, OpusTeX User's Manual in LaTeX
+ source and DVI formats, and example source OpusTeX music score files.
+ .
+ OpusTeX is a set of versatile and power TeX macros to typeset polyphonic,
+ orchestral or choral music.  It allows very fine control and produces
+ professional printed music scores.
+ .
+ OpusTeX is still a beta-test Version and only dedicated for those, who
+ want to work with and--more important--to work on.
+ .
+ Due to the important amount of information to be provided to the
+ typesetting process, coding OpusTeX might appear to be awfully
+ complicated, especially for beginners.  Therefore, it is recommended
+ to use OpusTeX with some pre-processors such as ABC2MTeX.
+ Visit the GMD Music Archive at http://www.gmd.de/Misc/Music/ and check
+ the MuTeX Mailing List Archive for more information.
+ .
+  Authors: Ross Mitchell (Australia)
+           Andreas Egler <Andreas_Egler@wob.maus.de>
+           Daniel Taupin <taupin@lps.u-psud.fr>
+
+Package: php4-dbase
+Priority: optional
+Section: non-free/web
+Installed-Size: 88
+Maintainer: Ondrej Sury <ondrej@debian.org>
+Architecture: sh
+Version: 4.0.5-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/p/php4-dbase/php4-dbase_4.0.5-1_sh.deb
+Size: 16626
+MD5sum: e373b3b5406df676233031269e6acc40
+Description: dBase module for php4
+ This package provides a module for MySQL database connections directly from
+ PHP scripts.
+ .
+ PHP4 is an HTML-embedded scripting language. Much of its syntax is borrowed
+ from C, Java and Perl with a couple of unique PHP-specific features thrown
+ in. The goal of the language is to allow web developers to write
+ dynamically generated pages quickly.
+
+Package: picon-domains
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 16626
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.04.30-1
+Provides: picons
+Filename: pool/non-free/p/picon-domains/picon-domains_2001.04.30-1_all.deb
+Size: 2538058
+MD5sum: f7b0a75bd9a97d16e930e499dfbbfb96
+Description: Picon (Personal Images) database of for Internet domain logos.
+ "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-misc
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 592
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.01.02-2
+Provides: picons
+Filename: pool/non-free/p/picon-misc/picon-misc_2001.01.02-2_all.deb
+Size: 44006
+MD5sum: 6b02000f89960ac33b44d7d0ce81d68b
+Description: Picon (Personal Images) database of common accounts and misc.
+ "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-news
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 4796
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.01.02-1
+Provides: picons
+Filename: pool/non-free/p/picon-news/picon-news_2001.01.02-1_all.deb
+Size: 224624
+MD5sum: 2826644716f3ba871054663017a47665
+Description: Picon (Personal Images) db of Usenet newsgroups and hierarchies
+  "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-unknown
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 136
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.01.02-2
+Provides: picons
+Filename: pool/non-free/p/picon-unknown/picon-unknown_2001.01.02-2_all.deb
+Size: 16480
+MD5sum: 6860e1a082e1d087d093273d2d5ac9a5
+Description: Picon (Personal Images) database for very high-level domains
+ "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-usenix
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 108160
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 1995.04.13-6
+Provides: picons
+Filename: pool/non-free/p/picon-usenix/picon-usenix_1995.04.13-6_all.deb
+Size: 13619918
+MD5sum: fd97efab0cab89a7bdd15ee87acb4646
+Description: Picon (Personal Images) db of Usenix conference attendees.
+  "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-users
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 17044
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.05.16-1
+Provides: picons
+Filename: pool/non-free/p/picon-users/picon-users_2001.05.16-1_all.deb
+Size: 4058374
+MD5sum: 84f3c0082a15fb416c390e6c42ef52eb
+Description: Picon (Personal Images) database of individual Internet accounts
+  "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: picon-weather
+Priority: extra
+Section: non-free/graphics
+Installed-Size: 1736
+Maintainer: Hakan Ardo <hakan@debian.org>
+Architecture: all
+Version: 2001.01.02-2
+Provides: picons
+Filename: pool/non-free/p/picon-weather/picon-weather_2001.01.02-2_all.deb
+Size: 77344
+MD5sum: 56a450616ce4ceb50ae679c6e3c3dfce
+Description: Picon (Personal Images) database for displaying weather forecasts.
+ "picons" is short for "personal icons". They're small, constrained
+ images used to represent users and domains on the net, organized into
+ databases so that the appropriate image for a given e-mail address can
+ be found. Besides users and domains, there are picons databases for
+ Usenet newsgroups and weather forecasts. The picons are in either
+ monochrome XBM format or color XPM and GIF formats.
+ .
+ These databases have been compiled in hopes of helping make cyberspace
+ a more personable place. With them, software and services can be
+ developed to identify persons on the net by face (or, at least, by
+ institution logo) instead of by a cryptic e-mail address. Software of
+ this kind is for example xfaces and exmh.
+
+Package: pine-docs
+Priority: optional
+Section: non-free/mail
+Installed-Size: 89
+Maintainer: Santiago Vila <sanvila@debian.org>
+Architecture: all
+Version: 2000-09-02-1
+Filename: dists/woody/non-free/binary-all/mail/pine-docs_2000-09-02-1.deb
+Size: 45720
+MD5sum: d5464e003d3b465222a9ef085e9e44a3
+Description: Getting started with email using Pine
+ This is the HTML document "Getting Started" as found in
+ ftp://ftp.cac.washington.edu/pine/docs.
+
+Package: portsentry
+Priority: optional
+Section: non-free/net
+Installed-Size: 248
+Maintainer: Guido Guenther <agx@debian.org>
+Architecture: sh
+Version: 1.0-1.7
+Depends: libc6 (>= 2.2.1-2), net-tools, procps, debconf, debianutils (>=1.7)
+Recommends: tcpd
+Suggests: logcheck
+Filename: pool/non-free/p/portsentry/portsentry_1.0-1.7_sh.deb
+Size: 52078
+MD5sum: 17f9b69516b3c9f1300c958c7557cd83
+Description: Portscan detection daemon
+ PortSentry has the ability to detect portscans(including stealth scans) on
+ the network interfaces of your machine. Upon alarm it can block the attacker
+ via hosts.deny, dropped route or firewall rule. It is part of the Abacus
+ program suite.
+ .
+ Note: If you  have no idea what a port/stealth scan is, I'd recommend to have
+ a look at http://www.psionic.com/abacus/portsentry/ before installing this
+ package. Otherwise you might easily block hosts you'd better not(e.g. your
+ NFS-server, name-server, ...).
+
+Package: povray-doc
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 1734
+Maintainer: Drake Diedrich <Drake.Diedrich@anu.edu.au>
+Architecture: all
+Source: povray
+Version: 3.0.20-10
+Filename: dists/potato/non-free/binary-all/graphics/povray-doc_3.0.20-10.deb
+Size: 838912
+MD5sum: ac0ed3433926be970a845de06118cdad
+Description: Persistence of Vision raytracer
+ The official povray documentation, POV3ISO examples, and PVMPOV
+ documentation.
+
+Package: povray-misc
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 649
+Maintainer: Drake Diedrich <Drake.Diedrich@anu.edu.au>
+Architecture: all
+Source: povray
+Version: 3.0.20-10
+Replaces: povray
+Conflicts: povray (<<3.0.20)
+Filename: dists/potato/non-free/binary-all/graphics/povray-misc_3.0.20-10.deb
+Size: 243778
+MD5sum: 9ee6aa371b505b02cdad036316ad5c74
+Description: Persistence of Vision raytracer - include files
+ Standard architecture independent include files for povray.
+
+Package: ptex-base
+Priority: optional
+Section: non-free/tex
+Installed-Size: 1900
+Maintainer: Masayuki Hatta <mhatta@debian.org>
+Architecture: all
+Version: 1:1.10-1
+Depends: tetex-base, tetex-bin
+Suggests: ptex-bin
+Conflicts: platex-base
+Filename: pool/non-free/p/ptex-base/ptex-base_1.10-1_all.deb
+Size: 222268
+MD5sum: c31c375389c281ac83dd71af6836b020
+Description: basic ASCII pTeX library files
+ ASCII pTeX is a Japanized TeX distribution.
+ .
+ Together with ptex-bin you have a complete installation.
+ .
+ Includes: platex
+
+Package: qf-data-shareware
+Priority: optional
+Section: non-free/games
+Installed-Size: 18392
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Architecture: all
+Source: quake-shareware
+Version: 1.06-1
+Provides: qf-data
+Depends: quakeforge
+Filename: pool/non-free/q/quake-shareware/qf-data-shareware_1.06-1_all.deb
+Size: 8591022
+MD5sum: f6acc3e6983f8d30d03d8798af591795
+Description: First-person shooter game - shareware episode 1
+ This is the shareware episode 1 for Quake.  If you have the registered
+ version of Quake or another full dataset such as Open Quartz, you do not
+ need this package.
+
+Package: qmail-src
+Priority: extra
+Section: non-free/mail
+Installed-Size: 328
+Maintainer: Jon Marler <jmarler@debian.org>
+Architecture: all
+Source: qmail
+Version: 1.03-17
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), gcc, make, fakeroot | sudo
+Recommends: ucspi-tcp-src
+Filename: pool/non-free/q/qmail/qmail-src_1.03-17_all.deb
+Size: 273374
+MD5sum: 5caa6ea432ce1e0820d5fea3e225b214
+Description: Source only package for building qmail binary package
+ qmail is a secure Secure, reliable, efficient, simple mail transport system.
+ .
+ Dan Bernstein (qmail's author) only gives permission for qmail to be
+ distributed in source form, or binary for by approval.  This package
+ has been put together to allow people to easily build a qmail binary
+ package for themselves, from source.
+ .
+ If there is a package called qmail available, then Dan has approved the
+ binary version of the package for approval, so you might as well install
+ that and save yourself some effort.
+
+Package: qpage
+Priority: optional
+Section: non-free/net
+Installed-Size: 224
+Maintainer: Michael Alan Dorman <mdorman@debian.org>
+Architecture: sh
+Version: 3.3final-1
+Depends: libc6 (>= 2.2.1-2), libwrap0
+Filename: pool/non-free/q/qpage/qpage_3.3final-1_sh.deb
+Size: 72090
+MD5sum: 42ddf8d3d938d4854b6bff58c39f336d
+Description: SNPP client, or SNPP-to-TAP/IXO gateway
+ QuickPage is a paging program.  It can speak SNPP to a server, or it
+ can speak SNPP as a server and dial your modem to send an alpha page.
+ .
+ HylaFAX contains similar functionality but is more complex by at least
+ an order of magnitude.  If you just need to send pages, this does
+ everything you might want.
+
+Package: quake-lib
+Priority: optional
+Section: non-free/games
+Installed-Size: 18396
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Architecture: all
+Version: 1.06-10
+Provides: quake-game
+Recommends: quake
+Filename: dists/potato/non-free/binary-all/games/quake-lib_1.06-10.deb
+Size: 8622240
+MD5sum: 2abfb650d6139c81209742071f20cd9d
+Description: shareware episode 1 for Quake.
+ This is the shareware episode 1 for Quake. If you already have the dos
+ version of Quake installed, or own the registered version, you don't need
+ to install this package (install quake-lib-stub instead).
+
+Package: rblsmtpd-src
+Priority: extra
+Section: non-free/mail
+Installed-Size: 52
+Maintainer: Jon Marler <jmarler@debian.org>
+Architecture: all
+Source: rblsmtpd
+Version: 0.70-5
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make
+Suggests: ucspi-tcp-src
+Filename: dists/potato/non-free/binary-all/mail/rblsmtpd-src_0.70-5.deb
+Size: 37484
+MD5sum: 8bc747168e7bc6770e283c70aeee2c3c
+Description: Source only package for building rblsmtpd binary package
+ rblsmtpd works with any SMTP server that can run under tcpserver (from the
+ ucspi-tcp package, also by Dan Bernstein) in particular, any version of
+ qmail or sendmail.
+ .
+ rblsmtpd supports anti-RBL lists for sites that want to skip RBL lookups
+ for preauthorized hosts. It also optionally pays attention to temporary RBL
+ lookup errors.
+ .
+ Dan Bernstein (rblsmtpd's author) only gives permission for his code
+ to be distributed in source form, or binary by approval.  This package
+ has been put together to allow people to easily build a binary
+ package for themselves, from source.
+ .
+ If there is a package called ucspi-tcp available, then Dan has approved the
+ binary version of the package for distribution, so you might as well install
+ that and save yourself some effort.
+
+Package: revtex
+Priority: optional
+Section: non-free/tex
+Installed-Size: 664
+Maintainer: Michael A. Miller <mmiller@debian.org>
+Architecture: sh
+Version: 3.1-9
+Depends: tetex-base, tetex-bin
+Filename: pool/non-free/r/revtex/revtex_3.1-9_sh.deb
+Size: 257524
+MD5sum: f40f497229eaeaac310e0abd204e4647
+Description: Electronic publishing product of the American Physical Society
+ REVTeX is an electronic publishing product of the American
+ Physical Society.  It is a set of LaTeX-based tags that can be
+ used to prepare a physics manuscript for submission.  If REVTeX
+ tags are used consistently throughout a manuscript and published
+ guidelines are followed exactly, it is hoped that the TeX
+ manuscript file (called a compuscript) can be used by APS, OSA,
+ AIP, and other participating member societies in production of
+ author proofs.
+
+Package: rsynth
+Priority: extra
+Section: non-free/sound
+Installed-Size: 172
+Maintainer: Frank Jordan <f.jordan@uni-duisburg.de>
+Architecture: sh
+Version: 2.0-6
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/r/rsynth/rsynth_2.0-6_sh.deb
+Size: 52414
+MD5sum: d49270c10fdf37feb848c9f129bc6628
+Description: Text to speech program
+ This program convert regular text to audio and by default plays them on /dev/audio.  You
+ can have it read entire books for you if you like, tell you how many messages have have to
+ read, etc.
+ .
+ With a dictionary rsynth will pronounce things a little better.
+
+Package: serialmail-src
+Priority: optional
+Section: non-free/mail
+Installed-Size: 62
+Maintainer: Roberto Lumbreras <rover@debian.org>
+Architecture: all
+Source: serialmail
+Version: 0.72-3.1
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make
+Filename: pool/non-free/s/serialmail/serialmail-src_0.72-3.1_all.deb
+Size: 46892
+MD5sum: bab9c79d529e0d363407c0221451b414
+Description: tools for passing mail across serial links (source)
+ This is a source only package for building serialmail binary
+ package from source, because Dan Bernstein (serialmail's author)
+ only gives permission for qmail to be distributed in source form,
+ or binary for by approval.
+ .
+ Serialmail is for passing mail across serial links, like a modem
+ or a slow link: you use qmail to deliver messages to a maildir,
+ and then serialmail to deliver messages out of the maildir using
+ SMTP or QMTP.
+ .
+ Written by Dan J. Bernstein, serialmail uses ucspi-tcp/tcpclient
+ for networking, so it can be used with future UCSPI clients for
+ transparent compression, IPv6, etc.
+
+Package: shapetools-tutorial
+Priority: optional
+Section: non-free/doc
+Installed-Size: 144
+Maintainer: Matthias Klose <doko@debian.org>
+Architecture: all
+Version: 1.3-2
+Depends: atfs
+Suggests: shapetools
+Filename: dists/potato/non-free/binary-all/doc/shapetools-tutorial_1.3-2.deb
+Size: 131254
+MD5sum: 96df55abc77953beb326263115e1d07e
+Description: A Tutorial for ShapeTools
+ Using the Shape Toolkit for Cooperative Software Development.
+ .
+ This tutorial describes version 1.3 of ShapeTools; please have
+ a look at the man pages for a more recent documentation.
+
+Package: sharefont
+Priority: extra
+Section: non-free/x11
+Installed-Size: 880
+Maintainer: Dr. Guenter Bechly <gbechly@debian.org>
+Architecture: all
+Version: 0.10-10
+Depends: xutils
+Filename: pool/non-free/s/sharefont/sharefont_0.10-10_all.deb
+Size: 730152
+MD5sum: 06b5387a08c6dfef9aaee0be664025ba
+Description: Shareware font selection for X11
+ A collection of 22 scalable type 1 fonts for X11. The fonts are all
+ shareware. You need to pay a fee to use these.
+ .
+ The package freefont contains fonts that are free to use.
+
+Package: simh
+Priority: optional
+Section: non-free/otherosfs
+Installed-Size: 2108
+Maintainer: Brian Russo <wolfie@debian.org>
+Architecture: sh
+Version: 2.3d-4
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/s/simh/simh_2.3d-4_sh.deb
+Size: 359000
+MD5sum: 8c2f3089abd4c9e1bc4287ff9c560aa1
+Description: An emulator for various DEC computers
+ This is a collection of emulators for various old DEC computers, in
+ particular: PDP-8, PDP-11, PDP-1, PDP-4, PDP-7, PDP-9 and PDP-15. It can also
+ simulate the IBM 1401 and the Data General Nova.
+ .
+ There are various disk images available, including a copy of UNIX Version 7
+ for the PDP-11 emulator.
+
+Package: simh-rsts-images
+Priority: extra
+Section: non-free/misc
+Installed-Size: 30840
+Maintainer: Brian Russo <wolfie@debian.org>
+Architecture: all
+Version: 1-3
+Depends: simh
+Filename: pool/non-free/s/simh-rsts-images/simh-rsts-images_1-3_all.deb
+Size: 7043918
+MD5sum: 53327ef1b11007b96d12aa61b9c071b9
+Description: RSTS/E V7.0-07 images for simh
+ This package contains both a working system, and the SYSGNG/PATCHG pair
+ to create a system from scratch.  The images are in RL format.
+
+Package: simh-unix-images
+Priority: extra
+Section: non-free/misc
+Installed-Size: 21572
+Maintainer: Brian Russo <wolfie@debian.org>
+Architecture: all
+Version: 1-3
+Depends: simh
+Filename: pool/non-free/s/simh-unix-images/simh-unix-images_1-3_all.deb
+Size: 4842556
+MD5sum: 54dea1ddf6622673f2a0c0e51907e341
+Description: UNIX V[567] images for simh emulator
+ This package includes both RL and RK images for use with the simh
+ PDP-11 emulator.  It contains UNIX version 5, 6, and 7 from
+ Bell Labs.
+
+Package: so-far
+Priority: optional
+Section: non-free/games
+Installed-Size: 364
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 6-8
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/s/so-far/so-far_6-8_all.deb
+Size: 173782
+MD5sum: b4618ccb862316d13f3ba3cc9a9f6f6c
+Description: So Far, An Interactive Catharsis by Andrew Plotkin
+ Dissatisfied in a world not unlike our own, but not entirely similar,
+ you slip into another reality: a collection of allegorical worlds,
+ full of haunting images, strange noises and atmospheric landscapes.
+ .
+ Andrew Plotkin, the author of So Far, writes:
+ .
+ "This is a shortish-to-medium-sized game.  More than a short story,
+ less than a full-length novel.  Its rating is `cruel.'  It is possible
+ to make mistakes which will prevent you from winning.  Sometimes common
+ sense will serve to avoid such mistakes; sometimes insight is necessary;
+ sometimes neither will help.  Save often, and keep your old saved games.
+ .
+ "Do not expect `So Far' to be anything like `A Change in the Weather'.
+ It's not."
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: spim
+Priority: extra
+Section: non-free/electronics
+Installed-Size: 632
+Maintainer: Fernando Sanchez <fer@debian.org>
+Architecture: sh
+Version: 6.3-1
+Depends: libc6 (>= 2.2.1-2), libxaw7 (>> 4.0.3), xlibs (>> 4.0.3)
+Filename: pool/non-free/s/spim/spim_6.3-1_sh.deb
+Size: 349496
+MD5sum: d330c3f40b2702c4b7092d91b5e49ba6
+Description: MIPS R2000/R3000 emulator.
+ Emulates a MIPS R2000/R3000 processor in software.
+ Useful for students who are taught MIPS R2000/R3000 assembly.
+
+Package: tao-doc
+Priority: optional
+Section: non-free/doc
+Installed-Size: 645
+Maintainer: Ossama Othman <ossama@debian.org>
+Architecture: all
+Source: tao
+Version: 1.1.8-1
+Filename: dists/woody/non-free/binary-all/doc/tao-doc_1.1.8-1.deb
+Size: 256698
+MD5sum: e704b672ade8309c2da208dfc4d18c99
+Description: A high-performance, real-time ORB
+ This package contains documentation for TAO, including the man pages.
+ .
+ TAO is a real-time ORB endsystem designed to meet end-to-end application
+ quality of service (QoS) requirements by vertically integrating CORBA
+ middleware with OS I/O subsystems, communication protocols, and network
+ interfaces. It is the first real-time ORB endsystem to support end-to-end QoS
+ guarantees over ATM networks.
+
+Package: tatctae
+Priority: optional
+Section: non-free/games
+Installed-Size: 440
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 7-7
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/t/tatctae/tatctae_7-7_all.deb
+Size: 230828
+MD5sum: 4b2f6b186e3a013ff3b1cb94dcf375c6
+Description: Time: All Things Come To An End
+ Time: All Things Come To An End, by Andy Phillips, is a game where YOU
+ get to be the mad scientist!  After years of work, and dozens of failed
+ experiments, a bunch of stupid company directors phase out your project.
+ Not to be defeated, you return to the lab and try one last time to make
+ your machine work.
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: tcltutor
+Priority: optional
+Section: non-free/doc
+Installed-Size: 748
+Maintainer: Javier Fernandez-Sanguino Pen~a <jfs@computer.org>
+Architecture: all
+Version: 2b4-3
+Depends: wish
+Suggests: tkman
+Filename: dists/woody/non-free/binary-all/doc/tcltutor_2b4-3.deb
+Size: 128068
+MD5sum: 5bee26e6f8d9e9d6b39fde1c9abc97c2
+Description: Tutor for the Tcl scripting language
+ This is an online tutor for the Tcl language, complete
+ with lessons for beginners, and advanced users. It
+ shows both the language basics and more advanced
+ topics in 40+ lessons.
+
+Package: tfm-twmoe-kai
+Priority: optional
+Section: non-free/tex
+Installed-Size: 132
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: ttf-twmoe-kai
+Version: 1.0-1
+Depends: cjk-latex (>= 4.2.0-0.5), ttf-twmoe-kai (>= 1.0-1)
+Filename: dists/potato/non-free/binary-all/tex/tfm-twmoe-kai_1.0-1.deb
+Size: 26230
+MD5sum: e77c9707d652e60f4f5691f197f873b4
+Description: Chinese (Big5) Standard Kai TeX font metric data
+ This package contains the Chinese (Big5) Standard Kai TeX font
+ metric data (TFM) files which can be used with the cjk-latex
+ package for doing typesetting. The name of the typeface is
+ 'moekai'.
+ .
+ The TFM files are converted from the Truetype font in the
+ ttf-twmoe-kai package by using ttf2tfm.
+
+Package: tfm-twmoe-sung
+Priority: optional
+Section: non-free/tex
+Installed-Size: 132
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Source: ttf-twmoe-sung
+Version: 1.0-2
+Depends: cjk-latex (>= 4.2.0-0.5), ttf-twmoe-sung (>= 1.0-1)
+Filename: dists/potato/non-free/binary-all/tex/tfm-twmoe-sung_1.0-2.deb
+Size: 24950
+MD5sum: 9fd24030baea0cd6e0e32feecf3d4848
+Description: Chinese (Big5) Standard Sung TeX font metric data
+ This package contains the Chinese (Big5) Standard Sung TeX font
+ metric data (TFM) files which can be used with the cjk-latex
+ package for doing typesetting. The name of the typeface is
+ 'moesng'.
+ .
+ The TFM files are converted from the Truetype font in the
+ ttf-twmoe-sung package by using ttf2tfm.
+
+Package: tnt
+Priority: optional
+Section: non-free/net
+Installed-Size: 244
+Maintainer: Itai Zukerman <zukerman@debian.org>
+Architecture: all
+Version: 2.3.2-1
+Depends: emacsen
+Filename: pool/non-free/t/tnt/tnt_2.3.2-1_all.deb
+Size: 52144
+MD5sum: 9dfc6be187e244ce710802234855b272
+Description: An AIM client for Emacs.
+ TNT is an Emacs client for AIM, AOL's free (as in beer) instant
+ messaging service.  Using TNT, you can, from the comfort of your
+ Emacs window, check whether friends and coworkers are online, send
+ them "instant messages", and join them in multi-party private chat
+ sessions.
+
+Package: tracker
+Priority: optional
+Section: non-free/sound
+Installed-Size: 132
+Maintainer: Steve McIntyre <stevem@chiark.greenend.org.uk>
+Architecture: sh
+Version: 4.3-9
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/t/tracker/tracker_4.3-9_sh.deb
+Size: 39102
+MD5sum: 05cd89ef200b0be7f6c0f6df024986e9
+Description: plays Amiga MOD files
+ Tracker plays MOD sound files via /dev/dsp.
+
+Package: ttf-twmoe-kai
+Priority: optional
+Section: non-free/tex
+Installed-Size: 9081
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Version: 1.0-1
+Suggests: xfs | xserver, xbase-clients (>= 3.3.3.1-6)
+Filename: dists/potato/non-free/binary-all/tex/ttf-twmoe-kai_1.0-1.deb
+Size: 5637782
+MD5sum: e22645a26808048dd93afb6a7b057faa
+Description: Chinese (Big5) Standard Kai TrueType font by TWMOE
+ This package contains the Chinese (Big5) Standard Kai TrueTypefont
+ designed by the Taiwan Ministry of Education, and was converted
+ from the original DynaLab proprietary format to TrueType format
+ by Wukai.bbs@bbs.csie.nctu.edu.tw.
+ .
+ This package will be the most useful if your X server can display
+ Truetype fonts. The current official Debian's cannot, but there
+ are X-TT X servers from Debian JP that have this ability. You can
+ find them from http://www.debian.or.jp/Packages/unstable/x11/,
+ the names of the x-tt servers begin with xserver-xtt.
+
+Package: ttf-twmoe-sung
+Priority: optional
+Section: non-free/tex
+Installed-Size: 8543
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Version: 1.0-2
+Suggests: xfs | xserver, xbase-clients (>= 3.3.3.1-6)
+Filename: dists/potato/non-free/binary-all/tex/ttf-twmoe-sung_1.0-2.deb
+Size: 4480056
+MD5sum: 8daaa69df31d8c059ed16255f6099032
+Description: Chinese (Big5) Standard Sung TrueType font by TWMOE
+ This package contains the Chinese (Big5) Standard Sung TrueType font
+ designed by the Taiwan Ministry of Education, and was converted
+ from the original DynaLab proprietary format to TrueType format
+ by Wukai.bbs@bbs.csie.nctu.edu.tw.
+ .
+ This package will be the most useful if your X server can display
+ Truetype fonts. The current official Debian's cannot, but there
+ are X-TT X servers from Debian JP that have this ability. You can
+ find them from http://www.debian.or.jp/Packages/unstable/x11/,
+ the names of the x-tt servers begin with xserver-xtt.
+
+Package: ucspi-tcp-src
+Priority: optional
+Section: non-free/net
+Installed-Size: 128
+Maintainer: Jon Marler <jmarler@debian.org>
+Architecture: all
+Source: ucspi-tcp
+Version: 0.88-3
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make, libc6-dev
+Filename: pool/non-free/u/ucspi-tcp/ucspi-tcp-src_0.88-3_all.deb
+Size: 65990
+MD5sum: 5af58c91caa710fff221896a2a935b0e
+Description: Source only package for building ucspi-tcp binary package
+ Written by Dan J. Bernstein, tcpclient and tcpserver are
+ powerful easy-to-use command-line tools for building TCP
+ client-server applications. tcpserver provides TCP access control
+ features, similar to tcp-wrappers/tcpd's hosts.allow but much
+ faster; it can run high-availability services much better than
+ inetd.
+ .
+ Real-time Blocking List support is also included in tcpserver, so
+ you can run qmail-smtpd with it and avoid a lot of SPAM.
+ .
+ tcpclient and tcpserver conform to UCSPI, the UNIX Client-Server
+ Program Interface, using the TCP protocol.
+ .
+ Dan Bernstein (ucspi-tcp's author) only gives permission for his code
+ to be distributed in source form, or binary by approval.  This package
+ has been put together to allow people to easily build a binary
+ package for themselves, from source.
+ .
+ If there is a package called ucspi-tcp available, then Dan has approved the
+ binary version of the package for distribution, so you might as well install
+ that and save yourself some effort.
+
+Package: wdg-html-reference
+Priority: optional
+Section: non-free/doc
+Installed-Size: 2840
+Maintainer: Jaldhar H. Vyas <jaldhar@debian.org>
+Architecture: all
+Version: 2.1-1
+Filename: dists/woody/non-free/binary-all/doc/wdg-html-reference_2.1-1.deb
+Size: 455976
+MD5sum: 535613ea725ea1bbd472d2c302e60703
+Description: WDGs HTML 3.2, HTML 4, and CSS references
+ Attractive, well laid-out guides to the HTML 3.2, HTML 4, and
+ Cascading Style Sheets specifications in HTML format.
+
+Package: weather
+Priority: optional
+Section: non-free/games
+Installed-Size: 160
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 6-8
+Provides: zcode-game
+Depends: zcode-interpreter, int-fiction
+Filename: pool/non-free/w/weather/weather_6-8_all.deb
+Size: 55552
+MD5sum: 00dd8c9127742575d7f29a97c3c53523
+Description: A Change in the Weather, an interactive short story
+ The picnic is going full blast, which is exactly why you wander away
+ from it.  Some exploration -- on your own -- is an appealing thought.
+ You come across a chattering stream, a weathered old wooden bridge,
+ a tall lone tree and a weatherbeaten shed.  After a strange dream,
+ you embark on a mission; but there's hardly enough time to succeed...
+ .
+ Andrew Plotkin, the author of A Change in the Weather, writes:
+ .
+ "A CHANGE IN THE WEATHER is a cruel game, by the Zarfian Interactive
+ Fiction Rating System. Any choice you make may be a wrong choice,
+ and you may not discover it was wrong until later; and not choosing is
+ always a choice.  Timing may be critical. Save often and keep your old
+ saved games."
+ .
+ You'll need a Z-code (i.e. Infocom-format) game interpreter, such as
+ XZip or Frotz, to run this game.
+
+Package: whirlgif
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 76
+Maintainer: John Goerzen <jgoerzen@complete.org>
+Architecture: sh
+Version: 3.04-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/w/whirlgif/whirlgif_3.04-1_sh.deb
+Size: 18520
+MD5sum: 507fa84db694483ae636e006ab57866e
+Description: Create animated GIFs
+ WhirlGif is a simple tool to create animated GIFs
+ for use, for example, on a webpage.  It allows
+ setting of transparency, time delay, etc.  Can
+ be used in a CGI script or as a standalone
+ program.
+
+Package: wwwcount
+Priority: optional
+Section: non-free/web
+Installed-Size: 1064
+Maintainer: Ashley Clark <aclark@ghoti.org>
+Architecture: sh
+Version: 2.5-5
+Depends: libc6 (>= 2.2.1-2)
+Recommends: httpd
+Filename: pool/non-free/w/wwwcount/wwwcount_2.5-5_sh.deb
+Size: 289506
+MD5sum: e0d67753ac8fb254000b32817e114892
+Description: Web page access counter
+ This is an extremely versatile web page access counter written in C by
+ Mohammed A. Muquit (ma_muquit@fccc.edu)  You can display the number of
+ hits in various styles for any number of pages, for any number of
+ users.  You can even display the time and date.
+ .
+ WARNING:  The format of the config file has changed.  See the docs for
+ details and manually convert your old config file if you are upgrading.
+
+Package: wwwtable
+Priority: optional
+Section: non-free/web
+Installed-Size: 164
+Maintainer: Brian Bassett <brianb@debian.org>
+Architecture: all
+Version: 1.3-7
+Depends: perl
+Filename: pool/non-free/w/wwwtable/wwwtable_1.3-7_all.deb
+Size: 33106
+MD5sum: 4974337f142c1e5940d9b395d7f88bfa
+Description: A Perl script that facilitates the production of HTML tables
+ Wwwtable is a perl script that aims to make the production of HTML
+ tables a little easier.  This script works as a filter, reading stdin
+ and writing to stdout.
+ .
+ The input syntax is as roughly follows:
+ .
+       <wwwtable table-options...>
+ .
+         initial text (e.g. <caption> ... </caption>).
+ .
+         (X, Y) options for cell (X, Y)
+         text for cell (X,Y)...
+ .
+         ((X,Y)) options for header cell X,Y
+         text for header cell (X,Y)...
+ .
+       </wwwtable>
+ .
+ Rows and cells may be specified in any order, numbering starts at 1.
+ X and/or Y may be replaced by a regular expression to indicate rows or
+ columns.  Options or text (or both) may be omitted for cells.  Cells
+ may be omitted completely if they are empty or fall under the
+ rowspan/colspan specifications of another cell.  Cells may contain
+ arbitrary HTML text, including other wwwtable tables.
+
+Package: x3270-htmldoc
+Priority: optional
+Section: non-free/x11
+Installed-Size: 203
+Maintainer: Carey W. Evans <carey@debian.org>
+Architecture: all
+Source: x3270
+Version: 3.1.1.9-3
+Filename: dists/potato/non-free/binary-all/x11/x3270-htmldoc_3.1.1.9-3.deb
+Size: 63852
+MD5sum: 3a78a2fdf7f385167913bf2d07834843
+Description: HTML documentation for the x3270 package
+ This packages provides the documentation (which is already contained in the
+ x3270 package as standard ascii files) in HTML form.
+
+Package: xfonts-naga10
+Priority: optional
+Section: non-free/x11
+Installed-Size: 1520
+Maintainer: GOTO Masanori <gotom@debian.or.jp>
+Architecture: all
+Version: 1.1-8
+Replaces: knj10font
+Depends: xbase-clients (>= 3.3.3.1-5)
+Suggests: xfs | xserver
+Conflicts: knj10font
+Filename: pool/non-free/x/xfonts-naga10/xfonts-naga10_1.1-8_all.deb
+Size: 1107190
+MD5sum: 692e02657c20e820c343eb67af071d2a
+Description: 10x10 dot Japanese fonts
+ 10x10 dot Japanese fonts called naga10.
+
+Package: xfonts-scalable-nonfree
+Priority: optional
+Section: non-free/x11
+Installed-Size: 1780
+Maintainer: Ivan E. Moore II <rkrusty@debian.org>
+Architecture: all
+Version: 4.0.3-2
+Depends: xutils (>> 4.0.3)
+Filename: pool/non-free/x/xfonts-scalable-nonfree/xfonts-scalable-nonfree_4.0.3-2_all.deb
+Size: 841162
+MD5sum: 4aa467785b6213b54df4c75e6581dff5
+Description: non-free Type1 fonts from XFree86
+ xfonts-scalable-nonfree contains a set of Type1 fonts that are part of the
+ XFree86 distribution, but which are licensed under terms incompatible with
+ the Debian Free Software Guidelines, and thus cannot be distributed as part
+ of Debian.
+ .
+ The fonts are:
+  - Adobe Courier
+  - Adobe Utopia
+  - B&H Lucidux Mono
+  - B&H Lucidux Sans
+  - B&H Lucidux Serif
+
+Package: xgobi-doc
+Priority: optional
+Section: non-free/doc
+Installed-Size: 1023
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Architecture: all
+Version: 19981201-2
+Suggests: xgobi
+Filename: dists/potato/non-free/binary-all/doc/xgobi-doc_19981201-2.deb
+Size: 990216
+MD5sum: 23c76f606c37070137d6aa35db3b5381
+Description: Several papers about xgobi and xgvis
+ This package provides severeal papers which describe the XGobi and XGvis
+ data visualisation programs. More information on xgobi and xgvis can be
+ found at  http://www.research.att.com/areas/stat/xgobi/
+
+Package: xinvaders
+Priority: optional
+Section: non-free/games
+Installed-Size: 172
+Maintainer: Nicolás Lichtmaier <nick@debian.org>
+Architecture: sh
+Version: 2.1.2
+Depends: libc6 (>= 2.2.1-2), libxaw7 (>> 4.0.3), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xinvaders/xinvaders_2.1.2_sh.deb
+Size: 28866
+MD5sum: 4f3b34ff146652cd99713bfe28d16d68
+Description: Space Invaders game for X
+ xinvaders is an implementation of the classic Space Invaders game,
+ on top of the X11 window system.
+
+Package: xmame
+Priority: optional
+Section: non-free/games
+Installed-Size: 540
+Maintainer: Martin Mitchell <martin@debian.org>
+Architecture: all
+Version: 0.37b12.1-1
+Recommends: xmame-x | xmame-svga | xmame-gl | xmame-fx
+Filename: pool/non-free/x/xmame/xmame_0.37b12.1-1_all.deb
+Size: 376720
+MD5sum: 7028851fa3187e73ff2cfb40b363ed48
+Description: Multiple Arcade Machine Emulator
+ Mame is a virtual machine emulator: it includes a Z80, 6502 and
+ lastly I86 uP emulators, joined to several arcade machine hardware
+ emulators. Each arcade emulator contains a full description about
+ hardware, mem maps, video, sounds and so, making possible that if
+ you have original ROM images of a supported arcade game, you can
+ play the game.
+ .
+ You NEED the rom images to play a game: this is not a game
+ emulator, just an arcade machine one.
+ .
+ This package provides files common to both the X, SVGALIB and GL versions
+ of the game.  To get the actual game binary, install one or more of
+ xmame-x, xmame-svga, xmame-gl or xmame-fx.
+
+Package: xpacman
+Priority: optional
+Section: non-free/games
+Installed-Size: 100
+Maintainer: Steve McIntyre <93sam@debian.org>
+Architecture: sh
+Version: 0.11-8
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xpacman/xpacman_0.11-8_sh.deb
+Size: 16008
+MD5sum: 366fabd745cd0af350feff5fab94cb54
+Description: Basic Pacman
+ This is a basic version of pacman. I've tried to concentrate on the
+ essentials of the game for now, which means a lot of the original features
+ are absent (ie no scores, no fruit, no special items, no lives). When all
+ the pills have been cleared from a level, the difficulty level is notched
+ up, and a new level is generated. If you collide with a ghost, all the pills
+ are replaced, and you restart the current level from scratch. A new feature
+ just added is the presence of large red pills that for a short time turn the
+ ghosts grey and let you eat them.
+
+Package: xpostitplus
+Priority: optional
+Section: non-free/x11
+Installed-Size: 196
+Maintainer: Steve McIntyre <93sam@debian.org>
+Architecture: sh
+Version: 2.3.1-14
+Replaces: xpostit
+Depends: libc6 (>= 2.2.1-2), libxaw7 (>> 4.0.3), xlibs (>> 4.0.3)
+Conflicts: xpostit
+Filename: pool/non-free/x/xpostitplus/xpostitplus_2.3.1-14_sh.deb
+Size: 54394
+MD5sum: 5ddf6a617f90d2d59253bc68fe83fbc2
+Description: PostIt notes for X
+ Xpostit provides a mechanism for manipulating on-screen Post-it(r) notes.
+ All six sizes of Post-it notes may  be displayed, edited, and saved to
+ disk files.  In addition, any on-screen note may be resized to any arbitrary
+ size either when it is created or at a later time.
+ .
+ Documentation includes a script for converting notes made with xpostit-3.2.2
+ to the XPostitPlus format.
+
+Package: xshodo
+Priority: optional
+Section: non-free/graphics
+Installed-Size: 116
+Maintainer: Kenshi Muto <kmuto@debian.org>
+Architecture: sh
+Version: 2.0-4
+Depends: libc6 (>= 2.2.1-2), libxaw7 (>> 4.0.3), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xshodo/xshodo_2.0-4_sh.deb
+Size: 14876
+MD5sum: 64ab51dd8bdb95da7d0574a1f17cacdb
+Description: a virtual "SHODO - Japanese calligraphy" tool on X.
+ XShodo, formerly known as XBakuzan, is a program to enjoy a virtual "SHODO" on X. Without writing brushes 'fude' and Indian ink 'sumi', XShodo may help you produce the fine art of KANJI writing or painting.
+
+Package: xsnow
+Priority: optional
+Section: non-free/x11
+Installed-Size: 148
+Maintainer: Adrian Bunk <bunk@fs.tum.de>
+Architecture: sh
+Version: 1.41-1
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xsnow/xsnow_1.41-1_sh.deb
+Size: 29822
+MD5sum: a11a0e6ea0c8f3bfc59a07a906e1f79a
+Description: Brings Christmas to your desktop
+ Xsnow is the X Windows application that will let it snow on the
+ root window, in between and on windows.  Santa and his reindeer
+ will complete your festive-season feeling.
+
+Package: xtoolplaces
+Priority: optional
+Section: non-free/x11
+Installed-Size: 108
+Maintainer: Sven Rudolph <sr1@inf.tu-dresden.de>
+Architecture: sh
+Version: 1.6-3.1
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xtoolplaces/xtoolplaces_1.6-3.1_sh.deb
+Size: 21198
+MD5sum: aec647b664344d16418334583a171b73
+Description: Save current desktop state
+ This program will collect state information from any windows
+ currently running on an X desktop.  This information can then
+ be used to start X to return to the current desktop state.
+ This is the X equivalent of Sunview's toolplaces program.
+
+Package: xtrojka
+Priority: optional
+Section: non-free/games
+Installed-Size: 308
+Maintainer: An Thi-Nguyen Le <anle@debian.org>
+Architecture: sh
+Version: 123-17
+Depends: libc6 (>= 2.2.1-2), libxaw7 (>> 4.0.3), xlibs (>> 4.0.3)
+Filename: pool/non-free/x/xtrojka/xtrojka_123-17_sh.deb
+Size: 43834
+MD5sum: 5b6d0b9198018cd7f23b0b8e01ad16ae
+Description: Fast paced columns-like game
+ The aim of this game is to control and to place the falling blocks,
+ so that at least three blocks horizontally or diagonally, or both,
+ have matching patterns or colors. This sequence is then removed,
+ and the above blocks will collapse.
+
+Package: zoo
+Priority: optional
+Section: non-free/utils
+Installed-Size: 180
+Maintainer: Petr Cech <cech@debian.org>
+Architecture: sh
+Version: 2.10-9
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/non-free/z/zoo/zoo_2.10-9_sh.deb
+Size: 79950
+MD5sum: bd3a97003ba9e63a4eee354e38a0b811
+Description: manipulate archives of files in compressed form
+ Zoo is used to create and maintain collections of files in compressed
+ form.  It uses a Lempel-Ziv compression algorithm that gives space
+ savings in the range of 20% to 80% depending on the type of file data.
+ Zoo can store and selectively extract multiple generations of the same
+ file.
+

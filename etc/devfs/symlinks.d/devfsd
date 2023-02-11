@@ -1,0 +1,9 @@
+# Some standard old device links not done (yet) by devfs
+sr0	scd0
+sr1	scd1
+sr2	scd2
+sr3	scd3
+sr4	scd4
+sr5	scd5
+sr6	scd6
+sr7	scd7

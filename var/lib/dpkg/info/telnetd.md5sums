@@ -1,0 +1,10 @@
+05ddc9d31c3e4471bf0d64f0e013a54b  usr/lib/telnetlogin
+9af5bacabf4d2bf5a9113851e729b2b2  usr/share/man/man5/issue.net.5.gz
+63329d0007bcd440f84f6a28b7344db5  usr/share/man/man8/in.telnetd.8.gz
+eff017e71724def4446841b71149c5d4  usr/share/man/man8/telnetlogin.8.gz
+a8a8338179816c80dcdcbe7f6b6684ed  usr/share/doc/telnetd/BUGS
+c9c41e7640f14a3aabdeb6da7b415bdb  usr/share/doc/telnetd/copyright
+f14c016a601c299471e8417c0532c51d  usr/share/doc/telnetd/changelog.gz
+98995cdd864f7c047630fb84b4511063  usr/share/doc/telnetd/README.gz
+a6388486b3a5d712a09a4f8df9bdb253  usr/share/doc/telnetd/changelog.Debian.gz
+ed80729ead761cfe1a88d6ec13ca8f32  usr/sbin/in.telnetd

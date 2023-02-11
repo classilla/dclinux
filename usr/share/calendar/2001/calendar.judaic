@@ -1,0 +1,137 @@
+/* Judaic calendar for the year 2001 CE */
+/* Put together by Julian Gilbey <jdg@debian.org> for the Debian */
+/* bsdutils package, partially based on old versions.  This      */
+/* file may be freely used in any way desired.                   */
+
+/* For the benefit of those trying to create the calendar for future */
+/* years, the Hebrew dates are given for each date where it is not   */
+/* obvious.  These can be determined, for example, using emacs'      */
+/* calendar mode.                                                    */
+/* Note that Rosh Chodesh is always on the 1st of the month, with a  */
+/* two-day Rosh Chodesh occuring on the 30th of the outgoing month   */
+/* and the 1st of the new month should the outgoing month have 30    */
+/* days.                                                             */
+
+#include "/usr/share/calendar/calendar.judaic"
+
+/* 10th Tevet */
+Jan 05	Fast of Asara B'Tevet (Babylonians put siege on Jerusalem; fast day) */
+Jan 25	Rosh Chodesh Shevat (New Moon)
+/* 15th Shevat */
+Feb 08	Tu Bishvat (New Year for Trees)
+/* In a leap year, there are two months, Adar I and Adar II.  In a */
+/* regular year there is only one Adar, and Purim etc. fall in the */
+/* only Adar.                                                      */
+/* 02/06	Rosh Chodesh Adar I, 1st day (New Moon) */
+/* 02/07	Rosh Chodesh Adar I, 2nd day (New Moon) */
+/* 14th and 15th of Adar I */
+/* 02/20	Purim Katan (Minor Purim)                 */
+/* 02/21	Shushan Purim Katan (Minor Shushan Purim) */
+/* Would be Adar II in a leap year */
+Feb 23	Rosh Chodesh Adar, 1st day (New Moon)
+Feb 24	Rosh Chodesh Adar, 2nd day (New Moon)
+/* 13th, 14th, 15th Adar (II).  The fast is brought forward to */
+/* Thursday 11th Adar should the 13th be a Saturday.           */
+Mar 08	Fast of Esther (Battle of Purim; 1 day before Purim; fast day)
+Mar 09	Purim (Jews rescued from decrees of Haman; Feast of Lots; 30
+	days before Pesach; begins at sundown previous day)
+Mar 10	Shushan Purim (Purim in Jerusalem)
+Mar 25	Rosh Chodesh Nissan (New Moon)
+/* Fast of Firstborn is 14th Nissan, unless that is a Saturday, in */
+/* which case it is brought forward to Thursday 12th Nissan.       */
+/* Erev Pesach, the eve of passover, is always on 14th Nissan.     */
+Apr 07	Erev Pesach (Eve of Passover); Fast of Firstborn
+/* 1st day Pesach is 15th Nissan */
+Apr 08	Pesach (1st day of Passover; sabbatical; begins at sundown
+	previous day)
+Apr 09	Pesach (2nd day of Passover; sabbatical for Orthodox outside Israel)
+Apr 10	Pesach (3rd day of Passover)
+Apr 11	Pesach (4th day of Passover)
+Apr 12	Pesach (5th day of Passover)
+Apr 13	Pesach (6th day of Passover)
+Apr 14	Pesach (7th day of Passover; sabbatical)
+Apr 15	Pesach (8th day of Passover and sabbatical for Orthodox
+	outside Israel)
+/* 27th Nissan (or is it one week before Fallen Soldiers Memorial Day? */
+/* I don't remember for certain)                                       */
+Apr 18	Yom HaShoah (Holocaust Memorial Day)
+Apr 23	Rosh Chodesh Iyar, 1st day (New Moon)
+Apr 24	Rosh Chodesh Iyar, 2nd day (New Moon)
+/* 4th and 5th Iyar, but brought back by 1/2 day(s) if 5th Iyar is a */
+/* Friday or Saturday respectively.                                  */
+Apr 25	Yom HaZikaron (Israeli Fallen Soldiers Remembrance Day)
+Apr 26	Yom HaAtzmaut (Israel Independence Day)
+/* 14th Iyar */
+May 07	Pesach Sheni (A "second chance" for passover in Biblical times)
+/* 18th Iyar */
+May 11	Lag Ba`omer (Commemoration of the Great Rebellion; 33 days
+	after first day passover)
+/* 28th Iyar */
+May 21	Yom Yerushalayim (Reunification of Jerusalem)
+May 23	Rosh Chodesh Sivan (New Moon)
+/* 6th Sivan */
+May 28	Shavuot (1st day Pentecost; Festival of Weeks; 50 days after
+	first day passover; sabbatical; begins at sundown previous day)
+May 29	Shavuot (2nd day Pentecost and sabbatical for Orthodox outside
+	Israel)
+Jun 21	Rosh Chodesh Tammuz, 1st day (New Moon)
+Jun 22	Rosh Chodesh Tammuz, 2nd day (New Moon)
+/* 17th Tammuz; postponed to Sunday 18th Tammuz should */
+/* the 17th fall on a Saturday                         */
+Jul 08	Fast of Shiv'a Asar B'Tammuz (Romans breach Wall of Jerusalem;
+	fast day)
+Jul 21	Rosh Chodesh Av (New Moon)
+/* 9th Av; postponed to Sunday 10th Av should */
+/* the 9th fall on a Saturday                 */
+Jul 29	Fast of Tish'a B'Av (Babylon/Rome destroys Holy Temple; fast day)
+/* 15th Av (!) */
+Aug 04	Tu B'Av (Festival of Fifteenth of Av)
+Aug 19	Rosh Chodesh Elul, 1st day (New Moon)
+Aug 20	Rosh Chodesh Elul, 2nd day (New Moon)
+/* 1st and 2nd of Tishri */
+Sep 18	Rosh Hashanah (1st New Year; sabbatical; begins at sundown
+	previous day)
+Sep 19	Rosh Hashanah (2nd New Year; sabbatical)
+/* 3rd Tishri; postponed to Sunday 4th Tishri if 3rd Tishri */
+/* falls on a Saturday.                                     */
+Sep 20	Fast of Tzom Gedaliah (Fast commemorating assassination of
+	Gedaliah, the head of the Jewish community in Israel during the
+	Babylonian exile; 1 day after Rosh Hashanah; fast day)
+/* 10th Tishri */
+Sep 27	Yom Kippur (Day of Atonement; fast day; sabbatical, fast day;
+	begins at sundown previous day)
+/* 15th Tishri onwards */
+Oct 02	Sukkot (1st day; Festival of Tabernacles; sabbatical; begins
+	at sundown previous day)
+Oct 03	Sukkot (2nd day; Festival of Tabernacles; sabbatical for
+	Orthodox outside of Israel)
+Oct 04	Sukkot (3rd day; Festival of Tabernacles)
+Oct 05	Sukkot (4th day; Festival of Tabernacles)
+Oct 06	Sukkot (5th day; Festival of Tabernacles)
+Oct 07	Sukkot (6th day; Festival of Tabernacles)
+Oct 08	Hoshana Rabbah (Day of final appeal for a good judgement;
+	7th day of Sukkot)
+Oct 09	Shmini Atzeret (Eighth day of Gathering; sabbatical; joint
+	with Simchat Torah in Israel and non-Orthodox; begins at
+	sundown previous day)
+Oct 10	Simchat Torah (Rejoicing of the Law; sabbatical for Orthodox
+	outside of Israel)
+Oct 17	Rosh Chodesh Cheshvan, 1st day (New Moon)
+Oct 18	Rosh Chodesh Cheshvan, 2nd day (New Moon)
+Nov 16	Rosh Chodesh Kislev (New Moon)
+/* 25th Kislev onwards; be aware that Rosh Chodesh Tevet may */
+/* be one or two days long!                                  */
+Dec 10	1st day of Chanukah (Festival of Lights; begins at sundown
+	previous day)
+Dec 11	2nd day of Chanukah (Festival of Lights)
+Dec 12	3rd day of Chanukah (Festival of Lights)
+Dec 13	4th day of Chanukah (Festival of Lights)
+Dec 14	5th day of Chanukah (Festival of Lights)
+Dec 15	6th day of Chanukah (Festival of Lights);
+	Rosh Chodesh Tevet, 1st day (New Moon)
+Dec 16	7th day of Chanukah (Festival of Lights);
+	Rosh Chodesh Tevet, 2nd day (New Moon)
+Dec 17	8th (last) day of Chanukah (Festival of Lights)
+/* 10th Tevet */
+Dec 25	Fast of Asara B'Tevet (Babylonians put siege on Jerusalem;
+	fast day)

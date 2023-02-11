@@ -1,0 +1,27 @@
+These are the features that you'll never see in the version of rblcheck
+that I produce (rblcheck is GPL; you're free to produce your own version
+if this doesn't suit you well), and the rationale behind why not.
+
+Support for doing lookups of FQDNs:
+    This is a futile method of checking whether a particular system is
+    blackholed; if the originating system has control of reverse DNS for
+    their IP space, they can make their IP address resolve to anything
+    they want, such as system.network.com. If rblcheck were to do a lookup
+    on that, "system.network.com" might resolve to anything (such as
+    "127.0.0.1, which will always pass with every currently known
+    RBL-based blacklist).
+
+Return codes that identify a particular blacklist:
+    This took a while to convince me it was wrong. Here are the questions
+    I went over when deciding against this:
+        - what do you do with your scripts when the blacklist order
+          changes, or new blacklists appear (assuming a dynamic assignment
+          of identifiers)?
+        - if you hard-code a number for each and every blacklist, who
+          becomes responsible for being a registry for those numerical
+          identifiers?
+        - how do you scale beyond 256 RBL services?
+        - how do you report multiple matches with a return code, when the
+          return code can only hold one number?
+    Some of these can be solved, but not cleanly; you'll need no end of
+    special cases to accomodate them.

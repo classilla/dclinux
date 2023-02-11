@@ -1,0 +1,53 @@
+Template: bsdmainutils/calendar_config_moved
+Type: note
+Description: /usr/lib/calendar/default has been moved to /etc/calendar/default.old
+ Your old "calendar" configuration file, /usr/lib/calendar/default,
+ has been moved to /etc/calendar/default.old.  If you had customised
+ /usr/lib/calendar/default, you should apply those changes to the new
+ calendar configuration file, /etc/calendar/default.
+Description-de: /usr/lib/calendar/default wurde nach /etc/calendar/default.old verschoben
+ Ihre alte "calendar" Konfigurations Datei (/usr/lib/calendar/default) wurde
+ nach /etc/calendar/default.old verschoben. Wenn Sie Ihre alte Datei
+ /usr/lib/calendar/default nach Ihren Beduerfnisse angepasst hatten,
+ sollte Sie die Veränderungen ebenfalls an der neuen Datei
+ /etc/calendar/default durchführen.
+Description-it: /usr/lib/calendar/default è stato rinominato in /etc/calendar/default.old
+ Il tuo vecchio file di configurazione di "calendar", /usr/lib/calendar/default,
+ è stato rinominato in /etc/calendar/default.old. Se lo avevi personalizzato
+ dovresti rifare le stesse modifiche al nuovo file di configurazione di
+ calendar, /etc/calendar/default.
+Description-sv: /usr/lib/calendar/default har flyttats till /etc/calendar/default.old
+ Din gamla konfigurationsfil för "calendar", /usr/lib/calendar/default,
+ har flyttats till /etc/calendar/default.old. Om du hade anpassat
+ /usr/lib/calendar/default bör du applicera dessa ändringar till den
+ nya konfigurationsfilen för calendar, /etc/calendar/default.
+Description-nl: /usr/lib/calendar/default is verplaatst naar /etc/calendar/default.old
+ Uw oude 'calendar' instellingsbestand, /usr/lib/calendar/default, is
+ verplaatst naar /etc/calendar/default.old. Indien u deze had aangepast,
+ dient u die wijzigingen opnieuw aan te brengen in het nieuwe
+ instellingsbestand, /etc/calendar/default.
+Description-pt_BR: /usr/lib/calendar/default foi movido para /etc/calendar/default.old
+ Seu arquivo de configuração "calendar" antigo, /usr/lib/calendar/default,
+ foi movido para /etc/calendar/default.old. Se você o customizou você deve
+ aplicar essas mudanças ao novo arquivo de configuração do calendar.
+
+Template: bsdmainutils/calendar_lib_is_not_empty
+Type: note
+Description: Files in /usr/lib/calendar have not been removed 
+ Check the files left over in /usr/lib/calendar; you may want to move them
+ to /etc/calendar or delete them.
+Description-de: Dateien in /usr/lib/calendar wurde nicht entfernt
+ Prüfen Sie die übrig gebliebenen Dateien in /usr/lib/calendar; Sie möchten
+ die Dateien vielleicht nach /etc/calendar verschieben oder evtl. löschen.
+Description-it: I file in /usr/lib/calendar non sono stati cancellati
+ Controlla i file rimasti in /usr/lib/calendar, puoi spostarli in
+ /etc/calendar o cancellarli.
+Description-sv: Filer i /usr/lib/calendar har ej tagits bort
+ Kontrollera de kvarvarande filerna i /usr/lib/calendar; du kanske
+ vill flytta dem till /etc/calendar eller ta bort dem.
+Description-nl: Bestanden in /usr/lib/calendar niet verplaatst
+ Controleer de achtergebleven bestanden in /usr/lib/calendar; u wilt
+ deze misschien verplaatsen naar /etc/calendar of verwijderen.
+Description-pt_BR: Os arquivos em /usr/lib/calendar foram removidos
+ Cheque os arquivos remanescentes em /usr/lib/calendar; você pode querer
+ movê-los para /etc/calendar ou deletá-los.

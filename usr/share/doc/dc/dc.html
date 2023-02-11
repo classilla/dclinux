@@ -1,0 +1,930 @@
+<HTML>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- Created on March, 29  2001 by texi2html 1.64 -->
+<!-- 
+Written by: Lionel Cons <Lionel.Cons@cern.ch> (original author)
+            Karl Berry  <karl@freefriends.org>
+            Olaf Bachmann <obachman@mathematik.uni-kl.de>
+            and many others.
+Maintained by: Olaf Bachmann <obachman@mathematik.uni-kl.de>
+Send bugs and suggestions to <texi2html@mathematik.uni-kl.de>
+ 
+-->
+<HEAD>
+<TITLE>dc, an arbitrary precision calculator: </TITLE>
+
+<META NAME="description" CONTENT="dc, an arbitrary precision calculator: ">
+<META NAME="keywords" CONTENT="dc, an arbitrary precision calculator: ">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META NAME="Generator" CONTENT="texi2html 1.64">
+
+</HEAD>
+
+<BODY LANG="EN" BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#800080" ALINK="#FF0000">
+
+<A NAME="SEC_Top"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>dc, an arbitrary precision calculator</H1></P><P>
+
+<BLOCKQUOTE><TABLE BORDER=0 CELLSPACING=0> 
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC1">1. Introduction</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC2">2. Invocation</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC3">3. Printing Commands</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC4">4. Arithmetic</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC5">5. Stack Control</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC6">6. Registers</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC7">7. Parameters</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC8">8. Strings</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC9">9. Status Inquiry</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC10">10. Miscellaneous</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP">Other commands</TD></TR>
+<TR><TD ALIGN="left" VALIGN="TOP"><A HREF="dc.html#SEC11">11. Reporting bugs</A></TD><TD>&nbsp;&nbsp;</TD><TD ALIGN="left" VALIGN="TOP"></TD></TR>
+</TABLE></BLOCKQUOTE>
+<P>
+
+<HR SIZE=1>
+<A NAME="SEC1"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC2"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC2"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<A NAME="Introduction"></A>
+<H1> 1. Introduction </H1>
+<!--docid::SEC1::-->
+<P>
+
+DC is a reverse-polish desk calculator
+which supports unlimited precision arithmetic.
+It also allows you to define and call macros.
+Normally DC reads from the standard input;
+if any command arguments are given to it, they are filenames,
+and DC reads and executes the contents of the files
+instead of reading from standard input.
+All normal output is to standard output;
+all error messages are written to standard error.
+</P><P>
+
+To exit, use <SAMP>`q'</SAMP>.
+<KBD>C-c</KBD> does not exit;
+it is used to abort macros that are looping, etc.
+(Currently this is not true; <KBD>C-c</KBD> does exit.)
+</P><P>
+
+A reverse-polish calculator stores numbers on a stack.
+Entering a number pushes it on the stack.
+Arithmetic operations pop arguments off the stack and push the results.
+</P><P>
+
+To enter a number in DC, type the digits,
+with an optional decimal point.
+Exponential notation is not supported.
+To enter a negative number, begin the number with <SAMP>`_'</SAMP>.
+<SAMP>`-'</SAMP> cannot be used for this, as it is a binary operator
+for subtraction instead.
+To enter two numbers in succession,
+separate them with spaces or newlines.
+These have no meaning as commands.
+</P><P>
+
+<A NAME="Invocation"></A>
+<HR SIZE="6">
+<A NAME="SEC2"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC1"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC3"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC1"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC3"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 2. Invocation </H1>
+<!--docid::SEC2::-->
+<P>
+
+DC may be invoked with the following command-line options:
+<DL COMPACT>
+
+<DT><SAMP>`-e <VAR>expr</VAR>'</SAMP>
+<DD><DT><SAMP>`--expression=<VAR>expr</VAR>'</SAMP>
+<DD>Evaluate <VAR>expr</VAR> as DC commands.
+<P>
+
+<DT><SAMP>`-f <VAR>file</VAR>'</SAMP>
+<DD><DT><SAMP>`--file=<VAR>file</VAR>'</SAMP>
+<DD>Read and evaluate DC commands from <VAR>file</VAR>.
+<P>
+
+<DT><SAMP>`-h'</SAMP>
+<DD><DT><SAMP>`--help'</SAMP>
+<DD>Print a usage message summarizing the command-line options, then exit.
+<P>
+
+<DT><SAMP>`-V'</SAMP>
+<DD><DT><SAMP>`--version'</SAMP>
+<DD>Print the version information for this program, then exit.
+</DL>
+<P>
+
+If any command-line parameters remain after processing the options,
+these parameters are interpreted as additional <VAR>file</VAR>s whose
+contents are read and evaluated.
+A file name of <CODE>-</CODE> refers to the standard input stream.
+If no <CODE>-e</CODE> option was specified, and no files were specified,
+then the standard input will be read for commands to evaluate.
+</P><P>
+
+<A NAME="Printing Commands"></A>
+<HR SIZE="6">
+<A NAME="SEC3"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC2"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC4"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC2"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC4"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 3. Printing Commands </H1>
+<!--docid::SEC3::-->
+<P>
+
+<DL COMPACT>
+<DT><SAMP>`p'</SAMP>
+<DD>Prints the value on the top of the stack,
+without altering the stack.
+A newline is printed after the value.
+<P>
+
+<DT><SAMP>`n'</SAMP>
+<DD>Prints the value on the top of the stack, popping it off,
+and does not print a newline after.
+(This command is a GNU extension.)
+<P>
+
+<DT><SAMP>`P'</SAMP>
+<DD>Pops off the value on top of the stack.
+If it it a string, it is simply printed without a trailing newline.
+Otherwise it is a number, and the integer portion of its absolute
+value is printed out as a "base (UCHAR_MAX+1)" byte stream.
+Assuming that (UCHAR_MAX+1) is 256
+(as it is on most machines with 8-bit bytes),
+the sequence
+<CODE>KSK 0k1/ [_1*]sx d0&#62;x [256~aPd0&#60;x]dsxx sxLKk</CODE>
+could also accomplish this function,
+except for the side-effect of clobbering the x register.
+(Details of the behavior with a number are a GNU extension.)
+<P>
+
+<DT><SAMP>`f'</SAMP>
+<DD>Prints the entire contents of the stack
+without altering anything.
+This is a good command to use if you are lost or want
+to figure out what the effect of some command has been.
+</DL>
+<P>
+
+<A NAME="Arithmetic"></A>
+<HR SIZE="6">
+<A NAME="SEC4"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC3"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC5"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC3"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC5"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 4. Arithmetic </H1>
+<!--docid::SEC4::-->
+<P>
+
+<DL COMPACT>
+<DT><SAMP>`+'</SAMP>
+<DD>Pops two values off the stack, adds them, and pushes the result.
+The precision of the result is determined only
+by the values of the arguments, and is enough to be exact.
+<P>
+
+<DT><SAMP>`-'</SAMP>
+<DD>Pops two values, subtracts the first one popped
+from the second one popped, and pushes the result.
+<P>
+
+<DT><SAMP>`*'</SAMP>
+<DD>Pops two values, multiplies them, and pushes the result.
+The number of fraction digits in the result is the largest of
+the precision value,
+the number of fraction digits in the multiplier,
+or the number of fraction digits in the multiplicand;
+but in no event exceeding the number of digits required for
+an exact result.
+<P>
+
+<DT><SAMP>`/'</SAMP>
+<DD>Pops two values, divides the second one popped
+from the first one popped, and pushes the result.
+The number of fraction digits is specified by the precision value.
+<P>
+
+<DT><SAMP>`%'</SAMP>
+<DD>Pops two values,
+computes the remainder of the division that
+the <SAMP>`/'</SAMP> command would do,
+and pushes that.
+The value computed is the same as that computed by
+the sequence <CODE>Sd dld/ Ld*-</CODE> .
+<P>
+
+<DT><SAMP>`~'</SAMP>
+<DD>Pops two values,
+divides the second one popped from the first one popped.
+The quotient is pushed first, and the remainder is pushed next.
+The number of fraction digits used in the division
+is specified by the precision value.
+(The sequence <CODE>SdSn lnld/ LnLd%</CODE> could also accomplish
+this function, with slightly different error checking.)
+(This command is a GNU extension.)
+<P>
+
+<DT><SAMP>`^'</SAMP>
+<DD>Pops two values and exponentiates,
+using the first value popped as the exponent
+and the second popped as the base.
+The fraction part of the exponent is ignored.
+The precision value specifies the number of fraction
+digits in the result.
+<P>
+
+<DT><SAMP>`|'</SAMP>
+<DD>Pops three values and computes a modular exponentiation.
+The first value popped is used as the reduction modulus;
+this value must be a non-zero number,
+and the result may not be accurate if the modulus
+is not an integer.
+The second popped is used as the exponent;
+this value must be a non-negative number,
+and any fractional part of this exponent will be ignored.
+The third value popped is the base which gets exponentiated,
+which should be an integer.
+For small integers this is like the sequence <CODE>Sm^Lm%</CODE>,
+but, unlike <CODE>^</CODE>, this command will work with arbritrarily large exponents.
+(This command is a GNU extension.)
+<P>
+
+<DT><SAMP>`v'</SAMP>
+<DD>Pops one value, computes its square root, and pushes that.
+The precision value specifies the number of fraction digits
+in the result.
+</DL>
+<P>
+
+Most arithmetic operations are affected by the <EM>precision value</EM>,
+which you can set with the <SAMP>`k'</SAMP> command.
+The default precision value is zero,
+which means that all arithmetic except for
+addition and subtraction produces integer results.
+</P><P>
+
+<A NAME="Stack Control"></A>
+<HR SIZE="6">
+<A NAME="SEC5"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC4"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC6"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC4"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC6"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 5. Stack Control </H1>
+<!--docid::SEC5::-->
+<P>
+
+<DL COMPACT>
+<DT><SAMP>`c'</SAMP>
+<DD>Clears the stack, rendering it empty.
+<P>
+
+<DT><SAMP>`d'</SAMP>
+<DD>Duplicates the value on the top of the stack,
+pushing another copy of it.
+Thus, <SAMP>`4d*p'</SAMP> computes 4 squared and prints it.
+<P>
+
+<DT><SAMP>`r'</SAMP>
+<DD>Reverses the order of (swaps) the top two values on the stack.
+(This command is a GNU extension.)
+</DL>
+<P>
+
+<A NAME="Registers"></A>
+<HR SIZE="6">
+<A NAME="SEC6"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC5"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC7"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC5"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC7"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 6. Registers </H1>
+<!--docid::SEC6::-->
+<P>
+
+DC provides at least 256 memory registers,
+each named by a single character.
+You can store a number in a register and retrieve it later.
+</P><P>
+
+<DL COMPACT>
+<DT><SAMP>`s<VAR>r</VAR>'</SAMP>
+<DD>Pop the value off the top of the stack and
+store it into register <VAR>r</VAR>.
+<P>
+
+<DT><SAMP>`l<VAR>r</VAR>'</SAMP>
+<DD>Copy the value in register <VAR>r</VAR>,
+and push it onto the stack.
+This does not alter the contents of <VAR>r</VAR>.
+<P>
+
+Each register also contains its own stack.
+The current register value is the top of the register's stack.
+</P><P>
+
+<DT><SAMP>`S<VAR>r</VAR>'</SAMP>
+<DD>Pop the value off the top of the (main) stack and
+push it onto the stack of register <VAR>r</VAR>.
+The previous value of the register becomes inaccessible.
+<P>
+
+<DT><SAMP>`L<VAR>r</VAR>'</SAMP>
+<DD>Pop the value off the top of register <VAR>r</VAR>'s stack
+and push it onto the main stack.
+The previous value in register <VAR>r</VAR>'s stack, if any,
+is now accessible via the <SAMP>`l<VAR>r</VAR>'</SAMP> command.
+</DL>
+<P>
+
+<A NAME="Parameters"></A>
+<HR SIZE="6">
+<A NAME="SEC7"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC6"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC8"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC6"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC8"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 7. Parameters </H1>
+<!--docid::SEC7::-->
+<P>
+
+DC has three parameters that control its operation:
+the precision, the input radix, and the output radix.
+The precision specifies the number of fraction digits
+to keep in the result of most arithmetic operations.
+The input radix controls the interpretation of numbers typed in;
+<EM>all</EM> numbers typed in use this radix.
+The output radix is used for printing numbers.
+</P><P>
+
+The input and output radices are separate parameters;
+you can make them unequal, which can be useful or confusing.
+The input radix must be between 2 and 16 inclusive.
+The output radix must be at least 2.
+The precision must be zero or greater.
+The precision is always measured in decimal digits,
+regardless of the current input or output radix.
+</P><P>
+
+<DL COMPACT>
+<DT><SAMP>`i'</SAMP>
+<DD>Pops the value off the top of the stack
+and uses it to set the input radix.
+<P>
+
+<DT><SAMP>`o'</SAMP>
+<DD>Pops the value off the top of the stack
+and uses it to set the output radix.
+<P>
+
+<DT><SAMP>`k'</SAMP>
+<DD>Pops the value off the top of the stack
+and uses it to set the precision.
+<P>
+
+<DT><SAMP>`I'</SAMP>
+<DD>Pushes the current input radix on the stack.
+<P>
+
+<DT><SAMP>`O'</SAMP>
+<DD>Pushes the current output radix on the stack.
+<P>
+
+<DT><SAMP>`K'</SAMP>
+<DD>Pushes the current precision on the stack.
+<P>
+
+</DL>
+<P>
+
+<A NAME="Strings"></A>
+<HR SIZE="6">
+<A NAME="SEC8"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC7"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC9"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC7"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC9"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 8. Strings </H1>
+<!--docid::SEC8::-->
+<P>
+
+DC can operate on strings as well as on numbers.
+The only things you can do with strings are print them
+and execute them as macros
+(which means that the contents of the string are processed as DC commands).
+Both registers and the stack can hold strings,
+and DC always knows whether any given object is a string or a number.
+Some commands such as arithmetic operations demand numbers
+as arguments and print errors if given strings.
+Other commands can accept either a number or a string;
+for example, the <SAMP>`p'</SAMP> command can accept either and prints the object
+according to its type.
+</P><P>
+
+<DL COMPACT>
+<DT><SAMP>`[<VAR>characters</VAR>]'</SAMP>
+<DD>Makes a string containing <VAR>characters</VAR> and pushes it on the stack.
+For example, <SAMP>`[foo]P'</SAMP> prints the characters <SAMP>`foo'</SAMP>
+(with no newline).
+<P>
+
+<DT><SAMP>`a'</SAMP>
+<DD>The mnemonic for this is somewhat erroneous: asciify.
+The top-of-stack is popped.
+If it was a number, then the low-order byte of this number
+is converted into a string and pushed onto the stack.
+Otherwise the top-of-stack was a string,
+and the first character of that string is pushed back.
+(This command is a GNU extension.)
+<P>
+
+<DT><SAMP>`x'</SAMP>
+<DD>Pops a value off the stack and executes it as a macro.
+Normally it should be a string;
+if it is a number, it is simply pushed back onto the stack.
+For example, <SAMP>`[1p]x'</SAMP> executes the macro <SAMP>`1p'</SAMP>,
+which pushes 1 on the stack and prints <SAMP>`1'</SAMP> on a separate line.
+<P>
+
+Macros are most often stored in registers;
+<SAMP>`[1p]sa'</SAMP> stores a macro to print <SAMP>`1'</SAMP> into register <SAMP>`a'</SAMP>,
+and <SAMP>`lax'</SAMP> invokes the macro.
+</P><P>
+
+<DT><SAMP>`&#62;<VAR>r</VAR>'</SAMP>
+<DD>Pops two values off the stack and compares them
+assuming they are numbers,
+executing the contents of register <VAR>r</VAR> as a macro
+if the original top-of-stack is greater.
+Thus, <SAMP>`1 2&#62;a'</SAMP> will invoke register <SAMP>`a'</SAMP>'s contents
+and <SAMP>`2 1&#62;a'</SAMP> will not.
+<P>
+
+<DT><SAMP>`!&#62;<VAR>r</VAR>'</SAMP>
+<DD>Similar but invokes the macro if the original top-of-stack is not greater
+(is less than or equal to) what was the second-to-top.
+<P>
+
+<DT><SAMP>`&#60;<VAR>r</VAR>'</SAMP>
+<DD>Similar but invokes the macro if the original top-of-stack is less.
+<P>
+
+<DT><SAMP>`!&#60;<VAR>r</VAR>'</SAMP>
+<DD>Similar but invokes the macro if the original top-of-stack is not less
+(is greater than or equal to) what was the second-to-top.
+<P>
+
+<DT><SAMP>`=<VAR>r</VAR>'</SAMP>
+<DD>Similar but invokes the macro if the two numbers popped are equal.
+<P>
+
+<DT><SAMP>`!=<VAR>r</VAR>'</SAMP>
+<DD>Similar but invokes the macro if the two numbers popped are not equal.
+<P>
+
+<DT><SAMP>`?'</SAMP>
+<DD>Reads a line from the terminal and executes it.
+This command allows a macro to request input from the user.
+<P>
+
+<DT><SAMP>`q'</SAMP>
+<DD>During the execution of a macro,
+this command exits from the macro and also from the macro which invoked it.
+If called from the top level,
+or from a macro which was called directly from the top level,
+the <SAMP>`q'</SAMP> command will cause DC to exit.
+<P>
+
+<DT><SAMP>`Q'</SAMP>
+<DD>Pops a value off the stack and uses it as a count
+of levels of macro execution to be exited.
+Thus, <SAMP>`3Q'</SAMP> exits three levels.
+</DL>
+<P>
+
+<A NAME="Status Inquiry"></A>
+<HR SIZE="6">
+<A NAME="SEC9"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC8"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC10"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC8"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC10"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 9. Status Inquiry </H1>
+<!--docid::SEC9::-->
+<P>
+
+<DL COMPACT>
+<DT><SAMP>`Z'</SAMP>
+<DD>Pops a value off the stack,
+calculates the number of digits it has
+(or number of characters, if it is a string)
+and pushes that number.
+<P>
+
+<DT><SAMP>`X'</SAMP>
+<DD>Pops a value off the stack,
+calculates the number of fraction digits it has,
+and pushes that number.
+For a string, the value pushed is
+0.
+<P>
+
+<DT><SAMP>`z'</SAMP>
+<DD>Pushes the current stack depth:
+the number of objects on the stack
+before the execution of the <SAMP>`z'</SAMP> command.
+</DL>
+<P>
+
+<A NAME="Miscellaneous"></A>
+<HR SIZE="6">
+<A NAME="SEC10"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC9"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC11"> &gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC9"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC11"> &gt;&gt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 10. Miscellaneous </H1>
+<!--docid::SEC10::-->
+<P>
+
+<DL COMPACT>
+<DT><SAMP>`!'</SAMP>
+<DD>Will run the rest of the line as a system command.
+Note that parsing of the !&#60;, !=, and !&#62; commands take precidence,
+so if you want to run a command starting with &#60;, =, or &#62; you will
+need to add a space after the !.
+<P>
+
+<DT><SAMP>`#'</SAMP>
+<DD>Will interpret the rest of the line as a comment.
+(This command is a GNU extension.)
+<P>
+
+<DT><SAMP>`:<VAR>r</VAR>'</SAMP>
+<DD>Will pop the top two values off of the stack.
+The old second-to-top value will be stored in the array <VAR>r</VAR>,
+indexed by the old top-of-stack value.
+<P>
+
+<DT><SAMP>`;<VAR>r</VAR>'</SAMP>
+<DD>Pops the top-of-stack and uses it as an index into
+the array <VAR>r</VAR>.
+The selected value is then pushed onto the stack.
+</DL>
+<P>
+
+Note that each stacked instance of a register has its own
+array associated with it.
+Thus <SAMP>`1 <VAR>0:a</VAR> 0S<VAR>a</VAR> 2 <VAR>0:a</VAR> L<VAR>a</VAR> <VAR>0;a</VAR>p'</SAMP>
+will print 1, because the 2 was stored in an instance of <VAR>0:a</VAR>
+that was later popped.
+</P><P>
+
+<A NAME="Reporting bugs"></A>
+<HR SIZE="6">
+<A NAME="SEC11"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC10"> &lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[ &gt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC10"> &lt;&lt; </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top"> Up </A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[ &gt;&gt; ]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT"> &nbsp; <TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1> 11. Reporting bugs </H1>
+<!--docid::SEC11::-->
+<P>
+
+Email bug reports to <A HREF="mailto:bug-dc@gnu.org">bug-dc@gnu.org</A>.
+<HR SIZE="6">
+<A NAME="SEC_Contents"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>Table of Contents</H1>
+<UL>
+<A NAME="TOC1" HREF="dc.html#SEC1">1. Introduction</A>
+<BR>
+<A NAME="TOC2" HREF="dc.html#SEC2">2. Invocation</A>
+<BR>
+<A NAME="TOC3" HREF="dc.html#SEC3">3. Printing Commands</A>
+<BR>
+<A NAME="TOC4" HREF="dc.html#SEC4">4. Arithmetic</A>
+<BR>
+<A NAME="TOC5" HREF="dc.html#SEC5">5. Stack Control</A>
+<BR>
+<A NAME="TOC6" HREF="dc.html#SEC6">6. Registers</A>
+<BR>
+<A NAME="TOC7" HREF="dc.html#SEC7">7. Parameters</A>
+<BR>
+<A NAME="TOC8" HREF="dc.html#SEC8">8. Strings</A>
+<BR>
+<A NAME="TOC9" HREF="dc.html#SEC9">9. Status Inquiry</A>
+<BR>
+<A NAME="TOC10" HREF="dc.html#SEC10">10. Miscellaneous</A>
+<BR>
+<A NAME="TOC11" HREF="dc.html#SEC11">11. Reporting bugs</A>
+<BR>
+</UL>
+<HR SIZE=1>
+<A NAME="SEC_OVERVIEW"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>Short Table of Contents</H1>
+<BLOCKQUOTE>
+<A NAME="TOC1" HREF="dc.html#SEC1">1. Introduction</A>
+<BR>
+<A NAME="TOC2" HREF="dc.html#SEC2">2. Invocation</A>
+<BR>
+<A NAME="TOC3" HREF="dc.html#SEC3">3. Printing Commands</A>
+<BR>
+<A NAME="TOC4" HREF="dc.html#SEC4">4. Arithmetic</A>
+<BR>
+<A NAME="TOC5" HREF="dc.html#SEC5">5. Stack Control</A>
+<BR>
+<A NAME="TOC6" HREF="dc.html#SEC6">6. Registers</A>
+<BR>
+<A NAME="TOC7" HREF="dc.html#SEC7">7. Parameters</A>
+<BR>
+<A NAME="TOC8" HREF="dc.html#SEC8">8. Strings</A>
+<BR>
+<A NAME="TOC9" HREF="dc.html#SEC9">9. Status Inquiry</A>
+<BR>
+<A NAME="TOC10" HREF="dc.html#SEC10">10. Miscellaneous</A>
+<BR>
+<A NAME="TOC11" HREF="dc.html#SEC11">11. Reporting bugs</A>
+<BR>
+
+</BLOCKQUOTE>
+<HR SIZE=1>
+<A NAME="SEC_About"></A>
+<TABLE CELLPADDING=1 CELLSPACING=1 BORDER=0>
+<TR><TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Top">Top</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_Contents">Contents</A>]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[Index]</TD>
+<TD VALIGN="MIDDLE" ALIGN="LEFT">[<A HREF="dc.html#SEC_About"> ? </A>]</TD>
+</TR></TABLE>
+<H1>About this document</H1>
+This document was generated by <I>YAEGASHI Takeshi</I> on <I>March, 29  2001</I>
+using <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html
+"><I>texi2html</I></A>
+<P></P>  
+The buttons in the navigation panels have the following meaning:
+<P></P>
+<table border = "1">
+<TR>
+<TH> Button </TH>
+<TH> Name </TH>
+<TH> Go to </TH>
+<TH> From 1.2.3 go to</TH>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &lt; ] </TD>
+<TD ALIGN="CENTER">
+Back
+</TD>
+<TD>
+previous section in reading order
+</TD>
+<TD>
+1.2.2
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &gt; ] </TD>
+<TD ALIGN="CENTER">
+Forward
+</TD>
+<TD>
+next section in reading order
+</TD>
+<TD>
+1.2.4
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &lt;&lt; ] </TD>
+<TD ALIGN="CENTER">
+FastBack
+</TD>
+<TD>
+previous or up-and-previous section 
+</TD>
+<TD>
+1.1
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ Up ] </TD>
+<TD ALIGN="CENTER">
+Up
+</TD>
+<TD>
+up section
+</TD>
+<TD>
+1.2
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ &gt;&gt; ] </TD>
+<TD ALIGN="CENTER">
+FastForward
+</TD>
+<TD>
+next or up-and-next section
+</TD>
+<TD>
+1.3
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Top] </TD>
+<TD ALIGN="CENTER">
+Top
+</TD>
+<TD>
+cover (top) of document
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Contents] </TD>
+<TD ALIGN="CENTER">
+Contents
+</TD>
+<TD>
+table of contents
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [Index] </TD>
+<TD ALIGN="CENTER">
+Index
+</TD>
+<TD>
+concept index
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+<TR>
+<TD ALIGN="CENTER">
+ [ ? ] </TD>
+<TD ALIGN="CENTER">
+About
+</TD>
+<TD>
+this page
+</TD>
+<TD>
+ &nbsp; 
+</TD>
+</TR>
+</TABLE>
+<P></P>
+where the <STRONG> Example </STRONG> assumes that the current position 
+is at <STRONG> Subsubsection One-Two-Three </STRONG> of a document of 
+the following structure:
+<UL>
+<LI> 1. Section One  </LI>
+<UL>
+<LI>1.1 Subsection One-One</LI>
+<UL>
+<LI> ... </LI>
+</UL>
+<LI>1.2 Subsection One-Two</LI>
+<UL>
+<LI>1.2.1 Subsubsection One-Two-One
+</LI><LI>1.2.2 Subsubsection One-Two-Two
+</LI><LI>1.2.3 Subsubsection One-Two-Three &nbsp; &nbsp; <STRONG>
+&lt;== Current Position </STRONG>
+</LI><LI>1.2.4 Subsubsection One-Two-Four
+</LI></UL>
+<LI>1.3 Subsection One-Three</LI>
+<UL>
+<LI> ... </LI>
+</UL>
+<LI>1.4 Subsection One-Four</LI>
+</UL>
+</UL>
+
+<HR SIZE=1>
+<BR>  
+<FONT SIZE="-1">
+This document was generated
+by <I>YAEGASHI Takeshi</I> on <I>March, 29  2001</I>
+using <A HREF="http://www.mathematik.uni-kl.de/~obachman/Texi2html
+"><I>texi2html</I></A>
+
+</BODY>
+</HTML>

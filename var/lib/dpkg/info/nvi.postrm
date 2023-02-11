@@ -1,0 +1,18 @@
+#! /bin/sh
+
+if [ "$1" = "purge" ]
+then
+    update-rc.d nviboot remove > /dev/null
+    # There might be a leftover /etc/rc.boot/nvi file left
+    # around -- kill it.
+    if [ -f /etc/rc.boot/nvi ] ; then
+	rm /etc/rc.boot/nvi
+    fi
+    # There might be a leftover /etc/rc.boot/nvi.save_while_moving file left
+    # around -- kill it too.
+    if [ -f /etc/rc.boot/nvi.save_while_moving ] ; then
+	rm /etc/rc.boot/nvi.save_while_moving
+    fi
+fi
+
+exit 0

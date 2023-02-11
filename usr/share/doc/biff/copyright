@@ -1,0 +1,8 @@
+This version of biff was obtained from:
+ftp.uk.linux.org:/pub/linux/Networking/netkit.
+
+It has been packaged by Martin Mitchell <martin@debian.org> who added the
+debian/* files and added miscellaneous patches for compilation.
+
+The biff package is distributed under the BSD copyright which can be
+found in /usr/share/common-licenses/BSD on a Debian GNU/Linux system.

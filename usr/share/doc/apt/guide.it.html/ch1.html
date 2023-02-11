@@ -1,0 +1,118 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>Guida dell'utente di APT - Descrizione generale</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch2.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+<h1>
+Guida dell'utente di APT<br>
+¾Ï 1 Descrizione generale
+</h1>
+
+<hr>
+
+<p>
+Il pacchetto APT al momento contiene due sezioni, il metodo APT
+<code>dselect</code> e l'interfaccia utente a linea di comando
+<code>apt-get</code>; entrambi danno modo di installare e rimuovere pacchetti,
+e di scaricarne altri da Internet.
+</p>
+
+<hr>
+
+<h2>
+<a name="s1.1">1.1 Anatomia del sistema di pacchettizzazione</a>
+</h2>
+
+<p>
+Il sistema di pacchettizzazione di Debian contiene un gran numero di
+informazioni associate a ciascun pacchetto, per assicurarsi che si integri
+facilmente ed in maniera pulita nel sistema; la più importante di esse è il
+sistema di dipendenze.
+
+<p>
+Il sistema di dipendenze permette ai singoli programmi di fare uso degli
+elementi condivisi del sistema, quali le librerie; per ridurre il numero di
+elementi che l'utente medio debba installare, le porzioni di programmi che non
+vengono usate spesso vengono poste in pacchetti separati.  Inoltre, è possibile
+avere più di una scelta per cose quali i programmi di posta elettronica, i
+server X e così via.
+
+<p>
+Il primo passo per capire il sistema di dipendenze è la comprensione del
+concetto di dipendenza semplice: un pacchetto richiede che un altro sia
+installato insieme ad esso per poter funzionare.
+
+<p>
+Ad esempio, mail-crypt è un'estensione di emacs che aiuta a criptare le mail
+con PGP.  Se PGP non è installato, mail-crypt è inutile, quindi mail-crypt ha
+una dipendenza semplice da PGP.  Inoltre, dato che si tratta di un'estensione
+di emacs, mail-crypt dipende anche da emacs, senza il quale è totalmente
+inutile.
+
+<p>
+L'altro tipo di dipendenza importante da capire è la dipendenza di conflitto;
+con questa, un pacchetto che venga installato insieme ad un altro pacchetto non
+funziona, e si hanno seri problemi al sistema.  Come esempio, si consideri un
+programma di trasporto della posta, quale sendmail, exim o qmail: non è
+possibile averne due contemporaneamente, perché entrambi hanno bisogno di
+restare in ascolto sulla stessa porta di rete per ricevere la posta.  Tentare
+di installarne due danneggerebbe seriamente il sistema, quindi ciascun
+programma di trasporto della posta ha una dipendenza di conflitto con tutti gli
+altri.
+
+<p>
+Come ulteriore complicazione, c'è la possibilità che un pacchetto voglia
+prendere il posto di un altro; ad esempio, exim e sendmail per molte cose sono
+identici, dato che entrambi gestiscono la posta e comprendono un'interfaccia
+comune, quindi il sistema di pacchettizzazione deve dichiarare che sono
+entrambi agenti di trasporto della posta, e che gli altri pacchetti a cui serve
+uno dei due devono dipendere da un pacchetto fittizio
+agente-di-trasporto-della-posta.  Quando si modificano a mano i pacchetti,
+questo può portare a moltissima confusione.
+
+<p>
+In ciascun momento una singola dipendenza può essere soddisfatta o meno dai
+pacchetti già installati; APT cerca di risolvere i problemi di dipendenze con
+un buon numero di algoritmi automatici, che aiutano a selezionare i pacchetti
+da installare.
+</p>
+
+<hr>
+
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch2.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+Guida dell'utente di APT<br>
+
+<address>
+$Id: guide.it.sgml,v 1.2 2001/02/20 07:03:17 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code><br>
+Traduzione di Eugenia Franzoni <code><a href="mailto:eugenia@linuxcare.com">eugenia@linuxcare.com</a></code>
+</address>
+
+</body>
+
+</html>
+

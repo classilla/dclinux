@@ -1,0 +1,8 @@
+The Debian project has added a small number of words to the upstream
+word list.  If you discover errors in this word list or find
+correctly-spelled common words that are missing from this word list,
+please submit your suggestions as a "wishlist" bug against this
+package.  Thanks.
+
+The debian-added words, and the original dictionaries described in the
+upstream README files, may be obtained from the Debian source package.

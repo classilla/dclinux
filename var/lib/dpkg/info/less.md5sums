@@ -1,0 +1,13 @@
+a4d21b92af68feb4a5ffed1b10210217  usr/bin/less
+b81aacf68b38de65b4bd7eb81b0e085a  usr/bin/lesskey
+3a1c85d0caf6cf23bd16c4aecc51fc1a  usr/bin/lessecho
+e70096f1b7f1008179f8d17fe680db73  usr/bin/lesspipe
+76bafae39c727c7b9eb2ef956dc5f1be  usr/share/man/man1/lessecho.1.gz
+dbf9d6dafe7b51a9ed85a5cb5a2064b4  usr/share/man/man1/less.1.gz
+000230ddb4ca84ebccc0dc62bb5069ac  usr/share/man/man1/lesskey.1.gz
+88091436518c8fc25618b092c54071b3  usr/share/man/man1/lesspipe.1.gz
+937e143d43b9da9248746b2ce73ffac3  usr/share/doc/less/LESSOPEN
+0b6a079dd4bf709cd44d376e1273ef43  usr/share/doc/less/copyright
+40e5365e3c0fe90fe650a4a667b369da  usr/share/doc/less/changelog.gz
+d9b8e7af7cec7acac30383e5af7ca6ad  usr/share/doc/less/changelog.Debian.gz
+4654f4779e898e58d1b7d80cbdc9469f  usr/lib/mime/packages/less

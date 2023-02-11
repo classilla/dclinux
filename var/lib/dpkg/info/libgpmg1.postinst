@@ -1,0 +1,18 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+  configure)
+    ldconfig
+    ;;
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libgpmg1 -a -d /usr/share/doc/libgpmg1 ]; then
+		ln -sf ../share/doc/libgpmg1 /usr/doc/libgpmg1
+	fi
+fi
+# End automatically added section
+

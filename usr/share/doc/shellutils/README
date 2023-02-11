@@ -1,0 +1,59 @@
+This is a package of small shell programming utilities.  They are mostly
+compliant with POSIX.2, where applicable.
+
+The programs that can be built with this package are:
+
+  basename chroot date dirname echo env expr factor false groups
+  hostname id logname nice nohup pathchk printenv printf pwd seq
+  sleep stty su tee test true tty uname users who whoami yes
+
+Some programs (chroot, nice, nohup, uname, and stty) are built and
+installed only on systems that have the features to support them.
+su is always built, but it is installed only if the installer can
+create setuid-root programs.
+
+If you want to install the su program separately, you can run
+`./configure && make check && make install' as usual;  that will
+install all programs except su if you installed as a non-privileged
+user.  Then run `make install-root' as root to install only su.
+
+If you want to enable logging of successful and failed su-to-root
+invocations, you should run configure like this:
+
+  env CFLAGS='-DSYSLOG_SUCCESS -DSYSLOG_FAILURE' ./configure
+
+If you want to log attempts to su to non-root accounts also, add
+-DSYSLOG_NON_ROOT.
+
+See the file NEWS for a list of major changes in the current release.
+
+See the file INSTALL for compilation and installation instructions.
+
+nice, stty, and uname require facilities not available on all systems;
+`configure' detects this and does not try to compile them on systems
+where those facilities are missing.
+nohup requires nice.
+su will be installed only if you do `make install' as root.
+
+Many thanks to all of the people who have taken the time to submit
+problem reports and fixes.  Contributed changes are attributed in the
+ChangeLog file.
+
+Note that the man pages are now automatically generated from templates
+and from the --help usage message.  Patches to the template files (man/*.x)
+are welcome.  However, the authoritative documentation is in texinfo form
+in the doc directory.
+
+These programs all recognize the `--version' option.  When reporting
+bugs, please include in the subject line both the package name/version
+and the name of the program for which you found a problem.
+
+For general documentation on the coding and usage standards
+this distribution follows, see the GNU standards document
+http://www.gnu.org/prep/standards.html, and the documentation
+for automake and autoconf:
+http://www.gnu.org/software/autoconf/autoconf.html,
+http://www.gnu.org/software/automake/automake.html.
+
+Mail suggestions and bug reports for these programs to
+bug-sh-utils@gnu.org.

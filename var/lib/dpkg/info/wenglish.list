@@ -1,0 +1,17 @@
+/.
+/usr
+/usr/share
+/usr/share/dict
+/usr/share/dict/american-english
+/usr/share/man
+/usr/share/man/man5
+/usr/share/man/man5/words-american-english.5.gz
+/usr/share/doc
+/usr/share/doc/wenglish
+/usr/share/doc/wenglish/changelog.Debian.gz
+/usr/share/doc/wenglish/README2.linux.words
+/usr/share/doc/wenglish/linux.words.2.lsm
+/usr/share/doc/wenglish/README.Debian
+/usr/share/doc/wenglish/copyright
+/usr/share/doc/wenglish/README.linux.words.gz
+/usr/share/man/man5/american-english.5.gz

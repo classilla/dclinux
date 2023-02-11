@@ -1,0 +1,13 @@
+#! /bin/sh
+
+case "$1" in
+  upgrade|remove)
+	[ -L /usr/doc/sysvinit ] && rm -f /usr/doc/sysvinit
+	;;
+  failed-upgrade)
+	;;
+  deconfigure)
+	;;
+esac
+
+exit 0

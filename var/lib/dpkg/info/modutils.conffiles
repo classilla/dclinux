@@ -1,0 +1,11 @@
+/etc/cron.daily/modutils
+/etc/init.d/modutils
+/etc/modules
+/etc/modutils/aliases
+/etc/modutils/actions
+/etc/modutils/paths
+/etc/modutils/arch/i386
+/etc/modutils/arch/m68k.generic
+/etc/modutils/arch/m68k.amiga
+/etc/modutils/arch/m68k.atari
+/etc/modutils/arch/m68k.mac

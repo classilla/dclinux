@@ -1,0 +1,11 @@
+This package was debianized by Wichert Akkerman <wakkerma@debian.org>
+
+It was downloaded from
+	ftp://ftp.kernel.org/pub/linux/utils/kernel/modutils/
+
+Copyright:
+
+   All programs in this package follow the GNU General Public License,
+   version 2. On Debian systems a copy of this license can be found in
+   /usr/share/common-licenses/GPL
+

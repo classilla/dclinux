@@ -1,0 +1,39 @@
+#! /bin/sh
+#
+# This is the prerm script for the Debian GNU/Linux dc package
+#
+# Written by Dirk Eddelbuettel <edd@debian.org>   
+# Previous versions written by Bill Mitchell, Austin Donnelly and James Troup
+
+set -e
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/dc ]; then
+	rm -f /usr/doc/dc
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = remove -o "$1" = upgrade ] && \
+   command -v install-docs >/dev/null 2>&1; then
+	install-docs -r dc
+fi
+# End automatically added section
+
+
+case "$1" in
+    remove|upgrade|remove-in-favour|deconfigure-in-favour)
+	#
+    	install-info --quiet --remove dc
+        #
+#         if command -v install-docs >/dev/null 2>&1 
+# 	then
+# 	    install-docs -r dc
+#         fi
+	;;
+    failed-upgrade)
+        ;;
+    *)
+	echo "prerm called with unknown argument \`$1'" >&2
+	;;
+
+esac

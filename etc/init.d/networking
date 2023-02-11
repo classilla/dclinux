@@ -1,0 +1,164 @@
+#!/bin/sh
+#
+# start/stop networking daemons.
+
+if ! [ -x /sbin/ifup ]; then
+    exit 0
+fi
+
+if [ -e /etc/network/spoof-protect ]; then
+    . /etc/network/spoof-protect
+fi
+
+spoofprotect_rp_filter () {
+    # This is the best method: turn on Source Address Verification and get
+    # spoof protection on all current and future interfaces.
+    
+    if [ -e /proc/sys/net/ipv4/conf/all/rp_filter ]; then
+        for f in /proc/sys/net/ipv4/conf/*/rp_filter; do
+            echo 1 > $f
+        done
+        return 0
+    else
+        return 1
+    fi
+}
+
+spoofprotect_ipfwadm () {
+    # rules for linux 2.0.x and 2.1.x (x < 102) kernels
+
+    # can't do ipfwadm based spoof protection if we don't have the appropriate
+    # configuration info.
+
+    if [ -z "$LOCAL_IPS" -o -z "$LOCAL_IFACES" ]; then return 1; fi
+
+    #what about 127.0.0.0/8 ?
+    #deny incoming packets pretending to be from our own system.
+    #set your own IP address below (or use `hostname -i` to set it).
+
+    if [ -e /proc/net/ip_input ]; then
+        # delete and re-add entry (this way we don't get duplicate entries)
+        for ip in $LOCAL_IPS; do
+            for iface in $LOCAL_IFACES; do
+                ipfwadm -I -d deny -o -P all -S $ip -W $iface -D 0/0 \
+                    2>/dev/null || true
+                ipfwadm -I -i deny -o -P all -S $ip -W $iface -D 0/0 >/dev/null
+            done
+        done
+
+        return 0
+    else
+        return 1
+    fi
+}
+
+spoofprotect_ipchains () {
+    # rules for linux 2.1.x (x > 101) kernels
+
+    # can't do ipfwadm based spoof protection if we don't have the appropriate
+    # configuration info.
+
+    if [ -z "$LOCAL_IPS" ]; then return 1; fi
+
+    if [ -e /proc/net/ip_fwchains ]; then
+        for ip in $LOCAL_IPS; do
+	    ipchains -D input -j DENY -l -s $ip -i ! lo 2>/dev/null || true
+	    ipchains -A input -j DENY -l -s 127.0.0.0/8 -i ! lo
+        done
+
+        return 0
+    else
+        return 1
+    fi
+}
+
+spoofprotect () {
+    echo -n "Setting up IP spoofing protection: "
+    if spoofprotect_rp_filter; then
+        echo "rp_filter."
+    elif spoofprotect_ipfwadm; then
+        echo "ipfwadm."
+    elif spoofprotect_ipchains; then
+        echo "ipchains."
+    else
+        echo "FAILED"
+    fi
+}
+
+ip_forward () {
+    if [ -e /proc/sys/net/ipv4/ip_forward ]; then
+        echo -n "Enabling packet forwarding: "
+        echo 1 > /proc/sys/net/ipv4/ip_forward
+        echo "done."
+    fi
+}
+
+syncookies () {
+    if [ -e /proc/sys/net/ipv4/tcp_syncookies ]; then
+        echo -n "Enabling TCP/IP SYN cookies: "
+        echo 1 > /proc/sys/net/ipv4/tcp_syncookies
+        echo "done."
+    fi
+}
+
+doopt () {
+    optname=$1
+    default=$2
+    opt=`grep "^$optname=" /etc/network/options`
+    if [ -z "$opt" ]; then
+        opt="$optname=$default"
+    fi
+    optval=${opt#$optname=}
+    if [ "$optval" = "yes" ]; then
+        eval $optname
+    fi
+}
+
+case "$1" in
+    start)
+	doopt spoofprotect yes
+        doopt syncookies no
+        doopt ip_forward no
+
+        echo -n "Configuring network interfaces: "
+        ifup -a
+	echo "done."
+	;;
+    stop)
+        if sed -n 's/^[^ ]* \([^ ]*\) \([^ ]*\) .*$/\1 \2/p' /proc/mounts | 
+          grep -q "^/ nfs$"
+        then
+            echo "NOT deconfiguring network interfaces: / is an NFS mount"
+        elif sed -n 's/^[^ ]* \([^ ]*\) \([^ ]*\) .*$/\1 \2/p' /proc/mounts |  
+          grep -q "^/ smbfs$"
+        then
+            echo "NOT deconfiguring network interfaces: / is an SMB mount"
+	elif sed -n 's/^[^ ]* \([^ ]*\) \([^ ]*\) .*$/\2/p' /proc/mounts | 
+          grep -qE '^(nfs|smbfs)$'
+        then
+            echo "NOT deconfiguring network interfaces: NFS/SMB shares still mounted."
+        else
+            echo -n "Deconfiguring network interfaces: "
+            ifdown -a
+	    echo "done."
+        fi
+	;;
+    reload)
+	;;
+    force-reload)
+	$0 restart
+	;;
+    restart)
+        echo -n "Reconfiguring network interfaces: "
+        ifdown -a
+        ifup -a
+	echo "done."
+	;;
+    *)
+	echo "Usage: /etc/init.d/networking {start|stop|reload|restart}"
+	exit 1
+	;;
+esac
+
+exit 0
+

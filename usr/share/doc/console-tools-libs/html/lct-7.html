@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.7.3">
+ <TITLE>The Linux Console Tools: Font files</TITLE>
+ <LINK HREF="lct-8.html" REL=next>
+ <LINK HREF="lct-6.html" REL=previous>
+ <LINK HREF="lct.html#toc7" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="lct-8.html">Next</A>
+<A HREF="lct-6.html">Previous</A>
+<A HREF="lct.html#toc7">Contents</A>
+<HR>
+<H2><A NAME="s7">7.</A> <A HREF="lct.html#toc7">Font files</A></H2>
+
+<H2><A NAME="ss7.1">7.1 The formats</A>
+</H2>
+
+<P>The primary font file format for the Linux Console Tools, as of version 0.2.x, is
+the PSF format, which is also used by <CODE>kbd</CODE>.  0.3.x will introduce the
+XPSF format, which will be able to replace all existing file formats.</P>
+<P>Raw fonts can be converted into PSF files with the <CODE>font2psf(1)</CODE>
+(written by Martin Lohner, SuSE GmbH).</P>
+<P>Versions 0.2.x do not have support for the CP format again - this will
+come back in the 0.3.x development branch.</P>
+
+<H2><A NAME="ss7.2">7.2 Tools</A>
+</H2>
+
+<H3>Font-files manipulation tools</H3>
+
+<P>The <CODE>psfaddtable(1)</CODE>, <CODE>psfgettable(1)</CODE>, and
+<CODE>psfstriptable(1)</CODE> tools are provided by the Linux Console Tools for manipulation
+of the SFM embedded in PSF files.  These are the only
+font-manipulation tools provided by the Linux Console Tools as of version 0.2.x.
+The <CODE>font2psf(1)</CODE> tool is available in the <CODE>contrib</CODE> directory
+to convert old raw fonts into PSF fonts.</P>
+<P>There are plans for a more generic font-conversion tool based on
+libcfont.  It will be mostly trivial to write once work on libcfont
+will be advanced enough.</P>
+<P>The only way provided by the Linux Console Tools to display a font's contents is to load it, and then to display it using <CODE>showfont(1)</CODE>.</P>
+
+<H3>Font editors</H3>
+
+<P>I do not curently know of a good font-editor suitable for editing
+console fonts.  I tried <CODE>fonter</CODE>, but this one has a bad design
+flaw: you can only properly edit cp437 fonts (or maybe ASCII-based
+fonts if you like unreadable screens) because it works on the console
+and loads the font you are editing.  I was told about <CODE>cse</CODE> which I
+did not tried yet.  Marcin Kowalczyk is working on the 
+<A HREF="http://kki.net.pl/qrczak/programy/index.html">fonty</A> tool
+(which I did not check yet either), which will help font designers,
+but is not AFAIK a real editor.  Robert de Bath works on 
+<A HREF="http://www.cix.co.uk/~mayday/font.tgz">his own tools</A>
+which handle a variety of file formats and table formats.</P>
+
+
+<HR>
+<A HREF="lct-8.html">Next</A>
+<A HREF="lct-6.html">Previous</A>
+<A HREF="lct.html#toc7">Contents</A>
+</BODY>
+</HTML>

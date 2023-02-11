@@ -1,0 +1,302 @@
+ Information for S3 ViRGE, ViRGE/DX, ViRGE/GX, ViRGE/GX2, ViRGE/MX, ViRGE/VX,
+                Trio3D, Trio3D/2X, Savage3D and Savage4 Users
+
+                          The XFree86 Project Inc.
+
+                                2 August 1999
+
+1.  Supported hardware
+
+Since release 3.3.2 of XFree86, there are now two servers which support the
+ViRGE family of chips. The XF86_S3V server is a dedicated server which sup-
+ports the S3 ViRGE (86C325), the ViRGE/DX (86C375), ViRGE/GX (86C385) and the
+ViRGE/VX (86C988) chips. Use of that server is no longer recommended. It is
+not actively being supported anymore.
+
+The above ViRGE chipsets are supported in the XF86_SVGA server, which
+includes a new ViRGE driver making use of the XAA acceleration architecture
+and also supports ViRGE/GX2 (86C357), ViRGE/MX (86C260), Trio3D (86C365),
+Trio3D/2X (86C362), Savage3D (86C391), Savage4 (86C396/86C397) and Savage2000
+chips as of 3.3.6.
+
+The following sections describe details of ViRGE support.  Be aware that
+there are two servers described.  XF86_S3V is the ViRGE specific server and
+was created first.  The new acceleration architecture support is found in the
+XF86_SVGA server using the s3_virge driver.  Each has strengths and weak-
+nesses.
+
+2.  XF86_S3V server
+
+The S3V server has some minor fixes since 3.3.1.  You should find that the
+ViRGE server is stable at all depths.  The server supports 1 and 32 bpp
+pixmap formats.  This fixes known problems with xanim and Netscape clients in
+early versions of the S3V server.  It has been tested with ViRGE cards with 2
+and 4MB DRAM, ViRGE/DX 4M, ViRGE/VX 8M (4M VRAM/4M DRAM), and with a 220MHz
+ViRGE/VX card with 2MB VRAM up to 1600x1200 with 8/15/16bpp.
+
+NOTE: This driver is pretty new, and not everything might work like you
+expect it to. It shouldn't crash your machine, but you may have video arti-
+facts or missing lines. Please report any and all problems to
+XFree86@Xfree86.org using the appropriate bug report sheet.
+
+2.1  Features:
+
+   o Basic support for S3 ViRGE, ViRGE/DX, ViRGE/GX and ViRGE/VX video
+     adapters
+
+   o uses linear frame buffer
+
+   o it should be possible to reach resolutions up to the maximum supported
+     by your video card memory.  (eg. 1600x1200 at 8 and 16bpp, 1280x1024 at
+     24/32 bpp for a 4 Meg. card)
+
+   o it should be possible to use pixel depths of 8, 15, 16, 24, and 32 bits
+     per pixel.
+
+   o 32 bpp is implemented as translation to 24 bpp
+
+2.2  Known limitations
+
+   o No support for external RAMDACs on the ViRGE/VX.
+
+   o No support for VLB cards.
+
+   o No support for doublescan modes.
+
+   o The driver only works with linear addressing.
+
+   o For 24/32 bpp some simple dashed line acceleration is implemented, but
+     sloped dash/double dash are drawn as solid lines.
+
+   o No support for current chipsets.
+
+   o No longer actively maintained.
+
+2.3  Configuration:
+
+The server auto-detects RAM size, RAMDAC and ClockChip. Do not bother putting
+these in your "Device" section.  The "nolinear" option is unsupported.
+
+2.3.1  Cursor:
+
+   o The default is hardware cursor, no option is needed.
+
+   o "sw_cursor" switches to software cursor.
+
+3.  XF86_SVGA server
+
+The XF86_SVGA ViRGE driver supports all current flavors of the S3 ViRGE
+chipset including Trio3D and the Savage family.  It uses the XAA acceleration
+architecture for acceleration, and allows color depths of 8, 15, 16, 24 and
+32 bpp. It has been tested on several 2MB and 4MB ViRGE cards, a 4MB ViRGE/DX
+card, a ViRGE/VX card and a 4MB Trio3D card. Resolutions of up to 1600x1200
+have been achieved. This is an early release of this driver, and not every-
+thing may work as expected. Please note that Trio3D support is an initial
+release and not very well tested. Please report any problems to
+XFree86@Xfree86.org using the appropriate bug report sheet.
+
+3.1  Features
+
+   o Supports PCI hardware, ViRGE, ViRGE/DX, ViRGE/GX, ViRGE/GX2, ViRGE/MX,
+     ViRGE/VX, Trio3D and the Savage family.
+
+   o Supports 8bpp, 15/16bpp, 24bpp and 32bpp.
+
+   o VT switching seems to work well, no corruption reported at all color
+     depths.
+
+   o Acceleration is pretty complete: Screen-to-screen copy, solid rectangle
+     fills, CPU-to-screen color expansion, 8x8 pattern mono and color fills.
+     Currently, the color expansion appears to be substantially faster than
+     the accel server due to the optimized XAA routines.
+
+   o Acceleration at 32bpp is limited: only ScreenToScreen bitblit and solid
+     rectangles are supported. The ViRGE itself has no support for 32bpp
+     acceleration, so the graphics engine is used in 16bpp mode.
+
+   o All modes include support for a hardware cursor.
+
+3.2  Known limitations in the Savage family support (s3_savage driver)
+
+The Savage family driver for the Savage3D and the Savage4 was donated to
+XFree86 by S3 very closely before the release of XFree86-3.3.5. The driver
+violates a few design principles and goals, but since there is massive demand
+for it, we decided to include it in XFree86-3.3.5. For 3.3.6 some rewrites
+have been done, there is fallback code for non-BIOS modes.
+
+3.3  Known limitations of the s3_virge driver
+
+   o No support for external RAMDACs on the ViRGE/VX.
+
+   o No support for VLB cards.
+
+   o No support for doublescan modes.
+
+   o The driver only works with linear addressing.
+
+   o Lines and polygons are not accelerated yet (but XAA still provides some
+     acceleration in this respect).
+
+   o Burst Command Interface (BCI) support and 32bpp support not implemented
+     for the Trio3D.
+
+   o Trio3D support only works for some modelines. Many of the standard mode-
+     lines do not work (often slightly modifying the dot clock works,
+     though).  The following two modelines seem to work reliably at 8bpp and
+     24bpp:
+
+          Modeline "1024x768"  75  1024 1048 1184 1328  768  771  777  806 -hsync -vsync
+          Modeline "1280x1024" 135 1280 1312 1416 1664  1024 1027 1030 1064
+
+     The following two modelines seem to work reliably at 16bpp:
+
+          Modeline "640x480"  45.80 640 672 768 864 480 488 494 530 -hsync -vsync
+          Modeline "800x600"  36      800  824  896 1024    600  601  603  625
+
+3.4  Configuration
+
+The ViRGE SVGA driver supports a large number of XF86Config options, which
+can be used to tune PCI behavior and improve performance.
+
+Memory options:
+
+   o "slow_edodram" will switch the ViRGE to 2-cycle edo mode. Try this if
+     you encounter pixel corruption on the ViRGE. Using this option will
+     cause a large decrease in performance.
+
+   o "early_ras_precharge" and "late_ras_precharge" will modify the memory
+     timings, and may fix pixel corruption on some cards. The default behav-
+     ior is set by the BIOS, and is normally "late_ras_precharge".
+
+   o "set_mclk value" sets the video memory clock rate to 'value' (in MHz).
+     The performance of the card is directly proportional to the memory
+     clocking, so this may provide a performance increase. The BIOS setting
+     for your card is printed at server start-up. Often, "low-cost" cards use
+     the S3 default of 50MHz. This can often be exceeded with faster memory,
+     some cards may function reliably at 60 or 65 MHz (even higher on some
+     recent /DX and /GX cards). Note that S3 only officially supports an MCLK
+     of 50MHz and XFree86 does not encourage exceeding those specs.  ***
+     Note: This option should not be preceded by the "Option" keyword!
+
+Acceleration and graphic engine:
+
+   o "noaccel" turns off all acceleration
+
+   o "fifo_aggressive", "fifo_moderate" and "fifo_conservative" alter the
+     settings for the threshold at which the pixel FIFO takes over the inter-
+     nal memory bus to refill itself. The smaller this threshold, the better
+     the acceleration performance of the card. You may try the fastest set-
+     ting ("aggressive") and move down if you encounter pixel corruption.
+     The optimal setting will probably depend on dot-clock and on color
+     depth. Note that specifying any of these options will also alter other
+     memory settings which should increase performance, so you should at
+     least use "fifo_conservative" (this uses the chip defaults).
+
+PCI options:
+
+   o "pci_burst_on" will enable PCI burst mode. This should work on all but a
+     few "broken" PCI chipsets, and will increase performance.
+
+   o "pci_retry" will allow the driver to rely on PCI Retry to program the
+     ViRGE registers. "pci_burst_on" must be enabled for this to work.  This
+     will increase performance, especially for small fills/blits, because the
+     driver does not have to poll the ViRGE before sending it commands to
+     make sure it is ready. It should work on most recent PCI chipsets. A
+     possible side-effect is that it may interfere with DMA operations on the
+     PCI bus (e.g. sound cards, floppy drive).
+
+Cursor:
+
+   o "hw_cursor" turns on the hardware cursor.
+
+Color depth options and limitations:
+
+   o Pixel multiplexing is used above 80MHz for 8bpp on the ViRGE.
+
+   o 15bpp is supported, use "-bpp 15" as an option to the server.
+
+   o 24bpp is supported using the STREAMS engine.
+
+   o 32bpp uses STREAMS as well; however, because the ViRGE does not really
+     support 32 bpp "natively", acceleration is quite limited.
+
+   o Both 24bpp and 32bpp do not support interlace modes.
+
+   o 32bpp is limited to a width of < 1024 pixels.  (1024x768 is not possi-
+     ble, even if you have the memory.)  This is a hardware limit of ViRGE
+     chips.
+
+3.5  Hints for LCD configuration (S3 ViRGE/MX)
+
+If LCD is active the CRT will always output 1024x768 (or whatever is the
+_physical_ LCD size) and smaller modes are zoomed to fit on the LCD unless
+you specify Option "lcd_center" in the device section.
+
+The pixel clock for this physical size (e.g. 1024x768) mode...
+
+   o ...can explicitly set in the config file (device section) with  e.g.
+     `Set_LCDClk 70' (resulting 70 MHz pixel clock being used for all modes
+     when LCD is on)
+
+   o ...is taken from the _first_ mode in the modes line iff this mode's dis-
+     play size is the same as the physical LCD size
+
+   o ...the default LCD pixel clock of BIOS initialisation setup is used.
+     This value is output at server startup in the line `LCD size ...' unless
+     you're specifying a value using `Set_LCDClk ...'
+
+If LCD is _not_ active, the normal mode lines and pixel clocks are used for
+the VGA output.
+
+Whenever you switch output sources with Fn-F5 or similar, the Xserver won't
+get informed and pixel clock and other settings are wrong.  Because of this
+you have to switch modes _after_ switch output sources!  Then the server will
+check which outputs are active and select the correct clocks etc.  So the
+recommended key sequence to switch output is
+
+Fn-F5  Ctrl-Alt-Plus  Ctrl-Alt-Minus
+
+and everything should be ok..
+
+on the Toshiba keypad you can first hold down Ctrl-Alt, then press `Fn' addi-
+tionally before pressing Plus/Minus too to avoid to explicitly enable/disable
+the numeric keypad for mode switching.
+
+4.  Authors
+
+4.1  XF86_S3V server
+
+Harald Koenig <koenig@tat.physik.uni-tuebingen.de>
+
+and:
+
+   o Kevin Brosius Cobra@compuserve.com
+
+   o Berry Dijk berry_dijk@tasking.nl
+
+   o Dirk Hohndel hohndel@XFree86.Org
+
+   o Huver Hu huver@amgraf.com
+
+   o Dirk Vangestel gesteld@sh.bel.alcatel.be
+
+4.2  XF86_SVGA ViRGE driver
+
+Sebastien Marineau <marineau@genie.uottawa.ca>
+
+and:
+
+   o Harald Koenig <koenig@tat.physik.uni-tuebingen.de>
+
+   o Kevin Brosius Cobra@compuserve.com
+
+   o Sebastian Kloska kloska@mpimp-golm.mpg.de
+
+   o Alok Ladsariya alok@XFree86.Org
+
+   o Dirk Hohndel hohndel@XFree86.Org
+
+     Generated from XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/S3V.sgml,v 3.3.2.13 1999/12/11 15:28:31 hohndel Exp $
+
+
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/README.S3V,v 3.5.2.16 1999/12/11 15:30:55 hohndel Exp $

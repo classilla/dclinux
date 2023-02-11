@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/rblcheck -a -d /usr/share/doc/rblcheck ]; then
+		ln -sf ../share/doc/rblcheck /usr/doc/rblcheck
+	fi
+fi
+# End automatically added section

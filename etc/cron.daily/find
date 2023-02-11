@@ -1,0 +1,12 @@
+#! /bin/sh
+#
+# cron script to update the `find.codes' database.
+#
+# Written by Ian A. Murdock <imurdock@debian.org> and 
+#            Kevin Dalley <kevin@aimnet.com>
+
+if [ -f /etc/updatedb.conf ]; then
+  . /etc/updatedb.conf
+fi
+
+cd / && updatedb --localuser=nobody 2>/dev/null

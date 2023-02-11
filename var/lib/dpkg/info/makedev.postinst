@@ -1,0 +1,76 @@
+#!/bin/sh
+
+set +e
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/makedev -a -d /usr/share/doc/makedev ]; then
+		ln -sf ../share/doc/makedev /usr/doc/makedev
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/makedev" ]; then
+	update-rc.d makedev defaults >/dev/null
+	/etc/init.d/makedev start
+fi
+# End automatically added section
+
+
+cd /dev
+
+/sbin/MAKEDEV std
+/sbin/MAKEDEV consoleonly
+
+test -e /dev/tty0 || /sbin/MAKEDEV tty0
+test -e /dev/random || /sbin/MAKEDEV random
+test -e /dev/urandom || /sbin/MAKEDEV urandom
+test -e /dev/full && chmod 0622 /dev/full
+test -e /dev/audio || /sbin/MAKEDEV audio
+test -e /dev/agpgart || /sbin/MAKEDEV agpgart
+
+[ ! -f /dev/mouse -a -f /dev/sunmouse ] && ln -s sunmouse mouse
+
+for A in sda16 sdb16 sdc16 sdd16 sde16 sdf16 sdg16 sdh16 \
+	 ada16 adb16 adc16 add16 ade16 adf16 adg16 adh16
+do
+	test -e /dev/$A && rm /dev/$A
+done
+
+for A in logibm psaux inportbm atibm jbm smouse logimouse psmouse \
+msmouse atimouse jmouse amigamouse atarimouse sunmouse amigamouse1
+do
+	test -e /dev/$A && chmod 600 /dev/$A
+done
+
+# fix security hole caused by group-write permissions on kmem
+test -e /dev/kmem && chown root.kmem /dev/kmem && chmod 0640 /dev/kmem
+
+LIST=""
+
+for TYPE in tty pty ; do
+	for LETTER in p q r s t u v w x y z a b c d e ; do
+		if [ -e /dev/$TYPE$LETTER"0" ]; then
+			MAJOR="`/bin/ls -l /dev/$TYPE$LETTER"0"|cut -c33-36`"
+			if [ "$MAJOR" = 4 ] ; then
+				LIST="$LIST $TYPE$LETTER"
+			fi
+		fi
+	done
+done
+
+if [ -n "$LIST" ]; then
+	cat > /etc/rc.boot/makedev << EOF
+#!/bin/sh
+
+echo "Creating new console devices"
+/sbin/MAKEDEV $LIST
+
+rm /etc/rc.boot/makedev ; exit 0
+EOF
+
+chmod 755 /etc/rc.boot/makedev
+
+fi
+
+exit 0

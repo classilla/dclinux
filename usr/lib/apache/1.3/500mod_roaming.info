@@ -1,0 +1,6 @@
+LoadModule: roaming_module /usr/lib/apache/1.3/mod_roaming.so
+Directives:
+ RoamingAlias
+Handlers:
+ roaming-file
+Description: Support for Netscape 4.5+ Roaming Access

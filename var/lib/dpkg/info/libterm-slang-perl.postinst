@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libterm-slang-perl -a -d /usr/share/doc/libterm-slang-perl ]; then
+		ln -sf ../share/doc/libterm-slang-perl /usr/doc/libterm-slang-perl
+	fi
+fi
+# End automatically added section

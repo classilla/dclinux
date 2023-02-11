@@ -1,0 +1,3302 @@
+.\"  -*- nroff -*-
+.\"
+.\" xmame.6
+.\"
+.\" Done by René Herrmann <rene.herrmann@berlin.de>, September 2000
+.\"
+.\" xmame should be distributed under terms of the license in
+.\" readme.mame.
+.\" The main issue involves ROM images. ROM images are protected under the
+.\" copyrights of their authors, and CANNOT be distributed in the same
+.\" package as xmame. Download any ROM images at your own risk and
+.\" responsibility.
+.\"
+.Dd 22. March 2001
+.Dt Xmame 6
+.Os
+.Sh NAME
+.Nm xmame
+.Nd THE Arcade game machine emulator for UNIX/X
+.Sh SYNOPSIS
+.Nm xmame[.x11|svga|xgl|sdl]
+.Op Fl options
+.Ar gamename
+.Sh EXAMPLES
+Some examples for those who are in a hurry.
+
+If you don't have/want a frontend, you'll mostly use
+.Nm xmame
+(with a well defined xmamerc) in the following way:
+
+.Nm xmame
+.Ar ladybug
+
+Plays Ladybug with all options defined in xmamerc. If there is no xmamerc the 
+game starts with the buildin defaults.
+
+.Nm xmame
+.Ar defender
+.Fl frameskip Ar 1
+.Fl cheat
+
+Starts
+.Ar defender
+using a frameskip of 1 and cheat is enabled.
+Useful for slower computers, if the game is running really slowly.
+And of course if you want (have?) to cheat. ;-)
+.Sh LEGAL NOTICE
+The main issue involves ROM images. ROM images are protected under the
+copyrights of their authors, and CANNOT be distributed in the same
+package as xmame. Download any ROM images at your own risk and
+responsibility.
+
+.Nm xmame
+should be distributed under terms of the license in doc/readme.mame
+
+XInputExtensions based Joystick support. Source code is entirely pure 
+hack work. No sample code, no info at all was found (only library 
+reference manual) and is copyrighted by me (Juan Antonio Marmnez).
+Use it under terms of GNU General Public License.
+
+PLEASE BE AWARE OF THE POSSIBLE LEGAL RAMIFICATIONS OF DOWNLOADING ROM
+IMAGES, BEFORE YOU ACTUALLY DO SO!  YOU HAVE BEEN WARNED, AND WE TAKE NO
+RESPONSIBILITY FOR YOUR ACTIONS -- YOU ARE ON YOUR OWN!
+
+Also, the
+.Nm xmame 
+authors ask that you DO NOT distribute any ROM images with either source
+code or binaries of the
+.Nm xmame
+emulator.
+.Sh DESCRIPTION
+.Nm xmame 
+is the (M)ulti (A)rcade (M)achine (E)mulator for UNIX-(X).  It emulates
+the hardware of realy many classic arcade game machines.
+XMAME/XMESS DOCUMENTATIONJuan Antonio Martinez \f(CR\fP and Hans de Goede \f(CR\fP and Rene' Herrmann (4 doc/sgml)
+\f(CR\fP and Lawrence Gold (minor editing) \f(CR\fPv2.1.6, 5 May 2001xmame/xmess documentation with an installation guide, the FAQ (frequently
+asked questions), hints, tips and tricks, the changes on the code and many
+more!Introduction and Links 
+
+.SH Keep everything up-to-date!
+
+.Pp
+The most recent copy of this guide, the xmame-sources and many more can
+be found on the xmame project homepage at 
+.SH Some Links
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+The official M.A.M.E home is at 
+.nr bi 1
+.Pp
+The very best ROM site on this planet is at 
+.nr bi 1
+.Pp
+grustibus, the \fBvery good\fP frontend (if you gnome) 
+.nr bi 1
+.Pp
+gnomame, another great gnome-based frontend 
+.nr bi 1
+.Pp
+tkmame, the Tcl/TK frontend that works in Linux/Unix and MS Windows  
+.nr bi 1
+.Pp
+\fBMAME\fP \fBA\fPction \fBR\fPeplay \fBP\fPage for those who want to have a  look at other monitors
+at 
+.nr bi 1
+.Pp
+and of course don't forget our project homepage at \fB\fP
+.if \n(ll>1 .RE
+.nr ll -1
+.SH Pending Jobs - or TODO
+
+.Pp
+If you think you can help with the todo list or you can make a  contribution
+that you feel is interesting, please send mail to the xmame/xmess coordinator.
+See  for contact information.
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Optimise mouse warping.
+.nr bi 1
+.Pp
+Remove osd[lowbar]input[lowbar]init[lowbar]post, add display ready flag.
+.nr bi 1
+.Pp
+Updating of fps is off (dirty marking problem) with vector games.
+.nr bi 1
+.Pp
+Update porting.txt.
+.nr bi 1
+.Pp
+Convert all remaining sound drivers to plugins.
+.nr bi 1
+.Pp
+Rewrite display/input code to be more modular, oo-ish, and usable as a
+separate library.
+.nr bi 1
+.Pp
+Split \f(CR-[lsqb  ]no[rsqb  ]scanline\fP option into emulated and real scanline options.
+.nr bi 1
+.Pp
+Add an option to specify which resolution to use, add clipping and panning
+if it doesn't fit and use it anyway.
+.nr bi 1
+.Pp
+Use Pentium TSC for uclock where available.
+.nr bi 1
+.Pp
+Network:
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Fix since the dos team broke it, find out if the dosnet team is still alive.
+.nr bi 1
+.Pp
+Add mouse/joystick support to network play
+.nr bi 1
+.Pp
+Try converting network support to tcp, currently we have no error correction.
+.nr bi 1
+.Pp
+Make network code more robust, version check, input settings check, etc.
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Check x11-joystick. Rumor has it it's broken, but then again there's only
+one bug-report, so it seems no one is using it.
+.nr bi 1
+.Pp
+fm soundhack for linux-i386.
+.nr bi 1
+.Pp
+Make which messages are emitted and when configurable (log-type's and log-level),
+make fileio emit messages about which files it tries to open, to help debug
+rom-loading problems, and walk through all messages xmame emits giving them
+all a standard format like:
+.DS
+.sp 
+.ft RR
+.nf
+OSD:        Info:    bla
+X11-window: Warning: bla
+Svgalib:    Error:   bla
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+Add scancode 128-255 for non-PC keys like F13 -- F24, more keypad keys,
+etc., update all display targets to use this.
+.nr bi 1
+.Pp
+Also see the text todo file, kept around to quickly enter stuff while hacking:
+.
+.if \n(ll>1 .RE
+.nr ll -1
+Compiling, Setting Up and Starting Xmame/Xmess
+
+.Pp
+Note: This section is not a Unix tutorial. You need to know some basic
+Unix commands to compile and install xmame/xmess.
+.SH Requirements 
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+GNU make is MANDATORY in ALL Systems, even if you use a different  compiler.
+
+.nr bi 1
+.Pp
+On all platforms zlib is now needed since the core uses it. If you don't
+have zlib, a stripped version is included with xmame. See:  and 
+.nr bi 1
+.Pp
+You are encouraged to use a GNU development environment: gcc, gmake, gnu-
+ar. Lots of problems are found due to the very permissive syntax in gcc, so
+if you use a strictly ANSI C compiler, you'll get lots of warnings, and if
+the version of xmame/xmess is not fully debugged, compilation errors.
+.nr bi 1
+.Pp
+Xmame compilation breaks when using egcs-1.1.x or gcc-2.95, use \f(CR-fno-strict-aliasing\fP
+to fix it. gcc-2.95.1 does work with \f(CR-fstrict-aliasing\fP, and gives a nice speed
+increase.
+.nr bi 1
+.Pp
+Xmame compilation also breaks when using Red Hat 7's latest (as of 16 January
+2001) update for gcc. If you experience problems, please either downgrade your
+compiler to the one included on the Red Hat 7 CD-ROM, or try replacing "gcc"
+in the Makefile with "kgcc", which will invoke egcs-1.1.2. (But please see above
+about the \f(CR-fstrict-aliasing \fPflag.)
+.if \n(ll>1 .RE
+.nr ll -1
+.SH Follow these steps to compile xmame/xmess
+
+.Pp
+.nr ll +1
+.nr el +1
+.nr t\n(ll 1
+.nr e\n(el 0 1
+.af e\n(el \*(f\n(el
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+See  for platform specific compiling information.
+.nr bi 1
+.Pp
+See  for special display methods information.
+.nr bi 1
+.Pp
+Download the xmame/xmess source files archive.
+.nr bi 1
+.Pp
+Move the xmame/xmess source files archive to a suitable work directory.
+When you extract the archive, sub directories will be created under the  work
+directory.
+.nr bi 1
+.Pp
+Rename the source files archive so its extension is .gz, so that gzip doesn't
+complain. For example, change \f(CRxmame-0.34b1.1.tgz\fP to \f(CRxmame-0.34b1.1.tar.gz\fP
+.nr bi 1
+.Pp
+Use gzip -d to uncompress the archive. For example, type:
+.DS
+.sp 
+.ft RR
+.nf
+gzip -d xmame-0.34b1.1.tar.gz
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+Extract the files with tar. For example, type:
+.DS
+.sp 
+.ft RR
+.nf
+tar xvf xmame-0.34b1.1.tar
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+After extracting the archive, change to the subdirectory created by  the
+extraction process. For example, after extracting the xmame-0.34b1.1.tar archive,
+a directory named \f(CRxmame-0.34b1.1\fP is created. Change to it. This directory is
+the top of the source tree.
+.nr bi 1
+.Pp
+Copy makefile.unix to Makefile, the distributed Makefile is used for development
+and is not a good starting point!
+.nr bi 1
+.Pp
+Edit the \f(CRMakefile\fP and change the settings according to your system. The
+default \f(CRmakefile.unix\fP is preconfigured to run under X11/Linux. Be careful editing
+this file.
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+If you intend to compile in X11 joystick support, type the following to
+see the available Xdevice list:
+.DS
+.sp 
+.ft RR
+.nf
+make xlistdev; ./xlistdev
+  
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+Choose the desired device and re-edit Makefile, setting the option X11[lowbar]JOYNAME
+to the correct device.
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Compile xmame/xmess by typing:
+.DS
+.sp 
+.ft RR
+.nf
+make
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+If the compile fails, report the problem to the author.
+.nr bi 1
+.Pp
+\fB*** YOU MAY NEED TO BE root TO PERFORM THIS STEP ***\fP To install xmame/xmess,
+type:
+.DS
+.sp 
+.ft RR
+.nf
+make install
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+If you want you can now build xmame/xmess for another target/display method,
+otherwise skip to the next step.
+.nr ll +1
+.nr el +1
+.nr t\n(ll 1
+.nr e\n(el 0 1
+.af e\n(el \*(f\n(el
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+If you want to also build for another target repeat repeat the \f(CR"make"\fP and
+\f(CR"make install"\fP steps adding \f(CR"TARGET=[lt    ]target[gt    ]"\fP to the make command for example:
+.DS
+.sp 
+.ft RR
+.nf
+make TARGET=mess
+make install
+  
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+If you want to also build for another display method repeat the \f(CR"make"\fP and
+\f(CR"make install"\fP steps adding \f(CR"DISPLAY[lowbar]METHOD=[lt    ]method[gt    ]"\fP to the make command
+for example:
+.DS
+.sp 
+.ft RR
+.nf
+make DISPLAY_METHOD=svgalib
+make install
+  
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.nr bi 1
+.Pp
+You can also combine the 2 above for example:
+.DS
+.sp 
+.ft RR
+.nf
+make TARGET=mess DISPLAY_METHOD=svgalib
+make install
+  
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.if \n(ll>1 .RE
+.nr el -1
+.nr ll -1
+.nr bi 1
+.Pp
+In your home directory, create a subdirectory called .xmame.
+.nr bi 1
+.Pp
+From the top of the source tree, copy the file doc/xmamerc.dist to the
+[dollar][lcub  ]HOME[rcub  ]/.xmame/ directory. (For xmess do this for xmessrc)
+.nr bi 1
+.Pp
+If desired, copy xmamerc.dist to the global xmamerc location as [quot  ]xmamerc[quot  ]
+(for xmess, copy xmamerc.dist to xmessrc). The global xmamerc location is defined
+in the Makefile.
+.nr bi 1
+.Pp
+Edit [dollar][lcub  ]HOME[rcub  ]/.xmame/xmamerc to match your preferences.
+(For xmess, edit [dollar][lcub  ]HOME[rcub  ]/.xmess/xmessrc)
+.nr bi 1
+.Pp
+Be sure that the DISPLAY and PATH environment variables are  set correctly.
+.nr bi 1
+.Pp
+Make sure your ROM images are installed.
+.nr bi 1
+.Pp
+Start the X-Window System. (Unless you compiled for a different display
+method in which case you skip this step.)
+.nr bi 1
+.Pp
+Start xmame/xmess. For example:
+.DS
+.sp 
+.ft RR
+.nf
+/usr/games/xmame.x11 dkong
+ 
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.if \n(ll>1 .RE
+.nr el -1
+.nr ll -1
+.SH If you have problems compiling, installing and starting xmame/xmess...
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Read  
+.nr bi 1
+.Pp
+Read (the recent parts of) . They might contain some hints about recent
+changes which aren't fully documented yet.
+.nr bi 1
+.Pp
+Check  for operating system-specific notes. You may need to do something
+special for your operating system.
+.nr bi 1
+.Pp
+Check  for display subsystem-specific notes. You may need to do something
+special for your display system.
+.nr bi 1
+.Pp
+If you get an error about gz[lowbar]open and a bunch of other functions not found
+during linking, read:  and .
+.nr bi 1
+.Pp
+Be sure that the rompath in your xmamerc/xmessrc is correct; see .
+.nr bi 1
+.Pp
+Check xmamerc/xmessrc: Is it configured correctly?
+.nr bi 1
+.Pp
+Are you getting messages that you are missing files? Maybe you are missing
+PROMs; see  and 
+.nr bi 1
+.Pp
+Is the program in your PATH?
+.nr bi 1
+.Pp
+The svgalib/xf86[lowbar]dga build of xmame/xmess requires setuid root. Are your
+permissions correct?
+.nr bi 1
+.Pp
+Try asking the friendly folks at the newsgroup alt.game.mame to see if
+anyone else has experienced the same problem as you.
+.nr bi 1
+.Pp
+Try mailing to the xmame mailinglist, see  for more information.
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+If all else fails, send email to the current maintainer of the xmame/xmess
+project. See  for contact information.
+.SH Compile Notes for Specific Operating Systems 
+
+Linux i386
+
+.Pp
+Linux i386 is the platform I (Hans) use, so xmame should compile without
+any hassles on Linux i386. (Note: The same is true for Lawrence Gold.)
+.Pp
+Some bugs have been found and worked around when using gcc27x, please use
+egcs if available. If more gcc bugs popup, egcs will be  made mandatory, but
+I hope that won't be necessary.
+.Pp
+It has been reported that some SoundBlaster AWE32 and VIA-82cxxx (onboard)
+cards do not  correctly manage get[lowbar]freespace(). If so, you'll get some audio[lowbar]ioctl()
+calls failed messages in console, and if everything goes right a message that
+xmame/xmess is falling back to timer based audio. If  this doesn't happen and
+sound isn't right, try forcing timer-based  audio by starting xmame/xmess with
+\f(CR-timer\fP.
+.Pp
+SB64/128PCI cards (Ensoniq 137x-based cards) also do not correctly manage
+get[lowbar]freespace(). Unfortunately, this doesn't result in failed ioctl's; instead,
+they just ignore the calls. Xmame tries to autodetect this and to fall back
+to timer-based audio. If this doesn't happen and sound isn't right, try forcing
+timer based audio by starting xmame/xmess with \f(CR-timer\fP.
+.Pp
+Some have reported success using ALSA with OSS emulation (see ). If you
+experience the above problems, this would certainly be worth a try.
+.Pp
+Also, I've tested sound using the PC-Speaker driver module. It works!!
+But it needs \f(CR-timer.\fP Again, it should do this  automagically, but you know
+what to do if it doesn't.
+.Pp
+Distribution-Specific Comments:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+S.u.S.E. Linux: Besides the gcc compiler and libc libraries, which are
+both from the [quot  ]d[quot  ] series, other packages  need to be installed or
+the build will fail. If compiling for svgalib, the svgalib package from series
+[quot  ]d[quot  ] installed. If compiling for the X-Window System, you must have
+xdevel package from series [quot  ]x[quot  ] installed. These packages can be installed
+using the [quot  ]yast[quot  ] utility included in the S.u.S.E. distribution.
+.nr bi 1
+.Pp
+Red Hat Linux is the operating system used by the author. xmame/xmess 
+should build correctly under Red Hat Linux. :-)
+.if \n(ll>1 .RE
+.nr ll -1
+Linux PowerPC
+
+.Pp
+Linux PowerPC should work from now on. Here's an email from Andreas Varga
+\f(CR\fP, the Linux/PowerPC maintainer, describing the necessary steps:
+.Pp
+Required changes to compile xmame 0.34b3.1 on Linux/PowerPC with SVGALIB
+.Pp
+Makefile:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+enable CFLAGS for linux/ppc 
+.nr bi 1
+.Pp
+enable DISPLAY[lowbar]METHOD = svgalib 
+.nr bi 1
+.Pp
+enable ARCH = linux 
+.nr bi 1
+.Pp
+remove -lvgagl from LIBS.svgalib in src/unix/unix.mak (only -lvga is required)
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+Required changes to compile xmame 0.34b3.1 on Linux/PowerPC with X11 
+.Pp
+Makefile: 
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+enable CFLAGS for linux/ppc 
+.nr bi 1
+.Pp
+enable DISPLAY[lowbar]METHOD = x11 
+.nr bi 1
+.Pp
+enable ARCH = linux 
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+Another thing... sound is not working, because sound drivers support is
+currently under development in Linux/PPC kernels...there is an old driver that
+is a hacked Soundblaster driver, and newer 2.1.1xx kernels have a sound drivers
+based on Amiga DMA sound drivers... Once this issues are settled there should
+be a full OSS-compatible driver... sound should work then...
+.Pp
+I can't speak about Joystick support...
+.Pp
+The original Linux/PPC target changes in the Makefile were done by me,
+but there are some other changes required to get it to compile... Starting
+from October I will have some more time to work on this, and I'll keep you
+updated...
+.Pp
+Cheers, AndreasIRIX
+
+.Pp
+Use the generic unix arch for those machines that have no  sound support
+installed (xmame/xmess uses the dmedia package or the newer AL package on IRIX
+systems).
+.Pp
+Silicon Graphics provides several native compilers. xmame/xmess has  been
+compiled and tested with the normal cc. There were some problems with this
+when using -n32 for new style 32bit code. It does work when using -o32 for
+oldstyle 32 bit code. It should now also work with -n32 which is much faster.
+.Pp
+The use of DCC is not recommended (anymore) since it's a C++  compiler
+and thus won't even compile xmame/xmess out of the box due to uncasted mallocs.
+Changing all these mallocs would be crazy, esp. since they are not only in
+the osd part, but also in the core which is not under our control. Besides
+that, mame is normal C, so please compile it with a normal C compiler.
+.Pp
+Some problems have been reported using the GNU linker. It's recommended
+that you use the native one.HPUX
+
+.Pp
+Use the generic unix arch. In HP-UX, gcc and gnu-make are MANDATORY.ULTRIX 
+
+.Pp
+Use the generic unix arch.
+.Pp
+Notes received from Danny \f(CR\fP
+.Pp
+\fBVERY IMPORTANT!!!\fP
+.Pp
+The xmame/xmess CPU emulators access memory through pointers which are
+sometimes cast to illegal addresses - as far as the MIPS CPU is concerned.
+The Ultrix operating system is aware of that and fixes this [quot  ]unaligned
+data access[quot  ].
+.Pp
+Depending on your system setup, lots of warnings are generated for certain
+games. Fortunately these messages can be disabled by  executing the command
+[quot  ]uac p 0[quot  ] in the same shell where xmame/xmess  will be running.
+.Pp
+UPDATE: The new \f(CR-DALIGN[lowbar]INTS\fP switch in the makefile fixes these unaligned
+accesses in the source which is probably a lot faster than hot fixing them
+in the kernel segfault handler.
+.Pp
+Use gnu make.
+.Pp
+Compile with the `c89' compiler. Though `gcc' has no problems  with compiling
+and optimizing xmame/xmess, the resulting `c89'  executable is faster on an
+empty machine (read: xmame can use all  cpu [amp   ] memory without competing
+with other high priority  processes), so you can set `frameskip' to 1.
+.Pp
+When compiling with `c89 -O2' don't forget to also use `-Olimit  1000'.
+If 1000 is not enough, the compiler will tell you to  increase it.SunOS [amp   ] Solaris
+
+.Pp
+There are 2 relevant architecture options available in the makefile: 
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    ARCH = generic : use this for old SunOs running on Sparcs,
+                     but a Sparc running Solaris will usually
+                     handle this option too.
+    ARCH = solaris : this is the one you should use for Sparcs
+                     running Solaris.        
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Currently sound is not supported under sunos. The solaris arch does support
+audio.
+.Pp
+If you are using Sun's OpenWindows implementation of X11, then make sure
+that the X11INC and X11LIB variables in the X11 Options section of the makefile
+are set properly. (There are already entries for the standard OpenWin directory
+there that you can uncomment.)
+.Pp
+Of course, if you are compiling for X11 then you need to set these variables
+properly, no matter what implementation of X11 you are using!  :)
+.Pp
+If you are using Sun's SunPro cc compiler, then the following optimisation
+flags have been reported to be good:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    OPTFLAGS    = -fast -xO4 -native
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Finally, there has been a case of the xmame compilation processes breaking
+over the [quot  ]ar[quot  ] program. Most Solaris installations will include a
+set of utilities that conform to the XPG4 standard, usually in the [quot  ]/usr/xpg4/bin[quot  ]
+directory. The XPG4 version of [quot  ]ar[quot  ] should be avoided like the plague.
+Ensure that the [quot  ]/usr/ccs/bin[quot  ] appears in your path before the [quot  ]/usr/xpg4/bin[quot  ]
+directory and everything should go smoothly.
+.Pp
+PLEASE NOTE : There is currently not much support for SunOS/Solaris. If
+you have any trouble, try to fix it yourself. If you succeed, send a message
+to the mailing list detailing what you did. If you don't succeed, send a message
+anyway and someone [lowbar]may[lowbar] be able to help you. Either way, this is the only
+way that problems with xmame on SunOS/Solaris will get fixed.Openstep
+
+.Pp
+You must use the OpenStep gnumake, not make. You must also use the NeXT/Apple
+cc rather than gcc. Also use only the optimisation options as recommended for
+OpenStep in the makefile, others will cause the resulting executable to crash.
+The OpenStep assembler on i386 architectures is incompatible with the mame
+assembler CPU cores and thus you must use the C versions (Use i386-noasm instead
+of i386 when compiling for i386).
+.Pp
+The supplied complier is based on gcc 2.7.2.1 which will not compile src/profiler.c
+without crashing. To get around this you must turn off + optimisation when
+this crash occurs, re-make to compile this file only, then stop the make, re-enable
+optimisation, and continue.
+.Pp
+On an OpenStep keyboard the functions keys do not all operate as expected.
+Using the command key in conjuction with a number key generates the equivalent
+function key within xmame, with 0, - and = + representing F10, F11 and F12
+resepectively. Also note that the ALT + keys cannot be mapped. As most games
+tend to use this as the default fire button it is exteremly useful to remap
+this globally the first time you run xmame.Xmame Frequently Asked Questions
+
+.SH What is mame?
+
+.Pp
+Mame is an arcade machine emulator. Started in 1997 by Nicola  Salmoria,
+mame started out as a series of emulators for  individual games. This series
+of emulators was combined into a  simgle multi-game emulator. This is the current
+form of mame; no longer a one-man show, there are over 100 contributors to
+the project.
+.Pp
+Mame was created by Nicola Salmoria.
+.Pp
+Also see 
+.SH What is mess?
+
+.Pp
+Mess is just like mame---a virtual machine emulator, only it doesn't emulate
+arcade machines but rather computers and consoles.
+.Pp
+Also see 
+.SH What is xmame/xmess?
+
+.Pp
+Xmame/xmess are the Unix/X11 ports of the mame and mess projects. It makes
+mame/mess available on *ix machines using the X11R6 X-Window System (and SVGAlib/ggi/XF86-DGA/OpenGL/SDL
+too).
+.Pp
+Mame was orginally ported by Allard Van Der Bas, Dick the Ridder, Juan
+Antonio Martinez, and Hans de Goede.
+.Pp
+Xmame/xmess is currently maintained by Lawrence Gold.
+.SH What are the differences between mame/mess and xmame/xmess?
+
+.Pp
+None significant.
+.Pp
+Xmame/xmess is based on the mame/mess source code. Due to technical reasons
+beyond the scope of this document, the mame/mess source may not compile under
+Unix. That's why the xmame/xmess project exists. Each time mame/mess is updated,
+the code is tested  (and patched if needed) under Unix. This way xmame/xmess
+releases are always the same as their mame counterparts.
+.Pp
+There are no plans for the independent development of xmame/xmess.
+.SH What hardware and operating systems are supported? 
+
+.Pp
+Xmame runs on both little-endian and big-endian CPUs, using aligned integer
+access if needed and is compatible with 64 bit CPUs. The current list of supported
+CPUs in the makefile is:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+i386 + gnu-asm
+.nr bi 1
+.Pp
+i386 no asm
+.nr bi 1
+.Pp
+alpha
+.nr bi 1
+.Pp
+ia64 (merced)
+.nr bi 1
+.Pp
+m68k
+.nr bi 1
+.Pp
+generic risc (PowerPC, Sparc, HPPA, IBM)
+.nr bi 1
+.Pp
+generic risc, lsb-first (RISC (Ultrix machines))
+.nr bi 1
+.Pp
+mips (generic risc + SGI compiler bug workarounds)
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+Adding support for another cpu (if necessary) should be trivial.
+.Pp
+The following Unix platforms are specifically supported:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Linux
+.nr bi 1
+.Pp
+FreeBSD
+.nr bi 1
+.Pp
+NetBSD
+.nr bi 1
+.Pp
+Solaris (SunOS)
+.nr bi 1
+.Pp
+OpenStep (noasm only on i386)
+.nr bi 1
+.Pp
+IRIX with sound using the dmedia package or the new al package (sound currently
+broken)
+.nr bi 1
+.Pp
+AIX (sound currently broken)
+.nr bi 1
+.Pp
+generic unix, no sound
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The generic unix entry should work for any reasonable standard Unix variant,
+but lacks sound since there is no single Unix sound standard.
+.Pp
+On all platforms, zlib is now needed since the core uses it. Ff you don't
+have zlib, use the included one by uncommenting the appropriate line in Makefile.
+.Pp
+The following display methods are supported. X11 is the only one which
+works on all platforms, except for OpenStep which only works with Openstep
+bitmaps:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+X11 (X-Window System)
+.nr bi 1
+.Pp
+svgalib
+.nr bi 1
+.Pp
+GGI (Generic Graphics Interface)
+.nr bi 1
+.Pp
+OpenGL using X11 for input
+.nr bi 1
+.Pp
+glide using X11 for input (3DFX)
+.nr bi 1
+.Pp
+glide using svgalib for input (3DFX)
+.nr bi 1
+.Pp
+OpenStep bitmaps
+.nr bi 1
+.Pp
+SDL (Simple Direct Medialayer)
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The following is a list of arch/os/display combinations, with maintainers,
+for arch/os/display combinations which are actively supported. Please mail
+the maintainer of the arch/os/display combination for compilation and other
+arch/os/display specific problems. Mail Lawrence \f(CR\fP for generic (e.g., X11) problems.
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+i386/linux/x11 (+DGA) -[gt    ] Lawrence \f(CR\fP
+.nr bi 1
+.Pp
+i386/linux/svgalib -[gt    ] Lawrence \f(CR\fP
+.nr bi 1
+.Pp
+i386/linux/xgl -[gt    ] Sven Goethel \f(CR\fP
+.nr bi 1
+.Pp
+i386/linux/xfx -[gt    ] Lawrence \f(CR\fP
+.nr bi 1
+.Pp
+i386/linux/svgafx -[gt    ] Lawrence \f(CR\fP
+.nr bi 1
+.Pp
+i386/linux/ggi -[gt    ] Christian \f(CR\fP
+.nr bi 1
+.Pp
+alpha/linux/x11 -[gt    ] Christian \f(CR\fP
+.nr bi 1
+.Pp
+alpha/digital unix/x11 * -[gt    ] Leandro \f(CR\fP
+.nr bi 1
+.Pp
+powerpc/linux/x11 -[gt    ] Andreas \f(CR\fP
+.nr bi 1
+.Pp
+powerpc/linux/svgalib -[gt    ] Andreas \f(CR\fP
+.nr bi 1
+.Pp
+i386/freebsd/x11 -[gt    ] Jacob A. Hart \f(CR\fP
+.nr bi 1
+.Pp
+i386/netbsd/x11 -[gt    ] Dave \f(CR\fP
+.nr bi 1
+.Pp
+alpha/netbsd/x11 -[gt    ] Christian \f(CR\fP
+.nr bi 1
+.Pp
+Sparc/Solaris/x11 -[gt    ] Mathis \f(CR\fP
+.nr bi 1
+.Pp
+i386/Unixware7/x11 * -[gt    ] Richard \f(CR\fP
+.nr bi 1
+.Pp
+i386/openstep -[gt    ] Pete French \f(CR\fP
+.nr bi 1
+.Pp
+Sparc/SunOs -[gt    ] Saga \f(CR\fP
+.nr bi 1
+.Pp
+mips/irix/x11 -[gt    ] Dingus Family \f(CR\fP
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+* These are supported using the generic unix entry of the makefile, and
+thus lack sound.
+.Pp
+We are always looking for people willing to test and answer questions about
+xmame on a new arch/os/display. This takes very little work and could help
+other people tremendously. If you're interested, mail Lawrence \f(CR\fP.
+.SH My system is supported but xmame/xmess gives me errors and fails. Why?
+
+.Pp
+Xmame/xmess should run on 8bpp Pseudo Color displays and on 16, 24 and
+32bpp True Color displays. If your X-Server does not support any  of these
+display types, xmame/xmess will not run.
+.Pp
+You can verify your X-Server support by starting your X-Server  and running
+the xdpyinfo program. See the xdpyinfo manual page  for more information.
+.SH What is the role of the xmamerc/xmessrc file?
+
+.Pp
+A normal xmame/xmess invocation looks like:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    xmame pacman -sound -nojoy -frameskip 2 -heightscale 3 [bsol  ]   
+        -widthscale 2
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Most of the time, you will want to use the same configuration for  each
+game. xmame/xmess will read this file for default values for the  parameters
+that you can set. This way the only parameters you  need to express on the
+command line are the ones you want to  override.
+.Pp
+Another reason for xmamerc/xmessrc is keyboard remapping. Some Unix  keyboards
+are very different than their PC counterparts. To  compensate for the changes,
+xmame/xmess allows you to remap keys that  are not available on Unix keyboards
+to keys that are available.
+.SH What is the syntax of the xmamerc/xmessrc file.
+
+.Pp
+The syntax is quite simple:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+   [quot  ]keyword value[quot  ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+See  for most keywords. Allmost all commandline options can be used as
+keywords (without the -), use value 0 or 1 for commandline options which have
+a negating (-no[lsqb  ]option[rsqb  ]) counterpart. As usual lines begining with
+[quot  ][num   ][quot  ] are comments.
+.Pp
+You can also generate a configfile with all the current settings to use
+as a template by typing:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+   xmame -showconfig [gt    ] [tilde ]/.xmame/xmamerc
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.SH Where do roms, images, samples, highscores, configfiles, etc go? 
+
+Roms/Samples
+
+.Pp
+Xmame/xmess uses a [quot  ]:[quot  ] seperated rompath to find out which dirs
+to search for roms/samples.
+.Pp
+The default rompath is XMAMEROOT as defined in Makefile during compile.
+.Pp
+This is overwritten by any rompath in xmamerc/xmessrc, which can be overwritten
+again with the -rompath commandline option.
+.Pp
+Xmame/xmess searches every dir in this path for roms/samples in the following
+way:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/gamename.zip             (containing filename.ext)
+    [lt    ]dir[gt    ]/gamename/filename.ext
+    [lt    ]dir[gt    ]/gamename/filename.ext.gz (containing filename.ext)
+    [lt    ]dir[gt    ]/gamename/filename.zip    (containing filename.ext)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+So let's say that we are searching for rom0001.1, which is part of pacman.
+Then xmame/xmess would search every dir in your rompath for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/pacman.zip               (containing rom0001.1)
+    [lt    ]dir[gt    ]/pacman/rom0001.1
+    [lt    ]dir[gt    ]/pacman/rom0001.1.gz      (containing rom0001.1)
+    [lt    ]dir[gt    ]/pacman/rom0001.zip       (containing rom0001.1)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Note: If your neogeo games can't find neogeo.rom, put it in a dir called
+neogeo somewhere in your rompath, or put it in neogeo.zip somewhere in your
+rompath.Read/write Diskette Images
+
+.Pp
+This section only applies to xmess emulations which support read/write
+diskette images and thus try to open the image read/write.
+.Pp
+Xmess first searches for read/write images with the name specified on the
+commandline:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]path[gt    ]/image.ext
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+where path is the path specified with the image on the commandline. This
+way, absolute and relative filenames can be used directly on the commandline
+for an image which is not in the rompath.
+.Pp
+Then xmess searches every dir in the rompath for roms/samples in the following
+way:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/image.ext
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Note that (g)zipped images are not supported for r/w images.Rom Cartridges/Read Only Diskette Images
+
+.Pp
+Xmess begins by searching for cartdriges/disks from the current dir in
+the following way:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]path[gt    ]/image.ext
+    [lt    ]path[gt    ]/image.ext.gz            (containing image.ext)
+    [lt    ]path[gt    ]/image.zip               (containing image.ext)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+where path is the path specified with the image on the commandline. This
+way, absolute and relative filenames can be used directly on the commandline
+for an image which is not in the rompath.
+.Pp
+Then xmess searches every dir in the rompath for carts/images in the following
+way:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/image.ext
+    [lt    ]dir[gt    ]/image.ext.gz             (containing image.ext)
+    [lt    ]dir[gt    ]/image.zip                (containing image.ext)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Finally, xmess searches the rompath as desribed above using the systemtype
+for gamename.
+.Pp
+So let's say we want to play mario.nes on the nes emulation of xmess. We
+would then type: [quot  ]xmess nes mario.nes[quot  ]. Xmess then begins by searching
+the current dir for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    mario.nes
+    mario.nes.gz                   (containing mario.nes)
+    mario.zip                      (containing mario.nes)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+After that, xmess searches each dir in your rompath for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/mario.nes
+    [lt    ]dir[gt    ]/mario.nes.gz             (containing mario.nes)
+    [lt    ]dir[gt    ]/mario.zip                (containing mario.nes)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+And finally, xmess searches each dir in your rompath for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/nes.zip                  (containing mario.nes)
+    [lt    ]dir[gt    ]/nes/mario.nes
+    [lt    ]dir[gt    ]/nes/mario.nes.gz         (containing mario.nes)
+    [lt    ]dir[gt    ]/nes/mario.zip            (containing mario.nes)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Since xmess first searches for cartridges/disks from the current dir you
+can also specify cartridges/disks not in your rompath. For example:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [quot  ]xmess nes ../mario.nes[quot  ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Xmess then searches for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    ../mario.nes
+    ../mario.nes.gz                (containing mario.nes)
+    ../mario.zip                   (containing mario.nes)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+and will also search the rompath as described above with ../mario.nes as
+the image name but this is not that useful.Artwork
+
+.Pp
+Xmame/xmess searches every dir in the rompath for artwork in the following
+way:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/artwork.png
+    [lt    ]dir[gt    ]/artwork.png.gz           (containing artwork.png)
+    [lt    ]dir[gt    ]/artwork.zip              (containing artwork.png)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Then xmame/xmess searches the rompath as in roms/samples.
+.Pp
+So let's say we want to play foo which uses bar.png. Xmame/xmess then begins
+searching each dir in your rompath for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/bar.png
+    [lt    ]dir[gt    ]/bar.png.gz               (containing bar.png)
+    [lt    ]dir[gt    ]/bar.zip                  (containing bar.png)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+And then xmame/xmess searches each dir in your rompath for
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]dir[gt    ]/foo.zip                  (containing bar.png)
+    [lt    ]dir[gt    ]/foo/bar.png
+    [lt    ]dir[gt    ]/foo/bar.png.gz           (containing bar.png)
+    [lt    ]dir[gt    ]/foo/bar.zip              (containing bar.png)
+.DE
+.fi 
+.ec
+.ft P
+.sp
+Xmame configuration
+
+.Pp
+Xmame looks for the following configuration files and parses each one found.
+Files parsed later can overwrite options in previously parsed files:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    XMAMEROOT/xmamerc
+    XMAMEROOT/xmame-DISPLAY_METHODrc
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/xmamerc
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/xmame-DISPLAY_METHODrc
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/rc/[lt    ]gamename[gt    ]rc
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+\f(CRXMAMEROOT\fP is defined during compile time, see Makefile.
+.Pp
+\f(CRDISPLAY[lowbar]METHOD\fP is the \f(CRDISPLAY[lowbar]METHOD\fP for which xmame was compiled, this
+can be one of: x11, svgalib, ggi, xgl, xfx, svgafx, openstep, SDL.
+.Pp
+For xmess of course replace xmame by xmess. ;)Game configuration
+
+.Pp
+Game configuration files are kept on a per-user base in:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/cfg/[lt    ]game[gt    ].cfg resp
+    [dollar][lcub  ]HOME[rcub  ]/.xmess/cfg/[lt    ]game[gt    ].cfg
+.DE
+.fi 
+.ec
+.ft P
+.sp
+Game state
+
+.Pp
+Game state files are kept on a per-user base in:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/sta/[lt    ]game[gt    ].sta resp
+    [dollar][lcub  ]HOME[rcub  ]/.xmess/sta/[lt    ]game[gt    ].sta
+.DE
+.fi 
+.ec
+.ft P
+.sp
+NVram
+
+.Pp
+NVram files are kept on a per-user base in:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/nvram/[lt    ]game[gt    ].nv resp
+    [dollar][lcub  ]HOME[rcub  ]/.xmess/nvram/[lt    ]game[gt    ].nv
+.DE
+.fi 
+.ec
+.ft P
+.sp
+Mem cards
+
+.Pp
+Mem cards files are kept on a per-user base in:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [dollar][lcub  ]HOME[rcub  ]/.xmame/mem/[lt    ]filename[gt    ].mem resp
+    [dollar][lcub  ]HOME[rcub  ]/.xmess/mem/[lt    ]filename[gt    ].mem
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Where [lt    ]filename[gt    ] is given by the game-driver. Screenshots
+
+.Pp
+Screenshots, which can be made by pressing F12, are saved as png files
+in the directory from where xmame is started (cwd).
+.Pp
+This can be overidden by the screenshotdir entry in xmamerc/xmessrc, which
+can again be overidden by the \f(CR-screenshotdir\fP cmdline-option.
+.Pp
+They are saved as:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [lt    ]screenshotdir[gt    ]/[lt    ]game[gt    ]xxxx.png
+    Where xxxx is a number.
+.DE
+.fi 
+.ec
+.ft P
+.sp
+Highscores
+
+.Pp
+Highscores are stored in XMAMEROOT as defined in Makefile when building.
+This can be overidden by the spooldir entry in xmamerc/xmessrc, which can again
+be overidden by the \f(CR-spooldir\fP cmdline-option.
+.Pp
+So only give a 
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    drwxrwsr-x root games [lt    ]spooldir[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+permission and setgid xmame/xmess to [quot  ]games[quot  ] to get it to work.
+Note this doesn't work with suid root versions (svgalib [amp   ] XF86-DGA), suggestions
+welcome.
+.Pp
+For now use \f(CR[dollar][lcub  ]HOME[rcub  ]/.xmame\fP or \f(CR[dollar] [lcub  ]HOME[rcub  ]/.xmess\fP
+as the spooldir in xmamerc/xmessrc for  suid root versions.
+.Pp
+Note: For highscores to work, xmame must also be able to find hiscore.dat.hiscore.dat
+
+.Pp
+If you want to use highscores mame needs to load hiscore.dat to get highscore
+info.
+.Pp
+The default is \f(CRXMAMEROOT\fP/hiscore.dat . XMAMEROOT is set during compile-time;
+see the Makefile. This can be overridden by the hiscorefile entry in xmamerc
+if present, which can again be overridden by the cmdline-option \f(CR-hiscorefile\fP.
+.Pp
+\f(CRhiscore.dat\fP is available from the mame homepage: cheat.dat
+
+.Pp
+If you want to use cheats mame needs to load cheat.dat to get cheat info.
+.Pp
+The default is XMAMEROOT/cheat.dat . XMAMEROOT is set during compile-time;
+see the Makefile. This can be overridden by the cheatfile entry in xmamerc
+if present, which can again be overridden by the cmdline-option \f(CR-cheatfile\fP.
+.Pp
+\f(CRcheat.dat\fP is available from the mame homepage: history.dat
+
+.Pp
+If you want to display some nice background info on games, mame needs to
+load history.dat.
+.Pp
+The default is XMAMEROOT/history.dat . XMAMEROOT is set during compile-time,
+see the Makefile. This can be overridden by the historyfile entry in xmamerc
+if present, which can again be overridden by the cmdline-option \f(CR-historyfile\fP.
+.Pp
+\f(CRhistory.dat\fP is available from the mame homepage: Input logs
+
+.Pp
+Input logs are saved/read under the name specified after the \f(CR-record /
+-playback\fP option; this name is relative to the current path.Xmame/xmess still can't find files/store highscores
+
+.Pp
+Type \f(CR[quot  ]xmame/xmess -showconfig [verbar] more[quot  ]\fP and check that the rompath
+and spooldir shown are correct and readable/writable. Otherwise recheck xmamerc/xmessrc.
+Remember that xmess also searches the current dir.
+.SH How do I start xmess/xmame ?
+
+.Pp
+To start xmame, type
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    xmame [lsqb  ]options[rsqb  ] [lt    ]gamename[gt    ] [lsqb  ]more options[rsqb  ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+For xmess, type
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    xmess [lsqb  ]options[rsqb  ] [lt    ]systemname[gt    ] [lsqb  ]more options[rsqb  ] [bsol  ]
+    [lt    ]disk/romimage(s)[gt    ] [lsqb  ]more options[rsqb  ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+All options are optional. ;)
+.Pp
+Xmame/xmess supports most dos command line options (see readme.mame / readme.mess)
+as well as a few of its own: Type xmame -help [verbar]  more for a complete list.
+.Pp
+With xmess, some systems don't require a disk/romimage, but most do.
+.SH What are the command line parameters for xmame/xmess?
+
+.Pp
+To see a list of available parameters, type:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    /usr/games/xmame -help | more
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Xmame/xmess supports most of the command line parameters as the DOS  version
+as well a some of its own.
+.Pp
+See the file readme.mame / readme.mess for more information about the command
+line parameters.
+.SH What keys does xmame/xmess use?
+
+.Pp
+Xmame/xmess uses the same key-bindings as the DOS version of mame: The
+following keys work in all emulators:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    `  or [tilde ]      Enter On screen display to change volume, brightness etc.
+    Tab          Enter configuration menu. Press Tab or Esc to get back to
+                 the emulation.
+    P            Pause
+    F3           Reset
+    F4           Show the game graphics. Use cursor keys to change set/color,
+                 F4 or Esc to return to the emulation.
+    F8           Reduce frame skip
+    F9           Increase frameskip
+    F10          Toggle speed throttling
+    F10 + shift  Toggle idle sleeping
+    F11          Toggle speed display
+    F11 + shift  Toggle profiler display
+    F12          Save a screen snapshot
+    ESC          Exit emulator
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Xmame has 2 different auto frameskipping algorithms. These can be selected
+with the -frameskipper option and with key combos:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    Key combo:             Gives you the:
+    left-ctrl + insert     standard dos frameskipper
+    left-ctrl + home       William Barath's frameskipper
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Xmame's display scaling can be controlled on the fly with the following
+key combos:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    Key combo:             Result:
+    left-shift + insert    Increase widthscale
+    left-shift + delete    Decrease widthscale
+    left-shift + home      Increase heightscale
+    left-shift + end       Decrease heightscale
+    left-shift + pageup    Increase scale
+    left-shift + pagedown  Decrease scale
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Under X11, xmame can switch to and from different modes during runtime:
+.Pp
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    Key combo:             Warps you to:
+    left-alt + insert      Normal window
+    left-alt + home        DGA fullscreen mode
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Under SDL, xmame can switch to and from different modes during runtime:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    Key combo:             Result:
+    left-alt + enter       Toggles between windowed and
+                           fullscreen modes.
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Under X11 in a window, you can also grab the mouse. To be able to play
+with the mouse, press left-alt + page-down to grab the mouse, and press it
+again to release it.
+.SH Why doesn't a game have sound?
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+First check that sound is working in other applications.
+.nr bi 1
+.Pp
+Check that sound is supported for the game that has no sound; not all games
+have sound.
+.nr bi 1
+.Pp
+For xmame, take a look at gamelist.mame: Is the sound for the game emulated?
+.nr bi 1
+.Pp
+For xmess take a look at readme.mess: Is the sound for the system emulated?
+.nr bi 1
+.Pp
+Check the operating system support chart in the earlier part of  this file:
+Does xmame/xmess support sound on your system?
+.if \n(ll>1 .RE
+.nr ll -1
+.SH My sound seems lagged. / My sound Clicks. / What does -bufsize do?
+
+.Pp
+With the \f(CR-bufsize\fP commandline option or the bufsize configfile keyword,
+you can specify the number of frames of audio to buffer. The default is 2 frames.
+.Pp
+This value should be ok for everyone, but if you still have problems, read
+on.
+.Pp
+If the buffersize is to small, this causes the buffer to get empty between
+frames which in turn causes clicks/pauses in the sound. If this is the case,
+increasing the -bufsize value to, for example, 2.5 should help.
+.Pp
+If, however, you make the buffersize too large, then so much audio becomes
+buffered, that the sound could become lagged. E.g., you would hear the coin
+drop sound 0.5 seconds after pressing the insert coin key. In this case, lower
+the bufsize to, for example, 1.5.
+.Pp
+Please let me know if you need to change this setting, since I'm planning
+on removing it in a future release.
+.SH Why doesn't a game work? 
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Do you have the right roms or did you get checksum failures?
+.nr bi 1
+.Pp
+Xmame version 0.34 and higher require PROM files that were not included
+in ROM images released before version 0.34. See the question on PROMs  below
+for more information.
+.nr bi 1
+.Pp
+For xmame, check the file gamelist.mame to see if the game is playable.
+Just because a game is included doesn't mean it is working yet.
+.nr bi 1
+.Pp
+For xmess, take a look at readme.mess. Maybe the system isn't emulated
+all that well yet.
+.nr bi 1
+.Pp
+Some games require sound support. If you don't have sound  support under
+your Unix installation or sound isn't supported by xmame/xmess for you, try
+the \f(CR-fakesound\fP command line parameter.
+.if \n(ll>1 .RE
+.nr ll -1
+.SH What are PROMs? 
+
+.Pp
+PROMs contain game-specific information that used to be built in  to mame
+in versions prior to 0.34. This information has been  extracted and is now
+included with new versions of ROM files for  games that require this information.
+.Pp
+If you want to use your current ROM files, you can obtain just the PROM
+images in one large file at:
+.Pp
+.SH Why is xmame/xmess slow?
+
+.Pp
+Xmame/xmess is a compiled C program that is emulating hardware.  Software
+emulation of hardware always incurs a speed penalty. Here  are some things
+you can do:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Try using the -frameskip command line parameter.
+.nr bi 1
+.Pp
+Try pressing F8 while running xmame/xmess to alter the frame rate.
+.nr bi 1
+.Pp
+Try disabling the throttle with the -nothrottle command line  parameter
+or by pressing F10 while running xmame/xmess.
+.nr bi 1
+.Pp
+While running xmame/xmess, press F11 to check the speed of xmame/xmess.
+If you never get a display of 100[percnt], you need a faster computer.
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+You can also try recompiling xmame/xmess with more optimal settings. The
+following suggestions may not work or may not be appropriate on some machines
+and in some installations.  However, in cases where they do work, there can
+be a noticeable increase in overall performance of xmame/xmess.
+.Pp
+These [quot  ]enhancements[quot  ] simply require editing the Makefile that
+is distributed with xmame, and then recompiling the source.  If you are compiling
+the source for the second time you will need to do:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    make clean
+    make
+    make install
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+after editing the Makefile to set your new settings.SPEEDUP [num   ] 1 - Inline compiling
+
+.Pp
+Try enabling inline compiling by commenting and uncommenting the following
+lines:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [num   ] IL    = '-DINLINE=static inline'
+    IL     = -DINLINE=static
+.DE
+.fi 
+.ec
+.ft P
+.sp
+SPEEDUP [num   ] 2 - Direct Graphics Access
+
+.Pp
+For a big boost, try enabling DGA by uncommenting the following line:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    DGA = 1
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Then start xmame as root, and press left-alt + home to switch to dga mode;
+that should be a lot faster, and doesn't need/use xsync. ;) 
+.Pp
+To get back to a window without exiting, press left-alt + insert.
+.Pp
+The benefit of DGA is that it is Direct Graphics Access and therefore writes
+directly to the framebuffer (think DirectX versus GDI under MS Windows). So
+it should be a tad faster, unless you've got a really really well accelerated
+X-server, which could be just as fast. Try pressing F11 to see the actual framerate,
+although it might be hardly noticable (visually, at least), it should give
+you some speed increase.
+.Pp
+Besides that, it automatically switches to the right mode and removes any
+window manager stuff, but that can be done without DGA too. (I might add such
+a feature later, since it allows easy fullscreen without running as root.)
+.Pp
+Adding a 320x240 mode will most definitely get you a very nice fullscreen
+display at scale = 1. ;)
+.Pp
+Don't forget that you still need to set up the Modes line of the   [quot  ]Display[quot  ]
+subsection of the [quot  ]Screen[quot  ] section in your X11 config file if you
+want the games to fill the screen in DGA mode. Xmame will pick the best mode
+it can find, so if you have a line like
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    Modes  [quot  ]1024x768[quot  ] [quot  ]800x600[quot  ] [quot  ]640x480[quot  ] [quot  ]320x240[quot  ] [quot  ]256x224[quot  ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+then any game which fits into a 320x240 screen can be displayed in that
+resolution, and so on. Don't forget your X11 config file might have a number
+of different [quot  ]Screen[quot  ] sections in it, and you will need to add Modes
+to the one that is actually active with your Xserver is running. And of course
+it's not always that easy, since you also need to tell X which monitor settings
+are required for these resolution modes. This is done through Modeline entries
+in the [quot  ]Monitor[quot  ] section of your X config file.
+.Pp
+You can check out the \f(CR/contrib/tools/modelines\fP file for a set of crazy
+modes made especially for xmame in DGA mode. They should work on any reasonable
+multisync monitor, but don't use them on an old fixed-frequency monitor. (And
+if you can't resist trying, I won't pay for a new one!)SPEEDUP [num   ] 3 - NASM
+
+.Pp
+You can also try installing nasm and compiling the asm core, that helps
+a bit too.
+.SH I've got a dual processor machine. What can I do to take full advantage
+of this?
+
+.Pp
+Not much. Xmame is a single-threaded port of a single-threaded DOS app.
+Some degree of speedup will hopefully be found on an SMP machine since xmame
+is more likely to get to hog its one CPU for longer. But of course the same
+applies to any CPU-intensive program. And all the things one would normally
+do to any application to give it more CPU time (higher priority, kill or renice
+unecessary process, etc.) will work with xmame.
+.Pp
+Now you may at this point be thinking, "Surely you could have one thread
+doing emulation and another thead doing graphics to get a speedup." Yes, but
+there are some serious issues to consider. The first is synchronisation between
+the threads, which needs to be pretty tight. If not done smoothly. the overhead
+will blow most of the benefit away. Also, it needs to be implemented with a
+portable threads interface ... which basically means POSIX threads. In a nutshell,
+it's a lot of effort for probably not much gain. But of course if you are feeling
+particulary energetic and in the mood to code, then patches can always be submitted
+to the xmame devel mailing list ... :)
+.SH Why doesn't my joystick handle diagonal movement correctly on my Intel
+x86 system?
+
+.Pp
+Xmame/xmess uses autocalibrating, but you could try to use specific programs
+to calibrate it (jscal that comes with joystick  module works fine....).
+.SH How do I enable XinputExtensions X11 based joystick in Xfree86?
+
+.Pp
+You need to edit XF86Config to enable the XInput section. See the  manual
+page for XF86Config.
+.SH How do I read a manual page?
+
+.Pp
+Easy. If you want to read the manual page for XF86Config, type: man XF86Config
+.SH Why do I get gz[lowbar]open symbol not found while compiling? 
+
+.Pp
+Xmame/xmess versions newer than 0.35 use zlib for some compression routines.
+Unfortunately, a lot of Linux distributions have an old version of zlib installed
+as /usr/X11R6/lib/libz.a, and the new version installed as /usr/lib/libz.a.
+If this is the case, it's harmless to remove /usr/X11R6/lib/libz.a. If you're
+not sure whether this is the case, just move /usr/X11R6/lib/libz.a to another
+location.
+.Pp
+Removing or just moving /usr/X11R6/lib/libz.a should fix this problem.
+.Pp
+Also see: 
+.SH Why do I get zlib.h not found? 
+
+.Pp
+Xmame/xmess versions newer than 0.35 use zlib for some compression routines.
+.Pp
+Zlib is standard on most Unix versions. For those who don't ship with zlib
+or ship with a version that is too old, xmame/xmess now comes with a stripped-down
+version of zlib. Uncomment the appropriate line in the Makefile to use this.
+.SH Where can I get the latest version of xmame/xmess?
+
+.Pp
+The xmame/xmess Home Page always has the most up-to-date version. The address
+is
+.Pp
+.SH Where can I send fixes, bug reports, suggestions, or money?  :-)
+
+.Pp
+See  of this document.
+.SH What if my question is still not answered?
+
+.Pp
+Please check the offical mame and mess readme files to see if that answers
+your question:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+.nr bi 1
+.Pp
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+If that doesn't help, then ask your question on the mailing list or send
+it to the xmame/xmess maintainer, see   for contact information.Display Subsystem-Specific Comments and Notes 
+
+.SH FXmame, a glide driver for xmame
+
+.Pp
+The latest version of this driver can be obtained at .Requirements
+
+.Pp
+To run FXmame, you must have:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+A 3Dfx card
+.nr bi 1
+.Pp
+Glide 2x
+.nr bi 1
+.Pp
+The xmame distribution
+.if \n(ll>1 .RE
+.nr ll -1
+Compiling and Installing
+
+.Pp
+FXmame comes in two flavours---xfx and svgafx. The xfx version is designed
+to run under X11. It uses an X window for input. The svgafx version runs from
+the console, and uses svgalib for input. Both use the 3Dfx hardware for rendering.
+.Pp
+To install FXmame, follow the general instructions for installing xmame.
+To specify the glide driver, do the following to the Makefile:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Select either [quot  ]xfx[quot  ] or [quot  ]svgafx[quot  ] as your display method
+.nr bi 1
+.Pp
+Configure the glide variables to correspond to your glide setup
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The FXmame executables are called [quot  ]xmame.xfx[quot  ] and [quot  ]xmame.svgafx[quot  ]Running
+
+.Pp
+FXmame runs with the same parameters and uses the same keyboard commands
+that xmame.x11 does.
+.Pp
+A few extra keyboard commands have been added in the glide driver:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+RIGHTCTRL-A -- toggle antialiasing in vector games 
+.nr bi 1
+.Pp
+RIGHTCTRL-B -- toggle bilinear filtering
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The glide driver also adds several command-line options:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    -fxgama [lt    ]value[gt    ] 3Dfx gamma correction value
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Note that in order to display the game options or the fps display in vector
+games, I have to overlay the game bitmap over the vector display. This is because
+I circumvent the bitmap entirely in vector games. Drawing the bitmap is a big
+cpu hog, so you'll notice that the game slows down when you turn on the fps
+display (I know, not ideal when you want to find out the frame rate...).Common Questions (FAQ)
+
+.Pp
+Q: When I run FXmame, it just dumps core.
+.Pp
+A: Make sure you are running FXmame as root. Root privileges are required
+to access the 3Dfx hardware
+.Pp
+Q: When I run xmame.xfx, it just hangs at the initial game screen.
+.Pp
+A: Are you running KDE? For some reason, I can't get keyboard input under
+KDE. If you have this problem, switch window managers or use xmame.svgafx instead.Present Limitations/Bugs
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Antialiasing isn't working quite as well as it should
+.nr bi 1
+.Pp
+Input problems under KDE
+.if \n(ll>1 .RE
+.nr ll -1
+Future Work
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Optimize the drawing code to update only the changed portions of the game
+bitmap.
+.if \n(ll>1 .RE
+.nr ll -1
+License
+
+.Pp
+The FXmame code is Copyright 1998 by Mike Oliphant. It may be used and
+distributed under the terms of the MAME license.Version History
+
+.Pp
+v0.5 -- December 11th, 1998 ---------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+implemented long copies in screen update
+.nr bi 1
+.Pp
+added dirty handling. this greatly increases the speed of games that support
+the dirty update strategy (although most of them are older games that already
+ran at full speed on modern hardware)
+.nr bi 1
+.Pp
+merged source with xmame b8.1
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.4 -- October 30th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+improved alpha handling in vector games - now bitmapped overlays do not
+dim the screen o added svgalib support (xmame.svgafx) o fixed a tiling bug
+that gave artifacts on texture tile boundaries
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.3 -- October 29th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+got rid of extra lines in vector games o added bitmap overlay in vector
+games to show options/fps o added antialiasing in vector games
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.2 -- October 28th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+added screenshots o added 3Dfx gamma adjustment o added direct acceleration
+of vector games (still buggy)
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.1 -- October 27th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+first public release
+.if \n(ll>1 .RE
+.nr ll -1
+Author
+
+.Pp
+Mike Oliphant \f(CR\fP 
+.SH GLmame, an OpenGL driver for xmame
+
+.Pp
+The latest version of this driver can be obtained at: Requirements
+
+.Pp
+To run GLmame you must have:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+An OpenGL implementation
+.nr bi 1
+.Pp
+libjpeg
+.nr bi 1
+.Pp
+hardware 3D acceleration (if you want any kind of framerate)
+.nr bi 1
+.Pp
+the xmame distribution
+.if \n(ll>1 .RE
+.nr ll -1
+Compiling and Installing
+
+.Pp
+Follow the general instructions for installing xmame. To specify the OpenGL
+driver, do the following in the Makefile:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Select [quot  ]xgl[quot  ] as your display method.
+.nr bi 1
+.Pp
+For runtime printed debug info, add "-DGLDEBUG" to the "GLCFLAGS[quot  ] variable.
+.nr bi 1
+.Pp
+GLU version 1.2 is recommended (e.g., from SGI). If you use Mesa's GLU,
+you may have to add "-DGLU[lowbar]VERSION[lowbar]1[lowbar]2" to the "GLCFLAGS".
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The GLmame executable is called [quot  ]xmame.xgl[quot  ].Running
+
+.Pp
+xmame.xgl runs with the same parameters and uses the same keyboard commands
+that xmame.x11 does.
+.Pp
+The program starts up in cabinet mode. While this is pretty, and cool,
+you'll probably want to actually play in fullscreen mode.
+.Pp
+A few extra keyboard commands have been added in the OpenGL driver:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-A -- toggle antialias filtering (vector)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-B -- toggle bilinear filtering (raster)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-C -- toggle cabinet/fullscreen display (both)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-F -- toggle between fullscreen (max window size) and startup
+window size (both)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-O -- toggle draw-bitmap (both; nonsense for raster games, speedup
+for vector games)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-T -- toggle phosphor trails (vector)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-PLUS[lowbar]PAD -- incr. beam size (vector)
+.nr bi 1
+.Pp
+RIGHT[lowbar]ALT-MINUS[lowbar]PAD -- decr. beam size (vector)
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+The OpenGL driver also adds several command-line options:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    -[lsqb  ]no[rsqb  ]fullscreen         Start in fullscreen mode
+                            (default: disabled)
+
+    -[lsqb  ]no[rsqb  ]gldblbuffer        Disable/enable double buffering
+                            (default: enabled)
+
+    -gltexture_size [lt    ]int[gt    ]   Force the max width and height of one 
+                            texture segment (default: autosize)
+
+    -[lsqb  ]no[rsqb  ]glforceblitmode /  Force blitter for true color modes 15/32bpp
+    -[lsqb  ]no[rsqb  ]glblit             (default: enabled)
+
+    -[lsqb  ]no[rsqb  ]glext78 /          Force the usage of GL extension number 78,
+    -[lsqb  ]no[rsqb  ]glext              if available (palletted texture)
+                            (default: enabled)
+
+    -[lsqb  ]no[rsqb  ]glbilinear /       Disable/enable bilinear filtering
+    -[lsqb  ]no[rsqb  ]glbilin            (default: enabled)
+
+    -[lsqb  ]no[rsqb  ]gldrawbitmap /     Disable/enable drawing the bitmap; e.g., 
+    -[lsqb  ]no[rsqb  ]glbitmap           disable within vector games for a speedup
+                            (default: enabled)
+
+    -[lsqb  ]no[rsqb  ]glcolormod         Disable/enable color modulation (intensity,
+    -[lsqb  ]no[rsqb  ]glcmod             gamma)
+                            (default: enabled)
+
+    -glbeam [lt    ]float[gt    ]         Set the beam size for vector games
+                            (default: 1.0)
+
+    -[lsqb  ]no[rsqb  ]glalphablending /  Disable/enable alpha blending if available
+    -[lsqb  ]no[rsqb  ]glalpha            (default: enabled)
+
+    -[lsqb  ]no[rsqb  ]glantialias /      Disable/enable antialiasing
+    -[lsqb  ]no[rsqb  ]glaa               (default: enabled)
+
+    -gllibname /            Choose the dynamically loaded OpenGL
+    -gllib [lt    ]string[gt    ]         library
+                            (default: libGL.so)
+
+    -glulibname /           Choose the dynamically loaded GLU library
+    -glulib [lt    ]string[gt    ]        (default: libGLU.so)
+
+    -[lsqb  ]no[rsqb  ]cabview            Don't start/start in cabinet view mode
+                            (default: don't start in this mode)
+
+    -cabinet [lt    ]cabname[gt    ]      Specify which cabinet model to use
+                            (default: glmamejau)
+ 
+   -glres [lt    ]string[gt    ]          Always scale games to [lt    ]Xres[gt    ]x[lt    ]Yres[gt    ], 
+                            keeping their aspect ratio. 
+                            This overrides the scale options.
+                            Use this e.g. for the Vodoo1 gfx cards
+                            with: [quot  ]-glres 640x480[quot  ]
+
+
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Three cabinet models are provided. The default, [quot  ]glmamejau[quot  ],
+is designed to look like a standard arcade cabinet, like [quot  ]glmame[quot  ].
+The last one, [quot  ]trans[quot  ], is a box with a transparent game screen.
+.Pp
+Note that in order to display the game options or the fps display in vector
+games, the game's bitmap is overlaid above the vector display. Drawing the
+bitmap is a big cpu hog for some low-end hardware accelerated OpenGL implementations,
+so you'll notice that the game slows down when the bitmap is overlaid.
+.Pp
+Because bitmap overlaying is the default, you can toggle it on and off
+by pressing the [quot  ]RIGHT[lowbar]ALT-O[quot  ] key, or turn it off at startup by using
+the command line option [quot  ]-noglbitmap[quot  ].
+.Pp
+A problem with vector games and the cabinet mode is that some vector points
+do not reside within the screen coordinates, so you may see some vectors outside
+of the cabinet's mame display.
+.Pp
+\fB*** IMPORTANT! ***\fP
+.Pp
+If you have trouble with GLmame, or it is slow, read the [quot  ]Common Questions[quot  ]
+section. Most of the questions people email me are answered here.Cabinet Models
+
+.Pp
+Cabinet model information is stored in the [quot  ]cab[quot  ] subdirectory
+of the directory you specified with the ROMPATH variable in the Makefile. Path
+information specified in xmamerc or with the 'rompath' shell environment variable
+is currently not used. Each cabinet model has it's own subdirectory. GLmame
+will first try to load either the user-specified cabinet model (using the -cabinet
+command-line option), or a model corresponding to the current game name. Failing
+that, it will use the generic [quot  ]glmame[quot  ] model.
+.Pp
+A cabinet model directory must contain a geometry file [lt    ]modelname[gt    ].cab,
+and any .jpg files used for textures on the model. The format of the .cab file
+will be familiar if you have ever programmed using OpenGL -- it looks much
+like an OpenGL display list. The format is as follows:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    cabv1.1
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+This header must be the first 7 characters of the file.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    [num   ][lt    ]text[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Comment lines begin with '[num   ]'
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    begin [lt    ]type[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Begins a geometry object, where type is one of (points, polygon, quads,
+quad[lowbar]strip, screen). Each [quot  ]begin[quot  ] must be paired with an [quot  ]end[quot  ]
+statement. A [quot  ]polygon[quot  ] is specified using one vertex per, well...
+vertex. [quot  ]quads[quot  ] are four-sided polygons, each specified by four vertices
+in order around the polygon. A [quot  ]quad[lowbar]strip[quot  ] is a series of four-sided
+polygons, each of which shares an edge with the polygons before and after it
+in the strip. A [quot  ]screen[quot  ] is a quad that defines the actual area in
+3D space where the game will be displayed. only one of these should be defined.
+For more info, look at any description of OpenGL geometry.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    end
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Ends the geometry object begun with [quot  ]begin[quot  ].
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    pointsize [lt    ]s[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Changes the current pointsize to the corresponding size value (specified
+as a floating point number between 0.0 and, e.g., 20.0). Note: You cannot use
+this statement between begin and end!
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    color4 [lt    ]r[gt    ] [lt    ]g[gt    ] [lt    ]b[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Changes the current color to the corresponding rgb value (specified as
+floating point numbers between 0 and 1).
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    color4 [lt    ]r[gt    ] [lt    ]g[gt    ] [lt    ]b[gt    ] [lt    ]a[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Changes the current color to the corresponding rgba value (specified as
+floating point numbers between 0 and 1).
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    shading [lt    ]type[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Sets the shading type. available types are [quot  ]smooth[quot  ] (which blends
+colors from one vertex to the next) or [quot  ]flat[quot  ] (which doesn't).
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    vertex [lt    ]x[gt    ] [lt    ]y[gt    ] [lt    ]z[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Specifies a vertex for the current geometry object as a point in 3-space.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    numtex [lt    ]num[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Specifies the number of different textures to be loaded. This declaration
+must precede any [quot  ]loadtex[quot  ] call.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    loadtex [lt    ]num[gt    ] [lt    ]width[gt    ] [lt    ]height[gt    ] [lt    ]filename[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Loads texture number [lt    ]num[gt    ] from .jpg file [lt    ]filename[gt    ]. The .jpg
+file *must* be [lt    ]width[gt    ] by [lt    ]height[gt    ] pixels, and both [lt    ]width[gt    ]
+and [lt    ]height[gt    ] must be powers of two (and must conform to the hardware
+requirements of any 3D card you want the cabinet to work with -- 256x256 for
+3Dfx).
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    texcoord [lt    ]xcoord[gt    ] [lt    ]ycoord[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Sets the texture coordinate of the next vertex. This specifies where in
+2D texture space the vertex lies.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    enable texture
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Enables texture mapping (using the currently-selected texture).
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    disable texture
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Turns off texture mapping.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    settex [lt    ]num[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Select texture [lt    ]num[gt    ] for doing texturing. The texture must previously
+have been loaded using [quot  ]loadtex[quot  ].
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    camerapan [lt    ]num[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Starts the camera pan definition that will be followed by [lt    ]num[gt    ] camera
+transistions. After the last transision definition, the pan sequence must be
+ended with an [quot  ]end[quot  ] statement.
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    goto [lt    ]lx[gt    ] [lt    ]ly[gt    ] [lt    ]lz[gt    ] [lt    ]px[gt    ] [lt    ]py[gt    ] [lt    ]pz[gt    ] [lt    ]nx[gt    ] [lt    ]ny[gt    ] [lt    ]nz[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Relocates and reorients the camera. The arguments are the same as are used
+by the OpenGL command [quot  ]gluLookAt()[quot  ]. The camera is positioned at
+point [lt    ]lx,ly,lz[gt    ], pointing along vector [lt    ]px,py,pz[gt    ], with [quot  ]up[quot  ]
+normal (the direction that is [quot  ]up[quot  ] for the camera) [lt    ]nx,ny,nz[gt    ].
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    moveto [lt    ]lx[gt    ] [lt    ]ly[gt    ] [lt    ]lz[gt    ] [lt    ]px[gt    ] [lt    ]py[gt    ] [lt    ]pz[gt    ] [lt    ]nx[gt    ] [lt    ]ny[gt    ] [lt    ]nz[gt    ] [lt    ]frames[gt    ]
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Moves the camera to a new location (specified as in [quot  ]goto[quot  ]).
+The transition occurs over [lt    ]frames[gt    ] frames.
+.Pp
+All commands must be on separate lines. Use the (somewhat) commented glmamejau
+cabinet as an example to work from.Common Questions (FAQ)
+
+.Pp
+Q: I am only getting a few frames-per-second. This sucks! What gives? 
+.Pp
+A1: You're probably running Mesa in software mode. You should read the
+[quot  ]README.3Dfx[quot  ] file in the Mesa distro. Specifically, you need to
+[quot  ]setenv MESA[lowbar]GLX[lowbar]FX fullscreen[quot  ].
+.Pp
+A2: You don't have a 3D graphics card. Go buy one (see below)!
+.Pp
+Q: When I run xmame.xgl, it just dumps core. That's not as much fun as
+3D Pacman, now is it?
+.Pp
+A1: If you are using a 3Dfx card, make sure you are running xmame.xgl as
+root. Root privileges are required to access the 3Dfx hardware.
+.Pp
+A2: If you're using Mesa and haven't upgraded to v3.0, do so. 
+.Pp
+Q: When I run xmame.xgl, it just hangs at the initial game screen.
+.Pp
+A: Are you running KDE? For some reason, I can't get keyboard input under
+KDE. If you have this problem, switch window managers.
+.Pp
+Q: Which graphics cards are usable with xmame.xgl? 
+.Pp
+A: We have the following experiences (date 20010327):
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Vodoo3 + DRI OpenGL driver (XFree86 4.0.2), with command line options [quot  ]-noglaa[quot  ]
+and 16bpp X11 server color depth.
+.nr bi 1
+.Pp
+Vodoo1 + Mesa 3.4 + Glide, with command line options "-glres 640x480" !
+.nr bi 1
+.Pp
+GeForce + NVIDIA OpenGL driver + XFree86 4.0.2 with default command line
+options and 16/24bpp X11 server color depth.
+.nr bi 1
+.Pp
+NVIDIA TNT2 + NVIDIA OpenGL driver + XFree86 4.0.2 with command line options
+[quot  ]-bpp 16[quot  ] and 16bpp (may be 24bpp also ???) X11 server color depth
+(OpenGL colortable mapping is buggy).
+.nr bi 1
+.Pp
+NVIDIA TNT + NVIDIA OpenGL driver + XFree86 4.0.2 with command line options
+[quot  ]-bpp 16[quot  ] and 16bpp (may be 24bpp also ???) X11 server color depth
+(OpenGL colortable mapping is buggy).
+.nr bi 1
+.Pp
+Matrox MGA 400 + DRI OpenGL driver (XFree86 4.0.2) with command line options
+[quot  ]-bpp 16[quot  ], [quot  ]-noglaa[quot  ] (???) and 16bpp (may be 24bpp also
+???) X11 server color depth (OpenGL colortable mapping is buggy).
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+All of the above drivers work with the option [quot  ]-bpp 16[quot  ] and/or
+[quot  ]-noglext78[quot  ], the latter of which is very slow, of course! So it
+looks like an OpenGL implementation bug is causing these driver/hardware combinations
+to only work with these command line options. The bug may lie within these
+OpenGL functions:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+glColorTableEXT 
+.nr bi 1
+.Pp
+glColorSubTableEXT
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+Currently fast and funny driver/hardware combinations are:
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+NVIDIA GeForce + NVIDIA OpenGL driver + XFree86 4.0.2; I have tested the
+GeForce256 (AGP) hardware. 
+.nr bi 1
+.Pp
+Vodoo + DRI OpenGL driver (XFree86 4.0.2); I have tested the Vodoo3 hardware.
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+Q: When I run xmame.xgl, everything is messed up.
+.Pp
+A: Read the above experiences ... and try
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+switching your X server's bpp value, e.g. switch from 32bpp or 24bpp to
+16bpp; 
+.nr bi 1
+.Pp
+the command line option [quot  ]-bpp 16[quot  ];
+.nr bi 1
+.Pp
+the command line option [quot  ]-noglaa[quot  ];
+.nr bi 1
+.Pp
+the command line option [quot  ]-noglext[quot  ].
+.if \n(ll>1 .RE
+.nr ll -1
+Present Limitations/Bugs
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+No clipping of vector games (most noticeable in cabinet mode).
+.nr bi 1
+.Pp
+No preservation of game aspect ratio in cabinet mode.
+.if \n(ll>1 .RE
+.nr ll -1
+Future Work
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Fixing existing bugs .. are there any ? Or are there some unknown features
+only ;-) ? 
+.nr bi 1
+.Pp
+Optimize the drawing code to update only the changed portions of the game
+bitmap. Optimizing the dirty code ..
+.if \n(ll>1 .RE
+.nr ll -1
+License
+
+.Pp
+The GLmame code is based upon Mike Oliphant's GLmame code version 0.6.
+.Pp
+.Pp
+The GLMame code is Copyright 1998 by Mike Oliphant. It may be used and
+distributed under the terms of the MAME license. 
+.Pp
+Since GLmame version 0.7, the code has been changed and improved heavily
+by Sven Goethel --- no license change, of course!Version History
+
+.Pp
+v0.83 -- March 29th, 2001 ---------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Changed the code heavily to improve compatibility and speed. The new code
+is a re-merge of the GLMame32 code, which is a branch of Mike Oliphant's GLmame
+code version 0.6. 
+.nr bi 1
+.Pp
+For a detailed list, please consult the file changes.opengl within the
+distribution's documentation directory! You can also view the current changes.opengl
+here: 
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.6 -- December 14th, 1998 ---------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+added support for systems that do not support paletted textures (SGI and
+solaris OpenGL implementations, for example)
+.nr bi 1
+.Pp
+merged source with xmame b8.1
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.5 -- October 30th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+fixed a bug with texturing being left on in bad places
+.nr bi 1
+.Pp
+added 3Dfx gamma adjustment
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.4 -- October 21st, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+updated to work with xmame v0.34b5.2
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.3 -- October 12th, 1998 --------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+fixed verticle screen centering in fullscreen mode
+.nr bi 1
+.Pp
+moved cabinet and camera panning information into a user-editable configuration
+file
+.nr bi 1
+.Pp
+added 'trans' cabinet model o added double buffer, view type, and cabinet
+selection command-line options
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.2 -- October 6th, 1998 -------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+adding missing 'cab' directory
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+v0.1 -- October 5th, 1998 -------------------------
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+first public release
+.if \n(ll>1 .RE
+.nr ll -1
+Authors
+
+.Pp
+Since GLmame version 0.7: Sven Goethel  
+.Pp
+Till GLmame version 0.6: Mike Oliphant \f(CR\fP Contact Information and Credits
+
+.SH Mail 
+
+.Pp
+There is an official xmame/xmess mailing list. All operations related to
+this list are performed via email to \f(CR\fP with a proper keyword in the body.
+.Pp
+Some of the currently recognized commands are:
+.Pp
+.DS
+.sp 
+.ft RR
+.nf
+    subscribe      - subscribe to the list
+    unsubscribe    - unsubscribe from the list
+    who            - see everyone who is on the list
+    info           - view the introductory information for this list
+    help           - list all recognized commands
+    
+.DE
+.fi 
+.ec
+.ft P
+.sp
+.Pp
+Xmame Mailing List 
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+The xmame mailing list is intended to be a technical forum for xmame developers,
+that is,
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+To exchange ideas for producing a better xmame.
+.nr bi 1
+.Pp
+To share patches and bug notifications.
+.nr bi 1
+.Pp
+To study new design strategies.
+.nr bi 1
+.Pp
+To expose problems and learn know-how.
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+The Xmame mailing list \fBis not\fP a forum about playing games (but everyone
+on the list plays...); so please
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+\fBDon't use the list to ask about ROMs.\fP
+.nr bi 1
+.Pp
+\fBDon't ask about non-UNIX ports of MAME, just about MAME and xmame.\fP
+.nr bi 1
+.Pp
+\fBDon't ask about implementing a game. Just search the docs and contribute
+yourself (you'll enjoy twice: programming and playing...).\fP
+.nr bi 1
+.Pp
+\fBDon't show your last high score in xxx game (we are interested in programming,
+and then playing, in this order).\fP
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+\fBCopyright notice: NEVER, I repeat NEVER send ROM images to the  list.\fP (But
+you can tell us where to retrieve them... ;-) )
+.nr bi 1
+.Pp
+At this moment, the xmame list is \fBunmoderated\fP; that is, everyone subscribed
+will receive everything sent to the list. We foresee no need to change this
+policy.
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+If you want to send a personal mail to the xmame/xmess coordinator, send
+to the address below. Everyone who contributes to xmame/xmess should subscribe
+to the xmame/xmess mailing list.
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Mailing list:\f(CR\fP
+.nr bi 1
+.Pp
+Xmame/xmess coordinator: \f(CR\fP
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+That's all. Enjoy xmame!
+.SH Credits
+
+.Pp
+Lots and lots and lots of thanks to everyone for their great help on the
+xmame project. I would like to thank the following people and of course anyone
+I've forgotten.
+.Pp
+Thank you all,
+.Pp
+Hans
+.Pp
+(Addendum: I'd like to send a big thanks to Hans for his fantastic work
+as longtime xmame/xmess maintainer, and also to those on the mailing list who
+have been most helpful during my transition to official maintainer. --Lawrence
+Gold)
+.Pp
+.nr ll +1
+.nr el +1
+.nr t\n(ll 1
+.nr e\n(el 0 1
+.af e\n(el \*(f\n(el
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Fathers of the mame-creature (main version)
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Nicola Salmoria
+.nr bi 1
+.Pp
+Allard van der Bas
+.nr bi 1
+.Pp
+Mirko (Mix) Buffoni (General Mantainer)
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Fathers of mess
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Brad Oliver 
+.nr bi 1
+.Pp
+Richard Bannister
+.nr bi 1
+.Pp
+Ben Bruscella (current coordinator) 
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Original UNIX/X11 port
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Allard van der Bas
+.nr bi 1
+.Pp
+Dick the Ridder
+.nr bi 1
+.Pp
+Juan Antonio Martinez
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Semi-retired Unix maintainer extraordinaire
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Hans de Goede
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Alpha specific issues
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Christian Groessler
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Sun specific issues
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Keith Hargrove
+.nr bi 1
+.Pp
+Mathis Rosenhau
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Irix specific issues
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Tristram Scott
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+GGI maintainance
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Gabriele Boccone (original port)
+.nr bi 1
+.Pp
+Christian Groessler (current maintainer)
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+OpenGL code [amp   ] maintainance
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Mike Oliphant (original creator)
+.nr bi 1
+.Pp
+Sven Goethel (from GLmame 0.7 to the present)
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Network code
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Eric Totel
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Perl scripts for automation of some porting issues
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Bill Adams
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Xmame RPMs
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Jeremy Hansen
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Mailing list maintainer
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Chris McCraw
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Bits and pieces
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Christian Groessler
+.nr bi 1
+.Pp
+Torsten Paul
+.nr bi 1
+.Pp
+Jack Patton
+.nr bi 1
+.Pp
+David Black
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+AIX Sound code
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Chris Sharpp
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+IRIX Sound code
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+\f(CR\fP 
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+German readme
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Robert Hamberger
+.if \n(ll>1 .RE
+.nr ll -1
+.nr bi 1
+.Pp
+Documentation (SGML, HTML, MAN)
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+Rene Herrmann
+.if \n(ll>1 .RE
+.nr ll -1
+.if \n(ll>1 .RE
+.nr el -1
+.nr ll -1
+Legal Issues and Copyrights Concerning MAME/MESS
+
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+\fBPlease read the MAME/MESS readme-files first!\fP
+.nr bi 1
+.Pp
+Xmame/xmess should be distributed under terms of the license in 
+.nr bi 1
+.Pp
+And if you are interested in mess, take a look in 
+.nr bi 1
+.Pp
+The main issue involves ROM images. ROM images are protected under the
+copyrights of their authors, and CANNOT be distributed in the same package
+as xmame/xmess. Download any ROM images at your own risk and responsibility.
+.nr bi 1
+.Pp
+XInputExtensions-based Joystick support. Source code is entirely pure 
+hack work. No sample code, no info at all was found (only library  reference
+manual) and is copyrighted by me (Juan Antonio Martinez). Use it under terms
+of GNU General Public License.
+.if \n(ll>1 .RE
+.nr ll -1
+ChangeLogs
+
+.SH The MAME/MESS ChangeLogs
+
+.Pp
+These are the changelogs of the offical MAME and MESS release, the core
+of xmame/xmess.
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+.nr bi 1
+.Pp
+.if \n(ll>1 .RE
+.nr ll -1
+.SH The Unix ChangeLog
+
+.Pp
+And now here is the HISTORY of the xmame project (of course that's why
+you are here :;-)) ... René
+.Pp
+.nr ll +1
+.nr t\n(ll 0
+.if \n(ll>1 .RS
+.nr bi 1
+.Pp
+.nr bi 1
+.Pp
+The OpenGL display driver changelog:  or 
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+.Pp

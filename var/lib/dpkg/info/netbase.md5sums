@@ -1,0 +1,9 @@
+fd834c02dd9a91ad6f0deeed3387a1b7  usr/sbin/update-inetd
+ab7c6433222946aec11419be3202f19e  usr/share/doc/netbase/README.Debian
+3c72fc5191fb2f6f48cc02f5c68fc9c7  usr/share/doc/netbase/copyright
+3f502f679766d16b144bb1f77b6bac27  usr/share/doc/netbase/changelog.gz
+5ae468b6b12a1f23c8c549bb0226d47c  usr/share/man/man3/DebianNet.3pm.gz
+a51a5592ef7f25ca4316ddaac350dad4  usr/share/man/man5/gateways.5.gz
+bd0d340e37a3b918b4195e95b74f19c0  usr/share/man/man8/resolv+.8.gz
+a882bdbf1a2443486912cae75307427f  usr/share/man/man8/update-inetd.8.gz
+d879c31d29fc8dbac1aacee53bbe2aa0  usr/lib/perl5/DebianNet.pm

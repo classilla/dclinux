@@ -1,0 +1,850 @@
+19700101 090047 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090047 probe ended
+19700101 090102 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090102 probe ended
+19700101 090104 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090105 probe ended
+19700101 090105 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090105 probe ended
+19700101 090106 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090106 probe ended
+19700101 090106 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090106 probe ended
+19700101 090107 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090107 probe ended
+19700101 090107 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090107 probe ended
+19700101 090107 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090107 probe ended
+19700101 090044 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090044 probe ended
+19700101 090058 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090058 probe ended
+19700101 090100 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090100 probe ended
+19700101 090101 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090101 probe ended
+19700101 090102 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090102 probe ended
+19700101 090102 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090102 probe ended
+19700101 090103 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090103 probe ended
+19700101 090103 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090103 probe ended
+19700101 090103 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090103 probe ended
+19700101 090127 start /sbin/modprobe -s -k -- nls_iso8859-1 safemode=1
+19700101 090127 probe ended
+19700101 090127 start /sbin/modprobe -s -k -- nls_iso8859-1 safemode=1
+19700101 090127 probe ended
+19700101 090210 start /sbin/modprobe -s -k -- nls_iso8859-1 safemode=1
+19700101 090210 probe ended
+19700101 090210 start /sbin/modprobe -s -k -- nls_iso8859-1 safemode=1
+19700101 090210 probe ended
+19700101 090043 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090043 probe ended
+19700101 090057 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090057 probe ended
+19700101 090058 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090059 probe ended
+19700101 090059 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090059 probe ended
+19700101 090100 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090100 probe ended
+19700101 090101 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090101 probe ended
+19700101 090101 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090101 probe ended
+19700101 090101 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090101 probe ended
+19700101 090101 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090101 probe ended
+19700101 090048 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090048 probe ended
+19700101 090104 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090104 probe ended
+19700101 090105 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090105 probe ended
+19700101 090107 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090107 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090109 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090109 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090109 probe ended
+19700101 090110 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090110 probe ended
+19700101 090110 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090110 probe ended
+19700101 091228 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 091228 probe ended
+19700101 091229 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 091229 probe ended
+19700101 091229 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 091230 probe ended
+19700101 091317 start /sbin/modprobe -k /dev/js0 safemode=0
+19700101 091317 probe ended
+19700101 091317 start /sbin/modprobe -k /dev/js1 safemode=0
+19700101 091317 probe ended
+19700101 091318 start /sbin/modprobe -k /dev/js2 safemode=0
+19700101 091318 probe ended
+19700101 091318 start /sbin/modprobe -k /dev/js3 safemode=0
+19700101 091318 probe ended
+19700101 091318 start /sbin/modprobe -k /dev/js4 safemode=0
+19700101 091318 probe ended
+19700101 091319 start /sbin/modprobe -k /dev/js5 safemode=0
+19700101 091319 probe ended
+19700101 091320 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 091320 probe ended
+19700101 091531 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 091531 probe ended
+19700101 091531 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 091531 probe ended
+19700101 091531 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 091532 probe ended
+19700101 091532 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 091532 probe ended
+19700101 091532 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 091532 probe ended
+19700101 091533 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 091533 probe ended
+19700101 091637 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 091637 probe ended
+19700101 091638 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 091638 probe ended
+19700101 091638 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 091639 probe ended
+19700101 093444 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093444 probe ended
+19700101 093444 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093444 probe ended
+19700101 093445 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093445 probe ended
+19700101 093445 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093445 probe ended
+19700101 093445 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093445 probe ended
+19700101 093446 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093446 probe ended
+19700101 093523 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093523 probe ended
+19700101 093523 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093523 probe ended
+19700101 093524 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093524 probe ended
+19700101 093524 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093524 probe ended
+19700101 093524 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093524 probe ended
+19700101 093525 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093525 probe ended
+19700101 093536 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093536 probe ended
+19700101 093536 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093536 probe ended
+19700101 093536 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093536 probe ended
+19700101 093537 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093537 probe ended
+19700101 093537 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093537 probe ended
+19700101 093537 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093537 probe ended
+19700101 093617 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093618 probe ended
+19700101 093618 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093618 probe ended
+19700101 093618 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093618 probe ended
+19700101 093618 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093618 probe ended
+19700101 093619 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093619 probe ended
+19700101 093619 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093619 probe ended
+19700101 093628 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093628 probe ended
+19700101 093629 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093629 probe ended
+19700101 093629 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093629 probe ended
+19700101 093629 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 093629 probe ended
+19700101 093630 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 093630 probe ended
+19700101 093630 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 093630 probe ended
+19700101 095038 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095038 probe ended
+19700101 095038 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095038 probe ended
+19700101 095038 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095038 probe ended
+19700101 095039 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095039 probe ended
+19700101 095039 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095039 probe ended
+19700101 095039 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095039 probe ended
+19700101 095127 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095127 probe ended
+19700101 095127 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095127 probe ended
+19700101 095128 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095128 probe ended
+19700101 095128 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095128 probe ended
+19700101 095128 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095128 probe ended
+19700101 095129 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095129 probe ended
+19700101 095247 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095247 probe ended
+19700101 095248 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095248 probe ended
+19700101 095248 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095248 probe ended
+19700101 095248 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095248 probe ended
+19700101 095249 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095249 probe ended
+19700101 095249 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095249 probe ended
+19700101 095302 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095302 probe ended
+19700101 095302 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095302 probe ended
+19700101 095306 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095306 probe ended
+19700101 095307 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095307 probe ended
+19700101 095308 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095308 probe ended
+19700101 095308 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095308 probe ended
+19700101 095310 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095310 probe ended
+19700101 095310 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095310 probe ended
+19700101 095319 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095319 probe ended
+19700101 095320 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095320 probe ended
+19700101 095322 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095322 probe ended
+19700101 095322 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095322 probe ended
+19700101 095329 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095329 probe ended
+19700101 095329 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095329 probe ended
+19700101 095330 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095330 probe ended
+19700101 095331 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095331 probe ended
+19700101 095335 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095335 probe ended
+19700101 095335 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095335 probe ended
+19700101 095338 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095338 probe ended
+19700101 095338 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095338 probe ended
+19700101 095409 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095409 probe ended
+19700101 095410 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095410 probe ended
+19700101 095412 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095412 probe ended
+19700101 095412 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095412 probe ended
+19700101 095416 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095416 probe ended
+19700101 095416 start /sbin/modprobe -s -k -- binfmt-0000 safemode=1
+19700101 095416 probe ended
+19700101 095517 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095517 probe ended
+19700101 095518 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095518 probe ended
+19700101 095518 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095518 probe ended
+19700101 095518 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095518 probe ended
+19700101 095518 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095518 probe ended
+19700101 095519 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095519 probe ended
+19700101 095602 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095602 probe ended
+19700101 095602 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095602 probe ended
+19700101 095602 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095602 probe ended
+19700101 095602 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095602 probe ended
+19700101 095603 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095603 probe ended
+19700101 095603 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095603 probe ended
+19700101 095709 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095709 probe ended
+19700101 095710 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095710 probe ended
+19700101 095710 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095710 probe ended
+19700101 095710 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095710 probe ended
+19700101 095710 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095711 probe ended
+19700101 095711 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095711 probe ended
+19700101 095929 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095929 probe ended
+19700101 095929 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095929 probe ended
+19700101 095929 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095929 probe ended
+19700101 095930 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095930 probe ended
+19700101 095930 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095930 probe ended
+19700101 095930 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095930 probe ended
+19700101 095956 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 095956 probe ended
+19700101 095956 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 095956 probe ended
+19700101 095957 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 095957 probe ended
+19700101 095957 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 095957 probe ended
+19700101 095957 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 095957 probe ended
+19700101 095958 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 095958 probe ended
+19700101 100148 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 100148 probe ended
+19700101 100149 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 100149 probe ended
+19700101 100149 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 100149 probe ended
+19700101 100149 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 100149 probe ended
+19700101 100150 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 100150 probe ended
+19700101 100150 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 100150 probe ended
+19700101 100215 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 100215 probe ended
+19700101 100215 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 100215 probe ended
+19700101 100216 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 100216 probe ended
+19700101 100216 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 100216 probe ended
+19700101 100216 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 100216 probe ended
+19700101 100217 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 100217 probe ended
+19700101 100256 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 100256 probe ended
+19700101 100257 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 100257 probe ended
+19700101 100257 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 100257 probe ended
+19700101 100257 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 100257 probe ended
+19700101 100258 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 100258 probe ended
+19700101 100258 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 100258 probe ended
+19700101 100335 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 100336 probe ended
+19700101 100336 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 100336 probe ended
+19700101 100336 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 100336 probe ended
+19700101 100336 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 100336 probe ended
+19700101 100337 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 100337 probe ended
+19700101 100337 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 100337 probe ended
+19700101 100508 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 100508 probe ended
+19700101 100508 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 100508 probe ended
+19700101 100508 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 100508 probe ended
+19700101 100509 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 100509 probe ended
+19700101 100509 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 100509 probe ended
+19700101 100509 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 100509 probe ended
+19700101 104436 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 104436 probe ended
+19700101 104437 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 104437 probe ended
+19700101 104437 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 104437 probe ended
+19700101 104437 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 104437 probe ended
+19700101 104437 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 104437 probe ended
+19700101 104438 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 104438 probe ended
+19700101 105908 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 105908 probe ended
+19700101 105908 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 105908 probe ended
+19700101 105908 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 105908 probe ended
+19700101 105909 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 105909 probe ended
+19700101 105909 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 105909 probe ended
+19700101 105909 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 105909 probe ended
+19700101 110635 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110635 probe ended
+19700101 110636 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110636 probe ended
+19700101 110636 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110636 probe ended
+19700101 110636 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110636 probe ended
+19700101 110636 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110636 probe ended
+19700101 110637 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110637 probe ended
+19700101 110847 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110847 probe ended
+19700101 110848 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110848 probe ended
+19700101 110848 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110848 probe ended
+19700101 110848 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110848 probe ended
+19700101 110848 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110848 probe ended
+19700101 110849 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110849 probe ended
+19700101 110915 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110915 probe ended
+19700101 110915 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110915 probe ended
+19700101 110916 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110916 probe ended
+19700101 110916 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 110916 probe ended
+19700101 110916 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 110916 probe ended
+19700101 110917 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 110917 probe ended
+19700101 111317 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111317 probe ended
+19700101 111318 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111318 probe ended
+19700101 111318 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111318 probe ended
+19700101 111318 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111318 probe ended
+19700101 111319 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111319 probe ended
+19700101 111319 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111319 probe ended
+19700101 111329 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 111329 probe ended
+19700101 111330 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 111330 probe ended
+19700101 111330 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 111330 probe ended
+19700101 111330 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 111330 probe ended
+19700101 111331 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 111331 probe ended
+19700101 111331 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111331 probe ended
+19700101 111508 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 111508 probe ended
+19700101 111509 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 111509 probe ended
+19700101 111509 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 111509 probe ended
+19700101 111509 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 111509 probe ended
+19700101 111509 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 111509 probe ended
+19700101 111510 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111510 probe ended
+19700101 111540 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 111540 probe ended
+19700101 111540 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 111540 probe ended
+19700101 111540 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 111540 probe ended
+19700101 111541 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 111541 probe ended
+19700101 111541 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 111541 probe ended
+19700101 111541 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111541 probe ended
+19700101 111637 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 111637 probe ended
+19700101 111638 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 111638 probe ended
+19700101 111638 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 111638 probe ended
+19700101 111638 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 111638 probe ended
+19700101 111639 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 111639 probe ended
+19700101 111639 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111639 probe ended
+19700101 111724 start /sbin/modprobe -k /dev/input/js1 safemode=0
+19700101 111724 probe ended
+19700101 111724 start /sbin/modprobe -k /dev/input/js2 safemode=0
+19700101 111724 probe ended
+19700101 111724 start /sbin/modprobe -k /dev/input/js3 safemode=0
+19700101 111724 probe ended
+19700101 111724 start /sbin/modprobe -k /dev/input/js4 safemode=0
+19700101 111724 probe ended
+19700101 111725 start /sbin/modprobe -k /dev/input/js5 safemode=0
+19700101 111725 probe ended
+19700101 111725 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111725 probe ended
+19700101 111736 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111736 probe ended
+19700101 111736 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111736 probe ended
+19700101 111736 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111737 probe ended
+19700101 111737 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111737 probe ended
+19700101 111737 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111737 probe ended
+19700101 111737 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111737 probe ended
+19700101 111741 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111741 probe ended
+19700101 111741 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111741 probe ended
+19700101 111741 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111741 probe ended
+19700101 111742 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111742 probe ended
+19700101 111742 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111742 probe ended
+19700101 111742 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111742 probe ended
+19700101 111752 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111752 probe ended
+19700101 111752 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111752 probe ended
+19700101 111753 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111753 probe ended
+19700101 111753 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 111753 probe ended
+19700101 111753 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 111753 probe ended
+19700101 111753 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 111753 probe ended
+19700101 112251 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112251 probe ended
+19700101 112251 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112251 probe ended
+19700101 112252 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112252 probe ended
+19700101 112252 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112252 probe ended
+19700101 112252 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112252 probe ended
+19700101 112253 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112253 probe ended
+19700101 112624 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112624 probe ended
+19700101 112624 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112624 probe ended
+19700101 112624 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112624 probe ended
+19700101 112625 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112625 probe ended
+19700101 112625 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112625 probe ended
+19700101 112625 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112625 probe ended
+19700101 112800 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112800 probe ended
+19700101 112801 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112801 probe ended
+19700101 112801 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112801 probe ended
+19700101 112801 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112801 probe ended
+19700101 112802 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112802 probe ended
+19700101 112802 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112802 probe ended
+19700101 112823 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112823 probe ended
+19700101 112823 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112823 probe ended
+19700101 112824 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112824 probe ended
+19700101 112824 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112824 probe ended
+19700101 112824 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112824 probe ended
+19700101 112825 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112825 probe ended
+19700101 112849 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112849 probe ended
+19700101 112849 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112849 probe ended
+19700101 112849 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112849 probe ended
+19700101 112849 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112849 probe ended
+19700101 112850 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112850 probe ended
+19700101 112850 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112850 probe ended
+19700101 112943 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112943 probe ended
+19700101 112944 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112944 probe ended
+19700101 112944 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112944 probe ended
+19700101 112944 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 112944 probe ended
+19700101 112945 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 112945 probe ended
+19700101 112945 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 112945 probe ended
+19700101 090052 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090052 probe ended
+19700101 090108 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090108 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090109 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090111 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090050 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090050 probe ended
+19700101 090106 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090106 probe ended
+19700101 090107 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090107 probe ended
+19700101 090108 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090109 probe ended
+19700101 090110 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090110 probe ended
+19700101 090110 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090110 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090111 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090111 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090111 probe ended
+19700101 090239 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090239 probe ended
+19700101 090239 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090239 probe ended
+19700101 090240 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090240 probe ended
+19700101 090240 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090240 probe ended
+19700101 090240 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090240 probe ended
+19700101 090241 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090241 probe ended
+19700101 090400 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090400 probe ended
+19700101 090401 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090401 probe ended
+19700101 090401 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090401 probe ended
+19700101 090401 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090401 probe ended
+19700101 090402 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090402 probe ended
+19700101 090402 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090402 probe ended
+19700101 090405 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090405 probe ended
+19700101 090405 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090405 probe ended
+19700101 090406 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090406 probe ended
+19700101 090406 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090406 probe ended
+19700101 090406 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090406 probe ended
+19700101 090407 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090407 probe ended
+19700101 090409 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090409 probe ended
+19700101 090410 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090410 probe ended
+19700101 090410 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090410 probe ended
+19700101 090410 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090410 probe ended
+19700101 090411 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090411 probe ended
+19700101 090411 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090411 probe ended
+19700101 090418 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090418 probe ended
+19700101 090419 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090419 probe ended
+19700101 090419 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090419 probe ended
+19700101 090419 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090419 probe ended
+19700101 090420 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090420 probe ended
+19700101 090420 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090420 probe ended
+19700101 090429 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090429 probe ended
+19700101 090429 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090429 probe ended
+19700101 090430 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090430 probe ended
+19700101 090430 start /sbin/modprobe -k /dev/sound safemode=0
+19700101 090430 probe ended
+19700101 090430 start /sbin/modprobe -k /dev/dsp safemode=0
+19700101 090430 probe ended
+19700101 090431 start /sbin/modprobe -k /dev/dsp1 safemode=0
+19700101 090431 probe ended
+19700101 090053 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090053 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090109 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090111 probe ended
+19700101 090112 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090112 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090115 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090115 probe ended
+19700101 090115 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090115 probe ended
+19700101 100335 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 100335 probe ended
+19700101 100335 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 100335 probe ended
+19700101 100335 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 100335 probe ended
+19700101 100336 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 100336 probe ended
+19700101 100731 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 100731 probe ended
+19700101 100732 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 100732 probe ended
+19700101 100732 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 100733 probe ended
+19700101 102737 start /sbin/modprobe -k /dev/pty/s1 safemode=0
+19700101 102738 probe ended
+19700101 102738 start /sbin/modprobe -k /dev/pty/s1 safemode=0
+19700101 102738 probe ended
+19700101 103003 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 103003 probe ended
+19700101 103003 start /sbin/modprobe -k /dev/pts/0 safemode=0
+19700101 103003 probe ended
+19700101 103004 start /sbin/modprobe -k /dev/ptyxx safemode=0
+19700101 103004 probe ended
+19700101 090103 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090103 probe ended
+19700101 090120 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090120 probe ended
+19700101 090121 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090121 probe ended
+19700101 090122 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090123 probe ended
+19700101 090125 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090125 probe ended
+19700101 090126 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090126 probe ended
+19700101 090126 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090126 probe ended
+19700101 090126 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090126 probe ended
+19700101 090127 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090127 probe ended
+19700101 090055 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090055 probe ended
+19700101 090112 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090112 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090114 probe ended
+19700101 090115 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090115 probe ended
+19700101 090116 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090116 probe ended
+19700101 090117 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090117 probe ended
+19700101 090117 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090117 probe ended
+19700101 090117 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090117 probe ended
+19700101 090118 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090118 probe ended
+19700101 090517 start /sbin/modprobe -k /dev/js safemode=0
+19700101 090517 probe ended
+19700101 090052 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090052 probe ended
+19700101 090108 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090108 probe ended
+19700101 090110 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090110 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090111 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090051 start /sbin/modprobe -k /dev/ttyp0 safemode=0
+19700101 090051 probe ended
+19700101 090108 start /sbin/modprobe -k /dev/gpmdata safemode=0
+19700101 090108 probe ended
+19700101 090109 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090109 probe ended
+19700101 090111 start /sbin/modprobe -k /dev/gpmctl safemode=0
+19700101 090111 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090113 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090113 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended
+19700101 090114 start /sbin/modprobe -k /dev/MAKEDEV safemode=0
+19700101 090114 probe ended

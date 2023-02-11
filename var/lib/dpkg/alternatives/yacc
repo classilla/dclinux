@@ -1,0 +1,9 @@
+auto
+/usr/bin/yacc
+yaccman
+/usr/share/man/man1/yacc.1.gz
+
+/usr/bin/bison.yacc
+100
+/usr/share/man/man1/bison.1.gz
+

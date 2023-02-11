@@ -1,0 +1,19 @@
+ftpd for Debian
+---------------
+
+ftpd now supports PAM.  It is recommended that you leave the pam_ftp entry
+alone in the pam configuration file since ftpd uses it to figure out prompts
+and determining anonymity.
+
+The best way to disable anonymous ftp is to place ftp and anonymous in
+/etc/ftpusers.  Removing the user ftp from the system also works.
+
+The -A option no longer has any effect since authentication is done by PAM.
+To recover its functionality, just uncomment the ftpchroot line in the pam
+configuration file.
+
+If you wish to receive reports from users of your ftp server, you should setup
+an alias for ftp-bugs@name.of.your.ftp.server.
+
+Herbert <herbert@debian.org>
+$Id: README.Debian,v 1.1 1999/04/16 07:00:27 herbert Exp $

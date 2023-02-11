@@ -1,0 +1,18 @@
+This debian package is maintained by Bernd Eckenfels <ecki@debian.org> since 
+Mon, 14 Aug 2000 02:42:13 +0200. Debian Informations will be uploaded
+upstream, too.
+
+This package was debianized by Anthony Towns <ajt@debian.org> on
+Mon, 17 Jul 2000 07:34:12 +1000. It was originally part of the netbase
+package.
+
+It was downloaded from http://www.tazenda.demon.co.uk/phil/net-tools/
+
+Upstream Author(s): Phil Blundell <philb@gnu.org>, 
+                    Bernd Eckenfels <net-tools@lina.inka.de>
+
+Copyright:
+
+Distributed under the terms of the GNU General Public License version 2,
+as published by the Free Software Foundation. On Debian systems you can
+find a copy of this license in /usr/share/common-licenses/GPL.

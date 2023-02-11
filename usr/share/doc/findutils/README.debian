@@ -1,0 +1,21 @@
+Some people wish to have updatedb only include mount points which are
+automatically mounted by "mount -a", which mounts devices listed in
+/etc/fstab. 
+
+The following lines may be added to /etc/updatedb.conf to exclude
+non-automatic mount points from updatedb.  Add before the
+"export PRUNEPATHS" line in /etc/updatedb.conf. 
+
+# mount points not to be scanned (regexp matching lines into /etc/fstab)
+EXCLUDE_MOINT_POINTS=noauto
+EXCLUDE_PATH=`awk "/^#/ {next}; /$EXCLUDE_MOINT_POINTS/ {print \\$2}" < /etc/fstab | tr '\012' ' '`
+PRUNEPATHS="$PRUNEPATHS $EXCLUDE_PATH"
+
+This suggestion is due to Eric Delaunay
+<delaunay@lix.polytechnique.fr>
+
+
+> The problem is NOT
+> updatedb, rather it's actually caused by the "checksecurity" call in
+> /etc/cron.daily/standard.  The easy fix for this is to mount your NFS
+> stuff nosuid and nodev so it ignores them. 

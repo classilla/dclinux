@@ -1,0 +1,38 @@
+This is the Linux NFS utility package version 0.3.1.
+
+The nfs-utils package is available via the Linux NFS web page is at
+
+http://sourceforge.net/projects/nfs/
+
+To compile, just do
+
+# ./configure
+# make
+
+# make install
+
+will install the nfs-utils binaries. You have to install the NFS
+service scripts. There are 2 in etc/redhat provided for RedHat 6.x
+and 7.0. They are tested on RedHat 6.2 and 7.0.
+
+On RedHat 6.2 and 7.0, you can use
+
+# rpm -ta nfs-utils-0.3.1.tar.gz
+
+to build the source and binary RPMs.
+
+util-linux 2.10m or above is required. But the following patches may
+also be needed:
+
+ftp://nfs.sourceforge.net/pub/nfs/util-linux-2.10f-mount-tcp.patch
+ftp://nfs.sourceforge.net/pub/nfs/util-linux-2.10m-mount-compat.patch
+ftp://nfs.sourceforge.net/pub/nfs/util-linux-2.10m-mount-nfsv3.patch
+ftp://nfs.sourceforge.net/pub/nfs/util-linux-2.10m-mount-rpc.patch
+
+
+Thanks.
+
+
+H.J.
+hjl@lucon.org
+02/14/2001

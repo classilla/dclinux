@@ -1,0 +1,67 @@
+// $TOG: xfree86.lst /main/2 1997/06/13 06:29:00 kaleb $
+
+//
+//  Rules descriptions for XFree86
+//  Copyright 1996 by Joseph Moss
+//
+//  $XFree86: xc/programs/xkbcomp/rules/xfree86.lst,v 3.3.2.4 1999/06/21 09:45:30 hohndel Exp $
+
+! model
+  pc101		Generic 101-key PC
+  pc102		Generic 102-key (Intl) PC
+  pc104		Generic 104-key PC
+  pc105		Generic 105-key (Intl) PC
+  dell101	Dell 101-key PC
+  everex	Everex STEPnote
+  flexpro	Keytronic FlexPro
+  microsoft	Microsoft Natural
+  omnikey101	Northgate OmniKey 101
+  winbook	Winbook Model XP5
+  jp106		Japanese 106-key
+  pc98		PC-98xx Series
+  abnt2		Brazilian ABNT2
+
+! layout
+  us		U.S. English
+  en_US		U.S. English w/ISO9995-3
+  be		Belgian
+  bg		Bulgarian
+  ca		Canadian
+  cs		Czechoslovakian
+  de		German
+  de_CH		Swiss German
+  dk		Danish
+  es		Spanish
+  fi		Finnish
+  fr		French
+  fr_CH		Swiss French
+  gb		United Kingdom
+  hu		Hungarian
+  it		Italian
+  jp		Japanese
+  no		Norwegian
+  pl		Polish
+  pt		Portugese
+  ru		Russian
+  se		Swedish
+  th		Thai
+  nec/jp	PC-98xx Series
+  us_intl	U.S. English w/ deadkeys
+  br		Brazilian
+
+! variant
+  nodeadkeys	Eliminate dead keys
+
+! option
+  grp			Group Shift/Lock behavior
+  grp:switch		R-Alt switches group while pressed
+  grp:toggle		Right Alt key changes group
+  grp:shift_toggle 	Both Shift keys together change group
+  grp:ctrl_shift_toggle Control+Shift changes group
+  grp:ctrl_alt_toggle	Alt+Control changes group
+  ctrl			Control Key Position
+  ctrl:nocaps		Make CapsLock an additional Control
+  ctrl:swapcaps		Swap Control and Caps Lock
+  ctrl:ctrl_ac		Control key at left of 'A'
+  ctrl:ctrl_aa		Control key at bottom left
+

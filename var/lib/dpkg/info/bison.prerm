@@ -1,0 +1,18 @@
+#!/bin/sh
+
+if [ $1 != "upgrade" ] ; then
+        update-alternatives --remove yacc /usr/bin/bison.yacc
+        update-alternatives --remove yaccman /usr/man/man1/bison.1.gz
+
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/bison ]; then
+	rm -f /usr/doc/bison
+fi
+# End automatically added section
+# Automatically added by dh_installinfo
+install-info --quiet --remove /usr/share/info/bison.info
+# End automatically added section
+
+

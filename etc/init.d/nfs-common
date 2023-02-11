@@ -1,0 +1,73 @@
+#!/bin/sh
+#
+# nfs-common    This shell script takes care of starting and stopping
+#               common daemons required for NFS clients and servers.
+#
+# chkconfig: 345 20 80
+# description: NFS is a popular protocol for file sharing across \
+#	       TCP/IP networks. This service provides NFS file \
+#	       locking functionality.
+#
+
+PREFIX=
+
+NEED_LOCKD=yes
+if test -f /proc/ksyms
+then
+    # We need to be conservative and run lockd,
+    # unless we can prove that it isn't required.
+    grep -q lockdctl /proc/ksyms || NEED_LOCKD=no
+fi
+
+[ -x $PREFIX/sbin/rpc.statd ] || exit 0
+[ -x $PREFIX/sbin/rpc.lockd ] || [ "$NEED_LOCKD" = no ] || exit 0
+
+# What is this?
+DESC="NFS common utilities"
+
+# Make sure that daemon cwds are in root fs.
+cd /
+
+# See how we were called.
+case "$1" in
+  start)
+	printf "Starting $DESC:"
+	printf " statd"
+	start-stop-daemon --start --quiet \
+	    --exec $PREFIX/sbin/rpc.statd
+	if [ "$NEED_LOCKD" = yes ]
+	then
+	    printf " lockd"
+	    start-stop-daemon --start --quiet \
+		--exec $PREFIX/sbin/rpc.lockd
+	fi
+	echo "."
+	;;
+
+  stop)
+	printf "Stopping $DESC:"
+	if [ "$NEED_LOCKD" = yes ]
+	then
+	    printf " lockd"
+	    start-stop-daemon --stop --oknodo --quiet \
+		--exec $PREFIX/sbin/rpc.lockd
+	fi
+	printf " statd"
+	start-stop-daemon --stop --oknodo --quiet \
+	    --exec $PREFIX/sbin/rpc.statd
+	echo "."
+	;;
+
+  restart | force-reload)
+	$0 stop
+	sleep 1
+	$0 start
+	;;
+
+  *)
+	echo "Usage: nfs-common {start|stop|restart}"
+	exit 1
+	;;
+esac
+
+exit 0

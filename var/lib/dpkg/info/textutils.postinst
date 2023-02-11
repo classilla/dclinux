@@ -1,0 +1,13 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/textutils -a -d /usr/share/doc/textutils ]; then
+		ln -sf ../share/doc/textutils /usr/doc/textutils
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinfo
+if [ "$1" = "configure" ]; then
+	install-info --quiet /usr/share/info/textutils.info
+fi
+# End automatically added section

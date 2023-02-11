@@ -1,0 +1,46 @@
+This is the Debian package of Texinfo, the GNU documentation system.
+
+This package was previously maintained by Ian Jackson, Erick
+Branderhorst, and Galen Hazelwood. Today, it is maintained by
+Josip Rodin <jrodin@jagor.srce.hr>.
+
+The original source can be found at: ftp://texinfo.org/
+(or at: ftp://ftp.gnu.org/gnu/texinfo/ )
+
+Upstream maintainer: Karl Berry <karl@cs.umb.edu>.
+
+  All programs Copyright (C) 1987, 1992-1999  Free Software Foundation, Inc.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2, or (at your option)
+  any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL' file.
+
+  All manuals Copyright (C) 1988, 1990-1993, 1995-1999  Free Software
+  Foundation, Inc.
+
+  Permission is granted to make and distribute verbatim copies of this
+  manual provided the copyright notice and this permission notice are
+  preserved on all copies.
+
+  Permission is granted to copy and distribute modified versions of this
+  manual under the conditions for verbatim copying, provided that the
+  entire resulting derived work is distributed under the terms of a
+  permission notice identical to this one.
+
+  Permission is granted to copy and distribute translations of this
+  manual into another language, under the above conditions for modified
+  versions, except that this permission notice may be stated in a
+  translation approved by the Free Software Foundation.

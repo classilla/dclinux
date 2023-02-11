@@ -1,0 +1,485 @@
+# -*- perl -*-
+
+$::keymaps->{pc} =
+  {
+   default => 'qwerty',
+
+   'azerty' =>
+   {
+    default => 'French',
+    'French' =>
+    {
+     default => 'Without Euro (latin 1)',
+     'Without Euro (latin 1)' => { 'Standard' => 'fr-pc', },
+     'With Euro (latin 15)' => { 'Standard' => 'fr-latin0', },
+    },
+    'Belgian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'be-latin1',
+      'Alternate' => 'be2-latin1',
+     },
+     'Wang' => { 'Standard' => 'wangbe', },
+    },
+   },
+
+   'dvorak' => # needs confirm
+   {
+    'Unknown' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'dvorak',
+      'ANSI' => 'ANSI-dvorak',
+      'With French and Spanish accents' => 'pc-dvorak-latin1',
+     },
+     'Left single-handed' => { 'Standard' => 'dvorak-l', },
+     'Right single-handed' => { 'Standard' => 'dvorak-r', },
+    },
+   },
+
+   'fgGIod' =>
+   {
+    'Turkish' => # needs confirm
+    # FIXME
+    {
+     'Standard' =>
+     {
+      'trf' => 'trf',
+      'tr_f-latin5' => 'tr_f-latin5',
+     },
+    },
+   },
+
+   'qwerty' =>
+   {
+    default => 'US american',
+    'US american' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'us',
+      'With latin1' => 'us-latin1',
+     },
+    },
+    'British' =>
+    {
+     'Standard' => { 'Standard' => 'uk', },
+    },
+    'Bulgarian' =>
+    {
+     'Standard' => { 'Standard' => 'bg', },
+    },
+    'Brazilian' =>
+    {
+     'Standard' => { 'Standard' => 'br-abnt2', },
+    },
+    'Canadian' => # needs confirm
+    {
+     'French' => { 'Standard' => 'cf', },
+     'English' => { 'Standard' => 'us', },
+    },
+    'Czech' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'cz-lat2',
+      'Programmer' => 'cz-lat2-prog',
+     },
+    },
+    'Danish' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'dk',
+      'Dead keys' => 'dk-latin1',
+     },
+    },
+    'Spanish' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'es',
+      'CP850' => 'es-cp850',
+     },
+    },
+    'Estonian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'et',
+      'No dead keys' => 'et-nodeadkeys',
+     },
+    },
+    'Finnish' => # needs confirm (cf swedish ?)
+    {
+     'Standard' => { 'Standard' => 'fi-latin1', },
+     'Old (obsolete)' => { 'Standard' => 'fi', },
+    },
+    'Polish' => # needs confirm
+    {
+     'Standard' =>
+     {
+      default => 'Diacritics with AltGr and Alt',
+      'AltGr only diacritics' => 'pl',
+      'Diacritics with AltGr and Alt' => 'pl1',
+     },
+    },
+    'Greek' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'gr',
+      'gr-pc' => 'gr-pc',
+     },
+    },
+    'Italian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'it',
+      'it2' => 'it2',
+      'IBM' => 'it-ibm',
+     },
+    },
+    'Lithuanian' =>
+    {
+     'Standard' =>
+     {
+      'latin4' => 'lt.l4',
+      'unicode' => 'lt',
+     },
+    },
+    'Latvian' =>
+    {
+     'Standard' =>
+     {
+      'latin4' => 'lv-latin4',
+      'latin7' => 'lv-latin7',
+     },
+    },
+    'Norvegian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'no',
+      'latin1' => 'no-latin1',
+     },
+    },
+    'Japanese' => # needs confirm
+    {
+     'Standard' => { 'Standard' => 'jp106', },
+     'PC 110' => { 'Standard' => 'pc110', },
+    },
+    'Dutch' =>
+    {
+     'Standard' => { 'Standard' => 'nl', },
+    },
+    'Hebrew' =>
+    {
+     'Standard' => { 'Standard' => 'hebrew', },
+    },
+    'Hungarian' =>
+    {
+     'Standard' => { 'Standard' => 'hu101', },
+    },
+    'Icelandic' =>
+    {
+     'Standard' => { 'Standard' => 'is-latin1', },
+    },
+    'Latin American' =>
+    {
+     'Standard' => { 'Standard' => 'la-latin1', },
+    },
+    'Macedonian' =>
+    {
+     'Standard' => { 'unicode' => 'mk', },
+    },
+    'Portugese' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'pt-latin1',
+      'Old keymap' => 'pt-old',
+     },
+    },
+    'Romanian' =>
+    {
+     'Standard' => { 'Standard' => 'ro', },
+    },
+    'Russian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'KOI8-R (RightAlt)' => 'ru1',
+      'KOI8-R (RightCtrl)' => 'ru',
+      'KOI8-R (102 Keys)' => 'ru3',
+      'KOI8-R (105 Keys)' => 'ru4',
+      'KOI8-R (MS Cyrillic Layout)' => 'ru-ms',
+      'KOI8-R (Yawerty Layout)' => 'ru-yawerty',
+      'CP-1251 (1)' => 'ru-cp1251',
+      'CP-1251 (2)' => 'ru_win',
+      'CP-866' => 'ru2',
+     },
+    },
+    'Swedish' => # needs confirm (cf finnish ?)
+    {
+     'Standard' => { 'Standard' => 'se-latin1', },
+    },
+    'Slovak' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'sk-qwerty',
+      'Programmer' => 'sk-prog',
+      'Alternate programmer' => 'sk-prog-qwerty',
+     },
+    },
+    'Turkish' => # needs confirm
+    {
+     'Standard' =>
+     {
+      '"Q" layout (1)' => 'tr_q-latin5',
+      '"Q" layout (2)' => 'trq',
+      'Alternate' => 'tralt',
+     },
+    },
+    'Ukrainian' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard (koi8u)' => 'ua',
+      'WS' => 'ua-ws',
+      'unicode' => 'ua-utf',
+      'WS - unicode' => 'ua-utf-ws',
+      'Alternate' => 'uaw',
+      'Alternate - unicode' => 'uaw_uni',
+     },
+    },
+   },
+
+   'qwertz' =>
+   {
+    default => 'German',
+    'Swiss' => # needs confirm
+    {
+     'French' =>
+     {
+      'Standard' => 'fr_CH',
+      'latin1' => 'fr_CH-latin1',
+     },
+     'German' =>
+     {
+      'Standard' => 'sg',
+      'latin1' => 'sg-latin1',
+      'latin1-lk450' => 'sg-latin1-lk450',
+     },
+    },
+    'German' => # needs confirm
+    {
+     'Standard' =>
+     {
+      'Standard' => 'de',
+      'latin1' => 'de-latin1',
+      'latin1 - no dead keys' => 'de-latin1-nodeadkeys',
+     },
+    },
+    'Slovak' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'sk-qwertz',
+      'Programmer' => 'sk-prog-qwertz',
+     },
+    },
+    'Czech' =>
+    {
+     'Standard' => { 'Standard' => 'cz-us-qwertz', },
+    },
+    'Hungarian' =>
+    {
+     'Standard' => { 'Standard' => 'hu', },
+    },
+    'Slovene' =>
+    {
+     'Standard' => { 'Standard' => 'slovene', },
+    },
+    'Croat' =>
+    {
+     'Standard' => { 'Standard' => 'croat', },
+    },
+    'Serbian' =>
+    {
+     'Standard' => { 'Standard' => 'sr', },
+    },
+   },
+
+  };
+
+$::keymaps->{sparc} =
+  {
+   default => 'Type 5',
+   'Type 5' =>
+   {
+    default => 'British',
+    'French' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-fr-latin1', },
+    },
+    'German' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-de-latin1', },
+    },
+    'Spanish' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-es', },
+    },
+    'Finnish' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-fi-latin1', },
+    },
+    'Russian' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-ru', },
+    },
+    'British' =>
+    {
+     'Standard' => { 'Standard' => 'sunt5-uk', },
+    },
+   },
+   'Type 4' =>
+   {
+    'Spanish' =>
+    {
+     'Standard' => { 'Standard' => 'sunt4-es', },
+    },
+   },
+   'dvorak' =>
+   {
+    'Unknown' =>
+    {
+     'Standard' => { 'Standard' => 'sundvorak', },
+    },
+   },
+   'Unknown (Polish)' =>
+   {
+    'Polish' =>
+    {
+     'Standard' => { 'Standard' => 'sun-pl', },
+    },
+   },
+  };
+
+$::keymaps->{atari} =
+  {
+   'Unknown' =>
+   {
+    default => 'US american',
+    'German' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'atari-de',
+      'With dead keys' => 'atari-de-deadkeys',
+      'Emacs-like' => 'atari-de-emacs',
+     },
+    },
+    'Swedish' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'atari-se',
+      'With dead keys' => 'atari-se-deadkeys',
+     },
+    },
+    'British' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'atari-uk',
+      'With dead keys' => 'atari-uk-deadkeys',
+     },
+    },
+    'US american' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'atari-us',
+      'With dead keys' => 'atari-us-deadkeys',
+     },
+    },
+   },
+  };
+
+$::keymaps->{amiga} =
+  {
+   'Unknown' =>
+   {
+    default => 'US american',
+    'German' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-de', },
+    },
+    'Spanish' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-es', },
+    },
+    'French' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-fr', },
+    },
+    'Italian' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-it', },
+    },
+    'Swedish' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-se', },
+    },
+    'Swiss' =>
+    {
+     'German' => { 'Standard' => 'amiga-sg', },
+    },
+    'US american' =>
+    {
+     'Standard' => { 'Standard' => 'amiga-us', },
+    },
+   },
+  };
+
+$::keymaps->{mac} =
+  {
+   'Unknown' =>
+   {
+    default => 'US american',
+    'German' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'mac-de2-ext',
+      'No dead keys (broken)' => 'mac-de-latin1-nodeadkeys',
+     },
+    },
+    'French' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'mac-fr3',
+      'Alternate' => 'mac-fr2-ext',
+     },
+    },
+    'US american' =>
+    {
+     'Standard' =>
+     {
+      'Standard' => 'mac-us-std',
+      'Extended' => 'mac-us-ext',
+     },
+    },
+   },
+  };
+
+$::obsolete_keymaps = (
+		       [ 'pc', 'qwerty', 'Canadadian' ],
+		      );

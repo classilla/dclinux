@@ -1,0 +1,6 @@
+LoadModule: access_module /usr/lib/apache/1.3/mod_access.so
+Directives:
+ allow
+ deny
+ order
+Description: Support for host-based access control

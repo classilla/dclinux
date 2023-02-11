@@ -1,0 +1,42 @@
+#! /bin/sh
+
+# sysklogd	Cron script to rotate system log files daily.
+#
+#		If you want to rotate other logfiles daily, edit
+#		this script.  An easy way is to add them manually
+#		or to add -a to syslogd-listfiles and add some grep
+#		stuff.
+#
+#		This is a configration file.  You are invited to edit
+#		it and maintain it on your own.  You'll have to do
+#		that if you don't like the default policy
+#		wrt. rotating logfiles (i.e. with large logfiles
+#		weekly and daily rotation may interfere).  If you edit
+#		this file and don't let dpkg upgrade it, you have full
+#		control over it.  Please read the manpage to
+#		syslogd-listfiles.
+#
+#		Written by Martin Schulze <joey@debian.org>.
+#		$Id: cron.daily,v 1.4 2001/03/11 23:00:53 joey Exp $
+
+test -x /usr/sbin/syslogd-listfiles || exit 0
+
+cd /var/log
+for LOG in `syslogd-listfiles`
+do
+   if [ -s $LOG ]; then
+      savelog -g adm -m 640 -u root -c 7 $LOG >/dev/null
+   fi
+done
+
+for LOG in `syslogd-listfiles --auth`
+do
+   if [ -s $LOG ]; then
+      chown root.adm $LOG
+      chmod o-rwx $LOG
+   fi
+done
+
+# Restart syslogd
+#
+/etc/init.d/sysklogd reload

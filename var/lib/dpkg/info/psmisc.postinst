@@ -1,0 +1,11 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/psmisc -a -d /usr/share/doc/psmisc ]; then
+		ln -sf ../share/doc/psmisc /usr/doc/psmisc
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" -a -x /usr/bin/update-menus ]; then update-menus ; fi
+# End automatically added section

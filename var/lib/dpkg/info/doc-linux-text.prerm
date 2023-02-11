@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+L=en
+
+
+
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) \
+     -a -L /usr/doc/doc-linux-${L} ]; then
+  rm -f /usr/doc/doc-linux-${L}
+fi
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) \
+     -a -L /usr/doc/HOWTO/${L}-txt ]; then
+  rm -f /usr/doc/HOWTO/${L}-txt
+fi
+

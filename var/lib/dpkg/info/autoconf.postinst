@@ -1,0 +1,22 @@
+#! /bin/sh -e
+install-info --quiet --section "Development" "Development" \
+       --description="Create source code configuration scripts" \
+       /usr/info/autoconf.info
+
+if [ ! -e /usr/info/standards.info.gz \
+     -a ! -e /usr/share/info/standards.info.gz ]; then
+    install-info --quiet --remove /usr/info/standards.info
+    install-info --quiet --remove /usr/share/info/standards.info
+fi
+if [ ! -e /usr/info/maintain.info.gz \
+     -a ! -e /usr/share/info/maintain.info.gz ]; then
+    install-info --quiet --remove /usr/info/maintain.info
+    install-info --quiet --remove /usr/share/info/maintain.info
+fi
+
+PACKAGE=autoconf
+if [ "$1" = "configure" ]; then
+     if [ -d /usr/doc -a ! -e /usr/doc/$PACKAGE -a -d /usr/share/doc/$PACKAGE ]; then
+	     ln -sf ../share/doc/$PACKAGE /usr/doc/$PACKAGE
+     fi
+fi

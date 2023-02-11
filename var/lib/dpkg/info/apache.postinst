@@ -1,0 +1,187 @@
+#! /bin/sh
+# postinst script for apache
+#
+# see: dh_installdeb(1)
+
+set -e
+
+# summary of how this script can be called:
+#        * <postinst> `configure' <most-recently-configured-version>
+#        * <old-postinst> `abort-upgrade' <new version>
+#        * <conflictor's-postinst> `abort-remove' `in-favour' <package>
+#          <new-version>
+#        * <deconfigured's-postinst> `abort-deconfigure' `in-favour'
+#          <failed-install-package> <version> `removing'
+#          <conflicting-package> <version>
+# for details, see /usr/doc/packaging-manual/
+#
+# quoting from the policy:
+#     Any necessary prompting should almost always be confined to the
+#     post-installation script, and should be protected with a conditional
+#     so that unnecessary prompting doesn't happen if a package's
+#     installation fails and the `postinst' is called with `abort-upgrade',
+#     `abort-remove' or `abort-deconfigure'.
+
+if [ "$1" != configure ]
+then
+    exit 0
+fi
+
+# adduser stuffs moved from preinst
+if [ -e /usr/sbin/adduser ]
+then
+    if ! grep -q "^www" /etc/group;
+    then
+	echo -n "The www-data group is missing!  Attempt to fix? "
+	read X
+	if [ "$X" = "Y" -o "$X" = "y" ];
+	then
+	    echo "Here goes nothing ... "
+            addgroup --gid 33 --force-badname www-data
+            echo
+	fi
+    fi
+
+    if ! grep -q "^www" /etc/passwd;
+    then
+	echo -n "The www-data user is missing!  Attempt to fix? "
+	read X
+	if [ "$X" = "Y" -o "$X" = "y" ];
+	then
+            adduser --system --home /var/www --no-create-home \
+            --uid 33 --gid 33 --disabled-password --force-badname www-data
+            echo
+	fi
+    fi
+fi
+
+if [ ! -e /etc/apache/conf ] && [ "$2" = "" ]
+then
+    ln -s . /etc/apache/conf
+fi
+
+if [ -f /etc/apache/httpd.conf ] \
+    && ! grep -q LoadModule: /etc/apache/httpd.conf \
+    && ! grep -q ClearModuleList: /etc/apache/httpd.conf
+then
+    echo -n "Adding magic LoadModule line to httpd.conf ... "
+    cat > /etc/apache/httpd.conf.dpkg-inst.$$ <<EOF
+
+# Please keep this LoadModule: line here, it is needed for installation.
+
+
+EOF
+    cat /etc/apache/httpd.conf >> /etc/apache/httpd.conf.dpkg-inst.$$
+    mv /etc/apache/httpd.conf.dpkg-inst.$$ /etc/apache/httpd.conf
+    echo "done."
+fi
+
+# If the 1.3.9 Debian Package's srm.conf is still around, comment out
+# this directive or the newly-installed web server (currently 1.3.14)
+# won't start.
+if [ -f /etc/apache/srm.conf ]
+then
+    if grep -q "^[ 	]*AddDefaultCharsetName" /etc/apache/srm.conf
+    then
+        sed '/[^	]*AddDefaultCharsetName/s/^/# Obsolete # /' < /etc/apache/srm.conf > /etc/apache/srm.conf.dpkg-inst.$$ &&
+	    cat /etc/apache/srm.conf.dpkg-inst.$$ > /etc/apache/srm.conf
+    fi
+fi
+
+if [ ! -e /etc/apache/mime.types ]
+then
+    ln -s ../mime.types /etc/apache/mime.types
+fi
+
+if ! grep -qi "^webmaster:" /etc/aliases 2> /dev/null
+then
+    echo "Adding webmaster to /etc/aliases ..."
+    echo "webmaster: root" >> /etc/aliases
+    if [ -e /usr/sbin/newaliases ]
+    then
+        newaliases
+    fi
+fi
+
+update-rc.d apache defaults 91 20 > /dev/null
+
+if [ -d /etc/httpd ]
+then
+    echo "Directory /etc/httpd is way obsolete, and should be removed."
+fi
+
+if [ -d /usr/lib/httpd/cgi-bin ]
+then
+    echo "Copying CGI files to /usr/lib/cgi-bin."
+    cp -ia /usr/lib/httpd/cgi-bin/* /usr/lib/cgi-bin || true
+fi
+
+if [ -d /usr/lib/httpd ]
+then
+    echo "Directory /usr/lib/httpd is now obsolete, and should be removed."
+    echo "(Icons are in /usr/share/apache/icons, CGI in /usr/lib/cgi-bin.)"
+    echo
+fi
+
+if  [ -d /var/log/apache-httpd ]
+then
+    echo
+    echo 'Copying log files to their new location...'
+    (cd /var/log/apache-httpd; tar cf - .) |
+	(cd /var/log/apache; tar xpf -) && rm -rf /var/log/apache-httpd
+    (cd /var/log/apache; for f in `find . \( -name \*access_log\* -o \
+	-name \*error_log\* \) -print`; do
+	new=`echo $f | sed 's,_log$,.log,'`;
+	if [ "$new" != "$f" -a -f "$new" ]
+	then
+	    tmpl=$TMPDIR/`basename $new`.$$
+	    cat "$f" "$new" >$tmpl && mv -f "$tmpl" "$new" && rm -f "$f"
+	else
+	    mv -f $f "`echo $f | sed 's,_log,.log,'`";
+	fi; done)
+fi
+
+if  [ -d /etc/httpd -o /var/log/apache-httpd -o -d /usr/lib/httpd ]
+then
+    echo
+fi
+
+if [ "$2" != "" ]
+then
+    CONFFLAGS="--update"
+else
+    CONFFLAGS="--fullauto"
+fi
+
+if grep assert-perl /usr/sbin/apacheconfig > /dev/null 2>&1 \
+    && /usr/sbin/apacheconfig --assert-perl > /dev/null 2>&1
+then
+    if ! /usr/sbin/apacheconfig $CONFFLAGS
+    then
+	echo
+	echo -n "Configuration failed!  "
+	echo "Run \"apacheconfig\" to try this again later."
+	echo
+    fi
+else
+    echo
+    echo ERROR: apacheconfig could not be run.  It may be the wrong
+    echo version, or perl may not be fully configured yet.  When
+    echo fixed, run \"dpkg --configure apache\" or \"apacheconfig\".
+    echo
+    echo -n "Press Enter to continue: "
+    read REPLY
+    echo
+    exit 1;
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+        if [ -d /usr/doc -a ! -e /usr/doc/apache -a -d /usr/share/doc/apache ]; then
+                ln -sf ../share/doc/apache /usr/doc/apache
+        fi
+fi
+
+exit 0
+
+#FIXME DEBHELPER#

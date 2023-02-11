@@ -1,0 +1,13 @@
+#! /bin/sh
+
+set -e
+ldconfig
+
+## Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libwrap0 -a -d /usr/share/doc/libwrap0 ]; then
+		ln -sf ../share/doc/libwrap0 /usr/doc/libwrap0
+	fi
+fi
+# End automatically added section
+#

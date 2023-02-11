@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+test -x /usr/sbin/install-docs && install-docs -r lct || true
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/console-tools ]; then
+	rm -f /usr/doc/console-tools
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = remove -o "$1" = upgrade ] && \
+   command -v install-docs >/dev/null 2>&1; then
+	install-docs -r lct
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/console-screen.sh" -a "$1" = remove ]; then
+	/etc/init.d/console-screen.sh stop
+fi
+# End automatically added section
+

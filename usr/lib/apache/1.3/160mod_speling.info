@@ -1,0 +1,4 @@
+LoadModule: speling_module /usr/lib/apache/1.3/mod_speling.so
+Directives:
+ CheckSpelling
+Description: Support for automatic URL spell-correction

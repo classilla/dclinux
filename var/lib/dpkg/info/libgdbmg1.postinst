@@ -1,0 +1,11 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+      if [ -d /usr/doc -a ! -e /usr/doc/libgdbmg1 \
+          -a -d /usr/share/doc/libgdbmg1 ]; then
+              ln -sf ../share/doc/libgdbmg1 /usr/doc/libgdbmg1
+      fi
+      ldconfig
+fi

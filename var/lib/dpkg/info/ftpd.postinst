@@ -1,0 +1,24 @@
+#!/bin/sh -e
+# $Id: postinst,v 1.4 2001/02/11 20:46:41 herbert Exp $
+
+if grep -q '[[:blank:]]/usr/sbin/in\.ftpd[[:blank:]]' /etc/inetd.conf; then
+	if ! grep -q '^ftp[[:blank:]]' /etc/inetd.conf; then
+		update-inetd --pattern '/usr/sbin/in\.ftpd' --enable ftp
+	fi
+else
+	FTPENTRY="ftp		stream	tcp	nowait	root	/usr/sbin/tcpd	/usr/sbin/in.ftpd"
+	if grep '^ftp[[:blank:]]' /etc/inetd.conf; then
+		update-inetd --group STANDARD --add "## $FTPENTRY"
+	else
+		update-inetd --group STANDARD --add "$FTPENTRY"
+	fi
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ftpd -a -d /usr/share/doc/ftpd ]; then
+		ln -sf ../share/doc/ftpd /usr/doc/ftpd
+	fi
+fi
+# End automatically added section
+

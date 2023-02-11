@@ -1,0 +1,43 @@
+#! /bin/sh
+
+set -e
+
+stop_gpm ()
+{
+  #
+  #       Stop the daemon
+  # We don't call /etc/init.d/gpm stop because of problem
+  # with the init.d script in earlier revisions
+  #
+
+  if /etc/init.d/gpm stop; then return 0; fi
+  if /usr/sbin/gpm -x; then return 0; fi
+
+  if \ 
+    start-stop-daemon --stop --quiet \
+		      --pidfile /var/run/gpmpid --exec /usr/sbin/gpm; then
+    return 0;
+  fi
+
+  # For added fun the name of the PID file changed in
+  # between 1.14 and 1.16.0; so we try the new one too.
+
+  if \
+    start-stop-daemon --stop --quiet \
+		      --pidfile /var/run/gpm.pid --exec /usr/sbin/gpm; then
+    return 0;
+  fi
+  return 1;
+}
+
+if [ "$1" != "upgrade" ]; then
+  # Note, we do /NOT/ stop gpm on upgrade, as it may be repeating to X..
+  # However we do want to stop it if the upgrade fails.
+  stop_gpm
+fi
+
+install-info --quiet --remove /usr/share/info/gpm.info
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/gpm ]; then
+	rm -f /usr/doc/gpm
+fi

@@ -1,0 +1,14 @@
+#! /bin/sh -e
+
+pkg=sed
+
+if [ ! \( "$1" = "upgrade" -o "$1" = "remove" \) ]; then
+	exit 0
+fi
+
+install-info --quiet --remove sed
+
+if [ -L /usr/doc/$pkg ]; then
+	rm -f /usr/doc/$pkg
+fi
+

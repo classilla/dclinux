@@ -1,0 +1,1 @@
+?package(dc):needs=text title="dc" section="Apps/Math" hints="Calculators" command="/usr/bin/dc"

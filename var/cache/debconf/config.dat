@@ -1,0 +1,263 @@
+Name: adduser/homedir-permission
+Template: adduser/homedir-permission
+Value: true
+Owners: adduser
+Flags: seen
+
+Name: bsdmainutils/calendar_config_moved
+Template: bsdmainutils/calendar_config_moved
+Owners: bsdmainutils
+
+Name: bsdmainutils/calendar_lib_is_not_empty
+Template: bsdmainutils/calendar_lib_is_not_empty
+Owners: bsdmainutils
+
+Name: console-data/keymap/family
+Template: console-data/keymap/family
+Value: 
+Owners: console-common
+
+Name: console-data/keymap/ignored
+Template: console-data/keymap/ignored
+Owners: console-common
+
+Name: console-data/keymap/policy
+Template: console-data/keymap/policy
+Value: Select keymap from list
+Owners: console-common
+Flags: seen
+
+Name: console-data/keymap/template/keymap
+Template: console-data/keymap/template/keymap
+Owners: console-common
+
+Name: console-data/keymap/template/layout
+Template: console-data/keymap/template/layout
+Owners: console-common
+
+Name: console-data/keymap/template/variant
+Template: console-data/keymap/template/variant
+Owners: console-common
+
+Name: cvs/badrepositories
+Template: cvs/badrepositories
+Value: create
+Owners: cvs
+Flags: seen
+Variables:
+ badreps = /var/lib/cvs
+
+Name: cvs/pserver
+Template: cvs/pserver
+Value: false
+Owners: cvs
+Flags: seen
+
+Name: cvs/pserver_repos
+Template: cvs/pserver_repos
+Owners: cvs
+
+Name: cvs/pserver_repos_individual
+Template: cvs/pserver_repos_individual
+Owners: cvs
+
+Name: cvs/pserver_setspawnlimit
+Template: cvs/pserver_setspawnlimit
+Owners: cvs
+
+Name: cvs/pserver_spawnlimit
+Template: cvs/pserver_spawnlimit
+Owners: cvs
+
+Name: cvs/pserver_warning
+Template: cvs/pserver_warning
+Owners: cvs
+
+Name: cvs/read_cvsconf
+Template: cvs/read_cvsconf
+Owners: cvs
+
+Name: cvs/repositories
+Template: cvs/repositories
+Value: /var/lib/cvs
+Owners: cvs
+Flags: seen
+
+Name: cvs/rotate_individual
+Template: cvs/rotate_individual
+Owners: cvs
+
+Name: cvs/rotatehistory
+Template: cvs/rotatehistory
+Value: no
+Owners: cvs
+
+Name: cvs/rotatekeep
+Template: cvs/rotatekeep
+Owners: cvs
+
+Name: cvs/rotatekeep_individual
+Template: cvs/rotatekeep_individual
+Owners: cvs
+
+Name: cvs/rotatekeep_nondefault
+Template: cvs/rotatekeep_nondefault
+Value: no
+Owners: cvs
+
+Name: debconf/frontend
+Template: debconf/frontend
+Value: Slang
+Owners: debconf
+Flags: seen
+
+Name: debconf/helpvisible
+Template: debconf/helpvisible
+Owners: debconf
+
+Name: debconf/priority
+Template: debconf/priority
+Value: medium
+Owners: debconf
+Flags: seen
+
+Name: debconf/showold
+Template: debconf/showold
+Owners: debconf
+
+Name: debconf/switch-to-slang
+Template: debconf/switch-to-slang
+Owners: debconf
+
+Name: ifupdown/convert-interfaces
+Template: ifupdown/convert-interfaces
+Owners: ifupdown
+
+Name: lynx/defaulturl
+Template: lynx/defaulturl
+Value: http://www.debian.org/
+Owners: lynx
+Flags: seen
+
+Name: netbase/ipv6-hosts
+Template: netbase/ipv6-hosts
+Owners: netbase
+
+Name: netbase/spoofprot
+Template: netbase/spoofprot
+Value: 
+Owners: netbase
+Flags: seen
+
+Name: netbase/spoofprot/pre-2.2-interfaces
+Template: netbase/spoofprot/pre-2.2-interfaces
+Value: eth0 ppp0
+Owners: netbase
+Flags: seen
+
+Name: netbase/spoofprot/pre-2.2-ip
+Template: netbase/spoofprot/pre-2.2-ip
+Value: 127.0.0.1/8
+Owners: netbase
+Flags: seen
+
+Name: netbase/upgrade-note/etc-network-interfaces-pre-3.17-1
+Template: netbase/upgrade-note/etc-network-interfaces-pre-3.17-1
+Owners: netbase
+
+Name: netbase/upgrade-note/init.d-split-pre-3.16-1
+Template: netbase/upgrade-note/init.d-split-pre-3.16-1
+Owners: netbase
+
+Name: netbase/upgrade-note/portmap-restart-pre-3.11-2
+Template: netbase/upgrade-note/portmap-restart-pre-3.11-2
+Owners: netbase
+
+Name: netbase/upgrade-note/radius-ports-pre-3.05
+Template: netbase/upgrade-note/radius-ports-pre-3.05
+Owners: netbase
+
+Name: netkit-inetd/inetd-dos-services
+Template: netkit-inetd/inetd-dos-services
+Owners: netkit-inetd
+
+Name: passwd/make-user
+Template: passwd/make-user
+Owners: passwd
+
+Name: passwd/md5
+Template: passwd/md5
+Owners: passwd
+
+Name: passwd/password-empty
+Template: passwd/password-empty
+Owners: passwd
+
+Name: passwd/password-mismatch
+Template: passwd/password-mismatch
+Owners: passwd
+
+Name: passwd/root-password
+Template: passwd/root-password
+Owners: passwd
+
+Name: passwd/root-password-again
+Template: passwd/root-password-again
+Owners: passwd
+
+Name: passwd/shadow
+Template: passwd/shadow
+Owners: passwd
+
+Name: passwd/user-fullname
+Template: passwd/user-fullname
+Owners: passwd
+
+Name: passwd/user-password
+Template: passwd/user-password
+Owners: passwd
+
+Name: passwd/user-password-again
+Template: passwd/user-password-again
+Owners: passwd
+
+Name: passwd/username
+Template: passwd/username
+Owners: passwd
+
+Name: passwd/username-bad
+Template: passwd/username-bad
+Owners: passwd
+
+Name: ppp/maxfail
+Template: ppp/maxfail
+Owners: ppp
+
+Name: ssmtp/fromoverride
+Template: ssmtp/fromoverride
+Owners: ssmtp
+
+Name: ssmtp/hostname
+Template: ssmtp/hostname
+Owners: ssmtp
+
+Name: ssmtp/mailhub
+Template: ssmtp/mailhub
+Owners: ssmtp
+
+Name: ssmtp/mailname
+Template: ssmtp/mailname
+Owners: ssmtp
+
+Name: ssmtp/overwriteconfig
+Template: ssmtp/overwriteconfig
+Owners: ssmtp
+
+Name: ssmtp/rewritedomain
+Template: ssmtp/rewritedomain
+Owners: ssmtp
+
+Name: ssmtp/root
+Template: ssmtp/root
+Owners: ssmtp
+

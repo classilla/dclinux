@@ -1,0 +1,39 @@
+README for bsd-games-non-free
+=============================
+
+The bsd-games-non-free package contains two games from NetBSD with
+restrictive licences (non-free by the DFSG/OSD definition), rogue and
+hack.  Possibly this rogue cannot be sold for profit; it is not clear
+whether the restrictive licence overrides the BSD licence also
+included, or is superseded by it.  Porting changes may be made to
+hack, but not gameplay changes.
+
+Here's what this package has:
+
+hack:		exploring the Dungeons of Doom
+rogue:		exploring the Dungeons of Doom
+
+These games are from NetBSD-current.  Both are early examples from the
+genre of Roguelike games: rogue here is a reimplementation for BSD of
+the original proprietary version, and hack 1.0.3 is an expansion and
+rewrite by Andries Brouwer of Jay Fenlason's original hack, which was
+inspired by rogue, and a distant ancestor of nethack (so both may be
+of interest to players of current roguelikes interested in their
+roots).
+
+(Note that the MAIL and QUEST configuration options in hack/config.h
+are not supported in bsd-games-non-free; if you change them, hack may
+well not build or work.)
+
+If you have questions about bsd-games-non-free you can contact me at
+<jsm28@cam.ac.uk>.  Bug reports should state the versions of ncurses
+and libc used.
+
+Joseph S. Myers
+jsm28@cam.ac.uk
+
+
+
+Local Variables:
+mode: text
+End:

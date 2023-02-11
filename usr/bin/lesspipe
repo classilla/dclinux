@@ -1,0 +1,192 @@
+#!/bin/sh
+#
+# lessfile/lesspipe
+# $Id: lessopen,v 1.4 1998/05/12 09:37:46 torin Exp $
+#
+# Less filter for viewing non text files.
+#
+# Written by: Behan Webster <behanw@pobox.com>
+# Many Modifications by Darren Stalder
+# Further Modifications by Thomas Schoepf <schoepf@debian.org>
+#
+# combined lessfile and lesspipe to avoid duplication of decode stage
+# shell is sure icky.  I'm real tempted to rewrite the whole thing in Perl 
+#
+# Unfortunately, this means that I have filename dependencies sprinkled
+# throughout the code.  If you don't want lessfile to be called that,
+# you'll need to change the LESSFILE envar below.
+#
+# Usage: eval $(lessfile)  or eval $(lesspipe)
+#
+# less passes in:
+#    $1  filename to be viewed with less  (used by LESSOPEN)
+# and possibly (if used by lessfile)
+#    $2  filename that was created during LESSOPEN
+
+TMPDIR=${TMPDIR:-/tmp}
+BASENAME=$(basename $0)
+LESSFILE=lessfile
+
+if [ $# -eq 1 ] ; then
+	# we were called as LESSOPEN
+
+	# if the file doesn't exist, we don't do anything
+	if ! [ -e "$1" ]; then
+		exit 0
+	fi
+
+	# generate filename for possible use by lesspipe
+	umask 077
+	if [ $BASENAME = $LESSFILE ]; then
+		TMPFILE=$(tempfile -d $TMPDIR -p lessf)
+	fi
+
+	# possibly redirect stdout to a file for lessfile
+	( if [ $BASENAME = $LESSFILE ]; then exec > $TMPFILE; fi
+
+	# Allow for user defined filters
+	if [ -x ~/.lessfilter -a -O ~/.lessfilter ]; then
+		~/.lessfilter "$1"
+		if [ $? -eq 0 ]; then
+			if [ $BASENAME = $LESSFILE ]; then
+				if [ -s $TMPFILE ]; then
+					echo $TMPFILE
+				else
+					rm -f $TMPFILE
+				fi
+			fi
+			exit 0
+		fi
+	fi
+
+	# Decode file for less
+	case $(echo "$1" | tr '[:upper:]' '[:lower:]') in
+		*.arj)
+			if [ -x "`which unarj`" ]; then unarj l "$1"
+			else echo "No unarj available"; fi ;;
+ 
+		*.tar.bz2)
+			if [ -x "`which bunzip2`" ]; then
+				bunzip2 -dc "$1" | tar tvvf -
+			else echo "No bunzip2 available"; fi ;;
+
+		*.bz)
+			if [ -x "`which bunzip`" ]; then bunzip -c "$1"
+			else echo "No bunzip available"; fi ;;
+
+		*.bz2)
+			if [ -x "`which bunzip2`" ]; then bunzip2 -dc "$1"
+			else echo "No bunzip2 available"; fi ;;
+
+		*.deb)
+			echo "$1:"; dpkg --info "$1"
+			echo -e '\n*** Contents:'; dpkg-deb --contents "$1"
+			;;
+
+		*.doc)
+			if [ -x "`which catdoc`" ]; then catdoc "$1"; fi ;;
+
+		*.gif|*.jpeg|*.jpg|*.pcd|*.png|*.tga|*.tiff|*.tif)
+			if [ -x "`which identify`" ]; then
+				identify "$1"
+			else echo -e "No identify available\nInstall ImageMagick to browse images"; fi ;;
+
+		*.lha|*.lzh)
+			if [ -x "`which lha`" ]; then lha v "$1"
+			else echo "No lha available"; fi ;;
+
+		*.rpm)
+			if [ -x "`which rpm`" ]; then
+				echo "$1:"; rpm -q -i -p "$1"
+				echo -e '\n*** Contents:'; rpm -q -l -p "$1";
+			else echo "rpm isn't available, no query on rpm package possible"; fi ;;
+
+		*.tar.gz|*.tgz|*.tar.z|*.tar.dz)
+			tar tzvf "$1" ;;
+
+		# Note that this is out of alpha order so that we don't catch
+		# the gzipped tar files.
+		*.gz|*.z|*.dz)
+			gzip -dc "$1" ;;
+
+		*.tar)
+			tar tvf "$1" ;;
+
+		*.jar|*.zip)
+			if [ -x "`which unzip`" ]; then unzip -v "$1";
+			elif [ -x "`which miniunzip`" ]; then miniunzip -l "$1";
+			elif [ -x "`which miniunz`" ]; then miniunz -l "$1";
+			else echo "No unzip, miniunzip or miniunz available"; fi ;;
+
+		*.zoo)
+			if [ -x "`which zoo`" ]; then zoo v "$1"
+			else echo "No zoo available"; fi ;;
+
+	esac
+	) 2>/dev/null
+
+	if [ $BASENAME = $LESSFILE ]; then
+		if [ -s $TMPFILE ]; then
+			echo $TMPFILE
+		else
+			rm -f $TMPFILE
+		fi
+	fi
+
+elif [ $# -eq 2 ] ; then
+	#
+	# we were called as LESSCLOSE
+	# delete the file created if we were lessfile
+	#
+	if [ $BASENAME = $LESSFILE ]; then
+		if [ -f "$2" -a -O "$2" ]; then
+			rm -f "$2"
+		else
+			echo "Error in deleting $2" > /dev/tty
+		fi
+	fi
+
+elif [ $# -eq 0 ] ; then
+	#
+	# must setup shell to use LESSOPEN/LESSCLOSE
+	#
+	# I have no idea how some of the more esoteric shells (es, rc) do
+	# things. If they don't do things in a Bourne manner, send me a patch
+	# and I'll incorporate it.
+	#
+
+	# first determine the full path of lessfile/lesspipe
+	# if you can determine a better way to do this, send me a patch, I've
+	# not shell-scripted for many a year.
+	FULLPATH=$(cd $(dirname $0);pwd)/$BASENAME
+
+	case "$SHELL" in
+		*csh)
+			if [ $BASENAME = $LESSFILE ]; then
+				echo "setenv LESSOPEN \"$FULLPATH %s\";"
+				echo "setenv LESSCLOSE \"$FULLPATH %s %s\";"
+			else
+				echo "setenv LESSOPEN \"| $FULLPATH %s\";"
+				echo "setenv LESSCLOSE \"$FULLPATH %s %s\";"
+			fi
+			;;
+		*)
+			if [ $BASENAME = $LESSFILE ]; then
+				echo "export LESSOPEN=\"$FULLPATH %s\";"
+				echo "export LESSCLOSE=\"$FULLPATH %s %s\";"
+			else
+				echo "export LESSOPEN=\"| $FULLPATH %s\";"
+				echo "export LESSCLOSE=\"$FULLPATH %s %s\";"
+			fi
+			;;
+	esac
+
+	echo "# If you tried to view a file with a name that starts with '#', you"
+	echo "# might see this message instead of the file's contents."
+	echo "# To view the contents, try to put './' ahead of the filename when"
+	echo "# calling less."
+
+else
+	echo "Usage: eval \$($BASENAME)"
+	exit
+fi

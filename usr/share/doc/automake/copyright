@@ -1,0 +1,16 @@
+This is the Debian GNU/Linux prepackaged version of GNU automake.
+automake was primarily written by David Mackenzie and Tom Tromey.
+
+
+This package was put together by Kevin Dalley <kevind@rahul.net>,
+from sources obtained from:
+ ftp.cygnus.com:/pub/tromey
+
+Changes:
+ * added Debian GNU/Linux package maintenance system files
+ * added manual pages for automake and aclocal
+
+automake is Copyright (C) 1999 Free Software Foundation, Inc.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

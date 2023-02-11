@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+/sbin/ldconfig
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/console-tools-libs -a -d /usr/share/doc/console-tools-libs ]; then
+		ln -sf ../share/doc/console-tools-libs /usr/doc/console-tools-libs
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,23 @@
+#!/bin/sh
+# /etc/cron.daily/netkit-inetd: netkit-inetd daily maintenance script
+# Written by Peter Tobias <tobias@linux.de>
+
+bak=/var/backups
+
+umask 022
+if cd $bak
+then
+  if [ -s /etc/inetd.conf ]; then
+    if [ -s inetd.conf.bak ]; then
+      if ! cmp -s inetd.conf.bak /etc/inetd.conf; then
+	if [ -s inetd.conf.bak ]; then
+	  savelog -m 644 inetd.conf.bak >/dev/null
+	fi
+        cp -p /etc/inetd.conf inetd.conf.bak
+      fi
+    else
+      cp -p /etc/inetd.conf inetd.conf.bak
+    fi
+  fi
+fi
+

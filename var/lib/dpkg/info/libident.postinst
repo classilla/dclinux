@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+ldconfig
+
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libident -a -d /usr/share/doc/libident ]; then
+		ln -sf ../share/doc/libident /usr/doc/libident
+	fi
+fi

@@ -1,0 +1,18 @@
+
+jfbterm は、Version 0.2.0 以降から autoconf/automake 化されています。
+
+インストールは、
+
+	./configure
+	make
+	su
+	make install
+	exit
+
+でおこなえます。
+
+ただし、設定ファイル /etc/jfbterm.conf は別途用意する必要があります。
+同梱の jfbterm.conf.sample を参考に作成してください。
+
+また、フォントファイルも別途用意してください。
+

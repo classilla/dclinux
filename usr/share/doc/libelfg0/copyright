@@ -1,0 +1,13 @@
+This is the Debian GNU/Linux prepackaged version of the libelf library.
+libelf was written by Michael Riepe <riepe@ifwsn4.ifw.uni-hannover.de>.
+
+The package was put together by Stuart Lamble
+<lamble@yoyo.cc.monash.edu.au>, from sources obtained from:
+  ftp://sunsite.unc.edu/pub/Linux/libs/libelf-0.6.4.tar.gz
+
+Changes:
+  * added Debian GNU/Linux package maintenance system files
+
+libelf is available under the terms of the GNU Library General Public
+License. On Debian GNU/Linux systems, the complete text of this
+license can be found in `/usr/share/common-licenses/LGPL'.

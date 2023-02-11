@@ -1,0 +1,7 @@
+#!/bin/sh
+set -e
+
+# Remove old symlinks, if they exist
+if [ -L /usr/include/asm ] ; then rm -f /usr/include/asm ; fi
+if [ -L /usr/include/linux ] ; then rm -f /usr/include/linux ; fi
+if [ -L /usr/include/scsi ] ; then rm -f /usr/include/scsi ; fi

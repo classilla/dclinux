@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/cvs-makerepos,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+if [ "$1" = "-d" ]; then
+	. /usr/share/debconf/confmodule
+	
+	db_get cvs/repositories
+	REPOS="$RET"
+elif [ -f /etc/cvs-cron.conf ]; then
+	. /etc/cvs-cron.conf
+elif [ -f /etc/cvs.conf ]; then
+	. /etc/cvs.conf
+	REPOS="$CVS_REPOS"
+fi
+
+IFS=':'
+for i in $REPOS; do
+	IFS=' 	\
+'
+	if [ ! -d $i -o ! -d $i/CVSROOT ]; then
+		echo Creating CVS repository in $i...
+		if [ ! -d $i ]; then
+			mkdir -p $i
+			chown root.src $i
+			chmod g+s $i
+		fi
+		cvs -d $i init
+	fi
+done

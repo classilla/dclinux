@@ -1,0 +1,64 @@
+
+	GNU nano - an enhanced clone of the Pico text editor.
+                                      
+Overview
+
+     The nano project was started because of a few "problems" with the
+     wonderfully easy-to-use and friendly Pico text editor.
+
+     First and foremost is its license: the Pine suite does not use the
+     GPL or a GPL-friendly license, and has unclear restrictions on 
+     redistribution.  Because of this, Pine and Pico are not included with
+     many GNU/Linux distributions.  Also, other features (like goto line
+     number or search and replace) were unavailable until recently or
+     require a command-line flag.  Yuck.
+
+     nano aims to solve these problems by emulating the functionality of
+     Pico as closely as possible while adressing the problems above and
+     perhaps providing other extra functionality.
+
+     The nano editor is now an official GNU package.  For more information
+     on GNU and the Free Software Foundation please see http://www.gnu.org.
+     
+How to compile and install nano
+
+     Download the nano source code, then:
+     tar zxvf nano-x.y.z.tar.gz
+     cd nano-x.y.z
+     ./configure
+     make
+     make install
+     
+     It's that simple. Use --prefix with configutr to override the 
+     default installation directory of /usr/local.
+     
+Web Page
+
+	http://www.nano-editor.org
+     
+Mailing List and Bug Reports
+
+	SourceForge hosts all the nano-related mailing-lists.
+	+ nano-announce@lists.sourceforge.net is a very low traffic list
+	  used to announce new Nano versions or other important information
+	  about the project.
+	+ nano-devel@lists.sourceforge.net is the list used by the people
+	  that make Nano and a general development discussion list, with
+	  moderate traffic.
+	To subscribe, send email to nano-<name>-request@lists.sourceforge.net
+	with a subject of "subscribe", where <name> is the list you want to
+	subscribe to.
+	For general bug reports, send a description of the problem to
+	nano@nano-editor.org or directly to the development list.
+
+Current Status
+
+	GNU nano has finally reached its first stable release (1.0).
+	The development tree will fork soon and it will be called 1.1.x,
+	in the Linux kernel naming style.  Many thanks to all of our
+	bug reporters and contributors of code to get nano where it is
+	today.
+
+   Chris Allegretta (chrisa@asty.org)
+
+$Id: README,v 1.8 2001/03/18 18:50:04 astyanax Exp $

@@ -1,0 +1,649 @@
+Name: adduser/homedir-permission
+Default: true
+Description: Do you want system wide readable home directories?
+Description-de: Möchten Sie System-weit lesbare Heimatverzeichnisse?
+Description-es: ¿Quiere que todo el sistema pueda leer las cuentas de usuario?
+Description-fr: Voulez vous des répertoires personnels lisibles par tous ?
+Description-nl: Wilt u wereldwijd leesbare home directories?
+Description-no: Ønsker du globalt lesbare hjemmekataloger?
+Description-pt_br: Você quer ter seus diretórios 'home' visíveis por todos?
+Description-ro: Vrei ca directoarele din /home sã fie vizibile tuturor?
+Description-ru: èÏÔÉÔÅ ÌÉ ×Ù, ŞÔÏÂÙ ÓÉÓÔÅÍÁ ÉÍÅÌÁ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ, ÄÏÓÔÕĞÎÙÅ
+Description-sv: Vill du att hemmakataloger ska vara läsbara för hela systemet?
+Extended_description: Normally, home directories can be viewed by all users on the system. If you want to increase the security/privacy on your system, you might want your home directories only readable by the  user. If you are unsure, answer yes to enable system wide readable home directories.\n\n This will only affect home directories of users added with the adduser program later.
+Extended_description-de: Normalerweise können die Heimatverzeichnisse der Benutzer von allen anderen Benutzern auf dem Rechner gelesen werden. Wenn Sie die Sicherheit/Privatsphäre erhöhen möchten, dann ist es eventuell sinnvoll, dass die Heimatverzeichnisse nicht von allen Benutzern gelesen werden können. Wenn Sie sich nicht sicher sind, sollten Sie System-weit lesbare Heimatverzeichnisse aktivieren.\n\n Dies hat nur einen Effekt für Benutzer, die mit dem Programm adduser später hinzugefügt werden.
+Extended_description-es: Normalmente las cuentas de usuario pueden ser vistas por cualquier usuario del sistema. Si quiere incrementar la seguridad/privacidad de su sistema puede querer que sus cuentas sólo puedan ser leídas por el dueño de la cuenta. Si no está seguro responda sí para activar la lectura global de las cuentas de usuario.
+Extended_description-fr: Usuellement, les répertoires personnels sont lisibles par tous les utilisateurs du système. Si vous voulez rendre votre système plus sur/privé, vous pouvez choisir que les répertoires personnels ne soient lisibles que par leur propriétaire. Si vous n'êtes pas sur, répondez oui pour avoir des répertoires personnels lisibles par tous.
+Extended_description-nl: Normaal kunnen alle home directories door alle gebruikers op uw systeem gelezen worden, ze zijn dan wereldwijd leesbaar. Indien u de beveiliging of privacy op uw systeem wilt verhogen, kunt u overwegen om de home directories alleen leesbaar te maken voor de gebruiker zelf. Indien u niet zeker bent, antwoord dan ja op het wereldwijd leesbaar maken van home directories.
+Extended_description-no: Normalt kan innholdet i hjemmekatalogene sees av alle brukerne på systemet. Hvis du ønsker økt sikkerhet/konfidensialitet på systemet ditt, kan det være ønskelig at hjemmekatalogene bare er lesbare av eieren. Hvis du er usikker, svar ja for å ha globalt lesbare hjemmekataloger.
+Extended_description-pt_br: Normalmente, diretórios home podem ser vistos por todos os usuários do sistema. Se você quer aumentar a segurança/privacidade no seu sistema, você pode querer seu diretório home visível apenas para o usuário. Se você não tem certeza, responda sim para habilitar diretórios home visíveis por qualquer pessoa.
+Extended_description-ro: În mod normal, oricine poate vedea directoarele celorlalşi utilizatori. Dacã vrei sã mãreºti securitatea/secretizarea în sistem, poşi face  ca fiecare utilizator sã nu vadã conşinutul directoarelor celorlalşi utilizatori. Dacã nu eºti sigur, rãspunde afirmativ.
+Extended_description-ru: ÄÌÑ ŞÔÅÎÉÑ ×ÓÅÍ?  ïÂÙŞÎÏ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ ÍÏÇÕÔ ĞÒÏÓÍÁÔÒÉ×ÁÔØÓÑ ×ÓÅÍÉ ĞÏÌØÚÏ×ÁÔÅÌÑÍÉ ÓÉÓÔÅÍÙ. ÷ ÃÅÌÑÈ ĞÏ×ÙÛÅÎÉÑ ÂÅÚÏĞÁÓÎÏÓÔÉ É ËÏÎÆÉÄÅÎÃÉÁÌØÎÏÓÔÉ ÓÉÓÔÅÍÙ, ×Ù ÍÏÖÅÔÅ ÚÁÈÏÔÅÔØ, ŞÔÏÂÙ ÄÏÍÁÛÎÉÊ ËÁÔÁÌÏÇ ĞÏÌØÚÏ×ÁÔÅÌÑ ÂÙÌ ŞÉÔÁÅÍ ÔÏÌØËÏ ÉÍ ÏÄÎÉÍ. åÓÌÉ ×Ù ÎÅ Õ×ÅÒÅÎÙ, ÏÔ×ÅÔØÔÅ yes, ÔÏÇÄÁ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ ÂÕÄÕÔ ÄÏÓÔÕĞÎÙ ÄÌÑ ŞÔÅÎÉÑ ×ÓÅÍ.
+Extended_description-sv: Normalt kan hemmakataloger läsas av alla användare på systemet. Om du vill öka säkerheten/avskildheten i ditt system så kan det vara en bra idé att endast göra hemmakataloger läsbara av användaren själv. Om du är osäker, svara ja för att göra hemmakatalogerna läsbara för hela systemet.
+Type: boolean
+Owners: adduser/homedir-permission
+
+Name: bsdmainutils/calendar_config_moved
+Description: /usr/lib/calendar/default has been moved to /etc/calendar/default.old
+Description-de: /usr/lib/calendar/default wurde nach /etc/calendar/default.old verschoben
+Description-it: /usr/lib/calendar/default è stato rinominato in /etc/calendar/default.old
+Description-nl: /usr/lib/calendar/default is verplaatst naar /etc/calendar/default.old
+Description-pt_br: /usr/lib/calendar/default foi movido para /etc/calendar/default.old
+Description-sv: /usr/lib/calendar/default har flyttats till /etc/calendar/default.old
+Extended_description: Your old "calendar" configuration file, /usr/lib/calendar/default, has been moved to /etc/calendar/default.old.  If you had customised /usr/lib/calendar/default, you should apply those changes to the new calendar configuration file, /etc/calendar/default.
+Extended_description-de: Ihre alte "calendar" Konfigurations Datei (/usr/lib/calendar/default) wurde nach /etc/calendar/default.old verschoben. Wenn Sie Ihre alte Datei /usr/lib/calendar/default nach Ihren Beduerfnisse angepasst hatten, sollte Sie die Veränderungen ebenfalls an der neuen Datei /etc/calendar/default durchführen.
+Extended_description-it: Il tuo vecchio file di configurazione di "calendar", /usr/lib/calendar/default, è stato rinominato in /etc/calendar/default.old. Se lo avevi personalizzato dovresti rifare le stesse modifiche al nuovo file di configurazione di calendar, /etc/calendar/default.
+Extended_description-nl: Uw oude 'calendar' instellingsbestand, /usr/lib/calendar/default, is verplaatst naar /etc/calendar/default.old. Indien u deze had aangepast, dient u die wijzigingen opnieuw aan te brengen in het nieuwe instellingsbestand, /etc/calendar/default.
+Extended_description-pt_br: Seu arquivo de configuração "calendar" antigo, /usr/lib/calendar/default, foi movido para /etc/calendar/default.old. Se você o customizou você deve aplicar essas mudanças ao novo arquivo de configuração do calendar.
+Extended_description-sv: Din gamla konfigurationsfil för "calendar", /usr/lib/calendar/default, har flyttats till /etc/calendar/default.old. Om du hade anpassat /usr/lib/calendar/default bör du applicera dessa ändringar till den nya konfigurationsfilen för calendar, /etc/calendar/default.
+Type: note
+Owners: bsdmainutils/calendar_config_moved
+
+Name: bsdmainutils/calendar_lib_is_not_empty
+Description: Files in /usr/lib/calendar have not been removed
+Description-de: Dateien in /usr/lib/calendar wurde nicht entfernt
+Description-it: I file in /usr/lib/calendar non sono stati cancellati
+Description-nl: Bestanden in /usr/lib/calendar niet verplaatst
+Description-pt_br: Os arquivos em /usr/lib/calendar foram removidos
+Description-sv: Filer i /usr/lib/calendar har ej tagits bort
+Extended_description: Check the files left over in /usr/lib/calendar; you may want to move them to /etc/calendar or delete them.
+Extended_description-de: Prüfen Sie die übrig gebliebenen Dateien in /usr/lib/calendar; Sie möchten die Dateien vielleicht nach /etc/calendar verschieben oder evtl. löschen.
+Extended_description-it: Controlla i file rimasti in /usr/lib/calendar, puoi spostarli in /etc/calendar o cancellarli.
+Extended_description-nl: Controleer de achtergebleven bestanden in /usr/lib/calendar; u wilt deze misschien verplaatsen naar /etc/calendar of verwijderen.
+Extended_description-pt_br: Cheque os arquivos remanescentes em /usr/lib/calendar; você pode querer movê-los para /etc/calendar ou deletá-los.
+Extended_description-sv: Kontrollera de kvarvarande filerna i /usr/lib/calendar; du kanske vill flytta dem till /etc/calendar eller ta bort dem.
+Type: note
+Owners: bsdmainutils/calendar_lib_is_not_empty
+
+Name: console-data/keymap/family
+Choices: ${choices}
+Description: What is the layout family of your keyboard ?
+Extended_description: You need to first specify the generic family name for your keyboard layout. Usually the layout family name is taken from the first keys on the left of the top letters row of the keymap (this is at least true for qwerty and azerty layouts).
+Type: select
+Owners: console-data/keymap/family
+
+Name: console-data/keymap/ignored
+Description: A boot-time keymap in an old location is about to be ignored.
+Extended_description: You have asked the keymap configuration tool not to touch an existing keymap you installed, or you asked for higher-priority questions only to be asked and the tool decided not to mess with your existing setup.\n\n However, you have file(s) that were recognized as boot-time keymaps by older versions of the console utilities, either in /etc/kbd/ or in /etc/console-tools/, named default.kmap(.gz) and these are now ignored.\n\n If you wish that one of them takes effect on next reboot, you will have to move it to /etc/console/boottime.kmap.gz manually.
+Type: note
+Owners: console-data/keymap/ignored
+
+Name: console-data/keymap/policy
+Choices: Select keymap from list, Don't touch keymap, Keep kernel keymap
+Default: Select keymap from list
+Description: What policy do you want to apply regarding keymaps ?
+Extended_description: The keymap describes how keys are laid out on your keyboard, and what symbols (letters, digits, etc.) are drawn on them.\n\n "Select keymap from list" will allow you to select one of the predefined keymaps - you will most likely want this unless you have a USA keyboard.\n\n "Keep kernel keymap" will prevent any keymap to be loaded next time your system will boot.  It will remove from /etc/ any keymap you may have already selected (it will be lost), but if you have already loaded a keymap, it cannot not be changed back until you reboot.\n\n "Don't touch keymap" will prevent the configuration system to overwrite the keymap you have in /etc/.  Select this if you want to keep a keymap you obtained through other means.  Please remember to install new keymaps with install-keymap(8) if you select this choice.
+Type: select
+Owners: console-data/keymap/policy
+
+Name: console-data/keymap/template/keymap
+Choices: ${choices}
+Description: Which specific keymap do you want ?
+Extended_description: The keyboard you selected allows you to choose among several keymaps. Usually these were designed either for specific tastes (eg. dead keys or not), or for specific needs (eg. programmer's keymaps).
+Type: select
+Owners: console-data/keymap/template/keymap
+
+Name: console-data/keymap/template/layout
+Choices: ${choices}
+Description: What is the keys layout of your keyboard ?
+Extended_description: To refine your choice for a keymap, I need to know the physical layout of your keyboard.
+Type: select
+Owners: console-data/keymap/template/layout
+
+Name: console-data/keymap/template/variant
+Choices: ${choices}
+Description: Which variant do you have ?
+Extended_description: The layout you selected has several variants.  Please select the one matching your keyboard.
+Type: select
+Owners: console-data/keymap/template/variant
+
+Name: cvs/badrepositories
+Choices: create, ignore, reenter
+Default: create
+Description: Do you wish to fix invalid repositories?
+Extended_description: The following items you entered are not directories or do not contain a CVSROOT subdirectory: ${badreps}.\n\n If you have not yet created these repositories, you can create them by selecting 'create' here. You could also select 'ignore' and use the 'cvs-makerepos' command to create them, or create them individually using 'cvs init'.\n\n Do you wish to re-enter your repositories list, or ignore the errors and continue anyway?
+Type: select
+Owners: cvs/badrepositories
+
+Name: cvs/pserver
+Default: false
+Description: Should the CVS pserver be enabled?
+Extended_description: CVS pserver is a client-to-server mechanism which can be used by CVS as a replacement for the standard "server" method, which uses "rsh", or an rsh compatible program, such as ssh. It is more efficient than the standard server protocol, also supporting its own password files, making it more secure. However, it may be a security risk, and used to contain a security problem whereby a remote connection may have been able to read the passwd or other security-related files on the system.\n\n For this reason, it is recommended that you switch this option OFF, unless you know that you want it specifically. CVS now only allows access to particular repositories specified on the command line.\n\n CVS pserver will be installed in inetd, using tcpd wrappers if you answer "yes" to this question.
+Type: boolean
+Owners: cvs/pserver
+
+Name: cvs/pserver_repos
+Choices: all, some
+Default: all
+Description: Do you want all your repositories exported via pserver?
+Extended_description: If you want to configure pserver to export only some of your repositories rather than all of them, say 'some' here.
+Type: select
+Owners: cvs/pserver_repos
+
+Name: cvs/pserver_repos_individual
+Default: yes
+Description: Do you want the repository ${repos} exported via pserver?
+Extended_description: If you want the repository in ${repos} exported via pserver, say yes here, otherwise say no.
+Type: boolean
+Owners: cvs/pserver_repos_individual
+
+Name: cvs/pserver_setspawnlimit
+Default: yes
+Description: Change the maximum pserver processes spawned in one minute?
+Extended_description: When running a pserver, inetd's default limit of allowing 40 connections in 1 minute can easily be exceeded if a script calls CVS individually on many files over a pserver connection. This limit is designed to stop system load from rising too high if the service is continually failing.\n\n Thus a more sensible default limit for most systems is 400. However, if you are running an inetd clone which does not support the syntax "nowait.[limit]", you will need to not set a limit using this method.
+Type: boolean
+Owners: cvs/pserver_setspawnlimit
+
+Name: cvs/pserver_spawnlimit
+Default: 400
+Description: What should be the inetd spawn limit for CVS pserver?
+Extended_description: When running a pserver, inetd's default limit of allowing 40 connections in 1 minute can easily be exceeded if a script calls CVS individually on many files over a pserver connection. This limit is designed to stop system load from rising too high if the service is continually failing.\n\n Thus a more sensible default limit for most systems is 400.
+Type: string
+Owners: cvs/pserver_spawnlimit
+
+Name: cvs/pserver_warning
+Description: CVS pserver may have been inadvertently disabled
+Extended_description: WARNING: If you were running a pserver, due to a bug in the packaging of your previous version of CVS, it will have been disabled temporarily during the upgrade, and its status restored from the Debian configuration.\n\n If you setup the pserver manually, you will have to do so again.\n\n Also note that now to setup the pserver manually you should set the pserver option in the configuration to "manual".
+Type: note
+Owners: cvs/pserver_warning
+
+Name: cvs/read_cvsconf
+Default: false
+Description: has /etc/cvs.conf been merged into debconf?
+Type: boolean
+Owners: cvs/read_cvsconf
+
+Name: cvs/repositories
+Default: /var/lib/cvs
+Description: Where are your repositories?
+Extended_description: List the directories that are the roots of your repositories, separated by colons.\n\n These repositories can be exported by the pserver, have their history files rotated automatically every week, and general repository security checks will be performed on them.\n\n If you wish to create a new repository, enter the path where you wish to create it. You will then be given the option of creating it later.
+Type: string
+Owners: cvs/repositories
+
+Name: cvs/rotate_individual
+Default: true
+Description: Rotate the history files of the repository in ${repos}?
+Extended_description: Should the history files of the repository in ${repos} be rotated each week?
+Type: boolean
+Owners: cvs/rotate_individual
+
+Name: cvs/rotatehistory
+Choices: yes, no, individual
+Default: no
+Description: Do you want the history files in your repositories rotated weekly?
+Extended_description: Weekly rotation of history files is primarily useful for servers with a lot of activity. The script /etc/cron.weekly/cvs will rotate the history files. Select "individual" if you want to control rotation on a per-repository basis.
+Type: select
+Owners: cvs/rotatehistory
+
+Name: cvs/rotatekeep
+Default: 7
+Description: How many previous history files should be kept? (global)
+Extended_description: How many previous history files do you want kept when the history files in your repositories are rotated weekly? The default is 7.
+Type: string
+Owners: cvs/rotatekeep
+
+Name: cvs/rotatekeep_individual
+Default: 7
+Description: How many history files should be kept in ${repos}?
+Extended_description: How many previous history files do you want kept when the history files in ${repos} are rotated weekly? The default is 7.
+Type: string
+Owners: cvs/rotatekeep_individual
+
+Name: cvs/rotatekeep_nondefault
+Choices: yes, no, individual
+Default: no
+Description: Select how many previous history files should be kept?
+Extended_description: When rotating history files in repositories, by default the previous 7 are kept. If you want to change this number globally, select yes, or for individual repositories, select individual. Otherwise, select no.
+Type: select
+Owners: cvs/rotatekeep_nondefault
+
+Name: debconf/frontend
+Choices: Slang, Text, Editor, Dialog, Noninteractive
+Choices-es: Slang, Texto, Editor, Dialog, No-interactiva
+Choices-fi: Slang, Teksti, Editori, Dialog, Automaattinen
+Choices-fr: Slang, Texte, Éditeur, Dialogue, Non-interactif
+Choices-gl: Slang, Texto, Editor, Dialog, Non-Interactiva
+Choices-it: Slang, Testo, Editor, Dialogo, NonInterattiva
+Choices-ja: Slang, ¥Æ¥­¥¹¥È, ¥¨¥Ç¥£¥¿, ¥À¥¤¥¢¥í¥°, Á´¼«Æ°
+Choices-ko: Slang, ÅØ½ºÆ®, ÆíÁı±â, ´ëÈ­»óÀÚ, Noninteractive
+Choices-pl: Slang, Tekst, Edytor, Dialog, Automat, WWW
+Choices-pt_br: Slang, Texto, Editor, Dialog, Não-interativo
+Choices-ru: slang-ÉÎÔÅÒÆÅÊÓ, ÔÅËÓÔÏ×ÙÊ ÉÎÔÅÒÆÅÊÓ, ÒÅÄÁËÔÏÒ, dialog-ÉÎÔÅÒÆÅÊÓ, Á×ÔÏÍÁÔÉŞÅÓËÉÊ, ×ÅÂ-ÉÎÔÅÒÆÅÊÓ
+Choices-sv: Slang, Text, Textbehandlare, Dialog, Ickeinteraktiv
+Choices-zh_cn: Slang, ÎÄ±¾, ±à¼­Æ÷, Dialog, ·Ç½»»¥Ê½
+Choices-zh_tw: Slang, ¤å¥», ½s¿è¾¹, Dialog, «D¥æ¤¬¦¡
+Default: Dialog
+Description: What interface should be used for configuring packages?
+Description-de: Welches Interface soll für die Konfiguration benutzt werden?
+Description-es: ¿Qué interfaz debo usar para configurar los paquetes?
+Description-fi: Mitä käyttöliittymää pakkausten asetusten säätöön käytetään?
+Description-fr: Quelle interface utiliser pour configurer les paquets ?
+Description-gl: ¿Que interface se debería empregar para configura-los paquetes?
+Description-it: Quale interfaccia devo usare per configurare i pacchetti?
+Description-ja: ¥Ñ¥Ã¥±¡¼¥¸¤ÎÀßÄê¤Ë¤É¤Î¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤ò»ÈÍÑ¤·¤Ş¤¹¤«?
+Description-ko: ÆĞÅ°Áö¸¦ ¼³Á¤ÇÏ±â À§ÇØ ¾î¶² ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÒ±î¿ä?
+Description-nl: Welke interface moet gebruikt worden bij het instellen van pakketten?
+Description-pl: Jakiego interfejsu chcesz u¿ywaæ, aby konfigurowaæ pakiety?
+Description-pt_br: Que interface deve ser usada para configurar os pacotes?
+Description-ru: ëÁËÏÊ ÔÉĞ ÉÎÔÅÒÆÅÊÓÁ ×Ù ÈÏÔÉÔÅ ÉÓĞÏÌØÚÏ×ÁÔØ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔÏ×?
+Description-sv: Vilket gränssnitt skall användas för att konfigurera paket?
+Description-zh_cn: ÔÚÅäÖÃÈí¼ş°üµÄÊ±ºòÓ¦Ê¹ÓÃÊ²Ã´ÑùµÄ½çÃæ£¿
+Description-zh_tw: ¦b°t¸m³n¥ó¥]ªº®É­ÔÀ³¨Ï¥Î¤°»ò¼Ëªº¬É­±¡H
+Extended_description: Packages that use debconf for configuration share a common look and feel. You can select the type of user interface they use.\n\n The slang frontend provides a colorful, full-screen, character based\n windowing interface, while the text frontend uses a more traditional plain text interface. The editor frontend lets you configure things using your favorite text editor. The noninteractive frontend never asks you any questions. The dialog frontend is a primitive frontend that is being phased out.
+Extended_description-de: Pakete, die debconf zur Konfiguration benutzen, verwenden alle das gleiche `look and feel'. Sie können das Interface hier auswählen.\n\n Das slang Frontend bietet ein farbiges, bildschirmfüllendes,\n zeichenbasiertes Interface. Während das text Frontend ein ehrer einfaches traditionelles Textinterface ist. Das editor Frontend benutzt Ihren bevorzugten Texteditor. Das noninteractive Frontend fragt Sie niemals eine Frage.
+Extended_description-es: Puede escoger el tipo de interfaz de usuario que usar.\n\n Slang suministra una interfaz de ventanas de texto, a color, a pantalla\n completa. Texto es una interfaz tradicional, de solo texto. Editor le  permite configurar el sistema usando su editor favorito. No-interactiva no hace ninguna pregunta.
+Extended_description-fi: Debconf yhdenmukaistaa sitä käyttävien pakettien asetuskäyttöliittymän. Voit itse valita mieluisesi liittymän muutamasta vaihtoehdosta. \n\n Slang on värikäs, ruudun täyttävä, päätteellä näkyvä graafinen liittymä.\n Teksti on perinteisempi, paljasta tekstiä käyttävä liittymä. Editori käyttää asetusten säätöön lempieditoriasi. Automaattinen liittymä ei koskaan kysy kysymyksiä. Dialog on vanhempi liittymä, josta ollaan luopumassa. 
+Extended_description-fr: Les paquets utilisant debconf pour leur configuration partagent la même apparence et ergonomie. Vous pouvez choisir leur interface utilisateur.  \n\n 'Slang' est une interface couleur en plein écran basée sur une interface \n fenêtrée en mode caractère. 'Texte' est une interface en mode texte, plus traditionnelle et sans fioriture. L'interface 'Éditeur' vous permet de  faire vos configurations depuis votre éditeur favori. Si vous choisissez  'Non-interactif', le système ne vous posera jamais de question. 'Dialogue' est une interface primitive et dépassée. 
+Extended_description-gl: Os paquetes que empregan debconf para a configuración comparten unha aparencia común. Pode escolle-lo tipo de interface de usuario que usan.\n\n A interface de slang proporciona unha interface de fiestras a toda cor,\n en pantalla completa, en modo texto, mentres que a interface de texto usa unha interface de só texto máis tradicional. A interface de editor permítelle configura-las cousas co seu editor de texto favorito. A interface non interactiva nunca lle fai preguntas. A interface de dialog é unha interface primitiva que se está retirando.
+Extended_description-it: I pacchetti che usano debconf hanno lo stesso aspetto per la configurazione. Qui potete scegliere quale tipo di interfaccia usano.\n\n Slang fornisce un'interfaccia a finestre testuale, colorata e a tutto\n schermo, mentre l'interfaccia Testo è più tradizionale. Editor permette di configurare tutto usando il proprio editor preferito, e NonInterattiva non chiede niente. Dialog è un'interfaccia primitiva che verrà presto dismessa.
+Extended_description-ja: ÀßÄê¤Ë debconf ¤ò»ÈÍÑ¤¹¤ë¥Ñ¥Ã¥±¡¼¥¸¤Ï¡¢¶¦ÄÌ¤Î³°´Ñ¤ÈÁàºîÂÎ·Ï¤òÍøÍÑ¤·¤Ş¤¹¡£ ¤½¤³¤ÇÍøÍÑ¤µ¤ì¤ë¥æ¡¼¥¶¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤Î¼ïÎà¤òÁªÂò¤Ç¤­¤Ş¤¹¡£\n\n slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ï¡¢¥«¥é¥Õ¥ë¤Ç¥Õ¥ë¥¹¥¯¥ê¡¼¥ó¤Î¡¢¥­¥ã¥é¥¯¥¿¥Ù¡¼¥¹¤Î\n ¥¦¥£¥ó¥É¥¦¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤òÄó¶¡¤·¤Ş¤¹¡£¤Ş¤¿¡¢¥Æ¥­¥¹¥È¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ç ¤Ï¡¢¤è¤êÅÁÅıÅª¤ÊÁÇ¤Î¥Æ¥­¥¹¥È¥¤¥ó¥¿¡¼¥Õ¥§¥¤¥¹¤ò»ÈÍÑ¤·¤Ş¤¹¡£¥¨¥Ç¥£¥¿¥Õ¥í ¥ó¥È¥¨¥ó¥É¤Ç¤Ï¡¢¹¥¤­¤Ê¥¨¥Ç¥£¥¿¤ò»ÈÍÑ¤·¤ÆÀßÄê¤ò¹Ô¤Ê¤¤¤Ş¤¹¡£Á´¼«Æ°¥Õ¥í¥ó ¥È¥¨¥ó¥É¤Ï¡¢°ìÀÚ¤Î¼ÁÌä¤ò¹Ô¤Ê¤¤¤Ş¤»¤ó¡£
+Extended_description-ko: ¼³Á¤ÇÏ±â À§ÇØ¼­ debconf¸¦ »ç¿ëÇÏ´Â ÆĞÅ°Áö´Â °øÅëÀÇ °Ñ¸ğ½À°ú ´À³¦À» °øÀ¯ÇÕ´Ï´Ù. ±×°ÍÀÌ »ç¿ëÇÒ »ç¿ëÀÚ ÀÎÅÍÆäÀÌ½ºÀÇ À¯ÇüÀ» ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù.\n\n Slang frontend´Â È­·ÁÇÏ°í ÀüÃ¼È­¸éÀÎ ¹®ÀÚ ±â¹İÀÇ Ã¢ ÀÎÅÍÆäÀÌ½ºÀÎ ¹İ¸é,\n ÅØ½ºÆ® frontend´Â Á» ´õ ÀüÅëÀûÀÎ ´Ü¼øÇÑ ÅØ½ºÆ® ÀÎÅÍÆäÀÌ½º¸¦ »ç¿ëÇÕ´Ï´Ù. ÆíÁı±â frontend´Â ¼±È£ÇÏ´Â ÅØ½ºÆ® ÆíÁı±â¸¦ »ç¿ëÇØ¼­ ¼³Á¤ÇÒ ¼ö ÀÖ°Ô ÇØÁİ´Ï´Ù. Noninteractive frontend´Â ¾î¶°ÇÑ Áú¹®µµ ¹¯Áö ¾Ê½À´Ï´Ù.
+Extended_description-nl: Pakketten die debconf gebruiken voor hun configuratie delen een gezamelijke look-and-feel. U kunt selecteren welk type interface u wilt gebruiken.\n\n De 'slang' interface gebruikt een kleurrijke, volschermse,\n karaktergebaseerde interface, terwijl de 'text' interface een meer traditionele tekst interface gebruikt. De 'editor' interface laat u uw favoriete editor gebruiken om de pakketten in te stellen. De 'noninteractive' interface stelt u in het geheel geen vragen. De 'dialog' schil is een primitieve schil en wordt binnenkort verwijderd.
+Extended_description-pl: Konfiguracja pakietów u¿ywaj±cych do tego celu debconfa wygl±da podobnie. Mo¿esz wybraæ wspólny interfejs, którego bêd± u¿ywaæ.\n\n Nak³adka `slang' to kolorowy, tekstowy, pe³noekranowy interfejs; `tekst'\n -- bardziej tradycyjny, prosty, tekstowy. Nak³adka `edytor' pozwala na konfiguracjê przy pomocy Twojego ulubionego edytora tekstowego. Nak³adka `automat' nigdy nie zadaje ¿adnych pytañ. Nak³adka `www' pozwala na konfiguracjê za pomoc± przegl±darki stron www.
+Extended_description-pt_br: Pacotes que usam o debconf para configuração têm um visual comum. Você pode selecionar o tipo de interface de usuário que eles verão.\n\n O frontend slang provê uma interface de janelas baseadas em caracteres em\n tela cheia, colorida, enquanto o frontend texto usa uma interface  mais padrão de texto. O frontend editor permite que você configure as coisas com seu editor favorito. O frontend não interativo nunca pergunta nada. O frontend dialog é um frontend primitivo que está acabando.
+Extended_description-ru: ğÁËÅÔÙ, ÉÓĞÏÌØÚÕÀİÉÅ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔ debconf, ÉÍÅÀÔ ÏÄÉÎÁËÏ×ÙÊ ÓÔÉÌØ ÉÎÔÅÒÆÅÊÓÁ; ËÁËÏÊ ÉÍÅÎÎÏ, ×Ù ÍÏÖÅÔÅ ÕËÁÚÁÔØ, ÏÔ×ÅÔÉ× ÎÁ ÜÔÏÔ ×ÏĞÒÏÓ.\n\n slang-ÉÎÔÅÒÆÅÊÓ ÉÓĞÏÌØÚÕÅÔ ÍÎÏÇÏÃ×ÅÔÎÙÅ ĞÏÌÎÏÜËÒÁÎÎÙÅ ÏËÎÁ × ÔÅËÓÔÏ×ÏÍ\n ÒÅÖÉÍÅ. `ÔÅËÓÔÏ×ÙÊ ÉÎÔÅÒÆÅÊÓ' ĞÒÅÄÓÔÁ×ÌÑÅÔ ÓÏÂÏÊ ÂÏÌÅÅ ÔÒÁÄÉÃÉÏÎÎÙÊ. ÷ ÓÌÕŞÁÅ `ÒÅÄÁËÔÏÒÁ' ×Ù ÓÍÏÖÅÔÅ ÏÔ×ÅŞÁÔØ ÎÁ ×ÏĞÒÏÓÙ, ÉÓĞÏÌØÚÕÑ ×ÁÛ ÌÀÂÉÍÙÊ ÔÅËÓÔÏ×ÙÊ ÒÅÄÁËÔÏÒ.  á×ÔÏÍÁÔÉŞÅÓËÉÊ ÉÎÔÅÒÆÅÊÓ ÎÉËÏÇÄÁ ÎÅ ÚÁÄÁÅÔ ÎÉËÁËÉÈ ×ÏĞÒÏÓÏ×.  ÷ ÓÌÕŞÁÅ `×ÅÂ-ÉÎÔÅÒÆÅÊÓÁ' ×Ù ÍÏÖÅÔÅ ×ÏĞÓÏÌØÚÏ×ÁÔØÓÑ Ó×ÏÉÍ ÌÀÂÉÍÙÍ ×ÅÂ-ÂÒÁÕÚÅÒÏÍ.
+Extended_description-sv: Paket som använder debconf för konfiguration delar ett gemensamt utseende och känsla. Du kan välja vilken sorts användargränssnitt de använder. \n\n Slang-skalet ger en färgfullt, helskärms, teckenbaserat\n fönstergränssnitt, medan textskalet använder ett mer traditionellt gränssnitt med ren text. Textbehandlarskalet låter dig konfigurera saker med din favorittextbehandlare. Det ickeinteraktiva skalet frågar dig aldrig någonting. Dialogskalet är ett primitivt skal som är på väg att fasas ut.
+Extended_description-zh_cn: Ê¹ÓÃ Debconf À´ÅäÖÃµÄÈí¼ş°ü¿ÉÒÔÊ¹ÓÃÏàÍ¬·ç¸ñµÄÓÃ»§½çÃæ£®Äã¿ÉÒÔÔÚÕâÀïÑ¡Ôñ µ½µ×Ê¹ÓÃÄÄÒ»ÖÖ½çÃæ£®\n\n »ùÓÚ Slang µÄÓÃ»§½çÃæÊÇÒ»¸ö²ÊÉ«µÄ£¬È«ÆÁÄ»µÄ£¬»ùÓÚ×Ö·ûµÄ´°¿Ú½çÃæ£»ÖÁÓÚ\n Text µÄÇ°¶ËÓÃ»§½çÃæ£¬ÔòÊÇ¸üÎª´«Í³µÄ¼òµ¥µÄÎÄ±¾½çÃæ£®ÃûÎª Editor µÄÓÃ»§½çÃæ¿ÉÒÔÈÃ ÄãÔÚ×Ô¼º×îÂúÒâµÄ±à¼­Æ÷ÖĞ½øĞĞÅäÖÃ¹¤×÷£®·Ç½»»¥Ê½µÄÇ°¶Ë½çÃæÔò¾ø²»»áÏòÄãÎÊÈÎºÎ ÎÊÌâ£®
+Extended_description-zh_tw: ¨Ï¥Î Debconf ¨Ó°t¸mªº³n¥ó¥]¥i¥H¨Ï¥Î¬Û¦P­·®æªº¥Î¤á¬É­±¡D§A¥i¥H¦b³o¸Ì¿ï¾Ü ¨ì©³¨Ï¥Î­ş¤@ºØ¬É­±¡D\n\n °ò¤_ Slang ªº¥Î¤á¬É­±¬O¤@­Ó±m¦âªº¡A¥ş«Ì¹õªº¡A°ò¤_¦r²Åªºµ¡¤f¬É­±¡F¦Ü¤_\n Text ªº«eºİ¥Î¤á¬É­±¡A«h¬O§ó¬°¶Ç²ÎªºÂ²³æªº¤å¥»¬É­±¡D¦W¬° Editor ªº¥Î¤á¬É­±¥i¥HÅı §A¦b¦Û¤v³Ìº¡·Nªº½s¿è¾¹¤¤¶i¦æ°t¸m¤u§@¡D«D¥æ¤¬¦¡ªº«eºİ¬É­±«hµ´¤£·|¦V§A°İ¥ô¦ó °İÃD¡D
+Type: select
+Owners: debconf/frontend
+
+Name: debconf/helpvisible
+Default: true
+Description: Should debconf display extended help for questions?
+Description-de: Soll debconf erweiterte Hilfen anzeigen?
+Description-es: ¿Debe debconf mostrar ayuda extendida para las preguntas?
+Description-fi: Pitäisikö debconf:n näyttää laaja apu kysymyksille?
+Description-fr: Debconf doit-il afficher les textes étendus d'aide ?
+Description-gl: ¿Debería debconf amosar axuda extendida nas preguntas?
+Description-it: Usare l'help esteso per le domande?
+Description-ja: debconf ¤Î¼ÁÌä»ş¤Ë¾ÜºÙ¥Ø¥ë¥×¤òÉ½¼¨¤·¤Ş¤¹¤«?
+Description-ko: Debconf°¡ Áú¹®¿¡ ´ëÇÑ È®Àå µµ¿ò¸»À» Ç¥½ÃÇÏ°Ô ÇÒ±î¿ä?
+Description-nl: Moet debconf uitgebreide hulp tonen voor vragen?
+Description-pl: Czy debconf powinien wy¶wietlaæ rozszerzon± pomoc do pytañ?
+Description-pt_br: O Debconf deve mostrar ajuda extendida para as pergunas?
+Description-ru: ğÏËÁÚÙ×ÁÔØ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ ÉÎÆÏÒÍÁÃÉÀ Ï ×ÏĞÒÏÓÁÈ?
+Description-sv: Skall debconf visa utökad hjälp för frågor?
+Description-zh_cn: Debconf Ó¦¸ÄÎªÎÊÌâÏÔÊ¾Ïê¾¡µÄ°ïÖúĞÅÏ¢Âğ£¿
+Description-zh_tw: Debconf À³§ï¬°°İÃDÅã¥Ü¸ÔºÉªºÀ°§U«H®§¶Ü¡H
+Extended_description: Debconf can display extended help for questions. Some frontends allow this display to be turned off, which may make them run a bit faster, or be less cluttered. This is mostly useful for experts.
+Extended_description-de: Debconf kann erweiterte Hilfen zu den Fragen anzeigen. Einige Frontends erlauben das Abschalten dieser Hilfen. Dieses macht diese etwas schneller oder etwas aufgeräumter. Das ist meistens für Experten hilfreich.
+Extended_description-es: Debconf puede mostrar ayuda extendida para las preguntas. Algunos interfaces permiten desactivar esto, lo que hara que se ejecuten algo más rápido o estén menos congestionados. Esto es útil principalmente para los expertos.
+Extended_description-fi: Debconf voi näyttää kysymyksille laajan avustustekstin. Jotkut liittymät mahdollistavat tämän näytön poiskytkemisen, mikä voi nopeuttaa niitä tai siistiä näyttöä. Tämä poiskytkentä on hyödyllinen lähinnä asiantuntijoille. 
+Extended_description-fr: Debconf peut afficher des messages d'aide pour certaines questions. Certaines interfaces permettent de NE PAS le faire, ce qui leur permet de s'exécuter  un peu plus vite, ou d'être moins bavard. Ce réglage est surtout utile aux experts.  
+Extended_description-gl: Debconf pode amosar axuda extendida nas preguntas. Algunhas interfaces permiten desactivala, o que as pode facer máis rápidas, ou coa pantalla menos saturada. Isto é útil sobre todo para os expertos.
+Extended_description-it: Debconf può visualizzare l'help esteso per le domande. Alcune interfacce permettono di disabilitare questa caratteristica, cosa che permette loro una maggiore velocità e una minore confusione. E' utile in particolare per gli esperti.
+Extended_description-ja: debconf ¤Ï¼ÁÌä¤Ë´Ø¤¹¤ë¾ÜºÙ¥Ø¥ë¥×¤òÉ½¼¨¤¹¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£¥Õ¥í¥ó¥È¥¨¥ó ¥É¤Ë¤è¤Ã¤Æ¤ÏÉ½¼¨¤·¤Ê¤¤¤è¤¦¤Ë¤¹¤ë¤³¤È¤â²ÄÇ½¤Ç¡¢¤½¤ÎÊı¤¬Æ°ºî¤â¼ã´³¹âÂ®¤Ç ¤¢¤Ã¤¿¤ê¡¢¤è¤ê¤¹¤Ã¤­¤ê¤·¤¿É½¼¨¤Ë¤Ê¤ê¤Ş¤¹¡£¤³¤ì¤Ï¡¢¼ç¤Ë¾åµé¼Ô¤ËÍ­ÍÑ¤Ç¤·¤ç ¤¦¡£
+Extended_description-ko: Debconf´Â Áú¹®¿¡ ´ëÇÑ È®Àå µµ¿ò¸»À» Ç¥½ÃÇÒ ¼ö ÀÖ½À´Ï´Ù. ¸î¸î frontend´Â Á¶±İ ´õ ºü¸£°Ô ÇÏ°Å³ª, È¥ÀâÇÏÁö ¾Ê°Ô ÇÏ±â À§ÇØ ÀÌ Ç¥½Ã¸¦ ²ø ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº º¸Åë Àü¹®°¡¿¡°Ô À¯¿ëÇÕ´Ï´Ù.
+Extended_description-nl: Debconf kan uitgebreide hulp tonen voor vragen. Sommige schillen staan toe dat deze functie uitgeschakeld wordt, waardoor ze iets sneller uitgevoerd worden of er minder opeengepakt uitzien. Dit is met name voor experts handig.
+Extended_description-pl: Debconf mo¿e wy¶wietlaæ rozszerzon± pomoc do pytañ. Niektóre nak³adki pozwalaj± wy³±czyæ t± opcjê, dziêki czemu bêd± dzia³aæ nieco szybciej lub bêd± bardziej uporz±dkowane. Wy³±czyæ t± opcjê mog± chcieæ g³ównie eksperci.
+Extended_description-pt_br: O Debconf pode mostrar ajuda extendida para as perguntas. Alguns frontends permitem que isso esteja desligado, o que pode fazê-los rodar um pouco mais rápido. Isso é útil para experts.
+Extended_description-ru: äÌÑ ËÁÖÄÏÇÏ ×ÏĞÒÏÓÁ ĞÁËÅÔ debconf ÍÏÖÅÔ ĞÏËÁÚÙ×ÁÔØ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ ÉÎÆÏÒÍÁÃÉÀ. îÅËÏÔÏÒÙÅ ÉÎÔÅÒÆÅÊÓÙ ĞÏÚ×ÏÌÑÀÔ ÎÅ ×Ù×ÏÄÉÔØ ÜÔÕ ÄÏĞÏÌÎÉÔÅÌØÎÕÀ ÉÎÆÏÒÍÁÃÉÀ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ ĞÒÏÉÚ×ÅÓÔÉ ÎÁÓÔÒÏÊËÕ ĞÁËÅÔÏ× ÂÙÓÔÒÅÅ É ÍÅÎÅÅ ÓÕÍÁÔÏÛÎÏ.\n\n üÔÏ × ÏÓÎÏ×ÎÏÍ ÒÁÓŞÉÔÁÎÏ ÎÁ ÜËÓĞÅÒÔÏ×.
+Extended_description-sv: Debconf kan visa utökad hjälp för frågor. Vissa skal gör det möjligt att stänga av denna visning, vilket kan göra att de körs snabbare, eller inte är lika "skräpiga". Detta är huvudsakligen användbart för experter. 
+Extended_description-zh_cn: Debconf ¿ÉÒÔÎªÌá³öµÄÎÊÌâÏÔÊ¾Ïê¾¡µÄ°ïÖúĞÅÏ¢£®Ò»²¿·İ·ç¸ñµÄÇ°¶ËÓÃ»§½çÃæ¿ÉÒÔ²» ÏÔÊ¾ÕâĞ©°ïÖúĞÅÏ¢£¬ÕâÑù¿ÉÒÔÈÃËüÃÇÔËĞĞµÄ¸ü¿ìÒ»Ğ©£¬»òÕß¿ÉÄÜ¸ü¼ÓÇåË¬Ò»Ğ©£®Õâ¿É ÄÜÖ»ÊÇ¶ÔÒ»Ğ©×¨¼Ò»áÓĞËù°ïÖú£®
+Extended_description-zh_tw: Debconf ¥i¥H¬°´£¥Xªº°İÃDÅã¥Ü¸ÔºÉªºÀ°§U«H®§¡D¤@³¡¥÷­·®æªº«eºİ¥Î¤á¬É­±¥i¥H¤£ Åã¥Ü³o¨ÇÀ°§U«H®§¡A³o¼Ë¥i¥HÅı¥¦­Ì¹B¦æªº§ó§Ö¤@¨Ç¡A©ÎªÌ¥i¯à§ó¥[²M²n¤@¨Ç¡D³o¥i ¯à¥u¬O¹ï¤@¨Ç±M®a·|¦³©ÒÀ°§U¡D
+Type: boolean
+Owners: debconf/helpvisible
+
+Name: debconf/priority
+Choices: critical, high, medium, low
+Choices-es: crítica, alta, media, baja
+Choices-fi: kriittinen, tärkeä, tavallinen, vähäpätöinen
+Choices-fr: critique, haut, moyen, bas
+Choices-gl: crítica, alta, media, baixa
+Choices-it: critica, alta, media, bassa
+Choices-ja: ½ÅÍ×, ¹â, É¸½à, Äã
+Choices-ko: Áß¿ä, ³ôÀ½, º¸Åë, ³·À½
+Choices-nl: kritiek, hoog, gemiddeld, laag
+Choices-pl: najwy¿szy, wysoki, ¶redni, niski
+Choices-pt_br: crítica, alta, média, baixa
+Choices-ru: ËÒÁÊÎÅ ×ÁÖÎÙÊ, ×ÁÖÎÙÊ, ÏÂÙŞÎÙÊ, ÄÏĞÏÌÎÉÔÅÌØÎÙÊ
+Choices-sv: kritisk, hög, medium, låg
+Choices-zh_cn: ¹Ø¼ü, ¸ß, ÖĞ, µÍ
+Choices-zh_tw: ÃöÁä, °ª, ¤¤, §C
+Default: medium
+Description: Ignore questions with a priority less than..
+Description-de: Ignoriere Fragen mit einer kleineren Priorität als ...
+Description-es: No mostrar preguntas con una prioridad mejor que..
+Description-fi: Kuinka tärkeät kysymykset haluat nähdä?
+Description-fr: Ignorer les questions de priorité inférieure à...
+Description-gl: Ignora-las preguntas de prioridade menor que...
+Description-it: Ignorare le domande con una priorità più bassa di..
+Description-ja: °Ê²¼¤Î¤â¤Î¤è¤ê¤â½ÅÍ×ÅÙ¤ÎÄã¤¤¼ÁÌä¤òÌµ»ë¤¹¤ë
+Description-ko: ¼±ÅÃÇÑ °Í º¸´Ù ³·Àº ¿ì¼±¼øÀ§ÀÇ Áú¹®Àº ¹«½ÃÇÕ´Ï´Ù.
+Description-nl: Negeer vragen met een prioriteit lager dan..
+Description-pl: Nie zadawaj pytañ o priorytecie ni¿szym ni¿..
+Description-pt_br: Ignorar perguntas com prioridade menor que...
+Description-ru: ğÏËÁÚÙ×ÁÔØ ÔÏÌØËÏ ×ÏĞÒÏÓÙ ĞÒÉÏÒÉÔÅÔÁ ÎÅ ÎÉÖÅ, ŞÅÍ...
+Description-sv: Ignorera frågor med en prioritet lägre än..
+Description-zh_cn: ºöÂÔµÍÓÚÖ¸¶¨ÓÅÏÈ¼¶µÄÎÊÌâ
+Description-zh_tw: ©¿²¤§C¤_«ü©wÀu¥ı¯Åªº°İÃD
+Extended_description: Packages that use debconf for configuration prioritize the questions they might ask you. Only questions with a certain priority or higher are actually shown to you; all less important questions are skipped.\n\n You can select the lowest priority of question you want to see: \n  - `critical' is for items that will probably break the system\n    without user intervention.\n  - `high' is for items that don't have reasonable defaults.\n  - `medium' is for normal items that have reasonable defaults.\n  - `low' is for trivial items that have defaults that will work in the\n    vast majority of cases.\n\n\n For example, this question is of medium priority, and if your priority\n were  already `high' or `critical', you wouldn't see this question.\n\n If you are new to the Debian GNU/Linux system choose `critical' now, so\n you only see the most important questions.
+Extended_description-de: Pakete die debconf benutzen geben den möglichen Frage eine Priorität. Nur Fragen mit der gewählten oder höheren Priorität werden Ihnen gestellt. Weniger Wichtigere Fragen werden übergangen.\n\n Sie können die Priorität wählen, ab welcher Ihnen die Fragen gestellt\n werden sollen:\n  - `critical' ist für Einzelheiten, die ohne Ihre Angaben vielleicht \n    das System stören.\n  - `high' ist für Fragen, die keine vernünftige Vorgaben haben.\n  - `medium' ist für normale Fragen, die gute vorgegebene Antworten\n    haben.\n  - `low' ist für einfachste Einzelheiten, die Vorgaben haben, die\n    für eine Vielzahl von System gültig sind.\n\n\n So hat zum Beispiel diese Frage die Priorität `medium' und wenn Sie schon\n `high' oder `critical' ausgewählt hätten, würden Sie diese Frage nicht sehen.\n\n Wenn Sie neu bei Debian GNU/Linux sind, wählen Sie jetzt bitte\n `critical'. Damit sehen Sie dann nur die wichtigsten Fragen.
+Extended_description-es: Los que paquetes que usan debconf para la configuración le asignan una prioridad a las preguntas que hacen. Sólo se mostrarán las preguntas con una cierta prioridad o superior; no se mostrarán las preguntas menos importantes.\n\n Puede escoger la prioridad más baja para las preguntas que desea ver:\n  - `crítica' es para asuntos que probablemente romperán el sistema si\n    el usuario no interviene. \n  - `alta' es para asuntos para los que no hay valores predeterminados\n    razonables. \n  - `media' es para asuntos normales, que tienen valores predeterminados\n    razonables.\n  - `baja' es para asuntos triviales, que tienen valores predeterminados\n que\n    funcionarán en la inmensa mayoría de casos.\n Por ejemplo, esta pregunta es de prioridad media, y si el valor escogido\n para la prioridad fuese `alta' o `crítica', usted no habría visto esta pregunta.\n\n Si usted es un principiante en el sistema Debian GNU/Linux, escoja\n `crítica' por ahora, para ver sólo las preguntas más importantes.
+Extended_description-fi: Debconf:ia käyttävät paketit määrittävät kunkin kysymänsä kysymyksen tärkeyden. Sinulle näytetään vain valitsemasi tasoiset ja niitä tärkeämmät kysymykset; kaikille muille käytetään oletusasetuksia. \n\n Kysymysten tärkeystasot ja niiden merkitykset ovat \n - "kriittinen" asioille, jotka luultavasti rikkovat järjestelmän,\n   jos niille ei valita sopivaa vaihtoehtoa,\n - "tärkeä" asioille, joille ei ole järkevää oletusasetusta,\n - "tavallinen" asioille, joille on järkevä oletusasetus,\n - "vähäpätöinen" asioille, joiden järkevä oletusasetus on kelvollinen\n   lähes kaikissa tapauksissa\n\n\n Tämä kysymys on tasoltaan tavallinen, joten jos olisit aiemmin valinnut\n omaksi tasoksesi "kriittinen" tai "tärkeä", et edes näkisi tätä. \n\n Jos olet uusi Debian GNU/Linux -järjestelmän käyttäjä, valitse\n "kriittinen", jolloin joudut vastaamaan vain tärkeimpiin kysymyksiin. 
+Extended_description-fr: Les paquets utilisant debconf pour leur configuration indiquent la priorité des questions qu'ils vous posent. Le système ne vous pose que celles de priorité supérieure à un certain seuil. Toutes les questions moins importantes sont ignorées.  \n\n Vous pouvez choisir la priorité la plus basse des questions que vous \n souhaitez voir :  \n - les points `critiques' risquent de casser le système si l'utilisateur \n   n'intervient pas.\n - les points de priorité `haute' ont des valeur par défaut inacceptable\n   dans la plupart des cas.\n - les points de priorité `moyenne' sont standards, et ont des valeurs\n   par défaut généralement acceptables.\n - les questions de priorité `base' sont triviales, et ont des valeurs par\n   défaut fonctionnelles dans la grande majorité des cas.\n\n\n Par exemple, cette question est de priorité moyenne, et si votre seuil\n était déjà règlé à `critique' ou `haut', cette question ne vous aurait pas été posée.  \n\n Si vous faites vos premiers pas dans le monde Debian GNU/Linux,\n choisissez `critique' afin de ne voir que les questions les plus importantes.  
+Extended_description-gl: Os paquetes que empregan debconf para a súa configuración asígnanlle unha prioridade ás preguntas que lle poden facer. Só se lle amosan as preguntas que teñen unha certa prioridade, ou unha maior; omítense as preguntas menos importantes.\n\n Pode escolle-la prioridade mínima das preguntas para velas:\n  - `crítica' é para elementos que han corrompe-lo sistema sen\n    intervención do usuario.\n  - `alta' é para elementos sen valores por defecto razoables.\n  - `media' é para elementos normais con valores por defecto razoables.\n  - `baixa' é para elementos triviais con valores por defecto que\n    funcionan na maioría dos casos.\n\n\n Por exemplo, esta pregunta é de prioridade media, e se a súa prioridade\n fora `alta' ou `crítica', non vería esta pregunta.\n\n Se é novo no sistema Debian GNU/Linux escolla `crítica', para ver só as\n preguntas máis importantes.
+Extended_description-it: I pacchetti che usano debconf per la configurazione assegnano una priorità alle domande che vi vengono fatte, e solo quelle con una priorità più alta di quella scelta vi vengono poste; tutte le altre, che sono meno importanti, vengono saltate.\n\n Potete scegliere la priorità più bassa per le domande che volete vedere:\n   - `critica' è per le domande che rovinerebbero il sistema se non ci\n fosse\n      l'intervento dell'utente\n   - `alta' è per quelle che non hanno default ragionevoli\n   - `media'  è per le normali domande che hanno  default ragionevoli\n   - `bassa' è per tutte le domande banali che hanno default validi per la\n      maggior parte dei casi\n\n\n Ad esempio, questa domanda è di priorità media, e se aveste già priorità \n `alta' o `critica' non la vedreste.\n\n Se è la prima volta che utilizzate il sistema GNU/Linux scegliete\n `critica', in modo che vi vengano poste solo le domande più importanti.
+Extended_description-ja: ÀßÄê¤Ë debconf ¤ò»ÈÍÑ¤¹¤ë¥Ñ¥Ã¥±¡¼¥¸¤Ï¡¢¥æ¡¼¥¶¤ËÂĞ¤¹¤ë¼ÁÌä¤Ë½ÅÍ×ÅÙ¤òÉÕ¤± ¤Æ¤¤¤Ş¤¹¡£¤¢¤ë½ÅÍ×ÅÙ°Ê¾å¤Î¼ÁÌä¤Î¤ß¤¬¼Âºİ¤Ë¹Ô¤Ê¤ï¤ì¤Ş¤¹¤¬¡¢¤½¤ì¤è¤ê¤â½Å Í×ÅÙ¤ÎÄã¤¤¼ÁÌä¤ÏÈô¤Ğ¤µ¤ì¤Ş¤¹¡£\n\n ¼ÁÌä¤Î½ÅÍ×ÅÙ¤¬ºÇÄã¤Î¤â¤Î¤âÁªÂò¤Ç¤­¤Ş¤¹¡£\n - ¡Ö½ÅÍ×¡×¤Ï¡¢¥æ¡¼¥¶¤¬²ğºß¤·¤Ê¤¤¤È¥·¥¹¥Æ¥à¤òÇË²õ¤·¤«¤Í¤Ê¤¤¤è¤¦¤Ê¹àÌÜÍÑ\n   ¤Ç¤¹¡£\n - ¡Ö¹â¡×¤Ï¡¢Å¬ÀÚ¤Ê¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤¬¤Ê¤¤¤è¤¦¤Ê¹àÌÜÍÑ¤Ç¤¹¡£\n - ¡ÖÉ¸½à¡×¤Ï¡¢Å¬ÀÚ¤Ê¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤¬¤¢¤ë¤è¤¦¤ÊÉáÄÌ¤Î¹àÌÜÍÑ¤Ç¤¹¡£\n - ¡ÖÄã¡×¤Ï¡¢¤Û¤È¤ó¤É¤Î¾ì¹ç¤Ë¥Ç¥Õ¥©¥ë¥È¤Î²óÅú¤Ç¹½¤ï¤Ê¤¤¤è¤¦¤Ê¡¢¤µ¤µ¤¤¤Ê\n   ¹àÌÜÍÑ¤Ç¤¹¡£\n ¤¿¤È¤¨¤Ğ¡¢¤¢¤ë¼ÁÌä¤Î½ÅÍ×ÅÙ¤¬É¸½à¤Ç¡¢½ÅÍ×ÅÙ¤ÎÀßÄê¤¬¤¹¤Ç¤Ë¡Ö¹â¡×¤ä¡Ö½ÅÍ×¡×\n ¤Ë¤Ê¤Ã¤Æ¤¤¤ë¤È¡¢¤½¤Î¼ÁÌä¤Ï¹Ô¤Ê¤ï¤ì¤Ş¤»¤ó¡£\n\n ¤â¤·¤¢¤Ê¤¿¤¬ Debian GNU/Linux ¥·¥¹¥Æ¥à¤Î½é¿´¼Ô¤Ê¤é¤Ğ¡¢¤³¤³¤Ç¡Ö½ÅÍ×¡×¤ò\n ÁªÂò¤¹¤ì¤Ğ¡¢Èó¾ï¤Ë½ÅÍ×¤Ê¼ÁÌä¤Î¤ß¤¬¹Ô¤Ê¤ï¤ì¤Ş¤¹¡£
+Extended_description-ko: ¼³Á¤ÇÏ±â À§ÇØ¼­ debconf¸¦ »ç¿ëÇÏ´Â ÆĞÅ°Áö´Â Áú¹®¿¡ ¿ì¼±¼øÀ§¸¦ ºÎ¿©ÇÕ´Ï´Ù. ¿ÀÁ÷ Æ¯Á¤ÇÑ ¿ì¼±¼øÀ§ ¶Ç´Â ±×º¸´Ù ³ôÀº Áú¹®¸¸ÀÌ º¸ÀÏ °ÍÀÔ´Ï´Ù; ´ú Áß¿äÇÑ ¸ğµç Áú¹®Àº °Ç³Ê ¶İ´Ï´Ù.\n\n º¸°í ½ÍÀº Áú¹®ÀÇ ÃÖ¼Ò ¿ì¼±¼øÀ§¸¦ ¼±ÅÃÇÒ ¼ö ÀÖ½À´Ï´Ù:\n  - `Áß¿ä'´Â »ç¿ëÀÚÀÇ Á¶Á¤ ¾øÀÌ´Â ½Ã½ºÅÛÀÌ ¸Á°¡Áú ¼öµµ ÀÖ´Â Ç×¸ñ¿¡\n    ´ëÇÑ °ÍÀÔ´Ï´Ù.\n  - `³ôÀ½'Àº Àû´çÇÑ ±âº»°ªÀÌ ¾ø´Â Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.\n  - `º¸Åë'Àº Àû´çÇÑ ±âº»°ªÀÌ ÀÖ´Â º¸ÅëÀÇ Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.\n  - `³·À½'Àº ´ëºÎºĞÀÇ °æ¿ì¿¡ Àß ÀÛµ¿ÇÏ´Â ±âº»°ªÀ» °¡Áö°í ÀÖ´Â Æò¹üÇÑ\n    Ç×¸ñ¿¡ ´ëÇÑ °ÍÀÔ´Ï´Ù.\n\n\n ¿¹¸¦ µé¾î, ÀÌ Áú¹®Àº º¸ÅëÀÇ ¿ì¼±¼øÀ§ÀÌ±â ¶§¹®¿¡, ¸¸¾à ÀÌÀü¿¡ ¼±ÅÃÇÑ\n ¿ì¼±¼øÀ§°¡ `³ôÀ½'ÀÌ³ª `Áß¿ä'¿´´Ù¸é, ÀÌ Áú¹®Àº º¸Áö ¸øÇßÀ» °ÍÀÔ´Ï´Ù.\n\n ¸¸¾à µ¥ºñ¾È GNU/Linux ½Ã½ºÅÛ¿¡ Ã³À½ÀÌ¶ó¸é `Áß¿ä'¸¦ ¼±ÅÃÇÏ¼¼¿ä, ±×·¯¸é\n °¡Àå Áß¿äÇÑ Áú¹®¸¸ º¼ °ÍÀÔ´Ï´Ù.
+Extended_description-nl: Pakketten die debconf gebruiken voor het instellen, prioriteren de vragen die ze u kunnen stellen. Alleen vragen met een bepaalde prioriteit of hoger worden u daadwerkelijk voorgelegd; alle minder belangrijke vragen worden overgeslagen.\n\n U kunt selecteren wat de laagste prioriteit is die u wilt zien:\n - 'kritiek' is voor vragen die waarschijnlijk uw systeem onbruikbaar\n   maken zonder interventie door de gebruiker\n - 'hoog' is voor vragen die onredelijke standaardwaarden hebben\n - 'gemiddeld' is voor vragen met redelijke standaardwaarden\n - 'laag' is voor triviale vragen met standaardwaarden die in bijna\n   alle voorkomende gevallen werken\n\n\n Deze vraag bijvoorbeeld is van gemiddelde prioriteit en als uw\n prioritering al op 'hoog' of 'kritiek' staat, dan had u deze vraag niet gezien.\n\n Indien u Debian GNU/Linux voor het eerst gebruikt, kunt u het beste voor\n 'kritiek' kiezen nu. U krijgt dan alleen de meest belangrijke vragen te zien.
+Extended_description-pl: Pakiety u¿ywaj±ce do konfiguracji debconfa mog± wybraæ priorytet dla ka¿dego pytania. Zadawane s± tylko pytania o priorytecie równym, lub wy¿szym od pewnego wybranego. Wszystkie mniej wa¿ne pytania s± pomijane i za odpowiedzi przyjmowane s± warto¶ci domy¶lne.\n\n Mo¿esz wybraæ najni¿szy priorytet pytañ, które chcesz zobaczyæ. `niski'\n to ma³o istotne pytania, dla których odpowiedzi domy¶lne bêd± dzia³a³y w wiêkszo¶ci przypadków. `¶redni' to zwyk³e pytania, które posiadaj± dobre odpowiedzi domy¶lne. `wysoki' odpowiada pytaniom, które nie posiadaj± dobrych odpowiedzi domy¶lnych. `najwy¿szy' odpowiada pytaniom, na które musisz udzieliæ odpowiedzi, poniewa¿ w przeciwnym wypadku system mo¿e przestaæ dzia³aæ poprawnie. Na przyk³ad to pytanie posiada priorytet `¶redni' i nie zosta³oby zadane, gdyby progowy priorytet by³ ustalony na `najwy¿szy' lub `wysoki'.\n\n Je¶li jeste¶ nowym u¿ytkownikiem systemu Debian, wybierz priorytet\n `najwy¿szy', aby widzieæ tylko najwa¿niejsze pytania.
+Extended_description-pt_br: Os pacotes que usam o debconf para configuração priorizam as perguntas que podem fazer a você. Apenas as perguntas com uma certa prioridade ou maior são realmente mostradas a você; todas as perguntas menos  importantes são deixadas.\n\n Você pode selecionar a menor prioridade de perguntas que você quer ver:\n  - `crítica' é para itens que irão provavelmente quebrar seu sistema\n    sem intervenção do usuário.\n  - `alta' é para itens que não tem padrões razoáveis.\n  - `média' é para itens normais que têm padrões razoáveis.\n  - `baixa' é para itens triviais que tem padrões que funcionarão na\n    vasta maioria dos casos.\n\n\n Se você é novo no Debian GNU/Linux escolha `crítica' agora, para ver\n apenas as perguntas mais importantes.
+Extended_description-ru: ğÁËÅÔÙ, ÉÓĞÏÌØÚÕÀİÉÅ ÄÌÑ ÎÁÓÔÒÏÊËÉ ĞÁËÅÔ debconf, ÍÏÇÕÔ ÕËÁÚÙ×ÁÔØ ĞÒÉÏÒÉÔÅÔÙ ÄÌÑ ËÁÖÄÏÇÏ ÉÚ ×ÏÚÍÏÖÎÙÈ ×ÏĞÒÏÓÏ×.  ôÏÌØËÏ ×ÏĞÒÏÓÙ ÏĞÒÅÄÅÌÅÎÎÏÇÏ ĞÒÉÏÒÉÔÅÔÁ ÉÌÉ ×ÙÛÅ ÂÕÄÕÔ ĞÏËÁÚÁÎÙ ÎÁ ÜÔÁĞÅ ÎÁÓÔÒÏÊËÉ.  ÷ÓÅ ×ÏĞÒÏÓÙ ÂÏÌÅÅ ÂÏÌÅÅ ÎÉÚËÏÇÏ ĞÒÉÏÒÉÔÅÔÁ ÂÕÄÕÔ ĞÒÏĞÕİÅÎÙ, Á × ËÁŞÅÓÔ×Å ÏÔ×ÅÔÏ× ÎÁ ÎÉÈ ÂÕÄÕÔ ÉÓĞÏÌØÚÏ×ÁÎÙ ÚÎÁŞÅÎÉÑ ĞÏ ÕÍÏÌŞÁÎÉÀ.\n\n ÷Ù ÍÏÖÅÔÅ ÕËÁÚÁÔØ ÎÁÉÍÅÎØÛÉÊ ĞÒÉÏÒÉÔÅÔ ×ÏĞÒÏÓÏ×, ËÏÔÏÒÙÅ ×Ù ÈÏÔÉÔÅ\n ×ÉÄÅÔØ. `ÄÏĞÏÌÎÉÔÅÌÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÚÎÁŞÅÎÉÑ ĞÏ ÕÍÏÌŞÁÎÉÀ ÂÕÄÕÔ ÒÁÂÏÔÁÔØ × ĞÏÄÁ×ÌÑÀİÅÍ ÂÏÌØÛÉÎÓÔ×Å ÓÌÕŞÁÅ×. `ÏÂÙŞÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÓÕİÅÓÔ×ÕÀÔ ĞÒÉÅÍÌÅÍÙÅ ÚÎÁŞÅÎÉÑ ĞÏ ÕÍÏÌŞÁÎÉÀ. `×ÁÖÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÄÌÑ ËÏÔÏÒÙÈ ÎÅ ÓÕİÅÓÔ×ÕÅÔ ĞÒÉÅÍÌÅÍÙÈ ÚÎÁŞÅÎÉÊ ĞÏ ÕÍÏÌŞÁÎÉÀ. `ËÒÁÊÎÅ ×ÁÖÎÙÊ' -- ÄÌÑ ĞÁÒÁÍÅÔÒÏ×, ÚÎÁŞÅÎÉÑ ÄÌÑ ËÏÔÏÒÙÈ ÄÏÌÖÎÏ ××ÏÄÉÔØÓÑ ĞÏÌØÚÏ×ÁÔÅÌÅÍ.  îÁĞÒÉÍÅÒ, ÜÔÏÔ ĞÁÒÁÍÅÔÒ ÉÍÅÅÔ ĞÒÉÏÒÉÔÅÔ `ÏÂÙŞÎÙÊ' É, ÅÓÌÉ ÂÙ ÚÎÁŞÅÎÉÅ ÄÌÑ ÜÔÏÇÏ ĞÁÒÁÍÅÔÒÁ ÕÖÅ ÂÙÌÏ ÕËÁÚÁÎÏ ÚÎÁŞÅÎÉÅ `ËÒÁÊÎÅ ×ÁÖÎÙÊ' ÉÌÉ `×ÁÖÎÙÊ', ×Ù ÂÙ ÎÅ Õ×ÉÄÅÌÉ ÜÔÏÔ ×ÏĞÒÏÓ.\n\n åÓÌÉ ×Ù ÎÏ×ÉŞÏË × Debian GNU/Linux, ÉÓĞÏÌØÚÕÊÔÅ × ËÁŞÅÓÔ×Å ÚÎÁŞÅÎÉÑ\n `ËÒÁÊÎÅ ×ÁÖÎÙÊ', ŞÔÏ ĞÏÚ×ÏÌÉÔ ×ÁÍ Õ×ÉÄÅÔØ ÔÏÌØËÏ ÔÅ ×ÏĞÒÏÓÙ, ÄÌÑ ËÏÔÏÒÙÈ ×ÁÍ ÎÅÏÂÈÏÄÉÍÏ ŞÔÏ-ÔÏ ××ÅÓÔÉ.
+Extended_description-sv: Paket som använder debconf för konfigurering prioriterar de frågor de kan fråga dig. Endast frågor med en viss prioritet eller högre visas faktiskt för dig; alla mindra viktiga frågor hoppas över. \n\n Du kan välja den lägsta prioritet vars frågor du vill se: \n  - "kritisk" är för frågor som sannolikt kan ge stora problem för\n    systemet om användaren inte intervenerar.\n  - "hög" är för frågor som saknar rimliga förval.\n  - "medium" är för vanliga frågor som har rimliga förval.\n  - "låg" är för triviala frågor som har förval som fungerar i de\n    allra flesta fall.\n\n\n Som ett exempel har denna fråga prioriteten "medium", och om din\n prioritet redan vore "hög" eller "kritisk" skulle du inte se denna fråga. \n\n Om du är nybörjade på Debian GNU/Linux-systemet, välj "kritisk" nu, så\n får du bara se de viktigaste frågorna. 
+Extended_description-zh_cn: Ê¹ÓÃ Debconf µÄÈí¼ş°üÎªËüÃÇ½«ÒªÏòÄúÌá³öµÄÎÊÌâÖ¸¶¨ÁËÓÅÏÈ¼¶±ğ£®Ö»ÓĞÓÅÏÈ¼¶ ±ğ´ïµ½Ò»¶¨³Ì¶ÈµÄÎÊÌâ²Å»áÕæÕıÏòÄúÌá³öÀ´£»ÆäËüÏà¶Ô²»ÄÇÃ´ÖØÒªµÄÎÊÌâ¶¼»á±»ºö ÂÔ¹ıÈ¥£®\n\n Äú¿ÉÒÔÖ¸¶¨ÄúÏ£Íû¿´µ½µÄÎÊÌâÖÁÉÙ¾ßÓĞÏÂÁĞÄÄÒ»ÓÅÏÈ¼¶±ğ£º\n ¡¡£­¡®¹Ø¼ü¡¯¼¶±ğµÄÎÊÌâÈç¹ûµÃ²»µ½ÄúµÄ»Ø´ğ£¬ÔòÓĞ¿ÉÄÜÔì³ÉÏµÍ³ËğÉË£® ¡¡£­¡®¸ß¡¯¼¶±ğÎÊÌâÒ»°ãÃ»ÓĞºÏÀíµÄÄ¬ÈÏ»Ø´ğ£® ¡¡£­¡®ÖĞ¡¯¼¶±ğÎÊÌâÍ¨³£»áÓĞºÏÀíµÄÄ¬ÈÏ»Ø´ğ£® ¡¡£­¡®µÍ¡¯¼¶±ğÎÊÌâµÄÄ¬ÈÏµÄ»Ø´ğÔÚ¾ø´ó¶àÊıÇé¿öÏÂ¶¼ÊÇ¿ÉÒÔµÄ£®\n\n ±ÈÈçËµ£¬±¾ÎÊÌâ¾ÍÊÇ¡®ÖĞ¡¯¼¶±ğµÄ£¬Èç¹ûÄúÏÈÇ°Éè¶¨ËùÏ£ÍûµÄÓÅÏÈ¼¶±ğÊÇ¡®¸ß¡¯»ò\n ÕßÊÇ¡®¹Ø¼ü¡¯µÄ»°£¬Äú¾Í²»»á¿´µ½±¾ÎÊÌâÏòÄúÌá³öÀ´£®\n\n Èç¹ûÄúÊÇ Debian GNU/Linux ÏµÍ³µÄĞÂÊÖµÄ»°£¬½¨ÒéÄúÔÚÕâÀïÑ¡Ôñ¡®¹Ø¼ü¡¯¼¶±ğ£¬\n ÕâÑùÄú½«Ö»»áÓöµ½×îÖØÒªµÄÄÇĞ©ÎÊÌâ£®
+Extended_description-zh_tw: ¨Ï¥Î Debconf ªº³n¥ó¥]¬°¥¦­Ì±N­n¦V±z´£¥Xªº°İÃD«ü©w¤FÀu¥ı¯Å§O¡D¥u¦³Àu¥ı¯Å §O¹F¨ì¤@©wµ{«×ªº°İÃD¤~·|¯u¥¿¦V±z´£¥X¨Ó¡F¨ä¥¦¬Û¹ï¤£¨º»ò­«­nªº°İÃD³£·|³Q©¿ ²¤¹L¥h¡D\n\n ±z¥i¥H«ü©w±z§Æ±æ¬İ¨ìªº°İÃD¦Ü¤Ö¨ã¦³¤U¦C­ş¤@Àu¥ı¯Å§O¡G\n ¡@¡Ğ¡¥ÃöÁä¡¦¯Å§Oªº°İÃD¦pªG±o¤£¨ì±zªº¦^µª¡A«h¦³¥i¯à³y¦¨¨t²Î·l¶Ë¡D ¡@¡Ğ¡¥°ª¡¦¯Å§O°İÃD¤@¯ë¨S¦³¦X²zªºÀq»{¦^µª¡D ¡@¡Ğ¡¥¤¤¡¦¯Å§O°İÃD³q±`·|¦³¦X²zªºÀq»{¦^µª¡D ¡@¡Ğ¡¥§C¡¦¯Å§O°İÃDªºÀq»{ªº¦^µª¦bµ´¤j¦h¼Æ±¡ªp¤U³£¬O¥i¥Hªº¡D\n\n ¤ñ¦p»¡¡A¥»°İÃD´N¬O¡¥¤¤¡¦¯Å§Oªº¡A¦pªG±z¥ı«e³]©w©Ò§Æ±æªºÀu¥ı¯Å§O¬O¡¥°ª¡¦©Î\n ªÌ¬O¡¥ÃöÁä¡¦ªº¸Ü¡A±z´N¤£·|¬İ¨ì¥»°İÃD¦V±z´£¥X¨Ó¡D\n\n ¦pªG±z¬O Debian GNU/Linux ¨t²Îªº·s¤âªº¸Ü¡A«ØÄ³±z¦b³o¸Ì¿ï¾Ü¡¥ÃöÁä¡¦¯Å§O¡A\n ³o¼Ë±z±N¥u·|¹J¨ì³Ì­«­nªº¨º¨Ç°İÃD¡D
+Type: select
+Owners: debconf/priority
+
+Name: debconf/showold
+Default: false
+Description: Show all old questions again and again?
+Description-de: Zeige alle alten Fragen wieder und wieder?
+Description-es: ¿Mostrar las preguntas antiguas una y otra vez?
+Description-fi: Näytetäänkö vanhat kysymykset aina uudelleen?
+Description-fr: Poser de nouveau les anciennes questions ?
+Description-gl: ¿Ve-las preguntas antigas unha e outra vez?
+Description-it: Mostrare sempre le vecchie domande?
+Description-ja: °ÊÁ°¤ËÌä¤¤¹ç¤ï¤»¤¿¼ÁÌä¤ò¤¹¤Ù¤Æ²¿ÅÙ¤âÉ½¼¨¤·¤Ş¤¹¤«?
+Description-ko: ¿¹ÀüÀÇ Áú¹® ¸ğµÎ¸¦ ¹İº¹ÇØ¼­ º¸¿©ÁÙ±î¿ä?
+Description-nl: Alle oude vragen blijven herhalen?
+Description-pl: Czy zawsze zadawaæ stare pytania?
+Description-pt_br: Mostrar as perguntas antigas sempre?
+Description-ru: ğÏËÁÚÙ×ÁÔØ ×ÏĞÒÏÓÙ, ÏÔ×ÅÔ ÎÁ ËÏÔÏÒÙÅ ÂÙÌ ÕÖÅ ĞÏÌÕŞÅÎ?
+Description-sv: Visa alla gamla frågor igen och igen?
+Description-zh_cn: ÊÇ·ñ×ÜÊÇÒªÏÔÊ¾ÀÏÎÊÌâ£¿
+Description-zh_tw: ¬O§_Á`¬O­nÅã¥Ü¦Ñ°İÃD¡H
+Extended_description: Debconf normally only asks you any given question once. Then it remembers your answer and never asks you that question again. If you prefer, debconf can ask you questions over and over again, each time you upgrade or reinstall a package that asks them.\n\n Note that no matter what you choose here, you can see old questions again\n by using the dpkg-reconfigure program.
+Extended_description-de: Debconf fragt normal jede Frage nur einmal. Danach erinnert es sich an Ihre Antwort und fragt Sie diese Frage nie mehr. Wenn Sie es vorziehen, kann debconf Sie die Fragen immer wieder stellen wenn das entsprechende Paket installiert oder erneuert wird.\n\n Beachten Sie: egal was Sie hier auswählen, Sie können alte Fragen mit den\n Programm dpkg-reconfigure erneut stellen lassen.
+Extended_description-es: Normalmente debconf hace una determinada pregunta una sola vez. A partir de ahí recuerda su respuesta y no vuelve a repetir la pregunta más. Si usted prefiere, debconf puede repetir las preguntas una y otra vez cada vez que actualice o reinstale un paquete que las haga.\n\n Observe que independiente de lo que escoja aquí, puede ver las preguntas\n antiguas de nuevo usando dpkg-reconfigure .
+Extended_description-fi: Yleensä debconf kysyy kunkin kysymyksen vain kerran, muistaa antamasi vastauksen eikä enää kysy samaa kysymystä uudestaan. Jos haluat, debconf voi kysyä kaikki kysymykset uudelleen aina paketteja päivitettäessä tai uudelleenasennettaessa. \n\n Riippumatta valinnastasi nyt voit vastata kaikkiin kysymyksiin uudestaan\n ajamalla "dpkg-reconfigure"-ohjelman. 
+Extended_description-fr: Normalement, debconf ne pose chaque question qu'une seule fois. Ensuite, il se  souvient de la réponse que vous avez donnée, et ne repose jamais cette question. Si vous préférez, debconf peut reposer chaque question encore et encore, chaque fois qu'un paquet ayant besoin de cette réponse est installé ou mis à jour.  \n\n Notez que quel que soit votre choix ici, vous pouvez revoir la\n configuration  d'un paquet avec le programme dpkg-reconfigure.  
+Extended_description-gl: Normalmente, debconf faille cada pregunta unha soa vez. Despois lembra a resposta e nunca lle volve face-la pregunta. Se o prefire, debconf pódelle face-las preguntas unha e outra vez, cada vez que actualice ou reinstale un paquete que as pregunta.
+Extended_description-it: Debconf normalmente pone le domande una sola volta, ricorda le risposte date e non pone più la stessa domanda. Se preferite potete ora scegliere che vi venga posta la stessa domanda ogni volta che aggiornate o reinstallate un pacchetto.\n\n Notate che non importa la scelta fatta qui, potete vedere di nuovo le\n vecchie domande usando il programma dpkg-reconfigure.
+Extended_description-ja: ÄÌ¾ï¡¢debconf ¤Ï¤¤¤«¤Ê¤ë¼ÁÌä¤â 1 ²ó¤·¤«Ìä¤¤¹ç¤ï¤»¤Ş¤»¤ó¡£debconf ¤Ï¡¢°Ê Á°¤Î²óÅú¤òµ­²±¤·¤Æ¡¢ºÆÅÙÆ±¤¸¼ÁÌä¤Ï¤·¤Ê¤¤¤è¤¦¤Ë¤Ê¤Ã¤Æ¤¤¤Ş¤¹¡£¤·¤«¤·¡¢¤ª Ë¾¤ß¤Ê¤é¡¢Æ±¤¸¥Ñ¥Ã¥±¡¼¥¸¤Î¥¢¥Ã¥×¥°¥ì¡¼¥É»ş¤äºÆ¥¤¥ó¥¹¥È¡¼¥ë»ş¤Ë·«¤êÊÖ¤· ºÆÅÙ¼ÁÌä¤ò¤µ¤»¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£\n\n Ãí°Õ: ¤³¤³¤Ç²¿¤òÁªÂò¤·¤Æ¤â¡¢°ÊÁ°¤Ë¹Ô¤Ê¤Ã¤¿¼ÁÌä¤Ï dpkg-reconfigure ¥×¥í\n ¥°¥é¥à¤ò»ÈÍÑ¤·¤ÆÉ½¼¨¤Ç¤­¤Ş¤¹¡£
+Extended_description-ko: º¸Åë debconf´Â ÁÖ¾îÁø Áú¹®ÀÌ ¹«¾ùÀÌµç ÇÑ¹ø¸¸ ¹°¾îº¾´Ï´Ù. ±×·¯¸é ±× ´ë´äÀ» ±â¾ïÇÏ°í ±× Áú¹®À» Àı´ë·Î ´Ù½Ã ¹¯Áö ¾Ê½À´Ï´Ù. ¿øÇÑ´Ù¸é, debconf°¡ °è¼Ó ¹İº¹ÇØ¼­ Áú¹®À» ÇÏµµ·Ï ÇÒ ¼ö ÀÖ½À´Ï´Ù. ±×·¯¸é ÆĞÅ°Áö¸¦ ¾÷±×·¹ÀÌµåÇÏ°Å³ª ´Ù½Ã ¼³Ä¡ÇÒ ¶§¸¶´Ù Áú¹®À» ÇÒ °ÍÀÔ´Ï´Ù.\n\n ¿©±â¿¡¼­ ¾î¶² °ÍÀ» ¼±ÅÃÇÏ´õ¶óµµ, dpkg-reconfigure ÇÁ·Î±×·¥À» »ç¿ëÇØ¼­\n ¿¹ÀüÀÇ Áú¹®À» ´Ù½Ã º¼ ¼ö ÀÖ´Ù´Â °ÍÀ» ÁÖÀÇÇÏ¼¼¿ä.
+Extended_description-nl: Debconf vraagt u normaal gesproken alle vragen slechts een maal. Daarna onthoudt het uw antwoord en vraagt u die vraag niet meer. Als u dat liever heeft, kan debconf u bij elke upgrade of herinstallatie van een pakket de vragen opnieuw stellen.\n\n Los van wat u hier antwoord, kunt u oude vragen altijd opnieuw zien door\n het dpkg-reconfigure programma te gebruiken.
+Extended_description-pl: Normalnie debconf zadaje dane pytanie tylko raz. Zapamiêtuje odpowied¼ i nigdy wiêcej nie zadaje tego samego pytania. Je¶li chcesz, debconf mo¿e zadawaæ pytania za przy ka¿dym uaktualnieniu lub reinstalacji danego pakietu.\n\n Zwróæ uwagê, ¿e bez wzglêdu na odpowied¼ na to pytanie mo¿esz zobaczyæ\n dowolne pytanie jeszcze raz u¿ywaj±c programu dpkg-reconfigure.
+Extended_description-pt_br: O Debconf normalmente só faz uma pergunta uma vez. Ele então se lembra da sua resposta e nunca mais faz a mesma pergunta. Se você preferir, o debconf pode perguntar toda vez que você atualizar ou reinstalar um pacote que que tem perguntas.
+Extended_description-ru: ïÂÙŞÎÏ ËÁÖÄÙÊ ×ÏĞÒÏÓ ĞÁËÅÔÏÍ debconf ÚÁÄÁÅÔÓÑ ÔÏÌØËÏ ÏÄÉÎ ÒÁÚ.  ëÁÖÄÙÊ ÏÔ×ÅÔ ÚÁĞÏÍÉÎÁÅÔÓÑ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ ÂÏÌØÛÅ ÎÅ ÚÁÄÁ×ÁÔØ ÜÔÏÔ ×ÏĞÒÏÓ.  åÓÌÉ ×Ù ÈÏÔÉÔÅ, ÔÏ ĞÁËÅÔ debconf ÍÏÖÅÔ ÚÁÄÁ×ÁÔØ ×ÓÅ ×ÏĞÒÏÓÙ ËÁÖÄÙÊ ÒÁÚ, ËÏÇÄÁ ×Ù ÏÂÎÏ×ÌÑÅÔÅ ÉÌÉ ĞÅÒÅÕÓÔÁÎÁ×ÌÉ×ÁÅÔÅ ĞÁËÅÔ.\n\n úÁÍÅÔØÔÅ, ŞÔÏ ÎÅÚÁ×ÉÓÉÍÏ ÏÔ ÚÎÁŞÅÎÉÑ ÜÔÏÇÏ ĞÁÒÁÍÅÔÒÁ, ×Ù ÍÏÖÅÔÅ Õ×ÉÄÅÔØ\n ×ÓÅ ×ÏĞÒÏÓÙ, ÚÁĞÕÓÔÉ× ĞÒÏÇÒÁÍÍÕ dpkg-reconfigure.
+Extended_description-sv: Debconf frågar normalt sett bara varje given fråga en gång, och kommer sedan ihåg dina svar så att frågan inte behöver ställas igen. Om du så önskar, kan debconf ställa frågor åter och åter igen, varje gång du uppgraderar eller ominstallerar ett paket som ställer dem. \n\n Observera: oavsett vad du väljer här kan du se gamla frågor igen genom\n att använda programmet dpkg-reconfigure. 
+Extended_description-zh_cn: Debconf Í¨³£Ö»½«ËùÉæ¼°µÄÎÊÌâÎÊ½ö½öÒ»±é£®ËüÄÜ¼Ç×¡ÄúµÄ»Ø´ğ£¬ÕâÑùÒÔºó¾ÍÔÙÒ²²» ÏòÄúÌá³öÏàÍ¬µÄÎÊÌâÁË£®µ±È»£¬Èç¹ûÄúÀÖÒâ£¬Debconf Ò²¿ÉÒÔÔÚÄúÉı¼¶Èí¼ş°ü£¬»òÕß ÖØĞÂ°²×°µÄÊ±ºò£¬ÖØ¸´µÄÎÊÄúÕâĞ©ÀÏÎÊÌâ£®
+Extended_description-zh_tw: Debconf ³q±`¥u±N©Ò¯A¤Îªº°İÃD°İ¶È¶È¤@¹M¡D¥¦¯à°O¦í±zªº¦^µª¡A³o¼Ë¥H«á´N¦A¤]¤£ ¦V±z´£¥X¬Û¦Pªº°İÃD¤F¡D·íµM¡A¦pªG±z¼Ö·N¡ADebconf ¤]¥i¥H¦b±z¤É¯Å³n¥ó¥]¡A©ÎªÌ ­«·s¦w¸Ëªº®É­Ô¡A­«´_ªº°İ±z³o¨Ç¦Ñ°İÃD¡D
+Type: boolean
+Owners: debconf/showold
+
+Name: debconf/switch-to-slang
+Default: true
+Description: Switch to the new, full-featured slang frontend?
+Description-de: Wechseln zum neuen funktionsreichen slang Frontend?
+Description-es: ¿Cambiar a la nueva interfaz, basada en slang?
+Description-fi: Vaihdetaanko uuteen slang-käyttöliittymään?
+Description-fr: Utiliser la nouvelle interface slang ?
+Description-gl: ¿Cambiar á nova interface slang?
+Description-it: Passare alla nuova interfaccia slang?
+Description-ja: ¿·¤·¤¤¹âµ¡Ç½ slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤ËÀÚ¤êÂØ¤¨¤Ş¤¹¤«?
+Description-ko: »õ·Ó°í, ±â´ÉÀÌ Ç³ºÎÇÑ slang frontend·Î ¹Ù²Ü±î¿ä?
+Description-nl: Overgaan naar de nieuwe, uitgebreide 'slang' schil?
+Description-pl: Czy prze³±czyæ siê na now± nak³adkê slang?
+Description-pt_br: Mudar para o novo front-end completo slang?
+Description-ru: éÓĞÏÌØÚÏ×ÁÔØ ÎÏ×ÕÀ ×ÅÒÓÉÀ slang-ÉÎÔÅÒÆÅÊÓÁ?
+Description-sv: Byta till det nya, fullt fungerade slangskalet?
+Description-zh_cn: ÇĞ»»µ½ĞÂµÄ£¬È«¹¦ÄÜµÄ Slang Ç°¶Ë½çÃæÂğ£¿
+Description-zh_tw: ¤Á´«¨ì·sªº¡A¥ş¥\¯àªº Slang «eºİ¬É­±¶Ü¡H
+Extended_description: You are currently using debconf's dialog frontend. This frontend has been superceded by a new frontend, called the slang frontend, that does everything the dialog frontend does and more. It lets you see and answer multiple questions at a time, and is generally more flexable and pleasant to use. If you'd like, you can switch to that frontend now.
+Extended_description-de: Sie benutzen zur Zeit debconf's dialog Frontend. Dieses Frontend wurde durch ein neues Frontend ersetzt. Dieses slang Frontend kann alles was das dialog Frontend kann und mehr. Es zeigt Ihnen mehrere Fragen gleichzeitig und ist im Allgemeinen flexibler und angenehmer. Wenn Sie möchten können Sie jetzt zu diesen Frontend wechseln.
+Extended_description-es: Actualmente está usando la interfaz dialog de debconf. Esta interfaz ha sido suplantada por un nuevo interfaz, llamado interfaz slang, que hace todo lo que hace dialog y más. Le permite ver y responder a múltiples preguntas a la vez, y es en general más flexible y confortable de usar. Si lo desea, puede cambiar a ese interfaz ahora.
+Extended_description-fi: Käytät nyt debconf:n dialog-käyttöliittymää. Tälle liittymälle on tullut parempi vaihtoehto, slang-liittymä, jossa on kaikki samat ominaisuudet ja muutama lisääkin. Slang-liittymä antaa mahdollisuuden nähdä monta kysymystä ja niiden vastaukset yhtä aikaa ja on muutenkin joustavampi ja mukavampi käyttää. Voit nyt vaihtaa siihen, jos haluat. 
+Extended_description-fr: Vous utilisez en ce moment l'interface 'Dialogue'. Celle ci est maintenant\n remplacée par une nouvelle interface nommée 'slang'. Elle fait tout ce\n que 'Dialogue' fait, et plus encore. Par exemple, elle vous permet de\n visualiser plusieurs questions à la fois, ce qui est plus agréable. Vous pouvez choisir de changer d'interface maintenant.  
+Extended_description-gl: Agora está usando a interface dialog de debconf. Esta interface foi substituída por unha nova interface, chamada a interface slang, que fai todo o que facía a interface dialog, e máis. Permítelle ver e contestar varias preguntas ao mesmo tempo, e é máis flexible e agradable de usar. Se quere, pode cambiar a esta interface agora.
+Extended_description-it: Al momento state usando l'interfaccia dialog di debconf, che è stata sostituita da una nuova, basata sulle slang, che fa tutto quello che faceva la vecchia e qualcosa di più: vi permette di vedere e rispondere a più risposte contemporaneamente, ed in generale è più flessibile e gradevole da usare. Se volete, potete passare ora alla nuova interfaccia.
+Extended_description-ja: ¸½ºß»ÈÍÑ¤·¤Æ¤¤¤ë¤Î¤Ï¡¢debconf ¤Î¥À¥¤¥¢¥í¥°¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ç¤¹¡£¤³¤Î¥Õ¥í ¥ó¥È¥¨¥ó¥É¤Ï¡¢slang ¥Õ¥í¥ó¥È¥¨¥ó¥É¤È¸Æ¤Ğ¤ì¤ë¡¢¿·¤·¤¤¥Õ¥í¥ó¥È¥¨¥ó¥É¤ËÃÖ ¤­´¹¤ï¤ê¤Ş¤·¤¿¡£¥À¥¤¥¢¥í¥°¥Õ¥í¥ó¥È¥¨¥ó¥É¤Ë¤Ç¤­¤ë¤³¤È¤Ï¤¹¤Ù¤Æ²ÄÇ½¤Ç¡¢¤½ ¤ì°Ê¾å¤Î¤³¤È¤â¤Ç¤­¤Ş¤¹¡£Ê£¿ô¤Î¼ÁÌä¤ò°ìÅÙ¤ËÉ½¼¨¤·¤Æ²óÅú¤¹¤ë¤³¤È¤¬²ÄÇ½¤Ë ¤Ê¤ê¡¢ÂçÂÎ¤Ë¤ª¤¤¤Æ¤è¤ê½ÀÆğ¤Ç²÷Å¬¤Ç¤¹¡£¤´´õË¾¤Ê¤é¡¢¤³¤³¤Ç¥Õ¥í¥ó¥È¥¨¥ó¥É ¤òÀÚ¤êÂØ¤¨¤ë¤³¤È¤¬¤Ç¤­¤Ş¤¹¡£
+Extended_description-ko: Áö±İ debconfÀÇ ´ëÈ­»óÀÚ frontend¸¦ »ç¿ëÇÏ°í ÀÖ½À´Ï´Ù. ÀÌ frontend´Â slang frontend¶ó°í ºÒ¸®´Â »õ·Î¿î frontend·Î ±³Ã¼µÇ¾ú½À´Ï´Ù. ÀÌ°ÍÀº ´ëÈ­»óÀÚ frontendº¸´Ù ±â´ÉÀÌ ¸¹°í ¸ğµç °ÍÀ» ÇÒ ¼ö ÀÖ½À´Ï´Ù. ÀÌ°ÍÀº ¿©·¯°¡Áö Áú¹®À» ÇÑ¹ø¿¡ º¸¸é¼­ ´ë´äÇÒ ¼ö ÀÖ°í, º¸Åë Á» ´õ À¶Åë¼ºÀÖ°í Áñ°Ì°Ô »ç¿ëÇÒ ¼ö ÀÖ°Ô ÇØÁİ´Ï´Ù. ¿øÇÑ´Ù¸é, ÀÌ frontend·Î Áö±İ ¹Ù²Ü ¼ö ÀÖ½À´Ï´Ù.
+Extended_description-nl: U gebruikt momenteel debconf's 'dialog' schil. Deze heeft nu een opvolger genaamd 'slang', die alles kan wat 'dialog' kan en meer. U kunt hiermee meerdere vragen tegelijk zien en beantwoorden. Verder is ze over het algemeen flexibeler en prettiger in gebruik. Als u wilt, kunt u nu overstappen op de nieuwe schil.
+Extended_description-pl: U¿ywasz obecnie nak³adki `dialog' dla debconfa. Zosta³a ona zast±piona now±, lepsz± nak³adk± `slang'. Potrafi ona robiæ to wszystko, co `dialog', a nawet wiêcej. Pozwala widzieæ i odpowiadaæ na kilka pytañ na raz, i jest ogólnie wygodniejsza i bardziej elastyczna w u¿yciu. Je¶li chcesz, mo¿esz teraz prze³±czyæ siê na t± nak³adkê.
+Extended_description-pt_br: Você está atualmente usando o frontend dialog. Esse frontend foi ultrapassado por um novo frontend, chamado de slang, que faz tudo que o dialog faz e mais. Ele permite a você responder múltiplas perguntas de uma vez e é normalmente mais flexível e agradável de usar. Se quiser pode mudar para esse frontend agora.
+Extended_description-ru: óÅÊŞÁÓ ×Ù ÉÓĞÏÌØÚÕÅÔÅ dialog-ÉÎÔÅÒÅÆÅÊÓ.  äÌÑ ÜÔÏÇÏ ÉÎÔÅÒÆÅÊÓÁ ÓÕİÅÓÔ×ÕÅÔ ÎÏ×ÁÑ ×ÅÒÓÉÑ, ËÏÔÏÒÁÑ ÎÁÚÙ×ÁÅÔÓÑ slang-ÉÎÔÅÒÆÅÊÓ, ËÏÔÏÒÙÊ ĞÏ×ÚÏÌÑÅÔ ÄÅÌÁÔØ ÂÏÌØÛÅ ŞÅÍ ÔÏ, ŞÔÏ ĞÏÚ×ÏÌÑÅÔ dialog-ÉÎÔÅÒÆÅÊÓ.  ÷ ŞÁÓÔÎÏÓÔÉ, ÏÎ ĞÏÚ×ÏÌÑÅÔ ×ÁÍ Õ×ÉÄÅÔØ É ÏÔ×ÅÔÉÔØ ÓÒÁÚÕ ÎÁ ÎÅÓËÏÌØËÏ ×ÏĞÒÏÓÏ×.  åÓÌÉ ×Ù ÈÏÔÉÔÅ, ×Ù ÍÏÖÅÔÅ ĞÅÒÅËÌÀŞÉÔØÓÑ ÎÁ slang-ÉÎÔÅÒÆÅÊÓ ÓÅÊŞÁÓ.
+Extended_description-sv: Du använder just nu debconfs dialogskal. Detta skal har ersatts med ett nytt skal, kallat slangskalet, som gör allting dialogskalet gör, och mer därtill. Det låter dig se och besvara flera frågor samtidigt, och är oftast mer flexibelt och trevligt att använda. Om du så önskar kan du byta till det skalet nu. 
+Extended_description-zh_cn: ÄúÕıÔÚÊ¹ÓÃ Debconf µÄ Dialog Ç°¶ËÓÃ»§½çÃæ£®Õâ¸ö½çÃæÒÑ¾­±»ĞÂµÄÇ°¶Ë½çÃæ Slang ËùÈ¡´úÁË£¬Slang ¿ÉÒÔ×öµ½ Dialog µÄÈ«²¿µÄĞ§¹û£¬²¢ÇÒ×öµÃ¸üºÃ£®Ëü¿É ÒÔÈÃÄúÒ»´Î¿´µ½¶à¸öÎÊÌâ£¬¶øÇÒ¸ü¼ÓÁé»îºÍÉÍĞÄÔÃÄ¿£®Èç¹ûÄú¾õµÃºÏÊÊµÄ»°£¬¿É ÒÔ¿¼ÂÇÇĞ»»µ½Õâ¸ö½çÃæÉÏÀ´£®
+Extended_description-zh_tw: ±z¥¿¦b¨Ï¥Î Debconf ªº Dialog «eºİ¥Î¤á¬É­±¡D³o­Ó¬É­±¤w¸g³Q·sªº«eºİ¬É­± Slang ©Ò¨ú¥N¤F¡ASlang ¥i¥H°µ¨ì Dialog ªº¥ş³¡ªº®ÄªG¡A¨Ã¥B°µ±o§ó¦n¡D¥¦¥i ¥HÅı±z¤@¦¸¬İ¨ì¦h­Ó°İÃD¡A¦Ó¥B§ó¥[ÆF¬¡©M½à¤ß®®¥Ø¡D¦pªG±zÄ±±o¦X¾Aªº¸Ü¡A¥i ¥H¦Ò¼{¤Á´«¨ì³o­Ó¬É­±¤W¨Ó¡D
+Type: boolean
+Owners: debconf/switch-to-slang
+
+Name: ifupdown/convert-interfaces
+Default: true
+Description: Update /etc/network/interfaces?
+Extended_description: The format of /etc/network/interfaces has had a minor but incompatible change made between version 0.5.x and 0.6.x of ifupdown. It is however possible to automatically convert from the old format to the new in almost all cases. 
+Type: boolean
+Owners: ifupdown/convert-interfaces
+
+Name: lynx/defaulturl
+Default: http://www/
+Description: What is lynx's homepage?
+Description-de: Geben Sie die lynx's Homepage ein?
+Description-es: ¿Cuál es la página de inicio de lynx?
+Description-fr: Quelle page d'accueil pour lynx ?
+Description-pt_br: Qual a página inicial do lynx?
+Description-sv: Vilken är lynxs startsida?
+Extended_description: Please enter the default URL to use if none is given when invoking lynx.\n\n You must enter either a full URL (including the "http://", etc.) or an absolute pathname.
+Extended_description-de: Bitte geben Sie die Standart URL ein, die lynx verwenden soll, wenn Sie beim Aufruf von lynx keine andere URL angeben.\n\n Sie m=FCssen entweder der komplette URL (inklusive dem "http://", etc.) angeben, oder den absoluten Pfad Namen.
+Extended_description-es: Por favor, introduzca el URL a usar por defecto si se invoca lynx sin  argumentos.\n\n Debe introducir un URL completo (incluyendo "http://", etc.) o una ruta absoluta.
+Extended_description-fr: Entrez s'il vous plait l'URL a utiliser si aucune n'est  precise au lancement de lynx.\n\n Vous devez entrer soit une URL complete (avec "http://", etc.) soit un chemin absolu vers un fichier ou un repertoire.
+Extended_description-pt_br: Por favor entre com a URL padrão para usar se nenhuma for dada quando  chamar o lynx. .  Você deve digitar ou uma URL completa (incluindo o "http://", etc.) ou um nome de arquivo absoluto.
+Extended_description-sv: Ange vilken URL som lynx ska använda om ingen annan anges vid programstart. \n\n Du måste skriva in en fullständig URL (inklusive "http://", osv.) eller en absolut sökväg.
+Type: string
+Owners: lynx/defaulturl
+
+Name: netbase/ipv6-hosts
+Default: true
+Description: Would you like IPv6 addresses added to /etc/hosts?
+Description-it: Volete aggiungere gli indirizzi IPV6 ad /etc/hosts?
+Extended_description: Sooner or later, Debian will include out-of-the box support for IPv6 (see http://www.ipv6.org/). As such, you might like to start playing with this, and seeing what things break as we try to add support for IPv6.
+Extended_description-it: Prima o poi, Debian includera' il supporto per IPV6 nella normale configurazione (vedere http://www.ipv6.org/). Al momento potreste voler cominciare a giocarci, ed a vedere cosa si rompe a mano a mano che aggiungiamo il supporto per l'IPV6.
+Type: boolean
+Owners: netbase/ipv6-hosts
+
+Name: netbase/spoofprot
+Description: Spoof protection for pre-2.2 kernels
+Description-it: Protezione dallo spoofing per i kernel pre-2.2
+Extended_description: If you are running a pre-2.2 series kernel, IP spoof  protection cannot be enabled without special configuration, found in /etc/network/spoof-protect and provided by answering the following questions. \n\n For 2.2.x and later kernels, this information will be determined automatically at boot time, so you don't need to enter anything here unless you also use pre-2.2 kernels.
+Extended_description-it: Se state usando un kernel di una serie precedente alla 2.2, la protezione allo spoofing IP non puo' essere abilitata senza una configurazione speciale, che si trova in /etc/network/spoof-protect e che viene fornita rispondendo alle seguenti domande.\n\n Per i kernel 2.2.x e successivi, questa informazione verra' determinata automaticamente al momento del boot, quindi non avete bisogno di indicarla qui a meno che non usiate anche kernel pre-2.2.
+Type: note
+Owners: netbase/spoofprot
+
+Name: netbase/spoofprot/pre-2.2-interfaces
+Default: eth0 eth1 ppp0
+Description: What remote interfaces does this host have?
+Description-it: Quali interfacce remote ha questo host?
+Type: string
+Owners: netbase/spoofprot/pre-2.2-interfaces
+
+Name: netbase/spoofprot/pre-2.2-ip
+Default: 127.0.0.1/8
+Description: What IP addresses (or address ranges) should be considered local?
+Description-it: Quali indirizzi IP (o intervalli) devono essere considerati locali?
+Extended_description: IP addresses and ranges should be listed in any order, and separated by  spaces. Addresses should be specified as a dotted quad, while ranges should be specified in CIDR-style. So the class C network 192.168.42.0-192.168.42.255 would be specified as 192.168.42.0/24.
+Extended_description-it: Gli indirizzi IP e gli intervalli di indirizzi possono essere elencati in qualsiasi ordine, separati da spazi. Gli indirizzi devono essere indicati in notazione normale, mentre gli indirizzi vanno indicati in stile CIDR,  quindi la rete di classe C 192.168.42.0-192.168.42.255 deve essere indicata come 192.168.42.0/24.
+Type: string
+Owners: netbase/spoofprot/pre-2.2-ip
+
+Name: netbase/upgrade-note/etc-network-interfaces-pre-3.17-1
+Description: /etc/init.d/network superceded by /etc/network/interfaces
+Description-it: /etc/init.d/network sostituito da /etc/network/interfaces
+Extended_description: /etc/init.d/network is no longer directly supported. You may, of course, continue using it to setup your networking, however new Debian installs will use the ifup/ifdown commands to configure network interfaces based on the settings in /etc/network/interfaces.\n\n If you do convert to using /etc/network/interfaces in place of /etc/init.d/network you will probably want to remove /etc/init.d/network and the /etc/rcS.d/S40network symlink. These will not be touched by netbase or other Debian packages in future.\n\n Note that the old default /etc/init.d/network used to add a route for the loopback interface. This is no longer necessary for 2.2.x series kernels, and will result in a (non-fatal) SIOCADDRT error message at bootup.
+Extended_description-it: /etc/init.d/network non viene piu' supportato direttamente. Potete, ovviamente, continuare ad usarlo per impostare la rete, ma le nuove installazioni di Debian useranno i comandi ifup/ifdown per configurare le interfacce di retre, basandosi sulle impostazioni in /etc/network/interfaces.\n\n Notate che lo script /etc/init.d/network di default aggiunge una route per l'interfaccia di loopback. Per i kernel della serie 2.2.x questo non e' piu' necessario, e portera' ad un errore SIOCADDRT all'avvio del sistema.\n\n Il vecchio default /etc/init.d/network aggiungeva una route anche per l'interfaccia di loopback, che non e' piu' necessaria per i kernel 2.2.x, e portera' ad un errore SIOCADDRT all'avvio del sistema, anche se non da' problemi.
+Type: note
+Owners: netbase/upgrade-note/etc-network-interfaces-pre-3.17-1
+
+Name: netbase/upgrade-note/init.d-split-pre-3.16-1
+Description: /etc/init.d/netbase has been split.
+Description-it: /etc/init.d/netbase e' stato diviso.
+Extended_description: /etc/init.d/netbase is no longer required or used.\n\n /etc/init.d/portmap (provided by the portmap package) now handles stopping and starting the portmapper, /etc/init.d/inetd (provided by the netkit-inetd package) handles stopping and starting inetd, and /etc/init.d/networking handles spoof protection.
+Extended_description-it: /etc/init.d/netbase non e' piu' necessario, ne' viene usato.\n\n /etc/init.d/portmap ora gestisce l'avvio e lo spengimento del portmapper, /etc/init.d/inetd gestisce l'avvio e lo spengimento di inetd, e /etc/ini.d/networking la protezione contro lo spoofing.
+Type: note
+Owners: netbase/upgrade-note/init.d-split-pre-3.16-1
+
+Name: netbase/upgrade-note/portmap-restart-pre-3.11-2
+Description: The old portmapper is still running.
+Description-it: Il vecchio portmapper sta ancora girando.
+Extended_description: The old portmapper is still running. This will cause problems, mainly that "/etc/init.d/portmap stop" won't actually do anything. To fix this, I'm going to try to forcibly stop portmap, and then restart it.
+Extended_description-it: Il vecchio portmapper sta ancora girando, e questo potra' causare dei problemi; principalmente, "/etc/init.d/portmap stop" non funzionera'. Per correggerlo, cerchero' di fermare forzatamente portmap e poi riavviarlo.
+Type: note
+Owners: netbase/upgrade-note/portmap-restart-pre-3.11-2
+
+Name: netbase/upgrade-note/radius-ports-pre-3.05
+Description: Important hint for users of radius software
+Description-it: Suggerimento importante per chi usa software radius
+Extended_description: The official port numbers of the radius service have been changed from 1645 and 1646 to 1812 and 1813. If you use the radius service please make sure that the client and server software both use the same port numbers.
+Extended_description-it: I numeri di porta ufficiali del servizio radius sono stati cambiati da 1645 e 1646 a 1812 e 1813. Se usate il servizio radius assicuratevi che il software di client e quello di server usino gli stessi numeri di porta.
+Type: note
+Owners: netbase/upgrade-note/radius-ports-pre-3.05
+
+Name: netkit-inetd/inetd-dos-services
+Default: true
+Description: Disable chargen, echo, daytime/udp, time/udp services?
+Description-it: Devo disabilitare i servizi di chargen, echo, daytime/udp e time/udp?
+Extended_description: The `chargen', `echo', `daytime/udp' and/or `time/udp' internal services can be used for denial-of-service attacks and should therefore be disabled. For further information please check the CERT advisory CA-96.01 (ftp://info.cert.org/pub/cert_advisories/CA-96.01.*) \n\nYou should also check your /etc/inetd.conf and disable all unused services (especially UDP services). 
+Extended_description-it: I servizi interni `chargen', `echo', `daytime/udp' e/o `time/udp' possono essere usati per attacchi di denial-of-service, e quindi dovrebbero essere disabilitati. Per ulteriori informazioni controllate il CERT advisory CA-96.01 (ftp://info.cert.org/pub/cert_advisories/CA-96.01.*) \n\nDovreste controllare anche /etc/inetd.conf e disabilitare tutti i servizi non usati (specialmente quelli UDP). 
+Type: boolean
+Owners: netkit-inetd/inetd-dos-services
+
+Name: passwd/make-user
+Default: true
+Description: Shall I create a normal user account now?
+Extended_description: It's a bad idea to use the root account for normal day-to-day activities, such as the reading of electronic mail, because even a small mistake can result in disaster. Now you may create a normal user account to use for those day-to-day tasks.  \n\nNote that you may create it later (as well as any additional account) by typing 'adduser <username>' as root, where <username> is an user name, like 'imurdock' or 'rms'.  
+Type: boolean
+Owners: passwd/make-user
+
+Name: passwd/md5
+Default: false
+Description: Shall I enable md5 passwords?
+Extended_description: Md5 passwords are more secure and allow for passwords longer than 8 characters to be used. However, they can cause compatibility problems if you are using NIS or sharing password files with older systems.  
+Type: boolean
+Owners: passwd/md5
+
+Name: passwd/password-empty
+Description: Empty password was entered.
+Extended_description: You seem to have entered nothing for the password. That is not secure! Please try again.  
+Type: note
+Owners: passwd/password-empty
+
+Name: passwd/password-mismatch
+Description: Password input error.
+Extended_description: The two passwords you entered were not the same. Please try again.  
+Type: note
+Owners: passwd/password-mismatch
+
+Name: passwd/root-password
+Description: Enter a password for root:
+Extended_description: Before proceeding, you need to set a password for 'root', the system administrative account. The root password shouldn't be easy to guess, and it shouldn't be a word found in the dictionary, or a word that could be easily associated with you, like your middle name. A good password will contain a mixture of letters, numbers and punctuation and will be changed at regular intervals. The root password is changed by running the 'passwd' program as root. \n\nWhy such caution? The root account doesn't have the restrictions that normal user accounts have. A malicious or unqualified user with root access can have disastrous results. \n\nNote that you will not be able to see the password as you type it. 
+Type: password
+Owners: passwd/root-password
+
+Name: passwd/root-password-again
+Description: Re-enter password to verify:
+Extended_description: Please enter the same root password again to verify you have typed it correctly.  
+Type: password
+Owners: passwd/root-password-again
+
+Name: passwd/shadow
+Default: true
+Description: Shall I enable shadow passwords?
+Extended_description: Shadow passwords make your system more secure because nobody is able to view even encrypted passwords. Passwords are stored in a separate file that can only be read by special programs. We recommend the use of shadow passwords. However, if you're going to use NIS you could run into trouble.  
+Type: boolean
+Owners: passwd/shadow
+
+Name: passwd/user-fullname
+Default: Debian User
+Description: Enter a full name for the new user:
+Extended_description: Enter the full name of the new user. Your full name is a good choice.  
+Type: string
+Owners: passwd/user-fullname
+
+Name: passwd/user-password
+Description: Enter a password for the new user:
+Extended_description: A good password will contain a mixture of letters, numbers and punctuation and will be changed at regular intervals.  
+Type: password
+Owners: passwd/user-password
+
+Name: passwd/user-password-again
+Description: Re-enter password to verify:
+Extended_description: Please enter the same user password again to verify you have typed it correctly.  
+Type: password
+Owners: passwd/user-password-again
+
+Name: passwd/username
+Description: Enter a username for your account:
+Extended_description: Select a username for the new account. Your first name is a reasonable choice.  \n\nThe username should start with a lower-case letter, which can be followed by any combination of numbers and more lower-case letters.  
+Type: string
+Owners: passwd/username
+
+Name: passwd/username-bad
+Description: Invalid username entered.
+Extended_description: The user name you entered is invalid. Note that usernames must start with a lower-case letter, which can be followed by any combination of numbers and more lower-case letters.  
+Type: note
+Owners: passwd/username-bad
+
+Name: ppp/maxfail
+Description: Default number of redial attempts has changed.
+Description-de: Die Standart Anzahl von Neuanwahl Versuchen hat sich geändert.
+Description-fr: Le nombre de tentatives de renumerotation par defaut a changé.
+Description-nl: Standaard aantal inbelpogingen is veranderd.
+Description-pt_br: Número de tentativas de rediscagem padrão mudou.
+Description-sv: Antalet återuppringningsförsök har ändrats.
+Extended_description: Default value for number of redial attempts with `persist' option was changed from infinity to 10, by introducing a new `maxfail' option.\n\n If you used the `persist' option in your pppd settings, you will have to add `maxfail 0' to get the old behaviour back.\n\n Details about this can be found in /usr/share/doc/ppp/README.Debian.gz file and in pppd(8) manual page.
+Extended_description-de: Der Standart Wert für Neuanwahl Versuche mit `persist' Option wurde, durch Einführung einer neuen Option `maxfail', von unendlich auf 10 geändert.\n\n Wenn Sie die `persist' Option in Ihren pppd Einstellungen benutzt haben, dann werden Sie `maxfail 0' hinzufügen müssen, um das alte Verhalten beizubehalten.\n\n Details finden Sie in der Datei /usr/share/doc/ppp/README.Debian.gz und im pppd(8) Handbuch (manpage).
+Extended_description-fr: Le nombre de tentatives de renumerotation par defaut pour l'option `persist' a été passé de l'infini a 10, en introduisant une nouvelle option `maxfail'.\n\n Si vous utilisiez l'option `persist' dans vos réglages pppd, vous aurez à ajouter `maxfail 0' pour retrouver le comportement précédent.\n\n Plus d'information sont disponibles dans /usr/share/doc/ppp/README.Debian.gz et dans la page de manuel pppd(8).
+Extended_description-nl: De standaardwaarde voor het aantal nieuwe inbelpogingen bij gebruik van `persist' is veranderd van oneindig vaak naar 10, door introductie van de nieuwe `maxfail' optie.\n\n Als u de `persist' optie gebruikte in uw pppd instellingen, moet u `maxfail 0' toevoegen om de oude werking weer terug te krijgen.\n\n Details hierover staan in /usr/share/doc/ppp/README.Debian.gz en in de pppd(8) handleiding.
+Extended_description-pt_br: O valor padrão do número de tentativas de rediscagem com a opção 'persist' foi mudado do infinito para 10, com a introdução de uma nova opção chamada 'maxfail'.\n\n Se você usava a opção 'persist' nas suas configurações do pppd, você vai ter que adicionar 'maxfail 0' para o pppd se comportar como antes.\n\n Detalhes sobre isso podem ser encontrados no arquivo /usr/share/doc/ppp/ README.Debian.gz e no manual do pppd(8).
+Extended_description-sv: Antalet återuppringsningsförsök som görs när `persist' flaggan används har ändrats från oändlighet till 10, genom att introducera `maxfail` flaggan.\n\n Om du har använt `persist' flaggan måste du lägga till `maxfail 0' för att det ska fungera som tidigare.\n\n Detaljer om detta kan du hitta i filen /usr/share/doc/ppp/README.Debian.gz och i pppd(8) manual sidan.
+Type: note
+Owners: ppp/maxfail
+
+Name: ssmtp/fromoverride
+Default: false
+Description: Override From: line in email?
+Extended_description: \n A "positive" response will permit local users to enter any From: line\n in their messages without it being mangled, and cause ssmtp to rewrite\n the envelope header with that address. A "negative" response will\n disallow this, and use only the default address or addresses set in\n /etc/ssmtp/revaliases.
+Type: boolean
+Owners: ssmtp/fromoverride
+
+Name: ssmtp/hostname
+Description: Fully qualified hostname?
+Extended_description: \n This should specify the real hostname of this machine, and will be\n sent to the mailhub when delivering mail.
+Type: string
+Owners: ssmtp/hostname
+
+Name: ssmtp/mailhub
+Default: mail
+Description: Name of your mailhub?
+Extended_description: \n This sets the host to which mail is delivered. The actual machine\n name is required; no MX records are consulted. Commonly, mailhosts\n are named "mail.domain.com".
+Type: string
+Owners: ssmtp/mailhub
+
+Name: ssmtp/mailname
+Description: What name to store in /etc/mailname
+Extended_description: \n This is the portion of the address after the '@' sign to be shown on\n outgoing news and mail messages.
+Type: string
+Owners: ssmtp/mailname
+
+Name: ssmtp/overwriteconfig
+Default: true
+Description: Automatically overwrite config files?
+Extended_description: \n The mail configuration file /etc/ssmtp/ssmtp.conf can be automatically\n updated on each upgrade with the information supplied to the debconf\n database. If you do not want this to happen (ie/ you want to maintain\n control of this file yourself) then set this option to have the program\n never touch this file.
+Type: boolean
+Owners: ssmtp/overwriteconfig
+
+Name: ssmtp/rewritedomain
+Description: What domain to masquerade as?
+Extended_description: \n ssmtp will use "username@REWRITEDOMAIN" as the default From: address\n for outgoing mail which contains only a local username.
+Type: string
+Owners: ssmtp/rewritedomain
+
+Name: ssmtp/root
+Default: postmaster
+Description: Who gets mail for userids < 1000?
+Extended_description: \n Mail sent to a local user whose UID is less than 1000 will instead be\n sent here. This is useful for daemons which mail reports to root and\n other system UIDs.
+Type: string
+Owners: ssmtp/root
+

@@ -1,0 +1,8 @@
+#! /bin/sh
+# prerm script for patch
+
+set -e
+
+ if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/patch ]; then
+   rm -f /usr/doc/patch
+ fi

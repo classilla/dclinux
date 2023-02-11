@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+    install-info --quiet --section "Development" "Development" \
+	/usr/share/info/automake.info
+    if [ -d /usr/doc -a ! -e /usr/doc/automake -a -d /usr/share/doc/automake ]; then
+	ln -sf ../share/doc/automake /usr/doc
+    fi
+    if command -v install-docs > /dev/null 2>&1; then
+	install-docs -i /usr/share/doc-base/automake
+    fi
+fi
+

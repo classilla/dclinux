@@ -1,0 +1,6 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/libgc5 ]; then
+	rm -f /usr/doc/libgc5
+fi
+# End automatically added section

@@ -1,0 +1,35 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]
+then
+    if [ -f /etc/init.d/klogd ]
+    then
+	set +e
+	sh /etc/init.d/klogd stop
+	set -e
+    fi
+
+    update-rc.d klogd defaults 11 89 >/dev/null
+
+    # restarting daemon
+    #
+    if [ -f /etc/init.d/klogd ]
+    then
+	set +e
+	sh /etc/init.d/klogd start
+	set -e
+    fi
+
+    # Maintain transition to FHS
+    if [ "$1" = "configure" ]
+    then
+	if [ -d /usr/doc -a ! -e /usr/doc/klogd -a -d /usr/share/doc/klogd ]
+	then
+	    ln -sf ../share/doc/klogd /usr/doc/klogd
+	fi
+    fi
+fi
+
+exit 0

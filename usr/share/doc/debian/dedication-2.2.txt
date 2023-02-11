@@ -1,0 +1,28 @@
+Dedicated to Joel 'Espy' Klecker
+
+On July 11, 2000, the Debian Project, and the Free Software Community as a
+whole, lost a very dear friend and developer. For most of Joel's life he
+had been fighting a disease known as Duchenne Muscular Dystrophy. Since
+July of 1997, Joel has been a Debian developer, and for most of that time
+was bed-ridden because of this disease. Joel was 21 when he died, far from
+the ripe age we imagine most people in our field will reach. His great
+dedication to the project is an inspiration to us all, and will never be
+forgotten.
+
+He was known by most of us as "Espy", his IRC nickname, and also as the
+outspoken voice we heard on the mailing lists, never afraid to speak his
+mind in a way that only Joel could do, with humor and directness. He
+maintained a level of excellence in many important packages for Debian.
+His expertise and knowledge was never questioned. Those of us who have
+the honor of carrying on the work that he has done for us, will try to
+maintain it to his degree of technical perfection.
+
+Most of us had no idea the trials that Joel endured every day of his
+life. Not until near the end did any of us know he even had this disease.
+Only now are we realizing his dedication, and the friendship that he
+bestowed upon us. So as a show of our appreciation, and in memory of his
+inspirational life, this release of Debian is for him.
+
+ * The "Joel 'Espy' Klecker" release
+
+-- The Debian Developers

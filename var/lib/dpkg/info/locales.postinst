@@ -1,0 +1,41 @@
+#! /bin/sh
+set -e
+
+if [ "$1" = configure ]; then
+    if [ -d /usr/doc ]; then
+	package=$(basename $0 .postinst)
+	if [ ! -e /usr/doc/$package ]; then
+	    (cd /usr/doc;
+		if [ -d ../share/doc/$package ]; then
+		    ln -s ../share/doc/$package $package ;
+		fi
+            )
+	fi
+    fi
+
+    if [ ! -z $2 ]; then
+	if dpkg --compare-versions $2 le 2.2-1; then
+	    cat << EOF
+
+WARNING: The locales package no longer supplies precompiled versions of
+the locale definitions. Instead, you must uncomment the definitions you
+want in /etc/locale.gen, and run the \`locale-gen' program as root. Each
+time the locales package is upgraded, these definitions will automatically
+be regenerated. If you wish, you can type ^Z (CTRL+Z) now to background
+this install, edit /etc/locale.gen, and type \`fg' when done, so that
+locales will be generated now.
+
+NOTE: If you do not generate locales, you will not be able to properly see
+8bit character sets.
+EOF
+	    echo
+	    if [ "$DEBIAN_FRONTEND" != noninteractive ]; then
+		echo -n "Press [ENTER] to continue: "
+		read FOO
+	    fi
+	fi
+    fi
+
+    # Update requested locales
+    /usr/sbin/locale-gen
+fi

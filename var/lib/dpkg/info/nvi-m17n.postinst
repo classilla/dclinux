@@ -1,0 +1,27 @@
+#! /bin/sh
+
+update-alternatives --install /usr/bin/ex ex /usr/bin/nex-m17n 30 \
+  --slave /usr/share/man/man1/ex.1.gz ex.1.gz /usr/share/man/man1/nex-m17n.1.gz
+update-alternatives --install /usr/bin/vi vi /usr/bin/nvi-m17n 30 \
+  --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/share/man/man1/nvi-m17n.1.gz
+update-alternatives --install /usr/bin/view view /usr/bin/nview-m17n 30 \
+  --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/nview-m17n.1.gz
+
+update-rc.d nvi-m17n start 90 S . >/dev/null
+
+ if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/nvi-m17n -a -d /usr/share/doc/nvi-m17n ]; then
+   ln -sf ../share/doc/nvi-m17n /usr/doc/nvi-m17n
+  fi
+ fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/nvi-m17n -a -d /usr/share/doc/nvi-m17n ]; then
+		ln -sf ../share/doc/nvi-m17n /usr/doc/nvi-m17n
+	fi
+fi
+# End automatically added section
+   
+
+exit 0

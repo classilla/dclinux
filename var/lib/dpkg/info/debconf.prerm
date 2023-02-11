@@ -1,0 +1,13 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/debconf ]; then
+	rm -f /usr/doc/debconf
+fi
+# End automatically added section
+
+
+if [ "$1" = upgrade ] && dpkg --compare-versions "$2" "<<" "0.9"; then
+	echo "WARNING: Downgrading debconf to versions prior to 0.9" >&2
+	echo "is not well supported! Old versions of debconf will" >&2
+	echo "not understand the new format database. Muddling on ..." >&2
+fi

@@ -1,0 +1,39 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+    configure)
+	ldconfig
+	;;
+
+    upgrade)
+
+	if dpkg --compare-versions $2 le 2.10.91.0.2-2;  then
+		cat << EOF
+
+NOTE: The "-oformat" option for ld has changed to "--oformat".
+This affects building kernels on i386 and possibly other
+architectures.  Please check arch/<your arch>/boot/Makefile
+in your kernel source and be sure to replace any instances
+of "-oformat" with "--oformat".
+
+Upstream kernel changes are already taking place for this
+modification.
+EOF
+		echo
+		if [ "$DEBIAN_FRONTEND" != noninteractive ]; then
+			echo -n "Press [ENTER] to continue: "
+			read FOO
+		fi
+	fi
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/binutils -a -d /usr/share/doc/binutils ]; then
+		ln -sf ../share/doc/binutils /usr/doc/binutils
+	fi
+fi
+# End automatically added section
+

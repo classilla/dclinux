@@ -1,0 +1,68 @@
+Template: adduser/homedir-permission
+Type: boolean
+Default: true
+Description: Do you want system wide readable home directories?
+ Normally, home directories can be viewed by all users on the system. If
+ you want to increase the security/privacy on your system, you might want
+ your home directories only readable by the  user. If you are unsure,
+ answer yes to enable system wide readable home directories.
+ .
+ This will only affect home directories of users added with the adduser
+ program later.
+Description-de: Möchten Sie System-weit lesbare Heimatverzeichnisse?
+ Normalerweise können die Heimatverzeichnisse der Benutzer von allen anderen
+ Benutzern auf dem Rechner gelesen werden. Wenn Sie die
+ Sicherheit/Privatsphäre erhöhen möchten, dann ist es eventuell sinnvoll,
+ dass die Heimatverzeichnisse nicht von allen Benutzern gelesen werden
+ können. Wenn Sie sich nicht sicher sind, sollten Sie System-weit lesbare
+ Heimatverzeichnisse aktivieren.
+ .
+ Dies hat nur einen Effekt für Benutzer, die mit dem Programm adduser
+ später hinzugefügt werden.
+Description-fr: Voulez vous des répertoires personnels lisibles par tous ?
+ Usuellement, les répertoires personnels sont lisibles par tous les utilisateurs
+ du système. Si vous voulez rendre votre système plus sur/privé, vous
+ pouvez choisir que les répertoires personnels ne soient lisibles que par leur
+ propriétaire. Si vous n'êtes pas sur, répondez oui pour avoir des
+ répertoires personnels lisibles par tous.
+Description-no: Ønsker du globalt lesbare hjemmekataloger?
+ Normalt kan innholdet i hjemmekatalogene sees av alle brukerne på systemet.
+ Hvis du ønsker økt sikkerhet/konfidensialitet på systemet ditt, kan det være
+ ønskelig at hjemmekatalogene bare er lesbare av eieren. Hvis du er usikker,
+ svar ja for å ha globalt lesbare hjemmekataloger.
+Description-sv: Vill du att hemmakataloger ska vara läsbara för hela systemet?
+ Normalt kan hemmakataloger läsas av alla användare på systemet. Om du vill
+ öka säkerheten/avskildheten i ditt system så kan det vara en bra idé att
+ endast göra hemmakataloger läsbara av användaren själv. Om du är osäker,
+ svara ja för att göra hemmakatalogerna läsbara för hela systemet.
+Description-es: ¿Quiere que todo el sistema pueda leer las cuentas de usuario?
+ Normalmente las cuentas de usuario pueden ser vistas por cualquier usuario
+ del sistema. Si quiere incrementar la seguridad/privacidad de su sistema
+ puede querer que sus cuentas sólo puedan ser leídas por el dueño de la
+ cuenta. Si no está seguro responda sí para activar la lectura global de las
+ cuentas de usuario.
+Description-ru: èÏÔÉÔÅ ÌÉ ×Ù, ŞÔÏÂÙ ÓÉÓÔÅÍÁ ÉÍÅÌÁ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ, ÄÏÓÔÕĞÎÙÅ
+ ÄÌÑ ŞÔÅÎÉÑ ×ÓÅÍ?  ïÂÙŞÎÏ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ ÍÏÇÕÔ ĞÒÏÓÍÁÔÒÉ×ÁÔØÓÑ ×ÓÅÍÉ
+ ĞÏÌØÚÏ×ÁÔÅÌÑÍÉ ÓÉÓÔÅÍÙ. ÷ ÃÅÌÑÈ ĞÏ×ÙÛÅÎÉÑ ÂÅÚÏĞÁÓÎÏÓÔÉ É ËÏÎÆÉÄÅÎÃÉÁÌØÎÏÓÔÉ
+ ÓÉÓÔÅÍÙ, ×Ù ÍÏÖÅÔÅ ÚÁÈÏÔÅÔØ, ŞÔÏÂÙ ÄÏÍÁÛÎÉÊ ËÁÔÁÌÏÇ ĞÏÌØÚÏ×ÁÔÅÌÑ ÂÙÌ ŞÉÔÁÅÍ
+ ÔÏÌØËÏ ÉÍ ÏÄÎÉÍ. åÓÌÉ ×Ù ÎÅ Õ×ÅÒÅÎÙ, ÏÔ×ÅÔØÔÅ yes, ÔÏÇÄÁ
+ ÄÏÍÁÛÎÉÅ ËÁÔÁÌÏÇÉ ÂÕÄÕÔ ÄÏÓÔÕĞÎÙ ÄÌÑ ŞÔÅÎÉÑ ×ÓÅÍ.
+Description-nl: Wilt u wereldwijd leesbare home directories?
+ Normaal kunnen alle home directories door alle gebruikers op uw systeem
+ gelezen worden, ze zijn dan wereldwijd leesbaar. Indien u de beveiliging
+ of privacy op uw systeem wilt verhogen, kunt u overwegen om de home
+ directories alleen leesbaar te maken voor de gebruiker zelf. Indien u
+ niet zeker bent, antwoord dan ja op het wereldwijd leesbaar maken van
+ home directories.
+Description-pt_BR: Você quer ter seus diretórios 'home' visíveis por todos?
+ Normalmente, diretórios home podem ser vistos por todos os usuários do
+ sistema. Se você quer aumentar a segurança/privacidade no seu sistema,
+ você pode querer seu diretório home visível apenas para o usuário. Se você
+ não tem certeza, responda sim para habilitar diretórios home visíveis
+ por qualquer pessoa.
+Description-ro: Vrei ca directoarele din /home sã fie vizibile tuturor?
+ În mod normal, oricine poate vedea directoarele celorlalşi utilizatori.
+ Dacã vrei sã mãreºti securitatea/secretizarea în sistem, poşi face 
+ ca fiecare utilizator sã nu vadã conşinutul directoarelor celorlalşi
+ utilizatori. Dacã nu eºti sigur, rãspunde afirmativ.
+

@@ -1,0 +1,65 @@
+#!/bin/sh -e
+#
+# init.d script for ipchains by Lenart Janos.
+#
+
+# Please edit /etc/default/ipchains to ENAMBLE this feature.
+#             ^^^^^^^^^^^^^^^^^^^^^
+
+test -x /sbin/ipchains || exit 0
+test -x /sbin/ipchains-restore || exit 0
+test -x /sbin/ipchains-save || exit 0
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+. /etc/default/ipchains
+
+if [ "${ENABLED}" != "yes" ]
+  then
+    exit 0
+  fi
+
+save ()
+  {
+    echo -n "Saving IP chains: "
+    TEMPFILE="`tempfile`"
+    echo "${SAVEFILEHEADER}" >"${TEMPFILE}" && /sbin/ipchains-save >>"${TEMPFILE}" 2>/dev/null
+    cat "${TEMPFILE}" >/etc/ipchains.save
+    rm "${TEMPFILE}"
+  }
+
+case "$1"
+  in
+    start|load|restore|reload|force-reload)
+      echo -n "Restoring IP chains: "
+      ipchains -F
+      echo -n "clear_current_rules "
+      grep -v "^ *#" /etc/ipchains.save | /sbin/ipchains-restore -f -p 2>/dev/null
+      echo "ipchains-restore."
+      ;;
+    stop)
+      if [ "${SAVEONCE}" != "yes" ]
+        then
+	  save
+          echo -n "ipchains-save "
+	else
+	  echo -n "Clearing IP chains: "
+	fi   	   
+      ipchains -F
+      echo "clear_current_rules."
+      ;;
+    save|store)
+        save
+        echo "ipchains-save."
+      ;;
+    restart)
+      $0 stop
+      $0 start
+      ;;
+    *)
+      echo "Usage: $0 {start|load|restore|reload|force-reload|stop|save|store|restart}" >&2
+      exit 1
+      ;;
+  esac
+
+exit 0

@@ -1,0 +1,18 @@
+#	This unlicenced module says the Apache licence isn't appropriate.
+	test ! -d apache-contrib/mod_allowdev
+note: OK
+
+#	test ! -d apache-contrib/mod_cvs
+
+#	These modules have no licence or ownership statement.
+	test ! -d apache-contrib/mod_cache
+	test ! -d apache-contrib/mod_lock
+
+---- told rse
+
+create mod_debian to set en_US 
+still a doc-base registration prob
+
+ * Applied patch from Greg K-H from WireX fixing insecure creation of
+    tempfiles in htpasswd and htdigest, prepared by Debian's Security Team
+    for 1.3.9-13.2, closes: #83615.

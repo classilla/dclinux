@@ -1,0 +1,18 @@
+iptables for Debian
+----------------------
+
+This package requires a 2.4.0 kernel compiled with netfilter
+support. It's currently built with the kernel 2.4.0 header files
+in the lib6-dev package. If you use anything beyond stock 2.4.0
+kernel headers, even the patch-o-matic kernel source patches
+provided with iptables source code, you may have to rebuild
+iptables.
+
+NOTE: The iptables Debian package originally placed the iptables'
+bins and libs in /usr/sbin and /usr/lib. They have been moved to
+/sbin and /lib.
+
+More documentation can be found in /usr/share/doc/iptables and at
+http://netfilter.samba.org.
+
+Laurence J. Lane <ljlane@debian.org>,  Wed, 14 Mar 2001 04:47:56 -0500

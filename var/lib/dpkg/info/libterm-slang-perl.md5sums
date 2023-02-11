@@ -1,0 +1,17 @@
+c9eaa7e6c56871e517923387bf19de08  usr/lib/perl5/auto/Term/Slang/Slang.so
+d41d8cd98f00b204e9800998ecf8427e  usr/lib/perl5/auto/Term/Slang/Slang.bs
+6ba8f96d582900deb1dce8497c88aec5  usr/lib/perl5/Term/Slang.pm
+4b582de9f0e66dd84ffa9b3a17375577  usr/lib/perl5/Term/Slang/Window.pm
+80e02eb66b081d3c43b6136f22090ddb  usr/lib/perl5/Term/Slang/Scroll.pm
+ab6b588e46a232d601a0fca11d8c6c49  usr/share/man/man3/Term::Slang.3pm.gz
+f20927bb91689a64f294ca92ba5902f9  usr/share/man/man3/Term::Slang::Window.3pm.gz
+79cd8a2b12648dbbce96aa28822825e8  usr/share/man/man3/Term::Slang::Scroll.3pm.gz
+91a396d40d8bca6756ec34590fd278f8  usr/share/doc/libterm-slang-perl/README
+f5c54566bdc72095b15397ff3a247a30  usr/share/doc/libterm-slang-perl/TODO
+780f519e061be49aa9b982ab5e4e30e2  usr/share/doc/libterm-slang-perl/copyright
+d6b187caba3138ba57ab0671fefa3977  usr/share/doc/libterm-slang-perl/examples/cursor
+177cb1135b1fbf8a610258f35d4ce571  usr/share/doc/libterm-slang-perl/examples/draw-box
+a8e1907dd628909e86a309b73de9d033  usr/share/doc/libterm-slang-perl/examples/keypad
+ca48b0cd5519acad5e7521b0133ce8ac  usr/share/doc/libterm-slang-perl/examples/smgtest.gz
+2a40637cd4ee195263f690dd252b9c81  usr/share/doc/libterm-slang-perl/changelog.gz
+e81f98f879eaf1b6128d603651b7e636  usr/share/doc/libterm-slang-perl/changelog.Debian.gz

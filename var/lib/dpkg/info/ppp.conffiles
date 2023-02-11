@@ -1,0 +1,6 @@
+/etc/pam.d/ppp
+/etc/init.d/ppp
+/etc/ppp/options
+/etc/ppp/no_ppp_on_boot
+/etc/ppp/ip-up
+/etc/ppp/ip-down

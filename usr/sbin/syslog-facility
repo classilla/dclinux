@@ -1,0 +1,140 @@
+#! /usr/bin/perl -w
+
+# Copyright 1998 Hertzog Raphaël
+# You can use this script under the term of the GPL v2 or later.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111, USA.
+
+my $conf_file = '/etc/syslog.conf';
+
+## BUGS :
+#  . This script doesn't know about multi-lines configuration (ie with '\')
+#  . With a line like that "mail,local0.* /anything" 
+#    "syslog-facility remove local0" would remove the entire line
+#    => should not be a problem since lines installed by this script
+#    cannot use such syntax
+##
+
+## Nothing to modify after this line ##
+
+my $command = lc(shift);
+
+usage() if ($command !~ /^(?:set|remove)$/); 
+usage() if (not scalar(@ARGV));
+
+if ($command eq "set")
+{
+    usage() if (int(scalar(@ARGV) / 2) != scalar(@ARGV) / 2);
+    # find a free localx facility
+    my $facility = get_first_free_facility();
+    # if none stop immediately
+    if ($facility eq "none") {
+	print "none\n";
+	exit 1;
+    }
+    # ok append the lines asked
+    open (CONF, ">>$conf_file") || 
+        die "Can't open $conf_file in write mode: $!\n";
+    my ($pri,$file,$line);
+    while (defined($pri = shift)) {
+	$file = shift;
+	$line = "";
+	foreach (split(/;/,$pri)) {
+	    $_ =~ s/all/*/g;
+	    $line .= ";" if ($line);
+	    $line .= "$facility.$_";
+	}
+	$line .= "\t\t$file\n";
+	print CONF $line;
+    }
+    close CONF;
+    print "$facility\n";
+    exit 0;
+
+} elsif ($command eq "remove") {
+
+    my $facility = lc(shift);
+    my ($left,$file,$line);
+    open (CONF, $conf_file) || die "Can't open $conf_file: $!\n";
+    open (CONFNEW, ">$conf_file.new")  || 
+	die "Can't open $conf_file.new in write mode: $!\n";
+    while (defined($_=<CONF>)) {
+	# Write all "simple" lines like empty lines and comments
+	if (/^\s*$/ or /^\s*#/ or /\\$/) {
+	    print CONFNEW $_;
+	    next;
+	}
+	# Otherwise look if the facility to remove appears in the line
+	if (/^\s*(\S+)\s+(\S+)\s*/) {
+	    $left = $1; $file = $2; chomp $file;
+	    # It doesn't appers => write
+	    if ($left !~ /$facility/i) {
+		print CONFNEW $_;
+		next;
+	    }
+	    # It appears => write a new line without the localx facility
+	    $line = "";
+	    foreach (split(/;/,$left)) {
+		if (not /$facility/i) {
+		    $line .= ";" if ($line);
+		    $line .= $_;
+		}
+	    }
+	    next if ($line eq "");
+	    $line .= "\t\t$file\n";
+	    print CONFNEW $line;
+	}
+    }
+    close CONFNEW;
+    close CONF;
+    rename ("$conf_file.new", "$conf_file");
+}
+
+sub get_first_free_facility {
+
+    my @facility = (0) x 8;
+    my ($left,$fac);
+    open(CONF, $conf_file) || die "Can't open $conf_file: $!\n";
+    while(defined($_=<CONF>))
+    {
+	next if (/^\s*$/);
+	next if (/^\s*#/);
+        next if (/\\$/);
+	next if (not /^\s*(\S+)\s+(\S+)\s*$/);
+	$left = $1;
+	foreach $fac (split(/;/,$left)) {
+	    $facility[$1]++ if ($fac =~ /local(\d)/i);
+	}
+    }
+    foreach $fac (0..7)	{
+	return "local$fac" if ($facility[$fac] == 0);
+    }
+    return "none";
+}
+
+sub usage {
+
+    die  "syslog-facility - Copyright (c) 1998 Hertzog Raphaël\n"
+	."Usage : $0 set <set_of_priority> <logfile> ... \n"
+	."        it returns the 'LOCALx' string you have the right to use.\n"
+	."        $0 remove <facility>\n"
+	."Example: $0 set all /var/log/all\n"
+	."         $0 set all\\;\\!=info /var/log/all-without-info\n"
+	."         $0 set =err /var/log/errors =warning /var/log/warn\n"
+	."         $0 remove LOCAL1\n";   
+}
+
+
+

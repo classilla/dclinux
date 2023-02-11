@@ -1,0 +1,26 @@
+#!/bin/sh
+# start unicode mode
+
+kbd_mode -u
+
+if vt-is-UTF8 --quiet ; then
+  echo "Already in UTF8 mode"
+  exit 0
+fi
+
+case $# in
+    2)
+        consolechars --font=$1 --sfm=$2
+	;;
+    1)
+        consolechars --font=$1
+	;;
+    0)
+	;;
+    *)
+        echo "usage: unicode_start [font [unicode map]]"
+	;;
+esac
+
+# Since 1.2.1 - for older kernels, use: echo -n -e '\033%8'
+echo -n -e '\033%G'

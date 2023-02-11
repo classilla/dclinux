@@ -1,0 +1,5 @@
+8d9b4e082dd7f426ee815041eec75d2f  sbin/MAKEDEV
+2164d2d6c7824e2a6d56531371709611  usr/share/man/man8/MAKEDEV.8.gz
+8f829cea2dcc0921d4df538ef7807f5d  usr/share/doc/makedev/README.Debian
+7c0cd50e4ac1dc062f5e6ab578e95659  usr/share/doc/makedev/copyright
+c1faf0bf9192652afa2497d66c63a1e0  usr/share/doc/makedev/changelog.Debian.gz

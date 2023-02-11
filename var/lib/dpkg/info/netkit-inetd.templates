@@ -1,0 +1,20 @@
+Template: netkit-inetd/inetd-dos-services
+Type: boolean
+Default: true
+Description: Disable chargen, echo, daytime/udp, time/udp services?
+ The `chargen', `echo', `daytime/udp' and/or `time/udp' internal services
+ can be used for denial-of-service attacks and should therefore be
+ disabled. For further information please check the CERT advisory CA-96.01
+ (ftp://info.cert.org/pub/cert_advisories/CA-96.01.*)
+ .
+ You should also check your /etc/inetd.conf and disable all unused
+ services (especially UDP services).
+Description-it: Devo disabilitare i servizi di chargen, echo, daytime/udp e time/udp?
+ I servizi interni `chargen', `echo', `daytime/udp' e/o `time/udp' possono
+ essere usati per attacchi di denial-of-service, e quindi dovrebbero essere
+ disabilitati. Per ulteriori informazioni controllate il CERT advisory
+ CA-96.01 (ftp://info.cert.org/pub/cert_advisories/CA-96.01.*)
+ .
+ Dovreste controllare anche /etc/inetd.conf e disabilitare tutti i servizi
+ non usati (specialmente quelli UDP).
+

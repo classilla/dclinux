@@ -1,0 +1,20 @@
+#! /bin/sh
+
+N=/etc/init.d/makedev
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+set -e
+
+case "$1" in
+  start)
+	test -L /dev/MAKEDEV || ln -fs /sbin/MAKEDEV /dev/MAKEDEV
+	;;
+  stop|reload|restart|force-reload)
+	;;
+  *)
+	echo "Usage: $N {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

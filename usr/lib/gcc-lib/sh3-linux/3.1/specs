@@ -1,0 +1,94 @@
+*asm:
+%{!mb:-little} %{mrelax:-relax}
+
+*asm_final:
+%|
+
+*asm_options:
+%a %Y %{c:%W{o*}%{!o*:-o %w%b%O}}%{!c:-o %d%w%u%O}
+
+*invoke_as:
+%{!S:-o %{|!pipe:%g.s} |
+ as %(asm_options) %{!pipe:%g.s} %A }
+
+*cpp:
+%{mb:-D__BIG_ENDIAN__}    %{!mb:-D__LITTLE_ENDIAN__}    %{m4:-D__SH4__}    %{!m4:%{m4-nofpu:-D__SH4__ -D__SH4_NOFPU__}}    %{!m4:%{!m4-nofpu:-D__SH3__ -D__sh3__}}    %{fPIC:-D__PIC__ -D__pic__}    %{fpic:-D__PIC__ -D__pic__}    %{posix:-D_POSIX_SOURCE}    %{pthread:-D_REENTRANT -D_PTHREADS}
+
+*cpp_options:
+%{C:%{!E:%eGNU C does not support -C without using -E}} %{std*} %{nostdinc*} %{C} %{v} %{I*} %{P} %{$} %I %{MD:-M -MF %W{!o: %b.d}%W{o*:%.d%*}} %{MMD:-MM -MF %W{!o: %b.d}%W{o*:%.d%*}} %{M} %{MM} %W{MF*} %{MG} %{MP} %{MQ*} %{MT*} %{M|MD|MM|MMD:%{o*:-MQ %*}} %{!no-gcc:-D__GNUC__=%v1 -D__GNUC_MINOR__=%v2 -D__GNUC_PATCHLEVEL__=%v3} %{!undef:%{!ansi:%{!std=*:%p}%{std=gnu*:%p}} %P} %{trigraphs} %c %{Os:-D__OPTIMIZE_SIZE__} %{O*:%{!O0:-D__OPTIMIZE__}} %{ffast-math:-D__FAST_MATH__} %{fshort-wchar:-U__WCHAR_TYPE__ -D__WCHAR_TYPE__=short\ unsigned\ int} %{ffreestanding:-D__STDC_HOSTED__=0} %{fno-hosted:-D__STDC_HOSTED__=0} %{!ffreestanding:%{!fno-hosted:-D__STDC_HOSTED__=1}} %{fshow-column} %{fno-show-column} %{fleading-underscore} %{fno-leading-underscore} %{fno-operator-names} %{ftabstop=*} %{remap} %{g3:-dD} %{W*} %{w} %{pedantic*} %{H} %{d*} %C %{D*&U*&A*} %{i*} %Z %i %{E:%{!M*:%W{o*}}}
+
+*trad_capable_cpp:
+%{traditional|ftraditional|traditional-cpp:trad}cpp0
+
+*cc1:
+-musermode %{!mb:-ml} %{!m4:%{!m4-nofpu:-m3}}
+
+*cc1_options:
+%{pg:%{fomit-frame-pointer:%e-pg and -fomit-frame-pointer are incompatible}} %1 %{!Q:-quiet} -dumpbase %B %{d*} %{m*} %{a*} %{g*} %{O*} %{W*} %{w} %{pedantic*} %{std*} %{ansi} %{traditional} %{v:-version} %{pg:-p} %{p} %{f*} %{aux-info*} %{Qn:-fno-ident} %{--help:--help} %{--target-help:--target-help} %{!fsyntax-only:%{S:%W{o*}%{!o*:-o %b.s}}} %{fsyntax-only:-o %j} %{-param*}
+
+*cc1plus:
+-musermode %{!mb:-ml} %{!m4:%{!m4-nofpu:-m3}}
+
+*endfile:
+%{!shared:crtend.o%s} %{shared:crtendS.o%s} crtn.o%s
+
+*link:
+%{!mb:-m shlelf_linux} %{mrelax:-relax}    %{shared:-shared}    %{!static:      %{rdynamic:-export-dynamic}      %{!dynamic-linker:-dynamic-linker /lib/ld-linux.so.2}      %{!rpath:-rpath /lib}}    %{static:-static}
+
+*lib:
+%{shared: -lc}    %{!shared: %{pthread:-lthread}      %{profile:-lc_p} %{!profile: -lc}      %{!symbolic:-lc -lnss_files -lnss_dns -lresolv -lc}}
+
+*libgcc:
+%{shared-libgcc: -lgcc_s%M} %{static-libgcc:-lgcc}    %{!shared-libgcc: %{!static-libgcc:      %{static:-lgcc} %{!static:-lgcc_s%M}}}
+
+*startfile:
+%{!shared:      %{pg:gcrt1.o%s} %{!pg:%{p:gcrt1.o%s} 		       %{!p:%{profile:gcrt1.o%s} 			 %{!profile:crt1.o%s}}}}    crti.o%s %{!shared:crtbegin.o%s} %{shared:crtbeginS.o%s}
+
+*switches_need_spaces:
+
+
+*signed_char:
+%{funsigned-char:-D__CHAR_UNSIGNED__}
+
+*predefines:
+-D__ELF__ -Dunix -D__sh__ -Dlinux -Asystem=posix
+
+*cross_compile:
+0
+
+*version:
+3.1
+
+*multilib:
+. ;
+
+*multilib_defaults:
+
+
+*multilib_extra:
+
+
+*multilib_matches:
+
+
+*multilib_exclusions:
+
+
+*linker:
+collect2
+
+*link_libgcc:
+%D
+
+*md_exec_prefix:
+
+
+*md_startfile_prefix:
+
+
+*md_startfile_prefix_1:
+
+
+*link_command:
+%{!fsyntax-only:%{!c:%{!M:%{!MM:%{!E:%{!S:    %(linker) %l %X %{o*} %{A} %{d} %{e*} %{m} %{N} %{n} %{r} %{s} %{t}    %{u*} %{x} %{z} %{Z} %{!A:%{!nostdlib:%{!nostartfiles:%S}}}    %{static:} %{L*} %(link_libgcc) %o %{!nostdlib:%{!nodefaultlibs:%G %L %G}}    %{!A:%{!nostdlib:%{!nostartfiles:%E}}} %{T*} }}}}}}
+

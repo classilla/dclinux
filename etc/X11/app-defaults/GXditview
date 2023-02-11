@@ -1,0 +1,79 @@
+GXditview.height: 840
+
+GXditview.paned.allowResize:		true
+GXditview.paned.viewport.allowVert:	true
+GXditview.paned.viewport.allowHoriz:	true
+GXditview.paned.viewport.skipAdjust:	false
+GXditview.paned.viewport.width:		600
+GXditview.paned.viewport.height:	800
+GXditview.paned.viewport.showGrip:	false
+GXditview.paned.label.skipAdjust:	true
+
+GXditview.paned.viewport.dvi.translations: #augment \
+	<Btn1Down>:	XawPositionSimpleMenu(menu) MenuPopup(menu)\n\
+	<Key>Next:	NextPage()\n\
+	<Key>n:		NextPage()\n\
+	<Key>space:	NextPage()\n\
+	<Key>Return:	NextPage()\n\
+	<Key>Prior:	PreviousPage()\n\
+	<Key>p:		PreviousPage()\n\
+	<Key>BackSpace:	PreviousPage()\n\
+	<Key>Delete:	PreviousPage()\n\
+	<Key>Select:	SelectPage()\n\
+	<Key>Find:	OpenFile()\n\
+	<Key>r:		Rerasterize()\n\
+	<Key>q:		Quit()
+GXditview.paned.label.translations: #augment \
+	<Btn1Down>:	XawPositionSimpleMenu(menu) MenuPopup(menu)\n\
+	<Key>Next:	NextPage()\n\
+	<Key>n:		NextPage()\n\
+	<Key>space:	NextPage()\n\
+	<Key>Return:	NextPage()\n\
+	<Key>Prior:	PreviousPage()\n\
+	<Key>p:		PreviousPage()\n\
+	<Key>BackSpace:	PreviousPage()\n\
+	<Key>Delete:	PreviousPage()\n\
+	<Key>Select:	SelectPage()\n\
+	<Key>Find:	OpenFile()\n\
+	<Key>r:		Rerasterize()\n\
+	<Key>q:		Quit()
+GXditview.menu.nextPage.label:		Next Page
+GXditview.menu.previousPage.label:	Previous Page
+GXditview.menu.selectPage.label:	Select Page
+GXditview.menu.print.label:		Print
+GXditview.menu.openFile.label:		Open
+GXditview.menu.quit.label:		Quit
+
+GXditview.promptShell.allowShellResize:	true
+GXditview.promptShell.promptDialog.value.translations: #override \
+	<Key>Return:	Accept()
+
+GXditview.promptShell.promptDialog.accept.label: Accept
+GXditview.promptShell.promptDialog.accept.translations: #override \
+	<BtnUp>:	Accept() unset()
+
+GXditview.promptShell.promptDialog.cancel.label: Cancel
+GXditview.promptShell.promptDialog.cancel.translations: #override \
+	<BtnUp>:	Cancel() unset()
+
+GXditview*fontMap: \
+TR	-adobe-times-medium-r-normal--*-100-*-*-*-*-iso8859-1\n\
+TI	-adobe-times-medium-i-normal--*-100-*-*-*-*-iso8859-1\n\
+TB	-adobe-times-bold-r-normal--*-100-*-*-*-*-iso8859-1\n\
+TBI	-adobe-times-bold-i-normal--*-100-*-*-*-*-iso8859-1\n\
+CR	-adobe-courier-medium-r-normal--*-100-*-*-*-*-iso8859-1\n\
+CI	-adobe-courier-medium-o-normal--*-100-*-*-*-*-iso8859-1\n\
+CB	-adobe-courier-bold-r-normal--*-100-*-*-*-*-iso8859-1\n\
+CBI	-adobe-courier-bold-o-normal--*-100-*-*-*-*-iso8859-1\n\
+HR	-adobe-helvetica-medium-r-normal--*-100-*-*-*-*-iso8859-1\n\
+HI	-adobe-helvetica-medium-o-normal--*-100-*-*-*-*-iso8859-1\n\
+HB	-adobe-helvetica-bold-r-normal--*-100-*-*-*-*-iso8859-1\n\
+HBI	-adobe-helvetica-bold-o-normal--*-100-*-*-*-*-iso8859-1\n\
+NR	-adobe-new century schoolbook-medium-r-normal--*-100-*-*-*-*-iso8859-1\n\
+NI	-adobe-new century schoolbook-medium-i-normal--*-100-*-*-*-*-iso8859-1\n\
+NB	-adobe-new century schoolbook-bold-r-normal--*-100-*-*-*-*-iso8859-1\n\
+NBI	-adobe-new century schoolbook-bold-i-normal--*-100-*-*-*-*-iso8859-1\n\
+S	-adobe-symbol-medium-r-normal--*-100-*-*-*-*-adobe-fontspecific\n\
+SS	-adobe-symbol-medium-r-normal--*-100-*-*-*-*-adobe-fontspecific\n\
+M	-misc-fixed-medium-r-normal--*-100-*-*-*-*-jisx0208.1983-0\n\
+G	-misc-fixed-medium-r-normal--*-100-*-*-*-*-jisx0208.1983-0

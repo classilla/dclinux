@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/slang1-dev -a -d /usr/share/doc/slang1-dev ]; then
+		ln -sf ../share/doc/slang1-dev /usr/doc/slang1-dev
+	fi
+fi
+# End automatically added section

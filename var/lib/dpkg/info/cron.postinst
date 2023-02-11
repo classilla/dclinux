@@ -1,0 +1,58 @@
+#!/bin/sh
+set -e
+
+update-rc.d cron defaults 89 11 >/dev/null
+# Copy existing allow/deny files
+crondir="/var/spool/cron"
+pausemessage="F"
+for fname in allow deny ; do
+    if [ -f $crondir/$fname ] ; then
+	if [ ! -f $/etc/cron.$fname ] ; then
+	    mv $crondir/$fname /etc/cron.$fname
+	    echo " "
+	    echo "Moving $crondir/$fname to /etc/cron.$fname to comply with Debian policy"
+	    pausemessage="T"
+	else
+	    echo " "
+	    echo "Warning:"
+	    echo "Both $crondir/$fname and /etc/cron.$fname exist -- cron will"
+	    echo "use /etc/cron.$fname"
+	    pausemessage="T"
+	fi
+    fi
+done
+#
+# Check for upgrades from very old versions
+#
+if [ "$1" = "configure" -a -n "$2" ] && dpkg --compare-versions "$2" lt "3.0pl1-43" ; then
+    echo " "
+    echo "The format of the setuid.today file (output from checksecurity) has"
+    echo "changed. This means that the first run of checksecurity after the "
+    echo "upgrade will produce a diff on every every file affected".
+    pausemessage="T"
+fi
+
+#
+# Move dpkg status file backups, if necessary/possible.
+#
+( cd /var/lib/dpkg ;
+for oldstat in status.yesterday.* ; do
+    if [ -f $oldstat ] ; then
+        newstat=`echo $oldstat | sed 's/yesterday\.//'`;
+        newstat=/var/backups/dpkg.$newstat;            
+        if [ ! -f $newstat ] ; then
+            mv $oldstat $newstat ;
+        fi
+    fi                        
+done)
+
+start-stop-daemon --start --quiet --oknodo --exec /usr/sbin/cron
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/cron -a -d /usr/share/doc/cron ]; then
+		ln -sf ../share/doc/cron /usr/doc/cron
+	fi
+fi
+# End automatically added section
+

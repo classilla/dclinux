@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+test configure = "$1" && ldconfig
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libdb3 -a -d /usr/share/doc/libdb3 ]; then
+		ln -sf ../share/doc/libdb3 /usr/doc/libdb3
+	fi
+fi
+# End automatically added section
+

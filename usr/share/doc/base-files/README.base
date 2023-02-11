@@ -1,0 +1,48 @@
+About the base package:
+======================
+
+A long time ago, there was a package called `base', which was tagged
+essential and contained a lot of things, among them all the special
+device files in the /dev directory.
+
+Currently, the device files do not belong to any particular package,
+so the `base' package does not exist anymore, but if you upgraded your
+system from a very early Debian release, it is possible that you still
+have it installed (in this case it should not removed!).
+
+Having this package installed is harmless, but there are a few reasons
+why you might want to have it uninstalled:
+
+* dselect will show it as an "obsolete" package.
+* The list of installed packages in the system will not match the
+list of packages you would install when installing from scratch.
+
+Therefore, you might want to get rid of it. In this case, here
+is what you may do:
+
+It is very important that you *don't* do "dpkg --purge base", because
+this may remove all the conffiles for the base package listed in the
+/var/lib/dpkg/status file. Here is a much safer method:
+
+1. Make a backup of all your important files, in particular it is always
+a good idea to have backups of all the files under /etc and /var/lib/dpkg.
+
+2. Make sure you are not running a dselect session somewhere (if you can
+enter dselect and then exit it is likely this is not the case).
+
+3. Edit /var/lib/dpkg/status and remove all the items about the `base'
+package. This has to be done with extreme care.
+
+4. Remove all the files matching "/var/lib/dpkg/info/base.*".
+
+To simplify this task (only 2. to 4., you still have to do the
+backups!) and avoid mistakes, a simple shell script `remove-base' is
+provided in the /usr/doc/base-files directory. It will modify the
+status file and will remove the base.* files for you.
+
+Warning: This script is provided in the hope that it will be useful
+but without any warranty. Do not remove the `base' package if you are
+not absolutely sure that you will not mess up your system.
+
+
+Santiago Vila <sanvila@debian.org>

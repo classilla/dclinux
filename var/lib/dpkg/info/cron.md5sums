@@ -1,0 +1,15 @@
+44a39603b4a5f3a3cbbc4fca86ec41df  usr/bin/crontab
+94a52a5c7326145b21481f4f46e70922  usr/sbin/cron
+8c55d34154fdf683f04fa3d2b841460d  usr/sbin/checksecurity
+04fb736343da74e28b987f1020a18468  usr/share/man/man1/crontab.1.gz
+ddc9986b0fd77fda3dcab4e46bb388a5  usr/share/man/man5/crontab.5.gz
+6f341a060ae03e3200ccdad4fdf081d2  usr/share/man/man8/cron.8.gz
+3f593fd1be5ba725f517fa25d9676a4c  usr/share/man/man8/checksecurity.8.gz
+e44265e7da5d7e2205770e4fddd61acb  usr/share/doc/cron/FEATURES
+8f57348732b9755b264ef1c15b0e6485  usr/share/doc/cron/THANKS
+4c97da33dcaed14965b7b2a6171ad812  usr/share/doc/cron/README
+1488a39b48d9d9cd0b809019edd0eb5b  usr/share/doc/cron/README.anacron
+0db974064ccdbe0e74568cdb1deab2cf  usr/share/doc/cron/README.Debian
+abf7f44f2f6d95c666fa461bdb3ec359  usr/share/doc/cron/copyright
+e8aafc6017927b0890edc4f201b56325  usr/share/doc/cron/changelog.gz
+fa8ec10a580478882092ae99c89244b1  usr/share/doc/cron/changelog.Debian.gz

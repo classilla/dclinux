@@ -1,0 +1,17 @@
+LoadModule: proxy_module /usr/lib/apache/modules/mod_proxy.so
+LoadModule: proxy_module /usr/lib/apache/1.3/libproxy.so
+Directives:
+ ProxyRequests
+ ProxyRemote
+ ProxyPass
+ ProxyPassReverse
+ ProxyBlock
+ ProxyVia
+ CacheRoot
+ CacheSize
+ CacheGcInterval
+ CacheMaxExpire
+ CacheLastModifiedFactor
+ CacheDefaultExpire
+ NoCache
+Description: Support for caching proxy service

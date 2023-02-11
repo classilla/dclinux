@@ -1,0 +1,35 @@
+#! /bin/sh
+# /etc/init.d/klogd: start the kernel log daemon.
+
+test -f /sbin/klogd || exit 0
+
+#  Use KLOGD="-k /boot/System.map-$(uname -r)" to specify System.map
+#
+KLOGD=""
+
+case "$1" in
+  start)
+    echo -n "Starting kernel log daemon: klogd"
+    start-stop-daemon --start --quiet --exec /sbin/klogd -- $KLOGD
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping kernel log daemon: klogd"
+    start-stop-daemon --stop --quiet --exec /sbin/klogd --pidfile /var/run/klogd.pid
+    echo "."
+    ;;
+  restart|force-reload)
+    echo -n "Stopping kernel log daemon: klogd"
+    start-stop-daemon --stop --quiet --exec /sbin/klogd --pidfile /var/run/klogd.pid
+    echo "."
+    sleep 1
+    echo -n "Starting kernel log daemon: klogd"
+    start-stop-daemon --start --quiet --exec /sbin/klogd --exec /sbin/klogd -- $KLOGD
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/klogd {start|stop|restart|force-reload}"
+    exit 1
+esac
+
+exit 0

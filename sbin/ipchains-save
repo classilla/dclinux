@@ -1,0 +1,181 @@
+#! /bin/bash
+
+MYVERSION="1.1.2"
+
+help()
+{
+    exec 1>&2
+    echo `basename $0` v$MYVERSION: Script to save firewall chains to stdout.
+    echo
+    echo "   Takes an optional chain-name (used to save a single chain), otherwise"
+    echo "      it saves all chains."
+    echo "   With the -v option, prints out every rule."
+
+    exit 1
+}
+
+dotted()
+{
+    echo $((($1 >> 24) & 0xFF)).$((($1 >> 16) & 0xFF)).$((($1 >> 8) & 0xFF)).$(($1 & 0xFF))
+}
+
+genip()
+{
+    IP=0x`echo $1 | sed 's:/.*::'`
+    MASK=0x`echo $1 | sed 's:.*/::'`
+    echo `dotted $IP`/`dotted $MASK`
+}
+
+WHICHCHAIN=""
+VERBOSE=0
+IP_CHAINS_FILE=/proc/net/ip_fwchains
+#IP_CHAINS_FILE=ip_fwchains.dummy
+
+IP_CHAINNAMES_FILE=/proc/net/ip_fwnames
+#IP_CHAINNAMES_FILE=ip_fwnames.dummy
+
+for arg
+do
+    case "$arg"
+    in
+	-v) VERBOSE=1 ;;
+	-*) help ;;
+	*) if [ x"$WHICHCHAIN" != x ]; then help; fi; WHICHCHAIN="$arg" ;;
+    esac
+done
+
+if [ ! -f $IP_CHAINS_FILE ]
+then
+    exec 1>&2
+    echo \`$IP_CHAINS_FILE\' does not exist.
+    echo \(Does this kernel support IP Firewall Chains\?\)
+    exit 1
+fi
+
+if [ ! -r $IP_CHAINS_FILE ]
+then
+    exec 1>&2
+    echo \`$IP_CHAINS_FILE\' is not readable.
+    echo \(Am I root\?\)
+    exit 1
+fi
+
+# "%9s "			/* Chain name */
+# "%08lX/%08lX->%08lX/%08lX "	/* Source & Destination IPs */
+# "%.16s "			/* Interface */
+# "%hX %hX "			/* fw_flg and fw_invflg fields */
+# "%hu "			/* Protocol */
+# "%-9lu %-9lu %-9lu %-9lu "	/* Packet & byte counters */
+# "%hu-%hu %hu-%hu "		/* Source & Dest port ranges */
+# "A%02X X%02X "		/* TOS and and xor masks */
+# "%08X "			/* Redirection port */
+# "%hu "			/* fw_mark field */
+# "%hu "			/* output size */
+# "%9s\n",			/* Target */
+
+LASTCHAIN=" "
+
+# Do chain names first.
+dd if=$IP_CHAINNAMES_FILE bs=1024 2>/dev/null | while read CHN POL REFCNT
+do
+    if [ -z "$WHICHCHAIN" -o x"$WHICHCHAIN" = x"$CHN" ]
+    then
+	echo ":$CHN $POL"
+    fi
+done
+
+dd if=$IP_CHAINS_FILE bs=1024 2>/dev/null |
+while read CHAIN SRCDST IFACE FLG INVFLG PROTO IGN1 IGN2 IGN3 IGN4 SRCPT DSTPT TOSAND TOSXOR REDIR MARK OUTSIZE TARGET
+do
+    if [ -z "$WHICHCHAIN" -o x"$WHICHCHAIN" = x"$CHAIN" ]
+    then
+	if [ "$CHAIN" != "$LASTCHAIN" ]
+	then
+	    echo Saving \`$CHAIN\'. 1>&2
+	    LASTCHAIN=$CHAIN
+	fi
+
+	echo -n "-A $CHAIN "
+	LINE=""
+	if [ "$SRCPT" = "0-65535" ]
+	then 
+	    SRCPT=""
+	else 
+	    SRCPT=`echo $SRCPT | sed s/-/:/`
+	    let $((0x$INVFLG & 0x0008)) && SRCPT="! $SRCPT"
+	fi
+	LINE="$LINE -s"
+	let $((0x$INVFLG & 0x0001)) && LINE="$LINE !"
+	IPADDR=`genip \`echo $SRCDST | sed 's/->.*//'\``
+	LINE="$LINE $IPADDR $SRCPT "
+
+	if [ "$DSTPT" = "0-65535" ]
+	then 
+	    DSTPT=""
+	else 
+	    DSTPT=`echo $DSTPT | sed s/-/:/`
+	    let $((0x$INVFLG & 0x0010)) && DSTPT="! $DSTPT"
+	fi
+	LINE="$LINE -d"
+	let $((0x$INVFLG & 0x0002)) && LINE="$LINE !"
+	IPADDR=`genip \`echo $SRCDST | sed 's/.*->//'\``
+	LINE="$LINE $IPADDR $DSTPT"
+
+	if [ x"$IFACE" != x- ]
+	then
+	    LINE="$LINE -i"
+	    let $((0x$INVFLG & 0x0020)) && LINE="$LINE !"
+	    let $((0x$FLG & 0x0010)) && IFACE=${IFACE}+
+	    LINE="$LINE $IFACE "
+	fi
+	if [ $PROTO -ne 0 ]
+	then
+	    LINE="$LINE -p"
+	    let $((0x$INVFLG & 0x0004)) && LINE="$LINE !"
+	    LINE="$LINE $PROTO"
+	fi
+	if [ "$TOSAND $TOSXOR" != "AFF X00" ]
+	then
+	    LINE="$LINE -t `echo $TOSAND $TOSXOR | sed 's/.\([0-9A-Fa-f][0-9A-Fa-f]\)/\1/g'`"
+	fi
+	if [ x"$TARGET" = xREDIRECT ]
+	then
+	    LINE="$LINE -j $TARGET $((0x$REDIR))"
+	elif [ x"$TARGET" != x- ]
+	then 
+	    LINE="$LINE -j $TARGET"
+	fi
+
+	# Flag analysis.  Thank Gnu for bash.
+	let $((0x$FLG & 0x0001)) && LINE="$LINE -l"
+	if let $((0x$FLG & 0x0002))
+	then
+	    let $((0x$INVFLG & 0x0040)) && LINE="$LINE !"
+	    LINE="$LINE -y"
+	fi
+	if let $((0x$FLG & 0x0004))
+	then
+	    let $((0x$INVFLG & 0x0080)) && LINE="$LINE !"
+	    LINE="$LINE -f"
+	fi
+	if let $((0x$FLG & 0x0008))
+	then
+	    LINE="$LINE -m $MARK"
+	elif [ "$MARK" -ne 0 ]
+	then
+	    # Bash `feature'.  Woohoo!
+	    if let $(($MARK < 0))
+	    then 
+		LINE="$LINE -m $(($MARK))"
+	    else
+		LINE="$LINE -m +$(($MARK))"
+	    fi
+	fi
+	if let $((0x$FLG & 0x0020))
+	then
+	    LINE="$LINE -o $OUTSIZE"
+	fi
+	echo $LINE
+	if [ $VERBOSE != 0 ]; then echo $LINE 1>&2; fi
+    fi
+done

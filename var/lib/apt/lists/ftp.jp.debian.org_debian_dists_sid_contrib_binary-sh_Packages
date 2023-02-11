@@ -1,0 +1,1994 @@
+Package: ale-clone-cogliati
+Priority: optional
+Section: contrib/games
+Installed-Size: 1722
+Maintainer: Anthony Towns <ajt@debian.org>
+Architecture: all
+Version: 0.11-1
+Provides: ale-clone-data
+Depends: ale-clone
+Filename: dists/potato/contrib/binary-all/games/ale-clone-cogliati_0.11-1.deb
+Size: 720762
+MD5sum: 2940fdc2ab6362470456c4521940fe10
+Description: Free Graphics for ALE Clone
+ These are a set of free graphics for ALE Clone (the free WarCraft II clone).
+
+Package: atari800
+Priority: optional
+Section: contrib/otherosfs
+Installed-Size: 612
+Maintainer: Dale Scheetz <dwarf@polaris.net>
+Architecture: sh
+Version: 0.9.9f-2
+Depends: libc6 (>= 2.2.1-2), libncurses5, xlibs (>> 4.0.3), zlib1g (>= 1:1.1.3)
+Filename: pool/contrib/a/atari800/atari800_0.9.9f-2_sh.deb
+Size: 202294
+MD5sum: d2ffd560fdfb7719b44ab07c282bcbd3
+Description: Atari emulator for svgalib/X/curses
+ This is an Atari emulator that can use SVGALIB, X, or plain curses. It can
+ emulate the Atari 800, 800XL, 130XE, and 5200 systems.
+ .
+ The Atari Operating System ROMs are not available with this package, due to
+ copyright. You'll have to either make copies of them from an old Atari
+ computer, or see README.Debian for other ways to obtain them.
+ .
+ One atari800 game, alien encounter, is included in this package.
+
+Package: auto-pgp
+Priority: optional
+Section: contrib/mail
+Installed-Size: 160
+Maintainer: Dirk Eddelbuettel <edd@debian.org>
+Architecture: sh
+Version: 1.04-4
+Depends: libc6 (>= 2.2.1-2), perl, pgp
+Suggests: emacsen
+Filename: pool/contrib/a/auto-pgp/auto-pgp_1.04-4_sh.deb
+Size: 33114
+MD5sum: 3cbad4529da0401959bae078a8abee07
+Description: PGP tools for command-line and Emacs use
+ This package provides the shell commands pgp-auto, pgp-decrypt, and
+ pgp-pixie. It also integrates PGP into your Emacs mailreader.
+
+Package: bsh
+Priority: optional
+Section: contrib/devel
+Installed-Size: 290
+Maintainer: Tollef Fog Heen <tfheen@debian.org>
+Architecture: all
+Version: 1.1alpha5-1
+Depends: java-common, jdk1.1 | java-virtual-machine
+Recommends: xlibs
+Filename: pool/contrib/b/bsh/bsh_1.1alpha5-1_all.deb
+Size: 215940
+MD5sum: 6e989ce284c62b78f0c481b54593053a
+Description: A Java scripting environment.
+ BeanShell is a small, free, embeddable, Java source interpreter with object
+ scripting language features, written in Java. BeanShell executes standard Java
+ statements and expressions, in addition to obvious scripting commands and
+ syntax.  BeanShell supports scripted objects as simple method closures like
+ those in Perl and JavaScript(tm).
+ .
+ You can use BeanShell interactively for Java experimentation and debugging or
+ as a simple scripting engine for you applications.  In short: BeanShell is a
+ dynamically interpreted Java, plus some useful stuff.
+
+Package: cedicttools
+Priority: extra
+Section: contrib/text
+Installed-Size: 110
+Maintainer: Anthony Wong <ypwong@debian.org>
+Architecture: all
+Version: 1.1-3
+Depends: cedictb5 | cedictgb, perl | perl5
+Suggests: emacsen, rxvt-ml | cxterm-big5 | cxterm-gb, xcin
+Filename: dists/potato/contrib/binary-all/text/cedicttools_1.1-3.deb
+Size: 32494
+MD5sum: dbaa7f140abdc0b79c5ed94ca4221093
+Description: Various tools to use with the CEDict data
+ This package contains these utilities:
+ .
+ cedictlookup    - looks up vocabulary (by Chinese, pinyin, or English).
+ cedictlookup.el - emacs-lisp code which calls cedictlookup, for easy
+                   lookup when reading Chinese from within emacs.
+ .
+ The followings are not targetted for end-uesrs:
+ .
+ cedictcheckformat - checks a CEDICT-format file for lines which are
+                     not in the standard CEDICT format.
+ cedictsort        - sorts CEDICT-format files based on the pinyin
+                     romanization for pronunciation.
+ cedictmerge       - merges two CEDICT-format files.
+
+Package: civctp
+Priority: optional
+Section: contrib/games
+Installed-Size: 88
+Maintainer: Javier Fernandez-Sanguino Pen~a <jfs@computer.org>
+Architecture: all
+Version: 0.2
+Filename: dists/woody/contrib/binary-all/games/civctp_0.2.deb
+Size: 3784
+MD5sum: 439b8a074f513e74f488f4582d4938e1
+Description: Civilization Call to Power (installer)
+ Civilization Call to Power is a game from Loki Entertainment.
+ This is the installer package for Debian GNU/Linux, in order
+ to run it you need the demo distributed by Loki Entertainment.
+ Please read the README file.
+
+Package: cocoon
+Priority: optional
+Section: contrib/web
+Installed-Size: 308
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 1.8-1
+Depends: java-common, jserv (>= 1.0.99b3) | tomcat (>= 3.2.1-1), cocoon-lib, libxerces-java, lib-dom-java
+Recommends: libxalan-java
+Suggests: cocoon-doc
+Filename: pool/contrib/c/cocoon/cocoon_1.8-1_all.deb
+Size: 194072
+MD5sum: 95c60deeacf1805577550029ff5830aa
+Description: A XML/XSL publishing framework servlet
+ Cocoon is a 100% pure Java XML/XSL publishing framework servlet that
+ allows complete separation of content, logic and style.
+ .
+ It currently works with tomcat but with some manual changes it should
+ work with jserv too.
+ .
+ More information can be found at http://java.apache.org/cocoon.
+
+Package: cocoon-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 6132
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: cocoon
+Version: 1.8-1
+Filename: pool/contrib/c/cocoon/cocoon-doc_1.8-1_all.deb
+Size: 1321416
+MD5sum: 68610d3870e4af7b4684c444c13cc827
+Description: Documentation for Cocoon
+ This is the documentation for Cocoon which is a 100% pure Java
+ XML/XSL publishing framework servlet that allows complete separation
+ of content, logic and style.
+ .
+ This package contains the documentation in HTML format.
+
+Package: cocoon-example
+Priority: optional
+Section: contrib/web
+Installed-Size: 252
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: cocoon
+Version: 1.8-1
+Depends: cocoon
+Filename: pool/contrib/c/cocoon/cocoon-example_1.8-1_all.deb
+Size: 167600
+MD5sum: 488e6782643928c469da4e8e6bdca37a
+Description: An example of what cocoon can do.
+ This package contains a sample cocoon site that shows what cocoon
+ really can do.
+ .
+ The example is a .war file which essentially is a zip archive and
+ you only have to create your own one to create an own example.
+ .
+ When installed point your browser at http://localhost:8081/cocoon/index.xml
+ (if you use tomcat).
+
+Package: cocoon-lib
+Priority: optional
+Section: contrib/libs
+Installed-Size: 488
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: cocoon
+Version: 1.8-1
+Filename: pool/contrib/c/cocoon/cocoon-lib_1.8-1_all.deb
+Size: 364650
+MD5sum: 330240acc0c76c1925a449bb3043e232
+Description: An example of what cocoon can do.
+ This package contains some external java libraries to make
+ cocoon work properly.
+ Theese librarlies should later be moved to their own packages
+ and recompiled, but this makes this process easier.
+
+Package: cocoon2
+Priority: optional
+Section: contrib/web
+Installed-Size: 512
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 20010420-1
+Depends: java-common, tomcat (>= 3.2.1-1), libxerces-java
+Recommends: libxalan-java
+Suggests: lib-fop-java
+Conflicts: lib-dom-java
+Filename: pool/contrib/c/cocoon2/cocoon2_20010420-1_all.deb
+Size: 420440
+MD5sum: 00bf582a5e279d0d80191bf7b79d4b0f
+Description: A XML/XSL publishing framework servlet
+ Cocoon2 is a 100% pure Java XML/XSL publishing framework servlet that
+ allows complete separation of content, logic and style.
+ .
+ More information can be found at http://java.apache.org/cocoon/cocoon2/
+
+Package: cocoon2-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 272
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: cocoon2
+Version: 20010420-1
+Filename: pool/contrib/c/cocoon2/cocoon2-doc_20010420-1_all.deb
+Size: 7756
+MD5sum: 9214456344b702624e4680a8ee0695b9
+Description: Documentation for Cocoon2
+ This is the documentation for Cocoon2 which is a 100% pure Java
+ XML/XSL publishing framework servlet that allows complete separation
+ of content, logic and style.
+ .
+ This package contains the documentation in HTML format.
+
+Package: cocoon2-example
+Priority: optional
+Section: contrib/web
+Installed-Size: 4384
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: cocoon2
+Version: 20010420-1
+Depends: cocoon2, wwwconfig-common (>= 0.0.4-1)
+Conflicts: cocoon-example
+Filename: pool/contrib/c/cocoon2/cocoon2-example_20010420-1_all.deb
+Size: 3354004
+MD5sum: e7cf5c66cf4d0e7b7a345ff53ffd677a
+Description: An example of what cocoon2 can do.
+ This package contains a sample cocoon2 site that shows what cocoon2
+ really can do.
+ .
+ Normally this is a .war file but because of conflicting jar files and because
+ symbolic links are not supported in zip files (which .war and .jar files are).
+ .
+ When installed point your browser at http://localhost:8081/cocoon2/
+
+Package: cup
+Priority: optional
+Section: contrib/devel
+Installed-Size: 279
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 0.10g-2
+Replaces: java-cup
+Depends: jdk1.1-runtime | jdk1.1
+Suggests: java-compiler
+Conflicts: java-cup
+Filename: dists/potato/contrib/binary-all/devel/cup_0.10g-2.deb
+Size: 97310
+MD5sum: 9e5ac868cc04fb8a330f59c041235464
+Description: LALR parser generator for Java(tm)
+ CUP is the "Constructor of Useful Parsers", a system for generating
+ parsers from simple LALR specifications.  It serves the same role as the
+ widely used program YACC and in fact offers most of the features of YACC.
+ However, CUP is written in Java, uses specifications including embedded
+ Java code, and produces parsers which are implemented in Java.
+
+Package: daemontools-installer
+Priority: optional
+Section: contrib/misc
+Installed-Size: 92
+Maintainer: Adam D. McKenna <adam@debian.org>
+Architecture: all
+Version: 0.70-23
+Depends: patch, fakeroot | sudo, wget, debhelper, build-essential
+Filename: pool/contrib/d/daemontools-installer/daemontools-installer_0.70-23_all.deb
+Size: 12836
+MD5sum: 8e80b984036c97efe707696e104df5c6
+Description: Installer package for building daemontools binary package
+ The following is taken from http://cr.yp.to/daemontools.html.
+ .
+ daemontools is a collection of tools for managing UNIX services.
+ .
+ supervise monitors a service. It starts the service and restarts the service
+ if it dies. Setting up a new service is easy: all supervise needs is a
+ directory with a run script that runs the service.
+ .
+ multilog saves error messages to one or more logs. It optionally timestamps
+ each line and, for each log, includes or excludes lines matching specified
+ patterns. It automatically rotates logs to limit the amount of disk space used.
+ If the disk fills up, it pauses and tries again, without losing any data.
+ .
+ svscan starts one supervise process for each subdirectory of the current
+ directory, up to a limit of 1000 subdirectories. svscan skips subdirectory
+ names starting with dots. supervise must be in svscan's path.
+ .
+ If a subdirectory sub is sticky, svscan starts a pair of supervise processes,
+ one for sub, one for sub/log, with a pipe between them. svscan needs two
+ free descriptors for each pipe.
+ .
+ This package fetches the source from the internet, and then proceeds to
+ create a .deb file from it.
+
+Package: debian-cd
+Priority: optional
+Section: contrib/admin
+Installed-Size: 2536
+Maintainer: Raphael Hertzog <hertzog@debian.org>
+Architecture: all
+Version: 2.2.4
+Depends: perl5 | perl, libdigest-md5-perl | libmd5-perl, sysutils, apt (>= 0.3.11.1), dpkg-dev (>= 1.4.1.6), dpkg-multicd, make, mkhybrid | mkisofs, lynx, grep-dctrl
+Recommends: lha, unzip, hfsutils, debianutils (>= 1.6)
+Filename: pool/contrib/d/debian-cd/debian-cd_2.2.4_all.deb
+Size: 374566
+MD5sum: a054a325398bdd9f554b90ca72b4ace0
+Description: Tools for building (Official) Debian CD set
+ This package was formerly called YACS (for Yet Another CD
+ Script).
+ .
+ It's the official way of building CD since the potato release.
+ .
+ Its goal is to facilitate the creation of customized Debian
+ CD set.
+ .
+ You will need unzip for building i386 images, lha for m68k
+ images, and hfsutils for powerpc images.
+
+Package: debian-keyring
+Priority: optional
+Section: contrib/misc
+Installed-Size: 1212
+Maintainer: James Troup <keyring-maint@debian.org>
+Architecture: all
+Version: 2000.08.30
+Recommends: gnupg
+Suggests: gpg-rsa | gpg-rsaref
+Filename: dists/woody/contrib/binary-all/misc/debian-keyring_2000.08.30.deb
+Size: 1062788
+MD5sum: bd347852c16dd885daf589d403e75b7f
+Description: GnuPG (and obsolete PGP) keys of Debian Developers
+ The Debian project wants developers to digitally sign the
+ announcements of their packages with GnuPG, to protect against
+ forgeries.  This package contains keyrings of GnuPG and (deprecated)
+ PGP keys of developers.
+
+Package: distmp3
+Priority: optional
+Section: contrib/sound
+Installed-Size: 32
+Maintainer: Robert Woodcock <rcw@debian.org>
+Architecture: all
+Version: 0.1.6-1
+Depends: perl5
+Filename: dists/woody/contrib/binary-all/sound/distmp3_0.1.6-1.deb
+Size: 7824
+MD5sum: 627504be5c3c36f73d3a3ad963160941
+Description: Client/daemon for distributed MP3 compression over TCP/IP
+ Client (distmp3) and a daemon (distmp3host) for distributed
+ mp3-encoding across multiple hosts on a network.
+
+Package: djbdns-installer
+Priority: optional
+Section: contrib/net
+Installed-Size: 92
+Maintainer: Adam D. McKenna <adam@debian.org>
+Architecture: all
+Version: 1.05-3
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fakeroot | sudo, gcc, make, debhelper, daemontools-installer
+Filename: pool/contrib/d/djbdns-installer/djbdns-installer_1.05-3_all.deb
+Size: 12708
+MD5sum: ad7eb92b71cca4366f4fd81e3579a7c4
+Description: Source only package for building djbdns
+ The following were taken from various HTML pages under
+ http://cr.yp.to/djbdns.html/
+ .
+ dnscache is a local DNS cache. It accepts recursive DNS queries from local
+ clients such as web browsers and mail transfer agents. It collects
+ responses from remote DNS servers. It caches the responses to save time later.
+ .
+ tinydns is a DNS server. It accepts iterative DNS queries from hosts around the
+ Internet, and responds with locally configured information.
+ .
+ pickdns is a load-balancing DNS server. It accepts iterative DNS queries from
+ hosts around the Internet, and responds with a dynamic selection of locally
+ configured IP addresses with 5-second TTLs.
+ .
+ walldns is a reverse DNS wall. It accepts iterative DNS queries for in-addr.arpa
+ domains from hosts around the Internet, and supplies generic responses that avoid
+ revealing local host information.
+ .
+ rbldns is an IP-address-listing DNS server. It accepts iterative DNS queries from
+ hosts around the Internet asking about various IP addresses.  It provides responses
+ showing whether the addresses are on a locally configured list, such as RBL or DUL.
+ .
+ axfrdns is a DNS zone-transfer server. It reads a zone-transfer request in
+ DNS-over-TCP format from its standard input, and responds with locally configured
+ information.
+ .
+ The security of this software is guaranteed by the author.  Details of the guarantee
+ can be found at http://cr.yp.to/djbdns/guarantee.html
+
+Package: edict-el
+Priority: optional
+Section: contrib/editors
+Installed-Size: 320
+Maintainer: Roland Mas <lolando@debian.org>
+Architecture: all
+Version: 1.06-4
+Depends: emacs20 | emacsen, edict
+Filename: pool/contrib/e/edict-el/edict-el_1.06-4_all.deb
+Size: 61778
+MD5sum: 19c6464b3bb64ddc7d490e2c1bd1b4ae
+Description: An Emacs interface to Edict
+ This package provides edict.el and associated files, thus allowing
+ to query the Edict Japanese-English dictionary from within Emacs.
+ .
+ Using the region and couple of keystrokes, edict.el will look up the
+ Japanese key and return all the Edict entries containing that key, in
+ a pop-up buffer.  English is even easier, you just put point anywhere
+ in the word you want to look up.
+
+Package: ezmanage
+Priority: optional
+Section: contrib/mail
+Installed-Size: 234
+Maintainer: Tommi Virtanen <tv@debian.org>
+Architecture: all
+Version: 1.9
+Depends: perl5, ezmlm-idx (>=0.53-3.1), qmail, httpd, maildrop, mhonarc, mailtools
+Filename: dists/woody/contrib/binary-all/mail/ezmanage_1.9.deb
+Size: 50772
+MD5sum: a1b5d9e02b365c145f2786608a24117b
+Description: Manage multiple ezmlm mailing lists
+ Ezmanage provides a simple WWW interface to managing multiple ezmlm
+ mailing lists. It is designed to enable ISPs to provide their clients
+ with easily administratable mailing lists, to create a virtual domain
+ "lists.example.com" with mailing lists in it, etc.
+ .
+ Ezmanage is based on qmail and ezmlm-idx, and takes advantage of their
+ reliability and efficiency.
+
+Package: festvox-don
+Priority: extra
+Section: contrib/sound
+Installed-Size: 848
+Maintainer: David Huggins-Daines <dhd@debian.org>
+Architecture: all
+Version: 1.4.0-1
+Depends: festival (>= 1.3.0), festlex-poslex (>= 1.3.0), festlex-oald (>= 1.3.0)
+Filename: dists/potato/contrib/binary-all/sound/festvox-don_1.4.0-1.deb
+Size: 647344
+MD5sum: 0e5900a4722ee68faf3fa45be7685fb3
+Description: minimal British English male speaker for festival
+ This is a very small diphone database, which gives poor quality sound
+ output but runs very fast.
+ .
+ The voice contained in this database is a British English male speaker.
+
+Package: festvox-rablpc16k
+Priority: optional
+Section: contrib/sound
+Installed-Size: 7500
+Maintainer: David Huggins-Daines <dhd@debian.org>
+Architecture: all
+Version: 1.4.0-1
+Replaces: festvox-16k
+Provides: festvox-16k
+Depends: festival (>= 1.3.0), festlex-poslex (>= 1.3.0), festlex-oald (>= 1.3.1)
+Conflicts: festvox-16k, festvox-rablpc8k
+Filename: dists/potato/contrib/binary-all/sound/festvox-rablpc16k_1.4.0-1.deb
+Size: 5356132
+MD5sum: 5064c20b72a7c91236dbad4205a8ca48
+Description: British English male speaker for festival, 16khz sample rate
+ This is a diphone database for festival that uses 16k samples for high
+ quality sound output. This is a large database (9 MB), and festival will
+ convert text to speech more slowly using it, so you might want to install
+ festvox-rablpc8k instead if you have low disk space or a slow computer.
+ .
+ The voice contained in this database is a British English male speaker.
+
+Package: festvox-rablpc8k
+Priority: optional
+Section: contrib/sound
+Installed-Size: 4392
+Maintainer: David Huggins-Daines <dhd@debian.org>
+Architecture: all
+Version: 1.4.0-1
+Replaces: festvox-8k
+Provides: festvox-8k
+Depends: festival (>= 1.3.0), festlex-poslex (>= 1.3.0), festlex-oald (>= 1.3.0)
+Conflicts: festvox-8k, festvox-rablpc16k
+Filename: dists/potato/contrib/binary-all/sound/festvox-rablpc8k_1.4.0-1.deb
+Size: 3114494
+MD5sum: a63a68a22a2613f4185cfd56be312e4d
+Description: British English male speaker for festival, 8khz sample rate
+ This is a diphone database for festival that uses 8k samples so it takes up
+ a minimum of disk space. Using this diphone database, festival also converts
+ text to speech faster than with the 16k version. However, the sound quality
+ is not as good.
+ .
+ The voice contained in this database is a British English male speaker.
+
+Package: filler
+Priority: optional
+Section: contrib/games
+Installed-Size: 274
+Maintainer: Wojciech Jeczmien <jeczmien@ocean.univ.gda.pl>
+Architecture: all
+Version: 1.01-5
+Depends: java-virtual-machine
+Filename: pool/contrib/f/filler/filler_1.01-5_all.deb
+Size: 182444
+MD5sum: e5255b06830a82fbeec78dfe799edf7f
+Description: Simple game in Java
+ Filler is a simple two-player game written in java.  The object of the game
+ is to conquer more area of the playing board than your opponent.
+ .
+ This game requires a java 2 runtime environment. Try www.blackdown.de or
+ java.sun.com
+
+Package: freetds-jdbc
+Priority: optional
+Section: contrib/devel
+Installed-Size: 336
+Maintainer: Andreas Tille <tillea@rki.de>
+Architecture: all
+Version: pre0.3-1
+Depends: java-compiler, java-virtual-machine, java-common
+Filename: dists/potato/contrib/binary-all/devel/freetds-jdbc_pre0.3-1.deb
+Size: 108430
+MD5sum: a0f6ac8caf1da6e99b47d3d6aaff1a42
+Description: Pure Java JDBC driver for MS SQL and Sybase
+ This is a sneak peek of a free type 4 JDBC driver for SQLServer and
+ Sybase.  Currently it has only been tested mostly on SQLServer 6.5.
+ The driver is not complete yet, but Methods that aren't implemented
+ will throw a SQLException with the message "Not implemented".
+
+Package: gnujsp
+Priority: optional
+Section: contrib/web
+Installed-Size: 214
+Maintainer: Stefan Gybas <sgybas@debian.org>
+Architecture: all
+Version: 1.0.0-4
+Depends: jserv (>= 1.1-2), jikes | java-compiler
+Conflicts: jdk1.1-native
+Filename: dists/potato/contrib/binary-all/web/gnujsp_1.0.0-4.deb
+Size: 73838
+MD5sum: b8e34a5270113fb5abef70efa338ff00
+Description: A free implementation of Sun's Java Server Pages (JSP 1.0)
+ GNUJSP is a Java servlet that allows you to insert Java source code
+ into HTML files. When such a page is accessed, GNUJSP translates it
+ into a pure Java source code, compiles it and runs the class file.
+ .
+ This version conforms to the JSP 1.0 specification and is thus incompatible
+ to GNUJSP 0.9.x which supported the 0.91 specification.
+ .
+ For more information take a look at the GNUJSP home page at
+ http://www.klomp.org/gnujsp/.
+
+Package: gs-cjk-resource
+Priority: optional
+Section: contrib/text
+Installed-Size: 1376
+Maintainer: Yasuhiro Take <take@debian.org>
+Architecture: all
+Version: 0.93-2
+Depends: gs-aladdin (>> 6.50-3), defoma (>= 0.3.0)
+Pre-Depends: gs-aladdin
+Recommends: cmap-adobe-japan1 | cmap-adobe-cns1 | cmap-adobe-gb1 | cmap-adobe-korea1 | cmap-adobe-japan2
+Suggests: ttf-xtt-watanabe-mincho, ttf-xtt-wadalab-gothic
+Conflicts: gs-cjk-resource-6.0, gs-cjk-resource-6.5
+Filename: pool/contrib/g/gs-cjk-resource/gs-cjk-resource_0.93-2_all.deb
+Size: 394670
+MD5sum: 3ff26472bae000fcb41b27bc4a9c7871
+Description: Resource files for gs-cjk, ghostscript CJK-TrueType extension.
+ This package contains several resource files that provide mapping tables
+ used for converting CID-key to TrueType charcode.
+ .
+ gs-cjk enables ghostscript to handle CJK TrueType fonts through CID-keyed
+ font technology.
+
+Package: gzigzag
+Priority: optional
+Section: contrib/misc
+Installed-Size: 1924
+Maintainer: Antti-Juhani Kaijanaho <ajk@debian.org>
+Architecture: all
+Version: 0.6.0-1
+Depends: kaffe (>= 1:1.0.6-1) | jdk1.1 | j2re1.3 | ibm-jdk1.1-installer | j2sdk1.3 | java-virtual-machine-dummy, debconf
+Suggests: mozilla | konqueror | www-browser, lib-gnu.regexp-java, libxerces-java
+Filename: pool/contrib/g/gzigzag/gzigzag_0.6.0-1_all.deb
+Size: 1043070
+MD5sum: dc78dd80ec2b510b76b5575ff1be6d43
+Description: An implementation of Ted Nelson's ZigZag
+ GZigZag is an implementation of Ted Nelson's ZigZag concept, which is
+ a new way of looking at computers. Instead of a filesystem which is
+ basically a hierarchically arranged system of binary chunks of data,
+ or a spreadsheet which basically is a two- or three-dimensional grid,
+ you have a real multidimensional hyperstructure system.  It is a kind
+ of a crossing between a database, a filesystem, a personal
+ information manager and many others. And even that isn't sufficient
+ to describe it: it's simply something new.
+
+Package: honyaku-el
+Priority: optional
+Section: contrib/utils
+Installed-Size: 236
+Maintainer: Masato Taruishi <taru@debian.org>
+Architecture: all
+Version: 1.02-2
+Depends: emacsen
+Suggests: honyakudamashii-server
+Filename: dists/potato/contrib/binary-all/utils/honyaku-el_1.02-2.deb
+Size: 28176
+MD5sum: 82699c590ad972c7842fdbb021f71632
+Description: Honyakudamashii client for emacsen
+ Honyaku Damashii is a translation software between Japanese
+ English, brought to you by Omron software.
+ .
+ This is a emacen client for it.
+
+Package: hyperspec
+Priority: optional
+Section: contrib/doc
+Installed-Size: 48
+Maintainer: Peter Van Eynde <pvaneynd@debian.org>
+Architecture: sh
+Version: 1.5
+Depends: wget
+Filename: pool/contrib/h/hyperspec/hyperspec_1.5_sh.deb
+Size: 3908
+MD5sum: aff63232650d65b9a5f58dfdd4337f28
+Description: The Common Lisp Ansi-standard Hyperspec
+ This is a installer package for the html-ed version of the Ansi standard
+ for Common Lisp. Note that these pages are only FYI and are not valid
+ as a reference.
+ But for all intentends and purposes this is a good enough reference for
+ daily work.
+
+Package: ilu-doc
+Priority: optional
+Section: contrib/devel
+Installed-Size: 2320
+Maintainer: Torsten Landschoff <torsten@debian.org>
+Architecture: all
+Source: ilu
+Version: 2.0.0.91-1.1
+Depends: ilu-base (= 2.0.0.91-1.1)
+Filename: pool/contrib/i/ilu/ilu-doc_2.0.0.91-1.1_all.deb
+Size: 1352022
+MD5sum: 735a4f4b54464d9cbcb4b09e0e9faed2
+Description: ILU Documentation
+ Documentation for the Inter-Language Unification system by Xerox PARC.
+ .
+ The Inter-Language Unification system (ILU) is a multi-language object
+ interface system.  The object interfaces provided by ILU hide implementation
+ distinctions between different languages, between different address spaces,
+ and between operating system types. ILU can be used to build multi-lingual
+ object-oriented libraries ("class libraries") with well-specified
+ language-independent interfaces. It can also be used to implement distributed
+ systems. It can also be used to define and document interfaces between the
+ modules of non-distributed programs. ILU interfaces can be specified in either
+ the OMG's CORBA Interface Definition Language (OMG IDL), or ILU's Interface
+ Specification Language (ISL).
+ .
+ See http://parcftp.parc.xerox.com/pub/ilu/ilu.html for more information.
+
+Package: ilu-elisp
+Priority: optional
+Section: contrib/devel
+Installed-Size: 96
+Maintainer: Torsten Landschoff <torsten@debian.org>
+Architecture: all
+Source: ilu
+Version: 2.0.0.91-1.1
+Depends: ilu-base (= 2.0.0.91-1.1), emacsen
+Filename: pool/contrib/i/ilu/ilu-elisp_2.0.0.91-1.1_all.deb
+Size: 4012
+MD5sum: c091ff9f655b39efda37f4c5724c1c7c
+Description: Emacs-lisp files for ILU.
+ Emacs-lisp files the Inter-Language Unification system by Xerox PARC.
+ .
+ See http://parcftp.parc.xerox.com/pub/ilu/ilu.html for more information.
+
+Package: ilu-examples
+Priority: optional
+Section: contrib/devel
+Installed-Size: 1768
+Maintainer: Torsten Landschoff <torsten@debian.org>
+Architecture: all
+Source: ilu
+Version: 2.0.0.91-1.1
+Depends: ilu-base (= 2.0.0.91-1.1)
+Filename: pool/contrib/i/ilu/ilu-examples_2.0.0.91-1.1_all.deb
+Size: 218696
+MD5sum: 8e5b1368538479b800345e85f5c52d0d
+Description: ILU Examples
+ Example source code for the Inter-Language Unification system by Xerox PARC.
+ .
+ See http://parcftp.parc.xerox.com/pub/ilu/ilu.html for more information.
+
+Package: iraf-dev
+Priority: optional
+Section: contrib/science
+Installed-Size: 80
+Maintainer: Zed Pobre <zed@debian.org>
+Architecture: all
+Source: iraf
+Version: 2.11.3-2
+Filename: dists/woody/contrib/binary-all/graphics/iraf-dev_2.11.3-2.deb
+Size: 11914
+MD5sum: ec4ba4b1fb55328b823733e3d127b2bb
+Description: Bootstrap header files for IRAF
+ If you want to compile IRAF or packages in IRAF from source, you'll
+ need this.  Otherwise, you don't.
+
+Package: jde
+Priority: optional
+Section: contrib/devel
+Installed-Size: 1900
+Maintainer: Tollef Fog Heen <tfheen@debian.org>
+Architecture: all
+Version: 2.2.6-7
+Depends: emacs20 (>= 20.7) | emacs20-dl (>= 20.7) | xemacs21-nomule | xemacs21-mule | xemacs21-mule-canna-wnn, java-common, bsh, semantic, elib, speedbar, eieio (>= 0.15)
+Recommends: java-compiler | jdk1.1-dev, java-virtual-machine | jdk1.1
+Conflicts: tya (<< 1.2v4-2), emacs20 (<< 20.5a)
+Filename: pool/contrib/j/jde/jde_2.2.6-7_all.deb
+Size: 926618
+MD5sum: 55d4e001698c3e64051b90c87b286cd4
+Description: Java Development Environment for Emacs or XEmacs.
+ The Java Development Environment (JDE) is an Emacs Lisp package that
+ interfaces Emacs to third-party Java application development tools, such as
+ those provided by JavaSoft's Java Development Kit (JDK). The result is an
+ integrated development environment (IDE) comparable in power to many
+ commercial Java IDEs. Features include:
+  - source code editing with syntax highlighting and auto indentation
+  - compilation with automatic jump from error messages to responsible line
+    in the source code.
+  - run Java application in an interactive (comint) Emacs buffer
+  - integrated debugging with interactive debug command buffer and automatic
+    display of current source file/line when stepping through code
+  - browse JDK doc, using the browser of your choice
+  - browse your source code, using the Emacs etags facility or a
+    tree-structured speedbar.
+  - easily and infinitely customizable
+
+Package: jetspeed
+Priority: optional
+Section: contrib/web
+Installed-Size: 4600
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 20010406-1
+Depends: java-common, tomcat (>= 3.2.1-1), libxerces-java, libxalan-java, turbine
+Filename: pool/contrib/j/jetspeed/jetspeed_20010406-1_all.deb
+Size: 3069680
+MD5sum: 58a1c6fcde46026c1a08e60e0edc940a
+Description: Java Enterprise Information Portal
+ Jetspeed is an Open Source implementation of an Enterprise Information Portal,
+ using Java and XML. A portal makes network resources (applications, databases
+ and so forth) available to end-users. The user can access the portal via a
+ web browser, WAP-phone, pager or any other device. Jetspeed acts as the
+ central hub where information from multiple sources are made available in an
+ easy to use manner.
+
+Package: jetspeed-doc
+Priority: optional
+Section: contrib/web
+Installed-Size: 40
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: jetspeed
+Version: 20010406-1
+Filename: pool/contrib/j/jetspeed/jetspeed-doc_20010406-1_all.deb
+Size: 2712
+MD5sum: 7ee23871deea3ca029eed1824440a7bc
+Description: Documentation for jetspeed
+ Includes api docs, proposals, install information and much more.
+ .
+ This package contains the documentation in HTML format.
+
+Package: jetspeed-example
+Priority: optional
+Section: contrib/doc
+Installed-Size: 1520
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: jetspeed
+Version: 20010406-1
+Filename: pool/contrib/j/jetspeed/jetspeed-example_20010406-1_all.deb
+Size: 371974
+MD5sum: dfb64dc2f715db335d32ebbb1a342719
+Description: Example of jetspeed.
+ An example of what a jetspeed portal can look like. It is a good
+ example on how you can create your own jetspeed portal.
+ .
+ Normally this is a .war file but because of conflicting jar files and because
+ symbolic links are not supported in zip files (which .war and .jar files are).
+ .
+ When installed point your browser at http://localhost:8081/jetspeed/
+
+Package: jlex
+Priority: optional
+Section: contrib/devel
+Installed-Size: 139
+Maintainer: Charles Briscoe-Smith <cpbs@debian.org>
+Architecture: all
+Version: 1.2.3-5
+Replaces: javalex
+Depends: jdk1.1-runtime | jdk1.1
+Conflicts: javalex
+Filename: dists/potato/contrib/binary-all/devel/jlex_1.2.3-5.deb
+Size: 59670
+MD5sum: e60c15a7cd01be995fc8b6bc5a5d4577
+Description: A Lex-style lexical analyser generator for Java
+ The JLex utility is a lexical analyser generator, modelled after the
+ popular UNIX "lex" utility.
+ .
+ JLex takes a specification file similar to that accepted by Lex,
+ then creates a Java source file for the corresponding lexical analyzer.
+
+Package: kmailplugin
+Priority: optional
+Section: contrib/mail
+Installed-Size: 76
+Maintainer: Ivan E. Moore II <rkrusty@debian.org>
+Architecture: sh
+Version: 0.12-4
+Depends: libc6 (>= 2.2.1-2), netscape, kmail, binutils (>= 1.7)
+Recommends: knode
+Filename: pool/contrib/k/kmailplugin/kmailplugin_0.12-4_sh.deb
+Size: 6456
+MD5sum: eb494ea0aa0af9d1ed8278322b7e9ed4
+Description: netscape plugin which allows using kmail as mailer
+ With this plugin you can use kmail instead of Messenger.
+ .
+ -start kmail when mailto link is selected(in composer mode)
+ -enables MenuItem "Kmail" in Communicator Menu of Netscape
+ .
+ As Newsreader this plugin uses Knode, You could not use Netscape Messenger
+ for news, Netscape MailSDK do not support that(I think).
+ With Knode 0.3x(KDE2) you have full support.
+ .
+ Some versions of Netscape seems to be broken, they does not work with the
+ news-part of the plugin.
+
+Package: lib-fop-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 1260
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 0.17.0-2
+Depends: java-common, j2sdk1.3 | j2re1.3, libxerces-java, libxalan-java, libbsf-java (>>20010106-2)
+Suggests: lib-fop-java-doc, lib-fop-java-apidoc
+Filename: pool/contrib/lib-/lib-fop-java/lib-fop-java_0.17.0-2_all.deb
+Size: 1103492
+MD5sum: 03549b49048fbc94a0a102e44118aea8
+Description: A [XSL] Formatting Object to PDF Translator
+ FOP is a print formatter driven by XSL formatting objects.
+ It is a Java 1.1 application that reads a formatting object
+ tree and then turns it into a PDF document. The formatting
+ object tree can be in the form of an XML document (output by
+ an XSLT engine like XT) or can be passed in memory as a DOM
+ Document or (in the case of XT) SAX events.
+
+Package: lib-fop-java-apidoc
+Priority: optional
+Section: contrib/libs
+Installed-Size: 12016
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: lib-fop-java
+Version: 0.17.0-2
+Filename: pool/contrib/lib-/lib-fop-java/lib-fop-java-apidoc_0.17.0-2_all.deb
+Size: 640860
+MD5sum: 0349ab415ecfeb65dba74f43b082a585
+Description: API Documentation for lib-fop-java
+ FOP is a print formatter driven by XSL formatting objects.
+ It is a Java 1.1 application that reads a formatting object
+ tree and then turns it into a PDF document. The formatting
+ object tree can be in the form of an XML document (output by
+ an XSLT engine like XT) or can be passed in memory as a DOM
+ Document or (in the case of XT) SAX events.
+
+Package: lib-fop-java-doc
+Priority: optional
+Section: contrib/libs
+Installed-Size: 2692
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: lib-fop-java
+Version: 0.17.0-2
+Filename: pool/contrib/lib-/lib-fop-java/lib-fop-java-doc_0.17.0-2_all.deb
+Size: 1251414
+MD5sum: c8321de712c3313724f2bd866e04e330
+Description: Documentation for lib-fop-java
+ FOP is a print formatter driven by XSL formatting objects.
+ It is a Java 1.1 application that reads a formatting object
+ tree and then turns it into a PDF document. The formatting
+ object tree can be in the form of an XML document (output by
+ an XSLT engine like XT) or can be passed in memory as a DOM
+ Document or (in the case of XT) SAX events.
+
+Package: lib-openxml-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 413
+Maintainer: Julio Maia <julio@pobox.com>
+Architecture: all
+Version: 1.0.6.1-3
+Depends: java-common
+Suggests: lib-openxml-java-doc
+Filename: dists/potato/contrib/binary-all/libs/lib-openxml-java_1.0.6.1-3.deb
+Size: 313608
+MD5sum: 28b2c7db24d3d445959eae963d6a7791
+Description: A Java framework for XML-based applications
+ OpenXML is an open source, pure Java, commercial grade,
+ fully featured framework for XML-based applications.
+ .
+ OpenXML covers the entire spectrum of XML document
+ production, processing and publishing making it suitable
+ for a variety of uses including application to application
+ communication, content publishing and human interface.
+ .
+ For more information take a look at the OpenXML
+ home page at http://www.openxml.org
+
+Package: lib-openxml-java-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 4218
+Maintainer: Julio Maia <julio@pobox.com>
+Architecture: all
+Source: lib-openxml-java
+Version: 1.0.6.1-3
+Depends: java-common, dpkg (>= 1.4.1.17)
+Filename: dists/potato/contrib/binary-all/doc/lib-openxml-java-doc_1.0.6.1-3.deb
+Size: 1335668
+MD5sum: 53af634fda4ca8686894254070326dc6
+Description: Documentation for OpenXML
+ Documentation for OpenXML, an open source, pure Java, commercial
+ grade, fully featured framework for XML-based applications.
+
+Package: lib-xslp-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 216
+Maintainer: Julio Maia <julio@pobox.com>
+Architecture: all
+Version: 19991017-1.2
+Depends: java-common
+Suggests: lib-fesi-java (>= 1.1.2), lib-xslp-java-doc
+Filename: dists/woody/contrib/binary-all/libs/lib-xslp-java_19991017-1.2.deb
+Size: 188720
+MD5sum: e632a99727e80a256ea66b1548fdb44d
+Description: A XSL processor written in Java
+ XSL:P is a free, open-source XSL processor written in Java.
+ .
+ For more information take a look at the XSL:P
+ home page at http://www.clc-marketing.com/xslp
+
+Package: lib-xslp-java-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 1297
+Maintainer: Julio Maia <julio@pobox.com>
+Architecture: all
+Source: lib-xslp-java
+Version: 19991017-1.2
+Depends: java-common
+Filename: dists/woody/contrib/binary-all/doc/lib-xslp-java-doc_19991017-1.2.deb
+Size: 131454
+MD5sum: 4e317e6be93ed71f41aef9e19ea8c237
+Description: Documentation for XSL:P
+ Documentation for XSL:P, a free, open-source
+ XSL processor written in Java
+
+Package: libbsf-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 152
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 1:2.2-1
+Depends: java-common, libxerces-java, libxalan-java
+Filename: pool/contrib/libb/libbsf-java/libbsf-java_2.2-1_all.deb
+Size: 88438
+MD5sum: d5bfca80c7bfab12be1775b11c4b7f42
+Description: Bean Scripting Framework
+ The Bean Scripting Framework (BSF) is an architecture for
+ incorporating scripting into Java applications and applets.
+
+Package: libgifgraph-perl
+Priority: extra
+Section: contrib/graphics
+Installed-Size: 364
+Maintainer: Piotr Roszatycki <dexter@debian.org>
+Architecture: all
+Version: 1.10-2
+Depends: perl5 | perl, libgd-perl
+Filename: dists/potato/contrib/binary-all/graphics/libgifgraph-perl_1.10-2.deb
+Size: 63348
+MD5sum: 04592133ed5c9cd563930d644ee780ce
+Description: perl GIFgraph - Graph Plotting Module for Perl 5.
+ GIFgraph is a perl5 module to create and display GIF output for a graph,
+ using Lincoln Stein's GD.pm.
+
+Package: libhonyaku-damashii-ruby
+Priority: optional
+Section: contrib/interpreters
+Installed-Size: 92
+Maintainer: akira yamada <akira@debian.org>
+Architecture: all
+Version: 0.20-3
+Depends: libruby (>= 1.6.0), libruby (<< 1.7.0-0)
+Suggests: honyaku-damashii-server
+Filename: dists/woody/contrib/binary-all/interpreters/libhonyaku-damashii-ruby_0.20-3.deb
+Size: 9986
+MD5sum: 9d91513221cb6b85afebe978795cdc3d
+Description: Honyakudamashii client library for Ruby
+ Honyaku Damashii is a translation software between Japanese and
+ English, brought to you by Omron software.
+ .
+ This is a client library of Ruby for it.
+
+Package: libldap-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 392
+Maintainer: Stefan Gybas <sgybas@debian.org>
+Architecture: all
+Source: mozilla-ldapsdk
+Version: 4.1-1
+Depends: java-common
+Filename: dists/woody/contrib/binary-all/libs/libldap-java_4.1-1.deb
+Size: 296896
+MD5sum: 52abd04229798e66a9ad56911e860804
+Description: Java interface for LDAP
+ Java classes from the Mozilla project for accesing LDAP (Lightweight Directory
+ Access Protocol) servers. These classes work with all common LDAP servers,
+ including OpenLDAP, and enable you to write applications which access, manage,
+ and update the information stored in an LDAP directory.
+ .
+ For more information about the Mozilla LDAP SDK see the home page at
+ http://www.mozilla.org/directory/.
+
+Package: libldap-java-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 2340
+Maintainer: Stefan Gybas <sgybas@debian.org>
+Architecture: all
+Source: mozilla-ldapsdk
+Version: 4.1-1
+Depends: libldap-java (= 4.1-1)
+Suggests: www-browser
+Filename: dists/woody/contrib/binary-all/doc/libldap-java-doc_4.1-1.deb
+Size: 241410
+MD5sum: 1e79ec0b0922eafecb3d2f1376fea884
+Description: Java interface for LDAP - HTML Documentation and examples
+ Javadoc documentation and examples for using the Mozilla LDAP classes.
+ .
+ For more information about the Mozilla LDAP SDK see the home page at
+ http://www.mozilla.org/directory/.
+
+Package: liblog4j
+Priority: optional
+Section: contrib/libs
+Installed-Size: 296
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: jakarta-log4j
+Version: 1.1b7-1
+Depends: java-common
+Recommends: libxerces-java
+Filename: pool/contrib/j/jakarta-log4j/liblog4j_1.1b7-1_all.deb
+Size: 225128
+MD5sum: 7bc077d7ac245af6746a45729cdb465e
+Description: Logging library for java.
+ The logging library from the Apache Jacarta project.
+
+Package: liblog4j-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 4568
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: jakarta-log4j
+Version: 1.1b7-1
+Filename: pool/contrib/j/jakarta-log4j/liblog4j-doc_1.1b7-1_all.deb
+Size: 315132
+MD5sum: 202a964d37e3c8f4a878b3bbed6dbfc3
+Description: Documentation for liblog4j
+ The javadoc api documentation for the logging library
+ from the Apache Jakarta project.
+
+Package: libxalan-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 500
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 1.2.2-1
+Depends: java-common, libxerces-java, libbsf-java
+Suggests: libxalan-java-doc
+Filename: pool/contrib/libx/libxalan-java/libxalan-java_1.2.2-1_all.deb
+Size: 423698
+MD5sum: 0d126cf7d1e74a2615ca23d295199ba4
+Description: Xalan is an XSLT processor (transformer)
+ Xalan is an XSLT processor for transforming XML documents into
+ HTML, text, or other XML document types. Xalan-Java version
+ 1.2.2 is a complete and robust implementation of the W3C
+ Recommendations for XSL Transformations (XSLT) and the XML
+ Path Language (XPath).
+
+Package: libxalan-java-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 9580
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: libxalan-java
+Version: 1.2.2-1
+Depends: libxalan-java
+Filename: pool/contrib/libx/libxalan-java/libxalan-java-doc_1.2.2-1_all.deb
+Size: 793810
+MD5sum: c5fd05a68d3b72755756b378eed1a673
+Description: Documentation for libxalan-java
+ The Xalan documentation including examples.
+
+Package: libxalan2-java
+Priority: optional
+Section: contrib/libs
+Installed-Size: 840
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 2.0.1-1
+Depends: java-common, libxerces-java, libbsf-java, libservlet2.2-java
+Suggests: libxalan2-java-doc
+Filename: pool/contrib/libx/libxalan2-java/libxalan2-java_2.0.1-1_all.deb
+Size: 726938
+MD5sum: dbe52745156d7916266fb5825332354a
+Description: Java version of the Xalan XSLT processor (transformer)
+ Xalan is an XSLT processor for transforming XML documents into
+ HTML, text, or other XML document types. Xalan-Java version
+ 1.2.2 is a complete and robust implementation of the W3C
+ Recommendations for XSL Transformations (XSLT) and the XML
+ Path Language (XPath).
+
+Package: libxalan2-java-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 23668
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: libxalan2-java
+Version: 2.0.1-1
+Filename: pool/contrib/libx/libxalan2-java/libxalan2-java-doc_2.0.1-1_all.deb
+Size: 2131316
+MD5sum: 1b788a4ef5169192262f129a54d37915
+Description: Documentation for libxalan2-java
+ Documentation for the java version of libxalan2-java including examples.
+
+Package: lookup
+Priority: optional
+Section: contrib/text
+Installed-Size: 308
+Maintainer: Hayao Nakahara <nakahara@debian.org>
+Architecture: sh
+Version: 1.08b-3
+Depends: libc6 (>= 2.2.1-2)
+Suggests: edict, kanjidic
+Filename: pool/contrib/l/lookup/lookup_1.08b-3_sh.deb
+Size: 113834
+MD5sum: 7bc971a63f9673af0d7cc3d2bc5dac70
+Description: utility to search text files quickly and powerfully.
+ It provides: Romaji-to-Kana Converter, Fuzzy Searching,
+ Search with Regular Expressions, Filtering, Automatic Modifications,
+ Smart Word-Preference Mode
+
+Package: lxdoom
+Priority: optional
+Section: contrib/games
+Installed-Size: 528
+Maintainer: Joe Drew <drew@debian.org>
+Architecture: sh
+Version: 1.4.4-5
+Depends: libc6 (>= 2.2.1-2), lxdoom-svga | lxdoom-x11
+Recommends: doom-wad | doom-wad-editor
+Filename: pool/contrib/l/lxdoom/lxdoom_1.4.4-5_sh.deb
+Size: 332772
+MD5sum: 9bce31ebc10740d3389b5b3b91786861
+Description: Linux port of boom, an enhanced version of DOOM
+ Doom is a 3d shoot'em'up game, written by id Software, first released in
+ 1993.
+ .
+ LxDoom is a version of Doom, designed to run on Linux either under XFree86 or
+ using SVGALib.
+ .
+ LxDoom is based on Boom, a freely available port of Doom for DOS, written by
+ TeamTNT (http://www.teamtnt.com/).
+ .
+ This package includes only the network game server and the required game
+ wad file (boomlump.wad). To actually play lxdoom, you require lxdoom-x
+ or lxdoom-svga, depending on whether you're going to play lxdoom on the
+ console or X. Packages which may also enhance your gameplay are
+ lxdoom-sndserv and lxmusserv, which are the sound server and music server
+ packages, respectively.
+
+Package: lxdoom-sndserv
+Priority: optional
+Section: contrib/games
+Installed-Size: 104
+Maintainer: Joe Drew <drew@debian.org>
+Architecture: sh
+Source: lxdoom
+Version: 1.4.4-5
+Replaces: lxdoom (<< 1.4.4-2)
+Depends: libc6 (>= 2.2.1-2), lxdoom-x11 | lxdoom-svga
+Filename: pool/contrib/l/lxdoom/lxdoom-sndserv_1.4.4-5_sh.deb
+Size: 47322
+MD5sum: 29c7ecf4a2e7310c75d57de8c0f8ec44
+Description: Sound effects server for LxDoom
+ Sound effects in LxDoom are played by a separate executable, the sound
+ server. This sound server isn't required to play LxDoom (it will detect
+ the prescence or absence of both sndserv and musserv) -- it will, however,
+ enhance your playing experience.
+
+Package: lxdoom-x11
+Priority: optional
+Section: contrib/games
+Installed-Size: 516
+Maintainer: Joe Drew <drew@debian.org>
+Architecture: sh
+Source: lxdoom
+Version: 1.4.4-5
+Provides: doom-engine
+Depends: libc6 (>= 2.2.1-2), xlibs (>> 4.0.3), lxdoom
+Suggests: lxdoom-sndserv, lxmusserv
+Filename: pool/contrib/l/lxdoom/lxdoom-x11_1.4.4-5_sh.deb
+Size: 260448
+MD5sum: 30eb89871dab002b27eacf007a46478d
+Description: X binary for LxDoom
+ Doom is a 3d shoot'em'up game, written by id Software, first released in
+ 1993.
+ .
+ LxDoom is a version of Doom, designed to run on Linux either under XFree86 or
+ using SVGALib.
+ .
+ LxDoom is based on Boom, a freely available port of Doom for DOS, written by
+ TeamTNT (http://www.teamtnt.com/).
+ .
+ This is the X binary for LxDoom.
+
+Package: lxmusserv
+Priority: optional
+Section: contrib/games
+Installed-Size: 76
+Maintainer: Joe Drew <hoserhead@woot.net>
+Architecture: sh
+Version: 0.94-1
+Depends: libc6 (>= 2.2.1-2)
+Filename: pool/contrib/l/lxmusserv/lxmusserv_0.94-1_sh.deb
+Size: 15908
+MD5sum: c4e99c5d5c43c4db2856b663133f75f2
+Description: Linux music server for Doom and Heretic
+ A number of Linux DOOM and Heretic ports use this server to play
+ music, seperate from the main game binary.
+ .
+ Install this only if you want to hear music in these classic 3D
+ shooters.
+
+Package: m-tx
+Priority: optional
+Section: contrib/tex
+Installed-Size: 580
+Maintainer: Anthony Fok <foka@debian.org>
+Architecture: sh
+Version: 0.52-3
+Depends: libc6 (>= 2.2.1-2)
+Recommends: musixtex (>= 1:0.98-1), musixlyr (>= 1.10-4), pmx (>= 2.1.0-1)
+Filename: pool/contrib/m/m-tx/m-tx_0.52-3_sh.deb
+Size: 293490
+MD5sum: 61835748a3e3e1c5d56b86906648f11c
+Description: A simple music-from-text language for use with MusiXTeX
+ M-Tx is a music-from-text language designed to look as much as possible
+ like printed music.  Here is some typical input code:
+ .
+  ------------------------------------------------------------------------
+  Title: Net soos ek is
+  Composer: Charlotte Elliott
+  Style: SATB
+  Sharps: 2
+  Meter: 3/4
+  PMX: w190m
+  Space: 9
+ .
+  @+5 b4 b b  | b2d    | a4 a a | a2d     | d4 e- f  | g2 e4    | d2d of  |]
+  L: Net soos ek is, net soos ek is, O Lam van God, ek kom.
+      d4s g f | e2d    | e4 f e | d2d     | d4 dr d  | d2 c4    | d2d     |]
+  @^+5   rp   | b4 e d | c2d    | a4 d c  | ( b2d    | b2 ) g4  | f2d     |]
+  LT:           Net soos ek is, O Lam van God, ek kom.
+      a4 a a  | g2d    | g4 g g | f2d     | b4- g+ f | e2 a4-   | d2d ofd |]
+  L: Net soos ek is, net soos ek is, O Lam van God, ek kom.
+  ------------------------------------------------------------------------
+ .
+ To run M-Tx, you also need MusiXTeX, musixlyr and PMX, all available as
+ Debian packages.
+ .
+  Author: Dirk Laurie <dirk@calvyn.puk.ac.za>
+
+Package: mp3burn
+Priority: extra
+Section: contrib/sound
+Installed-Size: 23
+Maintainer: tony mancill <tmancill@debian.org>
+Architecture: all
+Version: 0.02-3
+Depends: perl5, mpg123, cdrecord, libmpeg-mp3info-perl
+Filename: dists/woody/contrib/binary-all/sound/mp3burn_0.02-3.deb
+Size: 6816
+MD5sum: 45d585109862a1e2bbe87f11f9d6ad1e
+Description: burn audio CDs directly from MP3s
+ mp3burn is a perl script that allows you to burn audio CDs composed
+ of MP3 tracks without an intermediate file conversion to .cdr or .wav.
+ Actually, the .mp3 files *are* converted using mpg123, but they are
+ written to FIFOs, so they don't consume a lot of filesystem space during
+ the burn.
+ .
+ This package is contrib because it depends on mpg123 (non-free).
+
+Package: msttcorefonts
+Priority: optional
+Section: contrib/graphics
+Installed-Size: 144
+Maintainer: Eric Sharkey <sharkey@debian.org>
+Architecture: all
+Version: 0.9.4
+Depends: wget, cabextract (>= 0.1-2), gawk | awk, xutils (>= 4.0.2)
+Filename: pool/contrib/m/msttcorefonts/msttcorefonts_0.9.4_all.deb
+Size: 7832
+MD5sum: e1e448bb9594418e0852c18f05b94881
+Description: Installer for Microsoft TrueType core fonts
+ This package allows for easy installation of the Microsoft True Type
+ Core Fonts for the Web including:
+ .
+   Andale Mono
+   Arial Black
+   Arial (Bold, Italic, Bold Italic)
+   Comic Sans MS (Bold)
+   Courier New (Bold, Italic, Bold Italic)
+   Georgia (Bold, Italic, Bold Italic)
+   Impact
+   Times New Roman (Bold, Italic, Bold Italic)
+   Trebuchet (Bold, Italic, Bold Italic)
+   Verdana (Bold, Italic, Bold Italic)
+   Webdings
+ .
+ You will need an Internet connection to download these modules from
+ Microsoft's Web site.
+
+Package: muffin
+Priority: optional
+Section: contrib/web
+Installed-Size: 485
+Maintainer: Bradley Marshall <bmarshal@pisoftware.com>
+Architecture: all
+Version: 0.9.3a-1
+Depends: java-common,jdk1.1
+Filename: pool/contrib/m/muffin/muffin_0.9.3a-1_all.deb
+Size: 408358
+MD5sum: 415f01ff119b5bd8a09b360cf6b4c68e
+Description: A personal and extensible Web proxy
+ Includes several filters which can remove cookies, kill GIF animations,
+ remove advertisements, add/remove/modify arbitrary HTML tags (like blink),
+ remove Java applets and Javascript, user-agent spoofing, rewrite URLs, and
+ much more.
+ You can add filters without modifying the code.
+
+Package: musixlyr
+Priority: optional
+Section: contrib/tex
+Installed-Size: 144
+Maintainer: Anthony Fok <foka@debian.org>
+Architecture: all
+Version: 1.10-4
+Depends: tetex-bin (>= 1.0.5-1)
+Recommends: musixtex (>= 1:0.98-1), tetex-base (>= 1.0-1)
+Suggests: pmx (>= 2.1.0-1)
+Filename: dists/woody/contrib/binary-all/tex/musixlyr_1.10-4.deb
+Size: 55020
+MD5sum: be57fd5cfdd9d3b8b972e6a49ff2840d
+Description: a MusiXTeX extension for handling lyrics
+ musixlyr is a set of TeX macros to be used with Taupin MusiXTeX
+ (version T.52 or later) for typesetting vocal music. Its purpose is
+ to compensate two drawbacks of MusiXTeX's lyrics handling:
+ .
+  * Typesetting lyrics with the "native" musixtex commands \zcharnote,
+    \zsong etc. tends to be quite inefficient, particularly if the lyrics
+    have to be changed or corrected.  The idea underlying musixlyr is to
+    separate lyrics coding from music coding and let TeX weave them
+    together with as little manual interference as possible.  As a result
+    you can enter and edit lyrics (nearly) as easily as normal text.
+ .
+  * musixtex has no built-in mechanism for centering hyphens between
+    syllables and for handling hyphenation at long melismas.  This is
+    implemented in musixlyr following the example of engraved music.
+ .
+  Author: Rainer Dunker <rainer.dunker@ebe-online.de>
+  Primary-site: ftp://ftp.gmd.de/music/musixtex/add-ons/musixlyr.zip
+
+Package: muttzilla
+Priority: optional
+Section: contrib/mail
+Installed-Size: 156
+Maintainer: Adrian Bridgett <bridgett@debian.org>
+Architecture: sh
+Version: 0.40-9
+Depends: netscape, python, x-terminal-emulator, libc6 (>= 2.2.1-2)
+Filename: pool/contrib/m/muttzilla/muttzilla_0.40-9_sh.deb
+Size: 20622
+MD5sum: 436c1cbc757dda597d43d867d0961e1a
+Description: Launch email or news clients from Netscape.
+ Muttzilla will launch your email or news client when you click on
+ mailto: or news: links in Netscape. You _must_ be using a libc6 version
+ of Netscape.
+
+Package: nautilus-suggested
+Priority: optional
+Section: contrib/x11
+Installed-Size: 9
+Maintainer: Takuo KITAME <kitame@northeye.org>
+Architecture: all
+Source: nautilus
+Version: 1.0.3-3
+Replaces: nautilus (<< 0.8)
+Depends: nautilus (= 1.0.3-3), nautilus-extra (= 1.0.3-3), eog, mpg321 | mpg123
+Recommends: trilobite (>= 1.0.3)
+Filename: pool/contrib/n/nautilus/nautilus-suggested_1.0.3-3_all.deb
+Size: 1240
+MD5sum: 929d0ba82b7b8ec3cf7f989f823c6ce8
+Description: Nautilus and a suggested set of components
+ This is a meta-package that requires packages useful for running Nautilus,
+ and getting multimedia to work, such as eog and mpg321(mpg123).
+
+Package: pike-crypto-build
+Priority: optional
+Section: contrib/devel
+Installed-Size: 72
+Maintainer: Turbo Fredriksson <turbo@debian.org>
+Architecture: all
+Version: 1.0.0-9
+Depends: dpkg-dev (>= 1.4.0.20), patch (>= 2.5-0bo1), fileutils (>= 3.16-4bo1.1), gcc, make, pike, debhelper
+Filename: dists/potato/contrib/binary-all/devel/pike-crypto-build_1.0.0-9.deb
+Size: 8344
+MD5sum: c01dce399416966c63c207de16fc5aaf
+Description: Build only package for building pike-crypto binary package
+ Script to build a pike-crypto package, written by Fredrik Hallenberg
+ <hallon@debian.org>, debian package by Turbo Fredriksson <turbo@debian.org>.
+ .
+ Does NOT contain the Roxen SSL3 package. Must be optained from Idonex separately.
+
+Package: pose-skins
+Priority: optional
+Section: contrib/otherosfs
+Installed-Size: 4464
+Maintainer: Ben Darnell <bgdarnel@debian.org>
+Architecture: all
+Version: 1.6-1
+Depends: pose (>=3.0a6-1)
+Filename: pool/contrib/p/pose-skins/pose-skins_1.6-1_all.deb
+Size: 4131704
+MD5sum: e7c809bfec718988388cc8db0020786d
+Description: Skins for the PalmOS Emulator
+ Skins for the PalmOS Emulator.
+ A generic skin is included in the pose package; use the skins in this
+ package to make the emulator look like a specific device.
+
+Package: premail
+Priority: optional
+Section: contrib/mail
+Installed-Size: 295
+Maintainer: Steve Kostecke <steve@debian.org>
+Architecture: all
+Version: 0.46-8
+Depends: pgp, mail-reader, debconf
+Filename: pool/contrib/p/premail/premail_0.46-8_all.deb
+Size: 108768
+MD5sum: a60098e6ae0ba4602d8336f7d6c79a6a
+Description: An e-mail privacy package.
+ Premail adds support for encrypted e-mail to your mailer, using plain PGP,
+ PGP/MIME, MOSS, or S/MIME.  In addition, premail provides a seamless,
+ transparent interface to the anonymous remailers, including full support
+ for Mixmaster remailers and the nymservers.  Nymservers provide crypto-
+ graphically protected, fully anonymous accounts for both sending and
+ receiving e-mail.
+
+Package: quake-lib-stub
+Priority: optional
+Section: contrib/games
+Installed-Size: 80
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Architecture: all
+Version: 1.9-8
+Provides: quake-game
+Depends: debianutils (>= 1.13.1)
+Recommends: quake
+Filename: dists/potato/contrib/binary-all/games/quake-lib-stub_1.9-8.deb
+Size: 5948
+MD5sum: 8d3ec7dfa79edac1232ac78a3848d38e
+Description: Use dos quake files with linux quake
+ This package configures the linux version of quake to use the library files
+ from an already installed dos quake. This enables you to use a registered
+ copy of quake in linux. Or, if you plan to use quake in both dos and linux,
+ this will let you install only one copy of quake's large library files on
+ your computer.
+ .
+ If you have no intention of using dos quake, and you don't have the
+ registered version of quake, install the quake-lib package instead of this
+ one.
+
+Package: roxen-ssl
+Priority: optional
+Section: contrib/web
+Installed-Size: 108
+Maintainer: Turbo Fredriksson <turbo@debian.org>
+Architecture: all
+Source: roxen
+Version: 1.3.122-17
+Depends: pike-crypto (>= 0.6.131-2), pike-gmp (>= 0.6.131), roxen (>= 1.3.122)
+Suggests: pike-crypto-build (>= 1.0.0-8)
+Filename: pool/contrib/r/roxen/roxen-ssl_1.3.122-17_all.deb
+Size: 37184
+MD5sum: 815ab9c30fb3bee0b498ed24b2c8fe07
+Description: SSL3 modules for the Roxen Challenger Webserver
+ This is the 128/168-bit encryption add-ons for the Roxen Challenger
+ webserver. Uses the Crypto/SSL3 library in pike-ssl, so this is not
+ nonus specific...
+ .
+ The package depends on pike-crypto, which doesn't exists as a package.
+ It have to be built by the installer (ie, you) out of pike-crypto-build.
+ Once built, the pike-crypto-build package can be removed...
+
+Package: roxen2-ssl
+Priority: optional
+Section: contrib/web
+Installed-Size: 192
+Maintainer: Turbo Fredriksson <turbo@debian.org>
+Architecture: all
+Source: roxen2
+Version: 2.1.247-2
+Depends: roxen2 (>= 2.0), pike7-crypto | pike7-lobotomized-crypto
+Filename: pool/contrib/r/roxen2/roxen2-ssl_2.1.247-2_all.deb
+Size: 29126
+MD5sum: 52a535a580763b93edc0b5985963eb19
+Description: SSL3 modules for the Roxen Challenger Webserver
+ This is the 128/168-bit encryption add-ons for the Roxen Challenger
+ webserver. Uses the Crypto/SSL3 library in pike-ssl, so this is not
+ NonUS specific...
+ .
+ The package depends on pike-crypto, which doesn't exists as a package.
+ It have to be built by the installer (ie, you) out of pike-crypto-build.
+ Once built, the pike-crypto-build package can be removed...
+
+Package: sdic
+Priority: optional
+Section: contrib/text
+Installed-Size: 186
+Maintainer: Takao KAWAMURA <kawamura@debian.org>
+Architecture: all
+Version: 2.1.2-7
+Depends: emacs20|xemacs20-mule-canna-wnn|xemacs20-mule|xemacs21-mule-canna-wnn|xemacs21-mule|mule2
+Suggests: sdic-gene95, sdic-edict, bsdmainutils
+Filename: dists/potato/contrib/binary-all/text/sdic_2.1.2-7.deb
+Size: 50184
+MD5sum: a101142bb6c084ffd090ba65be5baeaf
+Description: Emacs-Lisp program to view dictionaries
+ Sdic is an emacs interface to English-Japanese dictionaries
+ and Japanese-English dictionaries.
+
+Package: sdic-edict
+Priority: optional
+Section: contrib/text
+Installed-Size: 25
+Maintainer: Takao KAWAMURA <kawamura@debian.org>
+Architecture: all
+Source: sdic
+Version: 2.1.2-7
+Depends: edict, perl|perl5, debconf
+Recommends: sdic
+Suggests: sufary
+Filename: dists/potato/contrib/binary-all/text/sdic-edict_2.1.2-7.deb
+Size: 7334
+MD5sum: 8f6993d82fc114d61d7d3ed48aec9c4a
+Description: EDICT dictionaries for sdic (installer)
+ This package installs the EDICT Japanese-English
+ dictionaries to use with sdic.
+ .
+ Although this package can install a English-Japanese
+ dictionary derived the EDICT Japanese-English dictionary,
+ I would prefer to use the English-Japanese dictionary
+ installed through sdic-gene95.
+
+Package: sdic-gene95
+Priority: optional
+Section: contrib/text
+Installed-Size: 32
+Maintainer: Takao KAWAMURA <kawamura@debian.org>
+Architecture: all
+Source: sdic
+Version: 2.1.2-7
+Depends: nkf, perl|perl5, debconf (>= 0.2.0)
+Recommends: sdic
+Suggests: sufary, kakasi
+Filename: dists/potato/contrib/binary-all/text/sdic-gene95_2.1.2-7.deb
+Size: 10206
+MD5sum: dd9678263825a7b46852d11583dbe124
+Description: GENE95 dictionaries for sdic (installer)
+ This package installs the GENE95 English-Japanese
+ dictionary to use with sdic.
+ .
+ Although this package can install a Japanese-English
+ dictionary derived the GENE95 English-Japanese dictionary,
+ I would prefer to use the Japanese-English dictionary
+ installed through sdic-edict.
+ .
+ Before installing this package, you have to get gene95.lzh
+ or gene95.tar.gz or gene95.tar.bz2.  You can get these
+ files from
+ http://www-nagao.kuee.kyoto-u.ac.jp/member/tsuchiya/sdic/index.html
+
+Package: tkirc
+Priority: optional
+Section: contrib/net
+Installed-Size: 369
+Maintainer: Pekka Aleksi Knuutila <pa@debian.org>
+Architecture: all
+Version: 1.202-8
+Depends: wish, ircii (>=2.8-1)
+Filename: dists/woody/contrib/binary-all/net/tkirc_1.202-8.deb
+Size: 107930
+MD5sum: 7f01bad2cf3753464d50c560a1ccd223
+Description: Tcl/Tk based client to the Internet Relay Chat
+ tkirc is a frontend for unix's ircII (shell-client for the Internet
+ Relay Chat) based on Tcl/Tk.
+
+Package: tkpgp
+Priority: extra
+Section: contrib/misc
+Installed-Size: 194
+Maintainer: Christian Surchi <csurchi@debian.org>
+Architecture: all
+Version: 1.11.1.5-3
+Depends: wish, gnupg | pgp | pgp5i
+Filename: dists/woody/contrib/binary-all/misc/tkpgp_1.11.1.5-3.deb
+Size: 52986
+MD5sum: be39a0fc85807580db25ac97cfa4a214
+Description: Tcl/Tk script that serves as a GUI shell for PGP or GnuPG.
+ TkPGP intends to completely eliminate need to access command-
+ line interface of PGP for UNIX. Currently most of casual
+ activity such as signing, encrypting and decrypting is done
+ in GUI. Key management remains a domain of command line for
+ the time being.
+
+Package: tkseti
+Priority: optional
+Section: contrib/misc
+Installed-Size: 552
+Maintainer: Gopal Narayanan <gopal@debian.org>
+Architecture: sh
+Version: 3.00-1
+Depends: wish
+Recommends: setiathome (>= 3.0-1)
+Filename: pool/contrib/t/tkseti/tkseti_3.00-1_sh.deb
+Size: 172454
+MD5sum: 69332762c156bd4f7c7e0ebd018f9242
+Description: GUI front-end to the SETI@Home client for UNIX.
+ TkSETI is a customizable frontend for the SETI (Search for
+ Extra-Terrestrial Intelligence) client called SETI@Home. You will
+ need to install the debian installation wrapper package setiathome
+ for the SETI@Home client. TkSETI lets you monitor, start or stop the
+ setiathome client, display statistics of how many SETI work units you
+ helped process, among many other cool features.
+
+Package: tkxanim
+Priority: extra
+Section: contrib/graphics
+Installed-Size: 43
+Maintainer: Andrea Fanfani <andrea@debian.org>
+Architecture: all
+Version: 0.43-5
+Depends: wish, xanim
+Filename: dists/potato/contrib/binary-all/graphics/tkxanim_0.43-5.deb
+Size: 17810
+MD5sum: 3bb484375f3f3569d5bc769ed34e1506
+Description: Tcl/Tk front-end to xanim.
+ Tkxanim is a useful Tcl/Tk for xanim. The main features are about
+ lots of options and control volume.
+
+Package: tomcat
+Priority: optional
+Section: contrib/web
+Installed-Size: 1098
+Maintainer: Stefan Gybas <sgybas@debian.org>
+Architecture: all
+Version: 3.2.1-1
+Replaces: jserv, gnujsp
+Depends: j2sdk1.3 | j2re1.3 | jdk1.1 | ibm-jdk1.1-installer | ibm-jre1.1-installer, jikes, libxerces-java, libservlet2.2-java, logrotate
+Suggests: libapache-mod-jk
+Conflicts: jserv
+Filename: pool/contrib/t/tomcat/tomcat_3.2.1-1_all.deb
+Size: 737782
+MD5sum: 456a788c5546f696264df1bab1dbefb2
+Description: Java Servlet 2.2 engine with JSP 1.1 support
+ Jakarta-Tomcat is the reference implementation for the Java Servlet 2.2 and
+ JavaServer Pages (JSP) 1.1 specification from the Apache Jakarta project.
+ .
+ For more information about Tomcat please take a look at the Tomcat
+ home page at http://jakarta.apache.org/tomcat/index.html.
+ .
+ The official Servet 2.2 and JSP 1.1 specifications can be found at
+ http://java.sun.com/products/servlets and http://java.sun.com/products/jsp.
+
+Package: turbine
+Priority: optional
+Section: contrib/web
+Installed-Size: 700
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 20010419-1
+Depends: java-common, java-virtual-machine, libxerces-java, libxalan-java
+Conflicts: cocoon (<< 1.8-1)
+Filename: pool/contrib/t/turbine/turbine_20010419-1_all.deb
+Size: 589978
+MD5sum: d84374e5e80312e695eb9e5ed7d4a3fa
+Description: Website development framework.
+ Turbine is a servlet based framework that allows experienced Java developers
+ to quickly build secure web applications.
+ Parts of Turbine can also be used independently of the web portion of Turbine
+ as well.
+
+Package: turbine-doc
+Priority: optional
+Section: contrib/doc
+Installed-Size: 1944
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Source: turbine
+Version: 20010419-1
+Filename: pool/contrib/t/turbine/turbine-doc_20010419-1_all.deb
+Size: 196564
+MD5sum: 1da080737d050e265b62d8be8b009701
+Description: Documentation for turbine
+ This package contains the html documentation for turbine.
+
+Package: unp
+Priority: optional
+Section: contrib/utils
+Installed-Size: 37
+Maintainer: Eduard Bloch <blade@debian.org>
+Architecture: all
+Version: 1.0.1-4
+Depends: perl5-base | perl-base (>= 5.004.04), tar (>= 1.12-6), rpm, cpio, gzip (>= 1.2.4-30), bzip2, lha, unarj, unzip | unzip-crypt, sharutils
+Filename: pool/contrib/u/unp/unp_1.0.1-4_all.deb
+Size: 6166
+MD5sum: cc55fd9e49983efd167202b313caab39
+Description: shell frontend for decompressing and extracting tools
+ unp is a small perl script which makes extraction of any archive files
+ a bit easier. It support several compressors and archiver programs,
+ chooses the right one(s) automatically and extracts one or more files
+ in one go.
+
+Package: vchkpw
+Priority: optional
+Section: contrib/mail
+Installed-Size: 348
+Maintainer: Debian QA Group <debian-qa@lists.debian.org>
+Architecture: sh
+Version: 3.1.2-8
+Depends: qmail-src, ucspi-tcp-src (>= 0.84), perl5, libc6 (>= 2.2.1-2)
+Filename: pool/contrib/v/vchkpw/vchkpw_3.1.2-8_sh.deb
+Size: 57656
+MD5sum: 99c6fd1988e5207142d0f8b000e23888
+Description: Virtual POP-domains and users for qmail
+ These utilities enable qmail to have virtual domains and virtual users,
+ running under a single *real* user.
+ .
+ Features:
+   * Dynamic delivery - no need to have dozens of .qmail files
+     all over the place. Just a single .qmail-default handles all
+     the deliveries
+   * Only takes up 1 entry in /etc/passwd - everything runs under a
+     single UID/GID
+   * Web interface for administration
+
+Package: vnc-java
+Priority: optional
+Section: contrib/x11
+Installed-Size: 136
+Maintainer: Ola Lundqvist <opal@debian.org>
+Architecture: all
+Version: 3.3.3r2-2
+Provides: vncviewer
+Depends: vncserver (>= 3.3.3r2-8)
+Conflicts: vncserver (<< 3.3.3r2-8)
+Filename: pool/contrib/v/vnc-java/vnc-java_3.3.3r2-2_all.deb
+Size: 43006
+MD5sum: 0f266f34690b0bef01370b878e5cbe36
+Description: VNC java applet.
+ VNC stands for Virtual Network Computing. It is, in essence, a remote
+ display system which allows you to view a computing `desktop' environment
+ not only on the machine where it is running, but from anywhere on the
+ Internet and from a wide variety of machine architectures.
+ .
+ This is the vnc java applet files that the vnc-server
+ can distribute to the client.
+
+Package: vpopmail-doc
+Priority: optional
+Section: contrib/mail
+Installed-Size: 256
+Maintainer: Ondrej Sury <ondrej@debian.org>
+Architecture: all
+Source: vpopmail
+Version: 4.9.9-1
+Replaces: vpopmail
+Conflicts: vpopmail, vchkpw
+Filename: pool/contrib/v/vpopmail/vpopmail-doc_4.9.9-1_all.deb
+Size: 60414
+MD5sum: fdafc2d01406012c4b2bad7a836dfe7c
+Description: vpopmail documentation
+ vpopmail is a collection of programs to automate creation and
+ maintence of non /etc/passwd virtual domain email and pop accounts
+ for qmail installations.
+ .
+ This packages include documentation.
+
+Package: wdg-html-validator
+Priority: optional
+Section: contrib/web
+Installed-Size: 1264
+Maintainer: Jaldhar H. Vyas <jaldhar@debian.org>
+Architecture: sh
+Version: 1.0-6
+Depends: sp,sgml-data,libwww-perl,libwww-perl (<= 5.32-1) | libhtml-parser-perl,libunicode-string-perl,libunicode-map8-perl,libi18n-charset-perl,wdg-html-reference,libc6 (>= 2.2.1-2),perl
+Recommends: httpd
+Filename: pool/contrib/w/wdg-html-validator/wdg-html-validator_1.0-6_sh.deb
+Size: 503926
+MD5sum: 4be5e8c4893cef0fda328a905ed6f89b
+Description: WDG HTML Validator
+ This is a CGI script which lets you enter the URL of a web page which will
+ be then checked against a validating SGML parser for conformance to official
+ HTML standards.  Pages can also be uploaded and HTML can be directly entered.
+
+Package: webrt
+Priority: optional
+Section: contrib/misc
+Installed-Size: 724
+Maintainer: Lars Steinke <lss@debian.org>
+Architecture: sh
+Version: 1.0.6-2
+Depends: mysql-client (>=3.22), libcgi-pm-perl (>=2.56), libdbd-mysql-perl, libdigest-md5-perl, make, libc6 (>= 2.2.1-2), perl
+Filename: pool/contrib/w/webrt/webrt_1.0.6-2_sh.deb
+Size: 148726
+MD5sum: 9a69dc015851873f2f551627ed75af0e
+Description: Request Tracker, a GPL'd Trouble Ticket System
+ Request Tracker helps you handle and track problem reports, it features
+ web interfaces for queue administration and report submitting and sends out
+ email with replies and comments to those reports.
+ Be sure to read /usr/share/doc/webrt/README.Debian for installation
+ instructions !!!
+
+Package: x-pgp-sig-el
+Priority: optional
+Section: contrib/mail
+Installed-Size: 232
+Maintainer: Takuo KITAME <kitame@northeye.org>
+Architecture: all
+Version: 1.3.5.1-3
+Depends: emacsen, pgp
+Filename: dists/potato/contrib/binary-all/mail/x-pgp-sig-el_1.3.5.1-3.deb
+Size: 57048
+MD5sum: 57ff0e31ab62bbfa5f8ed21d29a33898
+Description: X-PGP-Sig mail and news header utility for Emacs.
+ X-PGP-Sig header utility for Emacs.
+ It can be insert/verify PGP signature in X-PGP-Sig: mail/news header.
+ x-pgp-sig.el is for MH(mh-e, Mew and so on), Gnus, Semi-gnus, wl(Wanderlust)
+ VM, cmail etc... (MUA on Emacs).
+ .
+ But English Documents is not available. (only Japanese available)
+
+Package: x11iraf
+Priority: optional
+Section: contrib/science
+Installed-Size: 2416
+Maintainer: Zed Pobre <zed@debian.org>
+Architecture: sh
+Version: 1.1-8
+Depends: libc6 (>= 2.2.1-2), libncurses5, xaw3dg (>= 1.5-6), xlibs (>> 4.0.3)
+Suggests: iraf
+Filename: pool/contrib/x/x11iraf/x11iraf_1.1-8_sh.deb
+Size: 1268742
+MD5sum: 8e7872482ec87316b9165cfcbe70d69d
+Description: X utilities for IRAF (Image Reduction Analysis Facility)
+ Includes the xgterm, ximtool and xtapemon and associated utilities
+ for the Image Reduction and Analysis Facility.
+ .
+ WARNING: ximtool currently does not work with recent (3.3.6ish)
+ XFree86 versions.  There is no known workaround at this time.
+
+Package: xanim-modules
+Priority: optional
+Section: contrib/graphics
+Installed-Size: 25
+Maintainer: Chris Lawrence <lawrencc@debian.org>
+Architecture: all
+Version: 2.80.1.12
+Depends: xanim (>= 2.80.1-3), python-base (>= 1.5.2-4), tar (>= 1.13.12-1)
+Filename: pool/contrib/x/xanim-modules/xanim-modules_2.80.1.12_all.deb
+Size: 7366
+MD5sum: a5b4bd186eb9898513d84a3b9871a98e
+Description: Installer for xanim binary-only modules
+ This package provides access to the binary modules needed for xanim
+ to decode the following graphic compression schemes:
+ .
+  Radius Cinepak 24 bits Color (Quicktime, AVI)
+  Radius Cinepak  8 bits Gray  (Quicktime, AVI)
+  Creative CYUV                (AVI)
+  CCITT H.261                  (AVI)
+  CCITT H.263 (not Intel I263) (AVI)
+  Intel Indeo 3.1              (Quicktime, AVI)
+  Intel Indeo 3.2              (Quicktime, AVI)
+  Intel Ray YUV                (Quicktime, AVI)
+  Intel Indeo 4.1              (Quicktime, AVI)
+  Intel Indeo 5.0              (Quicktime, AVI)
+ .
+ You will need an Internet connection to download these modules from
+ the author's FTP site; Debian's permission to distribute these
+ modules is so restricted that this is the only reasonable way to
+ handle the situation.
+ .
+ The author only provides binaries for Intel (glibc 2.1), Alpha and
+ PowerPC.  SPARC, ARM, m68k, and Hurd users will find this package
+ extremely useless.
+ .
+ Home Page: http://xanim.va.pubnix.com/home.html
+
+Package: xezmlm
+Priority: optional
+Section: contrib/admin
+Installed-Size: 128
+Maintainer: Turbo Fredriksson <turbo@debian.org>
+Architecture: sh
+Version: 1.0.3-9
+Depends: perl5, perl-tk, ezmlm-idx | ezmlm-src
+Filename: pool/contrib/x/xezmlm/xezmlm_1.0.3-9_sh.deb
+Size: 14012
+MD5sum: 920539b7b5fe99ed95c7a7aec630b0f8
+Description: A ezmlm mailinglist configuration tool for the X Window System
+ This is a configuration tool for the ezmlm mailing list
+ software, using perl-tk. It'll create the mailinglist
+ with all options chosen with simple Radiobuttons (Yes/No).
+
+Package: xjdic
+Priority: optional
+Section: contrib/text
+Installed-Size: 396
+Maintainer: Hayao Nakahara <nakahara@debian.org>
+Architecture: sh
+Version: 23-2
+Depends: libc6 (>= 2.2.1-2)
+Suggests: edict, kanjidic
+Filename: pool/contrib/x/xjdic/xjdic_23-2_sh.deb
+Size: 159548
+MD5sum: 347f08ef58b210aa79f3a54ef104e577
+Description: Japanese-English dictionary search program
+ XJDIC is an  electronic  Japanese-English  dictionary  program  designed  to
+ operate  in  the  X11 window environment.  In particular,  it must run in an
+ "xterm" environment which has Japanese language support such as provided  by
+ "kterm" etc.
+

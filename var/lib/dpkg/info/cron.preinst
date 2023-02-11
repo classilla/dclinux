@@ -1,0 +1,8 @@
+#! /bin/sh
+#
+# Needed because -36 and -36.1 included bad prerm scripts
+#
+if [ "$1" = "upgrade" -a \( "$2" = "3.0pl1-36" -o "$2" = "3.0pl1-36.1" \) ] ; then
+   #kill the running cron
+   start-stop-daemon --oknodo --quiet --stop --exec /usr/sbin/cron
+fi

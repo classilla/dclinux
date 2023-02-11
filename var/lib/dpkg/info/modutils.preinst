@@ -1,0 +1,98 @@
+#!/bin/sh
+# pre install script for the Debian GNU/Linux modutils package
+
+set -e
+
+# Check if we are upgrading while running a 2.0 kernel. If so abort
+# immediately since we don't support those kernels anymore.
+if [ "$1" = "upgrade" ] && dpkg --compare-versions "`uname -r`" lt 2.2.0 ; then
+	cat <<EOF
+ERROR: you are running a pre-2.2.0 kernel on this machine. Recent
+versions of modutils no longer support those kernels.
+EOF
+	
+	if [ ! -f /proc/modules ] ; then
+		cat <<EOF
+However, your kernel does not seem to use modules, so I will upgrade
+anyway.
+EOF
+	else
+		echo To prevent breaking this system the modutils upgrade will abort.
+		exit 1
+	fi
+fi
+
+
+# Remove diversions if we are upgrading from a version that still
+# diverted linux/kerneld.h
+if [ "$1" = "upgrade" ]; then
+	if dpkg --compare-versions "$2" lt 2.3.5-1 ; then
+		dpkg-divert --package modutils --remove \
+				--divert /usr/include/linux/kerneld.h.libc6 \
+					/usr/include/linux/kerneld.h
+	fi
+
+# Don't forget to mention the config-file format changed on us again!
+	if grep -q '^path' /etc/conf.modules 2>/dev/null ; then
+		cat <<EOF
+WARNING: the configuration format for modutils has changed!
+
+Your modutils configuration contains path statements. Since version 2.3.1
+of modutils the syntax for this statement has changed. The section is
+no longer automatically appended to the given path. To demonstrate: if
+you have a statement like this:
+
+  path[fs]=/lib/modules/`uname -r`
+
+it should be replaced with this statement:
+
+  path[fs]=/lib/modules/`uname -r`/fs
+
+For more documentation on the syntax please see the modules.conf manpage.
+
+Please press [ENTER] to continue
+EOF
+		read HITME
+	fi
+fi
+
+# maybe an old kerneld is still running?
+if [ -f /sbin/kerneld ]; then
+	start-stop-daemon --stop --quiet --oknodo --exec /sbin/kerneld
+fi
+
+# Handle namechage from conf.modules to modules.conf
+if [ -f /etc/conf.modules ]; then
+	if [ -f /etc/modules.conf ]; then
+		echo "The modutils configurationfile /etc/conf.modules has been"
+		echo "renamed to /etc/modules.conf. I tried to rename the file,"
+		echo "but there is already a file called modules.conf present."
+		echo "You will have to resolve this situation manually."
+	else
+		mv /etc/conf.modules /etc/modules.conf
+	fi
+fi
+
+# Check for symlinked /etc/modules.conf and replace it by a real file
+if [ -f /etc/modules.conf -a -L /etc/modules.conf ]; then
+	echo "Your /etc/modules.conf is a symlink. I will replace this by"
+	echo "a real file so update-modules can do it's work later."
+	cp /etc/modules.conf /etc/modules.conf.DPKG-UPGRADE
+	cat /etc/modules.conf.DPKG-UPGRADE > /etc/modules.conf
+	rm /etc/modules.conf.DPKG-UPGRADE
+fi
+
+# Remove any architecture-specifics in /etc/modutils. This is safe since
+# we already copied the used file (see above).
+echo -n "Removing obsoleted files: "
+for i in conf.generic conf.i386 conf.m68k conf.m68k.amiga conf.m68k.atari \
+		conf.m68k.amiga conf.m68k.mac ; do
+	if [ -f /etc/modutils/$i ]; then
+		echo -n "$i "
+		rm -f /etc/modutils/$i
+	fi
+done
+echo
+
+exit 0
+

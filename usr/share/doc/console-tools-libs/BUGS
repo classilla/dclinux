@@ -1,0 +1,125 @@
+* General:
+
+** investigate why underlining gives strange results after changing
+  from eg. iso01.f08 to iso01.f14. Maybe setfont should set correct
+  underlining pos when changing char height ? (see debian bug #8949 -
+  SVGATextMode handles this correctly) - see SVGA book.
+
+** bold attribute is told to disappear with 512-chars fonts (debian #8949)
+
+
+
+* kernel-level:
+
+** Security:
+
+*** Any user can mess up the keyboard. Only root should be allowed to change
+  the "basics" of the keytable, ie. minimal subset of ASCII allowing to use
+  the console and eventually load a new kmap. Then every user could choose
+  his prefered bells and whistles (when each VT would get its kmap).
+  
+*** Any user can mess up the display (font/SFM). Normal users should be
+  allowed at most to change something about chars not mapped-to by an ASCII
+  char (U+0000-U+008F).
+
+*** Any user can choose/mess up the ACM. It should be restored on logout, and
+  maybe get the same kind of protection than described for font/SFM.
+
+
+** Unicode support:
+
+*** It seems there is some bad interaction between 512-chars mode and
+  UTF.  It seems that after going into 512-chars mode, and then back
+  into 256-chars mode, the mechanism used by vt-is-utf8 does not work.
+
+*** The kernel currently considers an empty SFM as valid. This should not
+  be, as then ACM should be restricted to the straight-to-font zone, as when
+  it's not valid.
+
+*** Current keyboard driver can only handle unicodes up to U+0FFF (uses
+  0xF000 as a mask to recognize unicode). Current `loadkeys' relies on this.
+
+*** Current keyboard driver outputs UTF8 even when in ASCII mode.
+
+*** Investigate whether it's normal that PIO_UNIMAP doesn't output what
+  GIO_UNIMAP has set. A diff between [a unimap produced by
+  psfadtable/psfgettable from iso01.uni] and [a unimap produced by
+  psfadtable/setfont -opu/psfgettable from iso01.uni] (kernel 2.0.30 / kbd
+  0.94) shows that mappings have disappeared:
+
+	$ setfont iso01-08 && setfont -op iso01-08.psf
+	$ psfaddtable iso01-08.psf /usr/share/consoletrans/iso01.uni iso01-08a.psf
+	$ diff <(psfgettable iso01-08a.psf ) <(setfont iso01-08a.psf && setfont -opu >(psfgettable -))
+	2c2
+	< # Character table extracted from font iso01-08a.psf
+	---
+	> # Character table extracted from font stdin
+	24,25c24,25
+	< 0x14   U+00b6
+	< 0x15   U+00a7
+	---
+	> 0x14
+	> 0x15
+
+
+
+** Virtual terminals:
+
+*** VT_OPENQRY doesn't seem to return current VT when it is active, even if it
+  has no process attached (see VT_IS_IN_USE()/VT_BUSY()).
+
+*** VT's are sometimes (when ?!) considered busy even when not busy (probably
+  associated to "kbrequest" - also found when a bg process (eg. gpm) has been
+  associated to this VT, even if it has been killed now)
+
+
+
+* tools-level:
+
+** provided fonts:
+
+*** should be shipped in diffable source format.
+
+*** all of them should have a visible replacement char, as lat*.psf do.
+
+*** should be converted to XPSF when it's out.
+
+*** iso07.f08 is wrong (doesn't match the encoding of .f14 and .f16)
+
+
+** vt-is-UTF8(1)
+
+*** fails when called from mc ?
+
+
+** libs:
+
+*** findfile() sometimes leaves a zombie (lost SIGCHILD ?). That was
+  turned around by the maybekillzombie(), but has to be investigated
+  one day.
+
+*** many functions use fprintf(), which can modify errno, before returning -1.
+
+*** xfseek() should be reworked to not use ftell(). Use a XFILE structure to
+  manually keep track of the position.
+
+
+** font-file tools:
+
+*** <priority very_low> Fix codepage's use of getopt() ? (is it really worth ?)
+
+
+** General:
+
+*** Grep for "#warning", "FIXME" and "UNTESTED" in the source files.
+
+*** Make sure everything is byteorder-independant when reading from/writing to
+  files. Maybe provide unicode_{read,write}() functions in libcfont.
+
+
+
+* FAQ
+
+** Replace references to spawn_login by init/kb (switch priorities)
+
+** 12.M should refer to [latin1]{inputenc} instead.

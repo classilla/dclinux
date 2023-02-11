@@ -1,0 +1,16 @@
+ja-trans for Debian
+----------------------
+
+If you want to build from source package, you must install gettext package.
+
+Special Thanks to:
+  Yasuyuki Furukawa <yasu@on.cs.keio.ac.jp>
+  Daisuke Yamashita <yamad@infoweb.ne.jp>
+  Penguin Kun <penguin-kun@geocities.com>
+  H. Nabetani <nabe@debian.or.jp>
+  japo@flatout.org
+  and
+  ja@li.org
+
+ -- UNO Takeshi <uno@sysplan.co.jp>, Wed,  9 Feb 2000 10:34:49 +0900
+Sponsor: Fumitoshi UKAI <ukai@debian.or.jp>, Fri, 20 Aug 1999 01:37:15 +0900

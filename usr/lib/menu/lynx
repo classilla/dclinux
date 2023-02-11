@@ -1,0 +1,12 @@
+?package(lynx):\
+  needs=text\
+  section=Apps/Net\
+  title="Lynx"\
+  hints="Web Browser" \
+  command="/usr/bin/lynx"
+?package(lynx):\
+  needs=dwww\
+  section=Apps/Net\
+  title="Lynx Manual"\
+  hints="Web Browser Manual" \
+  command="/usr/doc/lynx/lynx_help/lynx_help_main.html"

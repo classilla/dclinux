@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/postinst,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+# Last version where postrm blindly remove pserver from inetd
+LAST_BROKEN_INETD="1.10.4-1"
+
+if [ "$1" = "configure" -a "$2" != "" -a -e /etc/cvs.conf ]; then
+	if /usr/bin/dpkg --compare-versions "$2" le $LAST_BROKEN_INETD; then
+		db_input critical cvs/pserver_warning ||:
+		db_go ||:
+	fi
+fi
+
+if [ "$1" = "configure" ]; then
+	/usr/sbin/cvsconfig -s
+fi
+
+db_get cvs/badrepositories
+if [ "$RET" = "create" ]; then
+	/usr/sbin/cvs-makerepos
+fi
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/cvs -a -d /usr/share/doc/cvs ]; then
+		ln -sf ../share/doc/cvs /usr/doc/cvs
+	fi
+fi
+# End automatically added section
+

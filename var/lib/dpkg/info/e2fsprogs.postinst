@@ -1,0 +1,14 @@
+#! /bin/sh
+
+set -e
+
+ldconfig
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/e2fsprogs -a -d /usr/share/doc/e2fsprogs ]; then
+		ln -sf ../share/doc/e2fsprogs /usr/doc/e2fsprogs
+	fi
+fi
+# End automatically added section
+

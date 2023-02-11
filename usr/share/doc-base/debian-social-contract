@@ -1,0 +1,10 @@
+Document: debian-social-contract
+Title: The Debian Social Contract, and the Debian Free Software Guidelines
+Author: The Debian Project
+Abstract: This is the "social contract" we offer to the free software
+ community. The Debian Free Software Guidelines (DFGS) are the set of
+ license conditions to be met for packages to be part of the Debian system.
+Section: Debian
+
+Format: text
+Files: /usr/share/doc/debian/social-contract.txt

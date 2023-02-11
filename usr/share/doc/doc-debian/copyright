@@ -1,0 +1,33 @@
+This is the Debian GNU/Linux `doc-debian' package. It provides various
+important documentation describing Debian.
+
+This package was first put together by Sven Rudolph, and later maintained
+by Santiago Vila. Current maintainer is Josip Rodin <jrodin@jagor.srce.hr>.
+
+The copyright and license statement for the Debian FAQ:
+
+  Copyright (C) 1996-2000 by Software in the Public Interest
+
+  Permission is granted to make and distribute verbatim copies of
+  this document provided the copyright notice and this permission notice
+  are preserved on all copies.
+
+  Permission is granted to copy and distribute modified versions of
+  this document under the conditions for verbatim copying, provided that
+  the entire resulting derived work is distributed under the terms of
+  a permission notice identical to this one.
+
+  Permission is granted to copy and distribute translations of this
+  document into another language, under the above conditions for
+  modified versions, except that this permission notice may be included
+  in translations approved by the Free Software Foundation instead of
+  in the original English.
+
+The copyright and license statement for the BTS docs:
+
+    copyright 1999 Darren O. Benham, 1994-7 Ian Jackson,
+    1997 nCipher Corporation Ltd, 1995 Steven Brenner.
+    Available under the GPL.
+
+On Debian systems, the complete text of the GNU General Public License is
+available in `/usr/share/common-licenses/GPL' file.

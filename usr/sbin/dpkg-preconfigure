@@ -1,0 +1,117 @@
+#!/usr/bin/perl -w
+# This file was preprocessed, do not edit directly.
+BEGIN {
+	eval qq{
+		use strict;
+		use FileHandle;
+		use Debconf::Log qw(:all);
+		use Debconf::Db;
+		use Debconf::Template;
+		use Debconf::Config;
+		use Debconf::AutoSelect qw(:all);
+		use Debconf::Gettext;
+	};
+	if ($@) {
+		print STDERR "debconf: Perl may be unconfigured ($@) -- aborting\n";
+		exit 0;
+	}
+}
+if (! -x "/usr/bin/apt-extracttemplates") {
+	warn "skipping preconfiguration (apt-utils is not installed)";
+	exit;
+}
+Debconf::Db->load;
+$|=1;
+my @debs;
+my $apt='';
+for (my $x=0; $x < @ARGV;) {
+	$_=$ARGV[$x++];
+	
+	if ($_ eq '--apt') {
+		$apt=1;
+	}
+	elsif (/^-(?:f|-frontend=)(.*)/) {
+		Debconf::Config->frontend($1);
+	}
+	elsif (/^-(?:f|-frontend)$/) {
+		Debconf::Config->frontend($ARGV[$x++]);
+	}
+	elsif (/^-(?:p|-priority=)(.*)/) {
+		Debconf::Config->priority($1);
+	}
+	elsif (/^-(?:p|-priority)$/) {
+		Debconf::Config->priority($ARGV[$x++]);
+	}
+	elsif (/^-(?:h|-help)$/) {
+		print STDERR gettext("Usage: dpkg-preconfigure [--frontend=type] [--priority=value] debfiles")."\n";
+		exit 1;
+	}
+	elsif (/^--?(\w+)/) {
+		print STDERR sprintf(gettext("Unknown option: %s"), $1)."\n";
+	}
+	else {
+		push @debs, $_;
+	}
+}
+@ARGV=();
+if ($apt) {
+	while (<>) {
+		chomp;
+		push @debs, $_ if length $_;
+	}
+	
+	exit unless @debs;
+	
+	open (STDIN, "/dev/tty") ||
+		(print STDERR sprintf(gettext("dpkg-preconfigure: unable to re-open stdin: %s"), $!)."\n", exit 0);
+	Debconf::Config->showold('false');
+}
+elsif (! @debs) {
+	print STDERR sprintf(gettext("Usage: dpkg-preconfigure deb [...]")), "\n";
+	exit(1);
+}
+my $frontend=make_frontend();
+my ($package, $version, $template, $config);
+unless (open(INFO, "-|")) {
+	exec "apt-extracttemplates", @debs or
+		print STDERR "debconf: exec of apt-extracttemplates failed: $!";
+}
+my @buffer=<INFO>;
+if ($apt && @buffer) {
+	print "Preconfiguring packages ...\n";
+}
+foreach my $line (@buffer) {
+	($package, $version, $template, $config)=split /\s/, $line;
+	
+	if (defined $template && length $template) {
+		eval q{
+			Debconf::Template->load($template, $package)
+		};
+		unlink $template;
+		if ($@) {
+			print STDERR "$package ".sprintf(gettext("template parse error: %s"), $@)."\n";
+			unlink $config;
+			next;
+		}
+	}
+}
+foreach my $line (@buffer) {
+	($package, $version, $template, $config)=split /\s/, $line;
+	if (defined $config && length $config && -e $config) {
+		debug user => "preconfiguring $package ($version)";
+		chmod(0755, $config) or
+			die sprintf(gettext("debconf: can't chmod: %s"), $!);
+		$frontend->default_title($package);
+		my $confmodule=make_confmodule($config, 'configure', $version);
+		$confmodule->owner($package);
+		1 while ($confmodule->communicate);
+		if ($confmodule->exitcode > 0) {
+			print STDERR sprintf(
+				gettext("%s failed to preconfigure, with exit status %s"),
+				$package, $confmodule->exitcode)."\n";
+		}
+		unlink $config;
+	}
+}
+$frontend->shutdown;
+Debconf::Db->save;

@@ -1,0 +1,551 @@
+                     Release Notes for XFree86[tm] 3.3.6
+
+                          The XFree86 Project, Inc
+
+                               31 December 1999
+
+                                  Abstract
+
+     This document describes the bugs fixed and the features added in
+     XFree86 3.3.6 compared with the 3.3.5 release, It also includes
+     installation instructions for the binary distributions.  It is
+     strongly recommended that anyone using XFree86 update to version
+     3.3.6.
+
+1.  XFree86 and X11R6.3
+
+XFree86 releases starting with the 3.2A beta are based on the X Consortium's
+X11R6.3 (the final release from the X Consortium).
+
+R6.3 is an update to R6.1, and is intended to be compatible with R6.1 and R6
+at the source and protocol levels.  Binaries should be upward-compatible.
+X11R6.3 includes some new Xserver extensions: SECURITY, XC-APPGROUP, XpExten-
+sion (print extension), and an updated, and standardised version of LBX.
+X11R6.3 also has new standards, including RX (X Remote Execution MIME type),
+and a proxy management protocol.  X11R6.3 includes support for gzipped fonts.
+
+R6.1 is an update to R6, and is intended to be compatible with R6 at the
+source and protocol levels.  Binaries should be upward-compatible.  X11R6.1
+includes some new Xserver extensions: DOUBLE-BUFFER, XKEYBOARD and RECORD.
+
+What about R6.2?  X11R6.2 is the name given to a subset of X11R6.3, which has
+only the print extension and the Xlib implementation of vertical writing and
+user-defined character support in addition to those features included in
+R6.1.
+
+2.  X11R6.4
+
+In September 1998 The Open Group changed the copyright of X11R6.4 from the
+non-free copyright used for the initial release of X11R6.4 back to the old
+free X Consortium style copyright.  Given the fact that our main development
+focus is on XFree86-4.0 and that the 3.3.x releases are intended mostly to
+fix some bugs and get out new drivers to the public, we opted not to include
+X11R6.4 in XFree86-3.3.x.
+
+XFree86-4.0 will be X11R6.4 based.
+
+3.  OS issues
+
+Always check the OS specific README files for special requirements or
+caveats.
+
+Users running Linux should note that Elf is now the only binary type sup-
+ported for Linux OSs.  This means that binaries for ix86/a.out and AXP/ECOFF
+are not available with this release.
+
+Users running FreeBSD 3.0 should note that only ELF binaries are provided
+with this release.  a.out shared libraries are also included for compatibil-
+ity purposes.
+
+4.  What's new in 3.3.6?
+
+   o Support for ATI Rage128.
+
+   o Support for ATI Rage Mobility
+
+   o Support for SiS 540/630 and SiS 300
+
+   o Support for Silicon Motion Lynx chipsets
+
+   o Support for Savage2000
+
+   o Support for NVIDIA GeForce
+
+   o Support for Intel i810 (not enabled by default as it needs kernel mod-
+     ule)
+
+   o Fixes to several drivers
+
+5.  What's new in 3.3.5?
+
+   o Support for S3 Savage4 and Savage3D. Limited to Linux/x86 at this point.
+     Please see README.S3V.
+
+   o Support for S3 Trio3D/2X.
+
+   o Support for DGux.
+
+   o Support for QNX.
+
+   o Fix bug in Mach64 server on Rage LT and Rage LT Pro.
+
+   o Fix SiS driver for 530 and 620.
+
+   o Fix the spurious underline problem on NVidia Riva TNT cards.
+
+   o Fix the PS/2 mouse problem with later Linux kernels.
+
+   o Misc updates and bugfixes in Rendition driver.
+
+   o Updates from SuSE and Red Hat, including more keyboards, PAM support,
+     ARM and AXP fixes, security fixes.
+
+6.  What's new in 3.3.4?
+
+   o Several security fixes.
+
+   o Intel i740 support (donated by Precision Insight).
+
+   o SiS 530 and SiS 620 support.
+
+   o 3Dfx Voodoo Banshee and Voodoo3 support.
+
+   o Trident Blade3D, CyberBlade and Cyber9525 support.
+
+   o S3 Trio3D support.
+
+   o Matrox G400 support.
+
+   o NVIDIA Riva TNT2 support and better acceleration for all Riva chipsets
+     (donated by NVIDIA).
+
+   o Rewritten Cyrix MediaGX support (donated by Cyrix).  Warning: this is
+     reported to hang some machines! If that happens, please use the SVGA
+     server in XFree86-3.3.3.1 instead.
+
+   o Acceleration for XF68_FBDev on PPC.
+
+   o VMWare's DGA-1.1 extension. Note that the next major release of XFree86
+     will NOT include DGA-1.1 but the newly developed DGA-2.0 that contains
+     significantly more features than DGA-1.1 and will most likely not be
+     compatible with DGA-1.1
+
+   o Change xterm to use the tty default value for the backspace key.
+
+   o Japanese documentation and manpage updates.
+
+   o Updates and new hardware support (Acecad flair, Calcomp DrawingBoard)
+     for xinput extension.
+
+   o Bug fixed for cards with S3 Aurora64V+ (M65) chip, VGA output should now
+     work.
+
+7.  What's new in 3.3.3.1?
+
+   o A system clock slowdown caused by 3Dlabs driver has been fixed.
+
+   o Drawing bugs with C&T HiQV chips have been fixed.
+
+   o Drawing problems in the Cyrix driver have been fixed.
+
+   o The Matrox G100/G200 PCI versions should now be fully supported.
+
+   o The Mach64 server now supports gamma correction.
+
+   o Open Source NVIDIA driver has been provided.
+
+   o I128 Rev IV support has been added.
+
+   o Another S3V lockup has been fixed.
+
+   o A drawing bug in cfb24 has been fixed.
+
+   o A problem causing lockups with some Trident cards has been fixed.
+
+   o Updates for SCO, FreeBSD, Linux glibc OS support.
+
+   o DG/ux support has been added.
+
+   o GNU/Hurd support has been added.
+
+   o Several XINPUT problems have been addressed.
+
+   o DGA relative mouse movement events when XINPUT is defined have been
+     fixed, as have DGA-related problems with the NVIDIA and S3V drivers.
+
+   o The X server now reads Xauthority files using the real user id.
+
+   o Several small fixes to core clients.
+
+   o A bug in Xlib's handling of KOI8-R has been fixed.
+
+   o PC98 cards database, sample config file and XKB handling have been
+     fixed.
+
+8.  What's new in 3.3.3?
+
+8.1  Security fixes
+
+   o Several buffer overrun problem discovered since the release of
+     XFree86-3.3.2 have been fixed
+
+   o Sanity checks on DISPLAY variable
+
+   o Attempt to stop X connection hijacking (sticky bit for /tmp/.X11-unix)
+     Note that this is only a short-term partial solution, and it is doesn't
+     help at all for some SYSV based OSs (like Solaris 2.x).
+
+8.2  Bug fixes
+
+   o Fix a serious LBX bug using uninitialized variables.
+
+   o Fix some Xlib bugs that cause problems when using XKB in some locales
+     (like latin2), add support for iso8859-15, and include a couple of basic
+     fonts for iso8859-15
+
+   o Fix xf86config to handle more than 10 modes and to be prepared for XFCom
+     / XBF servers.
+
+   o Lots of xterm changes, see xterm.log.html in the sources.
+
+   o Fix problems with high dot clocks in high color depths on Riva128.
+
+   o Fix problem in the S3 drivers with disabled onboard S3 chips when using
+     S3 cards.
+
+   o Fix problems with Cirrus 5480 at high resolutions and jitter that
+     appeared with the 546x's using the BitBLT engine.
+
+   o Fix clock limits in some cases in Tseng driver.
+
+   o Fix some lockups with ViRGE chips.
+
+   o Improved timing calculations for video FIFO in the Mach64 X server.
+
+   o Fixed bug in font rendering code in the Mach64 X server.
+
+   o Fixed VGA font restoration bug when exiting the Mach64 X server.
+
+   o Several XF68_FBDev fixes.
+
+   o Fix wrong clock limits for S3 Trio64V+.
+
+   o Fix some generic rendering errors in cfb and vga code.
+
+   o Fix text restore problems and improve high res 32bpp modes in MGA
+     driver; fix 24bpp and 32bpp display problems; disable probing for memory
+     on some MGA chipsets; fix maximum blit size; fix sync on green for Mys-
+     tique.
+
+   o Fix problems with Xnest crashing with too many visuals.
+
+   o Fixes for 64bit architectures.
+
+   o Fix cursor bug in S3V server.
+
+   o Fixes for memory probing, max dotclock probing and DPMS display off on
+     C&T chipsets.
+
+   o Fix LCD detection for CLGD755x and the double mouse bug and the blanking
+     bug in the cirrus driver.
+
+   o Fix some problems with -quiet flag (where some variables stayed unini-
+     tialized)
+
+   o SuperProbe can detect C&T HiQV chips now, with an exception in the case
+     of No-PCI bus connected. The "-no_bios" option of SuperProbe solve this
+     situation.
+
+   o The C&T chipsets now use software cursors by default to avoid a number
+     of minor problems in certain circumstances. Hardware cursors can still
+     be used by adding the "hw_cursor" option to XF86Config.
+
+   o EGC server now works on Linux/98. XF98Setup also works with it.
+
+   o Fix VT switch problem with MGA server on Linux/98.
+
+8.3  New Features
+
+   o New driver for Cyrix MediaGX based motherboards.
+
+   o New driver for Rendition V1000 and V2x00 chipsets (not accelerated).
+
+   o New driver for Weitek P9100 based cards.
+
+   o New driver for SiS 5597/98 and SiS 6326; treat SiS 6215 and 6225 as
+     6205.
+
+   o New server for 3Dlabs based cards using GLINT 500TX and MX (with IBM
+     RAMDAC), Permedia (with IBM RAMDAC), Permedia 2 and Permedia 2v.
+
+   o Support for the Matrox G100 and G200 based cards to the MGA driver.
+
+   o Support for C&T 69000 and 32bpp on 65550 and later.
+
+   o Support for NeoMagic notebook chipsets.
+
+   o Support for EPSON SPC8110.
+
+   o Support for NVidia Riva TNT.
+
+   o Acceleration for Trident Image975, Image985, Cyber9397, Cyber9388.
+
+   o Support for the new ATI Rage Pro, VT4 and Rage IIC based cards has been
+     added.
+
+   o 24-plane TGA support.
+
+   o Config support to build XFree86 on Linux with DECnet transport.
+
+   o Support to build XFree86 for FreeBSD/ELF.
+
+   o Support for vesafb on Linux/x86.
+
+   o LynxOS 3.0 support.
+
+   o Updates to SuperProbe.
+
+   o New XInput drivers for AceCad ADVANCEDigitizer, MicroTouch TouchPen, SGI
+     dial box.
+
+   o Add local font directory.
+
+8.4  Known Problems
+
+The problems listed here are those known at the time of the release.  See the
+XFree86 FAQ for more up to date information.
+
+   o There are problems with some Cirrus laptop chipsets (75xx).  The driver
+     seems to work for some people, but not others.  Until someone with the
+     appropriate hardware can look into this, these problems are unlikely to
+     be fixed.  If you wish to work on this, please contact us.  We don't
+     need testers, we need people willing and able to fix the problems.
+
+   o There are problems with some of the Trident laptop chipsets.  The driver
+     seems to work in a limited way for some people, but not others.  Until
+     someone with the appropriate hardware can look into this, these problems
+     are unlikely to be fixed.  If you wish to work on this, please contact
+     us.  We don't need testers, we need people willing and able to fix the
+     problems.
+
+   o SuperProbe command fails to detect some newly supported chips.  Cur-
+     rently, the probing result with Xserver itself with appropriate setting
+     in XF86Config (and maybe option "-probeonly") can be more relied on than
+     the result from SuperProbe for newer chips.  If you are interested in
+     improving the design of SuperProbe's code, let's come and join as the
+     member of the XFree86 ``developer team''.
+
+9.  XFree86 and Open Source Software
+
+XFree86 public releases in general follow the Open Source Software definition
+as set forth at http://www.opensource.org/osd.html.  This definition is actu-
+ally a subset of our requirements.
+
+All code in XFree86 3.3.6 satisfies the Open Source Software definition.
+
+10.  Installing the XFree86 3.3.6 Release
+
+The XFree86 3.3.6 binaries are distributed as a full release.
+
+NOTE: the X servers are no longer installed setuid root.  If you are starting
+your X servers with startx/xinit, or something similar, you will need a copy
+of the setuid Xwrapper, and an updated xinit.  These can be found in
+Xbin.tgz.
+
+What follows is a list of the XFree86 3.3.6 components.  There may be some
+variations in this for some OSs.
+
+The following are required for all new installations, or when upgrading from
+a version older than 3.3:
+
+          preinst.sh      Pre-installation script
+          postinst.sh     Post-installation script
+          extract         XFree86 extraction utility
+          Xbin.tgz        Clients, run-time libs, and app-defaults files
+          Xdoc.tgz        Documentation
+          Xfnts.tgz       75dpi, misc and PEX fonts
+          Xlib.tgz        Data files required at run-time
+          Xman.tgz        Manual pages
+          Xset.tgz        XF86Setup utility
+          Xjset.tgz       XF86Setup utility (if you prefer the Japanese version)
+          XVG16.tgz       16 colour VGA server (XF86Setup needs this server)
+          Xcfg.tgz        sample config files for xinit, xdm
+
+The following are required when upgrading from version 3.3 or later:
+
+          preinst.sh      Pre-installation script
+          postinst.sh     Post-installation script
+          extract         XFree86 extraction utility
+          Xbin.tgz        Clients, run-time libs, and app-defaults files
+          Xdoc.tgz        Documentation
+          Xlib.tgz        Data files required at run-time
+          Xman.tgz        Manual pages
+          Xset.tgz        XF86Setup utility
+          Xjset.tgz       XF86Setup utility (if you prefer the Japanese version)
+          XVG16.tgz       16 colour VGA server (XF86Setup needs this server)
+
+While it isn't essential to update the standard fonts, this version does
+include some minor fixes to some of them, as well as the addition of two
+basic ISO 8859-15 fonts.  If you want to upgrade the standard fonts you will
+also need:
+
+          Xfnts.tgz       75dpi, misc and PEX fonts
+
+NOTE: Be very careful about installing Xcfg.tgz over an existing installation
+if you have customised your xinit and/or xdm config files.  Installing
+Xcfg.tgz will overwrite any existing files.  If you do have customised files,
+there is no need to install Xcfg.tgz.
+
+NOTE: The bitmap fonts distributed with this release are compressed using
+gzip rather than compress.  This means that you will probably want to remove
+the old versions (after backing them up).  The Xservers and font server in
+releases prior to 3.2A cannot read gzipped fonts, so keep a copy of the old
+fonts if you wish to run older servers.
+
+The following X servers are for PC/AT based hardware (i.e., typical Intel
+ix86 based PCs).  Choose at least one which matches your hardware, as well as
+the VGA16 server.  The VGA16 server is required by the new configuration
+utility (XF86Setup).  A list showing which X server is required for a range
+of video cards can be found at http://www.xfree86.org/cardlist.html.
+
+          X3DL.tgz        3Dlabs server
+          X8514.tgz       8514/A server
+          XAGX.tgz        AGX server
+          XI128.tgz       I128 server
+          XMa32.tgz       Mach 32 server
+          XMa64.tgz       Mach 64 server
+          XMa8.tgz        Mach 8 server
+          XMono.tgz       Mono server
+          XP9K.tgz        P9000 server
+          XS3.tgz         S3 server
+          XS3V.tgz        old S3 ViRGE server (please use SVGA server)
+          XSVGA.tgz       SVGA server
+          XVG16.tgz       16 colour VGA server (XF86Setup needs this server)
+          XW32.tgz        ET4000/W32, ET6000 server
+
+The following X servers are available for Alpha hardware:
+
+          XMa64.tgz       Mach 64 server
+          XMono.tgz       Mono server (generic driver only)
+          XP9K.tgz        P9000 server
+          XTGA.tgz        DEC 21030 (TGA) server
+          XS3.tgz         S3 server
+          XS3V.tgz        old S3 ViRGE server (please use SVGA server)
+          XSVGA.tgz       SVGA server (Matrox Millennium and S3 ViRGE drivers only)
+
+The following X servers are for PC98 hardware. Note that PC98 is a Japanese
+computer standard and has nothing to do with Win98, or the Intel and
+Microsoft PC98 specification. If you have a PC98 machine, choose one which
+suits your hardware.  If you don't know what a PC98 machine is, you don't
+need any of these.  These servers will not run on "normal" PCs, so don't even
+try them if you don't have a Japanese PC98 machine.  A list showing which X
+server is required for a range of PC98 video cards and computers can be found
+at http://www.xfree86.org/cardlist98.html.
+
+          X9NS3.tgz       PC98 NEC(S3) server
+          X9SPW.tgz       PC98 PCSKB-PowerWindow(S3) server
+          X9LPW.tgz       PC98 PowerWindowLB(S3) server
+          X9EGC.tgz       PC98 EGC(generic) server
+          X9GA9.tgz       PC98 GA-968V4/PCI(S3 968) server
+          X9GAN.tgz       PC98 GANB-WAP(cirrus) server
+          X9480.tgz       PC98 PEGC-480(generic) server
+          X9NKV.tgz       PC98 NKV-NEC(cirrus) server
+          X9WS.tgz        PC98 WABS(cirrus) server
+          X9WEP.tgz       PC98 WAB-EP(cirrus) server
+          X9WSN.tgz       PC98 WSN-A2F(cirrus) server
+          X9TGU.tgz       PC98 TGUI server
+          X9MGA.tgz       PC98 MGA server
+          X9SVG.tgz       PC98 CLGD755x server
+          X9set.tgz       PC98 XF98Setup utility
+
+The following are optional.
+
+          Xf100.tgz       100dpi fonts
+          Xfcyr.tgz       Cyrillic fonts
+          Xfnon.tgz       Other fonts (Chinese, Japanese, Korean, Hebrew)
+          Xfscl.tgz       Scalable fonts (Speedo and Type1)
+          Xfsrv.tgz       Font server and config files
+          Xprog.tgz       X header files, config files and compile-time libs
+          Xnest.tgz       Nested X server
+          Xvfb.tgz        Virtual framebuffer X server
+          Xprt.tgz        X Print server
+          Xps.tgz         PostScript version of the documentation
+          Xhtml.tgz       HTML version of the documentation
+          Xjdoc.tgz       Documentation in Japanese (for version 3.3.4)
+          Xjhtm.tgz       HTML version of the documentation in Japanese (3.3.4)
+          Xlkit.tgz       X server LinkKit
+          Xlk98.tgz       X server LinkKit for PC98 servers
+
+If you already have a version of XFree86 installed, MAKE A BACKUP OF
+/usr/X11R6 BEFORE DOING ANYTHING ELSE.  The standard installation procedure
+will overwrite your existing version of XFree86.
+
+If you are installing from scratch, create a directory called /usr/X11R6,
+then extract the required .tgz files.  If you don't have enough space in /usr
+for this, create a directory elsewhere and create a symbolic link to it.
+E.g., if you create a directory in /home:
+
+          mkdir /home/X11R6
+          ln -s /home/X11R6 /usr
+
+The next step is to run the pre-installation script.  This script makes some
+preliminary checks of your system.  For some OSs, it may tell you to install
+new versions of some system components before proceeding with the installa-
+tion.  This script may also remove some outdated files and symbolic links
+from a previous installation that could cause problems.
+
+For the purposes of these installation instructions, it is assumed that you
+have downloaded all the files to the /var/tmp directory.  If you've put them
+in another directory, that's fine -- just replace all occurrences of
+``/var/tmp'' with the name of that directory.
+
+To run the pre-installation script, go to /usr/X11R6 and run it:
+
+          cd /usr/X11R6
+          sh /var/tmp/preinst.sh
+
+The next step is to make the installation utility executable.  To do this,
+make sure the `extract' file is in the same directory as all the X*.tgz
+files, and run the following from that directory:
+
+          chmod 755 extract
+
+The installation utility ``extract'' is used to unpack the .tgz files that
+make up the XFree86 distribution.  The .tgz files are gzipped tar files.
+However, ``tar'' in its standard form on most OSs is not well-suited to the
+task of installing XFree86.  The extract utility is a modified version of GNU
+tar 1.12 built with the options required to make it suitable for installing
+XFree86.  The source for extract is available from the same place you got the
+XFree86 distribution.
+
+It is strongly recommended that you use the provided extract utility to
+unpack the XFree86 distribution.  If you choose to ignore this and use some-
+thing else, we don't want to hear from you if you run into problems.  It is
+also important that you do not rename the extract utility.  If renamed, it
+behaves just like the normal GNU tar.
+
+To extract the XFree86 binaries, run the following as root:
+
+          cd /usr/X11R6
+          /var/tmp/extract /var/tmp/X*.tgz
+
+Once the required .tgz files have been extracted, run the post installation
+script:
+
+          cd /usr/X11R6
+          sh /var/tmp/postinst.sh
+
+For OSs which use ldconfig, you may need to run ldconfig or reboot to com-
+plete the installation.  The postinst.sh script should run ldconfig correctly
+for you if you are using Linux, FreeBSD, NetBSD or OpenBSD.  For other OSs
+that use ldconfig, check how it normally gets run at boot time.
+
+Once the installation is complete, you should run the one of the configura-
+tion utilities (XF86Setup or xf86config) to configure the X server.  This is
+essential for a new installation but optional for an existing installation.
+Refer to the QuickStart document for configuration information.
+
+     Generated from XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/RELNOTE.sgml,v 3.59.2.81 1999/12/11 15:28:31 hohndel Exp $
+
+
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/RELNOTES,v 3.52.2.54 1999/12/31 14:10:39 robin Exp $

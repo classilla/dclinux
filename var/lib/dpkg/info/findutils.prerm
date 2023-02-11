@@ -1,0 +1,14 @@
+#! /bin/sh
+
+set -e
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/findutils ]; then
+  rm -f /usr/doc/findutils
+fi
+
+if [ "$1" = "upgrade" -o "$1" = "remove" ]; then
+    install-info --quiet --remove find
+    if command -v install-docs > /dev/null 2>&1; then
+	install-docs -r findutils || true
+    fi
+fi

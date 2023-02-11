@@ -1,0 +1,144 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>Guida dell'utente di APT - DSelect</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch2.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch4.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+<h1>
+Guida dell'utente di APT<br>
+¾Ï 3 DSelect
+</h1>
+
+<hr>
+
+<p>
+Il metodo APT di <code>dselect</code> fornisce tutte le funzionalità di APT
+all'interno dell'interfaccia grafica di selezione dei pacchetti
+<code>dselect</code>.  <code>dselect</code> viene usato per selezionare i
+pacchetti da installare o rimuovere, ed APT li installa.
+
+<p>
+Per abilitare il metodo APT dovete selezionare [A]ccess in <code>dselect</code>
+e scegliere il metodo APT; vi verrà chiesto un insieme di fonti
+(<em>Sources</em>), cioè di posti da cui scaricare gli archivi.  Tali fonti
+possono essere siti Internet remoti, mirror locali di Debian o CDROM; ciascuna
+di esse può fornire una parte dell'archivio Debian, ed APT le combinerà insieme
+in un set completo di pacchetti.  Se avete un CDROM è una buona idea indicare
+quello per primo, e poi i mirror, in modo da avere accesso alle ultime
+versioni; APT userà in questo modo automaticamente i pacchetti sul CDROM prima
+di scaricarli da Internet.
+
+<pre>
+        Set up a list of distribution source locations
+     	 
+      Please give the base URL of the debian distribution.
+      The access schemes I know about are: http file
+     	   
+      For example:
+           file:/mnt/debian,
+           ftp://ftp.debian.org/debian,
+           http://ftp.de.debian.org/debian,
+           
+           
+      URL [http://llug.sep.bnl.gov/debian]:
+</pre>
+
+<p>
+La configurazione delle fonti inizia chiedendo la base dell'archivio Debian,
+propone come default un mirror HTTP, e poi chiede la distribuzione da
+scaricare.
+
+<pre>
+      Please give the distribution tag to get or a path to the
+      package file ending in a /. The distribution
+      tags are typically something like: stable unstable frozen non-US
+        
+      Distribution [stable]:
+</pre>
+
+<p>
+La distribuzione (``distribution'') fa riferimento alla versione Debian
+dell'archivio: <em>stable</em> è l'ultima rilasciata, ed <em>unstable</em> è
+quella di sviluppo.  <em>non-US</em> è disponibile solo su alcuni mirror, e
+contiene dei pacchetti in cui viene usata della tecnologia di criptazione o
+altre cose che non possano essere esportate dagli Stati Uniti; importare questi
+pacchetti negli US è però legale.
+
+<pre>
+      Please give the components to get
+      The components are typically something like: main contrib non-free
+       
+      Components [main contrib non-free]:
+</pre>
+
+<p>
+L'elenco dei componenti (``components'') si riferisce alla lista di
+sotto-distribuzioni da scaricare.  Ciascuna distribuzione viene divisa in base
+al copyright del software: la main contiene pacchetti la cui licenza soddisfa
+le DFSG, mentre contrib e non-free contengono software che ha diverse
+restrizioni sull'uso e sulla distribuzione.
+
+<p>
+Si possono inserire un qualsiasi numero di fonti, e lo script di configurazione
+continuerà a chiedere fino a che abbiate specificato tutti gli elementi che
+volete.
+
+<p>
+Prima di cominciare ad usare <code>dselect</code> è necessario aggiornare
+l'elenco dei pacchetti disponibili selezionando [U]pdate dal menù: si tratta di
+un sovrainsieme di ciò che fa <samp>apt-get update</samp>, che rende
+l'informazione scaricata disponibile a <code>dselect</code>.  [U]pdate deve
+essere fatto anche se prima è stato dato <samp>apt-get update</samp>.
+
+<p>
+Si può a questo punto continuare selezionando i pacchetti desiderati usando
+[S]elect e poi installando con [I]nstall.  Se si usa il metodo APT, i comandi
+[C]onfig e [R]emove non hanno significato, dato che entrambe le fasi sono
+contenute in [I]nstall.
+
+<p>
+Per default APT rimuoverà automaticamente i pacchetti che sono stati installati
+con successo.  Per modificare questo comportamento, si inserisca
+<samp>Dselect::clean &quot;prompt&quot;;</samp> in /etc/apt/apt.conf.
+</p>
+
+<hr>
+
+[ <a href="ch2.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch4.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+Guida dell'utente di APT<br>
+
+<address>
+$Id: guide.it.sgml,v 1.2 2001/02/20 07:03:17 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code><br>
+Traduzione di Eugenia Franzoni <code><a href="mailto:eugenia@linuxcare.com">eugenia@linuxcare.com</a></code>
+</address>
+
+</body>
+
+</html>
+

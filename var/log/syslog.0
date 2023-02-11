@@ -1,0 +1,536 @@
+Jan  1 09:00:23 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:27 dreamcast /usr/sbin/cron[107]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:27 dreamcast /usr/sbin/cron[108]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:55 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:01:57 dreamcast /usr/sbin/cron[107]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:01:57 dreamcast /usr/sbin/cron[108]: (CRON) STARTUP (fork ok)
+Jan  1 09:21:55 dreamcast -- MARK --
+Jan  1 09:32:51 dreamcast init: Switching to runlevel: 0
+Jan  1 09:33:00 dreamcast exiting on signal 15
+Jan  1 09:00:25 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:29 dreamcast /usr/sbin/cron[107]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:29 dreamcast /usr/sbin/cron[108]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:30 dreamcast init: Re-reading inittab
+Apr  9 04:45:25 dreamcast -- MARK --
+Apr  9 05:00:24 dreamcast rpc.statd[322]: Version 0.3.1 Starting
+Apr  9 05:25:25 dreamcast -- MARK --
+Apr  9 05:26:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.3/modules.dep (No such file or directory)
+Apr  9 05:26:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.3/modules.dep (No such file or directory)
+Apr  9 05:26:09 dreamcast /usr/sbin/gpm[811]: oops() invoked from gpn.c(204)
+Apr  9 05:26:09 dreamcast /usr/sbin/gpm[811]: /var/run/gpm.pid: No such file or directory
+Apr  9 05:33:20 dreamcast init: Switching to runlevel: 0
+Apr  9 05:33:33 dreamcast exiting on signal 15
+Jan  1 09:00:28 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:29 dreamcast rpc.statd[102]: Version 0.3.1 Starting
+Jan  1 09:00:34 dreamcast /usr/sbin/cron[120]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:34 dreamcast /usr/sbin/cron[121]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:00 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:01:02 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:13 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:01:13 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:30 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:31 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:37 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:37 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:39 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:40 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:48 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:48 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:39 dreamcast -- MARK --
+Jan  1 09:40:39 dreamcast -- MARK --
+Jan  1 10:00:39 dreamcast -- MARK --
+Jan  1 10:20:39 dreamcast -- MARK --
+Jan  1 10:40:39 dreamcast -- MARK --
+Jan  1 11:00:39 dreamcast -- MARK --
+Jan  1 11:20:39 dreamcast -- MARK --
+Jan  1 09:00:57 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:01:01 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:01:41 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:01:42 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:32 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:32 dreamcast -- MARK --
+Jan  1 09:40:32 dreamcast -- MARK --
+Jan  1 10:00:32 dreamcast -- MARK --
+Jan  1 09:00:32 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:33 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:42 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:42 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:33 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:32 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:33 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:32 dreamcast -- MARK --
+Jan  1 09:40:32 dreamcast -- MARK --
+Jan  1 09:00:33 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:34 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:41 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:33 dreamcast -- MARK --
+Jan  1 09:40:33 dreamcast -- MARK --
+Jan  1 10:00:33 dreamcast -- MARK --
+Jan  1 10:20:33 dreamcast -- MARK --
+Jan  1 10:40:33 dreamcast -- MARK --
+Jan  1 11:00:33 dreamcast -- MARK --
+Jan  1 11:20:33 dreamcast -- MARK --
+Jan  1 11:40:33 dreamcast -- MARK --
+Jan  1 12:00:33 dreamcast -- MARK --
+Jan  1 12:20:33 dreamcast -- MARK --
+Jan  1 12:40:33 dreamcast -- MARK --
+Jan  1 13:00:33 dreamcast -- MARK --
+Jan  1 13:20:33 dreamcast -- MARK --
+Jan  1 13:40:33 dreamcast -- MARK --
+Jan  1 14:00:33 dreamcast -- MARK --
+Jan  1 14:20:33 dreamcast -- MARK --
+Jan  1 14:40:33 dreamcast -- MARK --
+Jan  1 15:00:33 dreamcast -- MARK --
+Jan  1 15:20:33 dreamcast -- MARK --
+Jan  1 15:40:33 dreamcast -- MARK --
+Jan  1 16:00:33 dreamcast -- MARK --
+Jan  1 16:20:33 dreamcast -- MARK --
+Jan  1 16:40:33 dreamcast -- MARK --
+Jan  1 17:00:33 dreamcast -- MARK --
+Jan  1 17:20:33 dreamcast -- MARK --
+Jan  1 17:40:33 dreamcast -- MARK --
+Jan  1 18:00:33 dreamcast -- MARK --
+Jan  1 18:20:33 dreamcast -- MARK --
+Jan  1 18:40:33 dreamcast -- MARK --
+Jan  1 19:00:33 dreamcast -- MARK --
+Jan  1 19:20:33 dreamcast -- MARK --
+Jan  1 19:40:33 dreamcast -- MARK --
+Jan  1 20:00:33 dreamcast -- MARK --
+Jan  1 20:20:33 dreamcast -- MARK --
+Jan  1 20:40:33 dreamcast -- MARK --
+Jan  1 21:00:33 dreamcast -- MARK --
+Jan  1 21:20:33 dreamcast -- MARK --
+Jan  1 21:40:33 dreamcast -- MARK --
+Jan  1 22:00:33 dreamcast -- MARK --
+Jan  1 22:20:33 dreamcast -- MARK --
+Jan  1 22:40:33 dreamcast -- MARK --
+Jan  1 23:00:33 dreamcast -- MARK --
+Jan  1 23:20:33 dreamcast -- MARK --
+Jan  1 23:40:33 dreamcast -- MARK --
+Jan  2 00:00:33 dreamcast -- MARK --
+Jan  2 00:20:33 dreamcast -- MARK --
+Jan  2 00:40:33 dreamcast -- MARK --
+Jan  2 01:00:33 dreamcast -- MARK --
+Jan  2 01:20:33 dreamcast -- MARK --
+Jan  2 01:40:33 dreamcast -- MARK --
+Jan  2 02:00:33 dreamcast -- MARK --
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:35 dreamcast -- MARK --
+Jan  1 09:40:35 dreamcast -- MARK --
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:34 dreamcast -- MARK --
+Jan  1 09:40:34 dreamcast -- MARK --
+Jan  1 10:00:34 dreamcast -- MARK --
+Jan  1 10:20:34 dreamcast -- MARK --
+Jan  1 10:40:34 dreamcast -- MARK --
+Jan  1 11:00:34 dreamcast -- MARK --
+Jan  1 11:20:34 dreamcast -- MARK --
+Jan  1 11:40:34 dreamcast -- MARK --
+Jan  1 12:00:34 dreamcast -- MARK --
+Jan  1 12:20:34 dreamcast -- MARK --
+Jan  1 12:40:34 dreamcast -- MARK --
+Jan  1 13:00:34 dreamcast -- MARK --
+Jan  1 13:20:34 dreamcast -- MARK --
+Jan  1 13:40:34 dreamcast -- MARK --
+Jan  1 14:00:34 dreamcast -- MARK --
+Jan  1 14:20:34 dreamcast -- MARK --
+Jan  1 14:40:34 dreamcast -- MARK --
+Jan  1 15:00:34 dreamcast -- MARK --
+Jan  1 15:20:34 dreamcast -- MARK --
+Jan  1 15:40:34 dreamcast -- MARK --
+Jan  1 16:00:34 dreamcast -- MARK --
+Jan  1 16:20:34 dreamcast -- MARK --
+Jan  1 16:40:34 dreamcast -- MARK --
+Jan  1 17:00:34 dreamcast -- MARK --
+Jan  1 17:20:34 dreamcast -- MARK --
+Jan  1 17:40:34 dreamcast -- MARK --
+Jan  1 18:00:34 dreamcast -- MARK --
+Jan  1 18:20:34 dreamcast -- MARK --
+Jan  1 18:40:34 dreamcast -- MARK --
+Jan  1 19:00:34 dreamcast -- MARK --
+Jan  1 19:20:34 dreamcast -- MARK --
+Jan  1 19:40:34 dreamcast -- MARK --
+Jan  1 20:00:34 dreamcast -- MARK --
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:42 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:36 dreamcast -- MARK --
+Jan  1 09:40:36 dreamcast -- MARK --
+Jan  1 10:00:36 dreamcast -- MARK --
+Jan  1 10:20:36 dreamcast -- MARK --
+Jan  1 10:40:36 dreamcast -- MARK --
+Jan  1 11:00:36 dreamcast -- MARK --
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:07 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:35 dreamcast -- MARK --
+Jan  1 09:40:35 dreamcast -- MARK --
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:19 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:41 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:41 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:20:34 dreamcast -- MARK --
+Jan  1 09:31:03 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:31:03 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:32:08 dreamcast last message repeated 2 times
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:37 dreamcast -- MARK --
+Jan  1 09:40:37 dreamcast -- MARK --
+Jan  1 10:00:37 dreamcast -- MARK --
+Jan  1 10:20:37 dreamcast -- MARK --
+Jan  1 10:40:37 dreamcast -- MARK --
+Jan  1 11:00:37 dreamcast -- MARK --
+Jan  1 11:20:37 dreamcast -- MARK --
+Jan  1 11:40:37 dreamcast -- MARK --
+Jan  1 12:00:37 dreamcast -- MARK --
+Jan  1 12:20:37 dreamcast -- MARK --
+Jan  1 12:40:37 dreamcast -- MARK --
+Jan  1 13:00:37 dreamcast -- MARK --
+Jan  1 13:20:37 dreamcast -- MARK --
+Jan  1 13:40:37 dreamcast -- MARK --
+Jan  1 14:00:37 dreamcast -- MARK --
+Jan  1 14:20:37 dreamcast -- MARK --
+Jan  1 14:40:37 dreamcast -- MARK --
+Jan  1 15:00:37 dreamcast -- MARK --
+Jan  1 15:20:37 dreamcast -- MARK --
+Jan  1 15:40:37 dreamcast -- MARK --
+Jan  1 16:00:37 dreamcast -- MARK --
+Jan  1 16:20:37 dreamcast -- MARK --
+Jan  1 16:40:37 dreamcast -- MARK --
+Jan  1 17:00:37 dreamcast -- MARK --
+Jan  1 17:20:37 dreamcast -- MARK --
+Jan  1 17:40:37 dreamcast -- MARK --
+Jan  1 18:00:37 dreamcast -- MARK --
+Jan  1 18:20:37 dreamcast -- MARK --
+Jan  1 18:40:37 dreamcast -- MARK --
+Jan  1 19:00:37 dreamcast -- MARK --
+Jan  1 19:20:37 dreamcast -- MARK --
+Jan  1 19:40:37 dreamcast -- MARK --
+Jan  1 20:00:37 dreamcast -- MARK --
+Jan  1 20:20:37 dreamcast -- MARK --
+Jan  1 20:40:37 dreamcast -- MARK --
+Jan  1 21:00:37 dreamcast -- MARK --
+Jan  1 21:20:37 dreamcast -- MARK --
+Jan  1 21:40:37 dreamcast -- MARK --
+Jan  1 22:00:37 dreamcast -- MARK --
+Jan  1 22:20:37 dreamcast -- MARK --
+Jan  1 22:40:37 dreamcast -- MARK --
+Jan  1 23:00:37 dreamcast -- MARK --
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:39 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:47 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:36 dreamcast -- MARK --
+Jan  1 09:40:36 dreamcast -- MARK --
+Jan  1 10:00:36 dreamcast -- MARK --
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:35 dreamcast -- MARK --
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:37 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:20:36 dreamcast -- MARK --
+Jan  1 09:40:36 dreamcast -- MARK --
+Jan  1 10:00:36 dreamcast -- MARK --
+Jan  1 10:20:36 dreamcast -- MARK --
+Jan  1 10:40:36 dreamcast -- MARK --
+Jan  1 11:00:36 dreamcast -- MARK --
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:03:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:08 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:03:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:20 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:38 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:37 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:49 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:03:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:06:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:06:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:37 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:45 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:09 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:39 dreamcast last message repeated 3 times
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:55 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:55 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:48 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:48 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:20:34 dreamcast -- MARK --
+Jan  1 09:00:36 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:38 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:46 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:03:23 dreamcast last message repeated 2 times
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:16 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:14 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:02 dreamcast last message repeated 2 times
+Jan  1 09:02:29 dreamcast last message repeated 3 times
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:32 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:22 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:59 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:59 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:04:17 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:04:17 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:08:35 dreamcast in.telnetd[154]: connect from aragorn.ta.keshi.org
+Jan  1 09:08:36 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:09:25 dreamcast in.telnetd[157]: connect from aragorn.ta.keshi.org
+Jan  1 09:09:26 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:49 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:03:51 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:01:15 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:01:15 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:20:35 dreamcast -- MARK --
+Jan  1 09:23:42 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:23:43 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:26:28 dreamcast in.telnetd[145]: connect from aragorn.ta.keshi.org
+Jan  1 09:26:28 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:02 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:42 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:42 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:02:52 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:02:52 dreamcast modprobe: modprobe: Can't open dependencies file /lib/modules/2.4.5-pre2/modules.dep (No such file or directory)
+Jan  1 09:20:34 dreamcast -- MARK --
+Jan  1 09:40:34 dreamcast -- MARK --
+Jan  1 10:00:34 dreamcast -- MARK --
+Jan  1 09:00:35 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:36 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:44 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+Jan  1 09:00:34 dreamcast syslogd 1.4.1#1: restart.
+Jan  1 09:00:35 dreamcast rpc.statd[106]: Version 0.3.1 Starting
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[124]: (CRON) INFO (pidfile fd = 3)
+Jan  1 09:00:43 dreamcast /usr/sbin/cron[125]: (CRON) STARTUP (fork ok)
+May 21 05:18:06 dreamcast init: Re-reading inittab
+May 21 05:30:31 dreamcast -- MARK --
+May 21 05:45:33 dreamcast /usr/sbin/cron[807]: (CRON) INFO (pidfile fd = 3)
+May 21 05:45:33 dreamcast /usr/sbin/cron[808]: (CRON) STARTUP (fork ok)
+May 21 05:45:34 dreamcast /usr/sbin/cron[808]: (CRON) INFO (Skipping @reboot jobs -- not system startup)
+May 21 06:10:31 dreamcast -- MARK --
+May 21 06:25:02 dreamcast /USR/SBIN/CRON[1343]: (root) CMD (test -e /usr/sbin/anacron || run-parts --report /etc/cron.daily)

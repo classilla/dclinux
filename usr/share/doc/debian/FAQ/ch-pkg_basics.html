@@ -1,0 +1,741 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - Basics of the Debian Package Management System</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-ftparchives.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-pkgtools.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 6 Basics of the Debian Package Management System
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-package">6.1 What is a Debian package?</a>
+</h2>
+
+<p>
+Packages generally contain all of the files necessary to implement a set of
+related commands or features.  There are two types of Debian packages:
+
+<ul>
+
+<p>
+<li>
+<em>Binary packages</em>, which contain executables, configuration files,
+man/info pages, copyright information, and other documentation.  These packages
+are distributed in a Debian-specific archive format (see <a
+href="ch-pkg_basics.html#s-deb-format">What is the format of a Debian binary
+package?, Section 6.2</a>); they are usually distinguished by having a '.deb'
+file extension.  Binary packages can be unpacked using the Debian utility
+<samp>dpkg</samp>; details are given in its manual page.
+</li>
+
+<p>
+<li>
+<em>Source packages</em>, which consist of a <samp>.dsc</samp> file describing
+the source package (including the names of the following files), a
+<samp>.orig.tar.gz</samp> file that contains the original unmodified source in
+gzip-compressed tar format and usually a <samp>.diff.gz</samp> file that
+contains the Debian-specific changes to the original source.  The utility
+<samp>dpkg-source</samp> packs and unpacks Debian source archives; details are
+provided in its manual page.
+</li>
+
+</ul>
+
+<p>
+Installation of software by the package system uses &quot;dependencies&quot;
+which are carefully designed by the package maintainers.  These dependencies
+are documented in the <samp>control</samp> file associated with each package.
+For example, the package containing the GNU C compiler (<code>gcc</code>)
+&quot;depends&quot; on the package <code>binutils</code> which includes the
+linker and assembler.  If a user attempts to install <code>gcc</code> without
+having first installed <code>binutils</code>, the package management system
+(dpkg) will send an error message that it also needs <code>binutils</code>, and
+stop installing <code>gcc</code>.  (However, this facility can be overridden by
+the insistent user, see <code>dpkg(8)</code>.) See more in <a
+href="ch-pkg_basics.html#s-depends">What is meant by saying that a package
+Depends/Recommends/Suggests/Conflicts/Replaces/Provides another package?,
+Section 6.9</a> below.
+
+<p>
+Debian's packaging tools can be used to:
+
+<ul>
+
+<p>
+<li>
+manipulate and manage packages or parts of packages,
+</li>
+
+<p>
+<li>
+aid the user in the break-up of packages that must be transmitted through a
+limited-size medium such as floppy disks,
+</li>
+
+<p>
+<li>
+aid developers in the construction of package archives, and
+</li>
+
+<p>
+<li>
+aid users in the installation of packages which reside on a remote FTP site.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-deb-format">6.2 What is the format of a Debian binary package?</a>
+</h2>
+
+<p>
+A Debian &quot;package&quot;, or a Debian archive file, contains the executable
+files, libraries, and documentation associated with a particular suite of
+program or set of related programs.  Normally, a Debian archive file has a
+filename that ends in <samp>.deb</samp>.
+
+<p>
+The internals of this Debian binary packages format are described in the
+<code>deb(5)</code> manual page.  This internal format is subject to change
+(between major releases of Debian GNU/Linux), therefore please always use
+<code>dpkg-deb(8)</code> for manipulating <samp>.deb</samp> files.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-pkgname">6.3 Why are Debian package file names so long?</a>
+</h2>
+
+<p>
+The Debian binary package file names conform to the following convention:
+&lt;foo&gt;_&lt;VersionNumber&gt;-&lt;DebianRevisionNumber&gt;.deb
+
+<p>
+Note that <samp>foo</samp> is supposed to be the package name.  As a check, one
+can learn the package name associated with a particular Debian archive file
+(.deb file) in one of these ways:
+
+<ul>
+
+<p>
+<li>
+inspect the &quot;Packages&quot; file in the directory where it was stored at a
+Debian FTP archive site.  This file contains a stanza describing each package;
+the first field in each stanza is the formal package name.
+</li>
+
+<p>
+<li>
+use the command <samp>dpkg --info foo_VVV-RRR.deb</samp> (where VVV and RRR are
+the version and revision of the package in question, respectively).  This
+displays, among other things, the package name corresponding to the archive
+file being unpacked.
+</li>
+
+</ul>
+
+<p>
+The <samp>VVV</samp> component is the version number specified by the upstream
+developer.  There are no standards in place here, so the version number may
+have formats as different as &quot;19990513&quot; and &quot;1.3.8pre1&quot;.
+
+<p>
+The <samp>RRR</samp> component is the Debian revision number, and is specified
+by the Debian developer (or an individual user if he chooses to build the
+package himself).  This number corresponds to the revision level of the Debian
+package, thus, a new revision level usually signifies changes in the Debian
+Makefile (<samp>debian/rules</samp>), the Debian control file
+(<samp>debian/control</samp>), the installation or removal scripts
+(<samp>debian/p*</samp>), or in the configuration files used with the package.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-controlfile">6.4 What is a Debian control file?</a>
+</h2>
+
+<p>
+Specifics regarding the contents of a Debian control file are provided in the
+Debian Packaging manual, chapter 4, see <a
+href="ch-support.html#s-debiandocs">What other documentation exists on and for
+a Debian system?, Section 11.1</a>.
+
+<p>
+Briefly, a sample control file is shown below for the Debian package hello:
+
+<pre>
+     Package: hello
+     Priority: optional
+     Section: devel
+     Installed-Size: 45
+     Maintainer: Adam Heath &lt;doogie@debian.org&gt;
+     Architecture: i386
+     Version: 1.3-16
+     Depends: libc6 (&gt;= 2.1)
+     Description: The classic greeting, and a good example
+      The GNU hello program produces a familiar, friendly greeting.  It
+      allows nonprogrammers to use a classic computer science tool which
+      would otherwise be unavailable to them.
+      .
+      Seriously, though: this is an example of how to do a Debian package.
+      It is the Debian version of the GNU Project's `hello world' program
+      (which is itself an example for the GNU Project).
+</pre>
+
+<p>
+The Package field gives the package name.  This is the name by which the
+package can be manipulated by the package tools, and usually similar to but not
+necessarily the same as the first component string in the Debian archive file
+name.
+
+<p>
+The Version field gives both the upstream developer's version number and (in
+the last component) the revision level of the Debian package of this program as
+explained in <a href="ch-pkg_basics.html#s-pkgname">Why are Debian package file
+names so long?, Section 6.3</a>.
+
+<p>
+The Architecture field specifies the chip for which this particular binary was
+compiled.
+
+<p>
+The Depends field gives a list of packages that have to be installed in order
+to install this package successfully.
+
+<p>
+The Installed-Size indicates how much disk space the installed package will
+consume.  This is intended to be used by installation front-ends in order to
+show whether there is enough disk space available to install the program .
+
+<p>
+The Section line gives the &quot;section&quot; where this Debian package is
+stored at the Debian FTP sites.  This is the name of a subdirectory (within one
+of the main directories, see <a href="ch-ftparchives.html#s-dirtree">What are
+all those directories at the Debian FTP archives?, Section 5.1</a>) where the
+package is stored.
+
+<p>
+The Priority indicates how important is this package for installation, so that
+semi-intelligent software like dselect or console-apt can sort the package into
+a category of e.g.  packages optionally installed.  See <a
+href="ch-pkg_basics.html#s-priority">What is a
+Required/Important/Standard/Optional/Extra package?, Section 6.7</a>.
+
+<p>
+The Maintainer field gives the e-mail address of the person who is currently
+responsible for maintaining this package.
+
+<p>
+The Description field gives a brief summary of the package's features.
+
+<p>
+For more information about all possible fields a package can have, please see
+the Debian Packaging Manual, section 4., &quot;Control files and their
+fields&quot;.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-conffile">6.5 What is a Debian conffile?</a>
+</h2>
+
+<p>
+Conffiles is a list of configuration files (usually placed in
+<samp>/etc</samp>) that the package management system will not overwrite when
+the package is upgraded.  This ensures that local values for the contents of
+these files will be preserved, and is a critical feature enabling the in-place
+upgrade of packages on a running system.
+
+<p>
+To determine exactly which files are preserved during an upgrade, run:
+
+<pre>
+     dpkg --status package
+</pre>
+
+<p>
+And look under &quot;Conffiles:&quot;.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-maintscripts">6.6 What is a Debian preinst, postinst, prerm, and postrm script?</a>
+</h2>
+
+<p>
+These files are executable scripts which are automatically run before or after
+a package is installed.  Along with a file named <samp>control</samp>, all of
+these files are part of the &quot;control&quot; section of a Debian archive
+file.
+
+<p>
+The individual files are:
+
+<dl>
+
+<p>
+<dt>preinst</dt>
+<dd>
+This script executes before that package will be unpacked from its Debian
+archive (&quot;.deb&quot;) file.  Many 'preinst' scripts stop services for
+packages which are being upgraded until their installation or upgrade is
+completed (following the successful execution of the 'postinst' script).
+</dd>
+
+<p>
+<dt>postinst</dt>
+<dd>
+This script typically completes any required configuration of the package
+<samp>foo</samp> once <samp>foo</samp> has been unpacked from its Debian
+archive (&quot;.deb&quot;) file.  Often, 'postinst' scripts ask the user for
+input, and/or warn the user that if he accepts default values, he should
+remember to go back and re-configure that package as the situation warrants.
+Many 'postinst' scripts then execute any commands necessary to start or restart
+a service once a new package has been installed or upgraded.
+</dd>
+
+<p>
+<dt>prerm</dt>
+<dd>
+This script typically stops any daemons which are associated with a package.
+It is executed before the removal of files associated with the package.
+</dd>
+
+<p>
+<dt>postrm</dt>
+<dd>
+This script typically modifies links or other files associated with
+<samp>foo</samp>, and/or removes files created by the package.  (Also see <a
+href="ch-pkg_basics.html#s-virtual">What is a Virtual Package?, Section
+6.8</a>.)
+</dd>
+
+</dl>
+
+<p>
+Currently all of the control files can be found in directory
+<samp>/var/lib/dpkg/info</samp>.  The files relevant to package
+<samp>foo</samp> begin with the name &quot;foo&quot; and have file extensions
+of &quot;preinst&quot;, &quot;postinst&quot;, etc., as appropriate.  The file
+<samp>foo.list</samp> in that directory lists all of the files that were
+installed with the package <samp>foo</samp>.  (Note that the location of these
+files is a dpkg internal; you should not rely on it.)
+</p>
+
+<hr>
+
+<h2>
+<a name="s-priority">6.7 What is a Required/Important/Standard/Optional/Extra package?</a>
+</h2>
+
+<p>
+Each Debian package is assigned a <em>priority</em> by the distribution
+maintainers, as an aid to the package management system.  The priorities are:
+
+<ul>
+
+<p>
+<li>
+<strong>Required</strong>: packages that are necessary for the proper
+functioning of the system.
+
+<p>
+This includes all tools that are necessary to repair system defects.  You must
+not remove these packages or your system may become totally broken and you may
+probably not even be able to use dpkg to put things back.  Systems with only
+the Required packages are probably unusable, but they do have enough
+functionality to allow the sysadmin to boot and install more software.
+</li>
+
+<p>
+<li>
+<strong>Important</strong> packages should be found on any Unix-like system.
+
+<p>
+Other packages which the system will not run well or be usable without will be
+here.  This does <em>NOT</em> include Emacs or X11 or TeX or any other large
+applications.  These packages only constitute the bare infrastructure.
+</li>
+
+<p>
+<li>
+<strong>Standard</strong> packages are standard on any Linux system, including
+a reasonably small but not too limited character-mode system.
+
+<p>
+This is what will install by default if users do not select anything else.  It
+does not include many large applications, but it does include Emacs (this is
+more of a piece of infrastructure than an application) and a reasonable subset
+of TeX and LaTeX (if this turns out to be possible without X).
+</li>
+
+<p>
+<li>
+<strong>Optional</strong> packages include all those that you might reasonably
+want to install if you did not know what it was, or do not have specialized
+requirements.
+
+<p>
+This includes X11, a full TeX distribution, and lots of applications.
+</li>
+
+<p>
+<li>
+<strong>Extra</strong>: packages that either conflict with others with higher
+priorities, are only likely to be useful if you already know what they are, or
+have specialized requirements that make them unsuitable for
+&quot;Optional&quot;.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-virtual">6.8 What is a Virtual Package?</a>
+</h2>
+
+<p>
+A virtual package is a generic name that applies to any one of a group of
+packages, all of which provide similar basic functionality.  For example, both
+the <samp>tin</samp> and <samp>trn</samp> programs are news readers, and should
+therefore satisfy any dependency of a program that required a news reader on a
+system, in order to work or to be useful.  They are therefore both said to
+provide the &quot;virtual package&quot; called <samp>news-reader</samp>.
+
+<p>
+Similarly, <samp>smail</samp> and <samp>sendmail</samp> both provide the
+functionality of a mail transport agent.  They are therefore said to provide
+the virtual package, &quot;mail transport agent&quot;.  If either one is
+installed, then any program depending on the installation of a
+<samp>mail-transport-agent</samp> will be satisfied by the existence of this
+virtual package.
+
+<p>
+Debian provides a mechanism so that, if more than one package which provide the
+same virtual package is installed on a system, then system administrators can
+set one as the preferred package.  The relevant command is
+<samp>update-alternatives</samp>, and is described further in <a
+href="ch-customizing.html#s-diverse">Some users like mawk, others like gawk;
+some like vim, others like elvis; some like trn, others like tin; how does
+Debian support diversity?, Section 10.10</a>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-depends">6.9 What is meant by saying that a package Depends/Recommends/Suggests/Conflicts/Replaces/Provides another package?</a>
+</h2>
+
+<p>
+The Debian package system has a range of package &quot;dependencies&quot; which
+are designed to indicate (in a single flag) the level at which Program A can
+operate independently of the existence of Program B on a given system:
+
+<ul>
+
+<p>
+<li>
+Package A <em>depends</em> on Package B if B absolutely must be installed in
+order to run A.  In some cases, A depends not only on B, but on a version of B.
+In this case, the version dependency is usually a lower limit, in the sense
+that A depends on any version of B more recent than some specified version.
+</li>
+
+<p>
+<li>
+Package A <em>recommends</em> Package B, if the package maintainer judges that
+most users would not want A without also having the functionality provided by
+B.
+</li>
+
+<p>
+<li>
+Package A <em>suggests</em> Package B if B contains files that are related to
+(and usually enhance) the functionality of A.
+</li>
+
+<p>
+<li>
+Package A <em>conflicts</em> with Package B when A will not operate if B is
+installed on the system.  Most often, conflicts are cases where A contains
+files which are an improvement over those in B.  &quot;Conflicts&quot; are
+often combined with &quot;replaces&quot;.
+</li>
+
+<p>
+<li>
+Package A <em>replaces</em> Package B when files installed by B are removed and
+(in some cases) over-written by files in A.
+</li>
+
+<p>
+<li>
+Package A <em>provides</em> Package B when all of the files and functionality
+of B are incorporated into A.  This mechanism provides a way for users with
+constrained disk space to get only that part of package A which they really
+need.
+</li>
+
+</ul>
+
+<p>
+More detailed information on the use of each these terms can be found in the
+Packaging manual and the Policy manual.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-pre-depends">6.10 What is meant by Pre-Depends?</a>
+</h2>
+
+<p>
+&quot;Pre-Depends&quot; is a special dependency.  In the case of most packages,
+<samp>dpkg</samp> will unpack its archive file (i.e., its <samp>.deb</samp>
+file) independently of whether or not the files on which it depends exist on
+the system.  Simplistically, unpacking means that <samp>dpkg</samp> will
+extract the files from the archive file that were meant to be installed on your
+filesystem, and put them in place.  If those packages <em>depend</em> on the
+existence of some other packages on your system, <samp>dpkg</samp> will refuse
+to complete the installation (by executing its &quot;configure&quot; action)
+until the other packages are installed.
+
+<p>
+However, for some packages, <samp>dpkg</samp> will refuse even to unpack them
+until certain dependencies are resolved.  Such packages are said to
+&quot;Pre-depend&quot; on the presence of some other packages.  The Debian
+project provided this mechanism to support the safe upgrading of systems from
+<samp>a.out</samp> format to <samp>ELF</samp> format, where the <em>order</em>
+in which packages were unpacked was critical.  There are other large upgrade
+situations where this method is useful, e.g.  the packages with the required
+priority and their LibC dependency.
+
+<p>
+As before, more detailed information about this can be found in the Packaging
+manual.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-pkgstatus">6.11 What is meant by unknown/install/remove/purge/hold in the package status?</a>
+</h2>
+
+<p>
+These &quot;want&quot; flags tell what the user wanted to do with a package (as
+indicated either by the user's actions in the &quot;Select&quot; section of
+<samp>dselect</samp>, or by the user's direct invocations of
+<samp>dpkg</samp>).
+
+<p>
+Their meanings are:
+
+<ul>
+
+<p>
+<li>
+unknown - the user has never indicated whether he wants the package
+</li>
+
+<p>
+<li>
+install - the user wants the package installed or upgraded
+</li>
+
+<p>
+<li>
+remove - the user wants the package removed, but does not want to remove any
+existing configuration files.
+</li>
+
+<p>
+<li>
+purge - the user wants the package to be removed completely, including its
+configuration files.
+</li>
+
+<p>
+<li>
+hold - the user wants this package not to be processed, i.e., he wants to keep
+the current version with the current status whatever that is.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-puttingonhold">6.12 How do I put a package on hold?</a>
+</h2>
+
+<p>
+There are two ways of holding back packages, with dpkg, or with dselect.
+
+<p>
+With dpkg, you just have to export the list of package selections, with:
+
+<pre>
+     dpkg --get-selections &gt; selections.txt
+</pre>
+
+<p>
+Then edit the resulting file <code>selections.txt</code>, change the line
+containing the package you wish to hold, e.g.  <code>libc6</code>, from this:
+
+<pre>
+     libc6                                           install
+</pre>
+
+<p>
+to this:
+
+<pre>
+     libc6                                           hold
+</pre>
+
+<p>
+Save the file, and reload it into dpkg database with:
+
+<pre>
+     dpkg --set-selections &lt; selections.txt
+</pre>
+
+<p>
+With dselect, you just have to enter the [S]elect screen, find the package you
+wish to hold in its present state, and press the `=' key (or `H').  The changes
+will go live immediately after you exit the [S]elect screen.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-sourcepkgs">6.13 How do I install a source package?</a>
+</h2>
+
+<p>
+Debian source packages can't actually be &quot;installed&quot;, they are just
+unpacked in whatever directory you want to build the binary packages they
+produce.  Source packages are distributed in a directory called
+<samp>source</samp>, and you can either download them manually, or use
+
+<pre>
+     apt-get source foo
+</pre>
+
+<p>
+to fetch them (see <code>apt-get(8)</code> manual page on how to setup APT for
+doing that).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-sourcebuild">6.14 How do I build binary packages from a source package?</a>
+</h2>
+
+<p>
+You will need all of foo_*.dsc, foo_*.tar.gz and foo_*.diff.gz to compile the
+source (note: there is no .diff.gz for a Debian native package).
+
+<p>
+Once you have them, if you have the <code>dpkg-dev</code> package installed,
+the following command:
+
+<pre>
+     dpkg-source -x foo_version-revision.dsc
+</pre>
+
+<p>
+will extract the package into a directory called <samp>foo-version</samp>.
+
+<p>
+If you want just to compile the package, you may cd into
+<samp>foo-version</samp> directory and issue the command
+
+<pre>
+     debian/rules build
+</pre>
+
+<p>
+to build the program, then
+
+<pre>
+     debian/rules binary
+</pre>
+
+<p>
+as root, to build the package, and then
+
+<pre>
+     dpkg -i ../foo_version-revision_arch.deb
+</pre>
+
+<p>
+to install the newly-built package.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-creatingdebs">6.15 How do I create Debian packages myself?</a>
+</h2>
+
+<p>
+For more detailed description on this, read the New Maintainers' Guide,
+available in the <code>maint-guide</code> package, or at <code><a
+href="ftp://ftp.debian.org/debian/doc/package-developer/maint-guide.html.tar.gz">ftp://ftp.debian.org/debian/doc/package-developer/maint-guide.html.tar.gz</a></code>.
+</p>
+
+<hr>
+
+[ <a href="ch-ftparchives.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-pkgtools.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

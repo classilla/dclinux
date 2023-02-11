@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+package=libpcre3
+
+case "$1" in
+        remove|upgrade|remove-in-favour|deconfigure-in-favour)
+
+                # Remove /usr/doc symlink
+                if [ -L /usr/doc/$package ]; then
+                    rm -f /usr/doc/$package
+                fi
+                ;;
+
+        failed-upgrade)
+                ;;
+esac

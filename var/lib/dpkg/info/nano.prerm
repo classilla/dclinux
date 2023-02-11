@@ -1,0 +1,17 @@
+#!/bin/sh
+# prerm script for nano
+# Taken from nvi sources
+set -e
+
+if [ "$1" != "upgrade" ]; then
+  update-alternatives --remove editor /usr/bin/nano
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nano ]; then
+	rm -f /usr/doc/nano
+fi
+# End automatically added section
+
+
+exit 0

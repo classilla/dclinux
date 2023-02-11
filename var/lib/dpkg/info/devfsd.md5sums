@@ -1,0 +1,7 @@
+40519c39b1da64563a05416fabbadf96  etc/modutils/devfsd
+1bd220028ade9a2567b203e11ca19b9e  sbin/devfsd
+67368e83e5b35084574fc4beb4da63a1  usr/sbin/update-devfsd
+1ea06312d7acfdaeb679b22f06e45f71  usr/share/man/man8/devfsd.8.gz
+c120f2c07be929f7f93106aa1f0d072f  usr/share/doc/devfsd/README.Debian
+c09a8ae2b41ec2da4e303f2d1e525a44  usr/share/doc/devfsd/copyright
+ca0627f4cd98178e6fd1d335ab99ea0a  usr/share/doc/devfsd/changelog.Debian.gz

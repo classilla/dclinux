@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/finger -a -d /usr/share/doc/finger ]; then
+		ln -sf ../share/doc/finger /usr/doc/finger
+	fi
+fi
+# End automatically added section

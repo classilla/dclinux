@@ -1,0 +1,44 @@
+#! /bin/sh
+#
+# This file was automatically customized by debmake on Thu, 20 Feb 1997 17:33:12 +0100
+#
+# Written by Miquel van Smoorenburg <miquels@drinkel.ow.org>.
+# Modified for Debian GNU/Linux by Ian Murdock <imurdock@gnu.ai.mit.edu>.
+# Modified for Debian by Christoph Lameter <clameter@debian.org>.
+# Modified for Debian GNU/Linux by Martin Schulze <joey@infodrom.north.de>.
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+DAEMON=/usr/sbin/atd
+PIDFILE=/var/run/atd.pid
+
+# Arguments to atd
+#
+ARGS=""
+
+test -x $DAEMON || exit 0
+
+case "$1" in
+  start)
+    echo -n "Starting deferred execution scheduler: atd"
+    start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- $ARGS
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping deferred execution scheduler: atd"
+    start-stop-daemon --stop --quiet --pidfile $PIDFILE --exec $DAEMON
+    echo "."
+    ;;
+  reload)
+    echo "Not implemented."
+    ;;
+  force-reload|restart)
+    sh $0 stop
+    sh $0 start
+    ;;
+  *)
+    echo "Usage: /etc/init.d/atd {start|stop|restart|force-reload|reload}"
+    exit 1
+    ;;
+esac
+
+exit 0

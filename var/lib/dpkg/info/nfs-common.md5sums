@@ -1,0 +1,10 @@
+19ceaeabf9e14b349f75cda406a829ae  sbin/rpc.lockd
+e8ecde7b8c902b9a01b014ff1883e81c  sbin/rpc.statd
+c2eafdd9c6790feea0b76c8409c464b7  sbin/showmount
+99fd9a1c7c0cdd483334d003ec98e700  usr/sbin/nfsstat
+96a10baec0c7c8dc8fda5eaa395c0ff3  usr/share/man/man8/showmount.8.gz
+489d4c4f131cf366e8ad75611a6d83d7  usr/share/man/man8/lockd.8.gz
+0fd42a39074fa93d22ac88366195d33d  usr/share/man/man8/statd.8.gz
+fbcfdd85a0dc9ad5c479c487f92d9d14  usr/share/man/man8/nfsstat.8.gz
+0feb2b876ed6fae0e092cd61cdd7cf7c  usr/share/doc/nfs-common/copyright
+35691d56a5e476c44b1afb77829af659  usr/share/doc/nfs-common/changelog.Debian.gz

@@ -1,0 +1,105 @@
+                       Information for Rendition Users
+
+  The XFree86 Project Inc. Last updates by Dejan Ilic <dejan.ilic@home.se>
+
+                                1 August 1999
+
+1.  Supported hardware
+
+All cards based on the V1000 or the V2x00 should be supported. The server was
+tested on a miroCRYSTAL VRX (V1000), Intergraph Intense-100 3D (V1000), Dia-
+mond Stealth II S220 (V2100), Hercules Thriller3D (V2200) and Innovision War-
+rior3D (V2200).
+
+2.  Important notices
+
+V1000 cards can only work as primary display card due to hardware limita-
+tions.
+
+Some V1000-based videocards are known to lock up the computer if you have
+write-combine activated. Disabling it removes the problem. Look for settings
+in the motherboards BIOS and disable ALL settings that has to do with write-
+combine (usualy called USWC or just WC for short).
+
+The "chipset" option is now implemented and honored when used. Unfortunatly
+some legacy-code in the driver is preventing it from working with any cards
+but the primary display card.
+
+If you have problems with hardware cursor use the "sw_cursor" option to
+revert back to software cursor.
+
+3.  Features
+
+   o Unaccelerated
+
+   o Hardware cursor
+
+   o Supported color depths
+
+        o 8 bits per pixel (256 pseudo colour)
+
+        o 15 bits per pixel (16-bits with RGB-weight 555, 32768 colors, V1000
+          cards only)
+
+        o 16 bits per pixel (high colour, RGB-weight 565, 65536 colors)
+
+        o 32 bits per pixel (true colour, sparse 24bit, 16M colors)
+
+4.  XF86Config options recognized and used by Rendition driver
+
+      Option "sw_cursor"
+            Disables use of the hardware cursor.
+
+      Option "overclock_mem"
+            Run the memory at a higher clock. Useful on some cards with dis-
+            play glitches at higher resolutions. But adds the risk to damage
+            the hardware. Use with caution.
+
+      DacSpeed "MHz"
+            Set custom ramdac limit. We have currently no way of knowing if
+            the v2x00 chip is a v2100 (170MHz) or v2200 (203MHz and 230MHz)
+            so we assume the lowest. Use this option to manualy override the
+            value.
+
+5.  News in this release
+
+   o XFree 3.3.x Rendition driver development discontinued in favour of XFree
+     4.0 driver.
+
+6.  Known problems in current driver
+
+   o Displays with depth 15 ("-bpp 15" or "-bpp 16 -weight 555") are NOT sup-
+     ported on V2x00 cards. This is a hardware-"limitation" and has been con-
+     firmed by Rendition. The driver lets you display the mode but you will
+     get a reddish display as the card is actualy in 565-weight while X
+     thinks it should display weight 555.
+
+   o Switching from display to VC and back to display can lock up V2x00
+     cards.
+
+   o When scrolling the virtual display on a V1000 card parts of the screen
+     will become distorted. Problem dissapears when you continue moving
+     around. V2x00 does not exhibit this problem. Probably a bug in the
+     driver rather than a limitation of the chip.
+
+   o Option "chipset" is honored. Unfortunatly the driver still has problems
+     and will only work if the rendition card is the primary display card in
+     the system.
+
+   o Switching to VC does not restore correct textmode. Instead it defaults
+     to 80x25.
+
+   o A horizontal distortion around the hardware cursor can be seen on cer-
+     tain modes. It can be fixed by turning off hardware cursor or by lower-
+     ing the required bandwith of the mode.
+
+7.  Work in progress
+
+   o  All future development, including acceleration, has been redirected to
+     development of XFree 4.0 driver. No more improvments of XFree 3.3.x
+     driver is planned for the moment.
+
+     Generated from XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/rendition.sgml,v 1.1.2.12 1999/10/13 21:46:27 hohndel Exp $
+
+
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/README.rendition,v 1.1.2.10 1999/10/13 21:48:11 hohndel Exp $

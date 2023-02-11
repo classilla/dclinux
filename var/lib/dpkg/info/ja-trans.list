@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/share
+/usr/share/locale
+/usr/share/locale/ja
+/usr/share/locale/ja/LC_MESSAGES
+/usr/share/locale/ja/LC_MESSAGES/net-tools.mo
+/usr/share/locale/ja/LC_MESSAGES/texinfo.mo
+/usr/share/locale/ja/LC_MESSAGES/textutils.mo
+/usr/share/doc
+/usr/share/doc/ja-trans
+/usr/share/doc/ja-trans/README.Debian
+/usr/share/doc/ja-trans/copyright
+/usr/share/doc/ja-trans/changelog.Debian.gz

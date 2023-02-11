@@ -1,0 +1,11 @@
+This is a Debian prepackaged version of the Term::Slang library.
+
+This package was put together by Joey Hess <joeyh@debian.org>, using
+sources from CPAN, http://cpan.org/authors/id/D/DA/DANIEL/
+
+Term::Slang is copyright by Daniel <daniel-cpan-slang@electricrain.com>,
+and has the following copyright notice:
+
+  This program is free software; you can redistribute it and/or
+  modify it under the same terms as Perl itself.
+

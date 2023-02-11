@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/console-tools-dev -a -d /usr/share/doc/console-tools-dev ]; then
+		ln -sf ../share/doc/console-tools-dev /usr/doc/console-tools-dev
+	fi
+fi
+# End automatically added section

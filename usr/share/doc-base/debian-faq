@@ -1,0 +1,16 @@
+Document: debian-faq
+Title: Debian FAQ
+Author: Susan G. Kleinmann, Sven Rudolph
+Abstract: This document answers questions frequently asked about Debian
+ GNU/Linux.
+Section: Debian
+
+Format: HTML
+Index: /usr/share/doc/debian/FAQ/index.html
+Files: /usr/share/doc/debian/FAQ/*.html
+
+Format: text
+Files: /usr/share/doc/debian/FAQ/debian-faq.txt.gz
+
+Format: PostScript
+Files: /usr/share/doc/debian/FAQ/debian-faq.ps.gz

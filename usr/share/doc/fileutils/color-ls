@@ -1,0 +1,29 @@
+Colorized `ls' for Debian (GNU) Linux.
+Last revised by Erick Branderhorst, August 2, 1996 (fileutils 3.13).
+Last revised by Syrus Nemat-Nasser, March 29, 1996.
+
+The Debian color-ls package is obsolete since the release of GNU
+fileutils version 3.13 which includes colorized `ls', `dir', `vdir'
+and `dircolors'.
+
+Options for colorized `ls' are described in the on-line help (`ls
+--help') and the fileutils info pages.  Color support can be activated
+by typing `ls --color'.  Man pages exist but aren't kept up to date.
+
+Dirk.Eddelbuettel@qed.econ.queensu.ca suggested that the following
+could be included in /etc/profile (I modified it a little):
+
+--
+eval `dircolors`
+alias ls='ls --color=auto ';
+alias ll='ls -l';
+alias dir='ls --color=auto --format=vertical';
+alias vdir='ls --color=auto --format=long';
+alias ols='/bin/ls';
+--
+
+The documentation for color-ls will improve with time and in response
+to user feedback.  Please consider this the Alpha version of this
+document.
+
+

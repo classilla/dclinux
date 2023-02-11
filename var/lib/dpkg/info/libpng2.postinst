@@ -1,0 +1,16 @@
+#!/bin/sh
+set -e
+
+# Cache library
+if [ "$1" = "configure" ]
+then
+    ldconfig
+fi
+
+# FSSTD -> FHS
+pkg=libpng2
+if [ "$1" = "configure" ]; then
+ if [ -d /usr/doc -a ! -e /usr/doc/$pkg -a -d /usr/share/doc/$pkg ]; then
+  ln -sf ../share/doc/$pkg /usr/doc/$pkg
+ fi
+fi

@@ -1,0 +1,15 @@
+/.
+/lib
+/lib/libslang.so.1.4.4
+/usr
+/usr/lib
+/usr/share
+/usr/share/doc
+/usr/share/doc/slang1
+/usr/share/doc/slang1/NEWS
+/usr/share/doc/slang1/README
+/usr/share/doc/slang1/changelog.gz
+/usr/share/doc/slang1/copyright
+/usr/share/doc/slang1/UPGRADE.txt.gz
+/usr/share/doc/slang1/changelog.Debian.gz
+/lib/libslang.so.1

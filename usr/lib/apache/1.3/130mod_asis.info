@@ -1,0 +1,7 @@
+LoadModule: asis_module /usr/lib/apache/modules/mod_asis.so
+LoadModule: asis_module /usr/lib/apache/1.3/mod_asis.so
+MimeTypes:
+ httpd/send-as-is
+Handles:
+ send-as-is
+Description: Support for sending raw HTTP data

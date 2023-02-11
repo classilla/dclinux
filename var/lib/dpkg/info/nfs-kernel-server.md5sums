@@ -1,0 +1,11 @@
+a6f154089595a34b1dde2b51e59a44fe  usr/sbin/exportfs
+c49bd4d96f897374558576bf5b6d85b5  usr/sbin/rpc.mountd
+daeb0d7a131b902707b1f280625a1b73  usr/sbin/rpc.nfsd
+4635d4434e4a91a058625da702455752  usr/share/man/man5/exports.5.gz
+c68a68809ce372e0aed8c71d0395bf35  usr/share/man/man8/mountd.8.gz
+6407e11ac7e87a2c1c7bddcf4e88486f  usr/share/man/man8/exportfs.8.gz
+6856bd07f1c15be2d0b5c31ab54f516b  usr/share/man/man8/nfsd.8.gz
+319f83360e940ca9dadfede1b6470f3f  usr/share/doc/nfs-kernel-server/README
+0feb2b876ed6fae0e092cd61cdd7cf7c  usr/share/doc/nfs-kernel-server/copyright
+d4d59153fecf36edf64262007995fedd  usr/share/doc/nfs-kernel-server/ChangeLog.gz
+35691d56a5e476c44b1afb77829af659  usr/share/doc/nfs-kernel-server/changelog.Debian.gz

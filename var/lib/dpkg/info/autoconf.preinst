@@ -1,0 +1,5 @@
+#! /bin/sh -e
+test -e /etc/autoconf/acconfig.h && exit 0
+test -f /usr/lib/autoconf/acconfig.h || exit 0
+mkdir -p /etc/autoconf
+mv /usr/lib/autoconf/acconfig.h /etc/autoconf/acconfig.h

@@ -1,0 +1,16 @@
+TIMEOUT doesn't always work
+    If a shell is invoked then procmail may wait while executing a
+    command for longer than TIMEOUT specifies.
+
+regexp matching bug
+    Some regexps may return an incorrect value in the MATCH variable.
+    In particular, this can happen when 'redundant' * or + operators
+    appear on the lefthand side of the \/ token.
+
+Incorrect usage of -lnsl and -lsocket
+    libsocket and libnsl should be avoided if not needed as they're
+    broken under at least one version of IRIX.	If your procmail
+    binary doesn't reliably find user's home directories, or otherwise
+    appears to have problems accessing the passwd file, try removing
+    -lnsl and -lsocket from the SEARCHLIBS variable in the Makefile,
+    then recompile.

@@ -1,0 +1,34 @@
+This is the Debian GNU/Linux prepackaged version of GNU Make.  GNU
+Make was written by Richard Stallman and Roland McGrath.
+
+This package was put together by Ian Murdock <imurdock@debian.org>,
+from sources obtained from:
+ prep.ai.mit.edu:/pub/gnu/make-3.74.tar.gz
+
+Changes:
+ * added Debian GNU/Linux package maintenance system files
+
+The package has since changed maintainers, the current maintainer being 
+Manoj Srivastava <srivasta@pilgrim.umass.edu>.
+
+GNU Make is Copyright (C) 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994
+Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'. 
+
+    A copy of the GNU General Public License is also available at
+    <URL:http://www.gnu.org/copyleft/gpl.html>.  You may also obtain
+    it by writing to the Free Software Foundation, Inc., 59 Temple
+    Place - Suite 330, Boston, MA 02111-1307, USA.
+
+Manoj Srivastava <srivasta@debian.org>

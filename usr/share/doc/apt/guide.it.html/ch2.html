@@ -1,0 +1,132 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>Guida dell'utente di APT - apt-get</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch1.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch3.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+<h1>
+Guida dell'utente di APT<br>
+¾Ï 2 apt-get
+</h1>
+
+<hr>
+
+<p>
+<code>apt-get</code> fornisce un modo semplice di installare i pacchetti dalla
+linea di comando.  Diversamente da <code>dpkg</code>, <code>apt-get</code> non
+capisce i nomi dei file .deb, ma utilizza il vero nome dei pacchetti, e può
+installare archivi .deb solo da una fonte.
+
+<p>
+La prima [<a href="footnotes.html#1" name="fr1">1</a>] cosa da fare prima di
+usare <code>apt-get</code> è impostare l'elenco dei pacchetti dalle fonti in
+modo che il programma sappia quali pacchetti sono disponibili.  Lo si fa con
+<samp>apt-get update</samp>.  Ad esempio,
+
+<pre>
+     # apt-get update
+     Get http://ftp.de.debian.org/debian-non-US/ stable/binary-i386/ Packages
+     Get http://llug.sep.bnl.gov/debian/ frozen/contrib Packages
+     Reading Package Lists... Done
+     Building Dependency Tree... Done
+</pre>
+
+<p>
+Dopo aver aggiornato l'elenco si possono usare molti comandi:
+
+<dl>
+
+<p>
+<dt>upgrade</dt>
+<dd>
+Upgrade tenterà di fare un aggiornamento indolore del sistema completo, senza
+installare nuovi pacchetti o rimuoverne di esistenti, e senza aggiornare un
+pacchetto che possa rovinarne altri.  Upgrade farà un elenco di tutti i
+pacchetti che non avrà potuto aggiornare, cosa che in genere significa che
+questi dipendono da nuovi pacchetti o vanno in conflitto con altri.  Per
+forzare la loro installazione si può usare <code>dselect</code> o <samp>apt-get
+install</samp>.
+</dd>
+
+<p>
+<dt>install</dt>
+<dd>
+Install viene usato per installare i singoli pacchetti dando il loro nome.  Il
+pacchetto viene automaticamente scaricato ed installato, cosa molto utile se
+già se ne conosce il nome e non si vuole entrare in grafica per selezionarlo.
+Al comando si possono passare anche più pacchetti, che saranno tutti scaricati.
+L'installazione automatica cerca di risolvere i problemi di dipendenze con gli
+altri pacchetti elencati, stampa un riassunto e chiede conferma se si devono
+modificare altri pacchetti che non siano quelli sulla linea di comando.
+</dd>
+
+<p>
+<dt>dist-upgrade</dt>
+<dd>
+Dist-upgrade fa un aggiornamento completo, progettato in modo da rendere
+semplici gli aggiornamenti tra versioni di Debian.  Usa un algoritmo
+sofisticato per determinare il miglior insieme di pacchetti da installare,
+aggiornare e rimuovere per arrivare alla versione più aggiornata del sistema
+possibile.  In alcune situazioni può essere vantaggioso usare dist-upgrade
+invece che sprecare tempo a risolvere manualmente le dipendenze con
+<code>dselect</code>.  Una volta completato dist-upgrade, si può usare
+<code>dselect</code> per installare eventuali pacchetti che sono stati
+tralasciati.
+
+<p>
+È importante controllare attentamente cosa intende fare dist-upgrade, dato che
+le sue decisioni a volte possono essere abbastanza sorprendenti.
+</dd>
+
+</dl>
+
+<p>
+<code>apt-get</code> ha diverse opzioni a linea di comando, che vengono
+documentate dettagliatamente nella sua pagina man, <code>apt-get(8)</code>.
+L'opzione più utile è <samp>-d</samp>, che non installa i file scaricati: se il
+sistema deve scaricare un gran numero di pacchetti, non è bene farglieli
+installare subito, in caso dovesse andare male qualcosa.  Dopo aver usato
+<samp>-d</samp>, gli archivi scaricati possono essere installati semplicemente
+dando di nuovo lo stesso comando senza l'opzione <samp>-d</samp>.
+</p>
+
+<hr>
+
+[ <a href="ch1.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+[ <a href="ch3.html">¼¡¤Î¥Ú¡¼¥¸</a> ]
+
+<hr>
+
+Guida dell'utente di APT<br>
+
+<address>
+$Id: guide.it.sgml,v 1.2 2001/02/20 07:03:17 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code><br>
+Traduzione di Eugenia Franzoni <code><a href="mailto:eugenia@linuxcare.com">eugenia@linuxcare.com</a></code>
+</address>
+
+</body>
+
+</html>
+

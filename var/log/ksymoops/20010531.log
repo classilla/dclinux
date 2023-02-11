@@ -1,0 +1,114 @@
+20010531 054019 start /sbin/modprobe -k /dev/input/js0 safemode=0
+20010531 054019 probe ended
+20010531 054019 start /sbin/modprobe -k /dev/input/js1 safemode=0
+20010531 054019 probe ended
+20010531 054019 start /sbin/modprobe -k /dev/input/js2 safemode=0
+20010531 054019 probe ended
+20010531 054020 start /sbin/modprobe -k /dev/input/js3 safemode=0
+20010531 054020 probe ended
+20010531 054020 start /sbin/modprobe -k /dev/input/js4 safemode=0
+20010531 054020 probe ended
+20010531 054020 start /sbin/modprobe -k /dev/input/js5 safemode=0
+20010531 054020 probe ended
+20010531 054021 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054021 probe ended
+20010531 054455 start /sbin/modprobe -k /dev/input/js0 safemode=0
+20010531 054455 probe ended
+20010531 054456 start /sbin/modprobe -k /dev/input/js1 safemode=0
+20010531 054456 probe ended
+20010531 054456 start /sbin/modprobe -k /dev/input/js2 safemode=0
+20010531 054456 probe ended
+20010531 054456 start /sbin/modprobe -k /dev/input/js3 safemode=0
+20010531 054456 probe ended
+20010531 054457 start /sbin/modprobe -k /dev/input/js4 safemode=0
+20010531 054457 probe ended
+20010531 054457 start /sbin/modprobe -k /dev/input/js5 safemode=0
+20010531 054457 probe ended
+20010531 054458 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054458 probe ended
+20010531 054721 start /sbin/modprobe -k /dev/pts/0 safemode=0
+20010531 054721 probe ended
+20010531 054721 start /sbin/modprobe -k /dev/pts/0 safemode=0
+20010531 054721 probe ended
+20010531 054722 start /sbin/modprobe -k /dev/ptyxx safemode=0
+20010531 054722 probe ended
+20010531 054722 start /sbin/modprobe -k /dev/ptyxx safemode=0
+20010531 054722 probe ended
+20010531 054749 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054749 probe ended
+20010531 054749 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054749 probe ended
+20010531 054749 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054749 probe ended
+20010531 054749 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054749 probe ended
+20010531 054750 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054750 probe ended
+20010531 054750 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054750 probe ended
+20010531 054801 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054801 probe ended
+20010531 054801 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054801 probe ended
+20010531 054801 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054801 probe ended
+20010531 054802 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054802 probe ended
+20010531 054802 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054802 probe ended
+20010531 054802 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054802 probe ended
+20010531 054806 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054806 probe ended
+20010531 054806 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054806 probe ended
+20010531 054806 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054806 probe ended
+20010531 054807 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054807 probe ended
+20010531 054807 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054807 probe ended
+20010531 054807 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054807 probe ended
+20010531 054916 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054916 probe ended
+20010531 054916 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054916 probe ended
+20010531 054917 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054917 probe ended
+20010531 054917 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 054917 probe ended
+20010531 054917 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 054917 probe ended
+20010531 054917 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 054917 probe ended
+20010531 054918 start /sbin/modprobe -k /dev/js0 safemode=0
+20010531 054918 probe ended
+20010531 054918 start /sbin/modprobe -k /dev/input/event0 safemode=0
+20010531 054918 probe ended
+20010531 054959 start /sbin/modprobe -k /dev/js0 safemode=0
+20010531 054959 probe ended
+20010531 054959 start /sbin/modprobe -k /dev/js0 safemode=0
+20010531 054959 probe ended
+20010531 054959 start /sbin/modprobe -k /dev/js0 safemode=0
+20010531 054959 probe ended
+20010531 055007 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 055007 probe ended
+20010531 055007 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 055007 probe ended
+20010531 055007 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 055007 probe ended
+20010531 055007 start /sbin/modprobe -k /dev/sound safemode=0
+20010531 055007 probe ended
+20010531 055008 start /sbin/modprobe -k /dev/dsp safemode=0
+20010531 055008 probe ended
+20010531 055008 start /sbin/modprobe -k /dev/dsp1 safemode=0
+20010531 055008 probe ended
+20010531 055009 start /sbin/modprobe -k /dev/js1 safemode=0
+20010531 055009 probe ended
+20010531 055009 start /sbin/modprobe -k /dev/input/event0 safemode=0
+20010531 055009 probe ended
+20010531 062326 start /sbin/modprobe -k /dev/sr0 safemode=0
+20010531 062326 probe ended
+20010531 062332 start /sbin/modprobe -k /dev/sr0 safemode=0
+20010531 062332 probe ended

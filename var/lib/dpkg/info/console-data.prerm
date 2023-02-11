@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+# if [ "$1" != upgrade -a -e /usr/share/debconf/confmodule.sh ]
+# then
+#     /var/lib/dpkg/info/console-data.config X-deconfigure
+# fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/console-data ]; then
+	rm -f /usr/doc/console-data
+fi
+# End automatically added section
+

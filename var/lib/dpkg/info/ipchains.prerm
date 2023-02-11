@@ -1,0 +1,31 @@
+#!/bin/sh -e
+
+case "$1"
+  in
+    remove|deconfigure)
+      update-alternatives --quiet --remove \
+        ipfwadm \
+        /sbin/ipfwadm-wrapper
+
+      update-alternatives --quiet --remove \
+        ipfwadm.8.gz \
+	/usr/share/man/man8/ipfwadm-ipchainsalternative.8.gz
+
+      update-alternatives --quiet --remove \
+        ipfw.4.gz \
+	/usr/share/man/man4/ipfw-ipchainsalternative.4.gz
+      ;;
+    upgrade|failed-upgrade)
+      ;;
+    *)
+      echo "prerm called with unknown argument \"$1\"" >&2
+      exit 1
+      ;;
+  esac
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/ipchains ]; then
+	rm -f /usr/doc/ipchains
+fi
+# End automatically added section
+

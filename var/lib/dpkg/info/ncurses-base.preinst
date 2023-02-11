@@ -1,0 +1,39 @@
+#! /bin/sh
+
+# Make sure errors report (since we try to weed out potential spurious ones)
+set -e
+
+# If /etc/terminfo is a symbolic link, it will really screw up the
+# installation of our minimum set of terminfo entries.  Therefore we
+# get rid of any link with impunity.
+if [ -L /etc/terminfo ]; then
+  rm -f /etc/terminfo
+fi
+
+# /usr/lib/terminfo used to be the standard place for terminfo entries.
+# Now, it's /usr/share/terminfo.  So if /usr/lib/terminfo _isn't_ a symbolic
+# link, move the whole thing to /usr/share. 
+if [ -e /usr/lib/terminfo -a ! -L /usr/lib/terminfo ]; then
+  cp -dR /usr/lib/terminfo /usr/share;
+  rm -rf /usr/lib/terminfo;
+fi
+
+# If /usr/lib/tabset isn't a symbolic link, nuke it.
+if [ -e /usr/lib/tabset -a ! -L /usr/lib/tabset ]; then
+  rm -rf /usr/lib/tabset;
+fi
+
+# And the final piece of kludgery...if /usr/lib/{tabset,terminfo} _are_
+# symbolic links, get rid of them for now.  This is necessary because we
+# may end up in a state where the user replaces an older package and,
+# because debian can't tell that /usr/lib/foo and /usr/share/foo are the
+# same, it deletes the old package's /usr/lib files right after installing
+# the new /usr/share ones.  This leaves the user in a state where he has
+# no terminfo files at all.  :(
+if [ -L /usr/lib/terminfo ]; then
+  rm -f /usr/lib/terminfo
+fi
+if [ -L /usr/lib/tabset ]; then
+  rm -f /usr/lib/tabset
+fi
+

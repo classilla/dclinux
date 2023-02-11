@@ -1,0 +1,69 @@
+This is the Debian GNU/Linux prepackaged version of GNU cpio
+(including mt).
+
+This package was put together by Ian Murdock <imurdock@debian.org>,
+from sources obtained from:
+ prep.ai.mit.edu:/pub/gnu
+
+This package has been modified by Brian Mays <brian@debian.org>.
+Modifications of cpio package for Debian GNU/Linux Copyright (C) 1996-99
+Brian Mays and are released under the GPL (on Debian systems see
+`/usr/doc/copyright/GPL').
+
+Changes:
+ * added Debian GNU/Linux package maintenance system files
+ * moved rmt from /etc to /usr/sbin and installed a symbolic link to
+   /usr/sbin/rmt
+ * split cpio and mt into two separate Debian binary packages
+ * fixed 'mt -V' bug
+ * modified cpio to print a list of filenames terminated by a null
+   character when the -t and -0 flags are used
+ * eliminated a spurious error message printed when the -a flag is
+   used on a read-only filesystem
+ * fixed a remote ioctl bug in mt that caused spurious error messages
+   when commands were sent to a remote tape device
+ * added SCSI support to mt
+ * fixed 'cpio --sparse' bug
+ * added an rmt man page (from BSD).
+ * fixed a bug that could cause an endless loop
+ * fixed a bug that can occur when restoring a whole filesystem
+ * fixed problem causing corruption of old style ascii cpio archives
+ * fixed a bug that prevents cpio from being compiled with glibc 2.1
+ * added an rsh-command option to cpio and mt
+ * made ssh the default remote command (instead of rsh)
+ * fixed bug causing cpio to segfault when the tar format is used
+ * fixed bugs causing cpio to use the wrong minor device numbers
+ * fixed bug in rmt causing problems on systems (such as the Hurd)
+   where sys_errlist is not available
+ * modified cpio so that the -v and -V flags work with
+   --only-verify-crc
+
+GNU cpio is Copyright (C) 1992, 1993, 1994 Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/doc/copyright/GPL'.
+
+rmt.c is Copyright (C) 1983 Regents of the University of California.
+
+   All rights reserved.
+
+   Redistribution and use in source and binary forms are permitted
+   provided that the above copyright notice and this paragraph are
+   duplicated in all such forms and that any documentation,
+   advertising materials, and other materials related to such
+   distribution and use acknowledge that the software was developed
+   by the University of California, Berkeley.  The name of the
+   University may not be used to endorse or promote products derived
+   from this software without specific prior written permission.
+   THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR
+   IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.

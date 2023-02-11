@@ -1,0 +1,45 @@
+// $TOG: xfree86-it.lst /main/2 1997/06/13 06:28:38 kaleb $
+
+//
+//  Elenco dei modelli e dei lingauggi
+//  Copyright 1996 by Joseph Moss
+//
+// $XFree86: xc/programs/xkbcomp/rules/xfree86-it.lst,v 1.1.1.1.2.2 1998/02/01 16:05:45 robin Exp $
+
+! model
+  microsoft       Microsoft Natural
+  dell101         Dell 101-key PC
+  flexpro         Keytronic FlexPro
+  omnikey101      Northgate OmniKey 101
+  pc101           101-key PC Generico
+  pc102           102-key (Intl) PC Generico
+  jp106           106-key Giapponese
+  everex          Everex STEPnote
+  winbook         Winbook Modello XP5
+  pc98            PC-98xx Series
+
+! layout
+  us              Inglese Statunitense
+  en_US           U.S. Inglese + ISO9995-3
+  be              Belga
+  bg              Bulgaro
+  ca              Canadese
+  cs              Cecoslovacco
+  de              Tedesco
+  de_CH           Tedesco Svizzero
+  dk              Danese
+  es              Spagnolo
+  fi              Finlandese
+  fr              Francese
+  fr_CH           Francese Svizzero
+  gb              Regno Unito
+  hu              Ungherese
+  it              Italiano
+  jp              Giapponese
+  no              Norvegese
+  pl              Polacco
+  pt              Portoghese
+  ru              Russo
+  se              Svedese
+  th              Tailandese
+  nec/jp          nec/jp(pc98)

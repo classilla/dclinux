@@ -1,0 +1,4 @@
+#!/bin/sh
+# $Id$
+#
+if test -x /usr/bin/update-menus ; then /usr/bin/update-menus ; fi

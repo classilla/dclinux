@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+if test -x /usr/bin/update-menus; then update-menus; fi
+
+if [ -x /usr/sbin/update-mime ]; then
+    update-mime
+fi
+
+if [ "$1" = "purge" ]; then
+    rm -f /etc/lynx.cfg
+    if [ -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+    fi
+fi
+

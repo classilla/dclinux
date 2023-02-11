@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Clean up junk from old version of pump
+rm -f /etc/default/pump /etc/init.d/pump /etc/rc?.d/???pump
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/pump -a -d /usr/share/doc/pump ]; then
+		ln -sf ../share/doc/pump /usr/doc/pump
+	fi
+fi
+# End automatically added section
+

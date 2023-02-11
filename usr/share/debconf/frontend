@@ -1,0 +1,145 @@
+#!/usr/bin/perl -w
+
+=head1 NAME
+
+frontend - runs a debconf frontend
+
+=head1 SYNOPSIS
+
+ frontend confmodule [params]
+
+=head1 DESCRIPTION
+
+This is a helper program for confmodules. It expects to be passed
+the name of the confmodule script to run, and any parameters for it.
+
+This whole thing is really a hack; in an ideal world, dpkg would handle
+all this.
+
+=cut
+
+use strict;
+use Debconf::Db;
+use Debconf::Template;
+use Debconf::AutoSelect qw(:all);
+use Debconf::Log qw(:all);
+
+Debconf::Db->load;
+
+debug developer => "frontend started";
+
+my $frontend=make_frontend();
+
+# Set the default title.
+my $package;
+if ($ARGV[0]=~m!^.*/(.*?)\.(?:postinst|postrm|prerm)$!) {
+	$package=$1;
+}
+elsif (-e "/var/lib/dpkg/tmp.ci/control") {
+	# The preinst is running, presumably. Now it gets really ugly, because
+	# I have to parse the control file.
+	open (CONTROL, "< /var/lib/dpkg/tmp.ci/control")
+		|| die "Debconf: unable to open control file: $!";
+	while (<CONTROL>) {
+		if (/^Package: (.*)/) {
+			$package=$1;
+			last;
+		}
+	}
+	close CONTROL;
+}
+else {
+	# Being run some other way, not via a dpkg script.
+	$package='';
+
+	debug developer => 'Trying to find a templates file..';
+	sub trytemplate {
+		my $fn=shift;
+		debug developer => "Trying $fn";
+		if (-e $fn) {
+			debug developer => "I guess it is $fn";
+			Debconf::Template->load($fn, $package);
+			return 1;
+		}
+		else {
+			return;
+		}
+	}
+
+	# See if there is a templates file in the same directory as the script,
+	# with the same name except .templates is appended.
+	unless (trytemplate("$ARGV[0].templates")) {
+		# Next try removing "config" from the end of the script name,
+		# and putting in "templates".
+		unless ($ARGV[0]=~m/(.*)config$/ && trytemplate("${1}templates")) {
+			# Finally, look in debconf lib directory for the base
+			# filename with .templates appended.
+			unless ($ARGV[0]=~m!^(?:.*/)?(.*)! && trytemplate("/usr/share/debconf/templates/${1}.templates")) {
+				debug developer => "Couldn't find a templates file."
+			}
+		}
+	}
+}
+debug developer => "frontend running, package name is $package";
+$frontend->default_title($package);
+
+# See if the preinst or postinst of the package is being run, and if there
+# is a config script associated with this package. If so, run it first as a
+# confmodule (also loading the templates). This is a bit of a nasty hack, that
+# lets you dpkg -i somepackage.deb and have its config script be run first.
+#
+# If it is the preinst, everything is in this weird directory deep in
+# /var/lib/dpkg.
+if ($ARGV[0] =~/^(.*[.\/])(?:postinst|preinst)$/) {
+	my $base=$1;
+
+	# Load templates, if any.
+	my $templates=$base."templates";
+	Debconf::Template->load($templates, $package)
+		if -e $templates;
+
+	# Run config script, if any.
+	my $config=$base."config";
+	if (-e $config) {
+		# I assume that the third argument passed to this
+		# program (which should be the second argument passed to the
+		# preinst or postinst that ran it), is the package version.
+		my $version=$ARGV[2];
+		if (! defined($version)) {
+			$version='';
+		}
+		my $confmodule=make_confmodule($config,
+			"configure", $version);
+
+		# Make sure any questions the confmodule generates
+		# are owned by this package.
+		$confmodule->owner($package);
+
+		# Talk to it until it is done.
+		1 while ($confmodule->communicate);
+		
+		exit $confmodule->exitcode if $confmodule->exitcode > 0;
+	}
+}
+
+# Start up the confmodule we were asked to run.
+my $confmodule=make_confmodule(join " ",@ARGV);
+
+# Make sure any questions the confmodule generates are owned by this package.
+$confmodule->owner($package);
+
+# Talk to it until it is done.
+1 while ($confmodule->communicate);
+
+$frontend->shutdown;
+
+# Save state.
+Debconf::Db->save;
+
+exit $confmodule->exitcode;
+
+=head1 AUTHOR
+
+Joey Hess <joey@kitenet.net>
+
+=cut

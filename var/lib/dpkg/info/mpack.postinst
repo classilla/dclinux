@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+if [ "$1" = "configure" ]; then
+    if [ -d /usr/doc -a ! -e /usr/doc/mpack -a -d /usr/share/doc/mpack ]; then
+        ln -sf ../share/doc/mpack /usr/doc/mpack
+    fi
+fi

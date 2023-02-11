@@ -1,0 +1,45 @@
+#!/bin/sh
+set -e
+
+if [ -e /etc/psdevtab ] ; then
+	rm -f /etc/psdevtab
+fi
+if [ -e /etc/psdatabase ] 
+then
+	rm -f /etc/psdatabase
+fi
+# Remove old /etc/init.d/procps file, Bug #53818
+if [ -e /etc/init.d/procps ]
+then
+	rm -f /etc/init.d/procps
+fi
+# Remove old procps init.d script, if it exists Closes: #55137
+if [ -e /etc/rcS.d/S30procps ]
+then
+	update-rc.d procps remove >/dev/null
+fi
+
+#
+# Now to do the alternatives for w and ps
+update-alternatives --install /usr/bin/w w /usr/bin/w.procps 50 \
+	--slave /usr/share/man/man1/w.1.gz w.1.gz /usr/share/man/man1/w.procps.1.gz
+
+ldconfig
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/procps -a -d /usr/share/doc/procps ]; then
+		ln -sf ../share/doc/procps /usr/doc/procps
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" -a -x /usr/bin/update-menus ]; then update-menus ; fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/procps.sh" ]; then
+	update-rc.d procps.sh start 30 S . >/dev/null
+	/etc/init.d/procps.sh start
+fi
+# End automatically added section
+

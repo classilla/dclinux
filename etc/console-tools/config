@@ -1,0 +1,35 @@
+#
+# This files tells the console-tools package:
+#
+# - whether to load a specific font and boot (and maybe a screen-font map,
+# but you should avoid that if possible).
+# - whether to setup an Application-Charset Map other than the default CP437.
+# - whether to start "vcstime" to have time on all text VC'S.
+#
+# You can also specify per-VC settings by suffixing variable names as in
+# the examples below.
+#
+# CAVEATS:
+#
+# - When using the new framebuffer devices, the "global setting" for a font 
+# only affects the current console (ie., at boot-time, the first one)
+# - ACM setting involves 2 steps (maybe loading a user ACM, and activating
+# it on a given charset slot - see charset(1) for details), the 1st of which
+# affects the entire system, but the 2nd of which only affects the current
+# VC (ie., at boot-time, the first one).  So that if you want to use the same 
+# ACM on all VCs, you have to specify "APP_CHARSET_MAP_vc<N>=user" for all
+# relevant values of <N>.
+#
+# Example:
+#
+#SCREEN_FONT=iso01.f16
+#SCREEN_FONT_vc2=LatArCyrHeb-16
+#
+#APP_CHARSET_MAP=iso05
+#APP_CHARSET_MAP_vc2=user
+#
+#DO_VCSTIME=yes
+#
+# Forget this one unless you _know_ it is necessary for your font:
+#SCREEN_FONT_MAP=iso01
+

@@ -1,0 +1,14 @@
+Fri May 18 15:47:07 UTC 2001
+
+gcc-0-1
+libc6-2.2.2-1
+libc6-dbg-2.2.2-1
+libc6-dev-2.2.2-1
+libc6-pic-2.2.2-1
+libc6-prof-2.2.2-1
+binutils-2.11.90.0.7-1
+make-3.79.1-5
+dpkg-dev-1.9.5
+debhelper-3.0.18
+
+Linux tiny 2.4.4 #38 2001年 5月 12日 土曜日 14:37:18 JST sh3 unknown

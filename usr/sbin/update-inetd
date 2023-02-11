@@ -1,0 +1,160 @@
+#!/usr/bin/perl
+#
+# update-inetd: a utility to add entries to the /etc/inetd.conf file
+#
+# Copyright (C) 1995 Peter Tobias <tobias@et-inf.fho-emden.de>
+#
+#    update-inetd is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published
+#    by the Free Software Foundation; either version 2 of the License,
+#    or (at your option) any later version.
+#
+#    update-inetd is distributed in the hope that it will be useful, but
+#    WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+#    General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with update-inetd; if not, write to the Free Software Foundation,
+#    Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+require 5.000;
+require DebianNet;
+
+$version = "1.11";
+
+$0 =~ s#.*/##;
+
+while ($ARGV[0] =~ m/^-/) {
+    $_ = shift(@ARGV);
+    if (/--help$/) {
+        &usage;
+    } elsif (/--version$/) {
+        &version;
+    } elsif (/--add$/) {
+        $mode="add";
+    } elsif (/--remove$/) {
+        $mode="remove";
+    } elsif (/--enable$/) {
+        $mode="enable";
+    } elsif (/--disable$/) {
+        $mode="disable";
+    } elsif (/--multi$/) {
+        $DebianNet::multi = "true";
+    } elsif (/--verbose$/) {
+        $DebianNet::verbose = "true";
+    } elsif (/--debug$/) {
+        $debug = "true";
+    } elsif (/--file$/) {
+        $file = shift(@ARGV);
+        die "$0: Option \`--file' requires an argument\n" unless ($file and not ($file =~ m/^--/));
+        $DebianNet::inetdcf = $file;
+    } elsif (/--group$/) {
+        $group = shift(@ARGV);
+        die "$0: Option \`--group' requires an argument\n" unless ($group and not ($group =~ m/^--/));
+    } elsif (/--comment-chars$/) {
+        $sep = shift(@ARGV);
+        die "$0: Option \`--comment-chars' requires an argument\n" unless ($sep);
+        die "$0: The comment characters do not start with a \`#'!\n" unless ($sep =~ /^#/);
+        $DebianNet::sep = $sep;
+    } elsif (/--pattern$/) {
+        $pattern = shift(@ARGV);
+        die "$0: Option \`--pattern' requires an argument\n" unless ($pattern and not ($pattern =~ m/^--/));
+    } else {
+        print "$0: Unknown option: $_\n";
+        print "Try \`$0 --help' for more information.\n";
+        exit(1);
+    }
+}
+
+$group = "OTHER" unless ($group);
+
+&usage unless($mode);
+
+# die "You must be root to run this script.\n" if ($> != 0);
+
+if ($#ARGV > 0) {
+    print "Too many arguments!\n";
+} elsif ($#ARGV == -1) {
+    print "Too few arguments!\n";
+} else {
+    $modearg = $ARGV[0];
+    die "The service name may not include a whitespace character!\n" if (($mode eq "enable" or $mode eq "disable") and ($modearg =~ /\s+|\\t/));
+    die "The entry definition does not contain any whitespace characters!\n" if ($mode eq "add" and not ($modearg =~ /\s+|\\t/));
+}
+
+print "Processing $DebianNet::inetdcf\n" if (defined($DebianNet::verbose));
+print "Using mode \"$mode\", group \"$group\", pattern \"$pattern\" and seperator \"$DebianNet::sep\"\n" if (defined($debug));
+print "Multiple remove/disable: $DebianNet::multi\n" if (defined($debug) and defined($DebianNet::multi));
+print "ARGUMENT: $modearg\n" if (defined($debug));
+
+if ($mode eq "add") {
+    if (( -f "/etc/xinetd.conf" ) && ( -x "/usr/sbin/xinetd" )) {
+        print "--------- IMPORTANT INFORMATION FOR XINETD USERS ----------\n";
+        print "The following line will be added to your /etc/inetd.conf file:\n\n";
+        print "$modearg\n\n";
+        print "If you are indeed using xinetd, you will have to convert the\n";
+        print "above into /etc/xinetd.conf format, and add it manually. See\n";
+        print "/usr/share/doc/xinetd/README.update-inetd for more\n";
+        print "information.\n";
+        print "-----------------------------------------------------------\n\n";
+    }
+
+    DebianNet::add_service($modearg, $group);
+} elsif ($mode eq "remove") {
+    DebianNet::remove_service($modearg);
+} elsif ($mode eq "enable") {
+    @arglst = split(/,/, $modearg);
+    while(@arglst) {
+        $_ = shift(@arglst);
+        DebianNet::enable_service($_, $pattern);
+    }
+} elsif ($mode eq "disable") {
+    @arglst = split(/,/, $modearg);
+    while(@arglst) {
+        $_ = shift(@arglst);
+        DebianNet::disable_service($_, $pattern);
+    }
+} else {
+    die "Mode = \`$modearg'? This should not happen!\n";
+}
+
+sub version {
+    print "$0 $version\n";
+    print "DebianNet module $DebianNet::version\n";
+    exit(0);
+}
+
+sub usage {
+    print <<EOF;
+Usage: $0 [OPTION] MODE ARGUMENT
+
+Options:
+  --version                       output version information and exit
+  --help                          display this help and exit
+  --verbose                       explain what is being done
+  --debug                         enables debugging mode
+  --multi                         allow multiple removes/disables
+  --file FILENAME                 use FILENAME instead of /etc/inetd.conf
+  --group GROUPNAME               add entry to section GROUPNAME
+  --comment-chars CHARACTERS      use CHARACTERS as comment characters
+  --pattern PATTERN               use PATTERN to select a service
+
+Modes:
+  --add ENTRY                     add ENTRY to $DebianNet::inetdcf
+  --remove ENTRY                  remove ENTRY (regular expression)
+  --enable SERVICE                enable SERVICE in $DebianNet::inetdcf
+  --disable SERVICE               disable SERVICE in $DebianNet::inetdcf
+
+In order to prevent the shell from changing your ENTRY definition
+you have to quote the ENTRY using single or double quotes. You can
+use tabs (the tab character or \\t) and spaces to separate the fields
+of the ENTRY. If you want to enable/disable more than one SERVICE you
+can use a comma separated list of services (no whitespace characters
+allowed).
+
+EOF
+    exit(0);
+}
+

@@ -1,0 +1,45 @@
+#! /bin/sh
+# $Id: postinst,v 1.2 1998/04/20 11:43:29 luisgh Exp $
+OUTPUT=`dpkg-divert --package csh --list csh | grep "by csh"`
+if [ -n "$OUTPUT" ] ; then
+        cat <<EOT
+Removing diversion of csh (which was created by an old version of csh
+package).  The packages csh and tcsh do now use update-alternatives.
+EOT
+        dpkg-divert --package csh --rename --remove /bin/csh >/dev/null || true
+        dpkg-divert --package csh --rename --remove /usr/man/man1/csh.1 >/dev/null || true
+fi
+
+OUTPUT=`dpkg-divert --package tcsh --list csh | grep "by tcsh"`
+if [ -n "$OUTPUT" ] ; then
+        cat <<EOT
+Removing diversion of tcsh (which was created by an old version of tcsh
+package).  The packages csh and tcsh do now use update-alternatives.
+EOT
+        dpkg-divert --package tcsh --rename --remove /bin/csh >/dev/null || true
+        dpkg-divert --package tcsh --rename --remove /usr/man/man1/csh.1 >/dev/null || true
+fi
+
+# In old version of tcsh package we had a bug -- copyright file was gziped.
+if [ -e /usr/doc/tcsh/copyright.gz ] ; then
+        rm /usr/doc/tcsh/copyright.gz
+fi
+
+if test -x /usr/bin/update-menus ; then /usr/bin/update-menus ; fi
+
+# Remove the old alternatives link if present
+LINK=`update-alternatives --display csh | grep priority | grep /usr/bin/csh`
+if [ -n "$LINK" ]; then
+   	update-alternatives --remove csh /usr/bin/tcsh
+fi
+
+update-alternatives --install /bin/csh csh /bin/tcsh 20 \
+  --slave /usr/share/man/man1/csh.1.gz csh.1.gz /usr/share/man/man1/tcsh.1.gz
+
+# Change to the new FHS docs
+if [ "$1" = "configure" ]; then
+      if [ -d /usr/doc -a ! -e /usr/doc/tcsh \
+          -a -d /usr/share/doc/tcsh ]; then
+              ln -sf ../share/doc/tcsh /usr/doc/tcsh
+      fi
+fi

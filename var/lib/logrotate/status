@@ -1,0 +1,3 @@
+logrotate state -- version 2
+"/var/log/wtmp" 2001-5-21
+"/var/log/lastlog" 2001-5-21

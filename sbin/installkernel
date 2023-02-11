@@ -1,0 +1,46 @@
+#!/bin/sh
+# 
+# Copyright (C) 1995 - 1998, Ian A. Murdock <imurdock@debian.org>
+#
+# Install the kernel on a Debian Linux system.
+#
+# This script is called from /usr/src/linux/arch/i386/boot/install.sh.
+# If you install it as /sbin/installkernel, you can do a "make install"
+# from a generic kernel source tree, and the image will be installed to
+# the proper place for Debian GNU/Linux.
+
+set -e
+
+if [ $# = 4 ] ; then
+  img="$2"
+  map="$3"
+  ver="$1"
+  # $(INSTALL_PATH), passed as $4, is ignored--Debian uses /boot.
+else
+  echo "Usage: installkernel <version> <zImage> <System.map> <directory>"
+  exit 1
+fi
+
+updatever () {
+  if [ -f /boot/$1-$ver ] ; then
+    mv /boot/$1-$ver /boot/$1-$ver.old
+  fi
+
+  cat $2 > /boot/$1-$ver
+
+  if [ -f /boot/$1 ] ; then
+    if [ -L /boot/$1 -a $(ls -l /boot/$1 | awk '{print $11}') \
+     = $1-$ver ] ; then
+      ln -sf $1-$ver.old /boot/$1.old
+    else
+      mv /boot/$1 /boot/$1.old
+    fi
+  fi
+
+  ln -sf $1-$ver /boot/$1
+}
+
+updatever vmlinuz $img
+updatever System.map $map
+
+mkboot -i

@@ -1,0 +1,69 @@
+
+XFree86 Version 3.3.6 / X Window System
+(protocol Version 11, revision 0, vendor release 6300)
+Release Date: January 8 1999
+	If the server is older than 6-12 months, or if your card is newer
+	than the above date, look for a newer version before reporting
+	problems.  (see http://www.XFree86.Org/FAQ)
+Operating System: Linux 2.4.0-test10 i686 [ELF] 
+Configured drivers:
+   FBDev: Server for frame buffer device
+   (Patchlevel 10): mfb, cfb8, cfb16, cfb32
+(using VT number 2)
+
+XF86Config: /etc/XF86Config
+(**) stands for supplied, (--) stands for probed/default values
+(**) XKB: disabled
+(**) Mouse: type: ImPS/2, device: /dev/input/mice, buttons: 5
+(**) Mouse: zaxismapping: (-)5 (+)4
+(**) FBDev: Graphics device ID: "Primary Card"
+(**) FBDev: Monitor ID: "Primary Monitor"
+(**) FontPath set to "/usr/X11R6/lib/X11/fonts/misc,/usr/X11R6/lib/X11/fonts/naga10,/usr/X11R6/lib/X11/fonts/kaname,/usr/X11R6/lib/X11/fonts/100dpi/:unscaled,/usr/X11R6/lib/X11/fonts/75dpi/:unscaled,/usr/X11R6/lib/X11/fonts/Type1,/usr/X11R6/lib/X11/fonts/Speedo,/usr/X11R6/lib/X11/fonts/100dpi,/usr/X11R6/lib/X11/fonts/75dpi"
+(**) FBDev: Using default frame buffer video mode
+(--) FBDev: Frame buffer device: NEC PowerVR2
+(--) FBDev: Video memory: 8192K @ 0xa5000000
+(--) FBDev: MMIO regs: 0K @ (nil)
+(--) FBDev: Type 0 type_aux 0 bits_per_pixel 16
+(--) FBDev: Hardware accelerator: None
+(--) FBDev: No driver support for hardware acceleration
+bpp = 16, depth = 16, BitsPerRGB = 6
+(--) FBDev: Using cfb16 driver
+AUDIT: Thu Jan  1 09:04:58 1970: 195 X: client 2 rejected from local host
+Xlib: connection to ":0.0" refused by server
+Xlib: Client is not authorized to connect to Server
+/usr/X11R6/bin/xrdb: Can't open display ':0'
+xdm error (pid 196): Failed to open input method
+X connection to :0.0 broken (explicit kill or server shutdown).
+xdm error (pid 196): fatal IO error 32 (Broken pipe)
+xdm info (pid 193): Rereading configuration file /usr/X11R6/lib/X11/xdm/xdm-config
+
+XFree86 Version 3.3.6 / X Window System
+(protocol Version 11, revision 0, vendor release 6300)
+Release Date: January 8 1999
+	If the server is older than 6-12 months, or if your card is newer
+	than the above date, look for a newer version before reporting
+	problems.  (see http://www.XFree86.Org/FAQ)
+Operating System: Linux 2.4.0-test10 i686 [ELF] 
+Configured drivers:
+   FBDev: Server for frame buffer device
+   (Patchlevel 10): mfb, cfb8, cfb16, cfb32
+(using VT number 2)
+
+XF86Config: /etc/XF86Config
+(**) stands for supplied, (--) stands for probed/default values
+(**) XKB: disabled
+(**) Mouse: type: ImPS/2, device: /dev/input/mice, buttons: 5
+(**) Mouse: zaxismapping: (-)5 (+)4
+(**) FBDev: Graphics device ID: "Primary Card"
+(**) FBDev: Monitor ID: "Primary Monitor"
+(**) FontPath set to "/usr/X11R6/lib/X11/fonts/misc,/usr/X11R6/lib/X11/fonts/naga10,/usr/X11R6/lib/X11/fonts/kaname,/usr/X11R6/lib/X11/fonts/100dpi/:unscaled,/usr/X11R6/lib/X11/fonts/75dpi/:unscaled,/usr/X11R6/lib/X11/fonts/Type1,/usr/X11R6/lib/X11/fonts/Speedo,/usr/X11R6/lib/X11/fonts/100dpi,/usr/X11R6/lib/X11/fonts/75dpi"
+(**) FBDev: Using default frame buffer video mode
+(--) FBDev: Frame buffer device: NEC PowerVR2
+(--) FBDev: Video memory: 8192K @ 0xa5000000
+(--) FBDev: MMIO regs: 0K @ (nil)
+(--) FBDev: Type 0 type_aux 0 bits_per_pixel 16
+(--) FBDev: Hardware accelerator: None
+(--) FBDev: No driver support for hardware acceleration
+bpp = 16, depth = 16, BitsPerRGB = 6
+(--) FBDev: Using cfb16 driver
+xdm error (pid 208): Failed to open input method

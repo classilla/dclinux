@@ -1,0 +1,11 @@
+d09f7057f310a2d0329bb9563603d2aa  sbin/portmap
+63aba5b6559aa81583ecac930647a540  sbin/pmap_dump
+8dbd598868094dd3d408f6242da8047e  sbin/pmap_set
+475ff34ac47d7170ba5a4308972f9c35  usr/share/man/man8/pmap_set.8.gz
+15c20769c7869be8f75f44df18880956  usr/share/man/man8/portmap.8.gz
+12bd47abcf840ce13b9359a1fb0229c5  usr/share/man/man8/pmap_dump.8.gz
+70b2ea2bdd7234a4ede3368b82774ba3  usr/share/doc/portmap/changelog.gz
+0f5ca13d11c46859c6d797f302006f8f  usr/share/doc/portmap/portmapper.txt.gz
+e8edb0e1879e2d993ee8a23bc7ae236b  usr/share/doc/portmap/copyright
+7d936e24e0a593e31a63a083f180bc5b  usr/share/doc/portmap/README.gz
+0cd462a4dd053b118472f24b795bbcc3  usr/share/doc/portmap/changelog.Debian.gz

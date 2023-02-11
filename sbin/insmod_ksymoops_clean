@@ -1,0 +1,11 @@
+#!/bin/sh
+# Delete saved ksyms and modules not accessed in 2 days
+if [ -d /var/log/ksymoops -a -r /proc/ksyms ]
+then
+	set -e
+	# Make sure there is always at least one version
+	d=`date +%Y%m%d%H%M%S`
+	cp -a /proc/ksyms /var/log/ksymoops/${d}.ksyms
+	cp -a /proc/modules /var/log/ksymoops/${d}.modules
+	find /var/log/ksymoops -type f -atime +2 -exec rm {} \;
+fi

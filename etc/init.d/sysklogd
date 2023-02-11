@@ -1,0 +1,38 @@
+#! /bin/sh
+# /etc/init.d/sysklogd: start the system log daemon.
+
+test -f /sbin/syslogd || exit 0
+
+# Options for start/restart the daemons
+#   For remote UDP logging use SYSLOGD="-r"
+#
+SYSLOGD=""
+
+case "$1" in
+  start)
+    echo -n "Starting system log daemon: syslogd"
+    start-stop-daemon --start --quiet --exec /sbin/syslogd -- $SYSLOGD
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping system log daemon: syslogd"
+    start-stop-daemon --stop --quiet --exec /sbin/syslogd --pidfile /var/run/syslogd.pid
+    echo "."
+    ;;
+  reload|force-reload)
+    start-stop-daemon --stop --quiet --signal 1 --exec /sbin/syslogd --pidfile /var/run/syslogd.pid
+    ;;
+  restart)
+    echo -n "Stopping system log daemon: syslogd"
+    start-stop-daemon --stop --quiet --exec /sbin/syslogd --pidfile /var/run/syslogd.pid
+    sleep 1
+    echo -n "Starting system log daemon: syslogd"
+    start-stop-daemon --start --quiet --exec /sbin/syslogd -- $SYSLOGD
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/sysklogd {start|stop|reload|restart|force-reload}"
+    exit 1
+esac
+
+exit 0

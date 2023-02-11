@@ -1,0 +1,37 @@
+This is the Debian GNU/Linux prepackaged version of the GNU diffutils
+package. GNU `diff' was written by Mike Haertel, David Hayes, Richard
+Stallman, Len Tower, and Paul Eggert.  Wayne Davison designed and
+implemented the unified output format. GNU `diff3' was written by Randy
+Smith.  GNU `sdiff' was written by Thomas Lord.  GNU `cmp' was written by
+Torbjorn Granlund and David MacKenzie.
+
+The source for this release was obtained from
+
+ftp://ftp.gnu.org/pub/gnu/diffutils/diffutils-2.7.tar.gz
+
+The manpages were obtained from the FreeBSD-stable sources located at
+ftp.cdrom.com.  They appear to have originally been under the Berkeley
+copyright notice quoted in cmp.1, and to have been subsequently placed
+under the GNU Public License by FreeBSD.  They appear to have been
+written to describe diff-2.6.
+
+The following copyright statement is from the GNU diffutils source
+package, and applies to everything except the manpages:
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   On Debian GNU/Linux systems, the complete text of the GNU General
+   Public License may be found in `/usr/share/common-licenses/GPL'.
+
+   A copy of the GNU General Public License is also available at
+   ftp://ftp.gnu.org/pub/gnu/GPL. You may also obtain it by writing to
+   the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+   Boston, MA  02111-1307, USA.

@@ -1,0 +1,9 @@
+LoadModule: cgi_module /usr/lib/apache/modules/mod_cgi.so
+LoadModule: cgi_module /usr/lib/apache/1.3/mod_cgi.so
+MimeTypes:
+ httpd/x-httpd-cgi
+Handles:
+ cgi-script
+Directives:
+ ScriptAlias
+Description: Support for CGI scripts

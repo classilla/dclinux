@@ -1,0 +1,12 @@
+/.
+/sbin
+/sbin/update
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/update
+/usr/share/doc/update/copyright
+/usr/share/doc/update/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/update.8.gz

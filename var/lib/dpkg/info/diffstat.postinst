@@ -1,0 +1,17 @@
+#! /bin/sh
+# postinst script for diffstat
+
+set -e
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/diffstat -a -d /usr/share/doc/diffstat ]; then
+		ln -sf ../share/doc/diffstat /usr/doc/diffstat
+	fi
+fi
+# End automatically added section
+
+
+exit 0
+
+

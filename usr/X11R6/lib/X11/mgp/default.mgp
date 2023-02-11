@@ -1,0 +1,33 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% "tfont" defs in this part is for those who have downloaded Microsoft
+%% TrueType fonts (or those who mounting Windows partition from your UNIX
+%% partiton).
+%% those are available at: http://microsoft.com/typography/fontpack/default.htm
+%% and they require Windows lisence to extract the archive.
+%%
+%% If you got Computer Modern fonts in TrueType format, you may want to
+%% use the following settings:
+%%	"cmss10.ttf" for standard, "cmssbx10.ttf" for thick,
+%%	"cmtt10.ttf" for typewriter
+%% CM fonts are avaiable at CTAN mirros, pub/CTAN/fonts/cm/ps-type1/bakoma/ttf.
+%% unlike MS ones, it does not require Windows license!
+%%
+%% see README.fonts{,.jp} for more detailed milage you take.
+%%
+%deffont "standard" xfont "helvetica-medium-r", vfont "goth", tfont "arial.ttf", tmfont "wadalab-gothic.ttf"
+%deffont "thick" xfont "helvetica-bold-r", vfont "goth", tfont "arialbd.ttf", tmfont "wadalab-gothic.ttf"
+%deffont "typewriter" xfont "courier-medium-r", vfont "goth", tfont "courbd.ttf", tmfont "wadalab-gothic.ttf"
+%%
+%% Default settings per each line numbers.
+%%
+%default 1 leftfill, size 2, fore "white", back "black", font "thick"
+%default 2 size 7, vgap 10, prefix " "
+%default 3 size 2, bar "gray70", vgap 10
+%default 4 size 5, fore "white", vgap 30, prefix " ", font "standard"
+%%
+%% Default settings that are applied to TAB-indented lines.
+%%
+%tab 1 size 5, vgap 40, prefix "  ", icon box "green" 50
+%tab 2 size 4, vgap 40, prefix "      ", icon arc "yellow" 50
+%tab 3 size 3, vgap 40, prefix "            ", icon delta3 "white" 40

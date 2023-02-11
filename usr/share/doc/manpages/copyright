@@ -1,0 +1,13 @@
+Linux Manpages for Debian
+-------------------------
+
+These man pages are distributed under a variety of copyright licenses. 
+Although these licenses permit free distribution of the nroff sources
+contained in this package, commercial distribution may impose other
+requirements (e.g., acknowledgement of copyright or inclusion of the raw
+nroff sources with the commercial distribution). If you distribute these man
+pages commercially, it is your responsibility to figure out your
+obligations.  (For many man pages, these obligations require you to
+distribute nroff sources with any pre-formatted man pages that you provide.)
+Each file that contains nroff source for a man page also contains the
+author(s) name, email address, and copyright notice.

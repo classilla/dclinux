@@ -1,0 +1,15 @@
+#! /bin/sh -e
+
+# postrm - finish removal of the 'console-tools'-package
+
+if [ "$1" = "purge" ]
+then
+    rm -rf /etc/console-tools
+fi
+
+# Automatically added by dh_installinit
+if [ "$1" = "purge" ] ; then
+	update-rc.d console-screen.sh remove >/dev/null
+fi
+# End automatically added section
+

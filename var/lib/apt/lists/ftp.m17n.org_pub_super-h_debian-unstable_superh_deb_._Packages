@@ -1,0 +1,3825 @@
+Package: adduser
+Version: 3.33
+Priority: standard
+Section: base
+Maintainer: Roland Bauerschmidt <rb@debian.org>
+Depends: perl, passwd (>=961025), debconf
+Suggests: liblocale-gettext-perl
+Architecture: all
+Filename: ./adduser_3.33_all.deb
+Size: 48270
+MD5sum: 07555b53229c1935bfc641906dca7b70
+Description: Add and remove users and groups to resp. from the system.
+ This package includes the adduser and deluser commands for creating
+ and removing users.
+ .
+ o Adduser can create new users and groups and add existing users to
+    existing groups.
+ o Deluser can remove users and groups and remove users from specific
+    groups.
+ .
+ Adding users with adduser is much easier than adding them by hand.
+ Adduser will choose appropriate UID and GID values, create a home
+ directory, copy skeletal user configuration, allow you to set an
+ initial password and gecos.
+ .
+ Deluser can optionally remove and backup the user's home directory
+ and mail spool or all files on the system owned by him.
+ .
+ Optionally a custom script can be executed after each of the commands
+installed-size: 296
+
+Package: apt
+Version: 0.5.4
+Priority: standard
+Section: base
+Maintainer: APT Development Team <deity@lists.debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: dpkg-dev
+Provides: libapt-pkg-libc6.2-3-3.2
+Replaces: libapt-pkg-doc (<< 0.3.7), libapt-pkg-dev (<< 0.3.7)
+Architecture: sh
+Filename: ./apt_0.5.4_sh.deb
+Size: 657826
+MD5sum: 8c7d475cb86d05f4822100ef2b2a89f2
+Description: Advanced front-end for dpkg
+ This is Debian's next generation front-end for the dpkg package manager.
+ It provides the apt-get utility and APT dselect method that provides a
+ simpler, safer way to install and upgrade packages.
+ .
+ APT features complete installation ordering, multiple source capability
+ and several other unique features, see the Users Guide in
+ /usr/share/doc/apt/guide.text.gz
+installed-size: 1656
+
+Package: apt-utils
+Version: 0.5.4
+Priority: optional
+Section: admin
+Maintainer: APT Development Team <deity@lists.debian.org>
+Depends: libapt-pkg-libc6.2-3-3.2, libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Provides: libapt-inst-libc6.2-3-1.0
+Architecture: sh
+Filename: ./apt-utils_0.5.4_sh.deb
+Size: 211160
+MD5sum: a57c24aa837c07f523f8e464e223029a
+Description: APT utility programs
+ This package contains some infrequently used APT utility programs such
+ as apt-ftparchive, apt-sortpkgs and apt-extracttemplates.
+ .
+ apt-extracttemplates is used by debconf to prompt for configuration
+ questions before installation. apt-ftparchive is used to create Package
+ and other index files. apt-sortpkgs is a Package/Source file normalizer.
+source: apt
+installed-size: 488
+
+Package: at
+Version: 3.1.8-10
+Priority: important
+Section: admin
+Maintainer: Siggy Brentrup <bsb@winnegan.de>
+Depends: libc6 (>= 2.2.1-2), mail-transport-agent
+Architecture: sh
+Filename: ./at_3.1.8-10_sh.deb
+Size: 39820
+MD5sum: 20ba391681e57486781b0f061641a0e5
+Description: Delayed job execution and batch processing
+ At and batch read shell commands from standard input
+ storing them as a job to be scheduled for execution in the
+ future.
+ .
+ Use
+  at    to run the job at a specified time
+  batch to run the job when system load levels permit
+installed-size: 100
+
+Package: autoconf
+Version: 2.13-27
+Priority: optional
+Section: devel
+Maintainer: Ben Pfaff <pfaffben@msu.edu>
+Depends: perl | perl5, m4, debianutils (>= 1.8)
+Recommends: automake
+Suggests: gnu-standards
+Architecture: all
+Filename: ./autoconf_2.13-27_all.deb
+Size: 360656
+MD5sum: 495536e9de198445e45ffeada52219ed
+Description: automatic configure script builder
+ The standard for FSF source packages.  This is only useful if you
+ write your own programs or if you extensively modify other people's
+ programs.
+installed-size: 876
+
+Package: automake
+Version: 1.4-8
+Priority: optional
+Section: devel
+Maintainer: Kevin Dalley <kevind@rahul.net>
+Depends: autoconf
+Architecture: all
+Filename: ./automake_1.4-8_all.deb
+Size: 281888
+MD5sum: e8de57896fe98846d832ec354770fcea
+Description: A tool for generating GNU Standards-compliant Makefiles.
+ Automake is a tool for automatically generating `Makefile.in's from
+ files called `Makefile.am'.  The `Makefile.am' is basically a series of
+ `make' macro definitions (with rules being thrown in occasionally).
+ The generated `Makefile.in's are compliant with the GNU Makefile
+ standards.
+installed-size: 996
+
+Package: base-files
+Version: 2.2.8
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Santiago Vila <sanvila@debian.org>
+Depends: awk, base-passwd (>= 2.0.3.4)
+Provides: base
+Replaces: base, miscutils, libreadline, libreadlineg2 (<< 2.1-16), bash (<< 2.03-3)
+Architecture: sh
+Filename: ./base-files_2.2.8_sh.deb
+Size: 30270
+MD5sum: 313856ab60fa95333dbdbc8c7b1f0b87
+Description: Debian base system miscellaneous files
+ This package contains the basic filesystem hierarchy of a Debian system, and
+ several important miscellaneous files, such as /etc/debian_version,
+ /etc/host.conf, /etc/issue, /etc/motd, /etc/profile, /etc/nsswitch.conf,
+ and others, and the text of several common licenses in use on Debian systems.
+installed-size: 364
+
+Package: base-passwd
+Version: 3.2.0
+Essential: yes
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Replaces: base
+Architecture: sh
+Filename: ./base-passwd_3.2.0_sh.deb
+Size: 15966
+MD5sum: 160b31a39e69db3ec62aaa09dd9be17a
+Description: Debian Base System Password/Group Files
+ This package provides the master /etc/passwd and /etc/group files,
+ containing Debian-allocated user and group IDs, plus the update-passwd
+ utility to keep them up to date.
+installed-size: 92
+
+Package: bash
+Version: 2.04-9
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Matthias Klose <doko@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2), libncurses5
+Depends: base-files (>= 2.1.12)
+Architecture: sh
+Filename: ./bash_2.04-9_sh.deb
+Size: 411218
+MD5sum: a1ef6e0b9fb8e60b06164fb165fbcba5
+Description: The GNU Bourne Again SHell
+ Bash is an sh-compatible command language interpreter that executes
+ commands read from the standard input or from a file.  Bash also
+ incorporates useful features from the Korn and C shells (ksh and csh).
+ .
+ Bash is ultimately intended to be a conformant implementation of the
+ IEEE Posix Shell and Tools specification (IEEE Working Group 1003.2).
+installed-size: 788
+
+Package: bash-builtins
+Version: 2.04-9
+Priority: optional
+Section: utils
+Maintainer: Matthias Klose <doko@debian.org>
+Depends: bash (= 2.04-9)
+Architecture: sh
+Filename: ./bash-builtins_2.04-9_sh.deb
+Size: 79496
+MD5sum: 1de8afee36a03c70b2b71bc635f70515
+Description: Bash loadable builtins - headers & examples
+ Bash 2 can dynamically load new builtin commands.  Included are the
+ necessary headers to compile your own builtins and lots of examples.
+source: bash
+installed-size: 440
+
+Package: bash-doc
+Version: 2.04-9
+Priority: optional
+Section: doc
+Maintainer: Matthias Klose <doko@debian.org>
+Replaces: bash (<< 2.03-1)
+Architecture: all
+Filename: ./bash-doc_2.04-9_all.deb
+Size: 298630
+MD5sum: a282802cfbe85cd51be96adab4e892a3
+Description: Documentation and examples for the The GNU Bourne Again SHell
+ Bash is an sh-compatible command language interpreter that executes
+ commands read from the standard input or from a file.  Bash also
+ incorporates useful features from the Korn and C shells (ksh and csh).
+ .
+ This package contains the documentation in info format, all the
+ examples and the main changelog.
+source: bash
+installed-size: 808
+
+Package: binutils
+Version: 2.11.90.0.7-1
+Priority: standard
+Section: devel
+Maintainer: Christopher C. Chimelis <chris@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: binutils-doc (= 2.11.90.0.7-1)
+Conflicts: gas, elf-binutils
+Provides: elf-binutils
+Architecture: sh
+Filename: ./binutils_2.11.90.0.7-1_sh.deb
+Size: 1284458
+MD5sum: 4fde689568c16119cf3a010522c4eccb
+Description: The GNU assembler, linker and binary utilities.
+ The programs in this package are used to assemble, link and manipulate
+ binary and object files.  They may be used in conjunction with a compiler
+ and various libraries to build programs for Linux.
+installed-size: 2600
+
+Package: binutils-dev
+Version: 2.11.90.0.7-1
+Priority: extra
+Section: devel
+Maintainer: Christopher C. Chimelis <chris@debian.org>
+Depends: binutils (= 2.11.90.0.7-1)
+Conflicts: libbfd-dev
+Provides: libbfd-dev
+Replaces: libbfd-dev, libc5-dev
+Architecture: sh
+Filename: ./binutils-dev_2.11.90.0.7-1_sh.deb
+Size: 291502
+MD5sum: 5ab50b030d259a2de118c4320329434e
+Description: The GNU binary utilities (BFD development files)
+ This package includes header files and static libraries necessary to build
+ programs which use the GNU BFD library, which is part of binutils.  Note
+ that building Debian packages which depend on the shared libbfd is Not
+ Allowed.
+source: binutils
+installed-size: 788
+
+Package: binutils-multiarch
+Version: 2.11.90.0.7-1
+Priority: extra
+Section: devel
+Maintainer: Christopher C. Chimelis <chris@debian.org>
+Depends: libc6 (>= 2.2.1-2), binutils (= 2.11.90.0.7-1)
+Provides: multiarch-binutils
+Architecture: sh
+Filename: ./binutils-multiarch_2.11.90.0.7-1_sh.deb
+Size: 2578166
+MD5sum: b1608877a57354b2ffd05b5c3801df6e
+Description: Binary utilities that support multi-arch targets.
+ The programs in this package are used to manipulate binary and object
+ files that may have been created on other architectures.  This package
+ is primarily for multi-architecture developers and cross-compilers and
+ is not needed by normal users or developers.  Note that a cross-assembling
+ version of gas is not included in this package, just the binary utilities.
+ NORMAL USERS SHOULD NOT INSTALL THIS PACKAGE.  It's meant only for those
+ requiring support for reading info from binaries from other architectures.
+source: binutils
+installed-size: 5992
+
+Package: bison
+Version: 1:1.28-8
+Priority: standard
+Section: devel
+Maintainer: Vincent Renardias <vincent@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./bison_1.28-8_sh.deb
+Size: 309972
+MD5sum: 91489063dd6f06b2ca289cfe43334994
+Description: A parser generator that is compatible with YACC.
+ Bison is a general-purpose parser generator that converts a
+ grammar description for an LALR(1) context-free grammar into a C
+ program to parse that grammar.  Once you are proficient with Bison, you
+ may use it to develop a wide range of language parsers, from those used
+ in simple desk calculators to complex programming languages.
+ .
+ Bison is upward compatible with Yacc: all properly-written Yacc
+ grammars ought to work with Bison with no change.  Anyone familiar with
+ Yacc should be able to use Bison with little trouble.
+installed-size: 544
+
+Package: boa
+Version: 0.94.8.3-6
+Priority: optional
+Section: web
+Maintainer: Jonathon D Nelson <jnelson@boa.org>
+Depends: libc6 (>= 2.2.1-2),mime-support,logrotate
+Provides: httpd
+Architecture: sh
+Filename: ./boa_0.94.8.3-6_sh.deb
+Size: 85520
+MD5sum: 884f2a8dab5fcd9abe1653a351c493d9
+Description: Lightweight and High Performance WebServer
+ Boa is a single-tasking HTTP server. That means that unlike
+ traditional web servers, it does not fork for each incoming
+ connection, nor does it fork many copies of itself to handle multiple
+ connections. It internally multiplexes all of the ongoing HTTP
+ connections, and forks only for CGI programs (which must be separate
+ processes.) Preliminary tests show boa is capable of handling several
+ hundred hits per second on a 100 MHz Pentium.
+installed-size: 280
+
+Package: bsdutils
+Version: 1:2.11a-2
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Adrian Bunk <bunk@fs.tum.de>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Recommends: bsdmainutils
+Architecture: sh
+Filename: ./bsdutils_2.11a-2_sh.deb
+Size: 33768
+MD5sum: 7d95e3d63440bd0fadcbdc28990c23c9
+Description: Basic utilities from 4.4BSD-Lite.
+ This package contains the bare minimum number of BSD utilities needed
+ to boot a Debian system.  You should probably also install
+ bsdmainutils to get the remaining standard BSD utilities.
+ .
+ Included are: logger, renice, script, wall
+source: util-linux (2.11a-2)
+installed-size: 128
+
+Package: bzip2
+Version: 1.0.1-6
+Priority: optional
+Section: utils
+Maintainer: Philippe Troin <phil@fifi.org>
+Depends: libbz2-1.0(=1.0.1-6), libc6 (>= 2.2.1-2)
+Replaces: libbz2(<<0.9.5d-3)
+Architecture: sh
+Filename: ./bzip2_1.0.1-6_sh.deb
+Size: 221704
+MD5sum: 8d9f41d608c2529a85207567a1d0cc4e
+Description: A high-quality block-sorting file compressor - utilities
+ bzip2 is a freely available, patent free, high-quality data compressor.
+ It typically compresses files to within 10% to 15% of the best available
+ techniques, whilst being around twice as fast at compression and six
+ times faster at decompression.
+ .
+ bzip2 compresses files using the Burrows-Wheeler block-sorting text
+ compression algorithm, and Huffman coding.  Compression is generally
+ considerably better than that achieved by more conventional
+ LZ77/LZ78-based compressors, and approaches the performance of the PPM
+ family of statistical compressors.
+ .
+ The archive file format of bzip2 (.bz2) is incompatible with that of its
+ predecessor, bzip (.bz).
+installed-size: 420
+
+Package: comerr-dev
+Version: 2.0-1.19-3
+Priority: extra
+Section: devel
+Maintainer: Yann Dirson <dirson@debian.org>
+Depends: libc6-dev, libcomerr2
+Suggests: doc-base
+Conflicts: e2fsprogs (<< 1.10-6)
+Architecture: sh
+Filename: ./comerr-dev_2.0-1.19-3_sh.deb
+Size: 31304
+MD5sum: 97acc44a07be4730c5cdb1a54408dd23
+Description: The Common Error Description library - headers and static libraries.
+ libcomerr is an attempt to present a common error-handling mechanism to
+ manipulate the most common form of error code in a fashion that does not
+ have the problems identified with mechanisms commonly in use.
+source: e2fsprogs (1.19-3)
+installed-size: 109
+
+Package: cpio
+Version: 2.4.2-36
+Maintainer: Brian Mays <brian@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: mt-st(<<0.6), cpio-mt
+Replaces: cpio-mt
+Architecture: sh
+Filename: ./cpio_2.4.2-36_sh.deb
+Size: 72518
+MD5sum: d231301a41d8ca824d1367d2ff9986b3
+Description: GNU cpio -- a program to manage archives of files.
+ GNU cpio is a tool for creating and extracting archives, or copying
+ files from one place to another.  It handles a number of cpio formats
+ as well as reading and writing tar files.
+ .
+ This package also includes rmt, the remote tape server, and GNU mt, a
+ tape drive control program.  The mt program is essential for magnetic
+ tape drive users.  Debian's version of GNU mt supports SCSI tape
+ drives.
+installed-size: 200
+
+Package: cracklib-runtime
+Version: 2.7-8.1
+Maintainer: Jean Pierre LeJacq <jplejacq@quoininc.com>
+Depends: cracklib2, file
+Architecture: sh
+Filename: ./cracklib-runtime_2.7-8.1_sh.deb
+Size: 20518
+MD5sum: 43866efb75cca4ce89159256b3651351
+Description: A pro-active password checker library
+ Run-time support programs which use the shared library in cracklib2
+ including programs to build the password dictionary databases used by
+ the functions in the shared library.
+source: cracklib2
+installed-size: 164
+
+Package: cracklib2
+Version: 2.7-8.1
+Maintainer: Jean Pierre LeJacq <jplejacq@quoininc.com>
+Depends: libc6 (>= 2.2.1-2)
+Recommends: cracklib-runtime
+Conflicts: cracklib2.6
+Replaces: cracklib2.6
+Architecture: sh
+Filename: ./cracklib2_2.7-8.1_sh.deb
+Size: 26212
+MD5sum: a8202a94f26148a1891d2d9d7ef29115
+Description: A pro-active password checker library
+ Shared library for cracklib2 which contains a C function which may be
+ used in a passwd like program.  The idea is simple: try to prevent
+ users from choosing passwords that could be guessed by crack by
+ filtering them out, at source. cracklib2 is NOT a replacement passwd
+ program.  cracklib2 is a LIBRARY.
+installed-size: 112
+
+Package: cracklib2-dev
+Version: 2.7-8.1
+Maintainer: Jean Pierre LeJacq <jplejacq@quoininc.com>
+Depends: cracklib2
+Recommends: cracklib-runtime
+Conflicts: cracklib2.6-dev
+Replaces: cracklib2.6-dev
+Architecture: sh
+Filename: ./cracklib2-dev_2.7-8.1_sh.deb
+Size: 23240
+MD5sum: 7b5292e3a9c8ab42b870f71f857146bd
+Description: a pro-active password checker library
+ Header files, static libraries, documentation, and symbolic links
+ developers using cracklib2 will need.
+source: cracklib2
+installed-size: 136
+
+Package: cron
+Version: 3.0pl1-65
+Priority: important
+Section: admin
+Maintainer: Steve Greenland <stevegr@debian.org>
+Depends: libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), debianutils (>=1.7)
+Recommends: exim | smail | sendmail | mail-transport-agent
+Suggests: anacron (>=2.0-1), logrotate, lockfile-progs
+Conflicts: suidmanager (<< 0.50)
+Architecture: sh
+Filename: ./cron_3.0pl1-65_sh.deb
+Size: 56496
+MD5sum: 257b792c8a25e40bdc1bf712ca532640
+Description: management of regular background processing
+ cron is a background process (`daemon') that runs programs at regular
+ intervals (for example, every minute, day, week or month); which
+ processes are run and at what times are specified in the `crontab'.
+ .
+ Users may also install crontabs so that processes are run on
+ their behalf, though this feature can be disabled or restricted to
+ particular users.
+ .
+ Output from the commands is usually mailed to the system administrator
+ (or to the user in question); you should probably install a mail system
+ as well so that you can receive these messages.
+ .
+ This cron package is configured by default to do various standard
+ system maintenance tasks, such as ensuring that logfiles do not
+ grow endlessly and overflow the disk.
+ .
+ The lockfile-progs package is only a "Suggests" because of the poor
+ way that dselect handles "Recomments", but I do strongly suggest that
+ you install it; it prevents /etc/cron.daily/standard from running multiple
+ times if something gets jammed.
+installed-size: 132
+
+Package: debconf
+Version: 0.9.33
+Priority: important
+Section: admin
+Maintainer: Joey Hess <joeyh@debian.org>
+Pre-Depends: perl-base (>= 5.6.0-19)
+Depends: fileutils (>= 4.0-5)
+Recommends: libterm-stool-perl | libterm-readline-gnu-perl, apt-utils (>= 0.5.1)
+Suggests: debconf-doc, debconf-utils, whiptail | dialog | gnome-utils, liblocale-gettext-perl
+Conflicts: debconf-utils (<< 0.9), debconf-tiny, apt (<< 0.3.12.1), menu (<= 2.1.3-1), dialog (<< 0.9a-20000730-1), whiptail (<< 0.50.8-1), libterm-stool-perl (<< 0.20), cdebconf (<< 0.10-5)
+Provides: debconf-tiny
+Replaces: debconf-tiny
+Architecture: all
+Filename: ./debconf_0.9.33_all.deb
+Size: 83590
+MD5sum: 64ecfaed9ce7e8a07a867bb7cebe6ffe
+Description: Debian configuration management system
+ Debconf is a configuration management system for debian packages. Packages
+ use Debconf to ask questions when they are installed.
+installed-size: 346
+
+Package: debconf-doc
+Version: 0.9.33
+Priority: optional
+Section: admin
+Maintainer: Joey Hess <joeyh@debian.org>
+Suggests: debian-policy (>= 3.5)
+Conflicts: debconf (<< 0.3.10)
+Architecture: all
+Filename: ./debconf-doc_0.9.33_all.deb
+Size: 96656
+MD5sum: bac5df1a66be5b8176c4fe7cbbf61313
+Description: Debian configuration management system documentation
+ This package contains lots of additional documentation for Debconf,
+ including an introduction to Debconf, a user's guide, a programmer's
+ tutorial, and the specification Debconf is based on.
+source: debconf
+installed-size: 174
+
+Package: debconf-utils
+Version: 0.9.33
+Priority: optional
+Section: devel
+Maintainer: Joey Hess <joeyh@debian.org>
+Depends: debconf (>= 0.9.27)
+Conflicts: debconf (<< 0.3.31)
+Replaces: debconf (<< 0.3.31)
+Architecture: all
+Filename: ./debconf-utils_0.9.33_all.deb
+Size: 62318
+MD5sum: 3e0fc0c9153d5888a1d7ba3da56ec652
+Description: Debconf utilities
+ This package contains some small utilities to aid users and developers.
+ There are utilities to help manage debconf databases, other to manage
+ translated template files and a program to communicate directly with
+ debconf from the command line.
+source: debconf
+installed-size: 86
+
+Package: debianutils
+Version: 1.15
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Guy Maor <maor@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Conflicts: debian-utils
+Replaces: miscutils, cron (<=3.0pl1-31), debian-utils, tetex-bin (<< 1.0.6-1.1)
+Architecture: sh
+Filename: ./debianutils_1.15_sh.deb
+Size: 31376
+MD5sum: 60326b35fab140600af144333957e0a8
+Description: Miscellaneous utilities specific to Debian.
+ Debianutils includes installkernel mkboot mktemp readlink run-parts savelog
+ sensible-editor sensible-pager tempfile which.
+installed-size: 176
+
+Package: debmake
+Version: 3.6.9
+Priority: optional
+Section: devel
+Maintainer: Raul Miller <moth@debian.org>
+Depends: dpkg-dev, file, fileutils (>= 3.16-4), patch, ed, debianutils (>= 1.6)
+Suggests: devscripts, debsums
+Architecture: all
+Filename: ./debmake_3.6.9_all.deb
+Size: 44420
+MD5sum: 679ebb061f53f3aa49549d8779fc7242
+Description: Debianizing Tool and automated binary generation
+ Eases the development and maintenance of Debian Sourcepackages.
+ .
+  - deb-make: Generate a debian style sourcepackage from a regular sourcecode
+   archive. Customizes control files. Provides example setup for debstd that is
+   usually usable with minimal editing.
+  - "debstd" which has the following abilities:
+  - Automates compression of documentation, localizes manpages
+   compresses and installs them.
+  - Supports multiple binaries generated from a single source package
+  - Generates maintainer scripts for you and installs all scripts
+   for you in the proper locations with the proper permissions.
+  - Can perform modifications on a variety of important debian config files
+   through generation of proper maintainer scripts.
+  - Runs dpkg-shlibdeps on all ELF binaries for you and generates correct
+   shlibs file for provided libraries automatically.
+  - Checks symlinks to manpages /documentation and redirects
+   them if a file was compressed.
+installed-size: 316
+
+Package: devfsd
+Version: 1.3.11-0.1
+Priority: optional
+Section: admin
+Maintainer: Tom Lees <tom@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./devfsd_1.3.11-0.1_sh.deb
+Size: 31348
+MD5sum: 497d3e2e242fa0c26446b6b2be57083c
+Description: Daemon for the device filesystem
+ This daemon sets up the /dev filesystem for use. It creates required
+ symbolic links in /dev and also creates (if so configured, as is the
+ default) symbolic links to the "old" names for devices.
+installed-size: 93
+
+Package: diff
+Version: 2.7-24
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Santiago Vila <sanvila@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./diff_2.7-24_sh.deb
+Size: 137024
+MD5sum: c758bcf9619f51e162840f98b36671c2
+Description: File comparison utilities
+ The diff package provides the diff, diff3, sdiff, and cmp programs.
+ .
+ `diff' shows differences between two files, or each corresponding file
+ in two directories.  `cmp' shows the offsets and line numbers where
+ two files differ.  `cmp' can also show all the characters that
+ differ between the two files, side by side.  `diff3' shows differences
+ among three files.  `sdiff' merges two files interactively.
+ .
+ The set of differences produced by `diff' can be used to distribute
+ updates to text files (such as program source code) to other people.
+ This method is especially useful when the differences are small compared
+ to the complete files.  Given `diff' output, the `patch' program can
+ update, or "patch", a copy of the file.
+installed-size: 272
+
+Package: diff-doc
+Version: 2.7-24
+Priority: optional
+Section: doc
+Maintainer: Santiago Vila <sanvila@debian.org>
+Architecture: all
+Filename: ./diff-doc_2.7-24_all.deb
+Size: 82240
+MD5sum: 30613ca7439dd82d56e80ddb5fe1102e
+Description: Documentation for GNU diffutils.
+ This package contains the HTML documentation for GNU diffutils.
+source: diff
+installed-size: 480
+
+Package: dpkg
+Version: 1.8.3.1.superh
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2), libncurses5
+Depends: sysvinit (>= 2.72)
+Replaces: dpkg-doc-ja
+Architecture: sh
+Filename: ./dpkg_1.8.3.1.superh_sh.deb
+Size: 903076
+MD5sum: 65f56d7a917c6b35940ab103a183391c
+Description: Package maintenance system for Debian
+ This package contains the programs which handle the installation and
+ removal of packages on your system.
+ .
+ The primary interface for the dpkg suite is the `dselect' program;
+ a more low-level and less user-friendly interface is available in
+ the form of the `dpkg' command.
+ .
+ In order to unpack and build Debian source packages you will need to
+ install the developers' package `dpkg-dev' as well as this one.
+bugs: debbugs://bugs.debian.org
+installed-size: 2584
+origin: debian
+
+Package: dpkg-dev
+Version: 1.8.3.1.superh
+Priority: important
+Section: devel
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Depends: perl5, cpio (>= 2.4.2-2), patch (>= 2.2-1), make, binutils
+Recommends: c-compiler
+Suggests: gnupg, debian-keyring
+Conflicts: dpkgname
+Replaces: dpkgname, dpkg (<< 1.4.1.8), dpkg-doc-ja
+Architecture: all
+Filename: ./dpkg-dev_1.8.3.1.superh_all.deb
+Size: 77044
+MD5sum: 74112ef109df11fdbdc86e020bff6788
+Description: Package building tools for Debian
+ This package contains the tools (including dpkg-source) required to
+ unpack, build and upload Debian source packages.
+ .
+ Most Debian source packages will require additional tools to build -
+ for example, most packages need the `make' and the C compiler `gcc'.
+source: dpkg
+bugs: debbugs://bugs.debian.org
+installed-size: 364
+origin: debian
+
+Package: dpkg-doc
+Version: 1.8.3.1.superh
+Priority: extra
+Section: doc
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Replaces: dpkg-dev (<<1.4.1.19)
+Architecture: all
+Filename: ./dpkg-doc_1.8.3.1.superh_all.deb
+Size: 10654
+MD5sum: 10414d8e583fedd32597ed7ac039f9d7
+Description: Dpkg Internals Documentation
+ This document describes the internal operations of the dpkg program. It
+ covers building aswell as the internals functions. If you are interested
+ in creating your own packages, then you may be more interested in the
+ packaging-manual documentation package.
+source: dpkg
+bugs: debbugs://bugs.debian.org
+installed-size: 72
+origin: debian
+
+Package: dupload
+Version: 2.4.1
+Priority: optional
+Section: devel
+Maintainer: Stephane Bortzmeyer <bortzmeyer@debian.org>
+Depends: perl5 | perl (>= 5.003), libnet-perl
+Recommends: mail-transport-agent
+Suggests: lintian, ssh
+Architecture: all
+Filename: ./dupload_2.4.1_all.deb
+Size: 26232
+MD5sum: c93c0c688ad4b890304c2b8b17ab4d2e
+Description: Utility to upload Debian packages.
+ This script will automagically upload Debian packages to a master
+ or a transfer host, log the upload and send mail about the upload
+ of a package. It's intended for Debian maintainers only.
+installed-size: 120
+
+Package: e2fslibs-dev
+Version: 1.19-3
+Priority: extra
+Section: devel
+Maintainer: Yann Dirson <dirson@debian.org>
+Depends: libc6-dev, comerr-dev, e2fsprogs
+Suggests: doc-base
+Conflicts: e2fsprogs (<< 1.10-6)
+Provides: ext2fs-dev, e2p-dev
+Architecture: sh
+Filename: ./e2fslibs-dev_1.19-3_sh.deb
+Size: 93286
+MD5sum: 8ecbb3c3de745930857c7aaab16878b6
+Description: The headers and static libraries for ext2fs-aware tools-development.
+ EXT2FS stands for "Extended Filesystem", version 2. It's the filesystem
+ type used for hard disks on Debian and other Linux systems.
+ .
+ This package contains the headers and shared libraries needed to compile
+ ext2fs-aware programs. Only programmers that really manipulate
+ features specific to the ext2 filesystem will need this. Most
+ programmers will use the generic filesystem-independent interface
+ from libc.
+ .
+ It also contains dev files for the e2p lib used by
+ the e2fsprogs, but which is not yet packaged all by itself
+ because it lacks documentation. It may also lack some support
+ files, by I can't really know until someone uses it...
+ .
+ libe2p is for user-level e2fsprogs commands.  It's used by dumpe2fs,
+ chattr, and lsattr.  Functions in libe2p typically have two
+ characteristics (a) don't require that block device containing the
+ filesystem be opened directly (functions in libext2fs do), and (b)
+ libe2p typically contains printf statements or parse user input, and so
+ have more internationalization issues.
+source: e2fsprogs
+installed-size: 356
+
+Package: e2fsprogs
+Version: 1.19-3
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Yann Dirson <dirson@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Suggests: gpart, parted
+Conflicts: e2fslibsg, dump (<< 0.4b4-4), quota (<< 1.55-8.1)
+Provides: libcomerr2, libss2, libext2fs2, libe2p2, libuuid1, e2fslibsg
+Replaces: e2fslibsg, ss2g, comerr2g
+Architecture: sh
+Filename: ./e2fsprogs_1.19-3_sh.deb
+Size: 239368
+MD5sum: cd5797ec1b07e9393f256b1e259c734d
+Description: The EXT2 file system utilities and libraries.
+ EXT2 stands for "Extended Filesystem", version 2. It's the main
+ filesystem type used for hard disks on Debian and other Linux systems.
+ .
+ This package contains programs for creating, checking, and maintaining EXT2
+ filesystems, and the generic `fsck' wrapper.
+installed-size: 470
+
+Package: ed
+Version: 0.2-19
+Priority: important
+Section: editors
+Maintainer: James Troup <james@nocrew.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./ed_0.2-19_sh.deb
+Size: 49412
+MD5sum: 6874edd7ab974f32d50c8421739edeca
+Description: The classic unix line editor
+ ed is a line-oriented text editor.  It is used to
+ create, display, modify and otherwise manipulate text
+ files.
+ .
+ red is a restricted ed: it can only edit files in the
+ current directory and cannot execute shell commands.
+installed-size: 152
+
+Package: elvis-tiny
+Version: 1.4-14
+Maintainer: Miquel van Smoorenburg <miquels@cistron.nl>
+Pre-Depends: libc6 (>= 2.2.1-2), libncurses5
+Architecture: sh
+Filename: ./elvis-tiny_1.4-14_sh.deb
+Size: 48940
+MD5sum: 674698d093ea647e3b73e03325b3e5eb
+Description: Tiny vi compatible editor for the base system.
+ Elvis-tiny is based on a 1991 Minix version of elvis. You should install
+ another vi-editor (such as "elvis", "nvi" or "vim") if you want a full
+ featured vi editor.
+installed-size: 95
+
+Package: fakeroot
+Version: 0.4.4-9.1
+Priority: optional
+Section: utils
+Maintainer: joost witteveen <joostje@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./fakeroot_0.4.4-9.1_sh.deb
+Size: 30278
+MD5sum: b4476067c0dbfe84d8773accabd75068
+Description: Gives a fake root environment.
+ This package is intended to enable something like:
+   dpkg-buildpackage -rfakeroot
+ i.e. to remove the need to become root for a package build.
+ This is done by setting LD_PRELOAD to libfakeroot.so,
+ which provides wrappers around getuid, chown, chmod, mknod,
+ stat, ..., thereby creating a fake root environment.
+ .
+ If you don't understand any of this, you do not need fakeroot!
+installed-size: 68
+
+Package: file
+Version: 3.33-4
+Priority: standard
+Section: utils
+Maintainer: Nicolás Lichtmaier <nick@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./file_3.33-4_sh.deb
+Size: 113332
+MD5sum: ae96c202df7341dabf5fa39442df08fd
+Description: Determines file type using "magic" numbers
+ File tests each argument in an attempt to classify it.  There are three
+ sets of tests, performed in this order: filesystem tests, magic number
+ tests, and language tests.  The first test that succeeds causes the
+ file type to be printed.
+installed-size: 368
+
+Package: fileutils
+Version: 4.0.43-1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Michael Stone <mstone@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Conflicts: color-ls
+Replaces: color-ls, util-linux (<= 2.7.1-1)
+Architecture: sh
+Filename: ./fileutils_4.0.43-1_sh.deb
+Size: 688078
+MD5sum: 8b7c691695278a03700dcd935299a5d1
+Description: GNU file management utilities.
+ The utilities: chgrp chmod chown cp dd df dir dircolors du install ln
+ ls mkdir mkfifo mknod mv rm rmdir shred touch vdir sync.
+installed-size: 1633
+
+Package: findutils
+Version: 4.1.6-2
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Kevin Dalley <kevind@rahul.net>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./findutils_4.1.6-2_sh.deb
+Size: 166524
+MD5sum: 7a286bfa8fee47b89e2c35956c799131
+Description: utilities for finding files--find, xargs, and locate
+ These utilities find files meeting specified criteria and perform
+ various actions on the files which are found.
+installed-size: 592
+
+Package: flex
+Version: 2.5.4a-11
+Priority: standard
+Section: devel
+Maintainer: Santiago Vila <sanvila@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Recommends: c-compiler
+Suggests: bison
+Architecture: sh
+Filename: ./flex_2.5.4a-11_sh.deb
+Size: 186034
+MD5sum: 8da6e089c3e361dc40220c16aaff2ce0
+Description: A fast lexical analyzer generator.
+ flex is a tool for generating scanners: programs which recognized lexical
+ patterns in text. flex reads the given input files for a description of a
+ scanner to generate. The description is in the form of pairs of regular
+ expressions and C code, called rules. flex generates as output a C source
+ file, lex.yy.c, which defines a routine yylex().  This file is compiled
+ and linked with the -lfl library to produce an executable. When the
+ executable is run, it analyzes its input for occurrences of the regular
+ expressions. Whenever it finds one, it executes the corresponding C code.
+ .
+ This product includes software developed by the University of California,
+ Berkeley and its contributors.
+installed-size: 476
+
+Package: ftp
+Version: 0.17-5
+Priority: standard
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5, libreadline4 (>= 4.1)
+Provides: ftp-client
+Replaces: netstd
+Architecture: sh
+Filename: ./ftp_0.17-5_sh.deb
+Size: 60286
+MD5sum: c27c813c5933a35e15754075ccdce538
+Description: The FTP client.
+ ftp is the user interface to the ARPANET standard File Transfer Protocol.
+ The program allows a user to transfer files to and from a remote network
+ site.
+source: netkit-ftp
+installed-size: 109
+
+Package: ftpd
+Version: 0.17-3
+Priority: extra
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: netbase, libpam-modules, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1)
+Conflicts: ftp-server
+Provides: ftp-server
+Replaces: netstd
+Architecture: sh
+Filename: ./ftpd_0.17-3_sh.deb
+Size: 43692
+MD5sum: c0af833ace89d5592b7d788cf1f1b19a
+Description: FTP server
+ This is the netkit ftp server.  It is recommended for you to use one of its
+ alternatives, such as wu-ftpd or proftpd.
+source: linux-ftpd
+installed-size: 90
+
+Package: gettext
+Version: 0.10.35-17
+Priority: optional
+Section: devel
+Maintainer: Santiago Vila <sanvila@debian.org>
+Depends: libc6 (>= 2.2.1-2), gettext-base
+Suggests: emacsen
+Architecture: sh
+Filename: ./gettext_0.10.35-17_sh.deb
+Size: 338988
+MD5sum: c9a86baa04de1ed324c3bceaf72453a1
+Description: GNU Internationalization utilities
+ Interesting for authors or maintainers of other packages or programs
+ which they want to see internationalized.
+installed-size: 896
+
+Package: gettext-base
+Version: 0.10.35-17
+Priority: standard
+Section: base
+Maintainer: Santiago Vila <sanvila@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Replaces: gettext (<= 0.10.35-8)
+Architecture: sh
+Filename: ./gettext-base_0.10.35-17_sh.deb
+Size: 79538
+MD5sum: 24859879936624fc8c3c97a37fd17eda
+Description: GNU Internationalization utilities for the base system
+ This package includes the gettext program which allow other packages
+ to internationalize the messages given by shell scripts.
+source: gettext
+installed-size: 448
+
+Package: gettext-doc
+Version: 0.10.35-17
+Priority: optional
+Section: doc
+Maintainer: Santiago Vila <sanvila@debian.org>
+Architecture: all
+Filename: ./gettext-doc_0.10.35-17_all.deb
+Size: 98922
+MD5sum: 601c6eced997fb27dd7b50b758cfb88d
+Description: Documentation for GNU gettext.
+ This package contains the HTML documentation for GNU gettext.
+source: gettext
+installed-size: 452
+
+Package: glibc-doc
+Version: 2.2.2-1
+Priority: optional
+Section: doc
+Maintainer: Ben Collins <bcollins@debian.org>
+Conflicts: libc-doc, libc6-doc, glibcdoc
+Provides: libc-doc
+Replaces: libc-doc, libc6-doc, glibcdoc
+Architecture: all
+Filename: ./glibc-doc_2.2.2-1_all.deb
+Size: 2479872
+MD5sum: 6a4b68a5591611761096bfe26441b833
+Description: GNU C Library: Documentation
+ Contains The GNU C Library Reference manual in info format as well as man
+ pages for libpthread functions. Also included is the complete GNU C Library
+ ChangeLog.
+source: glibc
+installed-size: 5636
+
+Package: gpm
+Version: 1.19.3-6
+Priority: standard
+Section: misc
+Maintainer: Zephaniah E. Hull <warp@debian.org>
+Depends: libc6 (>= 2.2.1-2), debianutils (>= 1.7)
+Architecture: sh
+Filename: ./gpm_1.19.3-6_sh.deb
+Size: 200506
+MD5sum: d985896d3c9ed954625945c7cb778a80
+Description: General Purpose Mouse Interface
+ This package provides a daemon that listens to the mouse when the
+ console is displayed, and delivers them to applications.
+ .
+ The default when no application is running is to emulate
+ "selection", i.e. allow cut-and-paste with the mouse on the
+ console the same way as under X.
+installed-size: 448
+
+Package: grep
+Version: 2.4.2-1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Conflicts: rgrep
+Provides: rgrep
+Architecture: sh
+Filename: ./grep_2.4.2-1_sh.deb
+Size: 207864
+MD5sum: f9d6a3255f1b97ab6f917d3f04df8eb2
+Description: GNU grep, egrep and fgrep.
+ The GNU family of grep utilities may be the "fastest grep in the west".
+ GNU grep is based on a fast lazy-state deterministic matcher (about
+ twice as fast as stock Unix egrep) hybridized with a Boyer-Moore-Gosper
+ search for a fixed string that eliminates impossible text from being
+ considered by the full regexp matcher without necessarily having to
+ look at every character. The result is typically many times faster
+ than Unix grep or egrep. (Regular expressions containing backreferencing
+ will run more slowly, however.)
+installed-size: 684
+
+Package: gzip
+Version: 1.2.4-33
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Bdale Garbee <bdale@gag.com>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Depends: debianutils (>= 1.6)
+Architecture: sh
+Filename: ./gzip_1.2.4-33_sh.deb
+Size: 70058
+MD5sum: 3fbd2325a44d05c6984bf689c25ccd79
+Description: The GNU compression utility.
+ This is the standard GNU file compression utility, which is also the default
+ compression tool for Debian.  It typically operates on files with names
+ ending in '.gz'.
+ .
+ This package can also decompress '.Z' files created with 'compress'.
+installed-size: 220
+
+Package: hello
+Version: 1.3-18
+Priority: optional
+Section: devel
+Maintainer: Adam Heath <doogie@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./hello_1.3-18_sh.deb
+Size: 19778
+MD5sum: f32619ce823d809e377590c5c08393d4
+Description: The classic greeting, and a good example
+ The GNU hello program produces a familiar, friendly greeting.  It
+ allows nonprogrammers to use a classic computer science tool which
+ would otherwise be unavailable to them.
+ .
+ Seriously, though: this is an example of how to do a Debian package.
+ It is the Debian version of the GNU Project's `hello world' program
+ (which is itself an example for the GNU Project).
+installed-size: 84
+
+Package: hostname
+Version: 2.07
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Adam Heath <doogie@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./hostname_2.07_sh.deb
+Size: 9068
+MD5sum: 6d1bb1e38727c83acfb229575810e355
+Description: A utility to set/show the host name or domain name
+ The hostname command can be used to either set or display
+ the current host or domain name of the system. This name is
+ used by many of the networking programs to identify the machine.
+ The domain name is also used by NIS/YP.
+installed-size: 88
+
+Package: ifupdown
+Version: 0.6.4-3
+Priority: extra
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: net-tools, libc6 (>= 2.2.1-2)
+Suggests: iproute
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./ifupdown_0.6.4-3_sh.deb
+Size: 26380
+MD5sum: 3c8b6674d490241b646cfe92492b00d2
+Description: High level tools to configure network interfaces
+ This package provides the tools ifup and ifdown which may be used to
+ configure (or, respectively, deconfigure) network interfaces, based on
+ the file /etc/network/interfaces.
+installed-size: 68
+
+Package: info
+Version: 4.0-5
+Priority: important
+Section: doc
+Maintainer: Josip Rodin <jrodin@jagor.srce.hr>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Conflicts: xemacs-support
+Provides: info-browser
+Architecture: sh
+Filename: ./info_4.0-5_sh.deb
+Size: 194022
+MD5sum: f5540c398d33e52f91a6a743f6877efb
+Description: Standalone GNU Info documentation browser
+ The Info file format is an easily-parsable representation for online
+ documents. This program allows you to view Info documents, like the
+ ones stored in /usr/share/info and /usr/info.
+ .
+ Much of the software in Debian comes with its online documentation in
+ the form of Info files, so it is most likely you will want to install it.
+source: texinfo
+installed-size: 273
+
+Package: iptables
+Version: 1.2.1-1
+Priority: optional
+Section: net
+Maintainer: Laurence J. Lane <ljlane@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./iptables_1.2.1-1_sh.deb
+Size: 139494
+MD5sum: ae35f4c5773ffa425cdc1608b6ee10e7
+Description: IP packet filter administration for 2.4.X kernels
+ Iptables  is  used  to  set  up, maintain, and inspect the
+ tables of IP packet filter  rules  in  the  Linux  kernel.
+ The iptables tool also supports configuration of dynamic and static
+ network address translation.
+installed-size: 405
+
+Package: jfbterm
+Version: 0.3.10-3
+Priority: optional
+Section: utils
+Maintainer: Hatta Shuzo <hattas@debian.org>
+Depends: libc6 (>= 2.2.1-2), xfonts-base
+Architecture: sh
+Filename: ./jfbterm_0.3.10-3_sh.deb
+Size: 37564
+MD5sum: 0311dcab50d2a1c1126849491085c52e
+Description: Japanized framebuffer terminal with Multilingual Enhancement.
+ Jfbterm/me is a Japanized framebuffer terminal with Multilingual
+ Enhancement. It can display ISO-8859-1, ISO-8859-2, ISO-2022-JP, EUC-JP,
+ ISO-2022-CN, CN-GB, ISO-2022-KR, EUC-KR and Wansung.
+ BIG5 is planned to support.
+ .
+ It supprts 8 bpp PACKED-PIXELS PSEUDOCOLOR and (15|16|24|32) bpp
+ PACKED-PIXELS TRUECOLOR framebuffers (vga16fb is supported).
+installed-size: 164
+
+Package: klogd
+Version: 1.4.1-1
+Maintainer: Martin Schulze <joey@debian.org>
+Depends: libc6 (>= 2.2.1-2), sysklogd | system-log-daemon
+Conflicts: sysklogd (<= 1.3-33)
+Provides: linux-kernel-log-daemon
+Replaces: sysklogd
+Architecture: sh
+Filename: ./klogd_1.4.1-1_sh.deb
+Size: 35782
+MD5sum: bd3cc9bead1eb4d767fcf7a6a6916dc7
+Description: Kernel logging daemon
+ The klogd daemon listens to kernel message sources and is responsible
+ for prioritizing and processing operating system messages.  The klogd
+ daemon can run as a client of syslogd or optionally as a standalone
+ program.  Klogd can now be used to decode EIP addresses if it can
+ determine a System.map file.
+source: sysklogd
+installed-size: 128
+
+Package: libapt-pkg-dev
+Version: 0.5.4
+Priority: optional
+Section: devel
+Maintainer: APT Development Team <deity@lists.debian.org>
+Depends: libapt-pkg-libc6.2-3-3.2
+Architecture: sh
+Filename: ./libapt-pkg-dev_0.5.4_sh.deb
+Size: 56402
+MD5sum: 8568315801689da9d303d702653bc347
+Description: Development files for APT's libapt-pkg
+ This package contains the header files and static libraries for
+ developing with APT's libapt-pkg Debian package manipulation
+ library.
+source: apt
+installed-size: 308
+
+Package: libbz2-1.0
+Version: 1.0.1-6
+Priority: optional
+Section: libs
+Maintainer: Philippe Troin <phil@fifi.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: libbz2-dev, bzip2
+Architecture: sh
+Filename: ./libbz2-1.0_1.0.1-6_sh.deb
+Size: 38922
+MD5sum: b674038f41ea27f4c800dc83f53c3f7a
+Description: A high-quality block-sorting file compressor library - runtime
+ This package contains libbzip2 which is used by the bzip2 compressor.
+source: bzip2
+installed-size: 104
+
+Package: libbz2-dev
+Version: 1.0.1-6
+Priority: optional
+Section: devel
+Maintainer: Philippe Troin <phil@fifi.org>
+Depends: libbz2-1.0(=1.0.1-6), libc6-dev
+Replaces: bzip2(<<0.9.5d-3)
+Architecture: sh
+Filename: ./libbz2-dev_1.0.1-6_sh.deb
+Size: 64972
+MD5sum: 89e940a6d38596e855265323cbbf2d82
+Description: A high-quality block-sorting file compressor library - development
+ Static libraries and include files for the bzip2 compressor library.
+source: bzip2
+installed-size: 204
+
+Package: libc6
+Version: 2.2.2-1
+Priority: required
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Suggests: locales, glibc-doc
+Conflicts: libdb2 (= 2:2.7.7-2.1), timezone, timezones, gconv-modules, libtricks, libc6-doc
+Provides: gconv-modules, glibc2.2
+Replaces: ldso (<= 1.9.11-9), timezone, timezones, gconv-modules, libtricks
+Architecture: sh
+Filename: ./libc6_2.2.2-1_sh.deb
+Size: 3751308
+MD5sum: 5e5e9fd2d5ce73c08479fb16115ae587
+Description: GNU C Library: Shared libraries and Timezone data
+ Contains the standard libraries that are used by nearly all programs on
+ the system. This package includes shared versions of the standard C library
+ and the standard math library, as well as many others.
+ Timezone data is also included.
+source: glibc
+installed-size: 13308
+
+Package: libc6-dbg
+Version: 2.2.2-1
+Priority: extra
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (= 2.2.2-1)
+Architecture: sh
+Filename: ./libc6-dbg_2.2.2-1_sh.deb
+Size: 7574598
+MD5sum: 5f6fb0b60a24bb21801eafbf187ea093
+Description: GNU C Library: Libraries with debugging symbols
+ Contains unstripped shared libraries.
+ This package is provided primarily to provide a backtrace with
+ names in a debugger, this makes it somewhat easier to interpret core
+ dumps. The libraries are installed in /usr/lib/debug and can be
+ used by placing that directory in LD_LIBRARY_PATH.
+ Most people will not need this package.
+source: glibc
+installed-size: 24416
+
+Package: libc6-dev
+Version: 2.2.2-1
+Priority: standard
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (= 2.2.2-1)
+Recommends: c-compiler
+Suggests: glibc-doc
+Conflicts: libstdc++2.10-dev (<< 1:2.95.2-15), libc-dev
+Provides: libc-dev
+Replaces: man-db (<= 2.3.10-41), gettext (<= 0.10.26-1), ppp (<= 2.2.0f-24), libgdbmg1-dev (<= 1.7.3-24), ldso (<= 1.9.11-9)
+Architecture: sh
+Filename: ./libc6-dev_2.2.2-1_sh.deb
+Size: 2256876
+MD5sum: ff50db17c4aabeef9b9cd208355f19df
+Description: GNU C Library: Development Libraries and Header Files.
+ Contains the symlinks, headers, and object files needed to compile
+ and link programs which use the standard C library.
+source: glibc
+installed-size: 10612
+
+Package: libc6-pic
+Version: 2.2.2-1
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (= 2.2.2-1)
+Conflicts: libc-pic
+Provides: libc-pic, glibc-pic
+Architecture: sh
+Filename: ./libc6-pic_2.2.2-1_sh.deb
+Size: 954170
+MD5sum: f7744943bba7710d7490dd5061b3a871
+Description: GNU C Library: PIC archive library
+ Contains an archive library (ar file) composed of individual shared objects.
+ This is used for creating a library which is a smaller subset of the
+ standard libc shared library. The reduced library is used on the Debian
+ boot floppies. If you are not making your own set of Debian boot floppies
+ using the `boot-floppies' package, you probably don't need this package.
+source: glibc
+installed-size: 3224
+
+Package: libc6-prof
+Version: 2.2.2-1
+Priority: extra
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (= 2.2.2-1)
+Architecture: sh
+Filename: ./libc6-prof_2.2.2-1_sh.deb
+Size: 982734
+MD5sum: 29fe53b797699cda19b15c3d84fc1a9b
+Description: GNU C Library: Profiling Libraries.
+ Static libraries compiled with profiling info (-pg) suitable for use
+ with gprof.
+source: glibc
+installed-size: 3448
+
+Package: libcap-bin
+Version: 1:1.10-9
+Priority: optional
+Section: devel
+Maintainer: Michael Vogt <mvo@debian.org>
+Depends: libcap1
+Replaces: libcap-progs
+Architecture: sh
+Filename: ./libcap-bin_1.10-9_sh.deb
+Size: 11056
+MD5sum: e4c59f20e070b724c1b80292ba66ed22
+Description: basic utility programs for using capabilities
+ This packages contains the programs sucap, execap, getpcaps, setpcaps
+ for mainpulation of capabilities.
+source: libcap
+installed-size: 88
+
+Package: libcap-dev
+Version: 1:1.10-9
+Priority: optional
+Section: devel
+Maintainer: Michael Vogt <mvo@debian.org>
+Depends: libcap1 (= 1:1.10-9), libc6-dev
+Architecture: sh
+Filename: ./libcap-dev_1.10-9_sh.deb
+Size: 25910
+MD5sum: de58feaee05bea2dd63daa390da25795
+Description: development libraries and header files for libcap
+ Contains the necessary support for building applications that use
+ capabilities.
+source: libcap
+installed-size: 132
+
+Package: libcap1
+Version: 1:1.10-9
+Priority: optional
+Section: libs
+Maintainer: Michael Vogt <mvo@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./libcap1_1.10-9_sh.deb
+Size: 9518
+MD5sum: c5c7771ea4057554382a5a8fe3c5decf
+Description: support for getting/setting POSIX.1e capabilites
+ This library implements the user-space interfaces to the POSIX
+ 1003.1e capabilities available in Linux kernels.  These capabilities are
+ a partitioning of the all powerful root privilege into a set of distinct
+ privileges.  Note that it will not provide any functionality with kernels
+ below 2.2
+source: libcap
+installed-size: 68
+
+Package: libdb2
+Version: 2:2.7.7-4
+Priority: required
+Section: libs
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: lib-bdb2
+Replaces: libdb2.6, lib-bdb2, libc6 (<< 2.2.2-4), libc6.1 (<< 2.2.2-4), libc0.2 (<< 2.2.2-4)
+Architecture: sh
+Filename: ./libdb2_2.7.7-4_sh.deb
+Size: 344500
+MD5sum: 0525323c6c9c7e1c6dc9b81864cf3b88
+Description: The Berkeley database routines (run-time files).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+ .
+ It supports three kinds of file formats:
+  * btree. A representation of a sorted, balanced tree structure.
+  * hashed. An extensible, dynamic hashing scheme.
+  * UNIX file oriented. A byte stream file with fixed or variable
+    length records.
+ Other core database services:
+  * page cache management for fast access, clean page allocation.
+  * lock with multiple reader/writer granularity.
+  * nested transaction support with logging and rollback recovery
+    (two phase commit).
+  * Large set of utilities, to dump/load/restore data and examine log.
+source: db2
+installed-size: 624
+
+Package: libdb2++
+Version: 2:2.7.7-4
+Priority: optional
+Section: libs
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Conflicts: lib-bdb2++
+Replaces: libdb2.6++, lib-bdb2++
+Architecture: sh
+Filename: ./libdb2++_2.7.7-4_sh.deb
+Size: 191944
+MD5sum: ef5e03965217a11f6a4e8a9af811d549
+Description: The Berkeley database routines (c++ run-time files).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+source: db2
+installed-size: 632
+
+Package: libdb2++-dev
+Version: 2:2.7.7-4
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libstdc++-dev, libdb2++ (= 2:2.7.7-4), libdb2-dev (= 2:2.7.7-4)
+Suggests: db2-doc
+Conflicts: lib-bdb2++-dev
+Replaces: libdb2.6++-dev, lib-bdb2++-dev
+Architecture: sh
+Filename: ./libdb2++-dev_2.7.7-4_sh.deb
+Size: 62274
+MD5sum: a1a32ab0dd76a71639b8ac303a068e79
+Description: The Berkeley database routines (c++ development files).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+ .
+ This development package contains unstripped shared libraries
+ compiled with debugging symbols needed by gdb. It contains also
+ unstripped shared libraries.
+source: db2
+installed-size: 188
+
+Package: libdb2-dbg
+Version: 2:2.7.7-4
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc-dev, libdb2-dev (=2:2.7.7-4), libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Suggests: gdb
+Conflicts: lib-bdb2-dbg, libc6-bin, lib-bdb2++, libdb2++-dbg, lib-bdb2++-dbg
+Replaces: libdb2.6-dbg, lib-bdb2-dbg, libc6-bin, libdb2.6++-dbg, lib-bdb2++-dbg, libdb2++-dbg
+Architecture: sh
+Filename: ./libdb2-dbg_2.7.7-4_sh.deb
+Size: 3093108
+MD5sum: ee6dafdd96406b3a549476ef51bed38d
+Description: The Berkeley database routines (debugging libraries, C and C++).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+ .
+ This development package contains unstripped shared libraries
+ compiled with debugging symbols needed by gdb. It contains also
+ unstripped shared libraries.
+source: db2
+installed-size: 9216
+
+Package: libdb2-dev
+Version: 2:2.7.7-4
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libdb2 (= 2:2.7.7-4), libdb2-util (= 2:2.7.7-4)
+Suggests: db2-doc
+Conflicts: lib-bdb2-dev
+Replaces: libdb2.6-dev, lib-bdb2-dev
+Architecture: sh
+Filename: ./libdb2-dev_2.7.7-4_sh.deb
+Size: 213522
+MD5sum: 9433560f0917b29ae135de7240c7fd47
+Description: The Berkeley database routines (development files).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+ .
+ This development package contains the needed headers and libraries for
+ developing software using the libdb2 interface.
+source: db2
+installed-size: 532
+
+Package: libdb2-util
+Version: 2:2.7.7-4
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Conflicts: lib-bdb2-util, libc6-bin
+Replaces: libdb2.6-util, lib-bdb2-util, libc6-bin, libdb2-dbg
+Architecture: sh
+Filename: ./libdb2-util_2.7.7-4_sh.deb
+Size: 111112
+MD5sum: 8251318e936a8f77f1ae06d2711c1c3f
+Description: The Berkeley database routines (development files).
+ libdb2 is a library for manipulating database files, developed at
+ Berkeley and extended by Sleepycat Software Inc.
+ This is the stable version, also commercially supported.
+ .
+ This package contains several programs for managing database files.
+source: db2
+installed-size: 248
+
+Package: libdb3
+Version: 3.2.9-4
+Priority: optional
+Section: libs
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: libdb2 (<< 2:2.7.7-3)
+Architecture: sh
+Filename: ./libdb3_3.2.9-4_sh.deb
+Size: 292604
+MD5sum: 99434eb0873e190718b3d090bed7b975
+Description: Berkeley v3 Database Libraries [runtime]
+ This is the runtime package for programs that use the Berkeley v3
+ database library.
+source: db3
+installed-size: 759
+
+Package: libdb3++
+Version: 3.2.9-4
+Priority: optional
+Section: libs
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libdb3 (>= 3.2.9-1)
+Conflicts: libdb2++ (<< 2:2.7.7-3)
+Architecture: sh
+Filename: ./libdb3++_3.2.9-4_sh.deb
+Size: 31348
+MD5sum: 5450fed2e15f72f3ed3adf6b6feb206d
+Description: Berkeley v3 Database Libraries for C++ [runtime]
+ This is the runtime package for programs that use the Berkeley v3
+ database library. This is only for programs which use the C++
+ interface.
+source: db3
+installed-size: 97
+
+Package: libdb3++-dev
+Version: 3.2.9-4
+Priority: extra
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libdb3++ (= 3.2.9-4)
+Conflicts: libdb2++-dev, libdb++-dev
+Provides: libdb++-dev
+Architecture: sh
+Filename: ./libdb3++-dev_3.2.9-4_sh.deb
+Size: 48798
+MD5sum: e5c81d10ace6b391921da73abc62ad5b
+Description: Berkeley v3 Database Libraries for C++ [development]
+ This is the development package which contains headers and static
+ libraries for the Berkeley v3 database library. This is only for programs
+ which will use the C++ interface.
+source: db3
+installed-size: 186
+
+Package: libdb3-dev
+Version: 3.2.9-4
+Priority: extra
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libdb3 (= 3.2.9-4)
+Conflicts: libdb2-dev, libdb1-dev, libdb-dev
+Provides: libdb-dev
+Architecture: sh
+Filename: ./libdb3-dev_3.2.9-4_sh.deb
+Size: 329306
+MD5sum: 3b5a444ec58bb67c823ea4b64acc44b5
+Description: Berkeley v3 Database Libraries [development]
+ This is the development package which contains headers and static
+ libraries for the Berkeley v3 database library.
+source: db3
+installed-size: 1020
+
+Package: libdb3-tcl
+Version: 3.2.9-4
+Priority: extra
+Section: interpreters
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), tcl8.3 (>= 8.3.2)
+Architecture: sh
+Filename: ./libdb3-tcl_3.2.9-4_sh.deb
+Size: 333922
+MD5sum: dfa7f2ed0a9cd514d491b48c647de9c3
+Description: Berkeley v3 Database Libraries for TCL [module]
+ This package provides a TCL module suitable accessing Berkeley v3
+ databases from within TCL programs.
+source: db3
+installed-size: 861
+
+Package: libdb3-util
+Version: 3.2.9-4
+Priority: optional
+Section: utils
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libdb3 (>= 3.2.9-1)
+Architecture: sh
+Filename: ./libdb3-util_3.2.9-4_sh.deb
+Size: 50880
+MD5sum: 8deb29ffcd32df41b7c860160f936907
+Description: Berkeley v3 Database Utilities
+ These are utilities that help you work with DB3 databases.
+source: db3
+installed-size: 157
+
+Package: libgc5
+Version: 1:5.3-2
+Priority: optional
+Section: libs
+Maintainer: Mike Goldman <whig@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./libgc5_5.3-2_sh.deb
+Size: 59580
+MD5sum: 823aecc2d0873592450ed69609a01b63
+Description: Conservative garbage collector for C
+ Boehm's GC is a garbage collecting storage allocator that is
+ intended to be used as a plug-in replacement for C's malloc.
+source: libgc
+installed-size: 160
+
+Package: libgc5-dev
+Version: 1:5.3-2
+Priority: optional
+Section: devel
+Maintainer: Mike Goldman <whig@debian.org>
+Depends: libgc5 (= 1:5.3-2), libc6-dev
+Conflicts: libgc-dev, libgc4-dev, bigloo (<< 2.0e-1)
+Provides: libgc-dev
+Replaces: libgc4-dev
+Architecture: sh
+Filename: ./libgc5-dev_5.3-2_sh.deb
+Size: 167556
+MD5sum: 8042bd955bdabf2544a8f644e00275ef
+Description: Conservative garbage collector for C (development)
+ Boehm's GC is a garbage collecting storage allocator that is
+ intended to be used as a plug-in replacement for C's malloc.
+ This package is required to compile and link programs that use
+ libgc5.
+ .
+ Since the collector does not require pointers to be tagged, it does
+ not attempt to ensure that all inaccessible storage is reclaimed.
+ However it has typically been more successful at reclaiming unused
+ memory than most C programs using explicit deallocation.  Unlike
+ manually introduced leaks, the amount of unreclaimed memory typically
+ stays bounded.
+source: libgc
+installed-size: 544
+
+Package: libgdbmg1
+Version: 1.7.3-27
+Priority: standard
+Section: base
+Maintainer: James Troup <james@nocrew.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: libgdbm1 (<< 1.7.3-20)
+Provides: elf-libgdbm
+Architecture: sh
+Filename: ./libgdbmg1_1.7.3-27_sh.deb
+Size: 20180
+MD5sum: 2d574360cd1e466b927f9f5581b2b368
+Description: GNU dbm database routines (runtime version). [libc6 version]
+ GNU dbm ('gdbm') is a library of database functions that use extendible
+ hashing and works similarly to the standard UNIX 'dbm' functions.
+ .
+ The basic use of 'gdbm' is to store key/data pairs in a data file, thus
+ providing a persistent version of the 'dictionary' Abstract Data Type
+ ('hash' to perl programmers).
+source: gdbm
+installed-size: 43
+
+Package: libgdbmg1-dev
+Version: 1.7.3-27
+Priority: optional
+Section: devel
+Maintainer: James Troup <james@nocrew.org>
+Depends: libc6-dev, libgdbmg1 (= 1.7.3-27)
+Conflicts: libgdbm1-dev
+Architecture: sh
+Filename: ./libgdbmg1-dev_1.7.3-27_sh.deb
+Size: 44202
+MD5sum: 57f3dc78567570784a12ac4e8b3ebe81
+Description: GNU dbm database routines (development files) [libc6 version]
+ GNU dbm ('gdbm') is a library of database functions that use extendible
+ hashing and works similarly to the standard UNIX 'dbm' functions.
+ .
+ This library is no longer supported by the FSF, and hasn't been worked on
+ in several years -- for new applications, please consider libdb instead, and
+ also consider migrating old applications, see /usr/doc/libgdbmg1-dev/MIGRATE.
+source: gdbm
+installed-size: 99
+
+Package: libgmp3
+Version: 3.1.1-3
+Priority: extra
+Section: libs
+Maintainer: Dale Scheetz (Dwarf #1) <dwarf@polaris.net>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: libgmp2 (<<2.0.2-10)
+Architecture: sh
+Filename: ./libgmp3_3.1.1-3_sh.deb
+Size: 274084
+MD5sum: bc388dba07bcb15a337a8d80f15b43a6
+Description: Multiprecision arithmetic library
+ GNU MP is a programmer's library for arbitrary precision
+ arithmetic (ie, a bignum package).  It can operate on signed
+ integer, rational, and floating point numeric types.
+ .
+ It has a rich set of functions, and the functions have a regular
+ interface.
+ .
+ GNU MP is licenced under the GNU Library General Public Licence
+ (LGPL).
+ .
+ The home page is; http://www.swox.com/gmp
+installed-size: 529
+
+Package: libgmp3-dev
+Version: 3.1.1-3
+Priority: extra
+Section: devel
+Maintainer: Dale Scheetz (Dwarf #1) <dwarf@polaris.net>
+Depends: libgmp3
+Conflicts: libgmp2-dev
+Replaces: libgmp2-dev
+Architecture: sh
+Filename: ./libgmp3-dev_3.1.1-3_sh.deb
+Size: 217242
+MD5sum: 09faf37e3a8816d9de1c5af65a1929ef
+Description: Multiprecision arithmetic library developers tools.
+ This development package provides the header files and the symbolic
+ links to allow compilation and linking of programs that use the libraries
+ provided in the libgmp3 package.
+source: libgmp3
+installed-size: 580
+
+Package: libgpmg1
+Version: 1.19.3-6
+Priority: optional
+Section: libs
+Maintainer: Zephaniah E. Hull <warp@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Suggests: gpm
+Conflicts: libgpm1 (<< 1.12-3)
+Architecture: sh
+Filename: ./libgpmg1_1.19.3-6_sh.deb
+Size: 44440
+MD5sum: 032bd30de44e285ee05e9509682059e1
+Description: General Purpose Mouse Library [libc6]
+ This package provides a library that handles mouse requests
+ and delivers them to applications.
+source: gpm
+installed-size: 104
+
+Package: libgpmg1-dev
+Version: 1.19.3-6
+Priority: optional
+Section: devel
+Maintainer: Zephaniah E. Hull <warp@debian.org>
+Depends: libgpmg1 (= 1.19.3-6), libc6-dev
+Replaces: libgpm1 (<< 1.12-3)
+Architecture: sh
+Filename: ./libgpmg1-dev_1.19.3-6_sh.deb
+Size: 46260
+MD5sum: 2d0b0642e592c0cd831cb1cf679b2a22
+Description: General Purpose Mouse Library, development files [libc6]
+ This package provides a library that handles mouse requests
+ and delivers them to applications.
+source: gpm
+installed-size: 112
+
+Package: libident
+Version: 0.22-2
+Maintainer: Paul Slootman <paul@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: libident-dev
+Architecture: sh
+Filename: ./libident_0.22-2_sh.deb
+Size: 14112
+MD5sum: 4cc00332b8653b831252182ed281c741
+Description: simple RFC1413 client library - runtime
+ This is a small library to interface to the Ident protocol server;
+ "ident" enables a remote host to find out who's the owner of a
+ network connection.
+ .
+ /usr/sbin/in.identtestd is a small daemon (to be started from inetd)
+ that does an ident lookup on you if you telnet into it. Can be used
+ to verify that your Ident server is working correctly.
+installed-size: 36
+
+Package: libident-dev
+Version: 0.22-2
+Maintainer: Paul Slootman <paul@debian.org>
+Depends: libident(=0.22-2), libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./libident-dev_0.22-2_sh.deb
+Size: 8534
+MD5sum: a8772d0d3d21559b2212cd2deafa4daa
+Description: simple RFC1413 client library - development
+ This is a small library to interface to the Ident protocol server.
+source: libident
+installed-size: 27
+
+Package: liblockfile-dev
+Version: 1.01.2
+Priority: optional
+Section: devel
+Maintainer: Miquel van Smoorenburg <miquels@cistron.nl>
+Depends: liblockfile1 (=1.01.2)
+Architecture: sh
+Filename: ./liblockfile-dev_1.01.2_sh.deb
+Size: 7112
+MD5sum: e70646dc0595411d522a705d16e3c9c4
+Description: Development library for liblockfile.
+ This is a development library for liblockfile. It includes headers and
+ documentation.
+source: liblockfile
+installed-size: 72
+
+Package: liblockfile1
+Version: 1.01.2
+Priority: optional
+Section: libs
+Maintainer: Miquel van Smoorenburg <miquels@cistron.nl>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./liblockfile1_1.01.2_sh.deb
+Size: 13998
+MD5sum: 1962f24eba45f2d9688f8303964fb68c
+Description: NFS-safe locking library, includes dotlockfile program
+ Liblockfile is a shared library with NFS-safe locking functions. It
+ includes the command-line utility ``dotlockfile''.
+source: liblockfile
+installed-size: 92
+
+Package: libltdl0
+Version: 1.3.5-5
+Priority: optional
+Section: libs
+Maintainer: Ossama Othman <ossama@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: libltdl0.1
+Replaces: libltdl0.1
+Architecture: sh
+Filename: ./libltdl0_1.3.5-5_sh.deb
+Size: 30072
+MD5sum: 369b3f2f4426df6f35a1be56810a0e7b
+Description: A system independent dlopen wrapper for GNU libtool
+ This package contains the run-time libltdl library.
+ .
+ A small library that aims at hiding the various difficulties of dlopening
+ libraries from programmers.
+source: libtool
+installed-size: 84
+
+Package: libltdl0-dev
+Version: 1.3.5-5
+Priority: optional
+Section: devel
+Maintainer: Ossama Othman <ossama@debian.org>
+Depends: libltdl0 (= 1.3.5-5), libc6-dev, gcc | c-compiler, cpp
+Recommends: libtool
+Suggests: libtool-doc
+Conflicts: libltdl0.1-dev
+Replaces: libltdl0.1-dev
+Architecture: sh
+Filename: ./libltdl0-dev_1.3.5-5_sh.deb
+Size: 8832
+MD5sum: a6bddc86b12d4ff1ac79f817e9b1f251
+Description: A system independent dlopen wrapper for GNU libtool
+ This package contains the header files and static libraries for the
+ libltdl package.
+ .
+ A small library that aims at hiding the various difficulties of dlopening
+ libraries from programmers.
+source: libtool
+installed-size: 60
+
+Package: libncurses5
+Version: 5.2-1
+Priority: required
+Section: base
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./libncurses5_5.2-1_sh.deb
+Size: 252932
+MD5sum: 16b99163debd766a92970948f559fd2c
+Description: Shared libraries for terminal handling
+ This package contains the shared libraries necessary to run programs
+ compiled with ncurses.
+source: ncurses
+installed-size: 504
+
+Package: libncurses5-dbg
+Version: 5.2-1
+Priority: optional
+Section: devel
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Depends: libncurses5-dev (= 5.2-1)
+Architecture: sh
+Filename: ./libncurses5-dbg_5.2-1_sh.deb
+Size: 1171472
+MD5sum: e225d7a74604363b452d0c7bf47bf5f7
+Description: Debugging/profiling libraries for ncurses
+ This package contains the static debugging and profiling libraries and
+ symbolic links that developers using ncurses will need.
+source: ncurses
+installed-size: 4768
+
+Package: libncurses5-dev
+Version: 5.2-1
+Priority: standard
+Section: devel
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Depends: libncurses5 (= 5.2-1), libc6-dev
+Conflicts: ncurses-dev, ncurses-developer, libncurses-dev
+Provides: libncurses-dev
+Replaces: ncurses-dev, ncurses-developer, libncurses-dev
+Architecture: sh
+Filename: ./libncurses5-dev_5.2-1_sh.deb
+Size: 975676
+MD5sum: 97abc6ece54e0352bdc80e853f17bd4e
+Description: Developer's libraries and docs for ncurses
+ This package contains the header files, static libraries
+ and symbolic links that developers using ncurses will need.
+source: ncurses
+installed-size: 4244
+
+Package: libpam-cracklib
+Version: 0.72-18
+Priority: optional
+Section: libs
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: cracklib2, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), cracklib-runtime
+Replaces: libpam0g-cracklib
+Architecture: sh
+Filename: ./libpam-cracklib_0.72-18_sh.deb
+Size: 43222
+MD5sum: 61f99aaf3817610605409e6aa2b16e8e
+Description: PAM module to enable cracklib support.
+ This module allows the use of cracklib in the authentication model.
+source: pam
+installed-size: 61
+
+Package: libpam-modules
+Version: 0.72-18
+Priority: required
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libcap1, libdb3 (>= 3.2.9-1), libpam0g (>= 0.72-1)
+Conflicts: libpam0g-modules (= 0.66-1), libpam-motd, libpam-mkhomedir, suidmanager (<< 0.50)
+Provides: libpam-motd, libpam-mkhomedir
+Replaces: libpam0g-util
+Architecture: sh
+Filename: ./libpam-modules_0.72-18_sh.deb
+Size: 143518
+MD5sum: 91313632c3ff6837c44fd473b616fa17
+Description: Pluggable Authentication Modules for PAM
+ This package completes the set of modules for PAM. It includes the
+ the pam_unix_*.so module as well as some specialty modules.
+source: pam
+installed-size: 365
+
+Package: libpam-runtime
+Version: 0.72-18
+Priority: required
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Conflicts: libpam0g-util, libpam0g (<< 0.66-0)
+Replaces: libpam0g-util
+Architecture: sh
+Filename: ./libpam-runtime_0.72-18_sh.deb
+Size: 40540
+MD5sum: c32db27b8a49b3c79f8a83f81236d690
+Description: Runtime support for the PAM library
+ Contains the base setup for libpam
+source: pam
+installed-size: 62
+
+Package: libpam0g
+Version: 0.72-18
+Priority: required
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libpam-runtime
+Suggests: libpam-doc
+Conflicts: libpam0 (<= 0.56-2), libpam
+Replaces: libpam0g-util
+Architecture: sh
+Filename: ./libpam0g_0.72-18_sh.deb
+Size: 67760
+MD5sum: 96d25e00c83da02995a688df1aed2e67
+Description: Pluggable Authentication Modules library
+ Contains the C shared library for Linux-PAM, a suite of shared
+ libraries that enable the local system administrator to choose how
+ applications authenticate users.  In other words, without rewriting
+ or recompiling a PAM-aware application, it is possible to switch
+ between the authentication mechanism(s) it uses.  One may entirely
+ upgrade the local authentication system without touching the
+ applications themselves.
+source: pam
+installed-size: 109
+
+Package: libpam0g-dev
+Version: 0.72-18
+Priority: optional
+Section: devel
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libpam0g (= 0.72-18), libc6-dev
+Conflicts: libpam-dev, libpam-dbg
+Provides: libpam-dev
+Replaces: libpam0g (<= 0.65)
+Architecture: sh
+Filename: ./libpam0g-dev_0.72-18_sh.deb
+Size: 171462
+MD5sum: cdc57d58e3d2b6cbc6142dbe0ebb2356
+Description: Development files for PAM
+ Contains C header files and development shared libraries libraries for
+ libpam, the pluggable authentication modules, a suite of shared libraries
+ that enable the local system administrator to choose how applications
+ authenticate users.
+ .
+ PAM decouples applications from the authentication mechanism, making it
+ possible to upgrade the authentication system without recompiling or
+ rewriting the applications.
+source: pam
+installed-size: 411
+
+Package: libperl-dev
+Version: 5.6.0-21
+Priority: optional
+Section: devel
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: libperl5.6 (= 5.6.0-21)
+Architecture: sh
+Filename: ./libperl-dev_5.6.0-21_sh.deb
+Size: 466366
+MD5sum: 4675db054277b36e722492d9bbec85a4
+Description: Perl library: development files.
+ Files for developing applications which embed a Perl interpreter.
+source: perl
+installed-size: 1060
+
+Package: libperl5.6
+Version: 5.6.0-21
+Priority: required
+Section: libs
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: perl-base (= 5.6.0-21)
+Architecture: sh
+Filename: ./libperl5.6_5.6.0-21_sh.deb
+Size: 437484
+MD5sum: bfffb28b93b5b5c639f2d1f8f7133b26
+Description: Shared Perl library.
+ Provides a shared library for programs which embed a Perl interpreter.
+source: perl
+installed-size: 865
+
+Package: libpopt-dev
+Version: 1.5-0.1
+Priority: optional
+Section: devel
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Depends: libc6-dev, libpopt0 (>> 1.4-1)
+Conflicts: popt
+Replaces: popt
+Architecture: sh
+Filename: ./libpopt-dev_1.5-0.1_sh.deb
+Size: 27636
+MD5sum: 5ab1ad3df855b419ab392bd9d7cab36d
+Description: lib for parsing cmdline parameters - development files
+ Popt was heavily influenced by the getopt() and getopt_long() functions,
+ but it allows more powerful argument expansion. It can parse arbitrary
+ argv[] style arrays and automatically set variables based on command
+ line arguments. It also allows command line arguments to be aliased via
+ configuration files and includes utility functions for parsing arbitrary
+ strings into argv[] arrays using shell-like rules.
+ .
+ This package contains the popt static library and header file.
+source: popt
+installed-size: 112
+
+Package: libpopt0
+Version: 1.5-0.1
+Priority: important
+Section: libs
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: popt, libpopt-dev (<= 1.4-1)
+Replaces: popt
+Architecture: sh
+Filename: ./libpopt0_1.5-0.1_sh.deb
+Size: 16296
+MD5sum: dff6a8e164d0aacb492dcc24a92b48a8
+Description: lib for parsing cmdline parameters
+ Popt was heavily influenced by the getopt() and getopt_long() functions,
+ but it allows more powerful argument expansion. It can parse arbitrary
+ argv[] style arrays and automatically set variables based on command
+ line arguments. It also allows command line arguments to be aliased via
+ configuration files and includes utility functions for parsing arbitrary
+ strings into argv[] arrays using shell-like rules.
+ .
+ This package contains the runtime library and locale data.
+source: popt
+installed-size: 92
+
+Package: libproc-dev
+Version: 1:2.0.7-4
+Priority: optional
+Section: devel
+Maintainer: Craig Small <csmall@debian.org>
+Depends: libc6-dev, procps (= 1:2.0.7-4)
+Architecture: sh
+Filename: ./libproc-dev_2.0.7-4_sh.deb
+Size: 51690
+MD5sum: 4e594edf4d8b942ad650cdd38548897b
+Description: library for accessing process information from /proc
+ These are the header files for libproc. Some packages using libproc
+ to access process information from /proc need these to compile.
+source: procps
+installed-size: 109
+
+Package: libreadline4
+Version: 4.1-4
+Priority: required
+Section: base
+Maintainer: Matthias Klose <doko@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Architecture: sh
+Filename: ./libreadline4_4.1-4_sh.deb
+Size: 104814
+MD5sum: 005a11c95cc1d8395023c8d8daebc7ad
+Description: GNU readline and history libraries, run-time libraries.
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
+source: readline4
+installed-size: 220
+
+Package: libreadline4-dbg
+Version: 4.1-4
+Priority: optional
+Section: devel
+Maintainer: Matthias Klose <doko@debian.org>
+Depends: libreadline4 (= 4.1-4)
+Conflicts: libreadline-dbg
+Provides: libreadline-dbg
+Architecture: sh
+Filename: ./libreadline4-dbg_4.1-4_sh.deb
+Size: 251636
+MD5sum: ad0909744329cf23f16bdc9db6f640c7
+Description: GNU readline and history libraries, debugging libraries.
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
+source: readline4
+installed-size: 726
+
+Package: libreadline4-dev
+Version: 4.1-4
+Priority: standard
+Section: devel
+Maintainer: Matthias Klose <doko@debian.org>
+Depends: libreadline4 (= 4.1-4), libc6-dev, libncurses5-dev
+Conflicts: libreadline-dev
+Provides: libreadline-dev
+Architecture: sh
+Filename: ./libreadline4-dev_4.1-4_sh.deb
+Size: 178772
+MD5sum: 11ff9ec8669479cba2b32286174c5777
+Description: GNU readline and history libraries, development files.
+ The GNU readline library aids in the consistency of user interface
+ across discrete programs that need to provide a command line
+ interface.
+ .
+ The GNU history library provides a consistent user interface for
+ recalling lines of previously typed input.
+source: readline4
+installed-size: 392
+
+Package: libterm-slang-perl
+Version: 0.07-6
+Priority: optional
+Section: interpreters
+Maintainer: Joey Hess <joeyh@debian.org>
+Depends: libc6 (>= 2.2.1-2), perl (>= 5.6.0-21), perlapi-5.6.0
+Architecture: sh
+Filename: ./libterm-slang-perl_0.07-6_sh.deb
+Size: 34854
+MD5sum: 1e19dbc894487edc97f3afc0fa8465d7
+Description: Perl interface to the S-Lang terminal library
+ This is an interface to the S-Lang terminal library for perl.
+installed-size: 117
+
+Package: libterm-stool-perl
+Version: 0.25
+Priority: optional
+Section: interpreters
+Maintainer: Joey Hess <joeyh@debian.org>
+Depends: perl-base (>= 5.6.0-4), libterm-slang-perl (>= 0.05-2)
+Architecture: all
+Filename: ./libterm-stool-perl_0.25_all.deb
+Size: 89246
+MD5sum: 7f575fbd57dccc044ffd842179acdaf2
+Description: Slang widget toolkit for perl
+ This is a widget UI toolkit for perl that uses the Slang library.
+source: term-stool
+installed-size: 340
+
+Package: libtool
+Version: 1.3.5-5
+Priority: optional
+Section: devel
+Maintainer: Ossama Othman <ossama@debian.org>
+Depends: gcc | c-compiler, cpp, libc6-dev | libc-dev, file
+Recommends: libltdl0-dev
+Suggests: libtool-doc, autoconf, automake
+Conflicts: autoconf (<= 2.12), automake (<= 1.3)
+Architecture: all
+Filename: ./libtool_1.3.5-5_all.deb
+Size: 185306
+MD5sum: f913d6c04a3d0c8634227e00e32143ae
+Description: Generic library support script
+ This is GNU libtool, a generic library support script.  Libtool hides
+ the complexity of generating special library types (such as shared
+ libraries) behind a consistent interface.  To use libtool, add the
+ new generic library building commands to your Makefile, Makefile.in,
+ or Makefile.am.  See the documentation for details.  Libtool supports
+ building static libraries on all platforms.
+installed-size: 780
+
+Package: libtool-doc
+Version: 1.3.5-5
+Priority: optional
+Section: doc
+Maintainer: Ossama Othman <ossama@debian.org>
+Architecture: all
+Filename: ./libtool-doc_1.3.5-5_all.deb
+Size: 287982
+MD5sum: 4a1e18e6476578f2eb3d3eb976a30a69
+Description: Generic library support script
+ This package contains the GNU libtool documentation.
+ .
+ GNU libtool is generic library support script.  Libtool hides
+ the complexity of generating special library types (such as shared
+ libraries) behind a consistent interface.  To use libtool, add the
+ new generic library building commands to your Makefile, Makefile.in,
+ or Makefile.am.  See the documentation for details.  Libtool supports
+ building static libraries on all platforms.
+source: libtool
+installed-size: 640
+
+Package: libwrap0
+Version: 7.6-7
+Priority: standard
+Section: base
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Recommends: tcpd
+Conflicts: netbase (<< 3.16-1)
+Architecture: sh
+Filename: ./libwrap0_7.6-7_sh.deb
+Size: 56002
+MD5sum: dac54507ed0ac5d164f5236682321306
+Description: Wietse Venema's TCP wrappers library
+ Wietse Venema's network logger, also known as TCPD or LOG_TCP.
+ .
+ These programs log the client host name of incoming telnet,
+ ftp, rsh, rlogin, finger etc. requests. Security options are:
+ access control per host, domain and/or service; detection of
+ host name spoofing or host address spoofing; booby traps to
+ implement an early-warning system.
+source: tcp-wrappers
+installed-size: 136
+
+Package: libwrap0-dev
+Version: 7.6-7
+Priority: optional
+Section: devel
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libwrap0 (= 7.6-7), libc6-dev
+Conflicts: libwrap-dev, netbase (<< 3.16-1)
+Provides: libwrap-dev
+Architecture: sh
+Filename: ./libwrap0-dev_7.6-7_sh.deb
+Size: 29480
+MD5sum: e13cadc8fa82abeafb1afdc7950b3934
+Description: Wietse Venema's TCP wrappers library, development files
+ Wietse Venema's network logger, also known as TCPD or LOG_TCP.
+ .
+ These programs log the client host name of incoming telnet,
+ ftp, rsh, rlogin, finger etc. requests. Security options are:
+ access control per host, domain and/or service; detection of
+ host name spoofing or host address spoofing; booby traps to
+ implement an early-warning system.
+source: tcp-wrappers
+installed-size: 124
+
+Package: locales
+Version: 2.2.2-1
+Priority: standard
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: glibc2.2
+Conflicts: localebin, wg15-locale, i18ndata
+Provides: i18ndata
+Replaces: localebin, wg15-locale, libc6-bin, i18ndata, glibc2
+Architecture: all
+Filename: ./locales_2.2.2-1_all.deb
+Size: 2967178
+MD5sum: 0f66583e7cad438dc49d20cb2df689dd
+Description: GNU C Library: National Language (locale) data [support]
+ Machine-readable data files, shared objects and programs used by the
+ C library for localization (l10n) and internationalization (i18n) support.
+ .
+ This package contains the libc.mo i18n files, plus tools to generate
+ locale definitions from source files (included in this package). It allows
+ you to customize which definitions actually get generated. This is a
+ savings over how this package used to be, where all locales were generated
+ by default. This created a package that unpacked to an excess of 30megs.
+source: glibc
+installed-size: 8764
+
+Package: login
+Version: 20000902-3.1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Ben Collins <bcollins@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1)
+Depends: libpam-modules (>= 0.72-5)
+Conflicts: shadow-login, pam-apps, secure-su, suidregister (<< 0.50)
+Replaces: shadow-login, shadow-passwd, shellutils (<< 2.0-2)
+Architecture: sh
+Filename: ./login_20000902-3.1_sh.deb
+Size: 111966
+MD5sum: 0f0fbbbfccbfb33d16e7334ced254d4b
+Description: System login tools
+ These tools are required to be able to login and use your system. The
+ login program invokes you user shell and enables command execution. The
+ newgrp program is used to change your effective group ID (useful for
+ workgroup type situations). The su program allows changing your effective
+ user ID (useful being able to execute commands as another user).
+ .
+ Also supplies a logout daemon that can place limits on when, from where,
+ and for how long certain users can login to the system.
+source: shadow
+installed-size: 212
+
+Package: logrotate
+Version: 3.2-11
+Priority: important
+Section: admin
+Maintainer: Joseph Carter <knghtbrd@debian.org>
+Depends: libc6 (>= 2.2.1-2), libpopt0, cron (>= 3.0pl1-53), mailx, base-passwd (>= 2.0.3.4)
+Architecture: sh
+Filename: ./logrotate_3.2-11_sh.deb
+Size: 24246
+MD5sum: 4abde53fbd9c71cda17ac640077498af
+Description: Log rotation utility
+ The logrotate utility is designed to simplify the administration of
+ log files on a system which generates a lot of log files.  Logrotate
+ allows for the automatic rotation compression, removal and mailing of
+ log files.  Logrotate can be set to handle a log file daily, weekly,
+ monthly or when the log file gets to a certain size.  Normally, logrotate
+ runs as a daily cron job.
+installed-size: 132
+
+Package: mailx
+Version: 1:8.1.2-0.20010319cvs-2
+Priority: important
+Section: mail
+Maintainer: Robert Luberda <robert@debian.org>
+Depends: libc6 (>= 2.2.1-2), liblockfile1 (>= 1.0), exim | mail-transport-agent
+Conflicts: suidmanager (<< 0.52)
+Provides: mail-reader
+Architecture: sh
+Filename: ./mailx_8.1.2-0.20010319cvs-2_sh.deb
+Size: 109538
+MD5sum: 2a9566664b82f65b9df659b9ca973747
+Description: A simple mail user agent.
+ mailx is the traditional command-line-mode mail user agent.
+ Even if you don't use it it may be required by other programmes.
+installed-size: 224
+
+Package: make
+Version: 3.79.1-4
+Priority: standard
+Section: devel
+Maintainer: Manoj Srivastava <srivasta@debian.org>
+Depends: libc6 (>= 2.2.1-2), fileutils (>= 4.0)
+Architecture: sh
+Filename: ./make_3.79.1-4_sh.deb
+Size: 396222
+MD5sum: ac9ec92952f7e945d95cf900f6db5bd9
+Description: The GNU version of the "make" utility.
+ GNU Make is a program that determines which pieces of a large
+ program need to be recompiled and issues the commands to recompile
+ them, when necessary. More information about GNU Make can be
+ found in the `make' Info page.
+installed-size: 776
+
+Package: make-doc
+Version: 3.79.1-4
+Priority: optional
+Section: doc
+Maintainer: Manoj Srivastava <srivasta@debian.org>
+Depends: fileutils (>= 4.0)
+Suggests: make
+Architecture: all
+Filename: ./make-doc_3.79.1-4_all.deb
+Size: 552768
+MD5sum: 09e1a49023e8120a5067ea5aec6dbbeb
+Description: Documentation for the GNU version of the "make" utility.
+ This package contains the postscript and HTML documentation for GNU
+ Make.
+source: make
+installed-size: 1408
+
+Package: makedev
+Version: 2.3.1-52
+Priority: required
+Section: base
+Maintainer: Bdale Garbee <bdale@gag.com>
+Depends: base-passwd (>= 3.0.4)
+Architecture: all
+Filename: ./makedev_2.3.1-52_all.deb
+Size: 28338
+MD5sum: c15303183015aad3e6c6dc4a577653ec
+Description: Creates special device files in /dev.
+ The MAKEDEV executable is used to populate the /dev directory with device
+ files.
+installed-size: 132
+
+Package: mawk
+Version: 1.3.3-5
+Priority: required
+Section: base
+Maintainer: James Troup <awkmaint@nocrew.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Provides: awk
+Architecture: sh
+Filename: ./mawk_1.3.3-5_sh.deb
+Size: 82822
+MD5sum: 71a14d790a616128e7ab8c72b1f9ea8e
+Description: a pattern scanning and text processing language
+ Mawk is an interpreter for the AWK Programming Language. The AWK
+ language is useful for manipulation of data files, text retrieval and
+ processing, and for prototyping and experimenting with algorithms. Mawk
+ is a new awk meaning it implements the AWK language as defined in Aho,
+ Kernighan and Weinberger, The AWK Programming Language, Addison-Wesley
+ Publishing, 1988. (Hereafter referred to as the AWK book.) Mawk conforms
+ to the Posix 1003.2 (draft 11.3) definition of the AWK language
+ which contains a few features not described in the AWK book, and mawk
+ provides a small number of extensions.
+ .
+ Mawk is smaller and much faster than gawk. It has some compile-time
+ limits such as NF = 32767 and sprintf buffer = 1020.
+installed-size: 224
+
+Package: mime-support
+Version: 3.10-1
+Priority: standard
+Section: net
+Maintainer: Brian White <bcwhite@pobox.com>
+Recommends: file(>=3.27-3)
+Conflicts: a2ps(<<4.10.4)
+Architecture: all
+Filename: ./mime-support_3.10-1_all.deb
+Size: 59560
+MD5sum: f73b7c2219ca57370016cd42e28bc992
+Description: MIME files 'mime.types' & 'mailcap', and support programs
+ As these files can be used by all MIME compliant programs, they
+ have been moved into their own package that others can depend upon.
+ .
+ Other packages add themselves as viewers/editors/composers/etc by
+ using the provided "update-mime" program.
+ .
+ In addition, the commands "see", "edit", "compose", and "print"
+ will display, alter, create, and print (respectively) any file using
+ a program determined from the entries in the mime.types and mailcap
+ files.
+installed-size: 204
+
+Package: modutils
+Version: 2.4.2-1
+Priority: required
+Section: base
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Depends: libc6 (>= 2.2.1-2), sysvinit (>=2.71-2)
+Suggests: ksymoops
+Replaces: manpages (<=1.15-3)
+Architecture: sh
+Filename: ./modutils_2.4.2-1_sh.deb
+Size: 191610
+MD5sum: 9119861aa12254c28cdf4dd71d2acb1e
+Description: Linux module utilities.
+ These utilities are intended to make a Linux modular kernel
+ manageable for all users, administrators and distribution
+ maintainers.
+bugs: debbugs://bugs.debian.org/
+installed-size: 343
+origin: debian
+
+Package: mount
+Version: 2.11a-2
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Adrian Bunk <bunk@fs.tum.de>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./mount_2.11a-2_sh.deb
+Size: 86354
+MD5sum: a394dd5a7cee435dcc4a632ff5909709
+Description: Tools for mounting and manipulating filesystems.
+ This package provides the mount(8), umount(8), swapon(8),
+ swapoff(8), and losetup(8) commands.
+source: util-linux
+installed-size: 232
+
+Package: nano
+Version: 1.0.0-1
+Priority: optional
+Section: editors
+Maintainer: Jordi Mallach <jordi@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Suggests: spell
+Conflicts: nano-tiny
+Provides: editor
+Replaces: nano-tiny
+Architecture: sh
+Filename: ./nano_1.0.0-1_sh.deb
+Size: 147478
+MD5sum: ec47d428dcbd8e746eaa3e80fba94fc2
+Description: free Pico clone with some new features
+ GNU nano is a free replacement for Pico, the default Pine editor. Pine is
+ copyrighted under a slightly restrictive license, that makes it unsuitable
+ for Debian's main section. GNU nano is an effort to provide a Pico-like
+ editor, but also includes some features that were missing in the original,
+ such as 'search and replace', 'goto line' or internationalization support.
+ As it's written from scratch, it's smaller and faster.
+installed-size: 528
+
+Package: nano-tiny
+Version: 1.0.0-1
+Priority: optional
+Section: editors
+Maintainer: Jordi Mallach <jordi@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Conflicts: nano
+Provides: nano, editor
+Architecture: sh
+Filename: ./nano-tiny_1.0.0-1_sh.deb
+Size: 53772
+MD5sum: ec52705d61cafdd3b52588fad3bef7a3
+Description: free Pico clone with some new features - tiny build
+ GNU nano is a free replacement for Pico, the default Pine editor. Pine is
+ copyrighted under a slightly restrictive license, that makes it unsuitable
+ for Debian's main section. GNU nano is an effort to provide a Pico-like
+ editor, but also includes some features that were missing in the original,
+ such as 'search and replace', 'goto line' or internationalization support.
+ As it's written from scratch, it's smaller and faster.
+ .
+ This package contains a minimal build of GNU nano, aimed for use in
+ boot-floppies. Thus, many features are disabled in this version.
+source: nano
+installed-size: 120
+
+Package: ncurses-base
+Version: 5.2-1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Conflicts: ncurses, ncurses-runtime
+Provides: ncurses-runtime
+Replaces: ncurses-term
+Architecture: all
+Filename: ./ncurses-base_5.2-1_all.deb
+Size: 97674
+MD5sum: 7ce59da78a9eff1124672d1dceb7e77d
+Description: Descriptions of common terminal types
+ This package contains what should be a reasonable subset of terminal
+ definitions, including: ansi, dumb, linux, rxvt, screen, sun, vt100,
+ vt102, vt220, vt52, and xterm.
+source: ncurses
+installed-size: 320
+
+Package: ncurses-bin
+Version: 5.2-1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5, libncurses5
+Conflicts: ncurses, tput
+Provides: tput
+Architecture: sh
+Filename: ./ncurses-bin_5.2-1_sh.deb
+Size: 313282
+MD5sum: cb92ef3dc92588ceeb2cbfa6854d32e9
+Description: Terminal-related programs and man pages
+ This package contains the programs used for manipulating the terminfo
+ database and individual terminfo entries, as well as some programs for
+ resetting terminals and such.
+source: ncurses
+installed-size: 564
+
+Package: ncurses-term
+Version: 5.2-1
+Priority: standard
+Section: admin
+Maintainer: Daniel Jacobowitz <ncurses-maint@debian.org>
+Architecture: all
+Filename: ./ncurses-term_5.2-1_all.deb
+Size: 374636
+MD5sum: 309e899ebf3d1e655a482368f22148d5
+Description: Additional terminal type definitions
+ This package contains all of the terminal definitions not found in
+ the ncurses-base package.  There are far too many to list here.
+source: ncurses
+installed-size: 7808
+
+Package: net-tools
+Version: 1.59-1
+Priority: standard
+Section: base
+Maintainer: Bernd Eckenfels <ecki@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./net-tools_1.59-1_sh.deb
+Size: 269940
+MD5sum: eb18787d76527222953220b7c6d4b5a3
+Description: The NET-3 networking toolkit
+ This package includes the important tools for controlling the network
+ subsystem of the Linux kernel.  This includes arp, ifconfig, netstat,
+ rarp, nameif and route.  Additionally, this package contains utilities
+ relating to particular network hardware types (plipconfig, slattach) and
+ advanced aspects of IP configuration (iptunnel, ipmaddr).
+ .
+ In the upstream package 'hostname' and friends are included. Those are
+ not installed by this package, since there is a special "hostname*.deb".
+installed-size: 651
+
+Package: netbase
+Version: 4.05
+Priority: standard
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: net-tools | iproute, ifupdown, ipchains | ipfwadm | iptables, netkit-inetd, tcpd, netkit-ping | iputils-ping
+Suggests: debconf, ipmasqadm | ipautofw | iptables, portmap, netkit-rpc
+Conflicts: xinetd (<= 2.2.1-8), netstd (<< 3.00), nfs-user-server (<< 2.2beta47-9), nis (<= 3.6-2), rstatd (<= 3.03-3), rwalld (<= 0.16-1), rusersd (<= 0.17-1), ugidd (<< 2.2beta47-9)
+Architecture: all
+Filename: ./netbase_4.05_all.deb
+Size: 43270
+MD5sum: d50fe41446667ec3452691e4f7e18a52
+Description: Basic TCP/IP networking system
+ This package provides the necessary infrastructure for basic TCP/IP based
+ networking.
+installed-size: 220
+
+Package: netkit-inetd
+Version: 0.10-6.1
+Priority: standard
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: debconf
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./netkit-inetd_0.10-6.1_sh.deb
+Size: 24922
+MD5sum: 85260f9dc234b3254b60ff408f2e008b
+Description: The Internet Superserver
+ The inetd server is a network daemon program that specializes in managing
+ incoming network connections. It's configuration file tells it what
+ program needs to be run when an incoming connection is received. Any
+ service port may be configured for either of the tcp or udp protcols.
+source: netkit-base
+installed-size: 60
+
+Package: netkit-ping
+Version: 0.10-6.1
+Priority: standard
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: ping
+Provides: ping
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./netkit-ping_0.10-6.1_sh.deb
+Size: 19096
+MD5sum: 2b5322a87c254736da5debe46067e225
+Description: The ping utility from netkit
+ The ping command sends ICMP ECHO_REQUEST packets to a host in order to
+ test if the host is reachable via the network.
+source: netkit-base
+installed-size: 40
+
+Package: netkit-rpc
+Version: 0.10-6.1
+Priority: standard
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./netkit-rpc_0.10-6.1_sh.deb
+Size: 44764
+MD5sum: 04ba6dcce869d640619aeb2f777444e9
+Description: The rpcgen and rpcinfo utilities
+ rpcinfo makes an RPC call to an RPC server and reports what it finds.
+ .
+ rpcgen is a tool that generates C code to implement an RPC protocol. The
+ input to rpcgen is a language similar to C known as RPC Language
+ (Remote Procedure Call Language).
+source: netkit-base
+installed-size: 92
+
+Package: nfs-common
+Version: 1:0.3.1-1
+Priority: standard
+Section: net
+Maintainer: Chip Salzenberg <chip@debian.org>
+Depends: portmap, libc6 (>= 2.2.1-2)
+Conflicts: nfs-client
+Provides: nfs-client
+Replaces: nfs-client
+Architecture: sh
+Filename: ./nfs-common_0.3.1-1_sh.deb
+Size: 27666
+MD5sum: 7e9d84bc90ecc73459db6b9365607770
+Description: NFS support files common to client and server
+ Use this package on any machine that does NFS either as client or
+ server.  Programs included: lockd, statd, showmount, and nfsstat.
+ .
+ Upstream: SourceForge project "nfs", CVS module nfs-utils.
+source: nfs-utils
+installed-size: 152
+
+Package: nfs-kernel-server
+Version: 1:0.3.1-1
+Priority: standard
+Section: net
+Maintainer: Chip Salzenberg <chip@debian.org>
+Depends: nfs-common (>= 1:0.1.5), libc6 (>= 2.2.1-2)
+Conflicts: knfs, nfs-server
+Provides: knfs, nfs-server
+Replaces: knfs, nfs-server
+Architecture: sh
+Filename: ./nfs-kernel-server_0.3.1-1_sh.deb
+Size: 62012
+MD5sum: bd74728e72d8c68adea357c5ea9f802c
+Description: Kernel NFS server support
+ Use this package if you have a fairly recent kernel (2.2.13 or better)
+ and you want to use the kernel-mode NFS server.  The user-mode NFS
+ server in the "nfs-server" package is slower but more featureful and
+ easier to debug than the kernel-mode server.
+ .
+ Upstream: SourceForge project "nfs", CVS module nfs-utils.
+source: nfs-utils
+installed-size: 196
+
+Package: nhfsstone
+Version: 1:0.3.1-1
+Priority: extra
+Section: net
+Maintainer: Chip Salzenberg <chip@debian.org>
+Depends: nfs-common, libc6 (>= 2.2.1-2)
+Replaces: nfs-kernel-server
+Architecture: sh
+Filename: ./nhfsstone_0.3.1-1_sh.deb
+Size: 20980
+MD5sum: f322786ba2e08a4499dfc9c6335ea93c
+Description: NFS benchmark program.
+ .
+ Upstream: SourceForge project "nfs", CVS module nfs-utils.
+source: nfs-utils
+installed-size: 100
+
+Package: nscd
+Version: 2.2.2-1
+Priority: optional
+Section: admin
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.2-1)
+Replaces: libc6 (<< 2.1-4)
+Architecture: sh
+Filename: ./nscd_2.2.2-1_sh.deb
+Size: 51486
+MD5sum: 05697efcbbad23490645f3cc5a821564
+Description: GNU C Library: Name Service Cache Daemon
+ A daemon which handles passwd, group and host lookups
+ for running programs and caches the results for the next
+ query. You should install this package only if you use
+ slow Services like LDAP, NIS or NIS+
+source: glibc
+installed-size: 164
+
+Package: passwd
+Version: 20000902-3.1
+Priority: required
+Section: base
+Maintainer: Ben Collins <bcollins@debian.org>
+Depends: libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), login (>= 970502-1), libpam-modules (>= 0.72-5)
+Conflicts: shadow-passwd, pam-apps, suidregister (<< 0.50)
+Replaces: manpages (<=1.15-2)
+Architecture: sh
+Filename: ./passwd_20000902-3.1_sh.deb
+Size: 277688
+MD5sum: ba89406352865e3684398183ae7c66d2
+Description: Change and administer password and group data.
+ This package includes passwd, chsh, chfn, and many other programs to
+ maintain password and group data.
+ .
+ Shadow passwords are supported.  See /usr/share/doc/passwd/README.Debian.gz
+source: shadow
+installed-size: 784
+
+Package: patch
+Version: 2.5.4-3
+Priority: standard
+Section: utils
+Maintainer: Adrian Bunk <bunk@fs.tum.de>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./patch_2.5.4-3_sh.deb
+Size: 92250
+MD5sum: 5bf6259676ae2a2a8c9f23b048938d3e
+Description: Apply a diff file to an original
+ Patch will take a patch file containing any of the four forms
+ of difference listing produced by the diff program and apply
+ those differences to an original file, producing a patched
+ version.
+installed-size: 184
+
+Package: perl
+Version: 5.6.0-21
+Priority: important
+Section: interpreters
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: perl-base (= 5.6.0-21), perl-modules (= 5.6.0-21), libc6 (>= 2.2.1-2), libdb2 (>= 2:2.7.7-4)
+Suggests: perl-doc, libterm-readline-perl-perl
+Conflicts: perl-5.004, perl-5.005 (<< 6), perl-5.6 (<< 6), libpod-parser-perl (<= 1.18-1)
+Provides: perl5, libpod-parser-perl
+Replaces: perl-5.005 (<< 6), perl-5.6 (<< 6), libpod-parser-perl
+Architecture: sh
+Filename: ./perl_5.6.0-21_sh.deb
+Size: 793588
+MD5sum: 602c9a518bee737fd3aece7e20d608d2
+Description: Larry Wall's Practical Extracting and Report Language.
+ An interpreted scripting language, known among some as "Unix's Swiss
+ Army Chainsaw".
+ .
+ Perl is optimised for scanning arbitrary text files and system
+ administration.  It has built-in extended regular expression matching
+ and replacement, a data-flow mechanism to improve security with
+ setuid scripts and is extensible via modules that can interface to C
+ libraries.
+installed-size: 2680
+
+Package: perl-base
+Version: 5.6.0-21
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: libc6 (>= 2.2.1-2), libperl5.6 (= 5.6.0-21)
+Suggests: perl
+Conflicts: perl-5.004-base, perl-5.005-base (<< 6), perl-5.6-base (<< 6), data-dumper
+Provides: perl5-base, perlapi-5.005, perlapi-5.6.0, data-dumper
+Replaces: perl-5.005-base (<< 6), perl-5.6-base (<< 6), perl-modules (<< 5.6.0-19)
+Architecture: sh
+Filename: ./perl-base_5.6.0-21_sh.deb
+Size: 553958
+MD5sum: 799466de2ee476fda42ab269a1c16e7c
+Description: The Pathologically Eclectic Rubbish Lister.
+ A scripting language with delusions of full language-hood, Perl is used
+ in many system scripts and utilities.
+ .
+ This is a stripped down Perl with only essential libraries.  To make
+ full use of Perl, you'll want to install the `perl', `perl-modules' and
+ optionally `perl-doc' packages which supplement this one.
+source: perl
+installed-size: 1244
+
+Package: perl-debug
+Version: 5.6.0-21
+Priority: optional
+Section: interpreters
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: perl-base (= 5.6.0-21), libc6 (>= 2.2.1-2)
+Conflicts: perl-5.004-debug, perl-5.005-debug (<< 6), perl-5.6-debug (<< 6)
+Replaces: perl-5.005-debug (<< 6), perl-5.6-debug (<< 6)
+Architecture: sh
+Filename: ./perl-debug_5.6.0-21_sh.deb
+Size: 1135708
+MD5sum: 32bb04ebfd73263a036af03179d51b26
+Description: Debug-enabled Perl interpreter.
+ debugperl provides a debug-enabled version of Perl which can produce
+ extensive information about the interpreter as it compiles and executes
+ a program (see the -D switch in perlrun(1)).
+ .
+ Note that this package is primarily of use in debugging *Perl* rather
+ than perl programs, which may be traced/debugged using the standard
+ perl binary using the -d switch (see perldebug(1)).
+source: perl
+installed-size: 2558
+
+Package: perl-modules
+Version: 5.6.0-21
+Priority: important
+Section: interpreters
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: perl-base (= 5.6.0-21)
+Replaces: perl-doc (<< 5.6.0-18)
+Architecture: all
+Filename: ./perl-modules_5.6.0-21_all.deb
+Size: 1197888
+MD5sum: 91c57132bce8aee6e695356613b02c72
+Description: Core Perl modules.
+ Architecture independent library files for Perl
+source: perl
+installed-size: 5920
+
+Package: perl-suid
+Version: 5.6.0-21
+Priority: optional
+Section: interpreters
+Maintainer: Brendan O'Dea <bod@debian.org>
+Depends: perl-base (= 5.6.0-21), libc6 (>= 2.2.1-2), libperl5.6 (= 5.6.0-21)
+Conflicts: perl-5.004-suid, perl-5.005-suid (<< 6), perl-5.6-suid (<< 6)
+Replaces: perl-5.005-suid (<< 6), perl-5.6-suid (<< 6)
+Architecture: sh
+Filename: ./perl-suid_5.6.0-21_sh.deb
+Size: 33936
+MD5sum: 487ffc06d3690133e3819f1b9431ecc0
+Description: Runs setuid Perl scripts.
+ This can be a security hole but it is much safer than shell scripts and
+ with -Tw can be much safer than setuid executables.
+source: perl
+installed-size: 75
+
+Package: portmap
+Version: 5-2
+Priority: standard
+Section: net
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2), libwrap0
+Replaces: netbase (<< 4.00)
+Architecture: sh
+Filename: ./portmap_5-2_sh.deb
+Size: 24718
+MD5sum: 7819648d1dd115c6316110c586a3084d
+Description: The RPC portmapper
+ Portmap is a server that converts RPC (Remote Procedure Call) program
+ numbers into DARPA protocol port numbers.  It must be running in order
+ to make RPC calls.
+ .
+ Services that use RPC include NFS and NIS.
+installed-size: 57
+
+Package: procps
+Version: 1:2.0.7-4
+Priority: required
+Section: base
+Maintainer: Craig Small <csmall@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Recommends: psmisc
+Conflicts: watch, libproc-dev (<< 1:1.2.6-2), w-bassman (<< 1.0-3), procps-nonfree, pgrep (<< 3.3-5)
+Provides: watch
+Replaces: watch, bsdutils (<< 2.9x-1)
+Architecture: sh
+Filename: ./procps_2.0.7-4_sh.deb
+Size: 175034
+MD5sum: 7a3b5970bb159073951a366a48df4e95
+Description: The /proc file system utilities.
+ These are utilities to browse the /proc filesystem, which is not a real file
+ system but a way for the kernel to provide information about the status of
+ entries in its process table. (e.g. running, stopped or "zombie")
+ Both command line and full screen utilities are provided. Ncurses is needed
+ for the full screen utilities.
+installed-size: 364
+
+Package: pump
+Version: 0.8.3-3
+Priority: optional
+Section: base
+Maintainer: Steve Dunham <dunham@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: dhcpcd, dhcpcd-sv, pump-udeb
+Replaces: pump-udeb
+Architecture: sh
+Filename: ./pump_0.8.3-3_sh.deb
+Size: 35178
+MD5sum: 13f8b907edb2b73f38255fd4b7f0a90a
+Description: Simple DHCP/BOOTP client.
+ This is the DHCP/BOOTP client written by RedHat.
+installed-size: 77
+
+Package: rsh-client
+Version: 0.17-3
+Priority: extra
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: suidmanager (<< 0.50)
+Replaces: netstd
+Architecture: sh
+Filename: ./rsh-client_0.17-3_sh.deb
+Size: 31994
+MD5sum: c12fc498e131428d1314e46d5873cd5a
+Description: rsh clients.
+ This package contains rsh, rcp and rlogin.
+source: netkit-rsh
+installed-size: 67
+
+Package: rsh-server
+Version: 0.17-3
+Priority: extra
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: netbase, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1)
+Replaces: netstd
+Architecture: sh
+Filename: ./rsh-server_0.17-3_sh.deb
+Size: 37368
+MD5sum: 1ae56aef83046aa18d2db11d61ec9667
+Description: rsh servers.
+ This package contains rexecd, rlogind and rshd.
+source: netkit-rsh
+installed-size: 88
+
+Package: samba
+Version: 2.0.7-5
+Priority: optional
+Section: net
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Depends: samba-common (= 2.0.7-5), libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), libreadline4 (>= 4.1)
+Suggests: samba-doc
+Replaces: samba-common (<= 2.0.5a-2)
+Architecture: sh
+Filename: ./samba_2.0.7-5_sh.deb
+Size: 1173278
+MD5sum: 6461a5eb3557ce537311b657951f7a4a
+Description: A LanManager like file and printer server for Unix.
+ The Samba software suite is a collection of programs that
+ implements the SMB protocol for unix systems, allowing you to serve
+ files and printers to Windows, NT, OS/2 and DOS clients. This protocol
+ is sometimes also referred to as the LanManager or Netbios protocol.
+ .
+ This package contains all the components necessary to turn your
+ Debian GNU/Linux box into a powerful file and printer server.
+ .
+ As of Samba 2.0.6-1, the Samba Debian packages consist of the following:
+ .
+ samba - A LanManager like file and printer server for Unix.
+ samba-common - Samba common files used by both the server and the client.
+ smbclient - A LanManager like simple client for Unix.
+ swat - Samba Web Administration Tool
+ samba-doc - Samba documentation.
+ smbfs - Mount and umount commands for the smbfs (kernels 2.0.x and above).
+installed-size: 2470
+
+Package: samba-common
+Version: 2.0.7-5
+Priority: optional
+Section: net
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Depends: libpam-modules, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), libreadline4 (>= 4.1)
+Replaces: samba (<= 2.0.5a-2)
+Architecture: sh
+Filename: ./samba-common_2.0.7-5_sh.deb
+Size: 536974
+MD5sum: b0997db8b23fead45c8f5cbd78fbf192
+Description: Samba common files used by both the server and the client.
+ The Samba software suite is a collection of programs that
+ implements the SMB protocol for unix systems, allowing you to serve
+ files and printers to Windows, NT, OS/2 and DOS clients. This protocol
+ is sometimes also referred to as the LanManager or Netbios protocol.
+ .
+ This package contains the common files that are used by both the server
+ (provided in the samba package) and the client (provided in the smbclient
+ package).
+source: samba
+installed-size: 2974
+
+Package: sed
+Version: 3.02-6
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Wichert Akkerman <wakkerma@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./sed_3.02-6_sh.deb
+Size: 55548
+MD5sum: 5669f958a23631939e4d1a062e94fc07
+Description: The GNU sed stream editor.
+ sed reads the specified files or the standard input if no
+ files are specified, makes editing changes according to a
+ list of commands, and writes the results to the standard
+ output.
+installed-size: 180
+
+Package: sharutils
+Version: 1:4.2.1-3
+Priority: standard
+Section: utils
+Maintainer: Santiago Vila <sanvila@debian.org>
+Depends: libc6 (>= 2.2.1-2), debianutils (>= 1.6)
+Conflicts: shar, uuencode
+Architecture: sh
+Filename: ./sharutils_4.2.1-3_sh.deb
+Size: 119170
+MD5sum: 8c81494f687ccc37455165f31f87119f
+Description: shar, unshar, uuencode, uudecode
+ `shar' makes so-called shell archives out of many files, preparing
+ them for transmission by electronic mail services.  `unshar' helps
+ unpacking shell archives after reception.  Other related utility
+ programs help with other tasks.
+ .
+ `uuencode' prepares a file for transmission over an electronic
+ channel which ignores or otherwise mangles the eight bit (high
+ order bit) of bytes.  `uudecode' does the converse transformation.
+installed-size: 424
+
+Package: shellutils
+Version: 2.0.11-5
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Michael Stone <mstone@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2), login | hurd
+Conflicts: login (<< 19990827-1)
+Replaces: bsdutils (<= 3.0-2), util-linux (<< 2.9e-0.1)
+Architecture: sh
+Filename: ./shellutils_2.0.11-5_sh.deb
+Size: 616176
+MD5sum: 192a97b9e65f1369f270ac7398108f0c
+Description: The GNU shell programming utilities.
+ The utilities: basename chroot date dirname echo env expr factor false groups
+ hostid id logname nice nohup pathchk pinky printenv printf pwd seq sleep stty
+ tee test true tty uname users who whoami yes.
+installed-size: 1783
+
+Package: slang1
+Version: 1.4.4-1
+Priority: required
+Section: base
+Maintainer: Jim Mintha <jmintha@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Architecture: sh
+Filename: ./slang1_1.4.4-1_sh.deb
+Size: 218708
+MD5sum: a3108c41750d3b49e84b6f2e01cfe422
+Description: The S-Lang programming library - runtime version.
+ S-Lang is a C programmer's library that includes routines for the rapid
+ development of sophisticated, user friendly, multi-platform applications.
+ .
+ This package contains only the shared library libslang.so.* and copyright
+ information. It is only necessary for programs that use this library (such
+ as jed and slrn). If you plan on doing development with S-Lang, you will
+ need the companion -dev package as well.
+source: slang
+installed-size: 416
+
+Package: slang1-dev
+Version: 1.4.4-1
+Priority: optional
+Section: devel
+Maintainer: Jim Mintha <jmintha@debian.org>
+Depends: slang1 (= 1.4.4-1), libc6-dev
+Conflicts: slang-dev6, slang0.99.34-dev (<< 0.99.38-2.3)
+Provides: slang-dev6
+Architecture: sh
+Filename: ./slang1-dev_1.4.4-1_sh.deb
+Size: 633726
+MD5sum: 1dbd2bb79dfe650a9c2779ef5f835d76
+Description: The S-Lang programming library, development version.
+ S-Lang is a C programmer's library that includes routines for the rapid
+ development of sophisticated, user friendly, multi-platform applications.
+ .
+ The S-Lang library includes the following:
+  *   Low level tty input routines for reading single characters at a time.
+  *   Keymap routines for defining keys and manipulating multiple keymaps.
+  *   A high-level key processing interface (SLkp) for
+       handling function and arrow keys.
+  *   High level screen management routines for manipulating both
+       monochrome and color terminals. These routines are very
+       efficient. (SLsmg)
+  *   Low level terminal-independent routines for manipulating the display
+       of a terminal. (SLtt)
+  *   Routines for reading single line input with line editing and recall
+       capabilities. (SLrline)
+  *   Searching functions: both ordinary searches and regular expression
+       searches. (SLsearch)
+  *   An embedded stack-based language interpreter with a C-like syntax.
+source: slang
+installed-size: 1230
+
+Package: slang1-pic
+Version: 1.4.4-1
+Priority: optional
+Section: devel
+Maintainer: Jim Mintha <jmintha@debian.org>
+Depends: slang1-dev (= 1.4.4-1)
+Provides: slang-pic
+Architecture: sh
+Filename: ./slang1-pic_1.4.4-1_sh.deb
+Size: 263556
+MD5sum: 7cac965d8c61a3a7ddb120c7f3176186
+Description: The S-Lang programming library, shared library subset kit.
+ This is used to develop subsets of the S-Lang shared libraries for use
+ on custom installation floppies and in embedded systems. Unless you're
+ making one of those, you won't need this package.
+source: slang
+installed-size: 594
+
+Package: smbclient
+Version: 2.0.7-5
+Priority: optional
+Section: net
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Depends: samba-common (= 2.0.7-5), libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), libreadline4 (>= 4.1)
+Provides: samba-client
+Architecture: sh
+Filename: ./smbclient_2.0.7-5_sh.deb
+Size: 634184
+MD5sum: 06ed28af266befed5f2c5744f7e6b050
+Description: A LanManager like simple client for Unix.
+ The Samba software suite is a collection of programs that
+ implements the SMB protocol for unix systems, allowing you to serve
+ files and printers to Windows, NT, OS/2 and DOS clients. This protocol
+ is sometimes also referred to as the LanManager or Netbios protocol.
+ .
+ This package contains the client components of the Samba suite.
+source: samba
+installed-size: 1374
+
+Package: smbfs
+Version: 2.0.7-5
+Priority: optional
+Section: otherosfs
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Depends: netbase (>= 2.02), samba-common (= 2.0.7-5), libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), libreadline4 (>= 4.1)
+Conflicts: smbfsx, suidmanager (<< 0.50)
+Replaces: smbfsx
+Architecture: sh
+Filename: ./smbfs_2.0.7-5_sh.deb
+Size: 400730
+MD5sum: dadc22f1ebb49c532710676a1c431403
+Description: mount and umount commands for the smbfs (for kernels >= than 2.0.x)
+ Smbfs is a filesystem which understands the SMB protocol.
+ This is the protocol Windows for Workgroups, Windows NT or
+ Lan Manager use to talk to each other. It was inspired by
+ samba, the program by Andrew Tridgell that turns any unix
+ site into a file server for DOS or Windows clients.
+ .
+ Starting with the Debian Samba packages version 2.0.4b-2, the old smbfs
+ utilities for 2.0.x and the new smbfs utilities for 2.2.x kernels have been
+ merged in a single package called smbfs. A wrapper script called smbmount.sh
+ identifies the version of the kernel running and calls the correct binary.
+source: samba
+installed-size: 853
+
+Package: ss-dev
+Version: 2.0-1.19-3
+Priority: extra
+Section: devel
+Maintainer: Yann Dirson <dirson@debian.org>
+Depends: libc6-dev, libss2
+Conflicts: e2fsprogs (<< 1.10-6)
+Architecture: sh
+Filename: ./ss-dev_2.0-1.19-3_sh.deb
+Size: 13958
+MD5sum: 81b58505341cc1f491744b8628142c4c
+Description: Command-line interface parsing library - headers and static libraries.
+ This package includes a tool that parses a command table to generate
+ a simple command-line interface parser, the include files needed to
+ compile and use it, and the static libs.
+ .
+ It was originally inspired by the Multics SubSystem library.
+source: e2fsprogs (1.19-3)
+installed-size: 55
+
+Package: ssmtp
+Version: 2.38-13
+Maintainer: Matt Ryan <matt@banana.org.uk>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: mail-transport-agent
+Provides: mail-transport-agent
+Replaces: mail-transport-agent
+Architecture: sh
+Filename: ./ssmtp_2.38-13_sh.deb
+Size: 23634
+MD5sum: 66a4ef2d7ab24ff23b0816de16553cf3
+Description: Extremely simple MTA to get mail off the system to a mailhub
+ A secure, effective and simple way of getting mail off a system to your
+ mailhub. It contains no suid-binaries or other dangerous things - no mail
+ spool to poke around in, and no daemons running in the background. Mail is
+ simply forwarded to the configured mailhost. Extremely easy configuration.
+ .
+ WARNING: the above is all it does; it does not receive mail, expand aliases
+ or manage a queue. That belongs on a mailhub with a system administrator.
+installed-size: 8
+
+Package: swat
+Version: 2.0.7-5
+Priority: optional
+Section: net
+Maintainer: Eloy A. Paris <peloy@debian.org>
+Depends: samba, libc6 (>= 2.2.1-2), libpam0g (>= 0.72-1), libreadline4 (>= 4.1)
+Recommends: samba-doc
+Architecture: sh
+Filename: ./swat_2.0.7-5_sh.deb
+Size: 256090
+MD5sum: f5b515329a74b253dafdc7782bd9e307
+Description: Samba Web Administration Tool
+ The Samba software suite is a collection of programs that
+ implements the SMB protocol for unix systems, allowing you to serve
+ files and printers to Windows, NT, OS/2 and DOS clients. This protocol
+ is sometimes also referred to as the LanManager or Netbios protocol.
+ .
+ This package contains the components of the Samba suite that are needed
+ for Web administration of the Samba server.
+source: samba
+installed-size: 559
+
+Package: sysklogd
+Version: 1.4.1-1
+Maintainer: Martin Schulze <joey@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Recommends: klogd | linux-kernel-log-daemon
+Conflicts: syslogd
+Provides: syslogd, system-log-daemon
+Replaces: syslogd
+Architecture: sh
+Filename: ./sysklogd_1.4.1-1_sh.deb
+Size: 55070
+MD5sum: a225997ac4e22d5e514f3e2165663793
+Description: System logging daemons
+ This package implements the system log daemon, which is an enhanced
+ version of the standard Berkeley utility program. It is responsible
+ for providing logging of messages received from programs and facilities
+ on the local host as well as from remote hosts.
+installed-size: 192
+
+Package: sysvinit
+Version: 2.78-4
+Essential: yes
+Maintainer: Miquel van Smoorenburg <miquels@cistron.nl>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Depends: dpkg (>= 1.4.0.21), mount (>= 2.7i-1), util-linux (>= 2.9t-2), e2fsprogs (>= 1.15-1)
+Conflicts: last, file-rc (<= 0.4.2), kbd (<< 0.95-2), mdutils (<< 0.35-9)
+Replaces: last, bsdutils (<=2.0-2)
+Architecture: sh
+Filename: ./sysvinit_2.78-4_sh.deb
+Size: 89292
+MD5sum: c608700b7a71acbdaaed5bbc1796f7eb
+Description: System-V like init.
+ Init is the first program to run after your system is booted, and
+ continues to run as process number 1 until your system halts. Init's
+ job is to start other programs that are essential to the operation of
+ your system. All processes are descended from init. For more information,
+ see the manual page init(8).
+installed-size: 436
+
+Package: tar
+Version: 1.13.19-1
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Bdale Garbee <bdale@gag.com>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Suggests: bzip2
+Architecture: sh
+Filename: ./tar_1.13.19-1_sh.deb
+Size: 449106
+MD5sum: e5d9a6c4b6ca3817d9acff5e1cc9e980
+Description: GNU tar
+ Tar is a program for packaging a set of files as a single archive in tar
+ format.  The function it performs is conceptually similar to cpio, and to
+ things like pkzip in the DOS world.  It is heavily used by the Debian package
+ management system, and is useful for performing system backups and exchanging
+ sets of files with others.
+installed-size: 1068
+
+Package: tcl8.2
+Version: 8.2.3-5
+Priority: optional
+Section: libs
+Maintainer: Mike Markley <mike@markley.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: tclreadline
+Conflicts: tcl, tcl74 (<=7.4p3-2)
+Provides: tclsh
+Replaces: tcl8.2-doc
+Architecture: sh
+Filename: ./tcl8.2_8.2.3-5_sh.deb
+Size: 825262
+MD5sum: 25da9868fa3fa1c0d0c203cdb3802228
+Description: The Tool Command Language (TCL) v8.2 - Run-Time Files.
+ TCL is a powerful, easy to use, interpreted scripting language.
+installed-size: 2267
+
+Package: tcl8.2-dev
+Version: 8.2.3-5
+Priority: optional
+Section: devel
+Maintainer: Mike Markley <mike@markley.org>
+Depends: libc6-dev, tcl8.2 (=8.2.3-5)
+Suggests: tcl8.2-doc
+Conflicts: tcl, tcl-dev
+Architecture: sh
+Filename: ./tcl8.2-dev_8.2.3-5_sh.deb
+Size: 524764
+MD5sum: 251fa99d2f6f9b4683c3053d1ec682c8
+Description: The Tool Command Language (TCL) v8.2 - Development Files.
+ TCL is a powerful, easy to use, interpreted scripting language.
+source: tcl8.2
+installed-size: 1525
+
+Package: tcl8.3
+Version: 8.3.2-8
+Priority: optional
+Section: libs
+Maintainer: Mike Markley <mike@markley.org>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: tclreadline
+Conflicts: tcl, tcl74 (<=7.4p3-2)
+Provides: tclsh
+Architecture: sh
+Filename: ./tcl8.3_8.3.2-8_sh.deb
+Size: 876994
+MD5sum: 36fd13d727d51340d89003419152b210
+Description: The Tool Command Language (TCL) v8.3 - Run-Time Files.
+ TCL is a powerful, easy to use, interpreted scripting language.
+installed-size: 2371
+
+Package: tcl8.3-dev
+Version: 8.3.2-8
+Priority: optional
+Section: devel
+Maintainer: Mike Markley <mike@markley.org>
+Depends: libc6-dev, tcl8.3 (=8.3.2-8)
+Suggests: tcl8.3-doc
+Conflicts: tcl, tcl-dev
+Architecture: sh
+Filename: ./tcl8.3-dev_8.3.2-8_sh.deb
+Size: 583562
+MD5sum: b92d544ab621ccff62aa6e13a189b7cf
+Description: The Tool Command Language (TCL) v8.3 - Development Files.
+ TCL is a powerful, easy to use, interpreted scripting language.
+source: tcl8.3
+installed-size: 1687
+
+Package: tcpd
+Version: 7.6-7
+Priority: standard
+Section: base
+Maintainer: Anthony Towns <ajt@debian.org>
+Depends: libc6 (>= 2.2.1-2), libwrap0 (>= 7.6-1.1)
+Conflicts: netbase (<< 3.16-1)
+Architecture: sh
+Filename: ./tcpd_7.6-7_sh.deb
+Size: 35866
+MD5sum: 608f02c9880624bd6f8056a1ef9f5484
+Description: Wietse Venema's TCP wrapper utilities
+ Wietse Venema's network logger, also known as TCPD or LOG_TCP.
+ .
+ These programs log the client host name of incoming telnet,
+ ftp, rsh, rlogin, finger etc. requests. Security options are:
+ access control per host, domain and/or service; detection of
+ host name spoofing or host address spoofing; booby traps to
+ implement an early-warning system.
+source: tcp-wrappers
+installed-size: 140
+
+Package: telnet
+Version: 0.17-9
+Priority: standard
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: libc6 (>= 2.2.1-2), libncurses5
+Provides: telnet-client
+Replaces: netstd
+Architecture: sh
+Filename: ./telnet_0.17-9_sh.deb
+Size: 72776
+MD5sum: a97f77e8f85df70cf47237bd616529af
+Description: The telnet client.
+ The telnet command is used for interactive communication with another host
+ using the TELNET protocol.
+source: netkit-telnet
+installed-size: 137
+
+Package: telnetd
+Version: 0.17-9
+Priority: standard
+Section: net
+Maintainer: Herbert Xu <herbert@debian.org>
+Depends: netbase, adduser, base-files (>= 2.1.8), libc6 (>= 2.2.1-2)
+Conflicts: suidmanager (<< 0.50)
+Replaces: netstd
+Architecture: sh
+Filename: ./telnetd_0.17-9_sh.deb
+Size: 39830
+MD5sum: 50e630ffa187d0237353b834dfbd15a4
+Description: The telnet server.
+ The in.telnetd program is a server which supports the DARPA telnet interactive
+ communication protocol.
+source: netkit-telnet
+installed-size: 76
+
+Package: texi2html
+Version: 1.64-1
+Priority: optional
+Section: text
+Maintainer: Peter Moulder <pjm@bofh.asn.au>
+Depends: perl
+Replaces: tetex-bin (<< 1.0.7)
+Architecture: all
+Filename: ./texi2html_1.64-1_all.deb
+Size: 63276
+MD5sum: dd35fec97dc62fd6a96241e71f4e19ef
+Description: Convert Texinfo files to HTML
+ texi2html is a Perl script that converts Texinfo files to HTML.
+ .
+ The program takes Texinfo files (and not info ones) and produces a
+ set of HTML files. The quality of the output is close to the printed
+ output and is much better than an info->HTML gateway.
+ .
+ Compared to the output of `makeinfo --html', texi2html's output is
+ more customizable and (subjectively) produces better output by default.
+installed-size: 276
+
+Package: texinfo
+Version: 4.0-5
+Priority: standard
+Section: text
+Maintainer: Josip Rodin <jrodin@jagor.srce.hr>
+Depends: libc6 (>= 2.2.1-2)
+Suggests: tetex-bin
+Conflicts: tetex-bin (<< 1.0), tetex-base (<< 1.0-3)
+Architecture: sh
+Filename: ./texinfo_4.0-5_sh.deb
+Size: 550064
+MD5sum: 9dd85395ef5d4f60236d528a960f9f14
+Description: Documentation system for on-line information and printed output
+ Texinfo is a documentation system that uses a single source file to
+ produce both on-line information and printed output.
+ .
+ Using Texinfo, you can create a printed document with the normal features
+ of a book, including chapters, sections, cross references, and indices.
+ From the same Texinfo source file, you can create a menu-driven, on-line
+ Info file with nodes, menus, cross references, and indices.
+installed-size: 1027
+
+Package: textutils
+Version: 2.0-3
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Herbert Xu <herbert@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Conflicts: ptx
+Provides: ptx
+Replaces: bsdmainutils (<= 4.5.2), ptx
+Architecture: sh
+Filename: ./textutils_2.0-3_sh.deb
+Size: 644068
+MD5sum: 80f12da3059c4611e89ee3bf1a5dd22a
+Description: The GNU text file processing utilities.
+ The utilities: cat cksum comm csplit cut expand fmt fold head join md5sum
+ nl od paste pr ptx sort split sum tac tail tr tsort unexpand uniq wc.
+installed-size: 1808
+
+Package: update
+Version: 2.11-3
+Priority: required
+Section: base
+Maintainer: Chris Lawrence <lawrencc@debian.org>
+Pre-Depends: libc6 (>= 2.2.1-2)
+Conflicts: bdflush
+Replaces: bdflush, miscutils
+Architecture: sh
+Filename: ./update_2.11-3_sh.deb
+Size: 6342
+MD5sum: 6e96d4b420e3a2623f8b6607e991eeee
+Description: daemon to periodically flush filesystem buffers.
+ The update daemon flushes the filesystem buffers at regular intervals.
+ This version does not spawn a bdflush daemon, as this is now done by
+ the kernel's kupdate thread.
+ .
+ This package is not needed with Linux 2.2.8 and above.  If you do not
+ plan to run a 2.0.x series kernel on this system, you can safely
+ remove this package.  update may still be useful in sync mode (as opposed
+ to flush mode) on more recent kernels for the extra paranoid.
+installed-size: 20
+
+Package: util-linux
+Version: 2.11a-2
+Priority: required
+Section: base
+Essential: yes
+Maintainer: Adrian Bunk <bunk@fs.tum.de>
+Pre-Depends: libc6 (>= 2.2.1-2), libncurses5
+Conflicts: setterm, getty, fdisk, kbd (<< 1.05-3), console-tools (<< 1:0.2.3-21)
+Replaces: miscutils, setterm, getty, fdisk
+Architecture: sh
+Filename: ./util-linux_2.11a-2_sh.deb
+Size: 741342
+MD5sum: 3c6bddf3077b91f3325de944ad4f2a34
+Description: Miscellaneous system utilities.
+ A mixed bag of system utilities: arch chkdupexe cfdisk cytune dmesg
+ fdisk fsck.minix getty getopt hwclock ipcrm ipcs mcookie mkfs mkfs.minix
+ mkswap more namei rdev setterm setsid tunelp whereis.
+installed-size: 2100
+
+Package: uuid-dev
+Version: 1.2-1.19-3
+Priority: extra
+Section: devel
+Maintainer: Yann Dirson <dirson@debian.org>
+Depends: libc6-dev, e2fsprogs
+Conflicts: e2fsprogs (<< 1.10-6)
+Replaces: e2fslibs-dev (<< 1.15)
+Architecture: sh
+Filename: ./uuid-dev_1.2-1.19-3_sh.deb
+Size: 13482
+MD5sum: d523b5fc7fe0b9ce09559c97dfb221bb
+Description: Universally unique id library - headers and static libraries.
+ libuuid generates and parses 128-bit universally unique id's (UUID's),
+ using a standard which is blessed by both Microsoft and DCE, and is
+ being proposed as an internet standard.  See the internet-draft:
+ .
+                draft-leach-uuids-guids-01.txt
+ .
+ for more information.
+source: e2fsprogs (1.19-3)
+installed-size: 39
+
+Package: w3m
+Version: 0.2.1-2
+Priority: optional
+Section: text
+Maintainer: Fumitoshi UKAI <ukai@debian.or.jp>
+Depends: libc6 (>= 2.2.1-2), libgc5, libgpmg1 (>= 1.14-16), libncurses5
+Suggests: w3m-ssl (>= 0.2.1-2), mime-support, menu (>> 1.5), w3m-el
+Provides: www-browser
+Architecture: sh
+Filename: ./w3m_0.2.1-2_sh.deb
+Size: 526432
+MD5sum: 42dd830b5686df3ff3ec27a968d038be
+Description: WWW browsable pager with excellent tables/frames support
+ w3m is a text-based World Wide Web browser with IPv6 support.
+ It features excellent support for tables and frames. It can be used
+ as a standalone file pager, too.
+ .
+  * You can follow links and/or view images in HTML.
+  * Internet message prewview mode, you can browse HTML mail.
+  * You can follow links in plain text if it includes URL forms.
+ .
+ For more information,
+ see http://ei5nazha.yz.yamagata-u.ac.jp/~aito/w3m/eng/index.html
+installed-size: 1200
+
+Package: zlib-bin
+Version: 1:1.1.3-12
+Priority: optional
+Section: utils
+Maintainer: Mark Brown <broonie@debian.org>
+Depends: libz1
+Architecture: sh
+Filename: ./zlib-bin_1.1.3-12_sh.deb
+Size: 18062
+MD5sum: b154ad78712ea09b05c8122f7e07f2ce
+Description: compression library - sample programs
+ Some generally useful sample programs from the contrib directory.
+ Includes a "mini" implementation of `zip' and `unzip' called
+ `minizip' and `miniunzip' respectively.
+source: zlib
+installed-size: 88
+
+Package: zlib1g
+Version: 1:1.1.3-12
+Priority: optional
+Section: libs
+Maintainer: Mark Brown <broonie@debian.org>
+Depends: libc6 (>= 2.2.1-2)
+Conflicts: zlib1 (<= 1:1.0.4-7)
+Provides: libz1
+Architecture: sh
+Filename: ./zlib1g_1.1.3-12_sh.deb
+Size: 46458
+MD5sum: fd440dca6296942067d7b5fa370d4443
+Description: compression library - runtime
+ zlib is a library implementing the deflate compression method found
+ in gzip and pkzip.  This package includes the shared library.
+source: zlib
+installed-size: 132
+
+Package: zlib1g-dev
+Version: 1:1.1.3-12
+Priority: optional
+Section: devel
+Maintainer: Mark Brown <broonie@debian.org>
+Depends: zlib1g (= 1:1.1.3-12), libc6-dev
+Conflicts: zlib1-dev
+Provides: libz-dev
+Architecture: sh
+Filename: ./zlib1g-dev_1.1.3-12_sh.deb
+Size: 203640
+MD5sum: 039979659c200a01afe95cc30d5d4634
+Description: compression library - development
+ zlib is a library implementing the deflate compression method found
+ in gzip and pkzip.  This package includes the development support
+ files.
+source: zlib
+installed-size: 352
+

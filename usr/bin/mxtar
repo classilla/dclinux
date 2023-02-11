@@ -1,0 +1,9 @@
+#!/bin/sh
+
+taropt=$1
+dosfile=$2
+shift
+shift
+
+mcopy $dosfile - | tar $taropt - $@
+

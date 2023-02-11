@@ -1,0 +1,10 @@
+This is the Debian GNU/Linux prepackaged version of the grep program.
+Currently Wichert Akkerman <wakkerma@debian.org> maintains the
+Debian/GNU Linux version of grep.
+
+This package was created from the grep sources as found on the GNU
+mirrors. Like all GNU software, grep is distritubed under the terms
+of the GNU General Public License, version 2. On Debian GNU/Linux
+system you can find a copy of this license in
+/usr/share/common-licenses/GPL'
+

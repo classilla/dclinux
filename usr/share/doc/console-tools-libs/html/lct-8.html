@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.7.3">
+ <TITLE>The Linux Console Tools: The libraries</TITLE>
+ <LINK HREF="lct-9.html" REL=next>
+ <LINK HREF="lct-7.html" REL=previous>
+ <LINK HREF="lct.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="lct-9.html">Next</A>
+<A HREF="lct-7.html">Previous</A>
+<A HREF="lct.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="s8">8.</A> <A HREF="lct.html#toc8">The libraries</A></H2>
+
+<P>There are several shared libraries installed by the Linux Console Tools.  They were
+at first meant just to share code betwwen the various utilities
+(<CODE>kbd</CODE> has lots of duplicated code), but they could be used as a
+base to build new tools.</P>
+<P>However, they are not yet ready for production use (hence the version
+number 0.0.0), and are absolutely not complete nor coherent at the
+time.</P>
+<P>Here is a summary of what they are meant to become:</P>
+
+<H2><A NAME="ss8.1">8.1 libconsole, <CODE>&lt;lct/console.h&gt;</CODE> +</A>
+<CODE>&lt;lct/ksyms.h&gt;</CODE></H2>
+
+<P>is a meant to be a collection of:
+<UL>
+<LI> wrappers around the kernel-level functionnalities, which should
+be as kernel-version-independant as reasonable; </LI>
+<LI> higher-level interfaces to these functionnalities.</LI>
+</UL>
+</P>
+<P>Maybe this goal overlaps with some part of libggi (see 
+<A HREF="lct-9.html#sec-future">The future</A>), but I didn't investigate that for now.</P>
+
+<H2><A NAME="ss8.2">8.2 libcfont, <CODE>&lt;lct/font.h&gt;</CODE></A>
+</H2>
+
+<P>is meant to provide a high-level interface to console-font
+file-handling. It also exports the lower-level functions used to
+construct higher-level ones.</P>
+<P>It only supports for now some low- to medium-level functions that ease
+writing programs, but I hope to make it a lot more than that,
+especially with the coming of the XPSF file-format (see
+<CODE>doc/font-formats/xpsf.draft</CODE> for details).</P>
+<P>As of release 1998.08.11, implementation of higher-level interface has
+just started.</P>
+
+<H2><A NAME="ss8.3">8.3 libctutils, <CODE>&lt;lct/utils.h&gt;</CODE> +</A>
+<CODE>&lt;lct/unicode.h&gt;</CODE></H2>
+
+<P>is a collection of misc utility functions for use by the 2 other libs
+and by the tools. I hope most this stuff will one day make its way to
+an existing general purpose utility-library.  Any offers welcomed.</P>
+
+
+<HR>
+<A HREF="lct-9.html">Next</A>
+<A HREF="lct-7.html">Previous</A>
+<A HREF="lct.html#toc8">Contents</A>
+</BODY>
+</HTML>

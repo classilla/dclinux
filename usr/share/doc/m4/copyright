@@ -1,0 +1,59 @@
+This is Debian GNU/Linux's prepackaged version of the FSF's GNU m4 macro
+processor. GNU `m4' has been originally written by Rene' Seindal, from
+Denmark, with subsequent changes by Franc,ois Pinard and other volunteers
+on the Internet. A list of contributors to the GNU program is in the
+THANKS file in the source distribution, or appended below in the binary
+package.
+
+This package was first put together by Ian Jackson <ijackson@nyx.cs.du.edu>
+and is currently maintained by Santiago Vila <sanvila@debian.org>.
+
+The GNU sources for this release were obtained from
+
+ftp://ftp.gnu.org/pub/gnu/m4/m4-1.4.tar.gz.
+
+The changes were very minimal - merely adding support for the Debian
+package maintenance scheme, by adding various debian/* files.
+
+
+Program Copyright (C) 1989, 1990, 1991, 1992, 1993, 1994 Free Software
+Foundation, Inc.; Modifications for Debian GNU/Linux Copyright (C)
+1994 Ian Jackson.
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2, or (at your option)
+any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License with
+your Debian GNU/Linux system, in /usr/share/common-licenses/GPL, or
+with the Debian GNU/Linux m4 source package as the file COPYING.  If
+not, write to the Free Software Foundation, Inc., 59 Temple Place,
+Suite 330, Boston, MA  02111-1307  USA
+
+M4 manual (m4.info) Copyright (C) 1989, 1990, 1991, 1992, 1993, 1994
+Free Software Foundation, Inc.
+
+Permission is granted to make and distribute verbatim copies of
+this manual provided the copyright notice and this permission notice
+are preserved on all copies.
+
+Permission is granted to process this file through TeX and print the
+results, provided the printed document carries copying permission
+notice identical to this one except for the removal of this paragraph
+(this paragraph not being relevant to the printed manual).
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided that the entire
+resulting derived work is distributed under the terms of a permission
+notice identical to this one.
+
+Permission is granted to copy and distribute translations of this manual
+into another language, under the above conditions for modified versions,
+except that this permission notice may be stated in a translation approved
+by the Foundation.

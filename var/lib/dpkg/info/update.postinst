@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ]; then
+        if [ -d /usr/doc -a ! -e /usr/doc/update -a -d /usr/share/doc/update ]; then
+                ln -sf ../share/doc/update /usr/doc/update
+        fi
+fi

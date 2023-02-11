@@ -1,0 +1,10 @@
+LoadModule: includes_module /usr/lib/apache/1.3/mod_include.so
+LoadModule: includes_module /usr/lib/apache/modules/mod_include.so
+MimeTypes:
+ text/x-server-parsed-html
+ text/x-server-parsed-html3
+Handles:
+ server-parsed
+Directives:
+ XBitHack
+Description: Support for server-parsed HTML (XBitHack)

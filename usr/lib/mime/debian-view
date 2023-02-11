@@ -1,0 +1,29 @@
+#! /bin/sh
+
+dpkg="dpkg"
+
+echo "Info for debian package '$1':"
+dpkg-deb --info $1
+echo " "
+echo -n "Do you wish to install this package now? (y/n) -->"
+read yn
+
+if [ "$yn" = "y" -o "$yn" = "Y" ]
+then
+	if [ `id --user` -ne 0 ]
+	then
+	    echo    "Installation of Debian packages needs to be done as root."
+	    echo -n "Enter command used to become root (eg. "sudo"): "
+	    read sudo
+	    dpkg="$sudo $dpkg"
+	fi
+
+	echo " "
+	echo "Installing package..."
+	eval "$dpkg --install $1"
+fi
+
+echo " "
+echo -n "Done.  Press <return> to continue: "
+read
+echo " "

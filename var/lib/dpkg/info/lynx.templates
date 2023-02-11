@@ -1,0 +1,37 @@
+Template: lynx/defaulturl
+Type: string
+Default: http://www/
+Description: What is lynx's homepage?
+ Please enter the default URL to use if none is given when invoking lynx.
+ .
+ You must enter either a full URL (including the "http://", etc.)
+ or an absolute pathname.
+Description-sv: Vilken är lynxs startsida?
+ Ange vilken URL som lynx ska använda om ingen annan anges vid programstart. 
+ .
+ Du måste skriva in en fullständig URL (inklusive "http://", osv.)
+ eller en absolut sökväg.
+Description-fr: Quelle page d'accueil pour lynx ?
+ Entrez s'il vous plait l'URL a utiliser si aucune n'est  precise au
+ lancement de lynx.
+ .
+ Vous devez entrer soit une URL complete (avec "http://", etc.) soit un
+ chemin absolu vers un fichier ou un repertoire.
+Description-es: ¿Cuál es la página de inicio de lynx?
+ Por favor, introduzca el URL a usar por defecto si se invoca lynx sin 
+ argumentos.
+ .
+ Debe introducir un URL completo (incluyendo "http://", etc.) o una ruta
+ absoluta.
+Description-de: Geben Sie die lynx's Homepage ein?
+ Bitte geben Sie die Standart URL ein, die lynx verwenden soll, wenn Sie
+ beim Aufruf von lynx keine andere URL angeben.
+ .
+ Sie m=FCssen entweder der komplette URL (inklusive dem "http://", etc.)
+ angeben, oder den absoluten Pfad Namen.
+Description-pt_BR: Qual a página inicial do lynx?
+ Por favor entre com a URL padrão para usar se nenhuma for dada quando 
+ chamar o lynx.
+ . 
+ Você deve digitar ou uma URL completa (incluindo o "http://", etc.)
+ ou um nome de arquivo absoluto.

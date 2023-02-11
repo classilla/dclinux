@@ -1,0 +1,56 @@
+#! /bin/sh
+
+umask 022
+set -e
+
+install-info --quiet --section "Development" "Development" \
+  --description="System V interprocess communication facilities" \
+  /usr/share/info/ipc.info.gz
+update-alternatives --install /usr/bin/pager pager /bin/more 50
+
+#	Check if we are PowerPC/PReP architecture
+if [ `uname --machine` = "ppc" ]
+then
+  if [ -f /proc/cpuinfo ]
+  then
+	Arch=""
+	Arch=`cat /proc/cpuinfo |
+	(
+	read line;
+	set -- $line;
+	while [ "$1" != "machine" ]
+	do
+	  read line;
+	  set -- $line;
+	done
+	echo $3;
+	)`
+  fi
+fi
+
+#
+#	Check if links to hwclock.sh are present in runlevel "6".
+#	If not, remove the ones from runlevel "S" so that
+#	update-rc.d will do it's job.
+#
+if [ ! -f /etc/rc6.d/???hwclock.sh ] && [ ! -f /etc/rc0.d/???hwclock.sh ]
+then
+	rm -f /etc/rcS.d/???hwclock.sh
+fi
+
+# hwclock does not work on PowerPC/PReP systems
+if [ "$Arch" != "PReP" ]
+then
+  update-rc.d -f hwclock.sh remove 2>/dev/null > /dev/null
+  update-rc.d hwclock.sh start 50 S . stop 25 0 6 . > /dev/null
+fi
+
+if [ -x /usr/sbin/update-mime ]; then
+	update-mime
+fi
+
+if [ -d /usr/doc -a ! -e /usr/doc/util-linux -a -d /usr/share/doc/util-linux ]
+then
+        ln -sf ../share/doc/util-linux /usr/doc/util-linux
+fi
+

@@ -1,0 +1,117 @@
+		     EURO PACK for Linux, version 1.3
+		     ********************************
+        Copyright (c) 1998, Guylhem AZNAR <guylhem@oeil.qc.ca>, GPL
+
+
+0. CONTENT
+**********
+
+You will find here :
+* fr-latin0.map : French-Latin0 keymap for linux-console
+* fr-latin0.xmod : French-Latin0 keymap for X11-xmodmap
+* fr-latin0 : French-Latin0 keymap for X11-xkb
+* other-latin0.map : Generic Latin0 keymap for linux-console
+* other-latin0.xmod : Generic Latin0 keymap for X11-xmodmap
+* .psf files : Latin0 fonts for linux-console
+* .bdf files : Latin0 fonts for X11
+* 2 .gif files to visually explain the few differences between latin0 &
+latin1, 99% compatible.
+
+1. HOWTO
+********
+
+French AZERTY specific informations are only available in LISEZMOI, since
+an heavy majority of AZERTY keyboards users are french speaking like me :)
+
+1.1 UNDER LINUX-CONSOLE
+***********************
+
+For example with lat0-16.psf (or another psf) :
+
+		setfont ./lat0-16.psf
+
+Eventually reload your national keymap first, for example US users will type :
+
+		loadkeys us.map
+
+While German users will type :
+
+		loadkeys de.map
+
+Now load latin0 keymap :
+
+		loadkeys ./other-latin0.map
+
+You can now input latin0 text under linux-console, provided that your shell
+is 8bit clean, else please read Danish HOWTO.
+
+In order to support 8bit, Alt key right to your spacebar has been remapped
+to AltGr, which will be used as a modifier like Shift :
+
+		Press AltGr, press E, then release E and release AltGr :
+you will output an euro currency symbol.
+
+		You can do the same with C to output a cent, this is
+notated AltGr (e) = euro & AltGr (c) = cent
+
+Home, End, Delete, Backspace have been corrected and "windows" keys have
+been mapped to switch from a virtual console to another.
+
+Moreover, "compose" sequences have been added : just prefix a key with
+compose key (SysReq) to output other latin0 chars, for example :
+
+	SysReq (o) (e) will output oe ligature (for example german poet Goethe)
+	SysReq (") (Y) will output uppercase Y diaeresis (for french and dutch) 
+	SysReq (/) (o) will output lowercase o slash (for danish and norwegian)
+        SysReq (^) (s) will output lowercase s reverse circumflex (for finnish)
+	SysReq (^) (Z) will output uppercase Z reverse circumflex (for finnish)
+
+1.2 UNDER X11
+*************
+
+As root, for example with Xlat0-10x20.pcf (or another pcf) please type :
+
+		bdftopcf Xlat0-10x20.pcf > Xlat0-10x20-lat0.pcf
+		gzip Xlat0-10x20-lat0.pcf
+		mv Xlat0-10x20-lat0.pcf.gz /usr/X11R6/lib/X11/fonts/misc
+		mkfontdir /usr/X11R6/lib/X11/fonts/misc
+
+US and xkb X11 extensions users will type :
+
+		cp other-latin0.xmod /usr/X11R6/lib/X11/xinit/Xmodmap
+		cp other-latin0.xmod ~/.Xmodmap
+		cp other-latin0.xmod ~/.Xmodmap
+
+While people who best like xmodmap or already have a working ~/.Xmodmap
+will type :
+
+		cat other-latin0.xmod >> /usr/X11R6/lib/X11/xinit/Xmodmap
+		cat other-latin0.xmod >> ~/.Xmodmap
+
+Then either restart X or type :
+
+		xset +fp /usr/X11R6/lib/X11/fonts/misc
+
+And if xmodmap isn't automatically launched on startup, type :
+
+		xmodmap ~/.Xmodmap
+
+To select Latin0 fonts, run xfontsel and look for iso8859-15 encodings.
+
+Or even simpler, just type :
+
+	grep Xlat0-10x20-lat0.pcf /usr/X11R6/lib/X11/fonts/misc/fonts*
+
+Then use the second parameter as an argument for xiterm or rxvt font :
+
+	xiterm -fn -misc-fixed-medium-r-normal--20-200-75-75-c-100-iso8859-15
+
+2. FEEDBACK
+***********
+
+I am interested by all kind of feedback, either positive or negative.
+
+Please tell me eventual bugs you could find and if you appreciate my work !
+
+					Guylhem Aznar <guylhem@oeil.qc.ca>
+					or <guylhem@barberouge.linux.lmm.com>

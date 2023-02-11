@@ -1,0 +1,821 @@
+#!/usr/bin/perl -w
+$|=1;
+
+# Copyright (C) 1997-2001 Johnie Ingram <johnie@debian.org>.
+# Modifications for perl 5.6 by Daniel Jacobowitz <dan@debian.org>.
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+use strict;
+no strict 'vars';
+
+$HTTPD_CONF="/etc/apache/httpd.conf";
+$HTTPD_EX="/usr/share/doc/apache/examples/httpd.conf";
+$ACCESS_CONF="/etc/apache/access.conf";
+$ACCESS_EX="/usr/share/doc/apache/examples/access.conf";
+$SRM_CONF="/etc/apache/srm.conf";
+$SRM_EX="/usr/share/doc/apache/examples/srm.conf";
+$CRON_CONF="/etc/apache/cron.conf";
+$CRON_EX="/usr/share/doc/apache/examples/cron.conf";
+$MIME_CONF="/etc/mime.types";
+$MAILNAME_CONF="/etc/mailname";
+$ALIASES_CONF="/etc/aliases";
+$HOME_EX="/usr/share/doc/apache/intro.html";
+
+$SERVER_ROOT="/etc/apache";
+$PID_FILE="/var/run/apache.pid";
+
+$write_httpdconf = 0;
+$write_accessconf = 0;
+$write_srmconf = 0;
+$write_aliasesconf = 0;
+$fix_webmaster = 0;
+$changed = 0;
+$q = 1;
+
+use Getopt::Long;
+
+$opt_assert_perl = 0;
+$opt_force = 0;
+$opt_force_modules = 0;
+$opt_manual_modules = 0;
+$opt_fullauto = 0;
+$opt_update = 0;
+# $opt_documentroot = "/var/www";
+# Don't change the document root if not explicitly requested
+
+chomp ($arch = `dpkg --print-installation-architecture`);
+chomp ($mailname = (-e $MAILNAME_CONF)
+       ? `cat $MAILNAME_CONF` : "localhost");
+
+
+###########################################################################
+
+
+sub load_config_files ()
+{
+    $main::httpdconf = `cat $HTTPD_CONF`;
+    $main::accessconf = `cat $ACCESS_CONF 2> /dev/null`;
+    $main::srmconf = `cat $SRM_CONF 2> /dev/null`;
+    $main::allconf = "$httpdconf\n$accessconf\n$srmconf";
+    ($main::nonvirtconf = $allconf) =~ s/\n\s*<Virtual.*VirtualHost>//gs;
+    $main::aliasesconf = `cat $ALIASES_CONF 2> /dev/null`;
+    $main::servername = loadconf ("ServerName", "localhost");
+    $main::serveradmin = loadconf ("ServerAdmin", "webmaster");
+    $main::serveruser = loadconf ("User", "www-data");
+    $main::servergroup = loadconf ("Group", "www-data");
+    chomp (my $tmproot = `egrep "^www-data:" /etc/passwd | cut -f 6 -d :`);
+    $tmproot = "/var/www" if ($tmproot eq "");
+    $main::documentroot = loadconf ("DocumentRoot",
+				    $tmproot, $SRM_CONF);
+    $main::serverport = loadconf ("Port", "80");
+    $main::version = system ("apache -l > /dev/null 2>&1")
+	? "1.1" : "1.3";
+    $main::version = "1.3" if (-f "/usr/lib/apache/1.3/libhttpd.so");
+
+    $main::serveruser =~ s/\#//g;
+    $main::servergroup =~ s/\#//g;
+    $main::servergroup = "www-data" if $main::servergroup =~ m/-/;
+}
+
+
+sub yorn ($;$)
+{
+    $main::changed = 0;
+    my $result = $_[0];
+    my $morearg = "";
+    print $_[1] if defined $_[1];
+    ($result) ? print " [Y/n] " : print " [y/N] ";
+    $arg = <STDIN>;
+    $result = 1 if ($arg =~ /^y/i);
+    $result = 0 if ($arg =~ /^n/i);
+    $q = 0 if ($arg =~ /q/i);
+    $main::changed = 1 unless ($result == $_[0]);
+    return $result;
+}
+
+
+sub answer ($;$)
+{
+    $main::changed = 0;
+    my $arg;
+    my $default = $_[0];
+    print $_[1] if defined $_[1];
+    print " [$default] " if (defined ($default) && $default ne "");
+    chomp ($arg = `read REPLY; echo \$REPLY`);
+    if ($arg ne "")
+    {
+	$main::changed = 1;
+	return $arg;
+    }
+    return $default;
+}
+
+
+sub loadconf ($$;$)
+{
+    my $parameter = $_[0];
+    my $default = $_[1];
+
+    my $file = (defined ($_[2]) ? $_[2] : "$HTTPD_CONF");
+    my $in = `egrep "^[:space:]*$parameter " $file 2> /dev/null| head -1`;
+    $in =~ s/\s*$parameter //;
+    chomp ($in);
+    return $in if ($in ne "");
+    return $default;
+}
+
+
+sub ensure_files ()
+{
+    system ("mkdir -m 755 --parents /etc/apache");
+    if (! -e $HTTPD_CONF)
+    {
+	print "Installing new configuration file $HTTPD_CONF ...\n";
+	system ("cp $HTTPD_EX $HTTPD_CONF") && exit 1;
+    }
+    if (! $opt_update || $opt_fullauto)
+    {
+	if (! -e $ACCESS_CONF)
+	{
+	    print "Installing new configuration file $ACCESS_CONF ...\n";
+	    system ("cp $ACCESS_EX $ACCESS_CONF") && exit 1;
+	}
+	if (! -e $SRM_CONF)
+	{
+	    print "Installing new configuration file $SRM_CONF ...\n";
+	    system ("cp $SRM_EX $SRM_CONF") && exit 1;
+	}
+    }
+    if (! -e $CRON_CONF)
+    {
+	print "Installing new configuration file $CRON_CONF ...\n";
+	system ("cp $CRON_EX $CRON_CONF") && exit 1;
+    }
+    if (! -e $MIME_CONF)
+    {
+	print "\nError: $MIME_CONF not found.\n";
+	print "Install the mime-support package, or copy the mime.types ";
+	print "from\n/usr/share/doc/apache/conf/mime.types.\n\n";
+	exit 1;
+    }
+    if (! -x "/usr/bin/savelog")
+    {
+	print "\nError: /usr/bin/savelog not found.\n";
+	print "Are you sure you're running a Debian system?   :-)\n\n";
+	exit 1;
+    }
+    if (! -w $HTTPD_CONF)
+    {
+	print "\nError: $HTTPD_CONF not writable by userid.\n";
+	print "Who do you think you are, root?   :-)\n\n";
+	exit 1;
+    }
+}
+
+
+sub make_corrections ()
+{
+    my $icons = "/usr/share/apache/icons/";
+    my $oldcbin = "/usr/lib/httpd/cgi-bin";
+    my $cbin = "/usr/lib/cgi-bin";
+
+    # FIXME: change to /usr/share/doc once the FHS transition is complete.
+    my $doc = "/usr/doc/";
+
+    if (! ($httpdconf =~ m/(^|(?<=\n))\s*ServerRoot\s+$SERVER_ROOT/))
+    {
+	print "Correcting ServerRoot to $SERVER_ROOT in httpd.conf.\n";
+	$httpdconf =~ s/(^|(?<=\n))\s*ServerRoot.*/ServerRoot $SERVER_ROOT/;
+	$write_httpdconf++;
+    }
+    if ($httpdconf =~ m#/var/log/apache-httpd#)
+    {
+	print "Correcting /var/log/apache-httpd to /var/log/apache in httpd.conf.\n";
+	$httpdconf =~ s#/var/log/apache-httpd#/var/log/apache#g;
+	$write_httpdconf++;
+    }
+    if ($httpdconf =~ m/mod_browser/)
+    {
+	print "Removing obsolete module mod_browser from httpd.conf.\n";
+	$httpdconf =~ s/(^|(?<=\n)).*mod_browser.*\n//g;
+	$write_httpdconf++;
+    }
+    if ($httpdconf =~ m/(^|(?<=\n))Group.*-\d/)
+    {
+	print "Changing Group reference in httpd.conf to 'nogroup'.\n";
+	$httpdconf =~ s/(^|(?<=\n))Group.*\n/Group nogroup\n/g;
+	$write_httpdconf++;
+    }
+    if (! ($httpdconf =~ m/(^|(?<=\n))\s*PidFile\s+$PID_FILE/))
+    {
+	print "Correcting PidFile to $PID_FILE in httpd.conf.\n";
+	$httpdconf =~ s/(^|(?<=\n))\s*PidFile.*/PidFile $PID_FILE/;
+	$write_httpdconf++;
+    }
+    if ($httpdconf =~ m/Please keep this ClearModuleList: line/)
+    {
+	print "Correcting magic ClearModuleList line to LoadModule.\n";
+	$httpdconf =~ s/Please keep this ClearModuleList: line/Please keep this LoadModule: line/;
+	$write_httpdconf++;
+    }
+    if ($httpdconf =~ m/(^|(?<=\n))\s*ServerAdmin\s+you.*address/i)
+    {
+       $write_httpdconf++;
+       $fix_webmaster++;
+    }
+
+    $write_httpdconf++ if ($httpdconf =~ m/mod_browser/i);
+    return unless (-f $SRM_CONF);
+
+    if (($srmconf =~ m#(^|(?<=\n))\s*Alias\s+/icons#)
+        && ! ($srmconf =~ m#(^|(?<=\n))\s*Alias\s+/icons/\s+$icons#))
+    {
+	if (yorn (1, "\nThe icons Alias specifed in srm.conf is non-standard.  Fix?"))
+	{
+	    print "Correcting Alias to $icons in srm.conf.\n";
+	    $srmconf =~ s#(^|(?<=\n))\s*Alias\s+/icons/.*#Alias /icons/ $icons#;
+	    $write_srmconf++;
+	}
+    }
+    if (($srmconf =~ m#(^|(?<=\n))\s*ScriptAlias\s+/cgi-bin#)
+        && ! ($srmconf =~ m#(^|(?<=\n))\s*ScriptAlias\s+/cgi-bin/\s+$cbin/#))
+    {
+	if (yorn (1, "\nThe cgi-bin ScriptAlias specifed in srm.conf is non-standard.  Fix?"))
+	{
+	    print "Correcting ScriptAlias to $cbin/ in srm.conf.\n";
+	    $srmconf =~
+		s#(^|(?<=\n))\s*ScriptAlias\s+/cgi-bin/.*#ScriptAlias /cgi-bin/ $cbin/#;
+	    $write_srmconf++;
+	}
+    }
+    # deliberately made a loose match, for the sysadmins flexibility
+    if (($srmconf =~ m#(^|(?<=\n))\s*Alias\s+/icons#)
+        && ! ($srmconf =~ m#Alias\s+/doc/\s+$doc#))
+    {
+        # FIXME: change this once the FHS transition is complete
+	if ($srmconf =~ m#(^|(?<=\n))\s*Alias\s+/doc/?\s+/usr/share/doc#)
+        {
+            $srmconf =~ s/\/usr\/share\/doc/\/usr\/doc/sg;
+            print "Updating alias /doc/ -> $doc in srm.conf (for Debian docs).\n";
+        }
+	else
+        {
+            if ($srmconf =~ m#(^|(?<=\n))\s*Alias\s+/doc#)
+            {
+                print "Eek! You need to rename your existing /doc alias in srm.conf!\n";
+                $srmconf =~ s!(^|(?<=\n))\s*Alias\s+/doc(.*)!\n\n\#\# FIXME \#\# Alias /doc$2\n\#\# The above line conflicts with webstandard 3.0, which specifies that /doc\n\#\# refers to /usr/doc.  Some packages may not work otherwise.\n\n!;
+            }
+            print "Adding alias /doc/ -> $doc to srm.conf (for Debian docs).\n";
+            $srmconf =~ s/$/\n\n\# Added for Debian GNU\/Linux docs (webstandard 3.0).\n/s;
+            $srmconf =~ s/$/Alias \/doc\/ $doc\n/s;
+        }
+	$write_srmconf++;
+    }
+
+    return unless (-f $ACCESS_CONF);
+
+    if ($accessconf =~ m/Directory $oldcbin/)
+    {
+	print "Correcting $oldcbin to $cbin in access.conf.\n";
+	$accessconf =~ s/$oldcbin/$cbin/g;
+	$write_accessconf++;
+    }
+}
+
+
+sub make_directory ($)
+{
+    if (! -d $_[0])
+    {
+	system ("mkdir --parents --mode=755 $_[0]")
+	    || print "Created directory $_[0].\n";
+
+    }
+    print "Fixing: ";
+    system ("chown --verbose root.root $_[0]");
+}
+
+
+sub config_documentroot ()
+{
+    # Configuration of the DocumentRoot: 
+    # In fullautomatic mode the DocumentRoot is set to /var/www if the 
+    # current value does not refer to a directory. On updates the value
+    # is left alone unless the directory does not exist in which case 
+    # we ask for a new value. 
+    
+    if ($opt_fullauto && ! defined ($opt_documentroot))
+    {
+    	$opt_documentroot = -d $documentroot ? $documentroot : "/var/www";
+    }
+
+    if (! defined ($opt_documentroot) && ! -d $documentroot)
+    {
+	print "\nThe Apache server will serve documents from a directory called ";
+	print "the\ndocument root or server root.  You must specify such a ";
+	print "directory for\nthe server to work: /var/www is recommended.\n\n";
+	do {
+	    $documentroot = answer ($documentroot,
+				    "What should the DocumentRoot be?");
+	    $srmconf =~ s/(^|(?<=\n))\s*DocumentRoot.*/DocumentRoot $documentroot/;
+	    $write_srmconf++ if $changed;
+	    make_directory ($documentroot) if (! -x $documentroot);
+	} until (-d $documentroot);
+    }
+    else
+    {
+	$documentroot = $opt_documentroot;
+	$main::srmconf =~ s/(^|(?<=\n))\s*DocumentRoot.*/DocumentRoot $documentroot/;
+	print "The DocumentRoot is set to $documentroot.\n";
+	make_directory ($documentroot) if (! -x $documentroot);
+	$write_srmconf++;
+    }
+    chomp ($indexfile = `ls $documentroot/index.* 2> /dev/null | head -1`);
+    if ($indexfile eq "")
+    {
+	print "Installing your new homepage in $documentroot.\n";
+	system ("cp -p -i $HOME_EX $documentroot/index.html && chmod 644 $documentroot/index.html");
+    }
+    else
+    {
+	print "Leaving existing site $indexfile untouched.\n";
+    }
+}
+
+
+sub config_serveradmin ()
+{
+    if (! defined ($opt_serveradmin))
+    {
+	print "\nEnter the email address of your server administrator.  This ";
+	print "address \nwill be used in error messages allowing users to submit ";
+	print "reports of\nfaulty links or misconfigured cgi-programs to you. ";
+	print "It should be an email\naddress that corresponds to a human.\n\n";
+
+	$main::serveradmin = "$main::serveradmin\@$mailname"
+	    if (! $main::serveradmin =~ m/@/);
+	$main::serveradmin = answer ($main::serveradmin,
+				     "Who should the ServerAdmin be?");
+    }
+    else
+    {
+	$main::serveradmin = $opt_serveradmin;
+	print "The ServerAdmin is set to $main::serveradmin.\n";
+	$changed++;
+    }
+    $httpdconf =~ s/(^|(?<=\n))\s*ServerAdmin.*/ServerAdmin $main::serveradmin/;
+    $write_httpdconf++ if $changed;
+
+#    if ($aliasesconf =~ m/^\s*webmaster/im)
+#    {
+#	if (! ($aliasesconf =~ m/^\s*webmaster.*$main::serveradmin/im))
+#	{
+#	    if (yorn (1, "Correct the webmaster mail alias to this address?"))
+#	    {
+#		$aliasesconf =~
+#		    s/^\s*webmaster.*/webmaster: $main::serveradmin/m;
+#		$write_aliasesconf++;
+#	    }
+#	}
+#    }
+#    else
+#    {
+#	if (yorn (1, "Create a webmaster mail alias for this address?"))
+#	{
+#	    $write_aliasesconf++;
+#	    $aliasesconf =~ s/$/\n\n\# Maintainer of the Web server\n/s;
+#	    $aliasesconf =~ s/$/webmaster: $main::serveradmin\n/s;
+#	}
+#    }
+
+}
+
+
+sub config_servername ()
+{
+    return unless $main::nonvirtconf =~ /(^|(?<=\n))\s*ServerName /;
+    if (! defined ($opt_servername))
+    {
+	print "\nYou may want to choose the publicized name for your server.  ";
+	print "This name\nis used to make the server report itself as being ";
+	print "someone else, for\nexample to replace $mailname by www.$mailname ";
+	print "which looks nicer.\nPlease note that you may still need to make ";
+	print "sure this alternative name\nwill be recognized by the Domain Name ";
+	print "Service if you want your\nserver to be reached!\n\n";
+
+	$servername = answer ($servername, "What should the ServerName be?");
+    }
+    else
+    {
+	$servername = $opt_servername;
+	print "The ServerName is set to $servername.\n";
+	$changed++;
+    }
+    $httpdconf =~ s/(^|(?<=\n))\s*ServerName.*/ServerName $servername/;
+    $write_httpdconf++ if $changed;
+}
+
+
+sub config_serverport ()
+{
+    if (! defined ($opt_port))
+    {
+	print "\nPlease choose a port number on which the Apache server will ";
+	print "listen\nfor incoming connections.  This port number is usually ";
+	print "80, but you\nmay want to choose another one if you have another ";
+	print "server already\nlistening on that port, or if you want to listen ";
+	print "on an unprivileged\nport; in this case, the port 8080 might be a ";
+	print "good choice.\n\n";
+
+	$serverport = answer ($serverport, "What port should Apache listen on?");
+    }
+    else
+    {
+	$serverport = $opt_port;
+	print "The Port is set to $serverport.\n";
+	$changed++;
+    }
+    $httpdconf =~ s/(^|(?<=\n))\s*Port.*/Port $serverport/;
+    $write_httpdconf++ if $changed;
+}
+
+
+sub find_suitable_modules (;$)
+{
+    $v = (defined ($_[0])) ? $_[0] : $main::version;
+    my $d = ($v eq "1.3") ? "/usr/lib/apache/1.3" : "/usr/lib/apache/modules";
+    my $k= ($v eq "1.3") ? "LoadModule.*apache/1.3|AddModule" : "LoadModule.*apache/module";
+    my $m = `egrep -l "$k" $d/*.info 2> /dev/null`;
+    return split ("\n", $m);
+}
+
+
+sub module_required ($;$)
+{
+    my $l;
+    my $directives = 0;
+    my $handles = 0;
+    my $types = 0;
+    my $needed = 0;
+    my $verbose = (defined ($_[1])) ? $_[1] : 0;
+    (-f $_[0]) || return 0;
+    my @file = split ("\n", `cat $_[0]`);
+    print "$_[0]\n" if $verbose;
+    foreach $l (@file)
+    {
+	chomp ($l);
+	($directives = 1, next) if ($l =~ m/^Directives:/);
+	($directives = 0, next) if ($l =~ m/^\w/);
+	if ($directives && $l =~ m/^ \w/)
+	{
+	    $l =~ s/^ //;
+	    $l =~ s/ .*//;
+	    print "  directive: \"$l\"" if $verbose;
+	    if ($main::allconf =~ m/(^|(?<=\n))\s*$l\W/)
+	    {
+		$needed++ ;
+		print "  *" if $verbose;
+	    }
+	    print "\n" if $verbose;
+	}
+    }
+    foreach $l (@file)
+    {
+	chomp ($l);
+	($handles = 1, next) if ($l =~ m/^Handles:/);
+	($handles = 0, next) if ($l =~ m/^\w/);
+	if ($handles && $l =~ m/^ \w/)
+	{
+	    $l =~ s/^ //;
+	    $l =~ s/ .*//;
+	    print "  handler: \"$l\"" if $verbose;
+	    if ($main::allconf =~ m/(^|(?<=\n))\s*\w*Handler\s*$l/)
+	    {
+		$needed++;
+		print "  *" if $verbose;
+	    }
+	    print "\n" if $verbose;
+	}
+    }
+    foreach $l (@file)
+    {
+	chomp ($l);
+	($types = 1, next) if ($l =~ m/^MimeTypes:/);
+	($types = 0, next) if ($l =~ m/^\w/);
+	if ($types && $l =~ m/^ \w/)
+	{
+	    $l =~ s/^ //;
+	    $l =~ s/ .*//;
+	    print "  type: \"$l\"" if $verbose;
+	    if ($main::allconf =~ m/(^|(?<=\n))\s*\w*Type\s*$l\W/)
+	    {
+		$needed++;
+		print "  *" if $verbose;
+	    }
+	    print "\n" if $verbose;
+	}
+    }
+    return $needed;
+}
+
+
+
+
+sub get_description ($)
+{
+    chomp (my $desc = `egrep "^Description: " $_[0]`);
+    $desc =~ s/Description: //;
+    return $desc;
+}
+
+
+sub get_module_line ($)
+{
+    my $k= ($main::version eq "1.3") ? 
+	"LoadModule.*apache/1.3|AddModule" : "LoadModule.*apache/module";
+    chomp (my $l = `egrep "^$k" $_[0]`);
+    $l =~ s/LoadModule: /LoadModule /;
+    $l =~ s/AddModule: /AddModule /;
+    return $l;
+}
+
+
+
+sub update_modules ($)
+{
+    $_[0] =~ s/\n\n/\n/g;
+    if ($main::httpdconf =~ m/The way lines are.*Debian.*such hashes\./s)
+    {
+	$main::httpdconf =~
+	    s/\# The way lines.*will use such hashes\.\n\#\n//s;
+    }
+    print "Pondering.";
+    foreach $m (find_suitable_modules ("1.1"))
+    {
+	chomp (my $l = `egrep "^LoadModule:.*\/1.3\/" $m | cut -f 2 -d " "`);
+	$main::httpdconf =~ s/.*LoadModule .*$l.*\n//g;
+	print ".";
+    }
+    foreach $m (find_suitable_modules ("1.3"))
+    {
+	chomp ($l = `egrep "^AddModule: " $m`);
+	$l =~ s/AddModule: //;
+	$main::httpdconf =~ s/.*AddModule $l.*\n//g;
+	print ".";
+    }
+    print " done.\n";
+    my $l = "LoadModule";
+    $main::httpdconf =~ s/(^|(?<=\n))\s*ClearModuleList.*\n//;
+    $main::httpdconf =~ s/(^|(?<=\n))\s*AddModule.*\n//g; # NEW
+    $main::httpdconf =~ s/(^|(?<=\n))\s*LoadModule.*\n//g; # NEW
+    $main::httpdconf =~ s/(^|(?<=\n))\# LoadModule.*\n//g; # NEW
+    $main::httpdconf =~
+	s/Please keep.*$l.*installation.\n/Please keep this $l: line here, it is needed for installation\.\n$_[0]/s;
+    $main::write_httpdconf++;
+}
+
+
+
+sub module_standard ($)
+{
+    return 1 if $_[0] =~ m/mod_auth\./;
+    return 1 if $_[0] =~ m/mod_expires\./;
+    return 1 if (($_[0] =~ m/mod_rewrite\./) && ($arch ne "sparc"));
+    return 1 if $_[0] =~ m/mod_dlopen\./;
+    return 1 if $_[0] =~ m/mod_so\./;
+    return 1 if $_[0] =~ m/mod_unique_id\./;
+    return 0;
+}
+
+
+
+sub config_modules ()
+{
+    my $q = 0;
+    my $moddl = 0;
+#   my $mlist = ($main::version eq "1.3") ? "ClearModuleList\n\n" : "\n";
+    $mlist = "\n";
+
+    if (! $opt_force_modules && $opt_manual_modules)
+    {
+	print "\nThis release of the Apache server can be configured to load ";
+	print "only certain\nmodules into memory.  This program can automagically ";
+	print "configure Apache\nso only modules that are actually needed are ";
+	print "loaded.\n\n";
+    }
+
+    $q = yorn (0, "Do you want to manually choose which modules to load?")
+        if ($opt_manual_modules);
+    ($q) ? print "\n" : print "Finding DSO mods.";
+    foreach $m (find_suitable_modules ())
+    {
+	print "." unless $q;
+	my $x = module_required ($m, 0);
+	my $std = module_standard ($m);
+	my $l = get_module_line ($m);
+	next if ($moddl && $l =~ /mod_dl/);
+	if ($q)
+	{
+	    my $t = get_description ($m);
+	    my $r = ($x) ? " [required]" : "";
+	    $r = ($std) ? " [standard]" : $r;
+	    (yorn (($x + $std), "$t$r?"))
+		? $mlist =~ s/$/$l\n/ : $mlist =~ s/$/\# $l\n/;
+	}
+	else
+	{
+	    ($x || $std)
+		? $mlist =~ s/$/$l\n/ : $mlist =~ s/$/\# $l\n/;
+	}
+	$moddl = 1 if ($l =~ /mod_dl/);
+    }
+    print "found." unless $q;
+    print "\n\n$mlist";
+    update_modules ($mlist);
+}
+
+
+sub offer_early_exit ()
+{
+    return if ($opt_force || $opt_force_modules);
+    if (! $write_httpdconf && ! $write_accessconf && ! $write_srmconf)
+    {
+# FIXME: Really should ask about restarting it.
+        exit 0;
+
+	if (yorn (1, "A valid Apache configuration exists.  Use it?"))
+	{
+	    if (yorn (1, "Restart Apache now?"))
+	    {
+		if (-x "/usr/sbin/apachectl")
+		{
+		    print "Stopping apache with apachectl ...\n";
+		    system ("/usr/sbin/apachectl stop > /dev/null 2>&1");
+		    print "Waiting for apache to terminate ...";
+		    sleep(10);
+		    print " done.\n";
+		    system ("/usr/sbin/apachectl start");
+		}
+		else
+		{
+		    system ("/etc/init.d/apache reload-modules");
+		}
+	    }
+	    exit 0;
+	}
+	$opt_update = 0;
+    }
+    print "An Apache configuration exists, but needs some tweaking.\n"
+	if ($write_httpdconf && ! $opt_fullauto);
+}
+
+
+
+###########################################################################
+
+
+GetOptions ("force!",
+	    "assert-perl!",
+	    "force-modules!",
+	    "update!",
+	    "manual-modules!",
+	    "fullauto!",
+	    "serveradmin=s",
+	    "servername=s",
+	    "documentroot=s",
+	    "port=i");
+
+exit 0 if $opt_assert_perl;
+
+if ($opt_fullauto)
+{
+    $opt_update = 1;
+    undef ($opt_serveradmin);
+    print "Initializing apache config for immediate operation.\n";
+}
+
+if ($opt_update && ! defined ($opt_serveradmin))
+{
+    $domain = `hostname --fqdn`;
+    $domain = `cat /etc/mailname` if (-f "/etc/mailname");
+    chomp ($domain);
+    $opt_serveradmin = "webmaster\@$domain";
+}
+
+ensure_files ();
+load_config_files ();
+make_corrections ();
+offer_early_exit () if ($opt_update);
+
+if (! $opt_force_modules)
+{
+    print "\nYour config files will not be modified until you select Y at \"save changes.\"\n"
+        unless ($opt_fullauto);
+
+    config_serveradmin () unless ($opt_update && !$fix_webmaster);
+    config_documentroot ()
+	unless ($write_httpdconf + $write_accessconf + $write_srmconf == 0);
+    config_servername () unless ($opt_update);
+#   config_serverport () unless ($opt_update);
+}
+config_modules ();
+
+if (! $opt_fullauto
+    && ! yorn (1, "\nSave these changes to the configuration files?"))
+{
+    print "\nWhew!  No changes were made.\n\n";
+    exit 0;
+}
+print "\n";
+
+if ($write_httpdconf)
+{
+    if (! $opt_fullauto)
+    {
+        system ("savelog -c 100 $HTTPD_CONF")
+            && die ("couldn't rotate $HTTPD_CONF");
+    }
+    open (CONF, ">$HTTPD_CONF") || die ("couldn't open $HTTPD_CONF");
+    print CONF $httpdconf;
+    close (CONF);
+}
+if ($write_accessconf)
+{
+    if (! $opt_fullauto)
+    {
+        system ("savelog -c 100 $ACCESS_CONF")
+            && die ("couldn't rotate $ACCESS_CONF");
+    }
+    open (CONF, ">$ACCESS_CONF") || die ("couldn't open $ACCESS_CONF");
+    print CONF $accessconf;
+    close (CONF);
+}
+if ($write_srmconf)
+{
+    if (! $opt_fullauto)
+    {
+        system ("savelog -c 100 $SRM_CONF")
+            && die ("couldn't rotate $SRM_CONF");
+    }
+    open (CONF, ">$SRM_CONF") || die ("couldn't open $SRM_CONF");
+    print CONF $srmconf;
+    close (CONF);
+}
+if ($write_aliasesconf)
+{
+    print "Writing $main::serveradmin to $ALIASES_CONF ...\n";
+    system ("savelog -c 100 $ALIASES_CONF")
+	&& die ("couldn't rotate $ALIASES_CONF");
+    open (CONF, ">$ALIASES_CONF") || die ("couldn't open $ALIASES_CONF");
+    print CONF $aliasesconf;
+    close (CONF);
+    if (-x "/usr/bin/newaliases" || -x "/usr/sbin/newaliases")
+    {
+	system ("newaliases");
+    }
+    elsif (-x "/usr/bin/mkaliases" || -x "/usr/sbin/mkaliases")
+    {
+	system ("mkaliases");
+    }
+    else
+    {
+	print "Could not guess how to update aliases -- rebuild manually!\n";
+    }
+}
+
+if ($opt_fullauto || yorn (1, "Restart Apache now?"))
+{
+    if (-x "/usr/sbin/apachectl")
+    {
+        if (-f "/var/run/apache.pid")
+        {
+            print "Stopping apache with apachectl ...";
+            system ("/usr/sbin/apachectl stop > /dev/null 2>&1");
+            print " done.\nWaiting for apache to terminate ...";
+            sleep(10);
+            print " done.\n";
+        }
+	exec ("/usr/sbin/apachectl start");
+    }
+    else
+    {
+	exec ("/etc/init.d/apache reload-modules");
+    }
+}
+
+exit 0;
+
+

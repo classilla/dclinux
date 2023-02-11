@@ -1,0 +1,20 @@
+#! /bin/sh
+if [ "$1" != "upgrade" ]
+then
+  update-alternatives --remove ex /usr/bin/nex-m17n
+  update-alternatives --remove vi /usr/bin/nvi-m17n
+  update-alternatives --remove view /usr/bin/nview-m17n
+fi
+
+ if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nvi-m17n ]; then
+   rm -f /usr/doc/nvi-m17n
+ fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nvi-m17n ]; then
+	rm -f /usr/doc/nvi-m17n
+fi
+# End automatically added section
+   
+
+exit 0

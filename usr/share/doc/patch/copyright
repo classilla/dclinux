@@ -1,0 +1,12 @@
+This is Debian GNU/Linux's prepackaged version of patch, Larry Wall's
+program that allows you to apply diffs to a file automagically.
+
+The current maintainer for this package is Adrian Bunk <bunk@fs.tum.de>.
+
+Previous maintainers were Bill Mitchell <mitchell@mdd.comm.mot.com>
+and Darren Stalder <torin@daft.com>.
+
+The upstream source is available at ftp://ftp.gnu.org/pub/gnu/patch/
+
+This source code is copyright under the GNU Public License (GPL), a copy
+of which may be found at /usr/share/common-licenses/GPL

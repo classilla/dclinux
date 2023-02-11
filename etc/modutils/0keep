@@ -1,0 +1,9 @@
+# DO NOT MODIFY THIS FILE!
+# This file is not marked as conffile to make sure if you upgrade modutils
+# it will be restored in case some modifications have been made.
+#
+# The keep command is necessary to prevent insmod and friends from ignoring
+# the builtin defaults of a path-statement is encountered. Until all other
+# packages use the new `add path'-statement this keep-statement is essential
+# to keep your system working
+keep

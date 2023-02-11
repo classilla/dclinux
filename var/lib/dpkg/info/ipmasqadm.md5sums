@@ -1,0 +1,9 @@
+8e8fadfb6b9e4a43d7dbe184402b5b46  usr/sbin/ipmasqadm
+64e7e69a68614c50b7184d4e7dbf8267  usr/lib/ipmasqadm/autofw.so
+25644c1f891b1225fe4f79220fe6354f  usr/lib/ipmasqadm/mfw.so
+562c68e1b73ec0499567d0f665e16421  usr/lib/ipmasqadm/portfw.so
+b121d60fe62d317760cde249d9b77b93  usr/lib/ipmasqadm/user.so
+02e2a6bdefd213be3810d952423ccbbb  usr/share/man/man8/ipmasqadm.8.gz
+b054577202e059d5a66896e37e0cdafe  usr/share/doc/ipmasqadm/copyright
+6980efe7dee43b5ae5aaadd7c18cc5a1  usr/share/doc/ipmasqadm/changelog.gz
+5fcdc473bf7af36f6c015bcfbf6a6bd7  usr/share/doc/ipmasqadm/changelog.Debian.gz

@@ -1,0 +1,370 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>Guida dell'utente di APT - L'interfaccia</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch3.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+
+<hr>
+
+<h1>
+Guida dell'utente di APT<br>
+¾Ï 4 L'interfaccia
+</h1>
+
+<hr>
+
+<p>
+Entrambi i metodi, <code>dselect</code> APT ed <code>apt-get</code>,
+condividono la stessa interfaccia; si tratta di un sistema semplice che indica
+in genere cosa sta per fare, e poi lo fa.  [<a href="footnotes.html#2"
+name="fr2">2</a>] Dopo la stampa di un riassunto delle operazioni che saranno
+fatte, APT stampa dei messaggi informativi sullo stato del sistema, in modo che
+possiate avere davanti agli occhi a quale punto dell'operazione si trova, e
+quanto ancora si deve aspettare.
+</p>
+
+<hr>
+
+<h2>
+<a name="s4.1">4.1 Avvio</a>
+</h2>
+
+<p>
+Prima di ciascuna operazione, eccetto l'aggiornamento della lista, APT compie
+alcune operazioni per prepararsi, oltre a dei controlli dello stato del
+sistema.  In qualsiasi momento le stesse operazioni possono essere fatte con
+<samp>apt-get check</samp>
+
+<pre>
+     # apt-get check
+     Reading Package Lists... Done
+     Building Dependancy Tree... Done
+</pre>
+
+<p>
+La prima cosa che fa è leggere tutti i file dei pacchetti in memoria, usando
+uno schema di caching in modo da rendere la stessa operazione più veloce la
+seconda volta che la si fa.  Se alcuni dei file dei pacchetti non vengono
+trovati, sono ignorati e viene stampato un avvertimento all'uscita di apt-get.
+
+<p>
+L'operazione finale consiste in un'analisi dettagliata delle dipendenze del
+sistema: viene controllato che tutte le dipendenze dei singoli pacchetti
+installati o non scompattati siano soddisfatte.  Se vengono individuati dei
+problemi, viene stampato un resoconto, ed <code>apt-get</code> esce senza
+eseguire alcuna operazione.
+
+<pre>
+     # apt-get check
+     Reading Package Lists... Done
+     Building Dependancy Tree... Done
+     You might want to run apt-get -f install' to correct these.
+     Sorry, but the following packages have unmet dependencies:
+       9fonts: Depends: xlib6g but it is not installed
+       uucp: Depends: mailx but it is not installed
+       blast: Depends: xlib6g (&gt;= 3.3-5) but it is not installed
+       adduser: Depends: perl-base but it is not installed
+       aumix: Depends: libgpmg1 but it is not installed
+       debiandoc-sgml: Depends: sgml-base but it is not installed
+       bash-builtins: Depends: bash (&gt;= 2.01) but 2.0-3 is installed
+       cthugha: Depends: svgalibg1 but it is not installed
+                Depends: xlib6g (&gt;= 3.3-5) but it is not installed
+       libreadlineg2: Conflicts:libreadline2 (&lt;&lt; 2.1-2.1)
+</pre>
+
+<p>
+In questo esempio il sistema ha molti problemi, tra cui uno piuttosto serio con
+la libreadlineg2.  Per ciascun pacchetto che ha dipendenze non soddisfatte,
+viene stampata una linea che indica il pacchetto che crea il problema e quali
+problemi ci sono.  Viene inclusa inoltre una breve spiegazione del perché il
+pacchetto ha un problema di dipendenze.
+
+<p>
+Ci sono due modi in cui un sistema possa arrivare in uno stato problematico di
+questo genere: il primo è causato dal fatto che <code>dpkg</code> possa mancare
+alcune relazioni sottili tra pacchetti durante un aggiornamento del sistema[<a
+href="footnotes.html#3" name="fr3">3</a>]; il secondo è possibile se
+l'installazione di un pacchetto fallisce, ed in questo caso è possibile che un
+pacchetto venga scompattato senza che tutti quelli da cui dipende siano stati
+installati.
+
+<p>
+La seconda possibilità è meno seria della prima, dato che APT gestisce l'ordine
+di installazione dei pacchetti; in entrambi i casi l'opzione <samp>-f</samp> di
+<code>apt-get</code> gli farà trovare una soluzione e lo farà continuare.  Il
+metodo APT di <code>dselect</code> comprende sempre l'opzione <samp>-f</samp>
+per permettere di configurare facilmente anche i pacchetti con script errati.
+
+<p>
+Se viene usata però l'opzione <samp>-f</samp> per correggere un sistema in uno
+stato molto problematico, è possibile che anche con l'opzione il programma
+fallisca, subito o durante la sequenza di installazione.  In entrambi i casi è
+necessario usare dpkg a mano (probabilmente usando delle opzioni di forzatura)
+per correggere quanto basta per poter fare continuare APT.
+</p>
+
+<hr>
+
+<h2>
+<a name="s4.2">4.2 Il resoconto sullo stato</a>
+</h2>
+
+<p>
+Prima di procedere, <code>apt-get</code> presenterà un resoconto delle
+operazioni che sta per fare.  In genere tale resoconto varierà con il tipo di
+operazioni da fare, ma ci sono alcuni elementi comuni: in tutti i casi gli
+elenchi dipendono dallo stato finale delle cose, e tengono conto dell'opzione
+<samp>-f</samp> e di altre attività rilevanti per il comando da eseguire.
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.1">4.2.1 L'elenco dei pacchetti Extra</a>
+</h3>
+
+<pre>
+     The following extra packages will be installed:
+       libdbd-mysql-perl xlib6 zlib1 xzx libreadline2 libdbd-msql-perl
+       mailpgp xdpkg fileutils pinepgp zlib1g xlib6g perl-base
+       bin86 libgdbm1 libgdbmg1 quake-lib gmp2 bcc xbuffy
+       squake pgp-i python-base debmake ldso perl libreadlineg2
+       ssh
+</pre>
+
+<p>
+L'elenco dei pacchetti Extra mostra tutti i pacchetti che verranno installati o
+aggiornati oltre a quelli indicati sulla linea di comando.  Viene generato solo
+per il comando <samp>install</samp>.  I pacchetti elencati sono spesso il
+risultato di un'operazione di auto installazione (Auto Install).
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.2">4.2.2 I pacchetti da rimuovere</a>
+</h3>
+
+<pre>
+     The following packages will be REMOVED:
+       xlib6-dev xpat2 tk40-dev xkeycaps xbattle xonix
+       xdaliclock tk40 tk41 xforms0.86 ghostview xloadimage xcolorsel
+       xadmin xboard perl-debug tkined xtetris libreadline2-dev perl-suid
+       nas xpilot xfig
+</pre>
+
+<p>
+L'elenco dei pacchetti da rimuovere (Remove) indica tutti i pacchetti che
+verranno rimossi dal sistema.  Può essere mostrato per una qualsiasi delle
+operazioni, e deve sempre essere esaminato attentamente per assicurarsi che non
+venga eliminato qualcosa di importante.  Con l'opzione <samp>-f</samp> è
+particolarmente probabile che vengano eliminati dei pacchetti, ed in questo
+caso va fatta estrema attenzione.  La lista può contenere dei pacchetti che
+verranno rimossi perché sono già rimossi parzialmente, forse a causa di
+un'installazione non terminata correttamente.
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.3">4.2.3 L'elenco dei nuovi pacchetti installati</a>
+</h3>
+
+<pre>
+     The following NEW packages will installed:
+       zlib1g xlib6g perl-base libgdbmg1 quake-lib gmp2 pgp-i python-base
+</pre>
+
+<p>
+L'elenco dei nuovi pacchetti installati (New) è semplicemente un appunto su
+quello che accadrà.  I pacchetti nell'elenco non sono al momento installati nel
+sistema, ma lo saranno alla fine delle operazioni di APT.
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.4">4.2.4 L'elenco dei pacchetti trattenuti</a>
+</h3>
+
+<pre>
+     The following packages have been kept back
+       compface man-db tetex-base msql libpaper svgalib1
+       gs snmp arena lynx xpat2 groff xscreensaver
+</pre>
+
+<p>
+In ogni caso in cui il sistema viene aggiornato nel suo insieme, c'è la
+possibilità che non possano venire installate nuove versioni di alcuni
+pacchetti, dato che potrebbero richiedere l'installazione di pacchetti non
+presenti nel sistema, o entrare in conflitto con altri già presenti.  In questo
+caso, il pacchetto viene elencato nella lista di quelli trattenuti (Kept Back).
+Il miglior modo per convincere i pacchetti elencati in questa lista è di
+installarli con <samp>apt-get install</samp> o usare <code>dselect</code> per
+risolvere i problemi.
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.5">4.2.5 Messaggi di attenzione sui pacchetti trattenuti</a>
+</h3>
+
+<pre>
+     The following held packages will be changed:
+       cvs
+</pre>
+
+<p>
+A volte si può richiedere ad APT di installare un pacchetto che è stato
+trattenuto; in questi casi viene stampato un messaggio di attenzione, che
+avverte che il pacchetto verrà modificato.  Questo dovrebbe accadere solo
+durante operazioni di dist-upgrade o di install.
+</p>
+
+<hr>
+
+<h3>
+<a name="s4.2.6">4.2.6 Resoconto finale</a>
+</h3>
+
+<p>
+Infine, APT stamperà un riassunto di tutte le modifiche che accadranno.
+
+<pre>
+     206 packages upgraded, 8 newly installed, 23 to remove and 51 not upgraded.
+     12 packages not fully installed or removed.
+     Need to get 65.7M/66.7M of archives. After unpacking 26.5M will be used.
+</pre>
+
+<p>
+La prima linea del riassunto è semplicemente una versione ridotta di tutte le
+liste, ed include il numero di aggiornamenti -- cioè dei pacchetti già
+installati per cui sono disponibili nuove versioni.  La seconda linea indica il
+numero di pacchetti con problemi di configurazione, probabilmente in
+conseguenza di un'installazione non andata a buon fine.  La linea finale indica
+i requisiti di spazio dell'installazione: i primi due numeri indicano
+rispettivamente il numero di byte che devono essere trasferiti da posizioni
+remote, ed il secondo la dimensione totale di tutti gli archivi necessari per
+l'installazione.  Il numero successivo indica la differenza in dimensione tra i
+pacchetti già installati e quelli che lo saranno, ed è approssimativamente
+equivalente allo spazio richiesto in /usr dopo l'installazione.  Se si stanno
+rimuovendo dei pacchetti, il valore può indicare lo spazio che verrà liberato.
+
+<p>
+Si possono generare altri resoconti usando l'opzione -u per mostrare i
+pacchetti da aggiornare, ma sono simili all'esempio precedente.
+</p>
+
+<hr>
+
+<h2>
+<a name="s4.3">4.3 La visualizzazione dello stato</a>
+</h2>
+
+<p>
+Durante il download degli archivi e dei file dei pacchetti, APT stampa una
+serie di messaggi di stato.
+
+<pre>
+     # apt-get update
+     Get:1 http://ftp.de.debian.org/debian-non-US/ stable/non-US/ Packages
+     Get:2 http://llug.sep.bnl.gov/debian/ frozen/contrib Packages
+     Hit http://llug.sep.bnl.gov/debian/ frozen/main Packages
+     Get:4 http://ftp.de.debian.org/debian-non-US/ unstable/binary-i386/ Packages
+     Get:5 http://llug.sep.bnl.gov/debian/ frozen/non-free Packages
+     11% [5 frozen/non-free `Waiting for file' 0/32.1k 0%] 2203b/s 1m52s
+</pre>
+
+<p>
+Le linee che cominciano con <em>Get</em> vengono stampate quando APT inizia a
+scaricare un file, e l'ultima linea indica il progresso dell'operazione.  Il
+primo valore in percentuale indica la percentuale totale di tutti i file; dato
+che la dimensione dei file Package non è nota, purtroppo a volte <samp>apt-get
+update</samp> fa una stima poco accurata.
+
+<p>
+La sezione successiva della linea di stato viene ripetuta una volta per
+ciascuna fase del download, ed indica l'operazione in corso, insieme ad alcune
+informazioni utili su cosa stia accadendo.  A volte questa sezione contiene
+solamente <em>Forking</em>, che significa che il sistema operativo sta
+caricando il modulo.  La prima parola dopo la parentesi quadra aperta è il nome
+breve dell'oggetto che si sta scaricando, che per gli archivi è il nome del
+pacchetto.
+
+<p>
+All'interno delle virgolette c'è una stringa informativa, che indica il
+progresso della fase di negoziazione del download.  Tipicamente comincia con
+<em>Connecting</em>, procede con <em>Waiting for file</em> e poi con
+<em>Downloading</em> o <em>Resuming</em>.  Il valore finale è il numero di byte
+che sono stati scaricati dal sito remoto: una volta cominciato il download
+viene rappresentato come <samp>102/10.2k</samp>, che indica che sono stati
+scaricati 102 byte di 10.2 kilobyte.  La dimensione totale viene sempre
+espressa in notazione a quattro cifre, per risparmiare spazio.  Dopo la
+dimensione viene indicato un indicatore progressivo della percentuale del file.
+Il penultimo elemento è la velocità istantanea media, che viene aggiornata ogni
+5 secondi, e riflette la velocità di trasferimento dei dati in quel periodo.
+Infine, viene visualizzato il tempo stimato per il trasferimento, che viene
+aggiornato periodicamente e riflette il tempo necessario per completare tutte
+le operazioni alla velocità di trasferimento mostrata.
+
+<p>
+La visualizzazione dello stato viene aggiornata ogni mezzo secondo per fornire
+un feedback costante del processo di download, e le linee Get scorrono indietro
+quando viene cominciato il download di un nuovo file.  Dato che la
+visualizzazione dello stato viene costantemente aggiornata, non è adatta per
+essere registrata in un file; per non visualizzarla si può usare l'opzione
+<samp>-q</samp>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s4.4">4.4 Dpkg</a>
+</h2>
+
+<p>
+APT usa <code>dpkg</code> per installare gli archivi e passerà all'interfaccia
+<code>dpkg</code> una volta finito il download.  <code>dpkg</code> porrà anche
+alcune domande durante la manipolazione dei pacchetti, ed i pacchetti stessi
+potranno farne altre.  Prima di ciascuna domanda viene proposta una descrizione
+di quello che sta per chiedere, e le domande sono troppo diverse per poter
+essere discusse in maniera completa in questa occasione.
+</p>
+
+<hr>
+
+[ <a href="ch3.html">Á°¤Î¥Ú¡¼¥¸</a> ]
+[ <a href="index.html#abstract">³µÍ×</a> ]
+[ <a href="index.html#copyright">Ãøºî¸¢É½¼¨</a> ]
+[ <a href="index.html#contents">ÌÜ¼¡</a> ]
+
+<hr>
+
+Guida dell'utente di APT<br>
+
+<address>
+$Id: guide.it.sgml,v 1.2 2001/02/20 07:03:17 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code><br>
+Traduzione di Eugenia Franzoni <code><a href="mailto:eugenia@linuxcare.com">eugenia@linuxcare.com</a></code>
+</address>
+
+</body>
+
+</html>
+

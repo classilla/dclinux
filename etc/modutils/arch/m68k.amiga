@@ -1,0 +1,18 @@
+alias block-major-2 amiflop
+alias char-major-4 m68kserial
+alias char-major-4-64 amiga_ser
+# The serial drivers below register to the first free minor!
+#alias char-major-4-65 ser_mfc
+#alias char-major-4-65 ser_ioext
+#alias char-major-4-65 ser_whippet
+alias char-major-6 lp_m68k
+alias char-major-6-0 lp_intern
+# The parallel drivers below register to the first free minor!
+#alias char-major-6-1 lp_mfc
+#alias char-major-6-1 lp_ioext
+alias char-major-10-4 amigamouse
+alias char-major-10-5 atarimouse
+alias char-major-10-7 amigamouse
+alias char-major-10-10 macmouse
+alias char-major-10-130 softdog
+alias char-major-14 dmasound

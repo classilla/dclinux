@@ -1,0 +1,7 @@
+# default spoof protection configuration
+#
+# this is only necessary for pre-2.2 kernels.
+# (it can be determined automatically under 2.2.x)
+
+LOCAL_IPS="127.0.0.1/8"
+LOCAL_IFACES="eth0 eth1 ppp0"

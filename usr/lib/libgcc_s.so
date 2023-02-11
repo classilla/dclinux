@@ -1,0 +1,5 @@
+/* GNU ld script
+   Use the shared library, but some functions are only in
+   the static library with HIDDEN attribute since they should
+   not be called via PLT.  */
+GROUP ( /usr/lib/libgcc_s.so.0 /usr/lib/libgcc_hidden.a )

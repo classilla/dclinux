@@ -1,0 +1,23 @@
+#!/bin/sh
+# postinst script for nano
+set -e
+
+if [ "$1" = "configure" ]; then
+   update-alternatives --install /usr/bin/editor editor /usr/bin/nano 40 \
+     --slave /usr/share/man/man1/editor.1.gz editor.1.gz \
+       /usr/share/man/man1/nano.1.gz
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/nano -a -d /usr/share/doc/nano ]; then
+		ln -sf ../share/doc/nano /usr/doc/nano
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" -a -x /usr/bin/update-menus ]; then update-menus ; fi
+# End automatically added section
+
+
+exit 0

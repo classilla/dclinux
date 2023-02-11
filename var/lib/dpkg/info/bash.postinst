@@ -1,0 +1,13 @@
+#! /bin/bash -e
+
+# the symlink is in the package now. So this should never happen ...
+if [ ! -e /bin/sh ]; then
+  ln -s bash /bin/sh
+fi
+
+if [ "$1" = "configure" ]; then
+  pkg=bash
+  if [ -d /usr/doc -a ! -e /usr/doc/$pkg -a -d /usr/share/doc/$pkg ]; then
+    ln -sf ../share/doc/$pkg /usr/doc/$pkg
+  fi
+fi

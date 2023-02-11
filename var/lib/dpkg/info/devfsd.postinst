@@ -1,0 +1,26 @@
+#!/bin/sh
+#update-rc.d devfsd.startup.sh start 01 S . >/dev/null
+#update-rc.d devfsd defaults s05 k95 >/dev/null
+update-rc.d devfsd start 01 S . start 60 0 6 . >/dev/null
+/usr/sbin/update-devfsd -n
+if [ "$1" = "configure" ]; then
+	if [ -z "$2" -o "$2" = "<unknown>" ]; then
+		/etc/init.d/devfsd start
+	else
+		/etc/init.d/devfsd restart
+	fi
+fi
+[ -x /sbin/update-modules ] && /sbin/update-modules
+# Automatically added by dh_installmodules
+if [ "$1" = "configure" ]; then
+	update-modules
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/devfsd -a -d /usr/share/doc/devfsd ]; then
+		ln -sf ../share/doc/devfsd /usr/doc/devfsd
+	fi
+fi
+# End automatically added section
+

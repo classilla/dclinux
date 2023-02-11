@@ -1,0 +1,8 @@
+#!/bin/sh
+
+rm -f /usr/man/man8/MAKEDEV.8 /usr/man/man8/MAKEDEV-C.8 \
+	/usr/man/man8/MAKEDEV-C.8.gz
+
+
+
+exit 0

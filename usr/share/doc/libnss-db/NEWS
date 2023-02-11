@@ -1,0 +1,33 @@
+Berkeley DB NSS module NEWS                                 -*-indented-text-*-
+  Hostory of user visible changes.
+  15 Aug 2000
+
+Copyright (C) 2000 Free Software Foundation, Inc.
+See the end for copying conditions.
+
+This module is an optional part of the GNU C Library.
+
+Please send bug reports using the `glibcbug' script to <bugs@gnu.org>.
+See the README file and the GNU C Library manual for details on sending bug
+reports.
+
+Version 2.2
+
+* First release as a standalone package.
+
+* It is now possible to link the module with various versions of
+  Berkeley DB.
+
+* Native Language Support is not yet available in this standalone version.
+
+----------------------------------------------------------------------
+Copyright information:
+
+   Permission is granted to anyone to make or distribute verbatim copies
+   of this document as received, in any medium, provided that the
+   copyright notice and this permission notice are preserved, thus
+   giving the recipient permission to redistribute in turn.
+
+   Permission is granted to distribute modified versions of this
+   document, or of portions of it, under the above conditions, provided
+   also that they carry prominent notices stating who last changed them.

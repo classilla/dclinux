@@ -1,0 +1,49 @@
+Section "Files"
+        RgbPath         "/usr/X11R6/lib/X11/rgb"
+        FontPath        "/usr/X11R6/lib/X11/fonts/misc"
+        FontPath        "/usr/X11R6/lib/X11/fonts/naga10"
+        FontPath        "/usr/X11R6/lib/X11/fonts/kaname"
+        FontPath        "/usr/X11R6/lib/X11/fonts/100dpi/:unscaled"
+        FontPath        "/usr/X11R6/lib/X11/fonts/75dpi/:unscaled"
+        FontPath        "/usr/X11R6/lib/X11/fonts/Type1"
+        FontPath        "/usr/X11R6/lib/X11/fonts/Speedo"
+        FontPath        "/usr/X11R6/lib/X11/fonts/100dpi"
+        FontPath        "/usr/X11R6/lib/X11/fonts/75dpi"
+#       FontPath        "tcp/192.168.0.254:7100"
+EndSection
+
+Section "ServerFlags"
+EndSection
+
+Section "Keyboard"
+        Protocol        "Standard"
+        XkbDisable
+EndSection
+
+Section "Pointer"
+        Protocol        "ImPS/2"
+        Device          "/dev/input/mice"
+        ZAxisMapping    5 4
+EndSection
+
+#Section "Module"
+#Load "xf86Jstk.so"
+#EndSection
+
+Section "Monitor"
+        Identifier      "Primary Monitor"
+EndSection
+
+Section "Device"
+        Identifier      "Primary Card"
+EndSection
+
+Section "Screen"
+        Driver  "FBDev"
+        Device  "Primary Card"
+        Monitor "Primary Monitor"
+        SubSection "Display"
+                Depth   16
+                Modes   "default"
+        EndSubSection
+EndSection

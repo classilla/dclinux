@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="LinuxDoc-Tools 0.9.7.3">
+ <TITLE>The Linux Console Tools: Understanding and setting up the screen driver</TITLE>
+ <LINK HREF="lct-7.html" REL=next>
+ <LINK HREF="lct-5.html" REL=previous>
+ <LINK HREF="lct.html#toc6" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="lct-7.html">Next</A>
+<A HREF="lct-5.html">Previous</A>
+<A HREF="lct.html#toc6">Contents</A>
+<HR>
+<H2><A NAME="s6">6.</A> <A HREF="lct.html#toc6">Understanding and setting up the screen driver</A></H2>
+
+<H2><A NAME="ss6.1">6.1 Unicode is everywhere</A>
+</H2>
+
+<H3>Screen Font Maps</H3>
+
+<P>In recent (as of 1998/08/11) kernels, the screen driver is based on
+16-bit unicode (UCS2) encoding, which means that every console-font
+loaded <B>should</B> be defined using a <EM>unicode Screen Font Map</EM>
+(SFM for short), which tells, for each character in the font, the list
+of UCS2 characters it will render.
+<BLOCKQUOTE>SFM's were formerly called ``Unicode Map'', or ``unimap''
+for short, but this term should be dropped, as now what they called
+``screen maps'' uses Unicode as well: it probably confuses many many
+people</BLOCKQUOTE>
+</P>
+
+<H3>SFM Fallback tables</H3>
+
+<P>Starting with release 1997.11.13 of the Linux Console Tools, <CODE>consolechars(8)</CODE>
+now understands <EM>SFM fallback tables</EM>.  Before that, SFM's should
+contain at the same time the Unicode of the characters it was
+primarily meant to render, as well as any approximations the user
+would like to.  These fallback tables allow to only put the primary
+mappings in the SFM provided with the font-file, and to
+<EM>separately</EM> keep a list telling <EM>``if no glyph for that
+character is available in the current font, then try to display it
+with the glyph for this one, or else the one for that one, or
+...''</EM>.  This permits to keep in one only place all possible
+fallbacks, and everyone will be able to choose which fallback tables
+(s)he wants.  Have a look at <CODE>data/consoletrans/*.fallback</CODE> for
+examples.</P>
+<P>A fallback-table file is made of fallback entries, each entry being on
+its own line. Empty lines, and lines beginning with the <CODE>#</CODE>
+comment character are ignored.</P>
+<P>A fallback entry is a series of 2 or more UCS2 codes. The first one is
+the character for which we want a glyph; the following ones are those
+whose glyph we want to use when no glyph designed specially for our
+character is available. The order of the codes defines a priority
+order (own glyph if available, then second char's, then the third's,
+etc.)</P>
+<P>If a SFM was to be loaded, fallback mappings are added to this map
+before it is loaded. If there was not (ie. a font without SFM was
+loaded, and no <CODE>--sfm</CODE> option was given to <CODE>consolechars</CODE>, or
+the <CODE>--force-no-sfm</CODE> option was given), then the current SFM is
+requested from the kernel, the fallback mappings are added, and the
+resulting SFM is loaded back into the kernel.</P>
+<P>Note that each fallback entry is checked against the original SFM, not
+against the SFM we get by adding former fallback entries to the
+original SFM (the one read from a file, or given by the kernel); this
+applies even to entries in different files, and thus the order of
+<CODE>-k</CODE> options has no effect. If you want some entries to be
+influenced by previous ones, you will have to use different fallback
+files, and to load them with several consecutive invocations of
+<CODE>consolechars -k</CODE>.</P>
+
+<H2><A NAME="ss6.2">6.2 The unicode screen-mode</A>
+</H2>
+
+<P>There are basically 2 screen-modes (byte mode and UTF mode).  The
+simpler to explain is the UTF mode, in which the bytes received from
+the application (ie. written to the console screen) are interpreted as
+UTF8 sequences, which are converted in the 
+<A HREF="lct-4.html#sec-unicode">equivalent UCS2 codes</A>, and then looked-up in the SFM to
+determine the glyphs used to display each character.</P>
+<P>Switching to and from UTF mode is done by sending to the screen the
+escape sequences <CODE>&lt;ESC&gt;%G</CODE> and <CODE>&lt;ESC&gt;%@</CODE>
+respectively.  You may use the <CODE>unicode_start(1)</CODE> and
+<CODE>unicode_stop(1)</CODE> scripts instead, as they also change the keyboard
+mode, and let you optionally change the screen-font.</P>
+<P>Use <CODE>vt-is-UTF8(1)</CODE> to find out whether active VT is in UTF mode.</P>
+
+<H2><A NAME="ss6.3">6.3 The byte screen-mode</A>
+</H2>
+
+<P>The byte mode is a bit more complicated, as it uses an additional map
+to transform the byte-characters sent by the application into UCS2
+characters, which are then treated as told above.  This map I call the
+Application Charset Map (ACM), because it defines the encoding the
+application uses, but it used to be called a ``screen map'', or
+``console map'' (this comes from the time where the screen driver
+didn't use Unicode, and there was only one Map down there).</P>
+<P>Although there is only one ACM active at a given time, there are 4 of
+them at any time in the kernel; 3 of them are built-in and never
+change, and they define the ISO latin1 charset, the DEC VT100 charset,
+and the IBM codepage 437; the 4th is user-definable, and defaults on
+boot to the ``straight to font'' mapping, decribed below under
+``Special UCS2 codes''.</P>
+<P>The <CODE>consolechars(1)</CODE> command can be used to change the ACM, as
+well as the font and its associated SFM.</P>
+
+<H3>Charset slots</H3>
+
+<P>The Linux Console Driver has 2 slots for charsets, labeled <EM>G0</EM> and
+<EM>G1</EM>.  Each of these slots contains a reference to one of the 4
+kernel ACMs, 3 of which are predefined to provide the <EM>cp437</EM>,
+<EM>iso01</EM>, and <EM>vt100 graphics</EM> charsets.  The 4th one is
+user-definable; this is the one you can set with <CODE>consolechars
+--acm</CODE> and get with <CODE>consolechars --old-acm</CODE>.  The console's
+defaults are <EM>iso01</EM> for <EM>G0</EM> and <EM>vt100 graphics</EM> for
+<EM>G1</EM>.</P>
+<P>Versions of the Linux Console Tools prior to 1998.08.11, as well as all versions of
+<CODE>kbd</CODE> at least until 0.96a, were always assuming you wanted to use
+the G0 slot, pointing to the user-defined ACM.  You can now use the
+<CODE>charset</CODE> utility to tune your charset slots.</P>
+<P>You will note that, although each VT has its own slot settings, there
+is only one user-defined ACM for use by all the VTs.  That is, whereas
+you can have tty1 using <EM>G0=cp437</EM> and <EM>G1=vt100</EM>, at the same
+time as tty2 using <EM>G0=iso01</EM> and <EM>G1=iso02</EM> (user-defined), you
+<B>cannot</B> have at the same time tty1 using <EM>iso02</EM> and tty2 using
+<EM>iso03</EM>.  This is a limitation of the linux kernel.</P>
+<P>Note that you can emulate such a setting using the <CODE>filterm</CODE>
+utility, with your console in UTF8-mode, by telling <CODE>filterm</CODE> to
+translate screen output on-the-fly to UTF8.</P>
+<P>You'll find <B>filterm</B> in the <B>konwert</B> package, by Marcin
+Kowalczyk, which is available from 
+<A HREF="http://kki.net.pl/qrczak/programy/index.html">his WWW site</A>.</P>
+
+
+<H2><A NAME="ss6.4">6.4 Special UCS2 codes</A>
+</H2>
+
+<P>There are special UCS2 values you should care about, but the present
+list is probably not exhaustive:</P>
+<P>
+<UL>
+<LI> codes <CODE>C</CODE> from <CODE>U+F000</CODE> to <CODE>U+F1FF</CODE> are not looked-up
+in the SFM, and directly accesses the character in font-position <CODE>C
+&amp; 0x01FF</CODE> (yes, a font can be 512-chars on many hardware
+platforms, like VGA).  This is refered to as the <EM>straight to font</EM>
+zone.
+  </LI>
+<LI>code <CODE>U+FFFD</CODE> is the <EM>replacement character</EM>, usually at
+font-position 0 in a font.  It is displayed by the kernel each time
+the application requested a unicode character that is not present in
+the SFM.  This allows not only the driver to be safe in Unicode mode,
+but also prevents displaying invalid characters when the ACM on a
+particular VT contains characters not in the current font !</LI>
+</UL>
+</P>
+
+<H2><A NAME="ss6.5">6.5 About the old 8-bit ``screen maps''</A>
+</H2>
+
+<P>There was a time where the kernel didn't know anything about Unicode.
+In this ancient time, Application Charset Maps were called ``screen
+maps'', and just mapped the application's characters into font
+positions.  The file format used for these 8bit ACM's is still
+supported for backward compatibility, but should not be used any more.</P>
+<P>The old way of using custom ACM's didn't know about unicode, so the
+ACM had to depend on the font.  Now, as each VT chooses its own ACM
+(from the 4 ones in the kernel at a given time), and as the
+console-font is common to all VT's, we can use a charset even if the
+font can't display all of its characters; it will then display the
+replacement character (<CODE>U+FFFD</CODE>).</P>
+
+<H2><A NAME="ss6.6">6.6 See also</A>
+</H2>
+
+<P><CODE>psfaddtable(1)</CODE>, <CODE>psfgettable(1)</CODE>, <CODE>psfstriptable(1)</CODE>,
+<CODE>showfont(1)</CODE>.</P>
+
+
+<HR>
+<A HREF="lct-7.html">Next</A>
+<A HREF="lct-5.html">Previous</A>
+<A HREF="lct.html#toc6">Contents</A>
+</BODY>
+</HTML>

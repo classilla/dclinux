@@ -1,0 +1,12 @@
+#!/bin/sh -e
+# $Id: preinst,v 1.1 1999/10/07 12:48:39 herbert Exp $
+
+# Rename old PAM conffile.
+if [ -n "$2" ] && dpkg --compare-versions "$2" lt 0.11-5; then
+	cd /etc/pam.d
+	if [ -f ftpd  -a ! -f ftp ]; then
+		cp -p ftpd ftp
+	fi
+fi
+
+

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+if [ "$1" = "configure" ]; then
+    if [ -n "$2" ]; then
+        if dpkg --compare-versions $2 lt 2.1.1-12 && \
+           dpkg --compare-versions $2 gt 2.1.1-0pre1.3
+        then
+            if [ -f /var/db/passwd.db ]; then
+                mv /var/db /var/db.old
+                ln -sf /var/lib/misc /var/db
+                cp -a /var/db.old/*.db /var/lib/misc/.
+                rm -rf /var/db.old
+            elif [ -f /var/state/glibc/passwd.db ]; then
+                mv /var/state/glibc /var/state/glibc.old
+                ln -sf /var/lib/misc /var/state/glibc
+                cp -a /var/state/glibc.old/*.db /var/lib/misc/.
+                rm -rf /var/state/glibc.old
+            fi
+        fi
+    fi
+    if [ -f /var/db/passwd.db ]; then
+	(cd /var/db; rm -f *.db; make) > /dev/null 2>&1 || true
+    elif [ -f /var/lib/misc/passwd.db ]; then
+    	(cd /var/lib/misc; rm -f *.db; make) > /dev/null 2>&1 || true
+    fi
+    test -x /etc/init.d/nscd && /etc/init.d/nscd restart > /dev/null 2>&1
+    ldconfig
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libnss-db -a -d /usr/share/doc/libnss-db ]; then
+		ln -sf ../share/doc/libnss-db /usr/doc/libnss-db
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+case "$1" in
+	configure)
+		ldconfig
+		;;
+	abort-upgrade|abort-remove|abort-deconfigure)
+		;;
+esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libpam0g -a -d /usr/share/doc/libpam0g ]; then
+		ln -sf ../share/doc/libpam0g /usr/doc/libpam0g
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,24 @@
+               Accessing bug reports in the tracking system logs
+
+   Each message received at or sent by the bug processing system is
+   logged and made available in a number of ways.
+
+   Copies of the logs are available on the World Wide Web at
+   http://www.infodrom.north.de/Debian/Bugs/,
+   http://www.nl.debian.org/Bugs/ and
+   http://www.debian.org/Bugs/
+
+   There is a mailserver which can send bug reports as plain text on
+   request. To use it send the word help as the sole contents of an email
+   to request@bugs.debian.org (the Subject of the message is ignored), or
+   read the instructions on the World Wide Web or in the file
+   bug-log-mailserver.txt.
+     _________________________________________________________________
+
+    Darren Benham / owner@bugs.debian.org. 12 Sep 1999.
+    Debian bug tracking system
+    copyright 1999 Darren O. Benham, 1994-7 Ian Jackson, 1997 nCipher
+    Corporation Ltd, 1995 Steven Brenner.
+    Available under the GPL.
+     _________________________________________________________________
+

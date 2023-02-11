@@ -1,0 +1,8 @@
+alias char-major-4 m68kserial
+alias char-major-6 lp_m68k
+alias char-major-6-0 lp_intern
+alias char-major-10-4 amigamouse
+alias char-major-10-5 atarimouse
+alias char-major-10-7 amigamouse
+alias char-major-10-10 macmouse
+alias char-major-10-130 softdog

@@ -1,0 +1,12 @@
+LoadModule: rewrite_module /usr/lib/apache/1.2/mod_rewrite.so
+LoadModule: rewrite_module /usr/lib/apache/1.3/mod_rewrite.so
+Directives:
+ RewriteEngine
+ RewriteOptions
+ RewriteLog
+ RewriteLogLevel
+ RewriteMap
+ RewriteBase
+ RewriteCond
+ RewriteRule
+Description: Support for regex based translations

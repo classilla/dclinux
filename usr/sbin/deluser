@@ -1,0 +1,428 @@
+#!/usr/bin/perl -w
+
+# deluser -- a utility to remove users from the system
+# delgroup -- a utilty to remove groups from the system
+$version = 3.36;
+
+# Copyright (C) 2000 Roland Bauerschmidt <rb@debian.org>
+# Based on 'adduser' as pattern by
+#     Guy Maor <maor@debian.org>
+#     Ted Hajek <tedhajek@boombox.micro.umn.edu>
+#     Ian A. Murdock <imurdock@gnu.ai.mit.edu>
+
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+# the program can be called as:
+#
+#  deluser user
+#     remove a normal user from the system
+#     example: deluser mike
+#     $action = "deluser"
+#
+#     --remove-home             remove the users home directory and mail spool
+#     --remove-all-files        remove all files owned by user
+#     --backup                  backup files before removing
+#
+#  delgroup group
+#  deluser --group group
+#     remove a system group from the system
+#     example: deluser --group students
+#     $action = "delgroup"
+#
+#  deluser user group
+#     remove the user from a group
+#     example: deluser mike students
+#     $action = "deluserfromgroup"
+#
+#  general options:
+#
+#     --quiet | -q      don't give process information to stdout
+#     --help | -h       usage message
+#     --version | -v    version number and copyright
+#     --conf | -c FILE  use FILE instead of /etc/deluser.conf
+
+$ENV{"PATH"} = "/sbin:/bin:/usr/sbin:/usr/bin";
+
+use File::Find;
+use Debian::AdduserCommon;
+
+BEGIN {
+    eval 'use Locale::gettext';
+    if ($@) {
+        *gettext = sub { shift };
+        *textdomain = sub { "" };
+        *LC_MESSAGES = sub { 5 };
+    }
+    eval {
+        require POSIX;
+        import POSIX qw(setlocale);
+    };
+    if ($@) {
+        *setlocale = sub { 1 };
+    }
+}
+
+setlocale(LC_MESSAGES, "");
+textdomain("adduser");
+
+$verbose = 1;
+$defaults = "/etc/deluser.conf";
+
+$config{"remove_home"} = 0;
+$config{"remove_all_files"} = 0;
+$config{"backup"} = 0;
+
+$action = $0 =~ /delgroup$/ ? "delgroup" : "deluser";
+
+while($arg = shift(@ARGV))
+{
+    die "$0: ",_("No options allowed after names.\n")
+	if ($names[0] && $arg =~ /^--/);
+
+    if($arg eq "--quiet" || $arg eq "-q")
+    {
+	$verbose = 0;
+    }
+    elsif($arg eq "--version" || $arg eq "-v")
+    {
+	version();
+	exit 0;
+    }
+    elsif($arg eq "--help" || $arg eq "-h")
+    {
+	usage();
+	exit 0;
+    }
+    elsif($arg eq "--group" || $arg eq "-g")
+    {
+	$action = "delgroup";
+    }
+    elsif($arg eq "--conf" || $arg eq "-c")
+    {
+        die "$0: ",_("--conf requires an argument.\n")
+            if (!($defaults = shift(@ARGV)));
+        dief (_("`%s' doesn't exist.\n"),$defaults)
+            if (! -f $defaults);
+    }
+    elsif($arg eq "--remove-home")
+    {
+	$pconfig{"remove_home"} = 1;
+    }
+    elsif($arg eq "--remove-all-files")
+    {
+	$pconfig{"remove_all_files"} = 1;
+    }
+    elsif($arg eq "--backup")
+    {
+	$pconfig{"backup"} = 1;
+    }
+    elsif($arg =~ /^--/ || $arg =~ /^-/)
+    {
+	dief (_("Unknown argument `%s'.\n"),$arg);
+    }
+    else
+    {
+	push @names, $arg;
+    }
+}
+
+read_config($defaults);
+foreach(keys(%pconfig))
+{
+    $config{$_} = $pconfig{$_};
+}
+
+die "$0: ",_("Only root may remove a user or group from the system.\n") if ($> != 0);
+ 
+if(@names == 0) {
+    if($action eq "delgroup")
+    {
+	print _("Enter a groupname to remove: ");
+    }
+    else
+    {
+	print _("Enter a username to remove: ");
+    }
+
+    chomp($answer=<STDIN>);
+    push(@names, $answer);
+}
+die "$0: ",_("I need a name to remove.\n") if (length($names[0]) == 0);
+die "$0: ",_("No more than two names.\n") if (@names > 2);
+
+if(@names == 2)       # must be addusertogroup
+{
+    die "$0: ",_("Specify only one name in this mode.\n")
+        if ($action eq "delgroup");
+    $action = "deluserfromgroup";
+    $user = shift(@names);
+    $group = shift(@names);
+}
+else
+{
+    if($action eq "delgroup")
+    {
+	$group = shift(@names);
+    }
+    else
+    {
+	$user = shift(@names);
+    }
+}
+
+if($user)
+  {
+    #($pw_name,$pw_passwd,$pw_uid,$pw_gid,$pw_quota,$pw_comment,
+    # $pw_gecos,$pw_homedir,$pw_shell,$pw_expire) = getpwnam($user);
+    my @passwd = getpwnam($user);
+    $pw_uid = $passwd[2];
+    $pw_gid = $passwd[3];
+    $pw_homedir = $passwd[7];
+    
+    $maingroup = $pw_gid ? getgrgid($pw_gid) : "";
+  }
+if($group)
+  {
+    #($gr_name,$gr_passwd,$gr_gid,$gr_members) = getgrnam($group);
+    my @group = getgrnam($group);
+    $gr_gid = $group[2];
+  }
+
+# arguments are processed:
+#
+#  $action = "deluser"
+#     $user          name of the user to remove
+#
+#  $action = "delgroup"
+#     $group         name of the group to remove
+#
+#  $action = "deluserfromgroup"
+#     $user          the user to be remove
+#     $group         the group to remove him/her from
+
+
+if($action eq "deluser")
+{
+    &invalidate_nscd();
+    unless(exist_user($user))
+    {
+	dief (_("`%s' does not exist.\n"),$user);
+    }
+    
+    if($config{"remove_home"} || $config{"remove_all_files"})
+    {
+	s_print(_("Looking for files to backup/remove...\n"));
+	my(@files,@dirs);
+	if($config{"remove_home"} && ! $config{"remove_all_files"})
+	{
+	    #push(@files, $pw_homedir)
+	#	if(-e $pw_homedir);
+	 #   push(@files, "/var/mail/$user")
+	#	if(-e "/var/mail/$user");
+	  sub home_match {
+	    push(@files, $File::Find::name) 
+	      if(-f $File::Find::name);
+	    push(@dirs, $File::Find::name)
+	      if(-d $File::Find::name);
+	  }
+	  File::Find::find({wanted => \&home_match, untaint => 1, no_chdir => 1}, $pw_homedir);
+	  push(@files, "/var/mail/$user")
+	    if(-e "/var/mail/$user");
+	}
+	else
+	{
+	  sub find_match {
+	    my ($dev,$ino,$mode,$nlink,$uid,$gid);
+	    (($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_)) &&
+	      ($uid == $pw_uid) &&
+		(
+		 ($File::Find::name =~ /^\/proc\// && ($File::Find::prune = 1)) ||
+		 (-f $File::Find::name && push(@files, $File::Find::name)) ||
+		 (-d $File::Find::name && push(@dirs, $File::Find::name))
+		);
+	  }
+	  File::Find::find({wanted => \&find_match, untaint => 1, no_chdir => 1}, '/');
+	}
+
+	if($config{"backup"})
+	{
+	    s_print(_("Backuping files to be removed...\n"));
+	    systemcall("/bin/tar", "-cf", "$user.tar", "--", @files);
+	    if(-e "/usr/bin/bzip2") {
+	    	systemcall("/usr/bin/bzip2", "$user.tar");
+	    } elsif(-e "/bin/gzip") {
+	    	systemcall("/bin/gzip", "$user.tar");
+	    }
+	}
+
+	if(@files || @dirs)
+	{
+	    s_print(_("Removing files...\n"));
+	    unlink(@files) if(@files);
+	    foreach(@dirs) {
+	      rmdir($_);
+	    }
+	}
+    }
+
+    s_printf(_("Removing user %s...\n"),$user);
+    systemcall("userdel", $user);
+    &invalidate_nscd();
+
+    systemcall('/usr/local/sbin/deluser.local', $user, $pw_uid,
+                $pw_gid, $pw_homedir) if (-x "/usr/local/sbin/deluser.local");
+
+    s_print(_("done.\n"));
+}
+elsif($action eq "delgroup")
+{
+    &invalidate_nscd();
+    unless(exist_group($group))
+    {
+	dief (_("`%s' does not exist.\n"),$group);
+    }
+    # This need to be fixed
+    if(system("grep", "-q", "^.*:.*:.*:$gr_gid:.*:.*:.*\$", "/etc/passwd") == 0)
+    {
+	dief (_("There are users having `%s' as primary group!\n"),$group);
+    }
+
+    s_printf(_("Removing group %s...\n"),$group);
+    systemcall("groupdel",$group);
+    &invalidate_nscd();
+    s_print(_("done.\n"));
+}
+elsif($action eq "deluserfromgroup")
+{
+    &invalidate_nscd();
+    unless(exist_user($user))
+    {
+	dief (_("`%s' does not exist.\n"),$user);
+    }
+    unless(exist_group($group))
+    {
+	dief (_("`%s' does not exist.\n"),$group);
+    }
+    if($maingroup eq $group)
+    {
+	die "$0: ",_("You may not remove the user from his/her primary group.\n");
+    }
+
+    my @members = get_group_members($group);
+    my $ismember = 0;
+
+    for($i = 0; $i <= $#members; $i++)
+      {
+	if($members[$i] eq $user)
+	  {
+	    $ismember = 1;
+	    splice(@members,$i,1);
+	  }
+      }
+
+    unless($ismember)
+    {
+	dief(_("%s is not a member of group %s.\n"),$user,$group);
+    }
+
+    s_printf(_("Removing user %s from group %s...\n"),$user,$group);
+    #systemcall("usermod","-G", join(",",@groups), $user );
+    systemcall('gpasswd','-M', join(',',@members), $group);
+    &invalidate_nscd();
+    s_print(_("done.\n"));
+}
+
+
+######
+
+sub version
+{
+    printf("deluser: %s $version\n\n",_("removing user and groups from the system. Version:"));
+
+    print("Copyright (C) 2000 Roland Bauerschmidt <roland\@copyleft.de>\n\n");
+
+    print("deluser is based on adduser by Guy Maor <maor\@debian.org>, Ian Murdock\n",
+	  "<imurdock\@gnu.ai.mit.edu> and Ted Hajek <tedhajek\@boombox.micro.umn.edu>\n");
+
+    print("\nThis program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License, /usr/share/common-licenses/GPL, for more details.\n");
+}
+
+sub usage
+{
+    printf("deluser: %s $version\n\n",_("removing user and groups from the system. Version:"));
+
+    print("deluser user
+  remove a normal user from the system
+  example: deluser mike
+
+  --remove-home             remove the users home directory and mail spool
+  --remove-all-files        remove all files owned by user
+  --backup                  backup files before removing
+
+delgroup group
+deluser --group group
+  remove a system group from the system
+  example: deluser --group students
+
+deluser user group
+  remove the user from a group
+  example: deluser mike students
+
+general options:
+  --quiet | -q      don't give process information to stdout
+  --help | -h       usage message
+  --version | -v    version number and copyright
+  --conf | -c FILE  use FILE instead of $defaults\n\n");
+
+    printf(_("Global configuration is in the file %s.\n"), $defaults);    
+}
+
+sub exist_user
+{
+    my $exist_user = shift;
+    return(defined getpwnam($exist_user));
+}
+
+sub exist_group
+{
+    my $exist_group = shift;
+    return(defined getgrnam($exist_group));
+}
+
+sub systemcall {
+    my $c = join(' ', @_);
+    #print "$c\n" if $debugging;
+    if (system(@_)) {
+        die("$0: `$c' returned error code " . ($?>>8) . ".  Aborting.\n")
+	  if ($?>>8);
+	die("$0: `$c' exited from signal " . ($?&255) . ".  Aborting.\n");
+    }
+}
+
+
+
+
+
+
+
+

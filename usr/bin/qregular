@@ -1,0 +1,67 @@
+#! /usr/bin/perl
+
+#
+# Regularize multibyte text to some extent.
+# Quick version; it recognizes G0/G1 designation only.
+#
+# Absolutely no warranty.  Freely redistributable.
+# copyright(c) 1997 by Jun-ichiro itojun Itoh.  All rights reserved.
+#
+# $Id: qregular.in,v 1.1.2.1 1997/09/23 00:43:38 itojun Exp $
+#
+
+$variation94 = '#$@[\]^`{|}~';
+
+while (<STDIN>) {
+	chop;
+	$line = $_;
+	$output = '';
+
+	while (length($line)) {
+		$pos = index($line, "\033");
+		if ($pos == -1) {
+			$output = $line;
+			$line = '';
+			next;
+		}
+
+		$output .= substr($line, 0, $pos);
+		$line = substr($line, $pos);
+
+		if ($line =~ /^\033\(([\@ABCGHJKLRTYZ`fghinuwxz])([\041-\176]*)(.*)$/) {
+			$code = $1;
+			$tmp = $2;
+			$line = $3;
+
+			$tmp = "\033(B" . $tmp . "\033(B";
+			$tmp =~ s/([#$\@\[\\\]^{|}~]+)/\033($code$1\033(B/g;
+			$tmp =~ s/\033\([0-\177](\033\([0-\177])/$1/g;
+
+			$output .= $tmp;
+		} elsif ($line =~ /^\033\)([\@ABCGHJKLRTYZ`fghinuwxz])([\241-\376]*)(.*)$/) {
+			$code = $1;
+			$tmp = $2;
+			$line = $3;
+
+			$tmp = "\033)B" . $tmp . "\033)B";
+			$tmp =~ s/([#$\@\[\\\]^{|}~]+)/\033)$code$1\033)B/g;
+			$tmp =~ s/\033\)[0-\177](\033\)[0-\177])/$1/g;
+
+			$output .= $tmp;
+		} else {
+			$pos = index($line, "\033", 1);
+			if ($pos == -1) {
+				$output .= $line;
+				$line = '';
+			} else {
+				$output .= substr($line, 0, $pos);
+				$line = substr($line, $pos);
+			}
+		}
+	}
+
+	$output =~ s/\033\([0-\177](\033\([0-\177])/$1/g;
+	print $output . "\n";
+}
+
+exit 0;

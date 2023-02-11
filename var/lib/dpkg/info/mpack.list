@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/bin/mpack
+/usr/bin/munpack
+/usr/share
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/mpack.1.gz
+/usr/share/man/man1/munpack.1.gz
+/usr/share/doc
+/usr/share/doc/mpack
+/usr/share/doc/mpack/copyright
+/usr/share/doc/mpack/README.unix.gz
+/usr/share/doc/mpack/changelog.Debian.gz

@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/cvs-pserver,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+#
+# Execute pserver
+#
+
+unset HOME
+if [ -f /etc/cvs-pserver.conf ]; then
+	. /etc/cvs-pserver.conf
+elif [ -f /etc/cvs.conf ]; then
+	. /etc/cvs.conf
+else
+	CVS_PSERV_REPOS=""
+fi
+
+allow_root_opts=""
+OLDIFS="$IFS"
+IFS=':'
+for i in $CVS_PSERV_REPOS; do
+	IFS="$OLDIFS"
+	allow_root_opts="$allow_root_opts --allow-root=$i"
+done
+exec /usr/bin/cvs -b /usr/bin ${allow_root_opts} pserver
+
+# End of file.

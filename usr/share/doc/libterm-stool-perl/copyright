@@ -1,0 +1,3 @@
+This is a Debian prepackaged version of Term::Stool, a debian native
+package. Term::Stool is copyright 2000 by Joey Hess
+<joey@kitenet.net>, under the same license as perl itself.

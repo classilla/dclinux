@@ -1,0 +1,2 @@
+/dev/rd/1 / ext2 rw 0 0
+proc /proc proc rw 0 0

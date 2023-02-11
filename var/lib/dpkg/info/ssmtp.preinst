@@ -1,0 +1,22 @@
+#!/bin/sh -e
+#
+# $Id: preinst,v 1.4 2001/03/21 20:29:27 matt Exp $
+#
+
+if test -s /etc/ssmtp.conf
+then
+	echo "Configuration files found in /etc, moving them to /etc/ssmtp"
+
+	mkdir /etc/ssmtp 2>/dev/null || true
+	mv -f /etc/ssmtp.conf /etc/ssmtp 2>/dev/null || true
+
+fi
+
+if test -s /etc/revaliases
+then
+	mkdir /etc/ssmtp 2>/dev/null || true
+	mv -f /etc/revaliases /etc/ssmtp 2>/dev/null || true
+fi
+
+# Program End
+exit 0

@@ -1,0 +1,13 @@
+lsof for DEBIAN
+----------------------
+
+Comments regarding the Package
+
+Compiled with the HASSECURITY option enabled meaning you can only see
+open files for your own processes.
+
+As of this version of the debian package 2.0.x kernels are no longer
+supported.  This version uses the /proc filesystem and should work on
+any kernel 2.2.x or 2.4.x.
+
+Jim Mintha <jmintha@debian.org>, Sat, 15 May 1999 22:50:27 +0200

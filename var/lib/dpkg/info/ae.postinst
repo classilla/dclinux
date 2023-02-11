@@ -1,0 +1,20 @@
+#! /bin/sh
+
+update-alternatives --install /usr/bin/editor editor /bin/ae 20 \
+  --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/ae.1.gz
+
+if [ -e /etc/ae2vi.rc ] ; then
+   rm -f /etc/ae2vi.rc
+fi
+
+if [ -e /etc/ae/ ] ; then
+   rm -rf /etc/ae
+fi
+
+if [ "$1" = "configure" ]; then
+ if [ -d /usr/doc -a ! -e /usr/doc/ae -a -d /usr/share/doc/ae ]; then
+  ln -sf ../share/doc/ae /usr/doc/ae
+ fi
+fi
+
+exit 0

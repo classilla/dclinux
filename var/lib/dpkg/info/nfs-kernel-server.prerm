@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[ -x /etc/init.d/nfs-kernel-server ] && /etc/init.d/nfs-kernel-server stop
+
+rm -f /usr/doc/nfs-kernel-server
+
+exit 0

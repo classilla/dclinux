@@ -1,0 +1,8 @@
+LoadModule: eaccess_module /usr/lib/apache/1.3/mod_eaccess.so
+Directives:
+ EAccessEnable
+ EAccessRule
+ EAccessLog
+ EAccessLogLevel
+ EAccessCache
+Description: Support for regex-based access control

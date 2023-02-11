@@ -1,0 +1,66 @@
+#! /bin/sh
+#
+# devfsd		This script handles the devfs startup, so that
+#			permissions are set correctly and device symlinks
+#			are available.
+#
+
+[ -e /dev/.devfsd ] || exit 0
+[ -x /sbin/devfsd ] || exit 0
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+export PATH
+
+case "$1" in
+  start|"")
+	## set up symlinks
+	echo -n "Setting up symlinks in /dev..."
+	cd /dev
+	OLDIFS="$IFS"
+	IFS='\
+'
+	for i in `sed -e '/^#/d' /etc/devfs/symlinks /etc/devfs/symlinks.d/* 2>/dev/null`; do
+		IFS="$OLDIFS"
+		eval set -- $i
+		[ -e $2 ] && continue
+		ln -sf $1 $2
+	done
+	echo "done."
+	echo -n "Setting up extra devices in /dev..."
+	OLDIFS="$IFS"
+	IFS='\
+'
+	for i in `sed -e '/^#/d' /etc/devfs/devices /etc/devfs/devices.d/* 2>/dev/null`; do
+		IFS="$OLDIFS"
+		eval set -- $i
+		[ -e $1 ] && continue
+		mknod $1 $2 $3 $4
+		chown $5.$6 $1
+		chmod $7 $1
+	done
+	echo "done."
+	echo -n "Starting devfsd..."
+	if [ ! -e /proc/stat ]; then
+		/sbin/devfsd /dev
+	else
+		start-stop-daemon --start --exec /sbin/devfsd -- /dev
+	fi
+	;;
+  stop)
+	echo -n "Stopping devfsd: "
+	start-stop-daemon --stop --quiet --exec /sbin/devfsd || kill `pidof /sbin/devfsd`
+	echo "devfsd."
+	;;
+  restart|force-reload)
+	echo -n "Restarting devfsd..."
+	start-stop-daemon --stop --quiet --exec /sbin/devfsd || kill `pidof /sbin/devfsd`
+	sleep 1
+	start-stop-daemon --start --exec /sbin/devfsd -- /dev
+	;;
+  *)
+	echo "Usage: /etc/init.d/devfsd {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

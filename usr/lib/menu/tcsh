@@ -1,0 +1,1 @@
+?package(tcsh):needs="text" section="Apps/Shells" title="Tcsh" command="/usr/bin/tcsh"

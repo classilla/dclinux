@@ -1,0 +1,15 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --section "General Commands" "General Commands" \
+	/usr/share/info/tar.info.gz
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/tar -a -d /usr/share/doc/tar ]; then
+		ln -sf ../share/doc/tar /usr/doc/tar
+	fi
+fi
+# End automatically added section
+

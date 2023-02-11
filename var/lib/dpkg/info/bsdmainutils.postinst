@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+if [ -f /usr/lib/calendar/default ]; then
+  mv -f /usr/lib/calendar/default /etc/calendar/default.old
+
+  # don't kill installation if directory can't be removed
+  rmdir /usr/lib/calendar 2>/dev/null || true
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/bsdmainutils -a -d /usr/share/doc/bsdmainutils ]; then
+		ln -sf ../share/doc/bsdmainutils /usr/doc/bsdmainutils
+	fi
+fi
+# End automatically added section
+
+

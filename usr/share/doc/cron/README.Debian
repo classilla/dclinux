@@ -1,0 +1,38 @@
+cron for DEBIAN
+----------------------
+
+This is Debian/GNU Linux's prepackaged version of Paul Vixie's cron
+subsystem.
+
+This package was put together by Ian Jackson <iwj10@cus.cam.ac.uk>,
+from the standard sources to 3.0pl1, as posted to comp.sources.unix.
+Ian obtained them from
+src.doc.ic.ac.uk:/usenet/comp.sources.unix/volume27/vixie-cron.
+
+The changes are essentially the configuration for Debian Linux in the
+Makefile and pathnames.h, and the addition of support for the Debian
+package maintenance scheme in the form of various files (now in the
+debian directory).
+
+The `checksecurity' script installed in /usr/sbin in the binary distribution
+(found in ./debian in the source) was (probably) written by Ian Jackson,
+and has been modified by Steve Greenland.
+
+File locations that are different than that indicated in 
+the cron distributions README:
+
+user crontabs: /var/spool/cron/crontabs/*
+log file:      /var/log/cron.log
+allow file:    /etc/cron.allow
+deny file:     /etc/cron.deny
+
+Note that the location of the log file can be changed via syslog.conf.
+
+1998: Added reading of crontab fragments from /etc/cron.d to support
+other Debian package cron requirements. Files follow /etc/crontab
+format (i.e. with user field), must meet run-parts(8) naming
+convention (alphanumeric, underscore, hyphen only).
+
+This package is now maintained by Steve Greenland
+<stevegr@master.debian.org>.
+

@@ -1,0 +1,22 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" -o "$1" = "upgrade" ]; then
+  update-alternatives --install /usr/bin/infobrowser infobrowser \
+                                /usr/bin/info 60 \
+                      --slave /usr/share/man/man1/infobrowser.1.gz infobrowser.1.gz \
+                              /usr/share/man/man1/info.1.gz
+  install-info --quiet /usr/share/info/info-stnd.info
+  install-info --quiet /usr/share/info/info.info
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/info -a -d /usr/share/doc/info ]; then
+		ln -sf ../share/doc/info /usr/doc/info
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installmenu
+if [ "$1" = "configure" -a -x /usr/bin/update-menus ]; then update-menus ; fi
+# End automatically added section
+

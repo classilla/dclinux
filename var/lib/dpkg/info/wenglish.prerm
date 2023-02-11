@@ -1,0 +1,14 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge" -o "$1" = "remove" ] ; then
+  update-alternatives --remove dictionary /usr/share/dict/american-english ;
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/wenglish ]; then
+	rm -f /usr/doc/wenglish
+fi
+# End automatically added section
+

@@ -1,0 +1,3 @@
+libcfont 0 console-tools-libs (= 1:0.2.3-23)
+libconsole 0 console-tools-libs (= 1:0.2.3-23)
+libctutils 0 console-tools-libs (= 1:0.2.3-23)

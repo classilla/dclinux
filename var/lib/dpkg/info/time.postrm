@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# This is the postrm script for the Debian GNU/Linux time package
+#
+# Written by Dirk Eddelbuettel <edd@debian.org>   
+
+set -e
+
+
+
+case "$1" in
+    upgrade)
+	exit 0
+	;;
+    remove|purge)
+	# update menus (not needed as we now use doc-base)
+	#if test -x /usr/bin/update-menus
+	#then 
+	#    update-menus
+	#fi
+	# update info
+	install-info --quiet --remove time
+	exit 0               
+	;;
+    failed-upgrade|abort-install|abort-upgrade|disappear)
+	exit 0
+	;;
+    *)
+	echo "postrm called with unknown argument \`$1'" >&2
+	exit 0
+	;;
+esac
+

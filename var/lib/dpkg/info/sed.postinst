@@ -1,0 +1,16 @@
+#! /bin/sh -e
+
+pkg=sed
+
+if [ ! "$1" = "configure" ]; then
+	exit 0
+fi
+
+
+install-info --quiet --section "General commands" "General commands" \
+		/usr/share/info/sed.info
+
+if [ -d /usr/doc -a ! -e /usr/doc/$pkg -a -d /usr/share/doc/$pkg ] ; then
+	ln -s ../share/doc/$pkg /usr/doc/$pkg
+fi
+

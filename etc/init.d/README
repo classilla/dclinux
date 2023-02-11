@@ -1,0 +1,21 @@
+
+	Configuration of Init under Debian GNU/Linux
+
+Most Unix versions have a file here that describes how the scripts
+in this directory work, and how the links in the /etc/rc?.d/ directories
+influence system startup/shutdown.
+
+For Debian, this information is contained in the policy manual, chapter 3.3:
+system run levels.  The home site for the Debian Policy Manual is at
+
+http://www.debian.org/doc/debian-policy/
+
+The Debian Policy Manual is also available in the Debian package
+`debian-policy'.  When this package is installed, the policy manual can be
+found in directory /usr/share/doc/debian-policy. If you have a web server
+and a browser installed you can probably read it at
+http://localhost/doc/debian-policy/
+
+Make sure you have at least version 3.1.1.0 of the policy manual.
+
+Some more detailed info can also be found in /usr/share/doc/sysvinit.

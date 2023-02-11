@@ -1,0 +1,44 @@
+This package was debianized by Jim Mintha <jim@dodo2.adm.uva.nl> on
+Mon, 16 Aug 1999 21:59:03 +0200.
+
+It was downloaded from ftp://space.mit.edu/pub/davis/slang/v1.4/
+
+Upstream Author: John E Davis <davis@space.mit.edu>
+
+Modifications for Debian Linux Copyright (C) 1995-1996 Chris Fearnley.
+
+Additional modifications for Debian Linux Copyright (C) 1997-1998 by Ray
+Dassen <jdassen@wi.LeidenUniv.nl> and Jim Mintha <jmintha@debian.org>
+
+Copyright:
+
+S-Lang is not free software --- it is copyrighted.  However, it may be used
+for any purpose without royalty or fees in accordance with the terms of the
+copyright.
+
+It may distributed under either the GNU General public license or under the
+Perl Artistic License.  See GPL and Artistic in /usr/share/common-licences/
+-----------------------------------------------------------------------------
+ Copyright (c) 1992, 1995 John E. Davis
+ All rights reserved.
+ 
+ You may distribute under the terms of either the GNU General Public
+ License or the Perl Artistic License.
+
+ IN NO EVENT SHALL JOHN E. DAVIS BE LIABLE TO ANY PARTY FOR DIRECT,
+ INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES ARISING OUT OF
+ THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION, EVEN IF JOHN E. DAVIS
+ HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+ JOHN E. DAVIS SPECIFICALLY DISCLAIMS ANY WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE.  THE SOFTWARE PROVIDED HEREUNDER IS ON AN "AS IS"
+ BASIS, AND JOHN E. DAVIS HAS NO OBLIGATION TO PROVIDE MAINTENANCE,
+ SUPPORT, UPDATES, ENHANCEMENTS, OR MODIFICATIONS.
+-----------------------------------------------------------------------------
+
+You should have received a copy of the GNU General Public License with your
+Debian GNU/Linux system, in /usr/share/common-licenses/GPL, or with the Debian
+GNU/Linux hello source package as the file COPYING.  If not, write to the
+Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+02111-1307  USA

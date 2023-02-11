@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+install-info --quiet --remove /usr/share/info/diff.info
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/diff ]; then
+  rm -f /usr/doc/diff
+fi

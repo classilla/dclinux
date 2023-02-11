@@ -1,0 +1,80 @@
+#!/bin/sh -e
+#
+# $Id: postinst,v 1.10 2001/03/22 12:49:53 matt Exp $
+#
+
+if test -L /usr/doc/ssmtp
+then
+	:
+else
+	(cd /usr/doc && ln -sf ../share/doc/ssmtp ssmtp)
+fi
+
+. /usr/share/debconf/confmodule
+
+db_get ssmtp/overwriteconfig
+OverwriteConfig="${RET:-true}"
+
+db_get ssmtp/root
+PostMaster="${RET:-postmaster}"
+
+db_get ssmtp/mailhub
+MailHub="${RET:-mail}"
+
+db_get ssmtp/hostname
+FQDN="${RET:-`hostname --fqdn`}"
+
+db_get ssmtp/rewritedomain
+RewriteDomain="$RET"
+
+if ! test -s /etc/mailname
+then
+	test -n "$FQDN" && MailName="$FQDN"
+	test -n "$RewriteDomain" && MailName="$RewriteDomain"
+
+	touch /etc/mailname
+	chmod 644 /etc/mailname
+	echo "$MailName" > /etc/mailname
+fi
+
+db_get ssmtp/fromoverride
+test "$RET" = "true" && FromOverride="$RET"
+
+test -d /etc/ssmtp || exit 1
+
+if test -s /etc/ssmtp/ssmtp.conf
+then
+	if test "$OverwriteConfig" = "false"
+	then
+		exit 0
+	fi
+fi
+exec 1>/etc/ssmtp/ssmtp.conf
+
+echo "***     This file is auto-generated using debconf on install.     ***"
+echo "*** Any changes made may be overwritten on next upgrade depending ***"
+echo "***  on your answer to the question on overwriting config files.  ***"
+echo "#"
+echo "# Config file for sSMTP sendmail"
+echo "#"
+echo "# The person who gets all mail for userids < 1000"
+echo "root=$PostMaster"
+echo
+echo "# The place where the mail goes. The actual machine name is required no "
+echo "# MX records are consulted. Commonly mailhosts are named mail.domain.com"
+echo "mailhub=$MailHub"
+echo
+echo "# Where will the mail seem to come from?"
+test -z "$RewriteDomain" && echo -n "#"
+echo "rewriteDomain=$RewriteDomain"
+echo ""
+echo "# The full hostname"
+echo "hostname=$FQDN"
+echo
+echo "# Set this to never rewrite the "From:" line (unless not given) and to"
+echo "# use that address in the "from line" of the envelope."
+test -z "$FromOverride" && echo -n "#"
+echo "FromLineOverride=YES"
+
+# Program End
+exit 0

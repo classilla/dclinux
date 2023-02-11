@@ -1,0 +1,16 @@
+/.
+/bin
+/bin/vi
+/bin/elvis-tiny
+/usr
+/usr/doc
+/usr/share
+/usr/share/doc
+/usr/share/doc/elvis-tiny
+/usr/share/doc/elvis-tiny/copyright
+/usr/share/doc/elvis-tiny/changelog.gz
+/usr/share/doc/elvis-tiny/KNOWN.BUGS.gz
+/usr/share/doc/elvis-tiny/changelog.Debian.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/elvis-tiny.1.gz

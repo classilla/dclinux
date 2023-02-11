@@ -1,0 +1,21 @@
+- follow CNAMEs from rblcheck(). This will let us get at the eventual
+  TXT RRs for a domain name.
+
+- an option to "exit on first match", so that after the first failure,
+  further checks are skipped, speeding up rejection if there is no
+  interest in the specifics of the results.
+
+- timeout option. Should default to no timeout, but apparently there is
+  an issue with rblcheck hanging in an offline environment where the
+  nameserver in use is located off-site. This would compensate for the
+  misconfiguration, and provide a 'quick-fail' mode for people to play
+  with.
+
+- (from Aaron Schrab <aaron@schrab.com>, era eriksson <era@iki.fi>, and
+  torben fjerdingstad <tfj@fjerdingstad.dk>) Add the ability to only list
+  successful matches, and add a debug mode which outputs what is happening
+  internally, and any errors received. This could be best implemented with
+  a '-v X' option, where 'X' is a number between 0 and 9 (0 being silent,
+  4 being default/ordinary output, 9 displaying heavy debugging info).
+
+Send ideas to "emarshal@logic.net".

@@ -1,0 +1,2 @@
+Apr  9 05:26:09 dreamcast /usr/sbin/gpm[811]: oops() invoked from gpn.c(204)
+Apr  9 05:26:09 dreamcast /usr/sbin/gpm[811]: /var/run/gpm.pid: No such file or directory

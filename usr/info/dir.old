@@ -1,0 +1,147 @@
+-*- Text -*-
+This is the file .../info/dir, which contains the topmost node of
+the Info hierarchy.  The first time you invoke Info you start off
+looking at that node, which is (dir)Top.
+
+File: dir	Node: Top	This is the top of the INFO tree
+  This (the Directory node) gives a menu of major topics.  Typing "d"
+  returns here, "q" exits, "?" lists all INFO commands, "h"  gives a
+  primer for first-timers, "mTexinfo<Return>" visits Texinfo topic,
+  etc.
+  Or click mouse button 2 on a menu item or cross reference to select
+  it.
+  --- PLEASE ADD DOCUMENTATION TO THIS TREE. (See INFO topic first.) ---
+
+In Debian GNU/Linux, Info `dir' entries are added with the command
+`install-info'.  Please refer to install-info(8) for usage details.
+
+* Menu: The list of major topics begins on the next line.
+
+Development
+* Autoconf: (autoconf).    Create source code configuration scripts
+* Ipc: (ipc).              System V interprocess communication facilities
+* M4: (m4).                The GNU m4 macro preprocessor.
+* Make: (make).            The GNU make utility.
+
+Console utilities
+* Gpm: (gpm).              A server wich hands mouse events to non-X programs.
+
+Miscellaneous
+* Groff: (groff).          The GNU troff document formatting system.
+* Rluserman: (rluserman).  GNU Readline Library API
+
+General Commands
+* Remsync: (remsync).      Synchronize remote files
+* Shar utilities: (sharutils).          GNU shar utilities.
+* shar: (sharutils)shar invocation.             Make a shell archive.
+* Time: (time).            A utility to time the execution of a command
+* unshar: (sharutils)unshar invocation.         Explode a shell archive.
+* dc: (dc).                Arbritrary precision RPN "Desktop Calculator".
+* Ed: (ed).                The `ed' command, which has the purpose of editing
+                             text files.
+* Shell utilities: (sh-utils).          GNU shell utilities.
+* basename: (sh-utils)basename invocation.      Strip directory and suffix.
+* chroot: (sh-utils)chroot invocation.          Specify the root directory.
+* date: (sh-utils)date invocation.              Print/set system date and time.
+* dirname: (sh-utils)dirname invocation.        Strip non-directory suffix.
+* echo: (sh-utils)echo invocation.              Print a line of text.
+* env: (sh-utils)env invocation.                Modify the environment.
+* expr: (sh-utils)expr invocation.              Evaluate expressions.
+* factor: (sh-utils)factor invocation.          Print prime factors
+* false: (sh-utils)false invocation.            Do nothing, unsuccessfully.
+* groups: (sh-utils)groups invocation.          Print group names a user is in.
+* hostid: (sh-utils)hostid invocation.          Print numeric host identifier.
+* hostname: (sh-utils)hostname invocation.      Print or set system name.
+* id: (sh-utils)id invocation.                  Print real/effective uid/gid.
+* logname: (sh-utils)logname invocation.        Print current login name.
+* nice: (sh-utils)nice invocation.              Modify scheduling priority.
+* nohup: (sh-utils)nohup invocation.            Immunize to hangups.
+* pathchk: (sh-utils)pathchk invocation.        Check file name portability.
+* printenv: (sh-utils)printenv invocation.      Print environment variables.
+* printf: (sh-utils)printf invocation.          Format and print data.
+* pwd: (sh-utils)pwd invocation.                Print working directory.
+* seq: (sh-utils)seq invocation.                Print numeric sequences
+* sleep: (sh-utils)sleep invocation.            Delay for a specified time.
+* stty: (sh-utils)stty invocation.              Print/change terminal settings.
+* su: (sh-utils)su invocation.                  Modify user and group id.
+* tee: (sh-utils)tee invocation.                Redirect to multiple files.
+* test: (sh-utils)test invocation.              File/string tests.
+* true: (sh-utils)true invocation.              Do nothing, successfully.
+* tty: (sh-utils)tty invocation.                Print terminal name.
+* uname: (sh-utils)uname invocation.            Print system information.
+* users: (sh-utils)users invocation.            Print current user names.
+* who: (sh-utils)who invocation.                Print who is logged in.
+* whoami: (sh-utils)whoami invocation.          Print effective user id.
+* yes: (sh-utils)yes invocation.                Print a string indefinitely.
+* Cpio: (cpio).            A program to manage archives of files.
+* Diff: (diff).            GNU diff and related utilities
+* Gzip: (gzip).            The the GNU `gzip' command for compressing files.
+* File utilities: (fileutils).  GNU file utilities.
+* chgrp: (fileutils)chgrp invocation.           Change file groups.
+* chown: (fileutils)chown invocation.           Change file owners/groups.
+* chmod: (fileutils)chmod invocation.           Change file permissions.
+* cp: (fileutils)cp invocation.                 Copy files.
+* dd: (fileutils)dd invocation.                 Copy and convert a file.
+* df: (fileutils)df invocation.                 Report filesystem disk usage.
+* dir: (fileutils)dir invocation.               List directories briefly.
+* dircolors: (fileutils)dircolors invocation.   Color setup for ls.
+* du: (fileutils)du invocation.                 Report on disk usage.
+* install: (fileutils)install invocation.       Copy and change attributes.
+* ln: (fileutils)ln invocation.                 Make links between files.
+* ls: (fileutils)ls invocation.                 List directory contents.
+* mkdir: (fileutils)mkdir invocation.           Create directories.
+* mkfifo: (fileutils)mkfifo invocation.         Create FIFOs (named pipes).
+* mknod: (fileutils)mknod invocation.           Create special files.
+* mv: (fileutils)mv invocation.                 Rename files.
+* rm: (fileutils)rm invocation.                 Remove files.
+* rmdir: (fileutils)rmdir invocation.           Remove empty directories.
+* shred: (fileutils)shred invocation.           Remove files more securely.
+* sync: (fileutils)sync invocation.             Synchronize memory and disk.
+* touch: (fileutils)touch invocation.           Change file timestamps.
+* vdir: (fileutils)vdir invocation.             List directories verbosely.
+* sed: (sed).              Stream EDitor.
+* shred: (fileutils)shred invocation.           Remove files more securely.
+* sync: (fileutils)sync invocation.             Synchronize memory and disk.
+* Tar: (tar).              GNU `tar', which creates and extracts files from
+                             archives.
+* touch: (fileutils)touch invocation.           Change file timestamps.
+* vdir: (fileutils)vdir invocation.             List directories verbosely.
+* grep: (grep).            Print lines matching a pattern.
+* Finding Files: (find).   Listing and operating on files that match certain
+                             criteria.
+* Standalone info program: (info-stnd). Standalone Info-reading program.
+* Info: (info).            Documentation browsing system.
+* Text utilities: (textutils).          GNU text utilities.
+* cat: (textutils)cat invocation.               Concatenate and write files.
+* cksum: (textutils)cksum invocation.           Print POSIX CRC checksum.
+* comm: (textutils)comm invocation.             Compare sorted files by line.
+* csplit: (textutils)csplit invocation.         Split by context.
+* cut: (textutils)cut invocation.               Print selected parts of lines.
+* expand: (textutils)expand invocation.         Convert tabs to spaces.
+* fmt: (textutils)fmt invocation.               Reformat paragraph text.
+* fold: (textutils)fold invocation.             Wrap long input lines.
+* head: (textutils)head invocation.             Output the first part of files.
+* join: (textutils)join invocation.             Join lines on a common field.
+* md5sum: (textutils)md5sum invocation.         Print or check message-digests.
+* nl: (textutils)nl invocation.                 Number lines and write files.
+* od: (textutils)od invocation.                 Dump files in octal, etc.
+* paste: (textutils)paste invocation.           Merge lines of files.
+* pr: (textutils)pr invocation.                 Paginate or columnate files.
+* ptx: (textutils)ptx invocation.               Produce permuted indexes.
+* sort: (textutils)sort invocation.             Sort text files.
+* split: (textutils)split invocation.           Split into fixed-size pieces.
+* sum: (textutils)sum invocation.               Print traditional checksum.
+* tac: (textutils)tac invocation.               Reverse files.
+* tail: (textutils)tail invocation.             Output the last part of files.
+* tsort: (textutils)tsort invocation.           Topological sort.
+* tr: (textutils)tr invocation.                 Translate characters.
+* unexpand: (textutils)unexpand invocation.     Convert spaces to tabs.
+* uniq: (textutils)uniq invocation.             Uniquify files.
+* wc: (textutils)wc invocation.                 Byte, word, and line counts.
+* bison: (bison).          GNU Project parser generator (yacc replacement).
+* Mtools: (mtools).        Mtools: utilities to access DOS disks in Unix.
+* Texinfo: (texinfo).           The GNU documentation format.
+* install-info: (texinfo)Invoking install-info. Update info/dir entries.
+* texi2dvi: (texinfo)Format with texi2dvi.      Print Texinfo documents.
+* texindex: (texinfo)Format with tex/texindex.  Sort Texinfo index files.
+* makeinfo: (texinfo)makeinfo Preferred.        Translate Texinfo source.

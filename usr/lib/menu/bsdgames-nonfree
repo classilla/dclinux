@@ -1,0 +1,4 @@
+?package(bsdgames-nonfree):needs="text" section="Games/Adventure" \
+	title="Rogue" command=/usr/games/rogue
+?package(bsdgames-nonfree):needs="text" section="Games/Adventure" \
+	title="Hack" command=/usr/games/hack

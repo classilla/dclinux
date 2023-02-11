@@ -1,0 +1,495 @@
+#! /usr/bin/perl
+###############################################################################
+#
+#  Run-Mailcap:  Run a program specified in the mailcap file based on a mime
+#  type.
+#
+#  Written by Brian White <bcwhite@pobox.com>
+#  This file has been placed in the public domain (the only true "free").
+#
+###############################################################################
+
+
+$debug=0;
+$etcmimetyp="/etc/mime.types";
+$shrmimetyp="/usr/share/etc/mime.types";
+$locmimetyp="/usr/local/etc/mime.types";
+$usrmimetyp="$ENV{HOME}/.mime.types";
+$xtermprgrm="/usr/bin/x-terminal-emulator";	# xterm?
+$quotedsemi=chr(255);
+$quotedprct=chr(254);
+
+
+%patterntypes =
+(
+ '(^|/)crontab[^/]+$'							=> 'text/x-crontab',			#'
+ '/man\d*/'										=> 'application/x-troff-man',	#'
+ '\.\d[^\.]*$'									=> 'application/x-troff-man',	#'
+);
+
+
+
+sub Usage {
+	my($error) = @_;
+	print STDERR $error,"\n\n" if $error;
+
+	print STDERR "Use: $0 <--opt=val> [...] [<mime-type>:[<encoding>:]]<file> [...]\n\n";
+	print STDERR "Options:\n";
+	print STDERR "  action        specify what action to do on these files (default=view)\n";
+	print STDERR "  debug         be verbose about what's going on (any non-zero value)\n";
+	print STDERR "\n";
+	print STDERR "Mime-Type:\n";
+	print STDERR "  any standard mime type designation in the form <class>/<subtype> -- if\n";
+	print STDERR "  not specified will be determined from the filename extension\n\n";
+	print STDERR "Encoding:\n";
+	print STDERR "  how the file (and type) has been encoded (only \"gzip\", \"bzip\", \"bzip2\"\n";
+	print STDERR "  and \"compress\" are supported) -- if not specified will be determined from\n";
+	print STDERR "  the filename extension\n\n";
+
+	exit ($error ? 1 : 0);
+}
+
+
+
+sub EncodingForFile {
+	my($file) = @_;
+	my $encoding;
+
+	if ($file =~ m/\.gz$/)	{ $encoding = "gzip";		}
+	if ($file =~ m/\.bz$/)	{ $encoding = "bzip";		}
+	if ($file =~ m/\.bz2$/)	{ $encoding = "bzip2";		}
+	if ($file =~ m/\.Z$/)	{ $encoding = "compress";	}
+
+	print " - file '$file' has encoding '$encoding'\n" if $debug && $encoding;
+
+	return $encoding;
+}
+
+
+
+sub ReadMimetypes {
+	my($file) = @_;
+
+	return unless -r $file;
+
+	print " - Reading mime.types file '$file'...\n" if $debug;
+	open(MIMETYPES,"<$file") || die "Error: could not read '$file' -- $!\n";
+	while (<MIMETYPES>) {
+		chomp; lc;
+		my($type,@exts) = split;
+
+		foreach (@exts) {
+			$mimetypes{$_} = $type unless exists $mimetypes{$_};
+		}
+	}
+	close MIMETYPES;
+}
+
+
+
+sub ReadMailcap {
+	my($file) = @_;
+	my $line = "";
+
+	return unless -r $file;
+
+	print " - Reading mailcap file '$file'...\n" if $debug;
+	open(MAILCAP,"<$file") || die "Error: could not read '$file' -- $!\n";
+	while (<MAILCAP>) {
+		chomp;
+		s/^\s+// if $line;
+		$line .= $_;
+		next unless $line;
+		if ($line =~ m/^\s*\#/) {
+			$line = "";
+			next;
+		}
+		if ($line =~ m/\\$/) {
+			$line =~ s/\\$//;
+		} else {
+			$line =~ s/\\;/$quotedsemi/g;
+			$line =~ s/\\%/$quotedprct/g;
+			push @mailcap,$line;
+			$line = "";
+		}
+	}
+	close MAILCAP;
+}
+
+
+
+sub TempFile {
+	my($name) = @_;
+	my $tmpfile;
+
+#	$tmpfile = POSIX::tmpnam($name);
+#	unlink($tmpfile);
+
+	$tmpfile = `tempfile --mode=600`;
+	chomp($tmpfile);
+
+#	$tmpfile = $ENV{TMPDIR};
+#	$tmpfile = "/tmp" unless $tmpfile;
+#	$tmpfile.= "/$name";
+#	unlink($tmpfile);
+
+	return $tmpfile;
+}
+
+
+
+sub SaveStdin {
+	my($match) = @_;
+
+	my $tmpfile = TempFile("stdin-$$");
+	if ($match =~ m/nametemplate=(.*?)\s*($|;)/) {
+		my $tmp = $1;
+		$tmp =~ s|%s|$tmpfile|;
+		$tmpfile = $tmp;
+	}
+	open(TMPFILE,">$tmpfile") || die "Error: could not write '$tmpfile' -- $!\n";
+	while (<STDIN>) {
+		print TMPFILE $_;
+	}
+	close(TMPFILE);
+	chmod 0600,$tmpfile;
+
+	return $tmpfile;
+}
+
+
+
+sub DecodeFile {
+	my($efile,$encoding,$action) = @_;
+	my($file,$res);
+
+	$file = $efile;
+	$file =~ s!^.*/!!;		# remove leading directories
+	$file =~ s!\.[^\.]*$!!;	# remove encoding extension
+	$file = "stdin-$$" if $efile eq '-';
+	my $tmpfile = TempFile($file);
+
+	print " - decoding '$efile' as '$tmpfile'\n" if $debug;
+
+	unlink($tmpfile);
+	return $tmpfile if (($efile ne '-' && ! -e $efile) || $action eq 'compose');
+
+	if ($encoding eq "gzip") {
+		if ($efile eq '-') {
+			$res = system "gzip -d >\Q$tmpfile\E";
+		} else {
+			$res = system "gzip -dc \Q$efile\E >\Q$tmpfile\E";
+		}
+	} elsif ($encoding eq "bzip") {
+		if ($efile eq '-') {
+			$res = system "bzip -d >\Q$tmpfile\E";
+		} else {
+			$res = system "bzip -dc <\Q$efile\E >\Q$tmpfile\E";
+		}
+	} elsif ($encoding eq "bzip2") {
+		if ($efile eq '-') {
+			$res = system "bzip2 -d >\Q$tmpfile\E";
+		} else {
+			$res = system "bzip2 -dc <\Q$efile\E >\Q$tmpfile\E";
+		}
+	} elsif ($encoding eq "compress") {
+		if ($efile eq '-') {
+			$res = system "uncompress >\Q$tmpfile\E";
+		} else {
+			$res = system "uncompress <\Q$efile\E >\Q$tmpfile\E";
+		}
+	} else {
+		die "Fatal: unknown encoding '$encoding' at";
+	}
+
+	$res = int($res/256);
+	if ($res != 0) {
+		print STDERR "Error: could not decode '$efile' -- $!\n";
+		unlink($tmpfile);
+		return;
+	}
+
+	chmod 0600,$tmpfile;
+	return $tmpfile;
+}
+
+
+
+sub EncodeFile {
+	my($dfile,$efile,$encoding) = @_;
+	my($res);
+
+	print " - encoding '$dfile' as '$efile'\n";
+
+	if ($encoding eq "gzip") {
+		if ($efile eq '-') {
+			$res = system "gzip -c \Q$dfile\E";
+		} else {
+			$res = system "gzip -c \Q$dfile\E >\Q$efile\E";
+		}
+	} elsif ($encoding eq "compress") {
+		if ($efile eq '-') {
+			$res = system "compress <\Q$dfile\E";
+		} else {
+			$res = system "compress <\Q$dfile\E >\Q$efile\E";
+		}
+	} else {
+		die "Fatal: unknown encoding '$encoding' at";
+	}
+
+	$res = int($res/256);
+	if ($res != 0) {
+		print STDERR "Error: could not encode '$efile' (left as '$dfile')\n";
+		return;
+	}
+
+	return $dfile;
+}
+
+
+
+sub ExtensionMimetype {
+	my($ext) = @_;
+	my($typ);
+
+	unless ($donemimetypes) {
+		ReadMimetypes($usrmimetyp);
+		ReadMimetypes($locmimetyp);
+		ReadMimetypes($shrmimetyp);
+		ReadMimetypes($etcmimetyp);
+		$donemimetypes = 1;
+	}
+
+	$typ = $mimetypes{lc($ext)};
+
+	print " - extension '$ext' maps to mime-type '$typ'\n" if $debug;
+	return $typ;
+}
+
+
+
+sub PatternMimetype {
+	my($file) = @_;
+	my($key,$val);
+
+	while (($key,$val) = each %patterntypes) {
+		if ($file =~ m!$key!i) {
+			print " - file '$file' maps to mime-type '$val'\n" if $debug;
+			return $val;
+		}
+	}
+
+	print " - file '$file' does not conform to any known pattern\n" if $debug;
+	return;
+}
+
+
+
+sub FileMimetype {
+	my($file) = @_;
+	my($ext)  = ($file =~ m!\.([^/\.]+)$!);
+
+	my $type;
+
+	$type = ExtensionMimetype($ext) if $ext;
+	$type = PatternMimetype($file) unless $type;
+
+	return $type;
+}
+
+
+
+foreach (@ARGV) {
+	print " - parsing parameter '$_'\n" if $debug;
+	if (m!^(-h|--help)$!) {
+		Usage();
+		exit(0);
+	} elsif (m!^--(.*?)=(.*)$!) {
+		print STDERR "Warning: definition of '$1=$2' overrides value '${$1}'\n" if ($ {$1} && $ {$1} != $2);
+		$ {$1}=$2;
+	} elsif (m!^[^/:]+/[^/:]+:[^/:]+:!) {
+		push @files,$_;
+	} elsif (m!^([^/:]+/[^/:]+):(.*)!) {
+		my $type = $1;
+		my $file = $2;
+		my $code = EncodingForFile($file);
+		push @files,"${type}:${code}:${file}";
+	} else {
+		my $file = $_;
+		my $code = EncodingForFile($file);
+		my $type;
+		if ($code) {
+			my $efile = $file;
+			$efile =~ s/\.[^\.]+$//;
+			$type = FileMimetype($efile);
+		} else {
+			$type = FileMimetype($file);
+		}
+		if ($type) {
+			push @files,"$type:$code:$file";
+		} else {
+			print STDERR "Warning: unknown mime-type for file '$file' -- using '*/*'\n";
+			push @files,"*/*:${code}:${file}";
+		}
+	}
+}
+
+unless ($action) {
+	   if ($0 =~ m!(^|/)view$!)		{ $action="view";	}
+	elsif ($0 =~ m!(^|/)edit$!)		{ $action="edit";	}
+	elsif ($0 =~ m!(^|/)compose$!)	{ $action="compose";}
+	elsif ($0 =~ m!(^|/)print$!)	{ $action="print";	}
+	elsif ($0 =~ m!(^|/)see$!)		{ $action="view";	}
+	elsif ($0 =~ m!(^|/)change$!)	{ $action="edit";	}
+	elsif ($0 =~ m!(^|/)create$!)	{ $action="compose";}
+	else							{ $action="view";	}
+}
+
+
+$mailcaps = $ENV{MAILCAPS};
+$mailcaps = "$ENV{HOME}/.mailcap:/etc/mailcap:/usr/local/etc/mailcap:/usr/share/etc/mailcap:/usr/etc/mailcap" unless $mailcaps;
+foreach (split(/:/,$mailcaps)) {
+	ReadMailcap($_);
+}
+
+$retcode = 0;
+foreach (@files) {
+	my($type,$code,$file) = m/^(.*?):(.*?):(.*)$/;
+	print "Processing file '$file' of type '$type' (encoding=",$code?$code:"none",")...\n" if $debug;
+
+	if ($file ne '-') {
+		if ($action eq 'compose' || $action eq 'edit') {
+			if (-e $file) {
+				if (! -w $file) {
+					print STDERR "Error: no write permission for file '$file'\n";
+					next;
+				}
+			} else {
+				if (open(TEST,">$file")) {
+					close(TEST);
+					unlink($file);
+				} else {
+					print STDERR "Error: no write permission for file '$file'\n";
+					next;
+				}
+			}
+		} else {
+			if (! -e $file) {
+				print STDERR "Error: no such file '$file'\n";
+				next;
+			}
+			if (! -r $file) {
+				print STDERR "Error: no read permission for file '$file'\n";
+				next;
+			}
+		}
+	}
+
+	my(@matches,$entry,$res,$efile);
+	if ($code) {
+		$efile = $file;
+		$file  = DecodeFile($efile,$code,$action);
+		next unless $file;
+	}
+
+	foreach $entry (@mailcap) {
+		$entry =~ m/^(.*?)\s*;/;
+		$_ = "\Q$1\E"; s/\\\*/\.\*/g;
+		push @matches,$entry if ($type =~ m!^$_$!i);
+	}
+	@matches = grep(/\Q$action\E=/,@matches) unless $action eq "view";
+
+	my $done=0;
+	foreach $match (@matches) {
+		my $comm;
+		print " - checking mailcap entry '$match'\n" if $debug;
+		if ($action eq "view") {
+			($comm) = ($match =~ m/^.*?;\s*(.*?)\s*($|;)/);
+		} else {
+			($comm) = ($match =~ m/\Q$action\E=(.*?)\s*($|;)/);
+		}
+		next if (!$comm || $comm =~ m!(^|/)false$!i);
+		print " - program to execute: $comm\n" if $debug;
+
+		if ($match =~ m/;\s*test=(.*?)\s*($|;)/) {
+			my $test;
+			print " - running test: $1 " if $debug;
+			$test   = system "$1 >/dev/null 2>&1";
+			$test >>= 8;
+			print " (result=$test)\n" if $debug;
+			next if $test;
+		}
+
+		my $tmpfile;
+		if ($action ne 'print' && $match =~ m/;\s*needsterminal\s*($|;)/ && ! -t STDOUT) {
+			if (!$ENV{DISPLAY}) {
+				print " - no terminal available for rule (needsterminal)\n" if $debug;
+				next;
+			}
+			if ($file eq "-") {
+				$tmpfile = SaveStdin($match);
+				$file    = $tmpfile;
+			}
+			$comm = "$xtermprgrm -T '$file ($type)' -e $0 --action=$action ${type}:${file}";
+		} elsif ($action eq 'view' && $match =~ m/;\s*copiousoutput\s*($|;)/) {
+			$comm .= " | $0 --action=$action text/plain:-";
+		}
+
+		if ($file ne "-") {
+			if ($comm =~ m/[^%]%s/) {
+				$comm =~ s/([^%])%s/$1$file/g;
+			} else {
+				if ($comm =~ m/\|/) {
+					$comm =~ s/\|/<\Q$file\E \|/;
+				} else {
+					$comm .= " <\Q$file\E";
+				}
+				if ($action eq 'edit' || $action eq 'compose') {
+					$comm .= " >\Q$file\E";
+				}
+			}
+		} else {
+			if ($comm =~ m/[^%]%s/) {
+				$tmpfile = SaveStdin($match);
+				$comm =~ s/([^%])%s/$1$tmpfile/g;
+			} else {
+				# no name means same as "-"... read from stdin
+			}
+		}
+
+		$comm =~ s!([^%])%t!$1$type!g;
+		$comm =~ s!([^%])%F!$1!g;
+		$comm =~ s!%{(.*?)}!$_="'$ENV{$1}'";s/\`//g;$_!ge;
+		$comm =~ s!\'\'!\'!g;
+		$comm =~ s!$quotedsemi!;!g;
+		$comm =~ s!$quotedprct!%!g;
+
+		print " - executing: $comm\n" if $debug;
+		$res = system $comm;
+		$res = int($res/256);
+		if ($res != 0) {
+			print STDERR "Warning: program returned non-zero exit code \#$res\n";
+			$retcode = $res;
+		}
+		$done=1;
+		unlink $tmpfile if $tmpfile;
+		last;
+	}
+
+	if (!$done) {
+		print STDERR "Error: no mailcap rule for action '$action' for type '$type'\n";
+		unlink $file if $code;
+		next;
+	}
+
+	if ($code) {
+		if ($action eq 'edit' || $action eq 'compose') {
+			my $file = EncodeFile($file,$efile,$code);
+			unlink $file if $file;
+		} else {
+			unlink $file;
+		}
+	}
+}
+
+exit($retcode);

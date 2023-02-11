@@ -1,0 +1,33 @@
+This package is maintained by David Coe <davidc@debian.org>.  
+
+Prior to me, it was maintained by Charles Briscoe-Smith
+<cpbs@debian.org>, and before him by Erick Branderhorst
+<branderhorst@heel.fgg.eur.nl>.
+
+It was first debianized by Herbert Xu <herbert@debian.org> 
+on Sat, 8 Feb 1997 22:16:50 +1100.
+
+It was was downloaded from
+ftp://sunsite.unc.edu/pub/Linux/libs/linux.words.2.tar.gz
+As of 24 February 2001, the upstream source is still available 
+from sunsite:
+./libs:
+-rw-rw-r--   1 gregh    linux     138063 Oct 12  1993 linux.words.2.tar.gz
+
+
+---------------------
+linux.words Copyright
+---------------------
+
+extracted from linux.words.2.lsm:
+
+  Desc1        = This is word list containing 45402 words.  Great care has been
+  Desc2        = taken to be sure that this word list is free of copyright.
+  Author       = Rik Faith
+  AuthorEmail  = faith@cs.unc.edu
+  CopyPolicy1  = Free of non-commercial restrictions.
+  CopyPolicy2  = Free for personal, educational, and research purposes.
+
+
+The files README.linux.words and README2.linux.words describe in detail
+how this word list was constructed.

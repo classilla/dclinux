@@ -1,0 +1,32 @@
+(Message inbox:3)
+X-POP3-Rcpt: bdale@winfree
+Received: from chorus.chorus.fr (root@chorus.chorus.fr [192.33.15.1]) by winfree.gag.com (8.7.6/8.7.3) with SMTP id WAA31177 for <bdale@gag.com>; Fri, 14 Mar 1997 22:27:06 -0700
+Received: by chorus.chorus.fr; Sat, 15 Mar 1997 05:55:59 +0100
+Date: Sat, 15 Mar 1997 05:55:59 +0100
+Message-Id: <199703150455.AA15120@chorus.chorus.fr>
+From: Jean-loup Gailly <gzip@prep.ai.mit.edu>
+Subject: Re: enhancement request from Debian user for gzip wrappers (automatic reply)
+Apparently-To: bdale@gag.com
+
+-------
+Thanks for your mail. This is an automatic reply.
+
+The address jloup@chorus.fr is no longer valid. However mail sent to
+this address is automatically forwarded to my current address, so you do
+not have to send your message again.
+
+For future messages, please use one of the following addresses:
+
+gaillje@gemse.fr           for mail related to General Electric Medical Systems
+zlib@quest.jpl.nasa.gov    for mail related to zlib
+zip-bugs@wkuvx1.wku.edu    for mail related to Info-ZIP (zip or unzip)
+    (zip-bugs is the list of all Info-ZIP maintainers, to which I belong)
+gzip@prep.ai.mit.edu       for all other subjects (including gzip)
+jlgailly@teaser.fr         to reach my home PC (mail not checked every day)
+
+For questions about Chorus, please contact Francois St Lu <fsl@chorus.fr>
+or check http://www.chorus.com/
+
+Jean-loup Gailly
+http://www.teaser.fr/~jlgailly/
+

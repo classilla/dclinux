@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+if [ "$1" = "purge" ]; then
+	update-rc.d inetd remove >/dev/null
+fi
+
+## Automatically added by dh_installdebconf
+if [ "$1" = purge -a -e /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+	db_purge
+fi
+# End automatically added section
+#

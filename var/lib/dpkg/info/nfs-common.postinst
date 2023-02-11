@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+	test ! -d /usr/share/doc/nfs-common ||
+	  test -L /usr/doc/nfs-common ||
+	  ln -sf ../share/doc/nfs-common /usr/doc/nfs-common
+
+	update-rc.d nfs-common defaults 19 81 >/dev/null 2>&1
+
+	/etc/init.d/nfs-common start
+	;;
+
+    *)
+	/etc/init.d/nfs-common start
+	;;
+esac

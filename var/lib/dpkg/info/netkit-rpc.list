@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/bin
+/usr/bin/rpcinfo
+/usr/bin/rpcgen
+/usr/share
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/rpcgen.1.gz
+/usr/share/man/man8
+/usr/share/man/man8/rpcinfo.8.gz
+/usr/share/doc
+/usr/share/doc/netkit-rpc
+/usr/share/doc/netkit-rpc/copyright
+/usr/share/doc/netkit-rpc/changelog.gz
+/usr/share/doc/netkit-rpc/changelog.Debian.gz

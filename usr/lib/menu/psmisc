@@ -1,0 +1,4 @@
+?package(psmisc):needs=x11 section="Apps/System" hints="Monitoring"\
+  title="pstree" command="/etc/alternatives/x-terminal-emulator -e /usr/bin/pstree.x11"
+?package(psmisc):needs=text section="Apps/System" hints="Monitoring"\
+  title="pstree" command="/usr/bin/pstree"

@@ -1,0 +1,18 @@
+LoadModule: autoindex_module /usr/lib/apache/1.3/mod_autoindex.so
+Directives:
+ AddAlt
+ AddAltByEncoding
+ AddAltByType
+ AddDescription
+ AddIcon
+ AddIconByEncoding
+ AddIconByType
+ DefaultIcon
+ FancyIndexing
+ HeaderName
+ IndexIgnore
+ IndexOptions
+ ReadmeName
+Description: Support for automatic directory listings
+
+

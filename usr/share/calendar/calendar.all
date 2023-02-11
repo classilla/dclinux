@@ -1,0 +1,22 @@
+/*
+ * International and national calendar files
+ *
+ * This is the calendar master file.  In the standard setup, it is
+ * included by /etc/calendar/default, so you can make any system-wide
+ * changes there and they will be kept when you upgrade.  If you want
+ * to edit this file, copy it into /etc/calendar/calendar.all and
+ * edit it there.
+ *
+ * $FreeBSD: src/usr.bin/calendar/calendars/calendar.all,v 1.6 1999/08/28 00:59:19 peter Exp $
+ */
+
+#ifndef _calendar_all_
+#define _calendar_all_
+
+#include <calendar.world>
+#include <calendar.german>
+#include <calendar.usholiday>
+#include <calendar.croatian>
+#include <calendar.russian>
+
+#endif /* !_calendar_all_ */

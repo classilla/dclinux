@@ -1,0 +1,315 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/cvsconfig,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin
+
+. /usr/share/debconf/confmodule
+
+read_debconf ()
+{
+	db_get cvs/repositories ||:
+	CVS_REPOS="$RET"
+	
+	db_get cvs/rotatehistory ||:
+	if [ "$RET" = "yes" ]; then
+		CVS_ROTATE="yes"
+		CVS_ROTDIRS="$CVS_REPOS"
+	elif [ "$RET" = "individual" ]; then
+		CVS_ROTATE="yes"
+		CVS_ROTDIRS=""
+		IFS=':'
+		for i in $CVS_REPOS; do
+			IFS=' 	\
+'
+			RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+			db_get "cvs/rotate/$RNAME" ||:
+			if [ "$RET" = "true" -a ! -z "$CVS_ROTDIRS" ]; then
+				CVS_ROTDIRS="$CVS_ROTDIRS:$i"
+			elif [ "$RET" = "true" ]; then
+				CVS_ROTDIRS="$i"
+			fi
+		done
+	else
+		CVS_ROTATE="no"
+	fi
+	if [ "$CVS_ROTATE" = "yes" ]; then
+		db_get cvs/rotatekeep_nondefault ||:
+		if [ "$RET" = "yes" ]; then
+			db_get cvs/rotatekeep ||:
+			RPARAM="$RET"
+			CVS_ROTATE=""
+			IFS=':'
+			for i in $CVS_ROTDIRS; do
+				IFS=' 	\
+'
+				if [ -z "$CVS_ROTATE" ]; then
+					CVS_ROTATE="$RPARAM"
+				else
+					CVS_ROTATE="$CVS_ROTATE:$RPARAM"
+				fi
+			done
+		elif [ "$RET" = "individual" ]; then
+			CVS_ROTATE=""
+			for i in $CVS_ROTDIRS; do
+				IFS=' 	\
+'
+				RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+				db_get "cvs/rotatekeep/$RNAME" ||:
+				if [ -z "$CVS_ROTATE" ]; then
+					CVS_ROTATE="$RET"
+				else
+					CVS_ROTATE="$CVS_ROTATE:$RET"
+				fi
+			done
+		fi
+	fi
+	
+	db_get cvs/pserver ||:
+	if [ "$RET" = "true" ]; then
+		CVS_ENAB_PSERV=yes
+		db_get cvs/pserver_repos ||:
+		if [ "$RET" = "all" ]; then
+			CVS_PSERV_REPOS="$CVS_REPOS"
+		else
+			IFS=':'
+			for i in $CVS_REPOS; do
+				IFS=' 	\
+'
+				RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+				db_get "cvs/pserver/$RNAME" ||:
+				if [ "$RET" = "true" -a ! -z "$CVS_PSERV_REPOS" ]; then
+					CVS_PSERV_REPOS="$CVS_PSERV_REPOS:$i"
+				elif [ "$RET" = "true" ]; then
+					CVS_PSERV_REPOS="$i"
+				fi
+			done
+		fi
+		db_get cvs/pserver_setspawnlimit ||:
+		if [ "$RET" = "true" ]; then
+			db_get cvs/pserver_spawnlimit ||:
+			CVS_PSERV_RESPAWN=$RET
+		else
+			db_fget cvs/pserver_setspawnlimit isdefault ||:
+			if [ "$RET" = "true" ]; then
+				CVS_PSERV_RESPAWN=off-def
+			else
+				CVS_PSERV_RESPAWN=off
+			fi
+		fi
+	else
+		CVS_ENAB_PSERV=no
+	fi
+}
+
+setup()
+{
+	# Set up the inetd pserver stuff
+	if test -x /usr/sbin/update-inetd; then
+		db_get cvs/pserver ||:
+		if test "$RET" = "true"; then
+			/usr/sbin/update-inetd --remove "cvspserver.*"
+			db_get cvs/repositories ||:
+			REPOS="$RET"
+			ALLOWROOT=""
+			OLDIFS="$IFS"
+			IFS=": 	"
+			db_get cvs/pserver_repos ||:
+			PS_REPOS="$RET"
+			for i in $REPOS; do
+				IFS=' 	\
+'
+				if [ "$PS_REPOS" = "some" ]; then
+					RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+					db_get "cvs/pserver/$RNAME" ||:
+					if [ "$RET" = "true" ]; then
+						if [ -z "$ALLOWROOT" ]; then
+							ALLOWROOT="$i"
+						else
+							ALLOWROOT="$ALLOWROOT:$i"
+						fi
+					fi
+				else
+					if [ -z "$ALLOWROOT" ]; then
+						ALLOWROOT="$i"
+					else
+						ALLOWROOT="$ALLOWROOT:$i"
+					fi
+				fi
+			done
+			IFS="$OLDIFS"
+			db_get cvs/pserver_setspawnlimit ||:
+			if [ "$RET" = "false" ]; then
+				NOWAIT="nowait"
+			else
+				db_get cvs/pserver_spawnlimit ||:
+				NOWAIT="nowait.$RET"
+			fi
+			cat <<-EOF >/etc/cvs-pserver.conf
+			CVS_PSERV_REPOS="$ALLOWROOT"
+			EOF
+			/usr/sbin/update-inetd --group OTHER --add \
+		"cvspserver	stream	tcp	$NOWAIT	root	/usr/sbin/tcpd	/usr/sbin/cvs-pserver"
+		else
+			/usr/sbin/update-inetd --disable cvspserver
+		fi
+	fi
+	# Set up the cron config file
+	db_get cvs/rotatehistory ||:
+	echo "ROT_HIST=\"$RET\"" > /etc/cvs-cron.conf
+	ROT_HIST="$RET"
+	db_get cvs/repositories ||:
+	echo "REPOS=\"$RET\"" >> /etc/cvs-cron.conf
+	REPOS="$RET"
+	db_get cvs/rotatekeep_nondefault ||:
+	echo "ROTKEEP=\"$RET\"" >> /etc/cvs-cron.conf
+	ROTKEEP="$RET"
+	if [ "$ROTKEEP" = "yes" ]; then
+		db_get cvs/rotatekeep ||:
+		echo "OTHER_ROTKEEP=\"$RET\"" >> /etc/cvs-cron.conf
+	fi
+	if [ "$ROT_HIST" = "individual" -o "$ROTKEEP" = "individual" ]; then
+		IFS=':'
+		for i in $REPOS; do
+			IFS=' 	\
+'
+			RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+			if [ "$ROT_HIST" = "individual" ]; then
+				db_get "cvs/rotate/$RNAME" ||:
+				echo "ROT_${RNAME}=\"$RET\"" >> /etc/cvs-cron.conf
+				eval ROT_${RNAME}="$RET"
+			fi
+			eval T="\${ROT_${RNAME}}"
+			if [ "$ROTKEEP" = "individual" -a \
+				\( "$ROT_HIST" = "yes" -o \
+				  \( "$ROT_HIST" = "individual" -a \
+				     "$T" = "true" \) \) ]; then
+				db_get "cvs/rotatekeep/$RNAME" ||:
+				echo "ROTKEEP_${RNAME}=\"$RET\"" >> /etc/cvs-cron.conf
+			fi
+		done
+	fi
+}
+
+# upgrade_conffile oldversion
+upgrade_conffile ()
+{
+	OLDVER="$1"
+	if [ $OLDVER -lt 2 ]; then
+		## Upgrade conffile to version 2
+		TEMP_UFILE=`tempfile -m 600`
+		TMPFILES="$TEMP_UFILE $TMPFILES"
+		#UP_SEDCMD="$UP_SEDCMD -e '/^CVS_PSERV_REPOS=/r$TEMP_UFILE'"
+		#echo 'CVS_PSERV_RESPAWN="400"' > $TEMP_UFILE
+		if ! grep -q CVS_PSERV_REPOS /etc/cvs.conf; then
+			sed -e '/^CVS_PSERV_REPOS=/a\
+CVS_PSERV_RESPAWN="400"' /etc/cvs.conf > $TEMP_UFILE
+			cp $TEMP_UFILE /etc/cvs.conf
+			CVS_PSERV_REPOS=400
+		fi
+	fi
+}
+
+create_config ()
+{
+	cat <<EOF >/etc/cvs.conf
+#
+# Configuration file for the Debian CVS-related scripts
+#
+
+# Please do not touch this - it enables the postinst scripts detection
+# of whether the "cvsconfig" script needs to be run or not.
+CVSCONF_VERSION="none"
+
+# 1. Where are your repositories?
+CVS_REPOS=""
+
+# 2. Do you want history files rotated?
+# 2a. If, so, only those in different dirs, or in all the dirs above?
+
+# Set CVS_ROTATE to a colon-separated list of the rotations to keep
+# (the default is seven).
+CVS_ROTATE=""
+CVS_ROTDIRS="\$CVS_REPOS"
+
+# The CVSROOT directories pserver is allowed to read from as standard
+CVS_ENAB_PSERV=""
+CVS_PSERV_REPOS="\$CVS_REPOS"
+CVS_PSERV_RESPAWN="400"
+
+# End of file.
+EOF
+}
+
+# Defaults if NOT SPECIFIED in config file
+set_defaults ()
+{
+	CVSCONF_VERSION="none"
+	CVS_REPOS=""
+	CVS_ROTATE=""
+	CVS_ROTDIRS=""
+	CVS_ENAB_PSERV="no"
+	CVS_PSERV_REPOS=""
+	CVS_PSERV_RESPAWN="off-def"
+}
+
+## Main program
+
+OURCVSCONF_VERSION="2"
+
+OPTION="$1"
+XOPTION="$2"
+
+if test "$OPTION" = "-r"; then
+	echo Generating config file from current configuration...
+	set_defaults
+	read_debconf
+	create_config
+	exit 0
+elif test "$OPTION" = "-s"; then
+	setup
+	exit 0
+elif test "$OPTION" = "-x"; then
+	if test ! -f /etc/cvs.conf; then
+		echo 'No current config file to update!'
+		exit 1
+	fi
+	set_defaults
+	. /etc/cvs.conf
+	read_debconf
+	echo Updating config file with current configuration...
+	
+	TMPFILE=`tempfile -m 600`
+	TMPFILES="$TMPFILE"
+	
+	trap "rm -f $TMPFILES; exit 1" SIGINT SIGHUP SIGQUIT SIGTERM
+	
+	if test -f /etc/cvs.conf -a "$CVSCONF_VERSION" != "$OURCVSCONF_VERSION"
+		-a "$XOPTION" = "-u"; then
+		if [ "$CVSCONF_VERSION" != "none" ]; then
+			upgrade_conffile "$CVSCONF_VERSION"
+		else
+			upgrade_conffile 1
+		fi
+	fi
+	
+	sed \
+		-e 's:\(CVSCONF_VERSION=\"\)[^\"]*\(\".*\):\1'"${OURCVSCONF_VERSION}"'\2:g' \
+		-e 'sÿ\(CVS_REPOS=\"\)[^\"]*\(\".*\)ÿ\1'"${CVS_REPOS}"'\2ÿg' \
+		-e 'sÿ\(CVS_ROTATE=\"\)[^\"]*\(\".*\)ÿ\1'"${CVS_ROTATE}"'\2ÿg' \
+		-e 'sÿ\(CVS_ENAB_PSERV=\"\)[^\"]*\(\".*\)ÿ\1'"${CVS_ENAB_PSERV}"'\2ÿg' \
+		-e 'sÿ\(CVS_PSERV_RESPAWN=\"\)[^\"]*\(\".*\)ÿ\1'"${CVS_PSERV_RESPAWN}"'\2ÿg' \
+		/etc/cvs.conf > $TMPFILE
+	
+	if ! cmp -s $TMPFILE /etc/cvs.conf; then
+		cp $TMPFILE /etc/cvs.conf
+	fi
+	
+	rm -f $TMPFILES
+	
+else
+	echo Use \`dpkg-reconfigure cvs\' to reconfigure cvs.
+	exit 1
+fi
+
+# End of file.

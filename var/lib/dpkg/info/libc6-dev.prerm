@@ -1,0 +1,12 @@
+#! /bin/sh
+set -e
+
+if [ $1 = remove ]; then
+    if [ -d /usr/doc ]; then
+	package=$(basename $0 .prerm)
+	if [ -L /usr/doc/$package ]; then
+	    rm /usr/doc/$package
+	fi
+    fi
+fi
+

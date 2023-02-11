@@ -1,0 +1,13 @@
+#!/bin/sh
+
+mkdir -p /usr/local/share/games/fortunes || true
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/fortunes-min -a -d /usr/share/doc/fortunes-min ]; then
+		ln -sf ../share/doc/fortunes-min /usr/doc/fortunes-min
+	fi
+fi
+# End automatically added section
+
+

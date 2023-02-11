@@ -1,0 +1,80 @@
+                     Information for Cyrix Chipset Users
+
+                          The XFree86 Project Inc.
+
+                                22 June 1999
+
+1.  Supported hardware
+
+This driver (as used in the SVGA (VGA256), VGA16 and VGA_Mono servers) sup-
+ports a single chipset `mediagx' that should work on the following Cyrix CPUs
+with integrated graphics:
+
+   o MediaGX
+
+   o MediaGXi
+
+   o MediaGXm
+
+2.  Features
+
+   o accelerated
+
+   o hardware cursor
+
+   o support color depths 1, 4, 8 and 16
+
+3.  XF86Config Option
+
+      Option "sw_cursor"
+            disable the hardware cursor.
+
+      Option "no_accel"
+            completely disables acceleration. Usually not recommended.
+
+4.  Bugs and Limitations
+
+   o On some older chipsets, the driver may trigger an illegal instruction
+     just after probing for the ``scratchpad size''.  If this is the case,
+     email to hecker@cat.dfrc.nasa.gov with the output of
+
+          XF86_SVGA -probeonly -verbose
+
+     and this will be fixed.
+
+   o There are limitations to the modeline values that can be specified.
+     Particularly, the difference between the first two horizontal timings
+     (e.g. 640 656, 1024 1048) must be at least 16 and at most 24.  The mode-
+     line values are not used in the 3.3.4 server since there is a static
+     array used to load the registers.  The modeline only identifies that a
+     particular resolution is desired.  The standard VESA modes up to
+     1280x768 are supported.  For more specific information, consult the
+     source code.
+
+   o The 4 colour server is slow due to the VGA banking mode used.  Moreover,
+     it does not work the way it is run by XF86Setup, which is probably due
+     to the timing limitations.
+
+   o The 3.3.4 server MAY totally hang the machine at times.  It is reported
+     to be stable on a BSD platform using twm.  It has crashed when using
+     resolutions greater than 800x600 on a Linux (Debian based) system using
+     wm as the window manager.  The safest course is to use the 3.3.3.1
+     server instead.  Efforts are under way to resolve this issue and provide
+     a more robust server under the 4.x release.
+
+5.  Authors
+
+   o Annius Groenink <Annius.Groenink@cwi.nl>
+
+   o Dirk Hohndel <hohndel@XFree86.org>
+
+   o Brian Falardeau
+
+   o Special thanks to Cyrix and Wyse for helping us with the development of
+     this server.  Brian, a Cyrix employee, made the 3.3.4 update possible
+     since the new 4.0 server has been our top priority.
+
+     Generated from XFree86: xc/programs/Xserver/hw/xfree86/doc/sgml/cyrix.sgml,v 1.1.2.4 1999/06/24 06:16:44 hohndel Exp $
+
+
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/README.cyrix,v 1.1.2.7 1999/06/25 08:56:51 hohndel Exp $

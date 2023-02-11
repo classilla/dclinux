@@ -1,0 +1,21 @@
+#!/bin/sh
+
+LOCALEGEN=/etc/locale.gen
+
+[ -f $LOCALEGEN -a -s $LOCALEGEN ] || exit 0;
+
+umask 022
+
+echo "Generating locales..."
+while read locale charset; do \
+	case $locale in \#*) continue;; esac; \
+	[ -n "$locale" -a -n "$charset" ] || continue
+	echo -n "  `echo $locale | sed 's/\([^.\@]*\).*/\1/'`"; \
+	echo -n ".$charset"; \
+	echo -n `echo $locale | sed 's/\([^\@]*\)\(\@.*\)*/\2/'`; \
+	echo -n '...'; \
+	input=`echo $locale | sed 's/\([^.]*\)[^@]*\(.*\)/\1\2/'`; \
+	localedef -i $input -c -f $charset $locale; \
+	echo ' done'; \
+done < $LOCALEGEN
+echo "Generation complete."

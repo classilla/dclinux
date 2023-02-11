@@ -1,0 +1,48 @@
+#!/bin/sh -e
+
+case "$1"
+  in
+    configure)
+      update-alternatives --quiet --install \
+        /sbin/ipfwadm \
+	ipfwadm \
+	/sbin/ipfwadm-wrapper 60
+
+      update-alternatives --quiet --install \
+        /usr/share/man/man8/ipfwadm.8.gz \
+	ipfwadm.8.gz \
+	/usr/share/man/man8/ipfwadm-ipchainsalternative.8.gz 60
+
+      update-alternatives --quiet --install \
+        /usr/share/man/man4/ipfw.4.gz \
+	ipfw.4.gz \
+	/usr/share/man/man4/ipfw-ipchainsalternative.4.gz 60
+
+      update-rc.d ipchains defaults 10 >/dev/null
+      
+      if [ -f /etc/init.d/ipchains ] && [ ! -f /etc/ipchains.save ]
+        then
+	  if ! /etc/init.d/ipchains save
+	    then
+	      echo "Unable to save ipchains rules. (Kernel w/o ipchains?)"
+	    else
+	      echo "Initial saving done."
+	    fi
+	fi
+      ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+      ;;
+    *)
+      echo "postinst called with unknown argument \"$1\"" >&2
+      exit 1
+      ;;
+ esac
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ipchains -a -d /usr/share/doc/ipchains ]; then
+		ln -sf ../share/doc/ipchains /usr/doc/ipchains
+	fi
+fi
+# End automatically added section
+

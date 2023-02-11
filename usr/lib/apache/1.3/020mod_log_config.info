@@ -1,0 +1,8 @@
+LoadModule: config_log_module /usr/lib/apache/1.3/mod_log_config.so
+LoadModule: config_log_module /usr/lib/apache/modules/mod_log_config.so
+Directives:
+ CookieLog
+ CustomLog
+ LogFormat
+ TransferLog
+Description: Support for configurable logfiles

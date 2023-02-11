@@ -1,0 +1,39 @@
+Copyright 1988,1990,1993,1994 by Paul Vixie;
+All rights reserved
+
+Distribute freely, except: don't remove my name from the source or
+documentation (don't take credit for my work), mark your changes (don't
+get me blamed for your possible bugs), don't alter or remove this
+notice.  May be sold if buildable source is provided to buyer.  No
+warranty of any kind, express or implied, is included with this
+software; use at your own risk, responsibility for damages (if any) to
+anyone resulting from the use of this software rests entirely with the
+user.
+
+
+The original source for this package may be obtained from 
+ftp://ftp.vix.com/pub/vixie/cron-3.0.
+
+Modifications for Debian GNU/Linux Copyright 1994 Ian Jackson;
+checksecurity script:
+Copyright (C) 1994 Ian Jackson
+Copyright (C) 1996, 1997, 1998, 1999, 2000 Steve Greenland
+
+The `checksecurity' script and its associated files (checksecurity.8
+and checksecurity.conf) are free software; you can redistribute it
+and/or modify it under the terms of the GNU General Public License as
+published by the Free Software Foundation; either version 2, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+A copy of the GNU General Public License is available as
+`/usr/share/doc/common-licenses/GPL' in the 
+Debian GNU/Linux distribution or on the World Wide Web
+at `http://www.gnu.org/copyleft/gpl.html'. You can also obtain it by
+writing to the Free Software Foundation, Inc., 59 Temple Place - Suite
+330, Boston, MA 02111-1307, USA.
+

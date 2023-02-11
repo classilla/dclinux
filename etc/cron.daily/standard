@@ -1,0 +1,102 @@
+#!/bin/sh
+# /etc/cron.daily/standard: standard daily maintenance script
+# Written by Ian A. Murdock <imurdock@gnu.ai.mit.edu>
+# Modified by Ian Jackson <ijackson@nyx.cs.du.edu>
+# Modified by Steve Greenland <stevegr@debian.org>
+
+bak=/var/backups
+LOCKFILE=/var/lock/cron.daily
+umask 022
+
+#
+# Avoid running more than one at a time -- could happen if the
+# checksecurity script lands on a network drive.
+#
+
+if [ -x /usr/bin/lockfile-create ] ; then
+    lockfile-create $LOCKFILE
+    if [ $? -ne 0 ] ; then
+	cat <<EOF
+
+Unable to run /etc/cron.daily/standard because lockfile $LOCKFILE
+acquisition failed. This probably means that the previous days
+instance is still running. Please check and correct if necessary.
+
+EOF
+	exit 1
+    fi
+
+    # Keep lockfile fresh
+    lockfile-touch $LOCKFILE &
+    LOCKTOUCHPID="$!"
+fi
+
+#
+# Backup key system files
+#
+
+if cd $bak ; then
+	cmp -s passwd.bak /etc/passwd || cp -p /etc/passwd passwd.bak
+	cmp -s group.bak  /etc/group  || cp -p /etc/group  group.bak
+        chmod 600 passwd.bak group.bak
+        if [ -f /etc/shadow ] ; then
+	  cmp -s shadow.bak  /etc/shadow  || cp -p /etc/shadow  shadow.bak
+          chmod 600 shadow.bak
+	fi
+        if [ -f /etc/gshadow ] ; then
+	  cmp -s gshadow.bak  /etc/gshadow  || cp -p /etc/gshadow  gshadow.bak
+	  chmod 600 gshadow.bak
+	fi
+fi
+
+if cd $bak ; then
+    if ! cmp -s dpkg.status.0 /var/lib/dpkg/status ; then
+	    cp -p /var/lib/dpkg/status dpkg.status
+	    savelog -c 7 dpkg.status >/dev/null
+    fi
+fi
+cd /var/log
+umask 027
+savelog -c 7 -m 640 -u root -g adm setuid.changes >/dev/null
+checksecurity >setuid.changes
+
+#
+# Check to see if any files are in lost+found directories and warn admin
+#
+# Get a list of the (potential) ext2 l+f directories
+lflist=`df -P --type=ext2  |awk '/\/dev\// {printf "%s/lost+found ", $6}'`
+
+# In each directory, look for files
+for lfdir in $lflist ; do
+    if [ -d "$lfdir" ] ; then
+	more_lost_found=`ls -1  "$lfdir" | grep -v 'lost+found$'`
+	if [ -n "$more_lost_found" ] ; then
+	    lost_found="$lost_found
+
+$lfdir:
+    $more_lost_found"
+	    # NOTE: above weird line breaks in string are intentional!
+        fi
+    fi
+done
+
+if [ -n "$lost_found" ]; then
+    cat << EOF
+Files were found in lost+found directories. This is probably
+the result of a crash or bad shutdown, or possibly of a disk
+problem. These files may contain important information. You
+should examine them, and move them out of lost+found or delete
+them if they are not important.
+
+The following files were found:
+$lost_found
+EOF
+fi
+
+#
+# Clean up lockfile
+#
+if [ -x /usr/bin/lockfile-create ] ; then
+    kill $LOCKTOUCHPID
+    lockfile-remove $LOCKFILE
+fi

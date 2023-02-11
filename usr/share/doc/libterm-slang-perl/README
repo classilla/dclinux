@@ -1,0 +1,24 @@
+PREREQUISITES
+-------------
+
+Before you can build Term::Slang you need to have the following installed
+on your system:
+
+    * Perl 5.004 or greater.
+
+    * The Slang library, 1.4 or greater.
+
+	Available at: ftp://space.mit.edu/pub/davis/slang/
+
+
+To build, test and install this distribution type:
+
+ perl Makefile.PL
+ make test
+ make install
+
+--
+Daniel Sully <daniel-cpan-slang@electricrain.com>
+
+This program is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.

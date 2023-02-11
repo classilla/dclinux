@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# $Id: postrm,v 1.1 1999/04/16 07:00:28 herbert Exp $
+
+if [ "$1" = remove -o "$1" = purge ]; then
+	update-inetd --remove "ftp		stream	tcp	nowait	root	/usr/sbin/tcpd	/usr/sbin/in.ftpd"
+fi
+
+

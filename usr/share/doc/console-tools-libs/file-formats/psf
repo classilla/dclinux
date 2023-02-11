@@ -1,0 +1,102 @@
+			The PSF file-format
+
+		(C) 1997 Yann Dirson <dirson@debian.org>
+
+
+ This file documents the PSF font-file-format, as understood by version 0.94
+and above of the Linux console utilities ('kbd'). This file makes obsolete
+the old `psffile.doc'.
+
+ This file has revision number 1.1, and is dated 1998/04/20.
+ Any useful additionnal information on PSF files would be great.
+
+
+0. Changes:
+
+1998/08/20: updated author's e-mail.
+1998/08/20: History of the format from hpa himself.
+1998/08/20: Fixed `filemode' description from hpa's input.
+
+
+1. Summary
+
+ PSF stands for PC Screen Font.
+
+ A PSF file basically contains one character-font, whose width is 8 pixels,
+ie. each scanline in a character occupies 1 byte.
+
+ It may contain characters of any height between 0 and 255, though character
+heights lower than 8 or greater than 32 are not attested to exist or even be
+useful [more info needed on this].
+
+ Fonts can contain either 256 or 512 characters.
+ 
+ The file can optionnally contain a unicode mapping-table, telling, for each
+character in the font, which UCS2 characters it can be used to display.
+
+ The "file mode" byte controls font size (256/512) and whether file contains
+a unicode mapping table.
+
+
+2. History
+
+ The PSF file format was designed by H. Peter Anvin
+<hpa@transmeta.com> in 1989 or so for his DOS screen font editor,
+FONTEDIT.EXE. When he became involved with Linux, he used it for the
+Linux font stuff he worked with, released a binary of FONTEDIT.EXE for
+free distribution, and added the Unicode table to the spec.
+
+
+3. Known programs understanding this file-format.
+
+ The following program in the Linux console utilities can read and/or write
+PSF files:
+
+	setfont (R/W)
+	psfaddtable (R/W)
+	psfstriptable (R/W)
+	psfgettable (R)
+
+
+4. Technical data
+
+ The file format is described here in sort-of EBNF notation. Upper-case
+WORDS represent terminal symbols, ie. C types; lower-case words represent
+non-terminal symbols, ie. symbols defined in terms of other symbols.
+ [sym] is an optional symbol
+ {sym} is a symbol that can be repeated 0 or more times
+ {sym}*N is a symbol that must be repeated N times
+ Comments are introduced with a # sign.
+
+
+# The data (U_SHORT's) are stored in LITTLE_ENDIAN byte order.
+
+psf_file =	psf_header
+		raw_fontdata
+		[unicode_data]
+		
+
+psf_header =	CHAR = 0x36  CHAR = 0x04	# magic number
+		filemode
+		fontheight
+		
+fontheight =	CHAR		# measured in scan lines
+filemode =	CHAR		# 0 : 256 characters, no unicode_data
+				# 1 : 512 characters, no unicode_data
+				# 2 : 256 characters, with unicode_data
+				# 3 : 512 characters, with unicode_data
+
+#
+
+raw_fontdata =	{char_data}*<fontsize>
+
+char_data =	{BYTE}*<fontheight>
+
+#
+
+unicode_data =	{ unicode_array psf_separator }*<fontsize>
+
+unicode_array =	{ unicode }				# any necessary number of times
+
+unicode =	U_SHORT					# UCS2 code
+psf_separator =	unicode = 0xFFFF

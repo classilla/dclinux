@@ -1,0 +1,408 @@
+#! /usr/bin/perl
+
+#
+# Regularize multibyte text to some extent.
+#
+# Absolutely no warranty.  Freely redistributable.
+# copyright(c) 1997 by Jun-ichiro itojun Itoh.  All rights reserved.
+#
+# $Id: regular.in,v 1.1.2.1 1997/09/23 00:43:39 itojun Exp $
+#
+
+# initial designation
+@ig0 = @ig = ('B94', '', '', '');
+$igl = 0;
+$igr = 1;
+$igl1 = -1;
+$igr1 = -1;
+
+@og = ('B94', '', '', '');
+$ogl = 0;
+$ogr = 1;
+$ogl1 = -1;
+$ogr1 = -1;
+
+$variation94 = '#$@[\]^`{|}~';
+
+# configurations
+$eolreset = 1;
+$oldstyle = 1;
+$output7 = 1;
+foreach $i (grep(/^-/, @ARGV)) {
+	if ($i eq '-ctext') {
+		$oldstyle = 0;
+		$output7 = 1;
+	} elsif ($i eq '-kr') {
+		$eolreset = 0;
+	} elsif ($i eq '-7') {
+		$output7 = 1;
+	} elsif ($i eq '-8') {
+		$output7 = 0;
+	} else {
+		print STDERR "regular: unknown option $i.\n";
+		exit 1;
+	}
+}
+
+if (scalar(grep(/^[^-]/, @ARGV))) {
+	print STDERR "regular: I take no argument.\n";
+	exit 1;
+}
+
+while (<STDIN>) {
+	$line = $_;
+
+	while (length($line)) {
+		($chcode1, $chcode2) = unpack('CC', $line);
+
+		# escape sequence
+		if ($consume = &parsedesig($line)) {
+			$line = substr($line, $consume);
+			next;
+		}
+
+		# control code
+		if ($chcode1 & 0x7f < 0x20) {
+			$mask = &selthischarset(0, 'B94');
+			print pack('C', ($chcode1 & 0x7f) | $mask);
+			$line = substr($line, 1);
+			next;
+		}
+
+		# normal chars
+		if (&validch1(0, $chcode1)) {
+			if (&variation1(0, $chcode1)) {
+				$mask = &selthischarset(0, 'B94');
+			} else {
+				$mask = &selcharset(0);
+			}
+			print pack('C', ($chcode1 & 0x7f) | $mask);
+			$line = substr($line, 1);
+		} elsif (&validch1(1, $chcode1)) {
+			if (&variation1(1, $chcode1)) {
+				$mask = &selthischarset(1, 'B94');
+			} else {
+				$mask = &selcharset(1);
+			}
+			print pack('C', ($chcode1 & 0x7f) | $mask);
+			$line = substr($line, 1);
+		} elsif (&validch2(0, $chcode1, $chcode2)) {
+			$mask = &selcharset(0);
+			print pack('C', ($chcode1 & 0x7f) | $mask);
+			print pack('C', ($chcode2 & 0x7f) | $mask);
+			$line = substr($line, 2);
+		} elsif (&validch2(1, $chcode1, $chcode2)) {
+			$mask = &selcharset(1);
+			print pack('C', ($chcode1 & 0x7f) | $mask);
+			print pack('C', ($chcode2 & 0x7f) | $mask);
+			$line = substr($line, 2);
+		} else {
+			# unknown char.  emit as is.
+			if ($chcode1 & 0x80) {
+				&selthischarset(1, 'B94');
+			} else {
+				&selthischarset(0, 'B94');
+			}
+			print substr($line, 0, 1);
+			$line = substr($line, 1);
+		}
+
+		$igl1 = $igr1 = -1;
+		$ogl1 = $ogr1 = -1;
+	}
+	&selthischarset(0, 'B94');
+	&selthischarset(1, 'B94') if ($og[1] ne '');
+	&selthischarset(2, 'B94') if ($og[2] ne '');
+	&selthischarset(3, 'B94') if ($og[3] ne '');
+	if ($eolreset) {
+		@ig = @ig0;
+	}
+	$igl = 0;
+	$igr = 1;
+	$igl1 = -1;
+	$igr1 = -1;
+}
+
+exit 0;
+
+#
+# check if the character is valid as 1-byte char (94 or 96) in the charset
+# designated in the input stream.
+#
+sub validch1 {
+	local($leftright, $code1) = @_;
+	local($curcharset, $off);
+
+	if (($igl1, $igr1)[$leftright] == -1) {
+		$curcharset = $ig[($igl, $igr)[$idx]];
+	} else {
+		$curcharset = $ig[($igl1, $igr1)[$idx]];
+	}
+	$off = (0x00, 0x80)[$leftright];
+
+	if ($curcharset =~ /94$/) {
+		if (0x21 + $off <= $code1 && $code1 <= 0x7e + $off) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} elsif ($curcharset =~ /96$/) {
+		if (0x20 + $off <= $code1 && $code1 <= 0x7f + $off) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return 0;
+	}
+}
+
+#
+# check if the character is valid as 2-byte char (94x94 or 96x96)
+# in the charset designated in the input stream.
+#
+sub validch2 {
+	local($leftright, $code1, $code2) = @_;
+	local($curcharset, $off);
+
+	if (($igl1, $igr1)[$leftright] == -1) {
+		$curcharset = $ig[($igl, $igr)[$idx]];
+	} else {
+		$curcharset = $ig[($igl1, $igr1)[$idx]];
+	}
+	$off = (0x00, 0x80)[$leftright];
+
+	if ($curcharset =~ /94x$/) {
+		if (0x21 + $off <= $code1 && $code1 <= 0x7e + $off
+		 && 0x21 + $off <= $code2 && $code2 <= 0x7e + $off) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} elsif ($curcharset =~ /96x$/) {
+		if (0x20 + $off <= $code1 && $code1 <= 0x7f + $off
+		 && 0x20 + $off <= $code2 && $code2 <= 0x7f + $off) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return 0;
+	}
+}
+
+#
+# Parse the designation in input stream.
+#
+sub parsedesig {
+	local($line) = @_;
+	local($idx);
+	local($version, $verslen);
+
+	if (index("\033\216\217\017\016", substr($line, 0, 1)) == -1) {
+		return 0;
+	}
+
+	if ($line =~ /^\033\&([0-\177])/) {
+		$version = $1;
+		$verslen = length($&);
+		$line = substr($line, $verslen);
+	} else {
+		$version = '';
+		$verslen = 0;
+	}
+
+	if ($line =~ /^\033\$([\@AB])/) {
+		$ig[0] = $1 . $version . '94x';
+		return length($&) + $verslen;
+	} elsif ($line =~ /^\033([\(\)*+])([0-\177])/) {
+		$idx = index('()*+', $1);
+		$ig[$idx] = $2 . $version . '94';
+		return length($&) + $verslen;
+	} elsif ($line =~ /^\033([,-.\/])([0-\177])/) {
+		$idx = index(',-./', $1);
+		$ig[$idx] = $2 . $version . '96';
+		return length($&) + $verslen;
+	} elsif ($line =~ /^\033\$([\(\)*+])([0-\177])/) {
+		$idx = index('()*+', $1);
+		$ig[$idx] = $2 . $version . '94x';
+		return length($&) + $verslen;
+	} elsif ($line =~ /^\033\$([,-.\/])([0-\177])/) {
+		$idx = index(',-./', $1);
+		$ig[$idx] = $2 . $version . '96x';
+		return length($&) + $verslen;
+	} elsif ($line =~ /\017/) {	# LS0
+		$igl = 0;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\016/) {	# LS1
+		$igl = 1;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033n/) {	# LS2
+		$igl = 2;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033o/) {	# LS3
+		$igl = 3;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033~/) {	# LS1R
+		$igr = 1;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033}/) {	# LS2R
+		$igr = 2;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033\|/) {	# LS3R
+		$igr = 3;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033N/) {	# SS2
+		$igl1 = 2;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\033O/) {	# SS3
+		$igl1 = 3;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\216/) {	# SS2R
+		$igr1 = 2;
+		return length($&) + $verslen;
+	} elsif ($line =~ /\217/) {	# SS3R
+		$igr1 = 3;
+		return length($&) + $verslen;
+	}
+
+	return 0;
+}
+
+#
+# Emit designation to output stream, based on the designation in input stream.
+#
+sub selcharset {
+	local($idx) = @_;
+	local($curcharset, $mask);
+
+	if (($igl1, $igr1)[$idx] == -1) {
+		$curcharset = $ig[($igl, $igr)[$idx]];
+	} else {
+		$curcharset = $ig[($igl1, $igr1)[$idx]];
+	}
+
+	if ($curcharset eq $og[$ogl]) {
+		return 0x00;
+	} elsif ($curcharset eq $og[$ogr]) {
+		return 0x80;
+	}
+
+	if ($oldstyle && $curcharset =~ /^([\@AB])94x$/) {
+		print "\033\$" . $1;
+		$og[$ogl] = $curcharset;
+	} elsif ($oldstyle && $curcharset eq 'B@94x') {
+		print "\033&\@\033\$B";
+		$og[$ogl] = $curcharset;
+	} elsif ($curcharset =~ /^(.)94$/) {
+		print "\033(" . $1;
+		$og[$ogl] = $curcharset;
+	} elsif ($curcharset =~ /^(.)96$/) {
+		if ($output7) {
+			print "\033," . $1;
+			$og[$ogl] = $curcharset;
+		} else {
+			print "\033-" . $1;
+			$mask = 0x80;
+			$og[$ogr] = $curcharset;
+		}
+	} elsif ($curcharset =~ /^(.)94x$/) {
+		print "\033\$(" . $1;
+		$og[$ogl] = $curcharset;
+	} elsif ($curcharset =~ /^(.)(.)94x$/) {
+		print "\033&" . $2 . "\033\$(" . $1;
+		$og[$ogl] = $curcharset;
+	} elsif ($curcharset =~ /^(.)96x$/) {
+		if ($output7) {
+			print "\033\$," . $1;
+			$og[$ogl] = $curcharset;
+		} else {
+			print "\033\$-" . $1;
+			$mask = 0x80;
+			$og[$ogr] = $curcharset;
+		}
+	}
+
+	return $mask;
+}
+
+#
+# Emit designation to output stream, based on the programmer's decision.
+#
+sub selthischarset {
+	local($leftright, $charset) = @_;
+	local($curcharset, $mask, $tmp);
+
+	if (($ogl1, $ogr1)[$leftright] == -1) {
+		$curcharset = $og[($ogl, $ogr)[$leftright]];
+	} else {
+		$curcharset = $og[($ogl1, $ogr1)[$leftright]];
+	}
+	$mask = (0x00, 0x80)[$leftright];
+
+	$tmp = ($ogl, $ogr)[$leftright];
+	$mask = (0x00, 0x80)[$leftright];
+	if ($oldstyle && $leftright == 0 && $charset =~ /^([\@AB])94x$/) {
+		if ($charset ne $curcharset) {
+			print "\033\$" . $1;
+			$og[$ogl] = $charset;
+		}
+	} elsif ($oldstyle && $leftright == 0 && $charset eq 'B@94x') {
+		if ($charset ne $curcharset) {
+			print "\033&\@\033\$" . $1;
+			$og[$ogl] = $charset;
+		}
+	} elsif ($charset =~ /^(.)94$/) {
+		if ($charset ne $curcharset) {
+			print "\033" . ('(', ')')[$leftright] . $1;
+			$og[$tmp] = $charset;
+		}
+	} elsif ($charset =~ /^(.)96$/) {
+		if ($charset ne $curcharset) {
+			print "\033" . (',', '-')[$leftright] . $1;
+			$og[$tmp] = $charset;
+		}
+	} elsif ($charset =~ /^(.)94x$/) {
+		if ($charset ne $curcharset) {
+			print "\033\$" . ('(', ')')[$leftright] . $1;
+			$og[$tmp] = $charset;
+		}
+	} elsif ($charset =~ /^(.)(.)94x$/) {
+		if ($charset ne $curcharset) {
+			print "\033&" . $2;
+			print "\033\$" . ('(', ')')[$leftright] . $1;
+			$og[$tmp] = $charset;
+		}
+	} elsif ($charset =~ /^(.)96x$/) {
+		if ($charset ne $curcharset) {
+			print "\033\$" . (',', '-')[$leftright] . $1;
+			$og[$tmp] = $charset;
+		}
+	}
+
+	return $mask;
+}
+
+#
+# Returns 1 if the character would better be emitted in ASCII charset.
+#
+sub variation1 {
+	local($leftright, $code) = @_;
+	local($curcharset);
+
+	if (($igl1, $igr1)[$leftright] == -1) {
+		$curcharset = $ig[($igl, $igr)[$leftright]];
+	} else {
+		$curcharset = $ig[($igl1, $igr1)[$leftright]];
+	}
+
+	if ($curcharset =~ /^[\@ABCGHJKLRTYZ`fghinuwxz]94$/) {
+		if (index($variation94, pack('C', $code & 0x7f)) == -1) {
+			return 1;
+		} else {
+			return 0;
+		}
+	} else {
+		return 0;
+	}
+}

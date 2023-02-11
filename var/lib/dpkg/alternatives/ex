@@ -1,0 +1,12 @@
+auto
+/usr/bin/ex
+ex.1.gz
+/usr/share/man/man1/ex.1.gz
+
+/usr/bin/nex
+30
+/usr/share/man/man1/nex.1.gz
+/usr/bin/nex-m17n
+30
+/usr/share/man/man1/nex-m17n.1.gz
+

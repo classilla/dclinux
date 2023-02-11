@@ -1,0 +1,31 @@
+This is ja-trans, initially maintained by UNO Takeshi <uno@sysplan.co.jp>
+on Fri,  7 May 1999 17:25:42 +0900.
+For Debian, this is maintained by Fumitoshi UKAI <ukai@debian.or.jp> 
+as Sponsor, until UNO Takeshi become a developer.
+
+The original .po can be found at(Japanese):
+    http://www.iro.umontreal.ca/contrib/po/trans/ja/fileutils-4.0i.ja.po
+    http://www.iro.umontreal.ca/contrib/po/trans/ja/grep-2.3.ja.po
+    http://www.iro.umontreal.ca/contrib/po/trans/ja/sh-utils-2.0.ja.po
+    http://www.iro.umontreal.ca/contrib/po/trans/ja/texinfo-4.0.ja.po
+    http://www.iro.umontreal.ca/contrib/po/trans/ja/textutils-2.0.ja.po
+    ftp://ring.exp.fujixerox.co.jp/pub/doc/gnu-info-j/po/libc-2.1.1.ja.po.bz2
+    http://village.infoweb.ne.jp/~dais/linux/net-tools-1.51.ja.po.gz
+    http://www-nuclth.phys.sci.osaka-u.ac.jp/users/nabetani/debian/libc-2.1.2_ja.uu
+
+Copyright (C) 1996,1997,1998,1999 Free Software Foundation, Inc. 
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License with
+  the Debian GNU/Linux distribution in file /usr/share/common-licenses/GPL;
+  if not, write to the Free Software Foundation, Inc., 59 Temple Place,
+  Suite 330, Boston, MA  02111-1307  USA

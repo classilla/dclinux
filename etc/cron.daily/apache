@@ -1,0 +1,121 @@
+#!/bin/sh
+#
+# apache    Rotate the apache logfiles as specified in
+#           /etc/apache/cron.conf
+#
+#           Johnie Ingram <johnie@debian.org>
+
+[ -f /etc/apache/httpd.conf ] || exit 0
+
+# DEFAULTS.  Override by editing /etc/apache/cron.conf.
+
+APACHE_OLD_LOGS=35
+APACHE_DAYS_TO_RUN=all
+APACHE_DAY_TO_RUN=any
+APACHE_PRE_SCRIPT=
+APACHE_POST_SCRIPT=
+APACHE_CHOWN_LOGFILES=1
+
+[ -f /etc/apache/cron.conf ] && . /etc/apache/cron.conf
+
+umask 022
+trap "" 1
+export LANG=C
+
+RUNTODAY=0
+
+if [ "$APACHE_DAY_TO_RUN" = "none" ] ; then
+    exit 0
+fi
+
+if [ "$APACHE_DAYS_TO_RUN" = "none" ] ; then
+    exit 0
+fi
+
+if [ "$APACHE_DAY_TO_RUN" = "any" ] ; then
+
+    # Get today's day and convert to lowercase.
+    TODAY=$(date +%a | tr 'A-Z' 'a-z')
+    # Convert days_to_run to lowercase.
+    APACHE_DAYS_TO_RUN=$(echo $APACHE_DAYS_TO_RUN | tr 'A-Z' 'a-z')
+    echo "$APACHE_DAYS_TO_RUN" | grep -q "$TODAY" && RUNTODAY=1
+    [ "$APACHE_DAYS_TO_RUN" = "all" ] && RUNTODAY=1
+
+else
+
+    # Get today's day: 01 .. 31
+    TODAY=$(date +%d | cat)
+    if [ $APACHE_DAY_TO_RUN = "$TODAY" ] ; then RUNTODAY=1; fi
+
+    # Get today's day: 001 .. 366
+    TODAY=$(date +%j | cat)
+    if [ $APACHE_DAY_TO_RUN = "$TODAY" ] ; then RUNTODAY=1; fi
+
+fi
+
+if [ "$RUNTODAY" = "1" ] ; then
+    # Run apache pre processing script if executable.
+    if [ -x "$APACHE_PRE_SCRIPT" ]
+    then
+	$APACHE_PRE_SCRIPT
+    fi
+
+    # This looks for lines in the conf files like: FooLog /some/where
+    CONFS=$(awk '$1 ~ /^\s*[Ii]nclude$/ && $2 ~ /^\// {print $2}' \
+        /etc/apache/*.conf | sort -u)
+    LOGS=$(awk '$1 ~ /^\s*[A-Za-z]*Log$/ && $2 ~ /^\// {print $2}' \
+        /etc/apache/*.conf $CONFS | sort -u)
+
+    if [ "$LOGS" = "" ]
+    then
+	LOGS="/var/log/apache/access.log /var/log/apache/error.log"
+	[ -d /var/log/apache ] || exit 0
+    fi
+
+    if [ -f /var/log/apache/rewrite.log ]
+    then
+        LOGS="$LOGS /var/log/apache/rewrite.log"
+    fi
+
+    SERVERROOT=$(awk '$1 == "ServerRoot" { print $2; exit }' \
+	/etc/apache/*.conf)
+    if [ "$SERVERROOT" != "" ]
+    then
+	cd $SERVERROOT
+    fi
+
+    USR=$(awk '$1 == "User" { print $2; exit }' /etc/apache/*.conf)
+    if [ "$USR" = "" ]; then USR="root"; fi
+    if [ "$USR" = "#-1" ]; then USR="root"; fi
+
+    GRP=$(awk '$1 == "Group" { print $2; exit }' /etc/apache/*.conf)
+    if [ "$GRP" = "" ]; then GRP="www-data"; fi
+    if [ "$GRP" = "#-1" ]; then GRP="www-data"; fi
+
+    GRP=$(echo $GRP | sed "s/#//g")
+
+    for LOG in $LOGS
+    do
+	if [ -f $LOG ]
+	then
+	    if [ "$APACHE_CHOWN_LOGFILES" = "1" ]
+	    then
+		savelog -c $APACHE_OLD_LOGS -m 664 -u $USR -g $GRP \
+		    $LOG > /dev/null
+	    else
+		savelog -c $APACHE_OLD_LOGS -m 644 -u root -g root \
+		$LOG > /dev/null
+	    fi
+	fi
+    done
+
+    # Send a reload signal to the apache server.
+    /etc/init.d/apache reload > /dev/null
+
+    # Run apache post processing script if executable.
+    if [ -x "$APACHE_POST_SCRIPT" ]
+    then
+	$APACHE_POST_SCRIPT
+    fi
+
+fi

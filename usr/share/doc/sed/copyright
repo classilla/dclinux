@@ -1,0 +1,18 @@
+This is the Debian GNU/Linux prepackaged version of sed - the GNU stream
+oriented editor.
+
+This package was assembled from sources obtained from:
+   ftp://ftp.gnu.org/gnu/sed-3.02.tar.gz
+
+It is currently maintained by Wichert Akkerman <wakkerma@debian.org>
+
+Change to the upstream release are:
+ * added a manpage for sed
+
+GNU sed is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free
+Software Foundation; either version 2, or (at your option) any later
+version.
+
+On Debian GNU/Linux systems you can find a copy of the GPL in
+/usr/share/common-licenses/GPL

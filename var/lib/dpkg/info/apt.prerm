@@ -1,0 +1,18 @@
+#! /bin/sh
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/apt ]; then
+	rm -f /usr/doc/apt
+fi
+# End automatically added section
+
+
+if [ "$1" = "upgrade" -o "$1" = "failed-upgrade" ] && 
+   dpkg --compare-versions "$2" "<<" 0.4.10
+then
+  if [ ! -d /var/state/apt/ ]; then
+    ln -s /var/lib/apt /var/state/apt
+    touch /var/lib/apt/lists/partial/.delete-me-later
+  fi
+fi
+  

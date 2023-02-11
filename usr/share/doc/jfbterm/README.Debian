@@ -1,0 +1,7 @@
+jfbterm for Debian
+----------------------
+
+The original version refers to terminfo entry 'kon', but Debian package version
+refers to terminfo entry 'jfbterm' that is as same as 'kon' but its entry name.
+
+ -- Hatta Shuzo <hattas@debian.or.jp>, Mon, 25 Oct 1999 11:37:55 +0900

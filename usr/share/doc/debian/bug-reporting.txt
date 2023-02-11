@@ -1,0 +1,202 @@
+                         How to report a bug in Debian
+
+   Send mail to submit@bugs.debian.org, as described below.
+
+   Please don't report several unrelated bugs - especially ones in
+   different packages - in one message. Also, please don't mail your bug
+   report to any mailing lists or recipients other than submit@bugs (for
+   details of how to do this right, see below).
+
+   Lists of currently-outstanding bugs are available on the World Wide
+   Web and elsewhere - see other documents for details.
+
+   You should put a pseudo-header at the start of the body of the
+   message, with the Package: and Version: lines giving the name and
+   version of the package which has the bug. (The pseudo-header fields
+   must start at the very start of their lines, and the bug system does
+   not currently understand them if they're buried in MIMEd or PGPd
+   mail.) (You can get these using dpkg --search and dpkg --list; see
+   dpkg --help. See below for further requirements.
+
+   There are some pseudo-packages available for putting in the Package
+   line when reporting a bug in something other than an actual Debian
+   software package. There is a list of these on the bugs WWW pages.
+
+Example
+
+   A bug report, with mail header, looks something like this:
+  To: submit@bugs.debian.org
+  From: diligent@testing.linux.org
+  Subject: Hello says `goodbye'
+
+  Package: hello
+  Version: 1.3-2
+
+  When I invoke `hello' without arguments from an ordinary shell
+  prompt it prints `goodbye', rather than the expected `hello, world'.
+  Here is a transcript:
+
+  $ hello
+  goodbye
+  $ /usr/bin/hello
+  goodbye
+  $
+
+  I suggest that the output string, in hello.c, be corrected.
+
+  I am using Debian 1.1, kernel version 1.3.99.15z
+  and libc 5.2.18.3.2.1.3-beta.
+
+Please include in your report:
+
+     * The exact and complete text of any error messages printed or
+       logged. This is very important!
+     * Exactly what you typed or did to demonstrate the problem.
+     * A description of the incorrect behaviour: exactly what behaviour
+       you were expecting, and what you observed. A transcript of an
+       example session is a good way of showing this.
+     * A suggested fix, or even a patch, if you have one.
+     * Details of the configuration of the program with the problem.
+       Include the complete text of its configuration files.
+     * The versions of any packages on which the buggy package depends.
+     * What kernel version you're using (type uname -a).
+     * What shared C library you're using (type ls -l /lib/libc.so.6).
+     * Any other details of your Linux system, if it seems appropriate.
+       For example, if you had a problem with a Debian Perl script, you
+       would want to provide the version of the `perl' binary (perl -v).
+     * Appropriate details of the hardware in your system. If you're
+       reporting a problem with a device driver please list all the
+       hardware in your system, as problems are often caused by IRQ and
+       I/O address conflicts.
+
+   Include any detail that seems relevant - you are in very little danger
+   of making your report too long by including too much information. If
+   they are small please include in your report any files you were using
+   to reproduce the problem (uuencoding them if they may contain odd
+   characters etc.).
+
+   Of course, like any email, you should include a clear, descriptive
+   Subject line in your main mail header. The subject you give will be
+   used as the initial bug title in the tracking system, so please try to
+   make it informative !
+
+Sending copies of bug reports to other addresses
+
+   Sometimes it is necessary to send a copy of a bug report to somewhere
+   else besides debian-bugs-dist and the package maintainer, which is
+   where they are normally sent.
+
+   You could do this by CC'ing your bug report to the other address(es),
+   but then the other copies would not have the bug report number put in
+   the Reply-To field and the Subject line. When the recipients reply
+   they will probably preserve the submit@bugs.debian.org entry in the
+   header and have their message filed as a new bug report. This leads to
+   many duplicated reports.
+
+   The right way to do this is to use the X-Debbugs-CC header. Add a line
+   like this to your message's mail header (not to the pseudo header with
+   the Package field):
+ X-Debbugs-CC: other-list@cosmic.edu
+
+   This will cause the bug tracking system to send a copy of your report
+   to the address(es) in the X-Debbugs-CC line as well as to
+   debian-bugs-dist.
+
+   This feature can often be combined usefully with mailing quiet - see
+   below.
+
+Severity levels
+
+   If a report is of a particularly serious bug, or is merely a feature
+   request that, you can set the severity level of the bug as you report
+   it. This is not required, however, and the developers will assign an
+   appropriate severity level to your report if you do not.
+
+   To assign a severity level put a Severity: severity line in the
+   pseudo-header, together with Package and Version. The severity levels
+   available are described in the developers' documentation.
+
+Not forwarding to the mailing list - minor bug reports
+
+   If a bug report is minor (for example, a documentation typo or other
+   trivial build problem), or you're submitting many reports at once,
+   send them to maintonly@bugs or quiet@bugs. maintonly will send the
+   report on to the package maintainer (provided you supply a correct
+   Package line in the pseudo-header and the maintainer is known), and
+   quiet will not forward it anywhere at all but only file it as a bug
+   (useful if, for example, you are submitting many similar bugs and want
+   to post only a summary).
+
+   If you do this the bug system will set the Reply-To of any forwarded
+   message so that replies will by default be processed in the same way
+   as the original report.
+
+  Unknown packages or bugs with no Package key
+
+   If the bug tracking system doesn't know who the maintainer of the
+   relevant package is it'll forward the report to debian-bugs-dist even
+   if maintonly was used.
+
+   When sending to maintonly@bugs or nnn-maintonly@bugs you should make
+   sure that the bug report is assigned to the right package, by putting
+   a correct Package at the top of an original submission of a report, or
+   by using the control@bugs service to (re)assign the report
+   appropriately first if it isn't correct already.
+
+Using dpkg to find the package and version for the report
+
+   If you are reporting a bug in a command, you can find out which
+   package installed it by using dpkg --search. You can find out which
+   version of a package you have installed by using dpkg --list or dpkg
+   --status.
+
+   For example:
+$ which dpkg
+/usr/bin/dpkg
+$ type dpkg
+dpkg is hashed (/usr/bin/dpkg)
+$ dpkg --search /usr/bin/dpkg
+dpkg: /usr/bin/dpkg
+$ dpkg --search '*/dpkg'
+dpkg: /usr/doc/copyright/dpkg
+dpkg: /var/lib/dpkg
+dpkg: /usr/bin/dpkg
+dpkg: /usr/lib/dpkg
+dpkg: /usr/doc/dpkg
+$ dpkg --list dpkg
+Desired=Unknown/Install/Remove/Purge
+| Status=Not/Installed/Config-files/Unpacked/Failed-config/Half-installed
+|/ Err?=(none)/Hold/Reinst-required/X=both-problems (Status,Err: uppercase=bad)
+||/ Name            Version        Description
++++-===============-==============-============================================
+ii  dpkg            1.2.9elf       Package maintenance system for Debian GNU/Li
+nux
+$ dpkg --status dpkg
+Package: dpkg
+Essential: yes
+Status: install ok installed
+Priority: required
+Section: base
+Maintainer: Ian Jackson <ian@chiark.chu.cam.ac.uk>
+Version: 1.2.9elf
+Replaces: dpkgname
+Pre-Depends: libc5 (>= 5.2.18-2), ncurses3.0
+Conflicts: dpkgname
+Description: Package maintenance system for Debian GNU/Linux
+ This package contains the programs which handle the installation and
+ removal of packages on your system.
+ .
+ The primary interface for the dpkg suite is the `dselect' program;
+ a more low-level and less user-friendly interface is available in
+ the form of the `dpkg' command.
+
+$
+     _________________________________________________________________
+
+    Darren Benham / owner@bugs.debian.org. 12 Sep 1999.
+    Debian bug tracking system
+    copyright 1999 Darren O. Benham, 1994-7 Ian Jackson, 1997 nCipher
+    Corporation Ltd, 1995 Steven Brenner.
+    Available under the GPL.
+     _________________________________________________________________
+

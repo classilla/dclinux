@@ -1,0 +1,13 @@
+355ec3f030de58e2d18caab4296917be  usr/bin/regular
+784555a0f81bdfe4ccf3839a779bed56  usr/bin/qregular
+3b196c94ac80847a847221be28222d86  usr/lib/nvi-m17n/vi/catalog/dutch
+cc5883b03775a57f36f2ac9e2eb0dabb  usr/lib/nvi-m17n/vi/catalog/english
+2b6f40a56ad1e46db15e5b1aa23a92ec  usr/lib/nvi-m17n/vi/catalog/french
+bebff6c4e76d9a83613c14dcfc5fcff8  usr/lib/nvi-m17n/vi/catalog/german
+39de33dc1164b9fd7f8a2c9997081c9b  usr/lib/nvi-m17n/vi/catalog/ru_SU.KOI8-R
+5451df4984806b550bbdfcf39b9fec96  usr/lib/nvi-m17n/vi/catalog/spanish
+0eeb9412c1e882312ccacf33fdeacc71  usr/lib/nvi-m17n/vi/catalog/swedish
+5d5f1bb0414331e2e6fc93088547aca6  usr/lib/nvi-m17n/vi/recover
+321e768cafca7bd86cfadeb7c3b236cb  usr/share/doc/nvi-m17n-common/README.Debian
+2f546fa9f14775a5567773ef0086b1db  usr/share/doc/nvi-m17n-common/copyright
+e7465449830153a20ca185967e56b2fe  usr/share/doc/nvi-m17n-common/changelog.Debian.gz

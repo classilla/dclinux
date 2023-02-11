@@ -1,0 +1,26 @@
+#!/bin/sh -e
+
+# Remove the diversions on /usr/sbin/pppd caused by old ppp-pam package.
+
+if dpkg-divert --list /usr/sbin/pppd | grep -q "diversion of /usr/sbin/pppd to /usr/sbin/pppd.nopam by ppp-pam"; then
+  dpkg-divert --package ppp-pam --remove \
+              --divert /usr/sbin/pppd.nopam /usr/sbin/pppd
+fi
+
+if dpkg-divert --list /usr/sbin/pppd | grep -q "diversion of /usr/sbin/pppd to /usr/sbin/pppd.ppp-pam by ppp-pam"; then
+  dpkg-divert --package ppp-pam --remove --rename \
+              --divert /usr/sbin/pppd.ppp-pam /usr/sbin/pppd
+fi
+
+# Remove the old diverted files.
+if [ -x /usr/sbin/pppd ]; then
+  rm -f /usr/sbin/pppd.nopam /usr/sbin/pppd.ppp-pam
+fi
+
+# Remove wrong suidmanager entries caused by diverted files.
+if command -v suidunregister >/dev/null 2>&1 && [ -e /etc/suid.conf ]; then
+  suidunregister -s ppp /usr/sbin/pppd.nopam
+  suidunregister -s ppp /usr/sbin/pppd.ppp-pam
+fi
+
+

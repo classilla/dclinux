@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if test -x /sbin/ldconfig
+then
+    /sbin/ldconfig
+fi
+
+update-alternatives --install /usr/lib/libldap.so.3 libldap.so.3 \
+	/usr/lib/libopenldap.so.1 20 --slave /usr/lib/liblber.so.3 \
+	liblber.so.3 /usr/lib/liblber-openldap.so.1
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libopenldap1 -a -d /usr/share/doc/libopenldap1 ]; then
+		ln -sf ../share/doc/libopenldap1 /usr/doc/libopenldap1
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,66 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/cron.weekly,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+# CVS cron.weekly script - rotate history files in registered CVS dirs.
+
+# rotate <dir>
+rotate ()
+{
+	DIR="$1"
+	if [ ! -d $DIR -o ! -d $DIR/CVSROOT -o ! -f $DIR/CVSROOT/history ]; then
+		return
+	fi
+	if [ "$ROTKEEP" = "yes" ]; then
+		#db_get cvs/rotatekeep
+		#KEEPTIME="$RET"
+		KEEPTIME="$OTHER_ROTKEEP"
+	elif [ "$ROTKEEP" = "individual" ]; then
+		RNAME="`echo "$DIR" | sed -e 's:/:_:g'`"
+		#db_get "cvs/rotatekeep/$RNAME"
+		#KEEPTIME="$RET"
+		eval KEEPTIME="\${ROTKEEP_${RNAME}}"
+	else	# no
+		KEEPTIME="7"
+	fi
+	savelog -p -t -c $KEEPTIME $DIR/CVSROOT/history >/dev/null 2>&1
+}
+
+# Uncomment these if you want to use debconf to get the variables directly
+#. /usr/share/debconf/confmodule
+. /etc/cvs-cron.conf
+
+# Retrieve some useful variables
+#db_get cvs/rotatehistory
+#ROT_HIST="$RET"
+#db_get cvs/repositories
+#REPOS="$RET"
+#db_get cvs/rotatekeep_nondefault
+#ROTKEEP="$RET"
+
+# Do the rotation
+if [ "$ROT_HIST" = "no" ]; then
+	exit 0
+elif [ "$ROT_HIST" = "individual" ]; then
+	IFS=':'
+	for i in $REPOS; do
+		IFS=' 	\
+'
+		RNAME="`echo "$i" | sed -e 's:/:_:g'`"
+		#db_get "cvs/rotate/$RNAME"
+		#if [ "$RET" = "true" ]; then
+		eval T="\${ROT_${RNAME}}"
+		if [ "$T" = "true" ]; then
+			rotate $i
+		fi
+	done
+else	# yes
+	IFS=':'
+	for i in $REPOS; do
+		IFS=' 	\
+'
+		rotate $i
+	done
+fi
+
+# End of file.

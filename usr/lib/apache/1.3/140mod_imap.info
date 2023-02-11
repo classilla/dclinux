@@ -1,0 +1,7 @@
+LoadModule: imap_module /usr/lib/apache/modules/mod_imap.so
+LoadModule: imap_module /usr/lib/apache/1.3/mod_imap.so
+MimeTypes:
+ application/x-httpd-imap
+Handles:
+ imap-file
+Description: Support for imagemaps

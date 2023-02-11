@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+if command -v install-docs >/dev/null 2>&1; then
+  install-docs -r debian-faq
+  install-docs -r debian-constitution-text
+  install-docs -r debian-reporting-bugs
+  install-docs -r debian-manifesto
+  install-docs -r debian-mailing-lists
+  install-docs -r debian-social-contract
+fi
+
+if [ "$1" = "upgrade" -o "$1" = "remove" ]; then
+  if [ -L /usr/doc/doc-debian ]; then
+    rm -f /usr/doc/doc-debian
+  fi
+  if [ -L /usr/doc/debian ]; then
+    rm -f /usr/doc/debian
+  fi
+fi

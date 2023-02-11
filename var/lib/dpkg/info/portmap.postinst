@@ -1,0 +1,14 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/portmap -a -d /usr/share/doc/portmap ]; then
+		ln -sf ../share/doc/portmap /usr/doc/portmap
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit
+if [ -e "/etc/init.d/portmap" ]; then
+	update-rc.d portmap start 41 S . start 10 0 6 . >/dev/null
+	/etc/init.d/portmap start
+fi
+# End automatically added section

@@ -1,0 +1,16 @@
+/.
+/usr
+/usr/lib
+/usr/lib/libapt-inst-libc6.2-3.so.1.0.0
+/usr/bin
+/usr/bin/apt-ftparchive
+/usr/bin/apt-sortpkgs
+/usr/bin/apt-extracttemplates
+/usr/share
+/usr/share/doc
+/usr/share/doc/apt-utils
+/usr/share/doc/apt-utils/copyright
+/usr/share/doc/apt-utils/changelog.gz
+/usr/share/man
+/usr/share/man/man1
+/usr/lib/libapt-inst-libc6.2-3.so.1.0

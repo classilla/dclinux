@@ -1,0 +1,108 @@
+#! /bin/sh
+#
+# powerfail	This script is run when the UPS tells the system the power has
+#		gone. Tell everybody and start the shutdown based on the failure
+#		type.  This script will also being run when the power comes up
+#		again.
+#
+# Version:	/etc/init.d/powerfail (v1.1)
+#
+# Author:	Tom Webster <webster@kaiwan.com>
+# Modified-By:	Brian White <bcwhite@verisim.com>
+#
+
+
+
+failtime=+5	# shutdown delay from initial power failure
+btrytime=now	# shutdown delay from low-battery warning
+
+failmsg="LINE POWER FAILURE -- SWITCHED TO BATTERY BACKUP"
+btrymsg="BACKUP BATTERY LOW -- EMERGENCY SHUTDOWN"
+cablmsg="BAD UPS CABLE -- SYSTEM MAY BE UNRELIABLE"
+othrmsg="LINE POWER FAILURE -- SHUTTING DOWN SYSTEM"
+okaymsg="LINE POWER RESTORED -- RESUMING NORMAL OPERATION"
+
+
+
+# Set the path.
+PATH=/sbin:/etc:/bin:/usr/bin
+
+# Set location of upsstatus file
+statpath="/etc/upsstatus"
+
+# Set location of file containing PID of running shutdowns
+spidpath="/var/run/shutdown.pid"
+
+
+
+# See what happened.
+case "$1" in
+
+    start)
+	# Called with a powerfail event, check to see if a shutdown is running
+	if [ -f $spidpath ]
+	then
+	    # Shutdown is running, kill it to process the new event
+	    shutdown -c >/dev/null 2>&1
+	fi
+
+	# Get power problem and act on it
+	if [ -r $statpath ]
+	then
+	    stats=`head -1 $statpath`
+	    case "$stats" in
+		FAIL)  # Power is down
+			shutdown -h $failtime "$failmsg" &
+			;;
+		SCRAM) # Battery is low
+			shutdown -h $btrytime "$btrymsg" &
+			;;
+		CABLE) # Possible bad cable
+			echo "$cablmsg" | wall
+			;;
+		*)     # Unknown message, assume power is down
+			shutdown -h $btrytime "$othrmsg" &
+			;;
+	    esac
+
+	else
+	    # powerfail called, and upsstatus dosen't exist.
+	    # Assume user is using powerd, and shutdown.
+	    shutdown -h $failtime "$othrmsg" &
+ 
+	fi
+	;;
+
+
+    now)
+	# Called with a powerfail event, check to see if a shutdown is running
+	if [ -f $spidpath ]
+	then
+	    # Shutdown is running, kill it to process the new event
+	    shutdown -c >/dev/null 2>&1
+	fi
+
+	# Power is going down _now_
+	shutdown -h $btrytime "$btrymsg" &
+	;;
+
+
+    stop)
+	# Ok, power is good again. Say so on the console.
+	if [ -f $spidpath ]
+	then
+	    # Only cancel if shutdown is running (system boot will call this)
+	    shutdown -c "$okaymsg"
+	fi
+	;;
+
+
+    *)
+	echo "Usage: /etc/init.d/powerfail {start|now|stop}" >&2
+	exit 1
+	;;
+
+esac
+
+
+exit 0

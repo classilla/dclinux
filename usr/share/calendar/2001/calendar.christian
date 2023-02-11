@@ -1,0 +1,25 @@
+/* Christian calendar for year 2001 (excluding fixed events) */
+
+#include "/usr/share/calendar/calendar.christian"
+
+/* Moveable feasts: */
+Feb 11	Septuagesima
+Feb 18	Sexagesima
+Feb 25	Quinquagesima
+Mar 04	Quadragesima (1st Sunday of Lent)
+Mar 07	Ember day
+Mar 09	Ember day
+Mar 10	Ember day
+May 20	Rogation Sunday
+May 21	Rogation Day
+May 22	Rogation Day
+May 23	Rogation Day
+Jun 05	Ember day
+Jun 07	Ember day
+Jun 08	Ember day
+Sep 19	Ember day
+Sep 21	Ember day
+Sep 22	Ember day
+Dec 19	Ember day
+Dec 21	Ember day
+Dec 22	Ember day

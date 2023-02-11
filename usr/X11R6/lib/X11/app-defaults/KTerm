@@ -1,0 +1,159 @@
+! $XConsortium: XTerm.ad,v 1.32 94/02/09 18:19:21 converse Exp $
+! $Id: KTerm.ad,v 6.2 1996/06/23 08:00:09 kagotani Rel $
+KTerm.JoinSession:False
+*SimpleMenu*BackingStore: NotUseful
+*SimpleMenu*menuLabel.font: -adobe-helvetica-bold-r-normal--*-120-*-*-*-*-iso8859-*
+*SimpleMenu*menuLabel.vertSpace: 	100
+*SimpleMenu*HorizontalMargins: 16
+*SimpleMenu*Sme.height:	16
+
+*SimpleMenu*Cursor: left_ptr
+*mainMenu.Label:  Main Options
+*mainMenu*securekbd*Label:  Secure Keyboard
+*mainMenu*allowsends*Label:  Allow SendEvents
+*mainMenu*logging*Label:  Log to File
+*mainMenu*redraw*Label:  Redraw Window
+*mainMenu*suspend*Label:  Send STOP Signal
+*mainMenu*continue*Label:  Send CONT Signal
+*mainMenu*interrupt*Label:  Send INT Signal
+*mainMenu*hangup*Label:  Send HUP Signal
+*mainMenu*terminate*Label:  Send TERM Signal
+*mainMenu*kill*Label:  Send KILL Signal
+*mainMenu*quit*Label:  Quit
+
+*vtMenu.Label:  VT Options
+*vtMenu*scrollbar*Label:  Enable Scrollbar
+*vtMenu*jumpscroll*Label:  Enable Jump Scroll
+*vtMenu*reversevideo*Label:  Enable Reverse Video
+*vtMenu*autowrap*Label:  Enable Auto Wraparound
+*vtMenu*reversewrap*Label:  Enable Reverse Wraparound
+*vtMenu*autolinefeed*Label:  Enable Auto Linefeed
+*vtMenu*appcursor*Label:  Enable Application Cursor Keys
+*vtMenu*appkeypad*Label:  Enable Application Keypad
+*vtMenu*scrollkey*Label:  Scroll to Bottom on Key Press
+*vtMenu*scrollttyoutput*Label:  Scroll to Bottom on Tty Output
+*vtMenu*allow132*Label: Allow 80/132 Column Switching
+*vtMenu*cursesemul*Label:  Enable Curses Emulation
+*vtMenu*visualbell*Label:  Enable Visual Bell
+*vtMenu*marginbell*Label:  Enable Margin Bell
+*vtMenu*altscreen*Label:  Show Alternate Screen
+*vtMenu*softreset*Label:  Do Soft Reset
+*vtMenu*hardreset*Label:  Do Full Reset
+*vtMenu*clearsavedlines*Label:  Reset and Clear Saved Lines
+*vtMenu*tekshow*Label:  Show Tek Window
+*vtMenu*tekmode*Label:  Switch to Tek Mode
+*vtMenu*vthide*Label:  Hide VT Window
+*vtMenu*statusline*Label:  Enable Status Line
+*vtMenu*reversestatus*Label:  Status Line Reverse Video
+*vtMenu*eucmode*Label:  Japanese EUC Mode
+*vtMenu*sjismode*Label:  Shift-JIS Mode
+*vtMenu*openim*Label:  Open Input Method
+
+*fontMenu.Label:  VT Fonts
+*fontMenu*fontdefault*Label:	Default
+*VT100*fontList:	-*-fixed-medium-r-normal--14-*,\
+			-*-gothic-medium-r-normal--14-*,\
+			-*-mincho-medium-r-normal--14-*
+!*VT100*boldFontList:	-*-fixed-bold-r-normal--14-*,\
+!			-*-gothic-bold-r-normal--14-*,\
+!			-*-mincho-bold-r-normal--14-*
+*fontMenu*font1*Label:	Unreadable
+*VT100*fontList1:	-*-fixed-medium-r-normal--2-*,\
+			-*-gothic-medium-r-normal--2-*,\
+			-*-mincho-medium-r-normal--2-*
+*VT100*font1:		-misc-nil-medium-r-normal--2-*-misc-fontspecific
+*fontMenu*font2*Label:	Tiny
+*VT100*fontList2:	-*-fixed-medium-r-normal--10-*,\
+			-*-gothic-medium-r-normal--10-*,\
+			-*-mincho-medium-r-normal--10-*
+*fontMenu*font3*Label:	Small
+*VT100*fontList3:	-*-fixed-medium-r-normal--12-*,\
+			-*-gothic-medium-r-normal--12-*,\
+			-*-mincho-medium-r-normal--12-*
+*fontMenu*font4*Label:	Medium
+*VT100*fontList4:	-*-fixed-medium-r-normal--16-*,\
+			-*-gothic-medium-r-normal--16-*,\
+			-*-mincho-medium-r-normal--16-*
+*fontMenu*font5*Label:	Large
+*VT100*fontList5:	-*-fixed-medium-r-normal--20-*,\
+			-*-gothic-medium-r-normal--20-*,\
+			-*-mincho-medium-r-normal--20-*
+*fontMenu*font6*Label:	Huge
+*VT100*fontList6:	-*-fixed-medium-r-normal--24-*,\
+			-*-gothic-medium-r-normal--24-*,\
+			-*-mincho-medium-r-normal--24-*
+*fontMenu*fontescape*Label:	Escape Sequence
+*fontMenu*fontsel*Label:		Selection
+!fontescape and fontsel overridden by application
+
+! You can specify a font for some specific character sets as follows
+!*VT100*font3:			-*-*-medium-r-normal--16-*-iso8859-1
+!*VT100*romanKanaFont3:		-*-*-medium-r-normal--16-*-jisx0201.1976-0
+!*VT100*kanjiFont3:		-*-*-medium-r-normal--16-*-jisx0208.1983-0
+!*VT100*boldFont3:		-*-*-bold-r-normal--16-*-iso8859-1
+!*VT100*romanKanaBoldFont3:	-*-*-bold-r-normal--16-*-jisx0201.1976-0
+!*VT100*kanjiBoldFont3:		-*-*-bold-r-normal--16-*-jisx0208.1983-0
+
+!*VT100*kanjiMode:		jis
+!*VT100*lineSpace:		0
+
+!*VT100*textColor0:		Black
+!*VT100*textColor1:		Red
+!*VT100*textColor2:		Green
+!*VT100*textColor3:		Yellow
+!*VT100*textColor4:		Blue
+!*VT100*textColor5:		Magenta
+!*VT100*textColor6:		Cyan
+!*VT100*textColor7:		White
+
+*tekMenu.Label:  Tek Options
+*tekMenu*tektextlarge*Label:  Large Characters
+*tekMenu*tektext2*Label:  #2 Size Characters
+*tekMenu*tektext3*Label:  #3 Size Characters
+*tekMenu*tektextsmall*Label:  Small Characters
+*tekMenu*tekpage*Label:  PAGE
+*tekMenu*tekreset*Label:  RESET
+*tekMenu*tekcopy*Label:  COPY
+*tekMenu*vtshow*Label:  Show VT Window
+*tekMenu*vtmode*Label:  Switch to VT Mode
+*tekMenu*tekhide*Label:  Hide Tek Window
+
+*tek4014*fontLarge: 9x15
+*tek4014*font2: 8x13
+*tek4014*font3: 6x13
+*tek4014*fontSmall: 6x10
+
+!
+! Added for Debian
+!
+*VT100*KanjiMode: euc
+*VT100.Translations: #override ~Shift ~Ctrl ~Meta <Key>Delete: string("\033[3~")\n\
+                               ~Shift ~Ctrl ~Meta <Key>Home: string("\033[1~")\n\
+                               ~Shift ~Ctrl ~Meta <Key>End: string("\033[4~")
+!
+! import from Vine Linux bellow ;-)
+!
+
+! for kinput2
+!*allowSendEvents: true
+
+! kterm use XMODIFIERS environment for XIM
+!*VT100*translations: #override \
+!  Shift<Key>space: open-im(XMODIFIERS) \n\
+*VT100*translations: #override \
+Shift<Btn4Down>,<Btn4Up>:scroll-back(1,line)\n\
+Shift<Btn5Down>,<Btn5Up>:scroll-forw(1,line)\n\
+Ctrl<Btn4Down>,<Btn4Up>:scroll-back(1,page)\n\
+Ctrl<Btn5Down>,<Btn5Up>:scroll-forw(1,page)\n\
+<Btn4Down>,<Btn4Up>:scroll-back(1,halfpage)\n\
+<Btn5Down>,<Btn5Up>:scroll-forw(1,halfpage)\n\
+
+!# In the scrollbar we map buttons 5 & 4 to 1 and 2 otherwise, core dump
+!# This will move proportionnaly to cursor position but we dont know how to
+!# program the same exact behavior as in the text widget.
+KTerm*VT100.Scrollbar.translations: #override\n\
+<Btn5Down>: StartScroll(Forward)\n\
+<Btn4Down>: StartScroll(Backward)\n\
+
+! selection characters with double click
+*charClass:        33:48,37:48,45-47:48,58:48,64:48,126-127:48

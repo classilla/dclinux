@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+
+if [ "$1" = "upgrade" ]; then
+  if [ -f /var/state/logrotate/status ]; then
+    mkdir -m 755 -p /var/lib/logrotate
+    mv /var/state/logrotate/status /var/lib/logrotate/status
+  fi
+fi

@@ -1,0 +1,27 @@
+#! /bin/sh
+#
+# network	Establish the network connection.
+#
+# Version:	@(#)network  2.2  19-Apr-1999 miquels@cistron.nl
+#
+
+case "`uname -r`" in
+        2.0.*) ADDROUTE="yes" ;;
+        *)     ADDROUTE="" ;;
+esac
+
+# Configure the loopback device.
+ifconfig lo 127.0.0.1
+[ "$ADDROUTE" ] && route add -net 127.0.0.0 dev lo
+
+# Configure the ethernet device or start SLIP/PPP below.
+IPADDR="192.168.1.1"		# Your IP address.
+NETMASK="255.255.255.0"		# Your netmask.
+NETWORK="192.168.1.0"		# Your network address.
+BROADCAST="192.168.1.255"	# Your broadcast address (blank if none).
+GATEWAY=""			# Your gateway address.
+
+ifconfig eth0 ${IPADDR} netmask ${NETMASK} broadcast ${BROADCAST}
+[ "$ADDROUTE" ] && route add -net ${NETWORK}
+[ "$GATEWAY" ]  && route add default gw ${GATEWAY} 
+

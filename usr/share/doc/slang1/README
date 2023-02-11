@@ -1,0 +1,21 @@
+-*- text -*-
+
+**** Note: If you are upgrading from previous 1.0 BETA versions, you
+           may need to recompile your applications if they are
+	   dynamically linked to a BETA version.  Failure to do so may
+	   result in a core-dump of your application.
+
+**** Note: If you are upgrading from version 0.99-XX, read UPGRADE.txt
+           for important information.
+
+Installation instructions:
+
+S-Lang has been successfully compiled and tested on many platforms and OSs
+(Unix/VMS/PC-MSDOS/OS2).  Building the S-Lang library requires a C compiler
+that understands function prototypes.  On SunOS, you will need gcc.
+
+  VMS: INSTALL.vms
+  OS/2, MSDOS, see: INSTALL.pc
+  Unix: see INSTALL.unx
+
+See doc/README for more information.

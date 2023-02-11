@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libopenldap-runtime -a -d /usr/share/doc/libopenldap-runtime ]; then
+		ln -sf ../share/doc/libopenldap-runtime /usr/doc/libopenldap-runtime
+	fi
+fi
+# End automatically added section

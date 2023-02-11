@@ -1,0 +1,9 @@
+LoadModule: anon_auth_module /usr/lib/apache/modules/mod_auth_anon.so
+LoadModule: anon_auth_module /usr/lib/apache/1.3/mod_auth_anon.so
+Directives:
+ Anonymous
+ Anonymous_LogEmail
+ Anonymous_VerifyEmail
+ Anonymous_NoUserID
+ Anonymous_Authoritative
+Description: Support for anonymous-FTP authentication

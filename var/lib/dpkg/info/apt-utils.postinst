@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/apt-utils -a -d /usr/share/doc/apt-utils ]; then
+		ln -sf ../share/doc/apt-utils /usr/doc/apt-utils
+	fi
+fi
+# End automatically added section

@@ -1,0 +1,42 @@
+/*
+ * Feiertage
+ *
+ * $FreeBSD: src/usr.bin/calendar/calendars/de_DE.ISO_8859-1/calendar.feiertag,v 1.6 1999/08/28 00:59:25 peter Exp $
+ */
+
+#ifndef _de_DE_ISO_8859_1_feiertag_
+#define _de_DE_ISO_8859_1_feiertag_
+
+LANG=de_DE.ISO_8859-1
+
+/* arbeitsfreie staatliche Feiertage */
+Jan 01	Neujahr
+May 01	Maifeiertag
+Oct 03	Tag der deutschen Einheit
+
+/*  arbeitsfreie christliche Feiertage */
+Easter-2	Karfreitag
+Easter		Ostersonntag
+Easter+1 	Ostermontag
+Easter+49	Pfingstsonntag
+Easter+50	Pfingstmontag
+Easter+39	Christi Himmelfahrt
+
+/*  Gedenktage - nicht arbeitsfreie Feiertage :-( */
+Jun 17	Arbeiteraufstand am 17. Juni 1953
+/* ??/?? Befreiung des KZs Auschwitz */
+
+/* Jahreszeiten */
+Mar 21*	Frühlingsanfang
+Jun 21*	Sommeranfang
+Sep 21*	Herbstanfang
+Dec 21*	Winteranfang	
+
+/* Sommer- und Winterzeit */
+03/SundayLast	Anfang der Sommerzeit
+10/SundayLast	Ende der Sommerzeit
+
+/* Blumenverkäufer */
+May Sun+2 	Muttertag
+
+#endif /*! _de_DE_ISO_8859_1_feiertag_ */

@@ -1,0 +1,172 @@
+                         Information for i740 Users
+
+                           Precision Insight, Inc.
+
+                              18 February 1999
+
+1.  Supported Hardware
+
+   o Intel 740 based cards
+
+2.  Features
+
+   o Full support for 8, 15, 16, 24 and 32 bit per pixel depths.
+
+   o Hardware cursor support to reduce sprite flicker.
+
+   o Hardware accelerated 2D drawing engine support for 8, 15, 16 and 24 bit
+     per pixel depths.
+
+   o Support for high resolution video modes up to 1600x1200.
+
+   o Support for doublescan video modes (e.g., 320x200 and 320x240).
+
+   o Support for gamma correction at all pixel depths.
+
+   o Fully programmable clock supported.
+
+   o Robust text mode restore for VT switching.
+
+3.  Technical Notes
+
+   o Hardware acceleration is not possible in 32 bit per pixel depth.
+
+   o Interlace modes cannot be supported.
+
+4.  Reported Working Video Cards
+
+   o Real3D Starfighter AGP
+
+   o Real3D Starfighter PCI
+
+   o Diamond Stealth II/G460 AGP
+
+   o 3DVision-i740 AGP
+
+   o ABIT G740 8MB SDRAM
+
+   o Acorp AGP i740
+
+   o AGP 2D/3D V. 1N, AGP-740D
+
+   o AOpen AGP 2X 3D Navigator PA740
+
+   o ARISTO i740 AGP (ART-i740-G)
+
+   o ASUS AGP-V2740
+
+   o Atrend (Speedy) 3DIO740 AGP (ATC-2740)
+
+   o Chaintech AGP-740D
+
+   o EliteGroup(ECS) 3DVision-i740 AGP
+
+   o EONtronics Picasso 740
+
+   o EONtronics Van Gogh
+
+   o Everex MVGA i740/AG
+
+   o Flagpoint Shocker i740 8MB
+
+   o Gainward CardExpert 740 8MB
+
+   o Genoa Systems Phantom 740
+
+   o Gigabyte Predator i740 8MB AGP
+
+   o Hercules Terminator 128 2X/i AGP
+
+   o HOT-158 (Shuttle)
+
+   o Intel Express 3D AGP
+
+   o Jaton Video-740 AGP 3D
+
+   o Jetway J-740-3D 8MB AGP, i740 AGP 3D
+
+   o Joymedia Apollo 7400
+
+   o Leadtek Winfast S900
+
+   o Machspeed Raptor i740 AGP 4600
+
+   o Magic-Pro MP-740DVD
+
+   o MAXI Gamer AGP 8 MB
+
+   o Palit Daytona AGP740
+
+   o PowerColor C740 (SG/SD) AGP
+
+   o QDI Amazing I
+
+   o Soyo AGP (SY-740 AGP)
+
+   o Spacewalker Hot-158
+
+   o VideoExcel AGP 740
+
+   o ViewTop ZeusL 8MB
+
+   o Winfast S900 i740 AGP 8MB
+
+5.  Configuration
+
+The driver auto-detects all device information necessary to initialize the
+card.  The only lines you need in the "Device" section of your XF86Config
+file are:
+
+            Section "Device"
+                Identifier "i740"
+            EndSection
+
+or let xf86config or XF86Setup do this for you.
+
+However, if you have problems with auto-detection, you can specify:
+
+   o VideoRam - in kilobytes
+
+   o DacSpeed - in MHz
+
+   o MemBase  - physical address of the linear framebuffer
+
+   o IOBase   - physical address of the memory mapped IO registers
+
+6.  Driver Options
+
+   o "hw_cursor" - request hardware cursor (default)
+
+   o "sw_cursor" - software cursor only
+
+   o "no_accel"  - software rendering only
+
+   o "sgram"     - force the use of SGRAM timing info
+
+   o "sdram"     - force the use of SDRAM timing info
+
+Note: the i740 X server should automatically detect whether your card has
+SGRAM or SDRAM.  Use the "sgram" and "sdram" options if it is incorrectly
+detected.
+
+7.  Known Limitations
+
+   o Certain drawing operations are very slow when using 24 bit per pixel
+     depth mode.  We hope to fix this in a future release.
+
+8.  Author
+
+   o Kevin E. Martin <kevin@precisioninsight.com>
+
+This driver was donated to The XFree86 Project by:
+
+         Precision Insight, Inc.
+         Cedar Park, TX
+         USA
+
+http://www.precisioninsight.com
+
+     Generated from XFree86: $
+
+
+$XFree86: xc/programs/Xserver/hw/xfree86/doc/README.i740,v 1.1.2.3 1999/06/25 08:56:52 hohndel Exp $

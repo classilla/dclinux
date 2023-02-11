@@ -1,0 +1,79 @@
+This is netkit-base-0.10 for Linux.
+
+This package updates the inetd, ping, rpcgen, and rpcinfo from
+NetKit-0.09. NetKit as a package no longer exists. To do a full update
+of NetKit-0.09 please consult NetKit.txt from your local ftp archive.
+
+Contents:
+	This package contains inetd, ping, rpcgen, and rpcinfo.
+
+	If you're reading this off a CD, go right away and check the
+	net archives for later versions and security fixes.
+	
+Requirements: (I know these work; you can probably use much earlier 
+versions of libc, gcc, or the kernel.)
+
+	libc 5.4 or higher 
+		Older libc versions will work but anything before 5.4.6 
+		includes some nasty security bugs. All the NetKit programs 
+		are believed immune to these, but the rest of your system 
+		probably isn't... 
+
+		Note: libc 5.0.x is not supported and won't work.
+		Note: glibc (aka libc 6.x) may or may not work with
+		this release.
+
+	linux 2.0 or higher 
+		Use of 1.2.x kernel versions is not recommended in general.
+		NetKit itself will probably work with anything since 0.99pl14,
+		although some hacking would probably be required.
+
+	gcc 2.7.2 or higher
+		Please get the strength-reduce fix if you don't have it.
+
+Please make sure your header files in /usr/include match your libc
+version installed in /lib and /usr/lib. If you have weird problems
+this is the most likely culprit.
+
+
+Installation:
+	Do "./configure", or edit MCONFIG to set the configuration options. 
+
+	If you are using glibc 1.99 or other pre-2.0 versions of glibc,
+	apply "oldglibc.patch" by reading the directions in the patch file.
+
+	Do "make".
+	Do "make install" as root to install everything. Save backup copies 
+	  of important tools, or confirm the new ones work first. Etc. We 
+	  warned you.
+
+Security:
+	netkit-inetd-0.10 fixes an issue with group list handling that
+	could cause trouble if inetd were restarted from the command
+	line. This is presently believed to be a nonissue but it never
+	hurts to be careful.
+
+	netkit-inetd-0.10 fixes a denial of service problem with the
+	daytime port.
+
+	NetKit-0.09 contained other fixes for now well-known security
+	problems. Please don't use old versions.
+
+Bugs:
+	If something doesn't compile for you, send diffs. If you can't
+	send diffs, send the compiler's error output.
+
+	If it compiles but doesn't work, send as complete a bug report as 
+	you can. Patches and fixes are welcome, as long as you describe 
+	adequately what they're supposed to fix. Please, one patch per
+	distinct fix.
+
+	Be sure to send all correspondence in e-mail. Postings to netnews 
+	will not be seen due to the enormous volume.
+
+	Please don't report known bugs (see the BUGS file(s)) unless you
+	are including fixes. :-)
+
+
+David A. Holland	dholland@hcs.harvard.edu
+								8-Mar-1997

@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/netkit-ping -a -d /usr/share/doc/netkit-ping ]; then
+		ln -sf ../share/doc/netkit-ping /usr/doc/netkit-ping
+	fi
+fi
+# End automatically added section

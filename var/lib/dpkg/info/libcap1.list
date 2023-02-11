@@ -1,0 +1,11 @@
+/.
+/lib
+/lib/libcap.so.1.10
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libcap1
+/usr/share/doc/libcap1/copyright
+/usr/share/doc/libcap1/changelog.gz
+/usr/share/doc/libcap1/changelog.Debian.gz
+/lib/libcap.so.1

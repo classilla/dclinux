@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+SEQFILE=/var/spool/cron/atjobs/.SEQ
+OLDSEQFILE=$SEQFILE-old
+
+olddoc=/usr/doc
+docdir=/usr/share/doc
+
+if [ -f $OLDSEQFILE ]
+then
+        mv -f $OLDSEQFILE $SEQFILE
+fi
+if [ -f /etc/suid.conf -a -x /usr/sbin/suidregister ]; then
+    suidunregister -s at /usr/bin     # Undo bogus suidregister from 3.1.8-8
+    suidregister -s at /usr/bin/at root root 4755
+fi
+chown daemon.daemon /var/spool/cron/atjobs /var/spool/cron/atspool /var/spool/cron/atjobs/.SEQ
+update-rc.d atd defaults 89 > /dev/null
+
+# Add FSSTND compatability symlink to obsolete /usr/doc
+if [ "$1" = "configure" ]; then
+    if [ -d ${olddoc} -a ! -e ${olddoc}/at -a -d ${docdir}/at ] ; then
+	ln -sf ../share/doc/at ${olddoc}/at
+    fi
+fi
+
+/etc/init.d/atd start

@@ -1,0 +1,25 @@
+This package was adopteded by Eric Gillespie, Jr. <epg@debian.org> on
+Sat, 14 Apr 2001 11:47:13 -0500.
+
+It was downloaded from http://www.cvshome.org/
+
+See README for a list of the upstream authors.
+
+Copyright:
+
+				CVS Kit
+
+		Copyright (c) 1993-1994 Brian Berliner
+	   Copyright (c) 1992 Brian Berliner and Jeff Polk
+	       Copyright (c) 1989-1992, Brian Berliner
+			 All Rights Reserved
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 1, or (at your option)
+    any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.

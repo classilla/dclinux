@@ -1,0 +1,144 @@
+Template: cvs/read_cvsconf
+Type: boolean
+Default: false
+Description: has /etc/cvs.conf been merged into debconf?
+
+Template: cvs/repositories
+Type: string
+Default: /var/lib/cvs
+Description: Where are your repositories?
+ List the directories that are the roots of your repositories, separated
+ by colons.
+ .
+ These repositories can be exported by the pserver, have their history files
+ rotated automatically every week, and general repository security checks
+ will be performed on them.
+ .
+ If you wish to create a new repository, enter the path where you wish to
+ create it. You will then be given the option of creating it later.
+
+Template: cvs/badrepositories
+Type: select
+Choices: create, ignore, reenter
+Default: create
+Description: Do you wish to fix invalid repositories?
+ The following items you entered are not directories or do not contain a
+ CVSROOT subdirectory: ${badreps}.
+ .
+ If you have not yet created these repositories, you can create them by
+ selecting 'create' here. You could also select 'ignore' and use the
+ 'cvs-makerepos' command to create them, or create them individually
+ using 'cvs init'.
+ .
+ Do you wish to re-enter your repositories list, or ignore the errors and
+ continue anyway?
+
+Template: cvs/rotatehistory
+Type: select
+Choices: yes, no, individual
+Default: no
+Description: Do you want the history files in your repositories rotated weekly?
+ Weekly rotation of history files is primarily useful for servers with a lot
+ of activity. The script /etc/cron.weekly/cvs will rotate the history files.
+ Select "individual" if you want to control rotation on a per-repository basis.
+
+Template: cvs/rotate_individual
+Type: boolean
+Default: true
+Description: Rotate the history files of the repository in ${repos}?
+ Should the history files of the repository in ${repos} be rotated each
+ week?
+
+Template: cvs/rotatekeep_nondefault
+Type: select
+Choices: yes, no, individual
+Default: no
+Description: Select how many previous history files should be kept?
+ When rotating history files in repositories, by default the previous
+ 7 are kept. If you want to change this number globally, select yes,
+ or for individual repositories, select individual. Otherwise, select
+ no.
+
+Template: cvs/rotatekeep
+Type: string
+Default: 7
+Description: How many previous history files should be kept? (global)
+ How many previous history files do you want kept when the history
+ files in your repositories are rotated weekly? The default is 7.
+
+Template: cvs/rotatekeep_individual
+Type: string
+Default: 7
+Description: How many history files should be kept in ${repos}?
+ How many previous history files do you want kept when the history
+ files in ${repos} are rotated weekly? The default is 7.
+
+Template: cvs/pserver
+Type: boolean
+Default: false
+Description: Should the CVS pserver be enabled?
+ CVS pserver is a client-to-server mechanism which can be used by CVS as
+ a replacement for the standard "server" method, which uses "rsh", or an
+ rsh compatible program, such as ssh. It is more efficient than the standard
+ server protocol, also supporting its own password files, making it more
+ secure. However, it may be a security risk, and used to contain a security
+ problem whereby a remote connection may have been able to read the passwd
+ or other security-related files on the system.
+ .
+ For this reason, it is recommended that you switch this option OFF, unless
+ you know that you want it specifically. CVS now only allows access to
+ particular repositories specified on the command line.
+ .
+ CVS pserver will be installed in inetd, using tcpd wrappers if you answer
+ "yes" to this question.
+
+Template: cvs/pserver_repos
+Type: select
+Choices: all, some
+Default: all
+Description: Do you want all your repositories exported via pserver?
+ If you want to configure pserver to export only some of your repositories
+ rather than all of them, say 'some' here.
+
+Template: cvs/pserver_repos_individual
+Type: boolean
+Default: yes
+Description: Do you want the repository ${repos} exported via pserver?
+ If you want the repository in ${repos} exported via pserver, say
+ yes here, otherwise say no.
+
+Template: cvs/pserver_setspawnlimit
+Type: boolean
+Default: yes
+Description: Change the maximum pserver processes spawned in one minute?
+ When running a pserver, inetd's default limit of allowing 40 connections in
+ 1 minute can easily be exceeded if a script calls CVS individually on many
+ files over a pserver connection. This limit is designed to stop system load
+ from rising too high if the service is continually failing.
+ .
+ Thus a more sensible default limit for most systems is 400. However, if you
+ are running an inetd clone which does not support the syntax
+ "nowait.[limit]", you will need to not set a limit using this method.
+
+Template: cvs/pserver_spawnlimit
+Type: string
+Default: 400
+Description: What should be the inetd spawn limit for CVS pserver?
+ When running a pserver, inetd's default limit of allowing 40 connections in
+ 1 minute can easily be exceeded if a script calls CVS individually on many
+ files over a pserver connection. This limit is designed to stop system load
+ from rising too high if the service is continually failing.
+ .
+ Thus a more sensible default limit for most systems is 400.
+
+Template: cvs/pserver_warning
+Type: note
+Description: CVS pserver may have been inadvertently disabled
+ WARNING: If you were running a pserver, due to a bug in the packaging
+ of your previous version of CVS, it will have been disabled temporarily
+ during the upgrade, and its status restored from the Debian configuration.
+ .
+ If you setup the pserver manually, you will have to do so again.
+ .
+ Also note that now to setup the pserver manually you should set the
+ pserver option in the configuration to "manual".

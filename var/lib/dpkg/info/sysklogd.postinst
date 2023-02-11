@@ -1,0 +1,85 @@
+#! /bin/sh
+
+set -e
+
+if [ -z "`ls /dev/xconsole 2> /dev/null`" ]; then
+    mknod -m 640 /dev/xconsole p
+else
+    chmod 0640 /dev/xconsole
+fi
+chown root.adm /dev/xconsole
+
+if [ ! -d /var/log/news ] \
+	&&  grep -q ^news: /etc/passwd \
+	&& grep -q ^news: /etc/group 
+then
+    mkdir /var/log/news
+    chmod 2755 /var/log/news
+    chown news.news /var/log/news
+fi
+
+if [ "$1" = "configure" ]
+then
+    case $2 in
+	1.2-*)
+cat<<EOT
+The default behaviour of syslogd has altered from 1.2 to 1.3.  By default
+*no* messages from the UDP port are accepted.
+
+Read the documentation in /usr/doc/sysklogd carefully.  Some important
+things have been changed!
+
+Press [Enter] to continue
+EOT
+	read xyz
+	;;
+  esac
+fi
+
+if [ "$1" = "configure" ]
+then
+    if [ -f /etc/init.d/sysklogd ]
+    then
+	set +e
+	sh /etc/init.d/sysklogd stop
+	set -e
+    fi
+
+    update-rc.d sysklogd defaults 10 90 >/dev/null
+
+    # Create logfiles with correct file modes
+    #
+    for LOG in `syslogd-listfiles` `syslogd-listfiles --auth`
+    do
+	if [ ! -f $LOG ]; then
+	    touch $LOG
+	fi
+	chown root.adm $LOG
+	chmod 640 $LOG
+    done
+
+    # Tidying up some old stuff
+    #
+    rm -f /etc/rc?.d/[SK]*.syslogd
+
+    # restarting daemon
+    #
+    if [ -f /etc/init.d/sysklogd ]
+    then
+	set +e
+	sh /etc/init.d/sysklogd start
+	set -e
+    fi
+
+    # Maintain transition to FHS
+    if [ "$1" = "configure" ]
+    then
+	if [ -d /usr/doc -a ! -e /usr/doc/sysklogd -a -d /usr/share/doc/sysklogd ]
+	then
+	    ln -sf ../share/doc/sysklogd /usr/doc/sysklogd
+	fi
+    fi
+fi
+
+
+exit 0

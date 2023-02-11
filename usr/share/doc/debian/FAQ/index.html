@@ -1,0 +1,256 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+
+<hr>
+
+<h1>The Debian GNU/Linux FAQ</h1>
+
+<hr>
+
+<h2><a name="abstract">Abstract</a></h2>
+
+<p>
+This document answers questions frequently asked about Debian GNU/Linux.
+
+<h2><a name="copyright">Copyright Notice</a></h2>
+
+<p>
+Copyright &copy; 1996-2000 by Software in the Public Interest
+
+<p>
+Permission is granted to make and distribute verbatim copies of this document
+provided the copyright notice and this permission notice are preserved on all
+copies.
+
+<p>
+Permission is granted to copy and distribute modified versions of this document
+under the conditions for verbatim copying, provided that the entire resulting
+derived work is distributed under the terms of a permission notice identical to
+this one.
+
+<p>
+Permission is granted to copy and distribute translations of this document into
+another language, under the above conditions for modified versions, except that
+this permission notice may be included in translations approved by the Free
+Software Foundation instead of in the original English.
+
+</p>
+
+<hr>
+
+<h2><a name="contents">Contents</a></h2>
+
+<ul>
+<li><a href="ch-basic_defs.html">1 Definitions and Overview</a>
+<ul>
+<li><a href="ch-basic_defs.html#s-whatisdebian">1.1</a> What is Debian GNU/Linux?
+<li><a href="ch-basic_defs.html#s-linux">1.2</a> OK, now I know what Debian is... what is Linux?!
+<li><a href="ch-basic_defs.html#s-hurd">1.3</a> What is this new &quot;Hurd&quot; thing?
+<li><a href="ch-basic_defs.html#s-difference">1.4</a> What is the difference between Debian GNU/Linux and other Linux distributions?
+<li><a href="ch-basic_defs.html#s-gnu">1.5</a> How does the Debian project fit in or compare with the Free Software Foundation's GNU project?
+<li><a href="ch-basic_defs.html#s-pronunciation">1.6</a> How does one pronounce Debian and what does this word mean?
+</ul>
+<li><a href="ch-getting.html">2 Getting and Installing Debian GNU/Linux</a>
+<ul>
+<li><a href="ch-getting.html#s-version">2.1</a> What is the latest version of Debian?
+<li><a href="ch-getting.html#s-boot-floppies">2.2</a> Where/how can I get the Debian installation disks?
+<li><a href="ch-getting.html#s-cdrom">2.3</a> How do I install the Debian from CD-ROMs?
+<li><a href="ch-getting.html#s-cdimages">2.4</a> I have my own CD-writer, are there CD images available somewhere?
+<li><a href="ch-getting.html#s-floppy">2.5</a> Can I install it from a pile of floppy disks?
+<li><a href="ch-getting.html#s-remoteinstall">2.6</a> Can I get and install Debian directly from a remote Internet site?
+<li><a href="ch-getting.html#s-tape">2.7</a> Can I get and install Debian from a tape device?
+</ul>
+<li><a href="ch-compat.html">3 Compatibility issues</a>
+<ul>
+<li><a href="ch-compat.html#s-arches">3.1</a> On what hardware architectures/systems does Debian GNU/Linux run?
+<li><a href="ch-compat.html#s-otherdistribs">3.2</a> How compatible is Debian with other distributions of Linux?
+<li><a href="ch-compat.html#s-otherunices">3.3</a> How source code compatible is Debian with other Unix systems?
+<li><a href="ch-compat.html#s-otherpackages">3.4</a> Can I use Debian packages (&quot;.deb&quot; files) on my RedHat/Slackware/... Linux system? Can I use RedHat packages (&quot;.rpm&quot; files) on my Debian GNU/Linux system?
+<li><a href="ch-compat.html#s-a.out">3.5</a> Is Debian able to run my very old &quot;a.out&quot; programs?
+<li><a href="ch-compat.html#s-libc5">3.6</a> Is Debian able to run my old libc5 programs?
+<li><a href="ch-compat.html#s-libc5-compile">3.7</a> Can Debian be used to compile libc5 programs?
+<li><a href="ch-compat.html#s-non-debian-programs">3.8</a> How should I install a non-Debian program?
+<li><a href="ch-compat.html#s-xlib6">3.9</a> Why do I get &quot;Can't find libX11.so.6&quot; errors when I try to run <samp>foo</samp>?
+<li><a href="ch-compat.html#s-termcap">3.10</a> Why can't I compile programs that require libtermcap?
+<li><a href="ch-compat.html#s-accelx">3.11</a> Why can't I install AccelX?
+<li><a href="ch-compat.html#s-motifnls">3.12</a> Why do my old XFree 2.1 Motif applications crash?
+</ul>
+<li><a href="ch-software.html">4 Software available in the Debian system</a>
+<ul>
+<li><a href="ch-software.html#s-apps">4.1</a> What types of applications and development software are available for Debian GNU/Linux?
+<li><a href="ch-software.html#s-softwareauthors">4.2</a> Who wrote all that software?
+<li><a href="ch-software.html#s-pkglist">4.3</a> How can I get a current list of programs that have been packaged for the Debian project?
+<li><a href="ch-software.html#s-no-devs">4.4</a> Why aren't there any libfoo.so files in Debian library packages?
+<li><a href="ch-software.html#s-missing">4.5</a> What is missing from Debian GNU/Linux?
+<li><a href="ch-software.html#s-java">4.6</a> (How) Does Debian support Java?
+<li><a href="ch-software.html#s-isitdebian">4.7</a> How can I check that I am using a Debian system, and what version is it?
+<li><a href="ch-software.html#s-nonenglish">4.8</a> How does Debian support non-English languages?
+<li><a href="ch-software.html#s-usexports">4.9</a> What about the US export regulation limitations?
+<li><a href="ch-software.html#s-pine">4.10</a> Where is pine?
+</ul>
+<li><a href="ch-ftparchives.html">5 The Debian FTP archives</a>
+<ul>
+<li><a href="ch-ftparchives.html#s-dirtree">5.1</a> What are all those directories at the Debian FTP archives?
+<li><a href="ch-ftparchives.html#s-dists">5.2</a> How many Debian distributions are there in the <samp>dists</samp> directory?
+<li><a href="ch-ftparchives.html#s-codenames">5.3</a> What are all those names like slink, potato, etc.?
+<li><a href="ch-ftparchives.html#s-frozen">5.4</a> What about &quot;frozen&quot;?
+<li><a href="ch-ftparchives.html#s-oldcodenames">5.5</a> Which other codenames have been used in the past?
+<li><a href="ch-ftparchives.html#s-sourceforcodenames">5.6</a> Where do these codenames come from?
+<li><a href="ch-ftparchives.html#s-sid">5.7</a> What about &quot;sid&quot;?
+<li><a href="ch-ftparchives.html#s-stable">5.8</a> What does the stable directory contain?
+<li><a href="ch-ftparchives.html#s-unstable">5.9</a> What does the unstable directory contain?
+<li><a href="ch-ftparchives.html#s-archsections">5.10</a> What are all those directories inside <samp>dists/stable/main</samp>?
+<li><a href="ch-ftparchives.html#s-source">5.11</a> Where is the source code?
+<li><a href="ch-ftparchives.html#s-otherdirs">5.12</a> Ok, what about the other directories, not inside <samp>dists</samp>?
+</ul>
+<li><a href="ch-pkg_basics.html">6 Basics of the Debian Package Management System</a>
+<ul>
+<li><a href="ch-pkg_basics.html#s-package">6.1</a> What is a Debian package?
+<li><a href="ch-pkg_basics.html#s-deb-format">6.2</a> What is the format of a Debian binary package?
+<li><a href="ch-pkg_basics.html#s-pkgname">6.3</a> Why are Debian package file names so long?
+<li><a href="ch-pkg_basics.html#s-controlfile">6.4</a> What is a Debian control file?
+<li><a href="ch-pkg_basics.html#s-conffile">6.5</a> What is a Debian conffile?
+<li><a href="ch-pkg_basics.html#s-maintscripts">6.6</a> What is a Debian preinst, postinst, prerm, and postrm script?
+<li><a href="ch-pkg_basics.html#s-priority">6.7</a> What is a Required/Important/Standard/Optional/Extra package?
+<li><a href="ch-pkg_basics.html#s-virtual">6.8</a> What is a Virtual Package?
+<li><a href="ch-pkg_basics.html#s-depends">6.9</a> What is meant by saying that a package Depends/Recommends/Suggests/Conflicts/Replaces/Provides another package?
+<li><a href="ch-pkg_basics.html#s-pre-depends">6.10</a> What is meant by Pre-Depends?
+<li><a href="ch-pkg_basics.html#s-pkgstatus">6.11</a> What is meant by unknown/install/remove/purge/hold in the package status?
+<li><a href="ch-pkg_basics.html#s-puttingonhold">6.12</a> How do I put a package on hold?
+<li><a href="ch-pkg_basics.html#s-sourcepkgs">6.13</a> How do I install a source package?
+<li><a href="ch-pkg_basics.html#s-sourcebuild">6.14</a> How do I build binary packages from a source package?
+<li><a href="ch-pkg_basics.html#s-creatingdebs">6.15</a> How do I create Debian packages myself?
+</ul>
+<li><a href="ch-pkgtools.html">7 The Debian Package Management Tools</a>
+<ul>
+<li><a href="ch-pkgtools.html#s-pkgprogs">7.1</a> What programs does Debian provide for managing its packages?
+<ul>
+<li><a href="ch-pkgtools.html#s-dpkg">7.1.1</a> dpkg
+<li><a href="ch-pkgtools.html#s-dselect">7.1.2</a> dselect
+<li><a href="ch-pkgtools.html#s-dpkg-deb">7.1.3</a> dpkg-deb
+<li><a href="ch-pkgtools.html#s-apt-get">7.1.4</a> apt-get
+<li><a href="ch-pkgtools.html#s-dpkg-split">7.1.5</a> dpkg-split
+</ul>
+<li><a href="ch-pkgtools.html#s-updaterunning">7.2</a> Debian claims to be able to update a running program; how is this accomplished?
+<li><a href="ch-pkgtools.html#s-whatpackages">7.3</a> How can I tell what packages are already installed on a Debian system?
+<li><a href="ch-pkgtools.html#s-filesearch">7.4</a> How can I find out what package produced a particular file?
+</ul>
+<li><a href="ch-uptodate.html">8 Keeping Your Debian System Up To Date</a>
+<ul>
+<li><a href="ch-uptodate.html#s-libc5to6upgrade">8.1</a> How can I upgrade my Debian 1.3.1 (or earlier) distribution, based on libc5, to 2.0 (or later), based on libc6?
+<li><a href="ch-uptodate.html#s-howtocurrent">8.2</a> How can I keep my Debian system current?
+<ul>
+<li><a href="ch-uptodate.html#s-apt">8.2.1</a> APT
+<li><a href="ch-uptodate.html#s-dpkg-ftp">8.2.2</a> dpkg-ftp
+<li><a href="ch-uptodate.html#s-mirror">8.2.3</a> mirror
+<li><a href="ch-uptodate.html#s-dftp">8.2.4</a> dftp
+<li><a href="ch-uptodate.html#s-dpkg-mountable">8.2.5</a> dpkg-mountable
+</ul>
+<li><a href="ch-uptodate.html#s-upgradesingle">8.3</a> Must I go into single user mode in order to upgrade a package?
+<li><a href="ch-uptodate.html#s-savedebs">8.4</a> Do I have to keep all those .deb archive files on my disk?
+<li><a href="ch-uptodate.html#s-keepingalog">8.5</a> How can I keep a log of the packages I added to the system?
+</ul>
+<li><a href="ch-kernel.html">9 Debian and the kernel</a>
+<ul>
+<li><a href="ch-kernel.html#s-non-debian-kernel">9.1</a> Can I install and compile a kernel without some Debian-specific tweaking?
+<li><a href="ch-kernel.html#s-customkernel">9.2</a> What tools does Debian provide to build custom kernels?
+<li><a href="ch-kernel.html#s-custombootdisk">9.3</a> How can I make a custom boot floppy?
+<li><a href="ch-kernel.html#s-modules">9.4</a> What special provisions does Debian provide to deal with modules?
+<li><a href="ch-kernel.html#s-removeoldkernel">9.5</a> Can I safely de-install an old kernel package, and if so, how?
+</ul>
+<li><a href="ch-customizing.html">10 Customizing your installation of Debian GNU/Linux</a>
+<ul>
+<li><a href="ch-customizing.html#s-papersize">10.1</a> How can I ensure that all programs use the same paper size?
+<li><a href="ch-customizing.html#s-hardwareaccess">10.2</a> How can I provide access to hardware peripherals, without compromising security?
+<li><a href="ch-customizing.html#s-consolefont">10.3</a> How do I load a console font on startup the Debian way?
+<li><a href="ch-customizing.html#s-appdefaults">10.4</a> How can I configure an X11 program's application defaults?
+<li><a href="ch-customizing.html#s-booting">10.5</a> Every distribution seems to have a different boot-up method. Tell me about Debian's.
+<li><a href="ch-customizing.html#s-custombootscripts">10.6</a> It looks as if Debian does not use <samp>rc.local</samp> to customize the boot process; what facilities are provided?
+<li><a href="ch-customizing.html#s-interconffiles">10.7</a> How does the package management system deal with packages that contain configuration files for other packages?
+<li><a href="ch-customizing.html#s-divert">10.8</a> How do I override a file installed by a package, so that a different version can be used instead?
+<li><a href="ch-customizing.html#s-localpackages">10.9</a> How can I have my locally-built package included in the list of available packages that the package management system knows about?
+<li><a href="ch-customizing.html#s-diverse">10.10</a> Some users like mawk, others like gawk; some like vim, others like elvis; some like trn, others like tin; how does Debian support diversity?
+</ul>
+<li><a href="ch-support.html">11 Getting support for Debian GNU/Linux</a>
+<ul>
+<li><a href="ch-support.html#s-debiandocs">11.1</a> What other documentation exists on and for a Debian system?
+<li><a href="ch-support.html#s-onlineresources">11.2</a> Are there any on-line resources for discussing Debian?
+<li><a href="ch-support.html#s-mailinglistconduct">11.3</a> What is the code of conduct for the mailing lists?
+<ul>
+<li><a href="ch-support.html#s-advertising">11.3.1</a> Mailing list advertising policy
+</ul>
+<li><a href="ch-support.html#s-searchtools">11.4</a> Is there a quick way to search for information on Debian GNU/Linux?
+<li><a href="ch-support.html#s-buglogs">11.5</a> Are there logs of known bugs?
+<li><a href="ch-support.html#s-bugreport">11.6</a> How do I report a bug in Debian?
+</ul>
+<li><a href="ch-contributing.html">12 Contributing to the Debian project</a>
+<ul>
+<li><a href="ch-contributing.html#s-contrib">12.1</a> How can I become a Debian software developer?
+<li><a href="ch-contributing.html#s-contribresources">12.2</a> How can I contribute resources to the Debian project?
+<li><a href="ch-contributing.html#s-supportingorganizations">12.3</a> How can I contribute financially to the Debian project?
+<ul>
+<li><a href="ch-contributing.html#s-SPI">12.3.1</a> Software in the Public Interest
+<li><a href="ch-contributing.html#s-FSF">12.3.2</a> Free Software Foundation
+</ul>
+</ul>
+<li><a href="ch-redistrib.html">13 Redistributing Debian GNU/Linux in a commercial product</a>
+<ul>
+<li><a href="ch-redistrib.html#s-sellcds">13.1</a> Can I make and sell Debian CDs?
+<li><a href="ch-redistrib.html#s-packagednonfree">13.2</a> Can Debian be packaged with non-free software?
+<li><a href="ch-redistrib.html#s-childistro">13.3</a> I am making a special Linux distribution for a &quot;vertical market&quot;. Can I use Debian GNU/Linux for the guts of a Linux system and add my own applications on top of it?
+<li><a href="ch-redistrib.html#s-commercialdebs">13.4</a> Can I put my commercial program in a Debian &quot;package&quot; so that it installs effortlessly on any Debian system?
+</ul>
+<li><a href="ch-nexttime.html">14 What kind of changes should I expect to see in the next major release of Debian GNU/Linux?</a>
+<ul>
+<li><a href="ch-nexttime.html#s-security">14.1</a> Increased security
+<li><a href="ch-nexttime.html#s-i18n">14.2</a> Extended support for non-English users
+<li><a href="ch-nexttime.html#s-morearches">14.3</a> More architectures
+<li><a href="ch-nexttime.html#s-newkernel">14.4</a> Linux kernel 2.4
+<li><a href="ch-nexttime.html#s-newglibc">14.5</a> The GNU C Library 2.2
+</ul>
+<li><a href="ch-faqinfo.html">15 General information about the FAQ</a>
+<ul>
+<li><a href="ch-faqinfo.html#s-authors">15.1</a> Authors
+<li><a href="ch-faqinfo.html#s-feedback">15.2</a> Feedback
+<li><a href="ch-faqinfo.html#s-latest">15.3</a> Availability
+<li><a href="ch-faqinfo.html#s-docformat">15.4</a> Document format
+</ul>
+</ul>
+</p>
+
+<hr>
+
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

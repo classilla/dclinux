@@ -1,0 +1,63 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ]; then
+	if [ -e /usr/share/debconf/confmodule ]; then
+		. /usr/share/debconf/confmodule
+    		db_get netkit-inetd/inetd-dos-services; DISABLE_INETD_DOS="$RET"
+	else
+		DISABLE_INETD_DOS=true
+	fi
+fi
+
+if [ "$1" = "configure" ]; then
+        if [ "$DISABLE_INETD_DOS" = "true" -a -f /etc/inetd.conf ] &&
+	    egrep -q '(^chargen|^echo|^daytime.*udp.*internal|^time.*udp.*internal)' /etc/inetd.conf
+	then
+		sed -e 's/^chargen.*stream.*tcp.*nowait.*root.*internal/#&/' \
+		    -e 's/^chargen.*dgram.*udp.*wait.*root.*internal/#&/' \
+		    -e 's/^echo.*stream.*tcp.*nowait.*root.*internal/#&/' \
+		    -e 's/^echo.*dgram.*udp.*wait.*root.*internal/#&/' \
+		    -e 's/^daytime.*dgram.*udp.*wait.*root.*internal/#&/' \
+		    -e 's/^time.*dgram.*udp.*wait.*root.*internal/#&/' \
+		    /etc/inetd.conf >/etc/inetd.tmp
+
+		cp -a /etc/inetd.conf /etc/inetd.conf.dpkg-old
+		# if sed was successful: size of inetd.tmp > size of 
+		# /etc/inetd.conf
+		TMPSIZE=`cat /etc/inetd.tmp | wc -c`
+		OLDSIZE=`cat /etc/inetd.conf | wc -c`
+		if [ "$TMPSIZE" -gt "$OLDSIZE" ]; then
+			cp /etc/inetd.tmp /etc/inetd.conf
+		fi
+		rm -f /etc/inetd.tmp
+	fi
+
+
+	update-rc.d inetd defaults 20 >/dev/null 2>&1
+
+	if [ "$2" = "" ]; then
+		/etc/init.d/inetd start >&2
+	else
+		/etc/init.d/inetd restart >&2
+	fi
+fi
+
+## Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/netkit-inetd -a -d /usr/share/doc/netkit-inetd ]; then
+		ln -sf ../share/doc/netkit-inetd /usr/doc/netkit-inetd
+	fi
+fi
+# End automatically added section
+#
+
+# shouldn't be necessary? but without it the postinst just hangs on dpkg -i :(
+#
+# do i have to do this right at the end, or can i do it earlier, for that
+# matter?
+#
+# i may be meant to redirect 3>&1 or something equally weird here :-/
+
+if [ "$1" = "configure" ] && [ -e /usr/share/debconf/confmodule ]; then
+    db_stop 
+fi

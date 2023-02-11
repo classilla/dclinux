@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Make sure errors report (since we try to weed out potential spurious ones)
+set -e
+
+if [ "$1" = configure ]; then
+# Make sure ld knows about the new library
+    ldconfig
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libncurses5 -a -d /usr/share/doc/libncurses5 ]; then
+		ln -sf ../share/doc/libncurses5 /usr/doc/libncurses5
+	fi
+fi
+# End automatically added section
+

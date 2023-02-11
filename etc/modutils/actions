@@ -1,0 +1,7 @@
+# Special actions that are needed for some modules
+
+# The BTTV module does not load the tuner module automatically,
+# so do that in here
+post-install bttv insmod tuner
+post-remove bttv insmod tuner
+

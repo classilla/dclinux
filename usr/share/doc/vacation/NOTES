@@ -1,0 +1,57 @@
+The FreeBSD version (1.3.2.6 1999/09/05) has over the NetBSD version
+(1.16 1998/12/19):
+ -l flag (list database)
+ trailing \n on some syslog messages
+ strerror(errno) instead of the %m macro in syslog messages
+ isdelim() used in nsearch()
+
+The OpenBSD version (1.12 1999/06/03) has over the NetBSD version:
+ correctly initialises a zero-lenght vacation.db
+ no "vacation: " prefix in syslog messages
+ uses Return-Path instead of From_, if present
+ $SUBJECT substitution in the message
+
+The old debian version has over the FreeBSD version:
+ discard_exit()
+
+The sendmail version (8.68.4.3 2000/04/27) has over the NetBSD version:
+ -fmstxz
+ annoying license
+
+Things in the sourceforge version:
+ $FROM substituion
+ has -j
+ does stupid things with the envelope sender in readheaders(), mistaking
+  it for a bang path
+ wastes time passing the -F argument to sendmail
+ interval is set with -t, but can only be specified in weeks
+ installation procedure
+
+ The -r flag of the sourceforge version is a very, very dangerous thing
+ because automatically generated replies MUST go to the envelope sender.
+ This version also ignores the From header.
+
+Things in the AIX 4.3 version:
+ /usr/share/lib/vacation.def
+ interval set with -f (like -t in solaris, with unit)
+
+Things in the DU version:
+ /usr/share/lib/vacation.def
+ interval can't be set (1 week)
+
+Things in the HP-UX 10.20 version:
+ /usr/share/lib/vacation.def
+ interval can't be set (1 week)
+
+Things in the IRIX version (a very old BSD port):
+ interval set with -r (in days?)
+
+Things in the Solaris version:
+ /etc/mail/vacation.def (used in the automatical installation process)
+ interval set with -t (with unit)
+ installation procedure
+
+http://www.FreeBSD.org/cgi/cvsweb.cgi/src/usr.bin/vacation/?cvsroot=freebsd
+http://www.FreeBSD.org/cgi/cvsweb.cgi/basesrc/usr.bin/vacation/?cvsroot=netbsd
+http://www.FreeBSD.org/cgi/cvsweb.cgi/src/usr.bin/vacation/?cvsroot=openbsd
+

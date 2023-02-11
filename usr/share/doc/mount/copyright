@@ -1,0 +1,20 @@
+This is the Debian GNU/Linux prepackaged version of util-linux.
+
+This package was put together by Guy Maor <maor@debian.org> and later
+maintained by Sean 'Shaleh' Perry <shaleh@debian.org>.
+Current maintainer is Adrian Bunk <bunk@fs.tum.de>.
+
+
+It was downloaded from
+ftp://ftp.kernel.org/pub/linux/utils/util-linux/
+
+
+Copyright:
+
+getopt, more, and whereis may be redistributed under the terms of the
+UCB BSD license found on Debian systems in the file
+/usr/share/common-licenses/BSD
+
+Everything else may be redistributed under the terms of the GNU GPL
+Version 2 or later found on Debian systems in the file
+/usr/share/common-licenses/GPL

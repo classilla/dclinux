@@ -1,0 +1,18 @@
+#! /bin/sh
+
+if [ "$1" != "upgrade" ]
+then
+  update-alternatives --remove editor /usr/bin/nvi
+  update-alternatives --remove ex /usr/bin/nex
+  update-alternatives --remove vi /usr/bin/nvi
+  update-alternatives --remove view /usr/bin/nview
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/nvi ]; then
+	rm -f /usr/doc/nvi
+fi
+# End automatically added section
+
+
+exit 0

@@ -1,0 +1,6 @@
+auto
+/sbin/ipfwadm
+
+/sbin/ipfwadm-wrapper
+60
+

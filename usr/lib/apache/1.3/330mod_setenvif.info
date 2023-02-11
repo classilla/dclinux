@@ -1,0 +1,7 @@
+LoadModule: setenvif_module /usr/lib/apache/1.3/mod_setenvif.so
+Directives:
+ BrowserMatch
+ BrowserMatchNoCase
+ SetEnvif
+ SetEnvifNoCase
+Description: Support for recognizing UserAgents

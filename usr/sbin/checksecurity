@@ -1,0 +1,70 @@
+#!/bin/sh
+# Security checks script - run daily out of the system crontab
+
+set -e
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+
+
+umask 027
+cd /
+
+. /etc/checksecurity.conf
+
+TMPSETUID=${LOGDIR:=/var/log}/setuid.new.tmp
+
+if [ "$CHECKSECURITY_DISABLE" = "TRUE" ] ; then
+    exit
+fi
+
+#
+# Check for NFS/AFS mounts that are not nosuid/nodev
+#
+if [ ! "$CHECKSECURITY_NONFSAFS" = "TRUE" ] ; then
+   # temporarily disable error exit, as grep may give errors if no nfs/afs
+   # are mounted.
+   set +e
+   nfssys=`mount | grep -E 'nfs|afs' | grep -vE '\(.*(nosuid|noexec).*nodev.*\)'`
+   nfssyscnt=`echo $nfssys |grep "[a-z]"| wc -l`
+   set -e
+   if [ $nfssyscnt -gt 0 ] ; then
+      echo "The following NFS or AFS filesystems are mounted insecurely:"
+      echo ""
+      echo $nfssys
+      echo ""
+      echo "If this is intentional and you have supreme confidence in the"
+      echo "security of the server for these file systems, you may disable"
+      echo "this message by editing the value of CHECKSECURITY_NONFSAFS in"
+      echo "the file /etc/checksecurity.conf."
+   fi
+fi
+
+if [ "$CHECKSECURITY_NOFINDERRORS" = "TRUE" ] ; then
+	exec 9>&2
+	exec 2>/dev/null
+fi
+
+
+find `mount | grep -vE "$CHECKSECURITY_FILTER" | cut -d ' ' -f 3` \
+     -xdev \( -type f -perm +06000 -o -type b -o -type c \) \
+     -printf "%8i %5m %3n %-10u %-10g %9s %t %h/%f\n" \
+  | sort >$TMPSETUID
+
+if [ "$CHECKSECURITY_NOFINDERRORS" = "TRUE" ] ; then
+	exec 2>&9
+fi
+
+cd $LOGDIR
+
+test -f setuid.today || touch setuid.today
+
+if cmp -s setuid.today $TMPSETUID >/dev/null
+then
+    :
+else
+	echo "`hostname` changes to setuid programs and devices:"
+	diff -u0 setuid.today $TMPSETUID || [ $? = 1 ]
+	mv setuid.today setuid.yesterday
+	mv $TMPSETUID setuid.today
+fi
+rm -f $TMPSETUID

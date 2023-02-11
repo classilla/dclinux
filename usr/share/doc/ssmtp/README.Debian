@@ -1,0 +1,19 @@
+ssmtp for DEBIAN
+----------------
+
+This is a secure, minimal mail sender.
+
+There is one configuration file in /etc/ssmtp/ssmtp.conf where all parameters
+are set. Support for debconf has been added, so to change the parameters use
+the command "dpkg-reconfigure ssmtp".
+
+Header size is limited to 4K. Do not try any mass mailings with this
+package. Moreover the number of recipients is limited to 100.
+
+sSMTP also supports reverse aliases if the file /etc/ssmtp/revaliases is
+present. See ssmtp(8) for details. 
+
+
+Christoph Lameter <clameter@debian.org>, Thu, 22 May 1997 22:18:24 -0700
+Last modified:
+Matt Ryan <matt@banana.org.uk>, Sat,  4 Mar 2000 15:26:22 +0000

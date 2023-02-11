@@ -1,0 +1,48 @@
+* Button->text is a hack that does not work as a lvalue. Redesign.
+* I want to have separator bars, disabled entries, hotkeys, and shortcut
+  texts on pull-down menu items.
+      
+  A quandry: The clean way to implement lists is as an array of listitems,
+  then you call the individual listitems to draw themseleves, etc. And you
+  use a new MenuListItem class for the extra's. But this would be dog-slow,
+  and it's already too slow. What to do, what to do..?
+
+  It's been months, and I still don't really know. It might just makes
+  sense to write it clean, and worry about optimization later. Hm. One
+  simple optimization would be to ask items in menus to not draw theselves,
+  but just generate a string that can be printed whenever they are to be
+  displayed, in the apropriate place. Of course, they'd need some way to
+  force an update of the string if it happened to change, but that wouldn't
+  be too bad. 
+
+* It's quite slow on a p-133 (in power save mode), I don't want to think about
+  a 486.. This needs to be looked into, and code path analysys and
+  optimizations done.
+
+  In particular, focus changing is just a wee bit slow, scrolling a panel
+  is a tad slow, and list box scrolling is quite slow.
+
+* Multiselect list boxes?
+* Mouse support.
+* It should be possible to make oxffset and yoffset be negative numbers. This
+  would mean that they are offsets from the other side of the container the
+  widget is in. Which would be very handly, indeed.
+* resize() should be expected to return a value. If false, the resize
+  failed, which generally would mean that the screen is too small. Then
+  allow that to be trapped somehow, and display some text saying to make
+  the screen bigger. 
+
+  Belive it or not, slang sometimes locks up if told to write_nstring(..,
+  -1), and debconf can trigger this if it is resized to be too small and
+  some widgets get negative widths. I've told JED about this though, and it
+  will be fixed.
+* In the demo, we see an odd little bug in the scrollbar attacked to a
+  scrolling panel. Notice that when the combox box is active, the scroll
+  bar thumb is always one character down. Scroll down until the panel has
+  to scroll, and the thumb stays where it was. Scroll down until it scrolls
+  again, and the thumb updates. Scroll down again and it reaches the
+  bottom.
+
+  Now, wouldn't it make more sense if the thumb had moved each time it had
+  to scroll down? There are four ways that panel can be scrolled, and 4
+  possible thumb positions, after all.

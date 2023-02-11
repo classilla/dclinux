@@ -1,0 +1,13 @@
+/.
+/bin
+/bin/ping
+/usr
+/usr/share
+/usr/share/man
+/usr/share/man/man8
+/usr/share/man/man8/ping.8.gz
+/usr/share/doc
+/usr/share/doc/netkit-ping
+/usr/share/doc/netkit-ping/copyright
+/usr/share/doc/netkit-ping/changelog.gz
+/usr/share/doc/netkit-ping/changelog.Debian.gz

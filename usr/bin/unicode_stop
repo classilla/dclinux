@@ -1,0 +1,11 @@
+#!/bin/sh
+# stop unicode
+
+kbd_mode -a
+
+if ! vt-is-UTF8 --quiet ; then
+  echo "Already in byte-mode"
+  exit 0
+fi
+
+echo -n -e '\033%@'

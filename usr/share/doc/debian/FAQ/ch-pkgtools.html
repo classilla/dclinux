@@ -1,0 +1,550 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - The Debian Package Management Tools</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-pkg_basics.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-uptodate.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 7 The Debian Package Management Tools
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-pkgprogs">7.1 What programs does Debian provide for managing its packages?</a>
+</h2>
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dpkg">7.1.1 dpkg</a>
+</h3>
+
+<p>
+This is the main package management program.  <code>dpkg</code> can be invoked
+with many options.  Some common uses are:
+
+<ul>
+
+<p>
+<li>
+Find out all the options: <samp>dpkg --help</samp>.
+</li>
+
+<p>
+<li>
+Print out the control file (and other information) for a specified package:
+<samp>dpkg --info foo_VVV-RRR.deb</samp>
+</li>
+
+<p>
+<li>
+Install a package (including unpacking and configuring) onto the file system of
+the hard disk: <samp>dpkg --install foo_VVV-RRR.deb</samp>.
+</li>
+
+<p>
+<li>
+Unpack (but do not configure) a Debian archive into the file system of the hard
+disk: <samp>dpkg --unpack foo_VVV-RRR.deb</samp>.  Note that this operation
+does <em>not</em> necessarily leave the package in a usable state; some files
+may need further customization to run properly.  This command removes any
+already-installed version of the program and runs the preinst (see <a
+href="ch-pkg_basics.html#s-maintscripts">What is a Debian preinst, postinst,
+prerm, and postrm script?, Section 6.6</a>) script associated with the package.
+</li>
+
+<p>
+<li>
+Configure a package that already has been unpacked: <samp>dpkg --configure
+foo</samp>.  Among other things, this action runs the postinst (see <a
+href="ch-pkg_basics.html#s-maintscripts">What is a Debian preinst, postinst,
+prerm, and postrm script?, Section 6.6</a>) script associated with the package.
+It also updates the files listed in the <samp>conffiles</samp> for this
+package.  Notice that the 'configure' operation takes as its argument a package
+name (e.g., foo), <em>not</em> the name of a Debian archive file (e.g.,
+foo_VVV-RRR.deb).
+</li>
+
+<p>
+<li>
+Extract a single file named &quot;blurf&quot; (or a group of files named
+&quot;blurf*&quot; from a Debian archive: <samp>dpkg --fsys-tarfile
+foo_VVV-RRR.deb | tar -xf - blurf*</samp>
+</li>
+
+<p>
+<li>
+Remove a package (but not its configuration files): <samp>dpkg --remove
+foo</samp>.
+</li>
+
+<p>
+<li>
+Remove a package (including its configuration files): <samp>dpkg --purge
+foo</samp>.
+</li>
+
+<p>
+<li>
+List the installation status of packages containing the string (or regular
+expression) &quot;foo*&quot;: <samp>dpkg --list 'foo*'</samp>.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dselect">7.1.2 dselect</a>
+</h3>
+
+<p>
+This program is a menu-driven interface to the Debian package management
+system.  It is particularly useful for first-time installations and large-scale
+upgrades.
+
+<p>
+<code>dselect</code> can:
+
+<ul>
+
+<p>
+<li>
+guide the user as he/she chooses among packages to install or remove, ensuring
+that no packages are installed that conflict with one another, and that all
+packages required to make each package work properly are installed;
+</li>
+
+<p>
+<li>
+warn the user about inconsistencies or incompatibilities in their selections;
+</li>
+
+<p>
+<li>
+determine the order in which the packages must be installed;
+</li>
+
+<p>
+<li>
+automatically perform the installation or removal; and
+</li>
+
+<p>
+<li>
+guide the user through whatever configuration process are required for each
+package.
+</li>
+
+</ul>
+
+<p>
+<code>dselect</code> begins by presenting the user with a menu of 7 items, each
+of which is a specific action.  The user can select one of the actions by using
+the arrow keys to move the highlighter bar, then pressing the
+<em>&lt;enter&gt;</em> key to select the highlighted action.
+
+<p>
+What the user sees next depends on the action he selected.  If he selects any
+option but <samp>Access</samp> or <samp>Select</samp>, then
+<code>dselect</code> will simply proceed to execute the specified action: e.g.,
+if the user selected the action <samp>Remove</samp>, then dselect would proceed
+to remove all of the files selected for removal when the user last chose the
+<samp>Select</samp> action.
+
+<p>
+Both the <samp>Access</samp> menu item and the <samp>Select</samp> menu item
+lead to additional menus.  In both cases, the menus are presented as split
+screens; the top screen gives a scrollable list of choices, while the bottom
+screen gives a brief explanation (&quot;info&quot;) for each choice.
+
+<p>
+Extensive on-line help is available, use the '?'  key to get to a help screen
+at any time.
+
+<p>
+The order in which the actions are presented in the first <code>dselect</code>
+menu represents the order in which a user would normally choose
+<code>dselect</code> to install packages.  However, a user can pick any of the
+main menu choices as often as needed (including not at all, depending on what
+one wants to do).
+
+<ul>
+
+<p>
+<li>
+Begin by choosing an <strong>Access Method</strong>.  This is the method by
+which the user plans on accessing Debian packages; e.g., some users have Debian
+packages available on CD-ROM, while others plan to fetch them using anonymous
+FTP.  The selected &quot;Access Method&quot; is stored after
+<code>dselect</code> exits, so if it does not change, then this option need not
+be invoked again.
+</li>
+
+<p>
+<li>
+Then <strong>Update</strong> the list of available packages.  To do this,
+<code>dselect</code> reads the file &quot;Packages.gz&quot; which should be
+included in the top level of the directory where the Debian packages to be
+installed are stored.  (But if it is not there, <code>dselect</code> will offer
+to make it for you.)
+</li>
+
+<p>
+<li>
+<strong>Select</strong> specific packages for installation on his system.
+After choosing this menu item, the user is first presented with a full screen
+of help (unless the `--expert' command line option was used).  Once the user
+exits the Help screen, he sees the split-screen menu for choosing packages to
+install (or remove).
+
+<p>
+The top part of the screen is a relatively narrow window into the list of
+Debian's 4200 packages; the bottom part of the screen contains description of
+the package or group of packages which are highlighted above.
+
+<p>
+One can specify which packages should be operated on by highlighting a package
+name or the label for a group of packages.  After that, you can select
+packages:
+
+<dl>
+
+<p>
+<dt>to be installed:</dt>
+<dd>
+This is accomplished by pressing the `+' key.
+</dd>
+
+<p>
+<dt>to be deleted:</dt>
+<dd>
+Packages can be deleted two ways:
+
+<ul>
+
+<p>
+<li>
+removed: this removes most of the files associated with the package, but
+preserves the files listed as configuration files (see <a
+href="ch-pkg_basics.html#s-conffile">What is a Debian conffile?, Section
+6.5</a>) and package configuration information.  This is done by pressing the
+`-' key.
+</li>
+
+<p>
+<li>
+purged: this removes <em>every</em> file that is part of the package.  This is
+done by pressing the `_' key.
+</li>
+
+</ul>
+
+<p>
+Note that it's not possible to remove &quot;All Packages&quot;.  If you try
+that, your system will instead be reduced to the initial installed base
+packages.
+</dd>
+
+<p>
+<dt>to be put &quot;on hold&quot;</dt>
+<dd>
+This is done by pressing `=', and it effectively tells <code>dselect</code> not
+to upgrade a package even if the version currently installed on your system is
+not as recent as the version that is available in the Debian repository you are
+using (this was specified when you set the <strong>Access Method</strong>, and
+acquired when you used <strong>Update</strong>).
+
+<p>
+Just like you can put a package on hold, you can reverse such setting by
+pressing `:'.  That tells <code>dselect</code> that the package(s) may be
+upgraded if a newer version is available.  This is the default setting.
+</dd>
+
+</dl>
+
+<p>
+You can select a different order in which the packages are presented, by using
+the `o' key to cycle between various options for sorting the packages.  The
+default order is to present packages by Priority; within each priority,
+packages are presented in order of the directory (a.k.a.  section) of the
+archive in which they are stored.  Given this sort order, some packages in
+section A (say) may be presented first, followed by some packages in section B,
+followed by more packages (of lower priority) in section A.
+
+<p>
+You can also expand meanings of the labels at the top of the screen, by using
+the `v' (verbose) key.  This action pushes much of the text that formerly fit
+onto the display off to the right.  To see it, press the right arrow; to scroll
+back to the left, press the left arrow.
+
+<p>
+If you select a package for installation or removal, e.g.,
+<code>foo.deb</code>, and that package depends on (or recommends) another
+package, e.g., <code>blurf.deb</code>, then <code>dselect</code> will place the
+you in a sub-screen of the main selection screen.  There you can choose among
+the related packages, accepting the suggested actions (to install or not), or
+rejecting them.  To do the latter, press Shift-D; to return to the former,
+press Shift-U.  In any case, you can save your selections and return to the
+main selection screen by pressing Shift-Q.
+</li>
+
+<p>
+<li>
+Users returning to the main menu can then select the &quot;Install&quot; menu
+item to unpack and configure the selected packages.  Alternatively, users
+wishing to remove files can choose the &quot;Remove&quot; menu item.  At any
+point, users can choose &quot;Quit&quot; to exit dselect; users' selections are
+preserved by <code>dselect</code>.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dpkg-deb">7.1.3 dpkg-deb</a>
+</h3>
+
+<p>
+This program manipulates Debian archive(<samp>.deb</samp>) files.  Some common
+uses are:
+
+<ul>
+
+<p>
+<li>
+Find out all the options: <samp>dpkg-deb --help</samp>.
+</li>
+
+<p>
+<li>
+Determine what files are contained in a Debian archive file: <samp>dpkg-deb
+--contents foo_VVV-RRR.deb</samp>)
+</li>
+
+<p>
+<li>
+Extract the files contained in a named Debian archive into a user specified
+directory: <samp>dpkg-deb --extract foo_VVV-RRR.deb tmp</samp> extracts each of
+the files in <samp>foo_VVV-RRR.deb</samp> into the directory <samp>tmp/</samp>.
+This is convenient for examining the contents of a package in a localized
+directory, without installing the package into the root file system.
+</li>
+
+</ul>
+
+<p>
+Note that any packages that were merely unpacked using <samp>dpkg-deb
+--extract</samp> will be incorrectly installed, you should use <samp>dpkg
+--install</samp> instead.
+
+<p>
+More information is given in the manual page <code>dpkg-deb(1)</code>.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-apt-get">7.1.4 apt-get</a>
+</h3>
+
+<p>
+<code>apt-get</code> provides a simple way to install packages from the command
+line.  Unlike <code>dpkg</code>, <code>apt-get</code> does not understand .deb
+files, it works with the packages proper name and can only install .deb
+archives from a source specified in <code>/etc/apt/sources.list</code>.
+
+<p>
+For more information, install <code>apt</code> package and read
+<code>apt-get(8)</code>, <code>sources.list(5)</code> and
+<code>/usr/share/doc/apt/guide.html/index.html</code>.
+</p>
+
+<hr>
+
+<h3>
+<a name="s-dpkg-split">7.1.5 dpkg-split</a>
+</h3>
+
+<p>
+This program splits large package into smaller files (e.g., for writing onto a
+set of floppy disks), and can also be used to merge a set of split files back
+into a single file.  It can only be used on a Debian system (i.e.  a system
+containing the <code>dpkg</code> package), since it calls the program
+<samp>dpkg-deb</samp> to parse the debian package file into its component
+records.
+
+<p>
+For example, to split a big .deb file into N parts,
+
+<ul>
+
+<p>
+<li>
+Execute the command <samp>dpkg-split --split foo.deb</samp>.  This will produce
+N files each of approximately 460 KBytes long in the current directory.
+</li>
+
+<p>
+<li>
+Copy those N files to floppy disks.
+</li>
+
+<p>
+<li>
+Copy the contents of the floppy disks onto the hard disk of your choice on the
+other machine.
+</li>
+
+<p>
+<li>
+Join those part-files together using <samp>dpkg-split --join
+&quot;foo*&quot;</samp>.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-updaterunning">7.2 Debian claims to be able to update a running program; how is this accomplished?</a>
+</h2>
+
+<p>
+The kernel (filesystem) in Debian GNU/Linux systems supports replacing files
+even while they're being used.
+
+<p>
+We also provide a program called <code>start-stop-daemon</code> which is used
+to start daemons at boot time or to stop daemons when the kernel runlevel is
+changed (e.g., from multi-user to single-user or to halt).  The same program is
+used by installation scripts when a new package containing a daemon is
+installed, to stop running daemons, and restart them as necessary.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-whatpackages">7.3 How can I tell what packages are already installed on a Debian system?</a>
+</h2>
+
+<p>
+To learn the status of all the packages installed on a Debian system, execute
+the command
+
+<pre>
+     dpkg --list
+</pre>
+
+<p>
+This prints out a one-line summary for each package, giving a 2-letter status
+symbol (explained in the header), the package name, the version which is
+<em>installed</em>, and a brief description.
+
+<p>
+To learn the status of packages whose names match the string any pattern
+beginning with &quot;foo&quot; by executing the command:
+
+<pre>
+     dpkg --list 'foo*'
+</pre>
+
+<p>
+To get a more verbose report for a particular package, execute the command:
+
+<pre>
+     dpkg --status packagename
+</pre>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-filesearch">7.4 How can I find out what package produced a particular file?</a>
+</h2>
+
+<p>
+To identify the package that produced the file named <samp>foo</samp> execute
+either:
+
+<ul>
+
+<p>
+<li>
+<samp>dpkg --search filename</samp>
+
+<p>
+This searches for <samp>filename</samp> in installed packages.  (This is
+(currently) equivalent to searching all of the files having the file extension
+of <samp>.list</samp> in the directory <samp>/var/lib/dpkg/info/</samp>, and
+adjusting the output to print the names of all the packages containing it, and
+diversions.)
+</li>
+
+<p>
+<li>
+<samp>zgrep foo Contents-ARCH.gz</samp>
+
+<p>
+This searches for files which contain the substring <samp>foo</samp> in their
+full path names.  The files <samp>Contents-ARCH.gz</samp> (where ARCH
+represents the wanted architecture) reside in the major package directories
+(main, non-free, contrib) at a Debian FTP site.  A <samp>Contents</samp> file
+refers only to the packages in the subdirectory tree where it resides.
+Therefore, a user might have to search more than one <samp>Contents</samp>
+files to find the package containing the file <samp>foo</samp>.
+
+<p>
+This method has the advantage over <samp>dpkg --search</samp> in that it will
+find files in packages that are not currently installed on your system.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+[ <a href="ch-pkg_basics.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-uptodate.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

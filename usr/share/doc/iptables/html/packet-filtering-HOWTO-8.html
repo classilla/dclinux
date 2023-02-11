@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+ <META NAME="GENERATOR" CONTENT="SGML-Tools 1.0.9">
+ <TITLE>Linux 2.4 Packet Filtering HOWTO: Using ipchains and ipfwadm</TITLE>
+ <LINK HREF="packet-filtering-HOWTO-9.html" REL=next>
+ <LINK HREF="packet-filtering-HOWTO-7.html" REL=previous>
+ <LINK HREF="packet-filtering-HOWTO.html#toc8" REL=contents>
+</HEAD>
+<BODY>
+<A HREF="packet-filtering-HOWTO-9.html">Next</A>
+<A HREF="packet-filtering-HOWTO-7.html">Previous</A>
+<A HREF="packet-filtering-HOWTO.html#toc8">Contents</A>
+<HR>
+<H2><A NAME="oldstyle"></A> <A NAME="s8">8. Using ipchains and ipfwadm</A></H2>
+
+<P> There are modules in the netfilter distribution called ipchains.o
+and ipfwadm.o.  Insert one of these in your kernel (NOTE: they are
+incompatible with iptables.o, ip_conntrack.o and ip_nat.o!).  Then
+you can use ipchains or ipfwadm just like the good old days.
+<P>
+<P> This will be supported for some time yet.  I think a reasonable
+formula is 2 * [notice of replacement - initial stable release],
+beyond the date that a stable release of the replacement is available.
+<P>
+<P>This means that for ipfwadm, the end of support is (FIXME: get real
+dates):
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+2 * [October 1997 (2.1.102 release) - March 1995 (ipfwadm 1.0)]
+        + January 1999 (2.2.0 release)
+    = November 2003.
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>
+<P>This means that for ipchains, the end of support is (FIXME: get
+real dates):
+<P>
+<BLOCKQUOTE><CODE>
+<PRE>
+2 * [August 1999 (2.3.15 release) - October 1997 (2.2.0 release)]
+        + January 2000 (2.3.0 release?)
+    = September 2003.
+</PRE>
+</CODE></BLOCKQUOTE>
+<P>So you don't have to worry until 2004.
+<P>
+<HR>
+<A HREF="packet-filtering-HOWTO-9.html">Next</A>
+<A HREF="packet-filtering-HOWTO-7.html">Previous</A>
+<A HREF="packet-filtering-HOWTO.html#toc8">Contents</A>
+</BODY>
+</HTML>

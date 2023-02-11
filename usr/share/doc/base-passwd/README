@@ -1,0 +1,55 @@
+base-passwd for DEBIAN
+----------------------
+
+This package supplies the "master" copies of /etc/passwd and /etc/group,
+in /usr/share/base-passwd. It also supplies the utility "update-passwd",
+which automatically makes sure that uids and gids in the 0-99 range on
+your system are consistant with the Debian master copies. This means
+that all entries in the masterfiles in that range have to be present on
+your system, and only those entries. The reason for not allowing other
+entries is that Debian reserves that range for future use.
+
+All packages assume that the users and groups listed in those
+master-files are always present on a system. If they are not present for
+some reason they may break unexpectedly. To ensure your system is
+correct you can use the update-passwd utility to check it and optionally
+make the necessary changes.
+
+There are some exceptions to this:
+* root is never removed or changed. If it doesn't exist a root-account will
+  be added though.
+* the homedirectory for the ftp-user is preserved, and it is neither added
+  nor removed automatically since this can affect how FTP daemons handle
+  anonymous access
+* the homedirectory for the www-data is preserved 
+* if a user or group exists but with an uid outside our reserved ranged
+  we don't change it
+
+The following uid/gid pairs have been allocated in the static range
+60000-64999.  They are created by their respective packages, and are listed
+here for reference.
+
+Reserved uids:
+    uid   | name      | description
+    ------+-----------+---------------
+    63434 | netplan   | netplan
+    64000 | ftn       | fidogate
+    64001 | mysql     | mysql-server
+    64005 | tac-plus  | tac-plus user
+    64010 | alias     | qmail alias
+    64011 | qmaild    | qmail daemon
+    64012 | qmails    | qmail send
+    64013 | qmailr    | qmail remove
+    64015 | qmailq    | qmail queue
+    64016 | qmaill    | qmail log
+    64017 | qmailp    | qmail pw
+
+Reserved gids:
+    gid   | name      | description
+    ------+-----------+---------------
+    63434 | netplan   | netplan
+    64000 | ftn       | fidogate
+    64001 | mysql     | mysql-server
+    64005 | tac-plus  | tac-plus group
+    64010 | qmail     | qmail
+

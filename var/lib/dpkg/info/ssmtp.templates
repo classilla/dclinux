@@ -1,0 +1,53 @@
+Template: ssmtp/overwriteconfig
+Type: boolean
+Default: true
+Description: Automatically overwrite config files?
+  The mail configuration file /etc/ssmtp/ssmtp.conf can be automatically
+  updated on each upgrade with the information supplied to the debconf
+  database. If you do not want this to happen (ie/ you want to maintain
+  control of this file yourself) then set this option to have the program
+  never touch this file.
+
+Template: ssmtp/root
+Type: string
+Default: postmaster
+Description: Who gets mail for userids < 1000?
+  Mail sent to a local user whose UID is less than 1000 will instead be
+  sent here. This is useful for daemons which mail reports to root and
+  other system UIDs.
+
+Template: ssmtp/mailhub
+Type: string
+Default: mail
+Description: Name of your mailhub?
+  This sets the host to which mail is delivered. The actual machine
+  name is required; no MX records are consulted. Commonly, mailhosts
+  are named "mail.domain.com".
+
+Template: ssmtp/rewritedomain
+Type: string
+Description: What domain to masquerade as?
+  ssmtp will use "username@REWRITEDOMAIN" as the default From: address
+  for outgoing mail which contains only a local username.
+
+Template: ssmtp/mailname
+Type: string
+Description: What name to store in /etc/mailname
+  This is the portion of the address after the '@' sign to be shown on
+  outgoing news and mail messages.
+
+Template: ssmtp/hostname
+Type: string
+Description: Fully qualified hostname?
+  This should specify the real hostname of this machine, and will be
+  sent to the mailhub when delivering mail.
+
+Template: ssmtp/fromoverride
+Type: boolean
+Default: false
+Description: Override From: line in email?
+  A "positive" response will permit local users to enter any From: line
+  in their messages without it being mangled, and cause ssmtp to rewrite
+  the envelope header with that address. A "negative" response will
+  disallow this, and use only the default address or addresses set in
+  /etc/ssmtp/revaliases.

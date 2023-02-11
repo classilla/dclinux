@@ -1,0 +1,55 @@
+This is the Debian GNU/Linux prepackaged version of the GNU file
+management utilities.
+
+This package is maintained by Michael Stone <mstone@debian.org> and
+built from sources obtained from:
+  ftp://alpha.gnu.org/gnu/fetish/fileutils-4.0.31.tar.gz
+
+This debian package was first put together by Ian Murdock
+<imurdock@debian.org>, from fileutils-3.12.  It was later maintained
+by Erick Branderhorst <branderh@debian.org> and Galen Hazelwood
+<galenh@micron.net>.  Certain patches and bug-fixes made by the
+previous maintainers have since been integrated into the upstream
+source.
+
+Changes:
+ * added Debian GNU/Linux package maintenance system files
+ * install.c: Added extra options to invocation of strip
+ * minor documentation changes
+ * at times, bug fixes awaiting inclusion in the upstream source
+
+GNU fileutils are Copyright (C) 1985-2000 Free Software Foundation, Inc.
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2, or (at your option)
+   any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software Foundation,
+   Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.
+
+Manual (fileutils.info) Copyright (C) 1994, 95, 96, 1999 Free Software Foundation, Inc.
+
+   Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+   Permission is granted to copy and distribute modified versions of
+this manual under the conditions for verbatim copying, provided that
+the entire resulting derived work is distributed under the terms of a
+permission notice identical to this one.
+
+   Permission is granted to copy and distribute translations of this
+manual into another language, under the above conditions for modified
+versions, except that this permission notice may be stated in a
+translation approved by the Foundation.
+

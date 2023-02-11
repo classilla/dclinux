@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ncurses-bin -a -d /usr/share/doc/ncurses-bin ]; then
+		ln -sf ../share/doc/ncurses-bin /usr/doc/ncurses-bin
+	fi
+fi
+# End automatically added section

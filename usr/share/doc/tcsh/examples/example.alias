@@ -1,0 +1,28 @@
+alias	a	alias
+alias	loada	'source ~/.alias'
+alias	loadalias	loada
+
+alias	log	watchlog
+
+unalias	ls
+alias	ls	'ls-F -C'
+alias	lsa	'ls -A'
+alias	vdir	'ls -l'
+alias	vdira	'dir -A'
+alias	d	'dir'
+alias	da	'dira'
+alias	v	'ls -l'
+alias	va	'v -A'
+alias	pls	\\ls
+
+alias	md	mkdir
+alias	rd	rmdir
+alias	rmold	'rm -rf *~ .*~ #*#'
+
+alias	-	less
+alias	+	'less -E'
+# alias	+	more
+
+alias	f	finger
+alias	ff	'finger -l'
+alias	p	'ping -c 1'

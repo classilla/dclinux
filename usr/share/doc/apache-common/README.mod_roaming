@@ -1,0 +1,50 @@
+                          mod_roaming 1.0.1
+
+   With mod_roaming you can use your Apache webserver as a Netscape
+   Roaming Access server. This allows you to store your Netscape
+   Communicator 4.5 preferences, bookmarks, address books, cookies etc.
+   on the server so that you can use (and update) the same settings from
+   any Netscape Communicator 4.5 that can access the server.
+   
+   This version fixes some documentation and code glitches. If you have
+   already installed the previous version, there is no need to update.
+   Please see the file CHANGES for details.
+   
+Features
+
+     * mod_roaming allows your existing Apache webserver to double as a
+       Roaming Access server.
+     * mod_roaming implements the GET, HEAD, PUT, DELETE and MOVE methods
+       that make Roaming Access work.
+     * Specifically mod_roaming implements the non-standard MOVE method
+       so that you do not have to set the li.prefs.http.useSimplePut
+       preference to true.
+     * mod_roaming automatically creates directories for new users to
+       keep administration simple.
+     * mod_roaming does not allow anonymous access to the roaming access
+       files, does not allow users to read or write each others roaming
+       access files, and is generally very strict about the requests it
+       allows. Only that which is needed by Netscape Communicator 4.5 is
+       allowed.
+     * mod_roaming can be installed as a DSO (Dynamic Shared Object)
+       module.
+       
+Related information
+
+     * A technical article about Roaming Access on the Netscape website.
+<URL:http://help.netscape.com/products/client/communicator/manual_roaming2.html>
+     * Jochen Wiedmann has written a mod_perl module based on the code of
+       mod_roaming, that allows you to generate configuration files on
+       the fly. Apache::Roaming is available from any CPAN mirror.
+       <URL:http://www.perl.com/CPAN/modules/by-module/Apache/>
+     * Frederik Vermeulen's Perl script that allows you to use Apache as
+       a Roaming Access Server. This script was my inspiration to write
+       mod_roaming.
+       <URL:http://www.esat.kuleuven.ac.be/~vermeule/roam/put>
+       
+License
+
+   This software is distributed under the terms of a BSD-style open
+   source license. Please see the file LICENSE for details.
+   
+Copyright (C) 1999, Vincent Partington <vinny@klomp.org>

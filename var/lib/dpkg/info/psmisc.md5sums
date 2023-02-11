@@ -1,0 +1,14 @@
+221e6f88962006cb2d67b2d26178f1fd  bin/fuser
+29f799e2616402308da0ffe88ca82c23  usr/bin/killall
+78de084934c874375156101ce1ab5160  usr/bin/pstree
+518cd8467d0be5302f39d56e1b7eb214  usr/bin/pstree.x11
+ddab2738df0504071b179874da391394  usr/share/man/man1/pidof.1.gz
+3d7e0a1c33aa9e1fff6d3f4e3d081dac  usr/share/man/man1/pstree.1.gz
+992102f6ee45f0ecb2357ee6f5040bdb  usr/share/man/man1/fuser.1.gz
+ae1e7c7adf456ad89384ab9e44128997  usr/share/man/man1/killall.1.gz
+7bcc24d26c81c86c65c07bdb9ce7508e  usr/share/doc/psmisc/README
+bc808361f5cc6c18ae664a77da8cbc88  usr/share/doc/psmisc/README.Debian
+197fa4c9ac969c65c700b5d32463f791  usr/share/doc/psmisc/copyright
+fc51c963056bcb597711d296a61251f6  usr/share/doc/psmisc/changelog.gz
+17d77d5baca18e6a4c43e667bad3a160  usr/share/doc/psmisc/changelog.Debian.gz
+3c87d449c0607cdee993dbe97dcb3ca7  usr/lib/menu/psmisc

@@ -1,0 +1,41 @@
+This is the Debian GNU/Linux prepackaged version of the "procmail"
+mail-processing program written by Stephen van den Berg.
+
+This package is currently maintained by Santiago Vila <sanvila@debian.org>.
+The source for this release was downloaded from:
+
+ftp://ftp.procmail.org/pub/procmail/procmail-3.15.1.tar.gz
+
+This package was first put together by Bruce Perens <bruce@hams.com>,
+who added Debian GNU/Linux package maintenance system files, and
+edited config.h to configure for Debian.
+
+Copyright:
+
+Procmail & formail mail processing package.
+Copyright (c) 1990-1999, S.R. van den Berg, The Netherlands.
+Copyright (c) 1999-2001, Philip Guenther, The United States of America
+
+This package is open source software; you can redistribute it and/or
+modify it under the terms of either:
+- the GNU General Public License as published by the Free Software Foundation
+  and can be found in the included file called "COPYING"; either version 2,
+  or (at your option) any later version, or
+- the "Artistic License" which can be found in the included file called
+  "Artistic".
+
+This package is distributed in the hope that it will be useful, but without
+any warranty; without even the implied warranty of merchantability or fitness
+for a particular purpose.  See either the GNU General Public License or the
+Artistic License for more details.
+
+For those of you that choose to use the GNU General Public License,
+my interpretation of the GNU General Public License is that no procmailrc
+script falls under the terms of the GPL unless you explicitly put
+said script under the terms of the GPL yourself.
+
+
+On Debian GNU/Linux systems, the complete text of the GNU General Public
+License can be found in `/usr/share/common-licenses/GPL', and the complete
+text of the "Artistic License" can be found in
+`/usr/share/common-licenses/Artistic'.

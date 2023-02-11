@@ -1,0 +1,52 @@
+This is release 0.2.3 of the Linux console-tools.
+
+  This release is a bugfix release for the 0.2.x series, and
+ adds Italian, Danish, and Estonian messages.
+ See ChangeLog for details.
+
+  0.2.0 was the first of a stable branch.  The data files (keymaps,
+ fonts and tables) formerly part of this package have been moved to a
+ new console-data package.
+
+  The 0.2.x branch will only get bug fixes and critically missing
+ features - all development will be done on the still-to-come 0.3.x
+ branch.
+
+  PLEASE NOTE that this release has not yet support for the CP
+ fontfile format back yet.  It has been integrated in development
+ version 0.3.0.
+
+
+Although it is now quite stable, this package is currently under
+development: use it at your own risks.  However, it should already be
+a good replacement for `kbd', and you might like the features not
+found in the latter, but (as usual) you have NO WARANTY of any kind.
+
+Some interface-level features are still liable to change (program names,
+option names, etc.).
+
+Much work is needed to really get Unicode stuff usable. This will be
+one of my primary goals. It will probably imply hacking the kernel as
+well for some features, but the kernel-part is being thoroughly
+rewritten by the GGI project, so don't hold you breath...
+
+
+This package is based on `kbd-0.94', and is mostly up to date with
+0.99, of which it corrects some bugs, and to which it adds several
+features (Message i18n, Screen-font-map fallback tables, 16-bit
+Application-Charset Maps (also called "console maps" or "screen
+maps"), can now output PSF files and use "-" to read/write most files
+to stdin/stdout, can make use of the G1 charset slot, etc.).
+
+
+Please send all bug reports, suggestions, or anything else to myself,
+(but take a look at the "TODO" file first), feedback will be greatly
+appreciated.
+
+Please get in touch with me before starting to modify this package, to
+prevent duplicated work - it's enough work to keep in sync with new
+kbd releases until we merge; as this code is expected to evolve quite
+rapidly, it would also be helpful that not too many persons work on
+the same pieces of code at the same time, to ease integration.
+
+Yann Dirson <dirson@debian.org>

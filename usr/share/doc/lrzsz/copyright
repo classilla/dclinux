@@ -1,0 +1,31 @@
+This is the lrzsz Debian GNU/Linux package. It was first maintained by
+Michael Alan Dorman <mdorman@debian.org>, with help of Martin Mitchell
+and current upstream maintainer, Uwe Ohse <uwe@ohse.de>.
+
+Current maintainer is Josip Rodin <jrodin@jagor.srce.hr>
+
+Original source was downloaded from: ftp://tirka.ohse.de/uwe/
+
+Copyright (C) until 1988 Chuck Forsberg (Omen Technology INC)
+Copyright (C) 1994 Matt Porter, Michael D. Black
+Copyright (C) 1996, 1997 Uwe Ohse
+
+Please note that credit should be given to Chuck Forsberg (rzsz) and
+Stephen Satchell/Satchell Evaluations (crc routines) for this package.
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 dated June, 1991.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program;  if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+  02111-1307, USA.
+
+On Debian systems, the complete text of the GNU General Public License
+can be found in /usr/share/common-licenses/GPL file.

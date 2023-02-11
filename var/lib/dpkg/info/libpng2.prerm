@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+# FSSTD -> FHS
+pkg=libpng2
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/$pkg ]; then
+  rm -f /usr/doc/$pkg
+fi

@@ -1,0 +1,15 @@
+Information about offensive fortunes found outside fortunes-off
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Should fortunes be found in the main fortunes database which fail the
+criteria found in the document /usr/share/doc/fortunes/Offensive, I will gladly
+move them into the fortunes-off package given the following:
+
+*) A bug is filed against the fortunes or fortunes-min package (depending
+   on which package the fortune happens to be in) stating:
+
+    * the fortune file in which the fortune appears (e.g. zippy, startrek)
+    * the text of the offensive fortune
+
+ -- Brian Bassett <brianb@debian.org>  Sat, 31 Jul 1999 13:02:20 -0700
+

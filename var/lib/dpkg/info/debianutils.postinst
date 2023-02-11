@@ -1,0 +1,16 @@
+#! /bin/sh
+set -e
+
+if [ "$1" = configure ]; then
+    if [ -d /usr/doc ]; then
+	package=$(basename $0 .postinst)
+	if [ ! -e /usr/doc/$package ]; then
+	    (cd /usr/doc;
+		if [ -d ../share/doc/$package ]; then
+		    ln -s ../share/doc/$package $package ;
+		fi
+            )
+	fi
+    fi
+fi
+

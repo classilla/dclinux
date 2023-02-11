@@ -1,0 +1,43 @@
+* How come Lynx does not display colors?
+
+ If you find that lynx does display colors, you may be using the wrong
+ terminal type. The terminal type vt100 does not support color, but "linux"
+ "xterm-color" and "xterm-debian" do.
+
+ Alternatively, you can invoke lynx as 'lynx -color' or set 
+ the COLORTERM environment variable to force the colors on.
+
+* How do I get a white background on black text?
+
+ Use the following 'COLOR' definitions in your /etc/lynx.cfg file:
+
+ COLOR:0:black:white
+ COLOR:1:blue:white
+ COLOR:2:yellow:blue
+ COLOR:3:green:white
+ COLOR:4:magenta:white
+ COLOR:5:blue:white
+ COLOR:6:red:white
+ COLOR:7:magenta:cyan
+
+* Very nice, but I run a multi-user system and I want to be able to configure
+  colors on a per-used basis.
+
+ Quoting from the /etc/lynx.cfg file:
+
+ Starting with Lynx 2.8.1, the lynx.cfg file has a crude "include"
+ facility.  This means that you can take advantage of the global lynx.cfg
+ while also supplying your own tweaks.
+
+ You can use a command-line argument (-cfg /where/is/lynx.cfg) or an
+ environment variable (LYNX_CFG=/where/is/lynx.cfg).
+ For instance, put in your .profile or .login:
+
+   LYNX_CFG=~/lynx.cfg; export LYNX_CFG   # in .profile for sh/ksh/bash/etc.
+   setenv LYNX_CFG ~/lynx.cfg             # in .login for [t]csh
+
+ Then in ~/lynx.cfg:
+
+ INCLUDE:/etc/lynx.cfg
+ 
+ and now your own tweaks.

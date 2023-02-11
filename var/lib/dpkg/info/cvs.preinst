@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# $Debian: cvs/debian/preinst,v 1.1 2001/04/20 16:00:54 epg Exp $
+
+set -e
+if [ -f /etc/cvs.conf ]; then
+	cp /etc/cvs.conf /etc/cvs.conf.import
+fi
+

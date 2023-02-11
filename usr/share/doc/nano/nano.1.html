@@ -1,0 +1,182 @@
+Content-type: text/html
+
+<HTML><HEAD><TITLE>Manpage of NANO</TITLE>
+</HEAD><BODY>
+<H1>NANO</H1>
+Section: User Commands  (1)<BR>Updated: December 2, 2000<BR><A HREF="#index">Index</A>
+<A HREF="http://localhost/cgi-bin/man/man2html">Return to Main Contents</A><HR>
+
+
+
+<A NAME="lbAB">&nbsp;</A>
+<H2>NAME</H2>
+
+nano - Nano's ANOther editor, an enhanced free Pico Clone
+<A NAME="lbAC">&nbsp;</A>
+<H2>SYNOPSIS</H2>
+
+<B>nano</B>
+
+[options]&nbsp;[+LINE]<I> file</I>
+
+<BR>
+
+<A NAME="lbAD">&nbsp;</A>
+<H2>DESCRIPTION</H2>
+
+This manual page documents briefly the
+<B>nano</B>
+
+command.
+<P>
+
+
+
+
+<B>nano</B> is a small, free and friendly editor which aims to replace
+Pico, the default editor included in the non-free Pine package. Rather
+than just copying Pico's look and feel,
+<B>nano</B>
+
+also implements some missing (or disabled by default) features in Pico,
+such as &quot;search and replace&quot; and &quot;goto line number&quot;.
+<A NAME="lbAE">&nbsp;</A>
+<H2>OPTIONS</H2>
+
+<DL COMPACT>
+<DT><B>-T (--tabsize)</B>
+
+<DD>
+Set the size (width) of a tab.
+<DT><B>-R (--regexp)</B>
+
+<DD>
+Enable regular expression matching for search strings, as well as
+\n subexpression replacement for replace strings, if available.
+<DT><B>-V (--version)</B>
+
+<DD>
+Show the current version number and author.
+<DT><B>-h (--help)</B>
+
+<DD>
+Display a summary of commandline options.
+<DT><B>-c (--const)</B>
+
+<DD>
+Constantly show the cursor position.
+<DT><B>-k (--cut)</B>
+
+<DD>
+Enable cut from cursor to end of line with ^K.
+<DT><B>-i (--autoindent)</B>
+
+<DD>
+Indent new lines to the previous line's indentation. Useful when editing
+source code.
+<DT><B>-l (--nofollow)</B>
+
+<DD>
+If the file being edited is a symbolic link, replace the link with a 
+a new file, do not follow it.  Good for editing files in /tmp perhaps?
+<DT><B>-m (--mouse)</B>
+
+<DD>
+Enable mouse support (if available for your system).
+<DT><B>-p (--pico)</B>
+
+<DD>
+Emulate Pico as closely as possible.  This affects both the &quot;shortcut list&quot;
+at the bottom of the screen, as well as the display and entry of previous
+search and replace strings.
+<DT><B>-s (--speller)</B>
+
+<DD>
+Enable alternative spell checker command.
+<DT><B>-t (--tempfile)</B>
+
+<DD>
+Always save changed buffer without prompting. Same as Pico -t option.
+<DT><B>-v (--view)</B>
+
+<DD>
+View file (read only) mode.
+<DT><B>-w (--nowrap)</B>
+
+<DD>
+Disable wrapping of long lines.
+<DT><B>-x (--nohelp)</B>
+
+<DD>
+Disable help screen at bottom of editor.
+<DT><B>-z (--suspend)</B>
+
+<DD>
+Enable suspend ability.
+<DT><B>-b, -e, -f</B>
+
+<DD>
+Ignored, for compatibility with Pico.
+<DT><B>+LINE</B>
+
+<DD>
+Places cursor at LINE on startup.
+</DL>
+<A NAME="lbAF">&nbsp;</A>
+<H2>NOTES</H2>
+
+Nano will try to dump the buffer into an emergency file in some cases.
+Mainly, this will happen if Nano recieves a SIGHUP or runs out of
+memory, when it will write the buffer into a file named &quot;nano.save&quot; if the
+buffer didn't have a name already, or will add a &quot;.save&quot; suffix to the
+current finename. Nano will <B>not</B> write this file if a previous one
+exists in the current directory.
+<A NAME="lbAG">&nbsp;</A>
+<H2>BUGS</H2>
+
+Please send any comments or bug reports to
+<BR>
+
+<B><A HREF="mailto:nano@nano-editor.org">nano@nano-editor.org</A>.</B>
+
+<BR>
+
+The nano mailing list is available from
+<BR>
+
+<B><A HREF="mailto:nano-devel@lists.sourceforge.net">nano-devel@lists.sourceforge.net</A>.</B>
+
+To subscribe, email to <A HREF="mailto:nano-devel-request@lists.sourceforge.net">nano-devel-request@lists.sourceforge.net</A> with a
+subject of &quot;subscribe&quot;.
+<A NAME="lbAH">&nbsp;</A>
+<H2>HOMEPAGE</H2>
+
+<A HREF="http://www.nano-editor.org">http://www.nano-editor.org</A>
+<A NAME="lbAI">&nbsp;</A>
+<H2>AUTHOR</H2>
+
+Chris Allegretta &lt;<A HREF="mailto:chrisa@asty.org">chrisa@asty.org</A>&gt;, et al (see AUTHORS for details).
+This manual page was originally written by Jordi Mallach
+&lt;<A HREF="mailto:jordi@sindominio.net">jordi@sindominio.net</A>&gt;, for the Debian GNU/Linux system (but may be
+used by others).
+<P>
+
+<HR>
+<A NAME="index">&nbsp;</A><H2>Index</H2>
+<DL>
+<DT><A HREF="#lbAB">NAME</A><DD>
+<DT><A HREF="#lbAC">SYNOPSIS</A><DD>
+<DT><A HREF="#lbAD">DESCRIPTION</A><DD>
+<DT><A HREF="#lbAE">OPTIONS</A><DD>
+<DT><A HREF="#lbAF">NOTES</A><DD>
+<DT><A HREF="#lbAG">BUGS</A><DD>
+<DT><A HREF="#lbAH">HOMEPAGE</A><DD>
+<DT><A HREF="#lbAI">AUTHOR</A><DD>
+</DL>
+<HR>
+This document was created by
+<A HREF="http://localhost/cgi-bin/man/man2html">man2html</A>,
+using the manual pages.<BR>
+Time: 02:16:52 GMT, December 18, 2000
+</BODY>
+</HTML>

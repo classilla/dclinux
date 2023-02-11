@@ -1,0 +1,15 @@
+This package was debianized by  Craig Small <csmall@debian.org> on
+Fri,  2 Jan 1998 11:12:00 +1100.
+
+It was downloaded from http://psmisc.sourceforge.net/
+
+Copyright:
+
+psmisc (fuser, killall and pstree) program code, documentation and
+auxiliary programs are
+Copyright 1993,1994,1995,1996,1997,1998,1999,2000,2001 Werner Almesberger
+and Craig Small <csmall@small.dropbear.id.au>
+
+This program is licensed under the GPL, on Debian systems you will find a full
+text of the GPL at
+/usr/share/common-licenses/GPL

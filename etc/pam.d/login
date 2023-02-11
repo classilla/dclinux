@@ -1,0 +1,99 @@
+#
+# The PAM configuration file for the Shadow `login' service
+#
+# NOTE: If you use a session module (such as kerberos or NIS+)
+# that retains persistent credentials (like key caches, etc), you
+# need to enable the `CLOSE_SESSIONS' option in /etc/login.defs
+# in order for login to stay around until after logout to call
+# pam_close_session() and cleanup.
+#
+
+# Outputs an issue file prior to each login prompt (Replaces the
+# ISSUE_FILE option from login.defs). Uncomment for use
+# auth       required   pam_issue.so issue=/etc/issue
+
+# Disallows root logins except on tty's listed in /etc/securetty
+# (Replaces the `CONSOLE' setting from login.defs)
+# auth       requisite  pam_securetty.so
+
+# Disallows other than root logins when /etc/nologin exists
+# (Replaces the `NOLOGINS_FILE' option from login.defs)
+auth       requisite  pam_nologin.so
+
+# This module parses /etc/environment (the standard for setting
+# environ vars) and also allows you to use an extended config
+# file /etc/security/pam_env.conf.
+# (Replaces the `ENVIRON_FILE' setting from login.defs)
+auth       required   pam_env.so
+
+# Standard Un*x authentication. The "nullok" line allows passwordless
+# accounts.
+auth       required   pam_unix.so nullok
+
+# This allows certain extra groups to be granted to a user
+# based on things like time of day, tty, service, and user.
+# Please uncomment and edit /etc/security/group.conf if you
+# wish to use this.
+# (Replaces the `CONSOLE_GROUPS' option in login.defs)
+# auth       optional   pam_group.so
+
+# Uncomment and edit /etc/security/time.conf if you need to set
+# time restrainst on logins.
+# (Replaces the `PORTTIME_CHECKS_ENAB' option from login.defs
+# as well as /etc/porttime)
+# account    requisite  pam_time.so
+
+# Uncomment and edit /etc/security/access.conf if you need to
+# set access limits.
+# (Replaces /etc/login.access file)
+# account  required       pam_access.so
+
+# Standard Un*x account and session
+account    required   pam_unix.so
+session    required   pam_unix.so
+
+# Sets up user limits, please uncomment and read /etc/security/limits.conf
+# to enable this functionality.
+# (Replaces the use of /etc/limits in old login)
+# session    required   pam_limits.so
+
+# Prints the last login info upon succesful login
+# (Replaces the `LASTLOG_ENAB' option from login.defs)
+session    optional   pam_lastlog.so
+
+# Prints the motd upon succesful login
+# (Replaces the `MOTD_FILE' option in login.defs)
+session    optional   pam_motd.so
+
+# Prints the status of the user's mailbox upon succesful login
+# (Replaces the `MAIL_CHECK_ENAB' option from login.defs). You
+# can also enable a MAIL environment variable from here, but it
+# is better handled by /etc/login.defs, since userdel also uses
+# it to make sure that removing a user, also removes their mail
+# spool file.
+session    optional   pam_mail.so standard noenv
+
+# The standard Unix authentication modules, used with NIS (man nsswitch) as
+# well as normal /etc/passwd and /etc/shadow entries. For the login service,
+# this is only used when the password expires and must be changed, so make
+# sure this one and the one in /etc/pam.d/passwd are the same. The "nullok"
+# option allows users to change an empty password, else empty passwords are
+# treated as locked accounts.
+#
+# (Add `md5' after the module name to enable MD5 passwords the same way that
+# `MD5_CRYPT_ENAB' would do under login.defs).
+#
+# The "obscure" option replaces the old `OBSCURE_CHECKS_ENAB' option in
+# login.defs. Also the "min" and "max" options enforce the length of the
+# new password.
+
+password   required   pam_unix.so nullok obscure min=4 max=8
+
+# Alternate strength checking for password. Note that this
+# requires the libpam-cracklib package to be installed.
+# You will need to comment out the password line above and
+# uncomment the next two in order to use this.
+# (Replaces the `OBSCURE_CHECKS_ENAB', `CRACKLIB_DICTPATH')
+#
+# password required       pam_cracklib.so retry=3 minlen=6 difok=3
+# password required       pam_unix.so use_authtok nullok md5

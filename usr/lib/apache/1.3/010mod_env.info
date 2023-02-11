@@ -1,0 +1,5 @@
+LoadModule: env_module /usr/lib/apache/1.3/mod_env.so
+Directives:
+ PassEnv
+ SetEnv
+Description: Support for passing environment to CGI

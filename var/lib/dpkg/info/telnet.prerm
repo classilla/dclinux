@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$1" = remove ] || [ "$1" = deconfigure ]; then
+	update-alternatives --remove telnet /usr/bin/telnet.netkit
+fi
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/telnet ]; then
+	rm -f /usr/doc/telnet
+fi
+# End automatically added section
+

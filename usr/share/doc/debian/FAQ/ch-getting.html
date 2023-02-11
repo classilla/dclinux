@@ -1,0 +1,312 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - Getting and Installing Debian GNU/Linux</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-basic_defs.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-compat.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 2 Getting and Installing Debian GNU/Linux
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-version">2.1 What is the latest version of Debian?</a>
+</h2>
+
+<p>
+Currently there are two versions of Debian GNU/Linux:
+
+<dl>
+
+<p>
+<dt><em>release 2.2, a.k.a. the `stable' distribution</em></dt>
+<dd>
+This is stable and well tested software, it changes if major security or
+usability fixes are incorporated.
+</dd>
+
+<p>
+<dt><em>the `unstable' distribution</em></dt>
+<dd>
+This is the version currently under development; it is updated continuously.
+You can retrieve packages from the `unstable' archive on any Debian FTP site
+and use them to upgrade your system at any time, but you may not expect the
+system to be as usable or as stable as before - that's why it's called
+`<strong>unstable</strong>'!
+</dd>
+
+</dl>
+
+<p>
+Please see <a href="ch-ftparchives.html#s-dists">How many Debian distributions
+are there in the <samp>dists</samp> directory?, Section 5.2</a> for more
+information.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-boot-floppies">2.2 Where/how can I get the Debian installation disks?</a>
+</h2>
+
+<p>
+You can get the installation disks by downloading the appropriate files from
+the Debian FTP site: <code><a
+href="ftp://ftp.debian.org/pub/debian/">ftp://ftp.debian.org/pub/debian/</a></code>
+and its <code><a
+href="http://www.debian.org/distrib/ftplist.html">mirrors</a></code>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-cdrom">2.3 How do I install the Debian from CD-ROMs?</a>
+</h2>
+
+<p>
+Linux supports the ISO 9660 (CD-ROM) file system with Rock Ridge extensions
+(formerly known as &quot;High Sierra&quot;).  Several <code><a
+href="http://www.debian.org/distrib/vendors">vendors</a></code> provide Debian
+GNU/Linux in this format.
+
+<p>
+Warning: When installing from CD-ROM, it is usually not a good idea to choose
+dselect's <samp>cdrom</samp> access method.  This method is usually very slow.
+The <samp>mountable</samp> and <samp>apt</samp> methods, for example, are much
+better for installing from CD-ROM (see <a
+href="ch-uptodate.html#s-dpkg-mountable">dpkg-mountable, Section 8.2.5</a> and
+<a href="ch-uptodate.html#s-apt">APT, Section 8.2.1</a>).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-cdimages">2.4 I have my own CD-writer, are there CD images available somewhere?</a>
+</h2>
+
+<p>
+Yes.  To make it easier for CD vendors to provide high quality disks, we
+provide the <code><a href="http://cdimage.debian.org/">Official CD
+images</a></code>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-floppy">2.5 Can I install it from a pile of floppy disks?</a>
+</h2>
+
+<p>
+First of all, a warning: whole Debian GNU/Linux is way too large to be
+installed from media as small as a standard 1.44MB floppy disk - you may not
+find installing from floppies a very pleasant experience.
+
+<p>
+Copy the Debian packages onto formatted floppy disks.  Either a DOS, the native
+Linux &quot;ext2&quot;, or the &quot;minix&quot; format will do; one just has
+to use a mount command appropriate to the floppy being used.
+
+<p>
+Using floppy disks has these complications:
+
+<ul>
+
+<p>
+<li>
+Short MS-DOS filenames: If you are trying to place Debian package files onto
+MS-DOS formatted disks, you will find that their names are generally too long,
+and do not conform to the MS-DOS 8.3 filename limitation.  To overcome this,
+Debian developers make all of their packages available by 8.3 filenames in
+separate &quot;msdos&quot; subdirectories (<samp>stable/msdos-i386/</samp>,
+<samp>contrib/msdos-i386/</samp> and <samp>non-free/msdos-i386/</samp>).  The
+files in these subdirectories are merely symbolic links to the Debian archive
+files; the files do not differ from the files in the <samp>binary-i386/</samp>,
+etc.  directories.
+</li>
+
+<p>
+<li>
+Large file sizes: Some packages are larger than 1.44 MBytes, and will not fit
+onto a single floppy disk.  To solve this problem, use the dpkg-split tool (see
+<a href="ch-pkgtools.html#s-dpkg-split">dpkg-split, Section 7.1.5</a>),
+available in the <samp>tools</samp> directory at <code><a
+href="ftp://ftp.debian.org/debian/">ftp://ftp.debian.org/debian/</a></code> and
+its <code><a
+href="http://www.debian.org/distrib/ftplist.html">mirrors</a></code>.
+</li>
+
+</ul>
+
+<p>
+You must have support in the kernel for floppy disks in order to read and write
+to floppy disk; most kernels come with floppy drive support included in them.
+
+<p>
+To mount a floppy disk under the mount point <samp>/floppy</samp> (a directory
+which should have been created during installation), use:
+
+<ul>
+
+<p>
+<li>
+<pre>
+     mount -t msdos /dev/fd0 /floppy/
+</pre>
+
+<p>
+if the floppy disk is in drive A: and has an MS-DOS filesystem,
+</li>
+
+<p>
+<li>
+<pre>
+     mount -t msdos /dev/fd1 /floppy/
+</pre>
+
+<p>
+if the floppy disk is in drive B: and has an MS-DOS filesystem,
+</li>
+
+<p>
+<li>
+<pre>
+     mount -t ext2 /dev/fd0 /floppy/
+</pre>
+
+<p>
+if the floppy disk is in drive A: and has an ext2 (i.e., a normal Linux)
+filesystem.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-remoteinstall">2.6 Can I get and install Debian directly from a remote Internet site?</a>
+</h2>
+
+<p>
+Yes.  There are several methods for doing this:
+
+<ul>
+
+<p>
+<li>
+<strong>Using APT:</strong> install the <code>apt</code> package, and edit the
+<samp>/etc/apt/sources.list</samp> file to suit your needs.  You should change
+it to include information about a Debian mirror closest to you.  Details on
+this can be found in <code>apt-get(8)</code> and <code>sources.list(8)</code>
+manual pages, as well as in the APT User's Guide, in
+<samp>/usr/share/doc/apt/guide.html/index.html</samp>.
+
+<p>
+Then run
+
+<pre>
+     apt-get update
+</pre>
+
+<p>
+followed by
+
+<pre>
+     apt-get upgrade
+</pre>
+
+<p>
+and your system will be upgraded to the latest Debian release.
+</li>
+
+<p>
+<li>
+<strong>Using dselect and dpkg-ftp:</strong> install the <code>dpkg-ftp</code>
+package (see <a href="ch-uptodate.html#s-dpkg-ftp">dpkg-ftp, Section
+8.2.2</a>).
+
+<p>
+Then invoke the program <code>dselect</code>, which will call
+<code>dpkg-ftp</code> for you, guide you through the selection of packages,
+then install the packages, without every downloading the packages themselves to
+your machine.  This method is designed to save the user both disk space and
+time.
+
+<p>
+Dselect will ask you for the fully qualified domain name of the anonymous ftp
+site you plan to use (if you don't know of any, try ftp.debian.org or
+http.us.debian.org).
+
+<p>
+It'll also ask you for the directory which contains the files you want to
+install, or the subdirectories which contain files you want to install.  This
+directory must contain a file called &quot;Packages&quot; (or its compressed
+equivalent, &quot;Packages.gz&quot;), usually dists/stable/main/binary-ARCH,
+where ARCH stands for your machine architecture.
+</li>
+
+</ul>
+
+<p>
+Please note that when you get and install the packages, you'll still have them
+kept in your /var directory hierarchy, so remember to delete extra files, or to
+move them someplace else (hint: use <code>apt-move</code>), or your partition
+may overflow.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-tape">2.7 Can I get and install Debian from a tape device?</a>
+</h2>
+
+<p>
+At present, installing packages directly from tape is not supported.  One can
+however, use <samp>tar</samp>, <samp>cpio</samp>, or <samp>afio</samp> to copy
+Debian archive files onto a tape, then copy them onto your local disk for
+installation.  In the same vein, floppy disks containing &quot;tar&quot; files
+would have to be copied onto a local disk before they could be managed with the
+Debian package tools.
+</p>
+
+<hr>
+
+[ <a href="ch-basic_defs.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-compat.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

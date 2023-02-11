@@ -1,0 +1,8 @@
+1999-08-12  Ralf Baechle <ralf@uni-koblenz.de>
+
+	* config/obj-elf.c (obj_elf_ident): Make it extern.
+
+	* config/obj-elf.h (obj_elf_ident): Add prototype.
+
+	* config/tc-mips.c (s_ident): New.
+	(mips_pseudo_table): Add "ident".

@@ -1,0 +1,73 @@
+#!/bin/sh -e
+
+if [ "$1" = "configure" ] && [ -e /usr/share/debconf/confmodule ]; then
+    . /usr/share/debconf/confmodule
+
+    # Get answers to questions
+    db_get ifupdown/convert-interfaces;    ATTEMPT_CONVERSION="$RET"
+elif [ "$1" = "configure" ] && dpkg --compare-versions "$2" le "0.6.2pr-3"
+then
+    echo
+    cat <<EOF
+The format of /etc/network/interfaces has had a minor but incompatible
+change made between version 0.5.x and 0.6.x of ifupdown. It is however
+possible to automatically convert from the old format to the new in
+most cases.
+EOF
+    echo
+    echo "Should I attempt to automatically update /etc/network/interfaces? [Y/n] "
+    read upg
+    if [ "$upg" = "N" -o "$upg" = "n" ]; then
+        ATTEMPT_CONVERSION="false"
+    else
+        ATTEMPT_CONVERSION="true"
+    fi
+fi
+
+if [ "$1" = "configure" ] &&
+        dpkg --compare-versions "$2" le "0.6.2pr-3" &&
+        [ "$ATTEMPT_CONVERSION" = "true" ]
+then
+    echo
+    echo -n "Automatically converting /etc/network/interfaces"
+    (
+        cd /etc/network;
+        if /usr/share/ifupdown/upgrade-from-0.5.x.pl \
+                < interfaces > interfaces.dpkg-new 2>/dev/null
+        then
+            echo " succeeded."
+            mv interfaces interfaces.dpkg-old
+            mv interfaces.dpkg-new interfaces
+            echo "Old interfaces file saved as interfaces.dpkg-old."
+        else
+            echo " failed."
+            echo
+            echo "If you wish to reattempt the conversion you may run"
+            echo "    cat /etc/network/interfaces |"
+            echo "         /usr/share/ifupdown/upgrade-from-0.5.x.pl"
+            echo
+	    if [ ! -e /usr/share/debconf/confmodule ]; then
+	        echo -n "Press enter to continue:"
+	        read blah
+	    fi # debconf users can't be prompted. stupid program.
+        fi
+    )
+fi
+
+if [ "$1" = configure -a -e /var/run/ifupdown.state -a \
+	! -e /etc/network/ifstate ]
+then
+	mv /var/run/ifupdown.state /etc/network/ifstate
+fi
+
+
+update-rc.d ifupdown start 39 S . >/dev/null
+
+## Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/ifupdown -a -d /usr/share/doc/ifupdown ]; then
+		ln -sf ../share/doc/ifupdown /usr/doc/ifupdown
+	fi
+fi
+# End automatically added section
+#

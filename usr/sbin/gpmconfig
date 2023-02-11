@@ -1,0 +1,206 @@
+#!/bin/sh
+#
+# gpmconfig, configure gpm (the mouse event server)
+# Copyright (C) 1996, 1997 Martin Schulze <joey@debian.org>
+# Copyright (C) 1997, 1998 James Troup <james@nocrew.org>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of the
+# License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+cfg=/etc/gpm.conf
+TMPFILE=$(mktemp /tmp/$(basename $0).XXXXXX) || exit 1
+ARCH=$(dpkg --print-installation-architecture)
+PIDFILE=/var/run/gpm.pid
+gpm -t types > $TMPFILE
+
+trap 'rm -rf $TMPFILE ; exit 1' 1 2 3 13 15
+
+get_cmdln()
+{
+  cmdln=
+  if [ -n "$device" ]; then cmdln="$cmdln -m $device"; fi
+  if [ -n "$type" ]; then cmdln="$cmdln -t $type"; fi
+  if [ -n "$responsiveness" ]; then cmdln="$cmdln -r $responsiveness"; fi
+  if [ -n "$sample_rate" ]; then cmdln="$cmdln -s $sample_rate"; fi
+  if [ -n "$repeat_type" ]; then cmdln="$cmdln -R$repeat_type"; fi
+  # Yes, this /IS/ correct! There is no space after -R!!!!!!
+  # I reserve the right to throw manpages at anyone who disagrees.
+  if [ -n "$append" ]; then cmdln="$cmdln $append"; fi
+  echo $cmdln
+}
+
+type_help()
+{
+    gpm -t help
+    case "$ARCH" in
+	m68k)
+	    echo "Default for "$ARCH" is bm";;
+	alpha)
+	    echo "Default for "$ARCH" is ps2";;
+	sparc)
+	    echo "Default for "$ARCH" is sun";;
+	i386|*)
+	    echo "Default for "$ARCH" is ps2";;
+    esac
+}
+
+gpm_test()
+{
+  gpmpid=$(cat $PIDFILE)
+  gpmcmdln=$(cat /proc/$gpmpid/cmdline 2>&- | tr '\0' ' ')
+  # ensure that PIDFILE wasn't empty or stale
+  case "$gpmcmdln" in
+    gpm*|/usr/sbin/gpm*) gpmcmdln=${gpmcmdln#*gpm} ;;
+    *) gpmcmdln=NONE ;;
+  esac
+  start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE --exec /usr/sbin/gpm
+  gpm $(get_cmdln)
+
+  echo "gpm $(get_cmdln)"
+  echo "Finish testing by typing Ctrl-D"
+  cat > /dev/null
+  start-stop-daemon --stop --quiet --oknodo --pidfile $PIDFILE --exec /usr/sbin/gpm
+  if [ "$restart" = "yes" -a "$gpmcmdln" != "NONE" ]; then
+    gpm $gpmcmdln
+  fi
+}
+
+if [ -f $cfg ]; then
+  . $cfg
+fi
+
+if [ $# -gt 0 -a "$1" = "--norestart" ]; then
+  restart=no
+else
+  restart=yes
+fi
+
+echo "Configuring gpm (mouse event server):"
+
+ok=no
+while [ ! "$ok" = "yes" ]; do
+  echo; echo "Current configuration: $(get_cmdln)"
+  if [ -n "$device" ];		then echo "Device: $device"; fi
+  if [ -n "$type" ];		then echo "Type: $type"; fi
+  if [ -n "$responsiveness" ];	then echo "Responsiveness: $responsiveness"; fi
+  if [ -n "$repeat_type" ];	then echo "Repeat_Type: $repeat_type"; fi
+  if [ -n "$append" ];		then echo "Append: $append"; fi
+
+  echo -n "Do you want to change anything (Y/n)? "; read answer
+  if [ "$answer" = "N" -o "$answer" = "n" ]; then
+    ok=yes
+  else
+    echo "Where is your mouse [$device]? "; echo -n "> "; read answer
+    if [ -n "$answer" ]; then device="$answer"; fi
+    answer=
+    while [ -z "$answer" ]; do
+      echo "What type is your mouse (or help) [$type]? "; echo -n "> "; read answer
+      if [ -n "$answer" ]; then
+
+	# BAH.  I hate sh.  WTF can't you have $foo where $foo
+	# contains a "|" and have case treat it like a seperator?
+
+        case $answer in
+         h|help)
+	   type_help | more -d
+	   answer=
+  	   ;;
+         *)
+           if grep -qw $answer $TMPFILE; then
+	     type=$answer
+  	   else
+	     echo "Sorry, "$answer" is not a recognised mouse type."
+  	     echo "Try help"
+  	     answer=
+	   fi
+	   ;;
+        esac
+      else
+	if [ -n "$type" ]; then
+	  answer=$type
+	fi
+      fi
+    done
+
+    echo "Set the responsiveness (normally not needed) [$responsiveness]? ";
+    echo -n "> "; read answer
+    if [ -n "$answer" ]; then responsiveness="$answer"; fi
+
+    echo "Repeat protocol (enter 'none' to turn repeating off) [$repeat_type]? ";
+    echo -n "> "; read answer
+    if [ -n "$answer" ]; then repeat_type="$answer"; fi
+    if [ "$answer" = "none" ]; then repeat_type=""; fi
+
+# FIXME, -l configuration
+
+    echo "Do you want to add any additional arguments [$append]? "
+    echo -n "> "; read answer
+    if [ -n "$answer" ]; then 
+      case $answer in
+	n|N|no|No|NO) append="";;
+	default) append="$answer";;
+      esac
+    fi
+
+    if [ "$restart" = "yes" ]; then
+      echo -n "Do you want to test this configuration (y/N)? "; read answer
+      if [ "$answer" = "Y" -o "$answer" = "y" ]; then gpm_test; fi
+    fi
+  fi
+  
+done
+
+if [ -n "$device" -a "$device" != "/dev/mouse" ]; then
+  rm -f /dev/mouse
+  if [ -n "$repeat_type" ]; then 
+    (cd /dev; ln -sf gpmdata mouse);
+  else
+    (cd /dev; ln -sf $(echo $device|cut -d/ -f3) mouse)
+  fi
+fi
+
+# Any backslashes in the append string must be protected from sed.
+
+append=$(echo $append | sed -e "s/\\\/\\\\\\\/g")
+
+# The append string is enclosed in quotes to preserve spaces and other
+# shell meta-characters; as a result we _must_ escape any quote marks
+# in the append string.  Failure to do so will lead to shell meta
+# characters being evaluated with undesirable consequences ('foo
+# "blah" ack' -> '"foo "blah" ack"'; blah is not protected by quotes.
+# However 'foo "blah" ack' -> '"foo \"blah\" ack"' is safe).  
+#
+# (Again, as protection against sed, the backslashes are doubled up.)
+
+append=$(echo $append | sed -e "s/\"/\\\\\\\\\"/g")
+
+if [ "$(grep -c ^repeat_type= $cfg)" = "0" ]; then
+       echo repeat_type= >> $cfg
+fi
+
+cat $cfg \
+  | sed \
+    -e "s,^[ ]*repeat_type=.*,repeat_type=$repeat_type,g" \
+    -e "s,^[ ]*device=.*,device=$device,g" \
+    -e "s,^[ ]*type=.*,type=$type,g" \
+    -e "s,^[ ]*responsiveness=.*,responsiveness=$responsiveness,g" \
+    -e "s,^[ ]*append=.*,append=\"$append\",g" \
+  > $cfg.new
+mv -f $cfg.new $cfg
+
+if [ "$restart" = "yes" ]; then
+  /etc/init.d/gpm restart
+fi
+
+rm -f $TMPFILE

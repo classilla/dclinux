@@ -1,0 +1,41 @@
+#! /bin/sh
+set -e
+
+package_name()
+{
+    case $(uname -s) in
+	GNU)
+	    echo libc0.2
+	;;
+	Linux)
+		case $(uname -m) in
+		    alpha*|ia64*)
+			    echo libc6.1
+		    ;;
+			*)
+			    echo libc6
+		    ;;
+		esac
+	;;
+    esac
+}
+
+if [ "$1" = remove ]; then
+    if command -v suidunregister >/dev/null 2>&1 && [ -e /etc/suid.conf ]; then
+	if [ -x /usr/lib/pt_chown ]; then
+	    suidunregister -s $(package-name) /usr/lib/pt_chown
+	elif [ -x /usr/libexec/pt_chown ]; then
+	    suidunregister -s $(package-name) /usr/libexec/pt_chown
+	fi
+    fi
+fi
+
+if [ "$1" = deconfigure ]; then
+    :; # blah, do something useful with ldso
+fi
+
+if [ "$1" = purge ]; then
+    update-rc.d devpts.sh remove > /dev/null
+fi
+
+exit 0

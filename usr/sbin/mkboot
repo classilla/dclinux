@@ -1,0 +1,161 @@
+#!/bin/bash
+# mkboot: make the system bootable
+# Debian GNU/Linux
+# Copyright 1996-1997 Guy Maor <maor@debian.org>
+# This is free software; see the GNU General Public License version 2
+# or later for copying conditions.  There is NO warranty.
+
+PATH=$PATH:/sbin:/usr/sbin
+
+# root partition
+rootpart=$(rdev | cut -d ' ' -f 1)
+# temporary directory
+tmpdir=${TMPDIR-/tmp}
+
+
+# check whether LILO is installed
+function lilocheck {
+    echo -en "\nChecking for LILO..."
+    if [ $(whoami) != root ] ; then
+	echo "Only root can check for LILO"
+        return 1;
+    fi
+    if [ ! -f /etc/lilo.conf -o ! -x /sbin/lilo ] ; then
+	echo "No"
+	return 1;
+    fi
+    bootpart=$(perl -ne 'print $1 if /^\s*boot\s*=\s*(\S*)/' /etc/lilo.conf)
+    if [ -z "$bootpart" ] ; then
+	# lilo defaults to current root when 'boot=' is not present
+	bootpart=$rootpart
+    fi
+    if ! dd if=$bootpart ibs=16 count=1 2>&- | grep -q LILO ; then
+	echo -e "\nYes, but I couldn't find a LILO signature on $bootpart"
+	echo "Check your /etc/lilo.conf, or run /sbin/lilo by hand."
+	return 1;
+    fi
+    echo "Yes, on $bootpart"
+    return 0;
+}
+
+
+# make a lilo boot disk
+function makelilo {
+bash <<- EOF
+	set -e
+	trap "set +e; cd /; umount /dev/fd0; rmdir $tmpdir/boot$$" 0
+	set -v
+	mkdir $tmpdir/boot$$
+	mke2fs -q /dev/fd0
+	mount -t ext2 /dev/fd0 $tmpdir/boot$$
+	cd $tmpdir/boot$$
+	cp $1 /boot/boot.b .
+	cat > lilo.conf <<- EOF2
+	boot = /dev/fd0
+	install = boot.b
+	map = map
+	compact
+	prompt
+	timeout = 50
+	read-only
+	image = ${kernel##*/}
+	    label = linux
+	    root = $rootpart
+	EOF2
+	lilo -C lilo.conf
+EOF
+}
+
+
+# make a simple boot disk
+function makesimple {
+bash <<- EOF
+	set -ev
+	dd if=$1 of=/dev/fd0
+	rdev /dev/fd0 $rootpart
+	rdev -R /dev/fd0 1
+EOF
+}    
+
+
+
+# make a boot disk
+function makedisk {
+    kernel=${1:-/boot/vmlinuz}
+    if [ ! -r $kernel ] ; then
+	echo "Error: Can't read $kernel."
+	exit 1
+    fi
+
+    boottype="lilo"
+    if [ $(whoami) != root ] ; then
+	echo "Since you don't have root permissions, I can't put LILO on the diskette."
+	echo "I will make a non-LILO diskette instead, but it won't be as useful.  You"
+	echo "can hit <Ctrl-C> to cancel."
+	boottype="simple"
+    fi
+
+    echo -en "\nInsert a floppy diskette into your boot drive, and press <Return>. "
+    read input
+    diskok=0
+    while [ "$diskok" != 1 ] ; do
+	echo -e "\nCreating a $boottype bootdisk..."
+	make$boottype $kernel
+	if [ $? -eq 0 ] ; then
+	    diskok=1
+	else
+	    echo -e "\nThere was a problem creating the boot diskette.  Please make sure that"
+	    echo "you inserted the diskette into the correct drive and that the diskette"
+	    echo "is not write-protected."
+	    echo -en "\nWould you like to try again? (y/n) "
+	    read input
+	    if [ "$input" != "y" ] ; then
+		return 1
+	    fi
+	fi
+    done
+    echo "...Success."
+    return 0
+}
+
+usage="$0 [-r rootpartition] [-i] [kernel]"
+
+while getopts "r:ih-" opt ; do
+    case "$opt" in
+	r) rootpart="$OPTARG" ;;
+	i) installkernel=1 ;;
+	h) echo $usage ; exit 0 ;;
+	-) break ;;
+	*) echo $usage 1>&2 ; exit 1 ;;
+    esac
+done
+shift $(($OPTIND - 1))
+
+if [ "$installkernel" ] ; then
+    shift
+    echo "In order to use the new kernel image you have just installed, you"
+    echo "will need to reboot the machine.  First, however, you will need to"
+    echo "either make a bootable floppy diskette or re-run LILO."
+
+    lilocheck
+    if [ $? -eq 0 ] ; then
+	echo -en "\nShould I run /sbin/lilo? (y/n) "
+	read input
+	if [ "$input" = "y" ] ; then
+	    /sbin/lilo && exit 0
+            echo "There was a problem running /sbin/lilo."
+	fi
+    fi
+
+    echo -en "\nShould I make a bootdisk? (y/n) "
+    read input
+    if [ "$input" = "y" ] ; then
+	makedisk $1 && exit 0
+    fi
+
+    echo -e "\nWARNING: Your system is probably unbootable now.  After correcting any"
+    echo "problems, rerun this script with the command \`mkboot -installkernel'."
+    exit 1
+fi
+
+makedisk $1

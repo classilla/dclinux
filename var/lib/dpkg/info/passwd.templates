@@ -1,0 +1,97 @@
+Template: passwd/root-password
+Type: password
+Description: Enter a password for root:
+ Before proceeding, you need to set a password for 'root', the system
+ administrative account. The root password shouldn't be easy to guess, and
+ it shouldn't be a word found in the dictionary, or a word that could be
+ easily associated with you, like your middle name. A good password will
+ contain a mixture of letters, numbers and punctuation and will be changed
+ at regular intervals. The root password is changed by running the 'passwd'
+ program as root.
+ .
+ Why such caution? The root account doesn't have the restrictions that
+ normal user accounts have. A malicious or unqualified user with root
+ access can have disastrous results.
+ .
+ Note that you will not be able to see the password as you type it.
+
+Template: passwd/root-password-again
+Type: password
+Description: Re-enter password to verify:
+ Please enter the same root password again to verify you have typed it
+ correctly. 
+
+Template: passwd/make-user
+Type: boolean
+Default: true
+Description: Shall I create a normal user account now?
+ It's a bad idea to use the root account for normal day-to-day activities,
+ such as the reading of electronic mail, because even a small mistake can
+ result in disaster. Now you may create a normal user account to use for
+ those day-to-day tasks. 
+ .
+ Note that you may create it later (as well as any additional account) by
+ typing 'adduser <username>' as root, where <username> is an user name,
+ like 'imurdock' or 'rms'. 
+
+Template: passwd/username
+Type: string
+Description: Enter a username for your account:
+ Select a username for the new account. Your first name is a reasonable
+ choice. 
+ .
+ The username should start with a lower-case letter, which can be followed
+ by any combination of numbers and more lower-case letters. 
+
+Template: passwd/username-bad
+Type: note
+Description: Invalid username entered.
+ The user name you entered is invalid. Note that usernames must start with
+ a lower-case letter, which can be followed by any combination of numbers
+ and more lower-case letters. 
+
+Template: passwd/user-fullname
+Type: string
+Default: Debian User
+Description: Enter a full name for the new user:
+ Enter the full name of the new user. Your full name is a good choice. 
+
+Template: passwd/user-password
+Type: password
+Description: Enter a password for the new user:
+ A good password will contain a mixture of letters, numbers and punctuation
+ and will be changed at regular intervals. 
+
+Template: passwd/user-password-again
+Type: password
+Description: Re-enter password to verify:
+ Please enter the same user password again to verify you have typed it
+ correctly. 
+
+Template: passwd/password-mismatch
+Type: note
+Description: Password input error.
+ The two passwords you entered were not the same. Please try again. 
+
+Template: passwd/password-empty
+Type: note
+Description: Empty password was entered.
+ You seem to have entered nothing for the password. That is not secure!
+ Please try again. 
+
+Template: passwd/shadow
+Type: boolean
+Default: true
+Description: Shall I enable shadow passwords?
+ Shadow passwords make your system more secure because nobody is able to
+ view even encrypted passwords. Passwords are stored in a separate file
+ that can only be read by special programs. We recommend the use of shadow
+ passwords. However, if you're going to use NIS you could run into trouble. 
+
+Template: passwd/md5
+Type: boolean
+Default: false
+Description: Shall I enable md5 passwords?
+ Md5 passwords are more secure and allow for passwords longer than 8
+ characters to be used. However, they can cause compatibility problems if
+ you are using NIS or sharing password files with older systems. 

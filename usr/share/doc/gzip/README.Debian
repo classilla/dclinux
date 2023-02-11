@@ -1,0 +1,12 @@
+This is the Debian GNU/Linux prepackaged version of gzip, the GNU
+compression utility.  gzip was written by Jean-loup Gailly, with
+portions written by Mark Adler (inflate.c), Peter Jannesen (unlzw.c)
+and Haruhiko Okumura (unlzh.c).  The zip deflate format was defined
+by Phil Katz.
+
+This package was put together by Ian Murdock <imurdock@debian.org>,
+from sources obtained from:
+ prep.ai.mit.edu:/pub/gnu/gzip-1.2.4.tar.gz
+
+The current maintainer of this package for the Debian distribution is
+Bdale Garbee <bdale@gag.com>.

@@ -1,0 +1,7 @@
+LoadModule: auth_module /usr/lib/apache/modules/mod_auth.so
+LoadModule: auth_module /usr/lib/apache/1.3/mod_auth.so
+Directives:
+ AuthGroupFile
+ AuthUserFile
+ AuthAuthoritative
+Description: Support for basic authentication

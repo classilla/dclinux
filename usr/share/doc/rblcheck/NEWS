@@ -1,0 +1,12 @@
+Changes since 1.4:
+
+- Converted to automake/autoconf for configuration, which should make
+  it easier to extend portability.
+
+- Added support for checking multiple addresses in one invokation.
+
+- Added support for reading addresses to check from standard input, by
+  specifying an argument of '-'.
+
+- Changed rbl.dorkslayers.com to relays.orbs.org, due to a change in
+  management.

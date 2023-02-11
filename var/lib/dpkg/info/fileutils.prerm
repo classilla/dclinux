@@ -1,0 +1,17 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --remove fileutils
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/fileutils ]; then
+	rm -f /usr/doc/fileutils
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/fileutils ]; then
+	rm -f /usr/doc/fileutils
+fi
+# End automatically added section
+

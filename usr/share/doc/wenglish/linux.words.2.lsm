@@ -1,0 +1,26 @@
+Begin2
+Title        = /usr/dict/words for Linux (linux.words)
+Version      = 2
+Desc1        = This is word list containing 45402 words.  Great care has been
+Desc2        = taken to be sure that this word list is free of copyright.
+Desc3        = This list is suitable for English language spelling checkers
+Desc4        = and as a target for look(1).
+Author       = Rik Faith
+AuthorEmail  = faith@cs.unc.edu
+Maintainer   = Rik Faith
+MaintEmail   = faith@cs.unc.edu
+Site1        = ftp.cs.unc.edu
+Path1        = /pub/faith/linux/utils
+File1        = linux.words.2.tar.gz
+FileSize1    = 140k
+Site2        = tsx-11.mit.edu
+Path2        = /pub/linux/docs
+Site3        = sunsite.unc.edu
+Path3        = /pub/Linux/libs
+CopyPolicy1  = Free of non-commercial restrictions.
+CopyPolicy2  = Free for personal, educational, and research purposes.
+Keywords     = dict, dictionary, words, wordlist
+Entered      = Sun Oct 10 19:02:47 1993
+EnteredBy    = Rik Faith
+CheckedEmail = faith@cs.unc.edu
+End

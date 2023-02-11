@@ -1,0 +1,16 @@
+#! /bin/sh
+
+case "$1" in
+  upgrade|remove)
+	[ -L /usr/doc/elvis-tiny ] && rm -f /usr/doc/elvis-tiny
+  ;;
+esac
+
+if [ "$1" = "remove" ]
+then
+	update-alternatives --remove vi     /usr/bin/elvis-tiny
+	update-alternatives --remove vi     /bin/elvis-tiny
+	update-alternatives --remove editor /bin/elvis-tiny
+fi
+
+exit 0

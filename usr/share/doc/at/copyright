@@ -1,0 +1,26 @@
+This is the Debian GNU/Linux prepackaged version of the deferred
+execution scheduler called at.
+
+This package was debianized by its author Thomas Koenig
+<ig25@rz.uni-karlsruhe.de>, taken over and re-packaged first by Martin
+Schulze <joey@debian.org> and now by Siggy Brentrup <bsb@winnegan.de>.
+This may be considered the experimental upstream source.
+
+   Copyright: 1993, 1994, 1995, 1996, 1997 (c) Thomas Koenig
+              1993 (c) David Parsons
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; version 2 dated June, 1991.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program;  if not, write to the Free Software
+   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111, USA.
+
+On Debian GNU/Linux systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

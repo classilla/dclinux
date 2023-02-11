@@ -1,0 +1,12 @@
+/.
+/lib
+/lib/libdb2.so.2.7.7
+/lib/libdb.so.3
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdb2
+/usr/share/doc/libdb2/changelog.gz
+/usr/share/doc/libdb2/copyright
+/usr/share/doc/libdb2/changelog.Debian.gz
+/lib/libdb2.so.2

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Clean up old conffiles
+
+if [ -f /etc/mtools.ref ]
+then
+  /bin/rm /etc/mtools.ref
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/mtools -a -d /usr/share/doc/mtools ]; then
+		ln -sf ../share/doc/mtools /usr/doc/mtools
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinfo
+if [ "$1" = "configure" ]; then
+	install-info --quiet /usr/share/info/mtools.info
+fi
+# End automatically added section
+

@@ -1,0 +1,96 @@
+#!/bin/bash
+set -e
+
+dpkg --assert-support-predepends
+
+if [ "$1" = upgrade ]
+then
+    if [ -f /var/lib/dpkg/info/timezone.postrm ]; then
+	rm -f /var/lib/dpkg/info/timezone.postrm
+    fi
+    if [ -f /var/lib/dpkg/info/timezones.postrm ]; then
+	rm -f /var/lib/dpkg/info/timezones.postrm
+    fi
+    if dpkg --compare-versions "$2" lt 2.1.3-8; then
+	if [ -s /etc/timezone ]; then
+	    cp -a /etc/timezone /etc/timezone.save
+	fi
+    fi
+    if dpkg --compare-versions "$2" le 2.1.1-0.1; then
+	if [ -f /var/run/utmpd.pid ]; then
+	    if kill -TERM `cat /var/run/utmpd.pid` > /dev/null 2>&1
+	    then
+		if [ -f /var/run/utmp ]; then
+		    cp /dev/null /var/run/utmp
+		    if grep '^utmp:' /etc/group; then
+			chown root.utmp /var/run/utmp
+			chmod 664 /var/run/utmp
+		    else
+			chown root.root /var/run/utmp
+			chmod 644 /var/run/utmp
+		    fi
+		fi
+		if [ -f /var/log/wtmp ]; then
+		    savelog /var/log/wtmp
+		    touch /var/log/wtmp
+		    if grep '^utmp:' /etc/group; then
+			chown root.utmp /var/log/wtmp
+			chmod 664 /var/log/wtmp
+		    else
+			chown root.root /var/log/wtmp
+			chmod 644 /var/log/wtmp
+		    fi
+		fi
+		rm -f /etc/init.d/utmpd
+		update-rc.d utmpd remove > /dev/null
+	    fi
+	fi
+	if [ -f /var/run/utmpx ]; then rm -f /var/run/utmpx; fi
+	if [ -f /var/log/wtmpx ]; then rm -f /var/log/wtmpx*; fi
+	if [ -e /var/run/utmpd.ro ]; then rm -f /var/run/utmpd.ro; fi
+	if [ -e /var/run/utmpd.rw ]; then rm -f /var/run/utmpd.rw; fi
+    fi
+fi
+
+if [ "$1" != abort-upgrade ] && [ "`uname -s`" = Linux ]
+then
+    # SPARC sun4m requires a recent kernel
+    realarch=`uname -m`
+    if [ "$realarch" = sparc ]
+    then
+	cputype=`egrep '^type.*:.*sun4m' /proc/cpuinfo 2> /dev/null` || true
+	kernel_ver=`uname -r`
+
+	if [ "$cputype" != "" ]
+	then
+	    kernel_ver=`uname -r`
+	    if dpkg --compare-versions "$kernel_ver" lt 2.2.7
+	    then
+		echo WARNING: You have a cpu which requires kernel 2.2.7
+		echo or greater in order to install this version of libc6.
+		echo Please upgrade the kernel before installing this package.
+		echo
+		echo You should be able to install the latest version of the
+		echo sparc kernel-image in order to satisfy this need. You
+		echo can also download and compile the latest kernel source
+		echo yourself from a kernel mirror \(see http://www.kernel.org/\).
+		exit 1
+	    fi
+	else
+	    if dpkg --compare-versions "$kernel_ver" lt 2.2.0 #should be safe
+	    then
+		echo WARNING: This version of libc6 suggests atleast a
+		echo 2.2.0 kernel in order to work properly. 2.0.x kernels
+		echo will not be able to support certain functions and
+		echo may cause problems. 2.2 kernels have proven to be much
+		echo more reliable than 2.0.x kernels on the sparc platform
+		echo anyway, so an upgrade is suggested. If you have a 2.1.x
+		echo kernel is is suggested you upgrade to the latest 2.2
+		echo release, since it is more stable and fixes many bugs.
+		exit 1
+	    fi
+	fi
+    fi
+fi
+
+exit 0

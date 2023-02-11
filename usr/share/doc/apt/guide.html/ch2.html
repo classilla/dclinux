@@ -1,0 +1,130 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=euc-jp">
+
+<title>APT User's Guide - apt-get</title>
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch1.html">前のページ</a> ]
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch3.html">次のページ</a> ]
+
+<hr>
+
+<h1>
+APT User's Guide<br>
+章 2 apt-get
+</h1>
+
+<hr>
+
+<p>
+<code>apt-get</code> provides a simple way to install packages from the command
+line.  Unlike <code>dpkg</code>, <code>apt-get</code> does not understand .deb
+files, it works with the package's proper name and can only install .deb
+archives from a <em>Source</em>.
+
+<p>
+The first [<a href="footnotes.html#1" name="fr1">1</a>] thing that should be
+done before using <code>apt-get</code> is to fetch the package lists from the
+<em>Sources</em> so that it knows what packages are available.  This is done
+with <samp>apt-get update</samp>.  For instance,
+
+<pre>
+     # apt-get update
+     Get http://ftp.de.debian.org/debian-non-US/ stable/binary-i386/ Packages
+     Get http://llug.sep.bnl.gov/debian/ frozen/contrib Packages
+     Reading Package Lists... Done
+     Building Dependency Tree... Done
+</pre>
+
+<p>
+Once updated there are several commands that can be used:
+
+<dl>
+
+<p>
+<dt>upgrade</dt>
+<dd>
+Upgrade will attempt to gently upgrade the whole system.  Upgrade will never
+install a new package or remove an existing package, nor will it ever upgrade a
+package that might cause some other package to break.  This can be used daily
+to relatively safely upgrade the system.  Upgrade will list all of the packages
+that it could not upgrade, this usually means that they depend on new packages
+or conflict with some other package.  <code>dselect</code> or <samp>apt-get
+install</samp> can be used to force these packages to install.
+</dd>
+
+<p>
+<dt>install</dt>
+<dd>
+Install is used to install packages by name.  The package is automatically
+fetched and installed.  This can be useful if you already know the name of the
+package to install and do not want to go into a GUI to select it.  Any number
+of packages may be passed to install, they will all be fetched.  Install
+automatically attempts to resolve dependency problems with the listed packages
+and will print a summary and ask for confirmation if anything other than its
+arguments are changed.
+</dd>
+
+<p>
+<dt>dist-upgrade</dt>
+<dd>
+Dist-upgrade is a complete upgrader designed to simplify upgrading between
+releases of Debian.  It uses a sophisticated algorithm to determine the best
+set of packages to install, upgrade and remove to get as much of the system to
+the newest release.  In some situations it may be desired to use dist-upgrade
+rather than spend the time manually resolving dependencies in
+<code>dselect</code>.  Once dist-upgrade has completed then
+<code>dselect</code> can be used to install any packages that may have been
+left out.
+
+<p>
+It is important to closely look at what dist-upgrade is going to do, its
+decisions may sometimes be quite surprising.
+</dd>
+
+</dl>
+
+<p>
+<code>apt-get</code> has several command line options that are detailed in its
+man page, <code>apt-get(8)</code>.  The most useful option is <samp>-d</samp>
+which does not install the fetched files.  If the system has to download a
+large number of package it would be undesired to start installing them in case
+something goes wrong.  When <samp>-d</samp> is used the downloaded archives can
+be installed by simply running the command that caused them to be downloaded
+again without <samp>-d</samp>.
+</p>
+
+<hr>
+
+[ <a href="ch1.html">前のページ</a> ]
+[ <a href="index.html#abstract">概要</a> ]
+[ <a href="index.html#copyright">著作権表示</a> ]
+[ <a href="index.html#contents">目次</a> ]
+[ <a href="ch3.html">次のページ</a> ]
+
+<hr>
+
+APT User's Guide<br>
+
+<address>
+$Id: guide.sgml,v 1.4 2001/04/10 07:02:55 jgg Exp $<br>
+Jason Gunthorpe <code><a href="mailto:jgg@debian.org">jgg@debian.org</a></code>
+</address>
+
+</body>
+
+</html>
+

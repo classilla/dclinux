@@ -1,0 +1,5 @@
+# /etc/ftpusers: list of users disallowed ftp access. See ftpusers(5).
+
+#root
+#ftp
+#anonymous

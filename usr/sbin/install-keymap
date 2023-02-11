@@ -1,0 +1,103 @@
+#!/bin/sh
+
+# Copyright (c) 1999-2001 Yann Dirson <dirson@debian.org>
+
+set -e
+
+CONFDIR=/etc/console
+CONFFILEROOT=boottime
+KMAPEXT=kmap
+
+if [ $# != 1 ]
+then
+    echo >&2 "Usage: `basename $0` [ keymap_file | NONE | KERNEL ]"
+    exit 1
+fi
+
+keymap="$1"
+
+if [ "$keymap" = NONE ]
+then
+    exit 0
+fi
+
+if [ ! -x /bin/loadkeys ]
+then
+    echo >&2 "Warning: no console utilities installed yet."
+    echo >&2 "         differing keymap setting until either console-tools or kbd is installed."
+    exit 0
+fi
+
+do_preserving_keymap()
+# execute shell command-line preserving the keymap
+{
+    # save keymap
+    TMP=`tempfile`
+    /usr/bin/dumpkeys >${TMP}
+
+    eval "$*"
+
+    # restore keymap
+    /bin/loadkeys -q ${TMP}
+    rm ${TMP}
+}
+
+# Be extra safe
+mkdir -p ${CONFDIR}
+
+NEW=`tempfile`.gz
+CONFFILE=${CONFDIR}/${CONFFILEROOT}.${KMAPEXT}.gz
+
+backup_and_install()
+{
+    # Keep a backup if no backup already exists
+    [ -r ${CONFFILE} -a ! -r ${CONFDIR}/${CONFFILEROOT}.old.${KMAPEXT}.gz ] && 
+	mv ${CONFFILE} ${CONFDIR}/${CONFFILEROOT}.old.${KMAPEXT}.gz
+    # Also backup this one, although it should probably not exist
+    [ -r ${CONFFILE%.gz} -a ! -r ${CONFDIR}/${CONFFILEROOT}.old.${KMAPEXT} ] && 
+	mv ${CONFFILE%.gz} ${CONFDIR}/${CONFFILEROOT}.old.${KMAPEXT}
+    
+    if [ "$keymap" != KERNEL ]
+    then
+	mv $NEW $CONFFILE
+    fi
+}
+
+if [ "$keymap" = KERNEL ]
+then
+    backup_and_install
+else
+    if [ "`dpkg --print-installation-architecture`" = "arm" ] && 
+	grep '^Hardware *: Acorn-' /proc/cpuinfo >/dev/null &&
+	find /usr/share/keymaps/i386/ -type f -name ${keymap} -o \
+		    -name ${keymap}.gz -o -name ${keymap}.kmap.gz
+    then
+	# we're pretty sure now we were asked to load a PC keymap on a RiscPC
+	echo >&2 "Notice: doing keycode translation to use PC keymap on RiscPC"
+	TRANSLATOR=/usr/share/console/ps2-to-riscpc
+    else
+	TRANSLATOR=cat
+    fi
+
+    # Running the translator at this point is the best way to look for problems, but
+    # running it prior to "loadkeys" (where it would belong really) is mostly not possible
+    # because of include files and include-like directives.
+    # It may turn out that we really need to do keymap-file expansion differently because
+    # of this.  Sigh.
+    do_preserving_keymap "loadkeys -q $keymap ; dumpkeys | $TRANSLATOR | gzip -9n > $NEW"
+
+    # if diff is available, use it to install only if needed
+    if [ -r $CONFFILE -a -x /usr/bin/diff ]
+    then
+	if diff -q $CONFFILE $NEW >/dev/null
+	then
+	    rm $NEW
+	else
+	    backup_and_install
+	fi
+    else
+	backup_and_install
+    fi
+
+    /bin/loadkeys $CONFFILE
+fi

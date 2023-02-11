@@ -1,0 +1,46 @@
+
+From lma@varesearch.com Wed Jul 23 20:40:33 1997
+Date: Wed, 23 Jul 1997 14:56:14 -0700
+From: "Larry M. Augustin" <lma@varesearch.com>
+To: clameter@miriam.fuller.edu
+Cc: linux-kernel@vger.rutgers.edu, davem@jenolan.rutgers.edu,
+    longyear@netcom.com, callahan@maths.ox.ac.uk
+Subject: Re: ppp 2.3.1 patch for Linux 2.1.4x+
+
+
+This reminds me, I had to modify ppp.c from ppp-2.3.1 to make it work
+with kernel 2.0.31-pre2.  Here is the patch to the ppp.c distributed
+with 2.3.1.  I'm not sure if any of this should be in 2.0.31 or not.
+
+Larry
+
+
+--- ppp.c       Sun Jul 13 20:50:50 1997
++++ /usr/src/linux/drivers/net/ppp.c    Mon Jul 21 10:59:54 1997
+@@ -455,7 +455,7 @@
+        dev->rebuild_header   = ppp_dev_rebuild;
+ #endif
+ 
+-       dev->hard_header_len  = PPP_HARD_HDR_LEN;
++       dev->hard_header_len  = PPP_HDRLEN;
+ 
+        /* device INFO */
+        dev->mtu              = PPP_MTU;
+@@ -2196,6 +2196,7 @@
+        struct ppp *ppp = tty2ppp (tty);
+        __u8 *new_data;
+        int proto;
++       int error;
+ 
+ /*
+  * Verify the pointers.
+@@ -2231,7 +2232,8 @@
+ /*
+  * Retrieve the user's buffer
+  */
+-       if (copy_from_user (new_data, data, count)) {
++       COPY_FROM_USER (error, new_data, data, count);
++       if (error != 0) {
+                kfree (new_data);
+                return -EFAULT;
+        }

@@ -1,0 +1,13 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge"  -o "$1" = "remove" ]
+then
+    sh /etc/init.d/sysklogd stop
+fi
+
+if [ "$1" = "purge" ]
+then
+    update-rc.d sysklogd remove >/dev/null
+fi

@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+
+case "$1" in
+    remove|deconfigure)
+        update-alternatives --quiet --remove pager /usr/bin/w3m
+        ;;
+    *)
+esac
+
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/w3m ]; then
+	rm -f /usr/doc/w3m
+fi
+# End automatically added section
+

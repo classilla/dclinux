@@ -1,0 +1,86 @@
+#!/bin/sh
+
+# $XConsortium: startx.cpp,v 1.4 91/08/22 11:41:29 rws Exp $
+# $XFree86: xc/programs/xinit/startx.cpp,v 3.0.8.4 1998/12/27 13:10:18 dawes Exp $
+# 
+# This is just a sample implementation of a slightly less primitive 
+# interface than xinit.  It looks for user .xinitrc and .xserverrc
+# files, then system xinitrc and xserverrc files, else lets xinit choose
+# its default.  The system xinitrc should probably do things like check
+# for .Xresources files and merge them in, startup up a window manager,
+# and pop a clock and serveral xterms.
+#
+# Site administrators are STRONGLY urged to write nicer versions.
+# 
+
+bindir=/usr/X11R6/bin
+
+
+userclientrc=$HOME/.xinitrc
+userserverrc=$HOME/.xserverrc
+sysclientrc=/usr/X11R6/lib/X11/xinit/xinitrc
+sysserverrc=/usr/X11R6/lib/X11/xinit/xserverrc
+clientargs=""
+serverargs=""
+
+
+
+
+
+
+if [ -f $userclientrc ]; then
+    clientargs=$userclientrc
+else if [ -f $sysclientrc ]; then
+    clientargs=$sysclientrc
+fi
+fi
+
+
+
+
+if [ -f $userserverrc ]; then
+    serverargs=$userserverrc
+else if [ -f $sysserverrc ]; then
+    serverargs=$sysserverrc
+fi
+fi
+
+whoseargs="client"
+while [ "x$1" != "x" ]; do
+    case "$1" in
+	/''*|\.*)	if [ "$whoseargs" = "client" ]; then
+		    if [ "x$clientargs" = x ]; then
+			clientargs="$1"
+		    else
+			clientargs="$clientargs $1"
+		    fi
+		else
+		    if [ "x$serverargs" = x ]; then
+			serverargs="$1"
+		    else
+			serverargs="$serverargs $1"
+		    fi
+		fi ;;
+	--)	whoseargs="server" ;;
+	*)	if [ "$whoseargs" = "client" ]; then
+		    clientargs="$clientargs $1"
+		else
+		    serverargs="$serverargs $1"
+		fi ;;
+    esac
+    shift
+done
+
+xinit $clientargs -- $serverargs
+
+
+
+
+
+
+
+
+
+
+
+

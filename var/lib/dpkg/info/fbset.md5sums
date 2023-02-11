@@ -1,0 +1,17 @@
+d8bf64c5f3a022058af19fc56605caec  usr/sbin/fbset
+fc01d371148abbca530ef1d6a1209c39  usr/sbin/modeline2fb
+4d1cfcc861e6ef58b1601c0de19126ab  usr/sbin/con2fbmap
+6ce50452ebb051036e120799601313a8  usr/share/doc/fbset/examples/fb.modes.NTSC.gz
+979def78fd95e74445353ae62f9a3a8c  usr/share/doc/fbset/examples/fb.modes.PAL.gz
+d980d0a61fde5f408952bad87b4cf05a  usr/share/doc/fbset/examples/fb.modes.ATI.gz
+ece99a10f6c4814d4c2acac0e4bf0447  usr/share/doc/fbset/examples/fb.modes.Falcon.gz
+8c6ea8d1936c828cc1815868ac22c4a5  usr/share/doc/fbset/FAQ.gz
+66aebd4568fab3d23e0de4818a77744f  usr/share/doc/fbset/kernel-doc/matroxfb.txt.gz
+2da2ec2a40a17699f55eb2484249eeff  usr/share/doc/fbset/kernel-doc/framebuffer.txt.gz
+23061c26d5a66d39d9eb2e85de22e68a  usr/share/doc/fbset/kernel-doc/vesafb.txt.gz
+91d84cabf222565c1c776a18b01e52aa  usr/share/doc/fbset/copyright
+53f6029e18bd5819b0c4fca2d5393f80  usr/share/doc/fbset/GetVideoMode.c.gz
+c720272cbd8dee0b56246ec776e94158  usr/share/doc/fbset/changelog.Debian.gz
+4ccb2a173e1ddbfa5d5749cf57552528  usr/share/man/man5/fb.modes.5.gz
+1607cc090658225907ddc3acf697f2cd  usr/share/man/man8/fbset.8.gz
+a0947584a5e5a2c72235872dbbc66aa7  usr/share/man/man8/con2fbmap.8.gz

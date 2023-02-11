@@ -1,0 +1,50 @@
+#!/bin/sh
+#
+# This is the postinst script for the Debian GNU/Linux time package
+#
+# Written by Dirk Eddelbuettel <edd@debian.org>   
+
+set -e 
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/time -a -d /usr/share/doc/time ]; then
+		ln -sf ../share/doc/time /usr/doc/time
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = configure ] && command -v install-docs >/dev/null 2>&1; then
+	install-docs -i /usr/share/doc-base/time
+fi
+# End automatically added section
+ 
+
+case "$1" in
+    configure)
+	#
+	# update menus (not needed as we now use doc-base)
+	#if test -x /usr/bin/update-menus
+	#then 
+	#    update-menus
+	#fi
+	#
+	install-info --quiet \
+	    --section "General commands" "General commands:" \
+	    --description="A utility to time the execution of a command" time
+	#
+#       if command -v install-docs >/dev/null 2>&1 
+#	then
+#	    install-docs -i /usr/share/doc-base/time
+#        fi
+	;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+	exit 0
+	;;
+    *)
+	echo "postinst called with unknown argument \`$1'" >&2
+	exit 0
+	;;
+esac
+
+

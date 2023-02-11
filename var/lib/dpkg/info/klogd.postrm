@@ -1,0 +1,13 @@
+#! /bin/sh
+
+set -e
+
+if [ "$1" = "purge"  -o "$1" = "remove" ]
+then
+    sh /etc/init.d/klogd stop
+fi
+
+if [ "$1" = "purge" ]
+then
+  update-rc.d klogd remove >/dev/null
+fi

@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "$1" = "configure" ]; then
+	ldconfig
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libdb2 -a -d /usr/share/doc/libdb2 ]; then
+		ln -sf ../share/doc/libdb2 /usr/doc/libdb2
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,7 @@
+#!/bin/sh
+
+dosfile=$1
+shift
+
+mcopy $dosfile - | cmp $@
+

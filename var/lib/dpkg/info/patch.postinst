@@ -1,0 +1,10 @@
+#! /bin/sh
+# postinst script for patch
+
+set -e
+
+ if [ "$1" = "configure" ]; then
+  if [ -d /usr/doc -a ! -e /usr/doc/patch -a -d /usr/share/doc/patch ]; then
+   ln -sf ../share/doc/patch /usr/doc/patch
+  fi
+ fi

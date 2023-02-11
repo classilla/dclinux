@@ -1,0 +1,8 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/netkit-rpc -a -d /usr/share/doc/netkit-rpc ]; then
+		ln -sf ../share/doc/netkit-rpc /usr/doc/netkit-rpc
+	fi
+fi
+# End automatically added section

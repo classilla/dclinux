@@ -1,0 +1,3 @@
+text/plain; less '%s'; needsterminal; priority=8
+text/*; less '%s'; needsterminal; priority=2
+*/*; less '%s'; needsterminal; priority=0

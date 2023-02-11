@@ -1,0 +1,29 @@
+This is the Debian Linux prepackaged version of the /proc file
+system utilities.
+
+This package was downloaded from:
+  http://www.cs.uml.edu/~acahalan/linux/procps-XXXXXX.tar.gz
+
+
+Upstream Author(s):
+Werner Almesberger <almesber@di.epfl.ch>, Roger Binns, Charles
+Blake <cblake@ucsd.edu>, Brian Edmonds, David Engel <david@ods.com>,
+Larry Greenfield <greenfie@gauss.rutgers.edu>, Michael K. Johnson
+<johnsonm@sunsite.unc.edu>, Branko Lankester <lankeste@fwi.uva.nl>,
+Robert Nation <nation@rocket.sanders.lockheed.com>, Michael Shields
+<mjshield@nyx.cs.du.edu>, Henry Ware <al172@yfn.ysu.edu>, Matt
+Welsh <mdw@sunsite.unc.edu> and Albert D. Cahalan
+
+The upstream maintainer of procps is Michael J. Johnson
+<johnsonm@sunsite.unc.edu>.
+
+All programs except ps, skill and snice are copyright by their
+authors and redistributable under the terms of the GNU General
+Public License. On Debian Linux systems, the complete text of
+the GNU General Public License can be found in
+`/usr/share/common-licenses/GPL'.
+
+ps, skill and snice are copyright by their authors and redistributable under 
+the terms of the GNU Library General Public License. On Debian Linux 
+systems, the complete text of the GNU Library General Public License can 
+be found in `/usr/share/common/licenses/LGPL'.

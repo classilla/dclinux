@@ -1,0 +1,56 @@
+                                                                   -*- text -*-
+$Debian: cvs/debian/README.Debian,v 1.1 2001/04/20 16:00:53 epg Exp $
+
+Aside from the standard Debian modifications of paths, default
+editors, and such, this package contains the following
+modifications:
+
+Pserver Patch
+~~~~~~~~~~~~~
+
+This package has a patch for pserver that fixes the problem that
+pserver wanted to read /root/.cvsignore. The problem is that the
+HOME environment variable is set, and it overrides the uid based
+password lookup. What we do now is drop the cached home directory
+if the uid has changed.
+
+-- Wichert Akkerman <wakkerma@debian.org>, Sun Dec 19 15:50:48 CET 1999
+
+Control of Keyword Expansion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+I've copied support for this via CVSROOT/options from FreeBSD.
+The options file can include tag and tagexpand directives. The
+tag directive defines a local keyword (if you've ever seen
+$FreeBSD$ in a file, now you know what it is. So when do we start
+seeing $Debian: cvs/debian/README.Debian,v 1.1 2001/04/20 16:00:53 epg Exp $? :) and the tagexpand directive defines which
+keywords (if any) should be expanded.
+
+This is more useful than using the normal -k options to control
+keyword expansion because you can simply turn off all expansion
+except for your local keyword. This is in fact what the FreeBSD
+project does.
+
+The tag directive looks like
+
+tag=Foo=<KEYWORD>
+
+where Foo is your new local keyword and <KEYWORD> is the standard
+keyword it mimics (one of Author, Date, CVSHeader, Header, Id,
+Locker, Log, Name, RCSfile, Revision, Source, or State).
+
+The tagexpand directive looks like
+
+tagexpand=<INCLUDE>Foo
+
+where <INCLUDE> is either i (for include in the list of keywords
+to expand) or e (for exclude) and Foo is the keyword to include
+or exclude. This can contain comma-separated values like
+
+tagexpand=iGNU,iDebian
+
+All keywords default to expanding, unless the tagexpand directive
+starts with an i (like the above example) in which case they all
+default to not being expanded.
+
+ -- Eric Gillespie, Jr. <epg@debian.org>  Fri, 20 Apr 2001 09:28:51 -0500

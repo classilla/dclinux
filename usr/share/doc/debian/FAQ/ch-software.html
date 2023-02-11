@@ -1,0 +1,340 @@
+<!doctype html public "-//W3C//DTD HTML 4.0//EN">
+
+<html>
+
+<head>
+
+<title>The Debian GNU/Linux FAQ - Software available in the Debian system</title>
+
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+<body>
+
+<hr>
+
+[ <a href="ch-compat.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ftparchives.html">next</a> ]
+
+<hr>
+
+<h1>
+The Debian GNU/Linux FAQ<br>
+Chapter 4 Software available in the Debian system
+</h1>
+
+<hr>
+
+<h2>
+<a name="s-apps">4.1 What types of applications and development software are available for Debian GNU/Linux?</a>
+</h2>
+
+<p>
+Like most Linux distributions, Debian GNU/Linux provides:
+
+<ul>
+
+<p>
+<li>
+the major GNU applications for software development, file manipulation, and
+text processing, including gcc, g++, make, texinfo, Emacs, the Bash shell and
+numerous upgraded Unix utilities,
+</li>
+
+<p>
+<li>
+Perl, Python, Tcl/Tk and various related programs, modules and libraries for
+each of them,
+</li>
+
+<p>
+<li>
+TeX (LaTeX) and Lyx, dvips, Ghostscript,
+</li>
+
+<p>
+<li>
+the X Window System, which provides a networked graphical user interface for
+Linux, and countless X applications including GNOME,
+</li>
+
+<p>
+<li>
+a full suite of networking applications, including servers for Internet
+protocols such as HTTP (WWW), FTP, NNTP (news), SMTP and POP (mail) and name
+server; also provided are web browsers, and development tools.
+</li>
+
+</ul>
+
+<p>
+More than 3750 packages, ranging from news servers and readers to sound
+support, FAX programs, database and spreadsheet programs, image processing
+programs, communications, net, and mail utilities, Web servers, and even
+ham-radio programs are included in the distribution.  Another 450 software
+suites are available as Debian packages, but are not formally part of Debian
+due to license restrictions.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-softwareauthors">4.2 Who wrote all that software?</a>
+</h2>
+
+<p>
+For each package the <em>authors</em> of the program(s) are credited in the
+file <samp>/usr/doc/PACKAGE/copyright</samp>, where PACKAGE is to be
+substituted with the package's name.
+
+<p>
+<em>Maintainers</em> who package this software for the Debian GNU/Linux system
+are listed in the Debian control file (see <a
+href="ch-pkg_basics.html#s-controlfile">What is a Debian control file?, Section
+6.4</a>) that comes with each package.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-pkglist">4.3 How can I get a current list of programs that have been packaged for the Debian project?</a>
+</h2>
+
+<p>
+A complete list is available from any of the Debian <code><a
+href="http://www.debian.org/distrib/ftplist.html">mirrors</a></code>.
+
+<p>
+The file <samp>indices/Packages-Master-i386.gz</samp> provides a list,
+including short descriptions, of all packages that are available for computers
+with ix86 (and compatible) chips.  There are similar files, at
+<samp>indices/Packages-Master-ARCH.gz</samp>, where ARCH is to be substituted
+by the appropriate architecture, that provide a similar list of packages that
+are available for such computers/architectures.
+
+<p>
+The <code><a href="http://www.debian.org/distrib/packages.html">WWW interface
+to the Debian packages</a></code> conveniently summarizes the packages in each
+of about twenty &quot;sections&quot; of the Debian archive.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-no-devs">4.4 Why aren't there any libfoo.so files in Debian library packages?</a>
+</h2>
+
+<p>
+Debian Policy requires that such symbolic links (to libfoo.so.x.y.z or similar)
+are placed in separate, development packages.  Those packages are usually named
+libfoo-dev or libfooX-dev (presuming the library package is named libfooX, and
+X is a whole number).
+</p>
+
+<hr>
+
+<h2>
+<a name="s-missing">4.5 What is missing from Debian GNU/Linux?</a>
+</h2>
+
+<p>
+A list of packages which are still needed to be packaged for Debian exists, the
+&quot;Work-Needing and Prospective Packages&quot; list.  For more details, see
+<a href="ch-contributing.html#s-contrib">How can I become a Debian software
+developer?, Section 12.1</a>.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-java">4.6 (How) Does Debian support Java?</a>
+</h2>
+
+<p>
+The Java Development Kit from Sun is currently available as a Debian package
+(<samp>jdkVVV_VVV-RRR.deb</samp>).  The JDK will allow you to run Java programs
+and applets, and write your own.  If your kernel is properly configured (see
+below), the JDK will allow you to <em>run</em> Java programs just like other
+executables.  The JDK package also includes a number of demo programs.
+
+<p>
+Debian's default kernel is configured with Java support built in as a module
+(i.e., CONFIG_BINFMT_JAVA=m).  Users who wish to build their own custom kernel
+(see <a href="ch-kernel.html#s-customkernel">What tools does Debian provide to
+build custom kernels?, Section 9.2</a>) can omit this if they choose, of
+course.  Once module support is available in the kernel, you need to make sure
+the module is loaded.  You can do it at boot time by inserting the line
+<samp>binfmt_java</samp> in the file <samp>/etc/modules</samp>.
+
+<p>
+Alternatively, you can install the module from the command line by executing
+the command <samp>insmod DIRNAME/binfmt_java.o</samp> where
+<samp>DIRNAME</samp> is the name of the directory where the modules that have
+been built for the version of the kernel now running are stored.  On a system
+with the 2.2.17 version of the kernel, <samp>DIRNAME</samp> is likely to be
+<samp>/lib/modules/2.2.17/fs/</samp>.  You can check that a module is loaded
+using the command <samp>lsmod</samp>.
+
+<p>
+Running a Java applet requires a browser with the capability to recognize and
+execute them.  The Netscape browser that can be installed as a Debian package
+will run Java applets.  (The Netscape source code is not publicly available.
+The Debian netscape package provides a wrapper which aids the installation and
+management of Netscape on a Debian system.  This is actually a good example of
+the integration of commercial packages with the Debian system.)
+
+<p>
+A final note of mixed blessings: Sun's licensing policies on the JDK are
+becoming more restricted with time, so this package may not be available as
+part of Debian soon.  It is possible that it may be available in the same way
+that Netscape is available for Debian GNU/Linux.  Better news is that a number
+of programs are currently being developed with may provide attractive
+publicly-available alternatives.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-isitdebian">4.7 How can I check that I am using a Debian system, and what version is it?</a>
+</h2>
+
+<p>
+In order to make sure that your system has been installed from the real Debian
+base disks check for the existence of <samp>/etc/debian_version</samp> file,
+which contains a single one-line entry giving the version number of the
+release, as defined by the package <samp>base-files</samp>.
+
+<p>
+The existence of the program <samp>dpkg</samp> shows that you should be able to
+install Debian packages on your system, but as the program has been ported to
+many other operating systems and architectures, this is no longer a reliable
+method of determining is a system Debian GNU/Linux.
+
+<p>
+Users should be aware, however, that the Debian system consists of many parts,
+each of which can be updated (almost) independently.  Each Debian
+&quot;release&quot; contains well defined and unchanging contents.  Updates are
+separately available.  For a one-line description of the installation status of
+package <samp>foo</samp>, use the command <samp>dpkg --list foo</samp>.  To
+view versions of all installed packages, run:
+
+<pre>
+     dpkg -l
+</pre>
+
+<p>
+For a more verbose description, use:
+
+<pre>
+     dpkg --status foo
+</pre>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-nonenglish">4.8 How does Debian support non-English languages?</a>
+</h2>
+
+<ul>
+
+<p>
+<li>
+Debian GNU/Linux is distributed with keymaps for nearly two dozen keyboards,
+and with utilities (in the <samp>kbd</samp> package) to install, view, and
+modify the tables.
+
+<p>
+The installation prompts the user to specify the keyboard he will use.
+</li>
+
+<p>
+<li>
+Vast majority of the software we packaged supports entering non-US-ASCII
+characters used in other Latin languages (e.g.  ISO-8859-1 or ISO-8859-2), and
+a number of programs support multi-byte languages such as Japanese or Chinese.
+</li>
+
+<p>
+<li>
+Currently, support for German-, Spanish-, Finnish-, French-, Hungarian-,
+Italian-, Japanese-, Korean- and Polish-language manual pages is provided
+through the <samp>manpages-LANG</samp> packages (where LANG is the ISO country
+code).  To access an NLS manual page, the user must set the shell LC_MESSAGES
+variable to the appropriate string.
+
+<p>
+For example, in the case of the Italian-language manual pages, LC_MESSAGES must
+be set to 'it_IT'.  The <code>man</code> program will then search for Italian
+manual pages under <samp>/usr/share/man/it_IT/</samp>.
+</li>
+
+</ul>
+</p>
+
+<hr>
+
+<h2>
+<a name="s-usexports">4.9 What about the US export regulation limitations?</a>
+</h2>
+
+<p>
+US laws place restrictions on the export of defense articles, which includes
+some types of cryptographic software.  PGP and ssh, among others, fall into
+this category.
+
+<p>
+To prevent anyone from taking unnecessary legal risks, certain Debian GNU/Linux
+packages are only available from a non-US site <code><a
+href="ftp://non-US.debian.org/debian-non-US/">ftp://non-US.debian.org/debian-non-US/</a></code>.
+There are numerous mirror sites all of which are also outside of the US, see
+<code><a
+href="ftp://non-US.debian.org/debian-non-US/README.non-US">ftp://non-US.debian.org/debian-non-US/README.non-US</a></code>
+for a full list.
+</p>
+
+<hr>
+
+<h2>
+<a name="s-pine">4.10 Where is pine?</a>
+</h2>
+
+<p>
+Due to its restrictive license, it's in the non-free area.  Moreover, since
+license does not even allow modified binaries to be distributed, you have to
+compile it yourself from the source and the Debian patches.  For the
+convenience of people using dselect, the source code for the Debian version of
+pine is available in the packages <code>pine396-src</code> and
+<code>pine396-diffs</code>, or <code>pine4-src</code> and
+<code>pine4-diffs</code> for version 4.*.
+
+<p>
+Note that there are many replacements for both pine and pico, such as
+<code>mutt</code> and <code>nano</code>, that are located in the main section.
+</p>
+
+<hr>
+
+[ <a href="ch-compat.html">previous</a> ]
+[ <a href="index.html#abstract">Abstract</a> ]
+[ <a href="index.html#copyright">Copyright Notice</a> ]
+[ <a href="index.html#contents">Contents</a> ]
+[ <a href="ch-ftparchives.html">next</a> ]
+
+<hr>
+
+The Debian GNU/Linux FAQ<br>
+
+<address>
+version 2.2.2, 24 September 2000<br>
+<a href="ch-faqinfo.html#s-authors">Authors, Section 15.1</a>
+</address>
+
+</body>
+
+</html>
+

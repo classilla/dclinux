@@ -1,0 +1,61 @@
+#!/bin/sh
+# uz [file...]
+# lz [file...]
+#
+# If called "uz", gunzips and extracts a gzip'd tar'd archive.
+# If called "lz", gunzips and shows a listing of a gzip'd tar'd archive.
+#
+# Requires: gzip and tar in the user's path.  Should work with most tars.
+# "-" is now used for backwards compatibility with antique tars, e.g. SCO.
+#
+# 1994/02/19	DCN	Created (as a trivial, but useful script)
+# 1994/12/01	DCN	Combined uz and lz, added suffix handling
+#
+# Copyright (C) 1994 David C. Niemi (niemidc@erols.com)
+# The author requires that any copies or derived works include this
+# copyright notice; no other restrictions are placed on its use.
+#
+
+set -e
+set -u
+
+case $0 in
+*uz)
+	tarparam="-pxvf"
+	action="Extracting from "
+	;;
+*lz)
+	tarparam="-tvf"
+	action="Reading directory of "
+	;;
+*)
+	echo "$0: expect to be named either \"uz\" or \"lz\"." >&2
+	exit 1
+	;;
+esac
+
+if [ $# = 0 ]; then
+	echo "$action standard input." >&2
+	gzip -cd - | tar "$tarparam" -
+	exit 0
+fi
+
+while [ $# -ge 1 ]; do
+	echo >&2
+	found=
+	for suffix in "" .gz .tgz .tar.gz .z .tar.z .taz .tpz .Z .tar.Z ; do
+		if [ -r "${1}$suffix" ]; then
+			found=$1$suffix;
+			break;
+		fi
+	done
+	if [ -z "$found" ]; then
+		echo "$0: could not read \"$1\"." >&2
+	else
+		echo "$action \"$found\"." >&2
+		gzip -cd -- "$found" | tar "$tarparam" -
+	fi
+	shift
+done
+
+exit 0

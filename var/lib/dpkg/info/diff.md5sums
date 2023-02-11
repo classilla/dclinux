@@ -1,0 +1,17 @@
+0f74fdd045b2a70569c33ce2d10374a3  usr/share/doc/diff/NEWS
+760739673b963545acf81602d2a63c57  usr/share/doc/diff/copyright
+f871deb097b16b6619522516c62be45e  usr/share/doc/diff/changelog.gz
+51f0d9d8480578150abe59aae08d64a7  usr/share/doc/diff/changelog.Debian.gz
+69094f7997dfb57d4f46a0cba89f3994  usr/share/man/man1/diff3.1.gz
+c73b4bfd27d8d3b66200daff9d0d7b5b  usr/share/man/man1/cmp.1.gz
+247ab6652441ba822fd65de4d949022e  usr/share/man/man1/diff.1.gz
+42a433c62d21968b4326ccdbef6f279d  usr/share/man/man1/sdiff.1.gz
+42c6bb5f3df8dfdcd2724cb9a7a1d75c  usr/share/info/diff.info-2.gz
+82416a5a5d3b8bbbe601ceeca89b5c01  usr/share/info/diff.info-3.gz
+b17b12f6fe14517aa4c34772393e226e  usr/share/info/diff.info-4.gz
+06c9b92fd7bec1ed05eff35cc4fd6cfe  usr/share/info/diff.info.gz
+9bd322ffb63fe27156d2485717d94400  usr/share/info/diff.info-1.gz
+e22180d7f10932ad8ddc31caad8c33c3  usr/bin/cmp
+ec288d0d2ed8f91a1b31b53792c7a697  usr/bin/diff
+f210e20b2976de525209767ba7749bec  usr/bin/diff3
+e162f3a7f972fd4c79f851382100a6c9  usr/bin/sdiff

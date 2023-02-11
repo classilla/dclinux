@@ -1,0 +1,10 @@
+
+These are examples, templates etc. for some scripts in /etc/init.d/
+
+Some of them are not really "examples" but I had to stuff some default
+scripts somewhere..
+
+Concerning the powerfail and powerd stuff,
+it is best if you install the "genpower" package maintained by
+Brian C. White <bcwhite@verisim.com> if you want to use a UPS.
+

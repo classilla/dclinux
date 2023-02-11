@@ -1,0 +1,10 @@
+styles R I B BI
+fonts 8 0 0 0 0 0 S M G
+ondemand M G
+sizes 8 10 12 14 18 24 0
+res 75
+X11
+hor 1
+vert 1
+unitwidth 10
+postpro gxditview

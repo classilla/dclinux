@@ -1,0 +1,18 @@
+#!/bin/sh -e
+if [ "$1" = configure ]; then
+        ldconfig
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/libpopt0 -a -d /usr/share/doc/libpopt0 ]; then
+		ln -sf ../share/doc/libpopt0 /usr/doc/libpopt0
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_makeshlibs
+if [ "$1" = "configure" ]; then
+	ldconfig
+fi
+# End automatically added section
+

@@ -1,0 +1,40 @@
+#! /bin/sh
+
+# Remove the old view link (nvi-1.34-14, maybe earlier)
+# Don't bother the user with it.
+update-alternatives --remove view /usr/bin/nvi >/dev/null
+
+update-alternatives --install /usr/bin/ex ex /usr/bin/nex 30 \
+  --slave /usr/share/man/man1/ex.1.gz ex.1.gz /usr/share/man/man1/nex.1.gz
+update-alternatives --install /usr/bin/vi vi /usr/bin/nvi 30 \
+  --slave /usr/share/man/man1/vi.1.gz vi.1.gz /usr/share/man/man1/nvi.1.gz
+update-alternatives --install /usr/bin/view view /usr/bin/nview 30 \
+  --slave /usr/share/man/man1/view.1.gz view.1.gz /usr/share/man/man1/nview.1.gz
+
+# These are for the generic editor links
+
+update-alternatives --install /usr/bin/editor editor /usr/bin/nvi 100 \
+  --slave /usr/share/man/man1/editor.1.gz editor.1.gz /usr/share/man/man1/nvi.1.gz
+
+#
+# Add startup links for recovery script
+#
+
+if [ $1 = "configure" ] ; then
+    update-rc.d nviboot start 70 S . >/dev/null
+    # Clean up old init script
+    if [ -f /etc/rc.boot/nvi -a -f /etc/init.d/nviboot ] ; then
+	rm /etc/rc.boot/nvi
+    fi
+fi
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/nvi -a -d /usr/share/doc/nvi ]; then
+		ln -sf ../share/doc/nvi /usr/doc/nvi
+	fi
+fi
+# End automatically added section
+
+
+exit 0

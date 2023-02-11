@@ -1,0 +1,22 @@
+#! /bin/sh
+
+set -e
+
+install-info --quiet --section "General commands" "General commands" \
+ /usr/share/info/fileutils.info.gz
+
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/fileutils -a -d /usr/share/doc/fileutils ]; then
+		ln -sf ../share/doc/fileutils /usr/doc/fileutils
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installdocs
+if [ "$1" = "configure" ]; then
+	if [ -d /usr/doc -a ! -e /usr/doc/fileutils -a -d /usr/share/doc/fileutils ]; then
+		ln -sf ../share/doc/fileutils /usr/doc/fileutils
+	fi
+fi
+# End automatically added section
+

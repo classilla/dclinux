@@ -1,0 +1,21 @@
+#! /bin/sh
+
+if [ "$1" != "upgrade" ]
+then
+  update-alternatives --remove editor /bin/ae
+fi
+
+if [ -e /bin/ae.vi.sh ]
+then
+  update-alternatives --remove vi /usr/bin/ae.vi.sh
+fi
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/ae ]; then
+  rm -f /usr/doc/ae
+fi
+
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/man/man1/ae.1.gz ]; then
+  rm -f /usr/man/man1/ae.1.gz
+fi
+
+exit 0

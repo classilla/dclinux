@@ -1,0 +1,9 @@
+auto
+/usr/bin/ftp
+ftp.1.gz
+/usr/share/man/man1/ftp.1.gz
+
+/usr/bin/netkit-ftp
+100
+/usr/share/man/man1/netkit-ftp.1.gz
+

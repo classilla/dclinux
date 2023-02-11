@@ -1,0 +1,51 @@
+Template: console-data/keymap/policy
+Type: select
+Choices: Select keymap from list, Don't touch keymap, Keep kernel keymap
+Default: Select keymap from list
+Description: What policy do you want to apply regarding keymaps ?
+ The keymap describes how keys are laid out on your keyboard,
+ and what symbols (letters, digits, etc.) are drawn on them.
+ .
+ "Select keymap from list" will allow you to select one of the predefined
+ keymaps - you will most likely want this unless you have a USA keyboard.
+ .
+ "Keep kernel keymap" will prevent any keymap to be loaded next time your
+ system will boot.  It will remove from /etc/ any keymap you may have already
+ selected (it will be lost), but if you have already loaded a keymap, it cannot
+ not be changed back until you reboot.
+ .
+ "Don't touch keymap" will prevent the configuration system to overwrite
+ the keymap you have in /etc/.  Select this if you want to keep a keymap you
+ obtained through other means.  Please remember to install new keymaps with
+ install-keymap(8) if you select this choice.
+
+Template: console-data/keymap/family
+Type: select
+Choices: ${choices}
+Description: What is the layout family of your keyboard ?
+ You need to first specify the generic family name for your keyboard layout.
+ Usually the layout family name is taken from the first keys on the left of
+ the top letters row of the keymap (this is at least true for qwerty
+ and azerty layouts).
+
+Template: console-data/keymap/template/layout
+Type: select
+Choices: ${choices}
+Description: What is the keys layout of your keyboard ?
+ To refine your choice for a keymap, I need to know the physical
+ layout of your keyboard.
+
+Template: console-data/keymap/template/variant
+Type: select
+Choices: ${choices}
+Description: Which variant do you have ?
+ The layout you selected has several variants.  Please select
+ the one matching your keyboard.
+
+Template: console-data/keymap/template/keymap
+Type: select
+Choices: ${choices}
+Description: Which specific keymap do you want ?
+ The keyboard you selected allows you to choose among several keymaps.
+ Usually these were designed either for specific tastes (eg. dead keys or not),
+ or for specific needs (eg. programmer's keymaps).

@@ -1,0 +1,9 @@
+#!/bin/sh -
+
+set -e
+
+# update the menus for fbset (remove)
+# if test -x /usr/bin/update-menus
+# then 
+#	update-menus  
+# fi

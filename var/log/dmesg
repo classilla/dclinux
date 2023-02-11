@@ -1,0 +1,76 @@
+Linux version 2.4.5 (yaegashi@aragorn) (gcc version 3.1 20010501 (experimental)) #27 Thu May 31 07:06:51 JST 2001
+SEGA Dreamcast support.
+On node 0 totalpages: 4096
+zone(0): 4096 pages.
+zone(1): 0 pages.
+zone(2): 0 pages.
+Kernel command line: mem=16M console=ttySC1,115200 ip=on
+CPU clock: 200.00MHz
+Bus clock: 100.00MHz
+Module clock: 50.00MHz
+Interval = 125000
+Console: colour dummy device 80x25
+Calibrating delay loop... 199.47 BogoMIPS
+Memory: 10332k/16384k available (1173k kernel code, 6052k reserved, 132k data, 188k init)
+Dentry-cache hash table entries: 2048 (order: 2, 16384 bytes)
+Inode-cache hash table entries: 1024 (order: 1, 8192 bytes)
+Buffer-cache hash table entries: 1024 (order: 0, 4096 bytes)
+Page-cache hash table entries: 4096 (order: 2, 16384 bytes)
+CPU: SH7750/SH7751
+POSIX conformance testing by UNIFIX
+PCI: MMIO fixup to Sega Corporation Broadband Adapter
+Linux NET4.0 for Linux 2.4
+Based upon Swansea University Computer Society NET3.039
+Starting kswapd v1.8
+devfs: v0.102 (20000622) Richard Gooch (rgooch@atnf.csiro.au)
+devfs: boot_options: 0x0
+Console: switching to colour frame buffer device 80x30
+fb0: NEC PowerVR2 frame buffer device, using 1200k/8192k of video memory
+fb0: Mode 640x480-32 pitch = 2560 cable: VGA video output: VGA
+pty: 256 Unix98 ptys configured
+SuperH SCI(F) driver initialized
+ttySC0 at 0xffe00000 is a SCI
+ttySC1 at 0xffe80000 is a SCIF
+maple: registered driver: Dreamcast controller (function 0x1)
+maple: registered driver: Dreamcast keyboard (function 0x40)
+maple: registered driver: Dreamcast mouse (function 0x200)
+Real Time Clock Driver v1.10d
+block: queued sectors max/low 6722kB/2240kB, 64 slots per queue
+RAMDISK driver initialized: 16 RAM disks of 4096K size 1024 blocksize
+loop: loaded (max 8 devices)
+8139too Fast Ethernet driver 0.9.17
+PCI: enabling device 00:00.0 (0006 -> 0007)
+eth0: SEGA Broadband Adapter at 0xa1001700, 00:d0:f1:02:3a:6f, IRQ 83
+eth0:  Identified 8139 chip type 'RTL-8139C'
+GDROM: Dreamcast GD-ROM Drive found.
+mice: PS/2 mouse device common for all mice
+SEGA Dreamcast MAPLE Bus drivers
+maple: registered driver: Dummy (function 0x0)
+NET4: Linux TCP/IP 1.0 for NET4.0
+IP Protocols: ICMP, UDP, TCP
+IP: routing cache hash table of 512 buckets, 4Kbytes
+TCP: Hash tables configured (established 1024 bind 2048)
+eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.
+maple(0,0): Connected(function 0x40)
+keybdev.c: Adding keyboard: input0
+input0: keyboard(0x1020080): Keyboard
+maple(1,0): Connected(function 0x200)
+mouse0: PS/2 mouse device for input1
+input1: mouse(0xe0700): Dreamcast Mouse
+maple(2,0): Connected(function 0x1)
+input2: controller(0xf06fe): Dreamcast Controller
+Sending DHCP requests ., OK
+IP-Config: Got DHCP answer from 192.168.0.254, my address is 192.168.0.248
+IP-Config: Complete:
+      device=eth0, addr=192.168.0.248, mask=255.255.255.0, gw=192.168.0.254,
+     host=192.168.0.248, domain=ta.keshi.org, nis-domain=(none),
+     bootserver=192.168.0.254, rootserver=192.168.0.254, rootpath=
+NET4: Unix domain sockets 1.0/SMP for Linux NET4.0.
+RAMDISK: Couldn't find valid RAM disk image starting at 0.
+Freeing initrd memory: 4096k freed
+Looking up port of RPC 100003/2 on 192.168.0.254
+Looking up port of RPC 100005/2 on 192.168.0.254
+VFS: Mounted root (nfs filesystem).
+Mounted devfs on /dev
+Freeing unused kernel memory: 188k freed
+eth0: Setting 100mbps full-duplex based on auto-negotiated partner ability 45e1.

@@ -1,0 +1,305 @@
+# Modules file for devfsd
+# Please email any additions to devfsd@packages.debian.org.
+#  (see the modules.in file in the source for details of how this is
+#  generated).
+## From /usr/sbin/MAKEFLOPPIES
+probe /dev/fd0d360 fd0 floppy
+probe /dev/fd0h1200 fd0 floppy
+probe /dev/fd0D360 fd0 floppy
+probe /dev/fd0D720 fd0 floppy
+probe /dev/fd0h360 fd0 floppy
+probe /dev/fd0h720 fd0 floppy
+probe /dev/fd0H1440 fd0 floppy
+probe /dev/fd0E2880 fd0 floppy
+probe /dev/fd0CompaQ fd0 floppy
+probe /dev/fd0h1440 fd0 floppy
+probe /dev/fd0H1680 fd0 floppy
+probe /dev/fd0h410 fd0 floppy
+probe /dev/fd0H820 fd0 floppy
+probe /dev/fd0h1476 fd0 floppy
+probe /dev/fd0H1722 fd0 floppy
+probe /dev/fd0h420 fd0 floppy
+probe /dev/fd0H830 fd0 floppy
+probe /dev/fd0h1494 fd0 floppy
+probe /dev/fd0H1743 fd0 floppy
+probe /dev/fd0h880 fd0 floppy
+probe /dev/fd0D1040 fd0 floppy
+probe /dev/fd0D1120 fd0 floppy
+probe /dev/fd0h1600 fd0 floppy
+probe /dev/fd0H1760 fd0 floppy
+probe /dev/fd0H1920 fd0 floppy
+probe /dev/fd0E3200 fd0 floppy
+probe /dev/fd0E3520 fd0 floppy
+probe /dev/fd0E3840 fd0 floppy
+probe /dev/fd0H1840 fd0 floppy
+probe /dev/fd0D800 fd0 floppy
+probe /dev/fd0H1600 fd0 floppy
+probe /dev/fd0 fd0 floppy
+probe /dev/fd1d360 fd1 floppy
+probe /dev/fd1h1200 fd1 floppy
+probe /dev/fd1D360 fd1 floppy
+probe /dev/fd1D720 fd1 floppy
+probe /dev/fd1h360 fd1 floppy
+probe /dev/fd1h720 fd1 floppy
+probe /dev/fd1H1440 fd1 floppy
+probe /dev/fd1E2880 fd1 floppy
+probe /dev/fd1CompaQ fd1 floppy
+probe /dev/fd1h1440 fd1 floppy
+probe /dev/fd1H1680 fd1 floppy
+probe /dev/fd1h410 fd1 floppy
+probe /dev/fd1H820 fd1 floppy
+probe /dev/fd1h1476 fd1 floppy
+probe /dev/fd1H1722 fd1 floppy
+probe /dev/fd1h420 fd1 floppy
+probe /dev/fd1H830 fd1 floppy
+probe /dev/fd1h1494 fd1 floppy
+probe /dev/fd1H1743 fd1 floppy
+probe /dev/fd1h880 fd1 floppy
+probe /dev/fd1D1040 fd1 floppy
+probe /dev/fd1D1120 fd1 floppy
+probe /dev/fd1h1600 fd1 floppy
+probe /dev/fd1H1760 fd1 floppy
+probe /dev/fd1H1920 fd1 floppy
+probe /dev/fd1E3200 fd1 floppy
+probe /dev/fd1E3520 fd1 floppy
+probe /dev/fd1E3840 fd1 floppy
+probe /dev/fd1H1840 fd1 floppy
+probe /dev/fd1D800 fd1 floppy
+probe /dev/fd1H1600 fd1 floppy
+probe /dev/fd1 fd1 floppy
+probe /dev/fd2d360 fd2 floppy
+probe /dev/fd2h1200 fd2 floppy
+probe /dev/fd2D360 fd2 floppy
+probe /dev/fd2D720 fd2 floppy
+probe /dev/fd2h360 fd2 floppy
+probe /dev/fd2h720 fd2 floppy
+probe /dev/fd2H1440 fd2 floppy
+probe /dev/fd2E2880 fd2 floppy
+probe /dev/fd2CompaQ fd2 floppy
+probe /dev/fd2h1440 fd2 floppy
+probe /dev/fd2H1680 fd2 floppy
+probe /dev/fd2h410 fd2 floppy
+probe /dev/fd2H820 fd2 floppy
+probe /dev/fd2h1476 fd2 floppy
+probe /dev/fd2H1722 fd2 floppy
+probe /dev/fd2h420 fd2 floppy
+probe /dev/fd2H830 fd2 floppy
+probe /dev/fd2h1494 fd2 floppy
+probe /dev/fd2H1743 fd2 floppy
+probe /dev/fd2h880 fd2 floppy
+probe /dev/fd2D1040 fd2 floppy
+probe /dev/fd2D1120 fd2 floppy
+probe /dev/fd2h1600 fd2 floppy
+probe /dev/fd2H1760 fd2 floppy
+probe /dev/fd2H1920 fd2 floppy
+probe /dev/fd2E3200 fd2 floppy
+probe /dev/fd2E3520 fd2 floppy
+probe /dev/fd2E3840 fd2 floppy
+probe /dev/fd2H1840 fd2 floppy
+probe /dev/fd2D800 fd2 floppy
+probe /dev/fd2H1600 fd2 floppy
+probe /dev/fd2 fd2 floppy
+probe /dev/fd3d360 fd3 floppy
+probe /dev/fd3h1200 fd3 floppy
+probe /dev/fd3D360 fd3 floppy
+probe /dev/fd3D720 fd3 floppy
+probe /dev/fd3h360 fd3 floppy
+probe /dev/fd3h720 fd3 floppy
+probe /dev/fd3H1440 fd3 floppy
+probe /dev/fd3E2880 fd3 floppy
+probe /dev/fd3CompaQ fd3 floppy
+probe /dev/fd3h1440 fd3 floppy
+probe /dev/fd3H1680 fd3 floppy
+probe /dev/fd3h410 fd3 floppy
+probe /dev/fd3H820 fd3 floppy
+probe /dev/fd3h1476 fd3 floppy
+probe /dev/fd3H1722 fd3 floppy
+probe /dev/fd3h420 fd3 floppy
+probe /dev/fd3H830 fd3 floppy
+probe /dev/fd3h1494 fd3 floppy
+probe /dev/fd3H1743 fd3 floppy
+probe /dev/fd3h880 fd3 floppy
+probe /dev/fd3D1040 fd3 floppy
+probe /dev/fd3D1120 fd3 floppy
+probe /dev/fd3h1600 fd3 floppy
+probe /dev/fd3H1760 fd3 floppy
+probe /dev/fd3H1920 fd3 floppy
+probe /dev/fd3E3200 fd3 floppy
+probe /dev/fd3E3520 fd3 floppy
+probe /dev/fd3E3840 fd3 floppy
+probe /dev/fd3H1840 fd3 floppy
+probe /dev/fd3D800 fd3 floppy
+probe /dev/fd3H1600 fd3 floppy
+probe /dev/fd3 fd3 floppy
+probe /dev/fd4d360 fd4 floppy
+probe /dev/fd4h1200 fd4 floppy
+probe /dev/fd4D360 fd4 floppy
+probe /dev/fd4D720 fd4 floppy
+probe /dev/fd4h360 fd4 floppy
+probe /dev/fd4h720 fd4 floppy
+probe /dev/fd4H1440 fd4 floppy
+probe /dev/fd4E2880 fd4 floppy
+probe /dev/fd4CompaQ fd4 floppy
+probe /dev/fd4h1440 fd4 floppy
+probe /dev/fd4H1680 fd4 floppy
+probe /dev/fd4h410 fd4 floppy
+probe /dev/fd4H820 fd4 floppy
+probe /dev/fd4h1476 fd4 floppy
+probe /dev/fd4H1722 fd4 floppy
+probe /dev/fd4h420 fd4 floppy
+probe /dev/fd4H830 fd4 floppy
+probe /dev/fd4h1494 fd4 floppy
+probe /dev/fd4H1743 fd4 floppy
+probe /dev/fd4h880 fd4 floppy
+probe /dev/fd4D1040 fd4 floppy
+probe /dev/fd4D1120 fd4 floppy
+probe /dev/fd4h1600 fd4 floppy
+probe /dev/fd4H1760 fd4 floppy
+probe /dev/fd4H1920 fd4 floppy
+probe /dev/fd4E3200 fd4 floppy
+probe /dev/fd4E3520 fd4 floppy
+probe /dev/fd4E3840 fd4 floppy
+probe /dev/fd4H1840 fd4 floppy
+probe /dev/fd4D800 fd4 floppy
+probe /dev/fd4H1600 fd4 floppy
+probe /dev/fd4 fd4 floppy
+probe /dev/fd5d360 fd5 floppy
+probe /dev/fd5h1200 fd5 floppy
+probe /dev/fd5D360 fd5 floppy
+probe /dev/fd5D720 fd5 floppy
+probe /dev/fd5h360 fd5 floppy
+probe /dev/fd5h720 fd5 floppy
+probe /dev/fd5H1440 fd5 floppy
+probe /dev/fd5E2880 fd5 floppy
+probe /dev/fd5CompaQ fd5 floppy
+probe /dev/fd5h1440 fd5 floppy
+probe /dev/fd5H1680 fd5 floppy
+probe /dev/fd5h410 fd5 floppy
+probe /dev/fd5H820 fd5 floppy
+probe /dev/fd5h1476 fd5 floppy
+probe /dev/fd5H1722 fd5 floppy
+probe /dev/fd5h420 fd5 floppy
+probe /dev/fd5H830 fd5 floppy
+probe /dev/fd5h1494 fd5 floppy
+probe /dev/fd5H1743 fd5 floppy
+probe /dev/fd5h880 fd5 floppy
+probe /dev/fd5D1040 fd5 floppy
+probe /dev/fd5D1120 fd5 floppy
+probe /dev/fd5h1600 fd5 floppy
+probe /dev/fd5H1760 fd5 floppy
+probe /dev/fd5H1920 fd5 floppy
+probe /dev/fd5E3200 fd5 floppy
+probe /dev/fd5E3520 fd5 floppy
+probe /dev/fd5E3840 fd5 floppy
+probe /dev/fd5H1840 fd5 floppy
+probe /dev/fd5D800 fd5 floppy
+probe /dev/fd5H1600 fd5 floppy
+probe /dev/fd5 fd5 floppy
+probe /dev/fd6d360 fd6 floppy
+probe /dev/fd6h1200 fd6 floppy
+probe /dev/fd6D360 fd6 floppy
+probe /dev/fd6D720 fd6 floppy
+probe /dev/fd6h360 fd6 floppy
+probe /dev/fd6h720 fd6 floppy
+probe /dev/fd6H1440 fd6 floppy
+probe /dev/fd6E2880 fd6 floppy
+probe /dev/fd6CompaQ fd6 floppy
+probe /dev/fd6h1440 fd6 floppy
+probe /dev/fd6H1680 fd6 floppy
+probe /dev/fd6h410 fd6 floppy
+probe /dev/fd6H820 fd6 floppy
+probe /dev/fd6h1476 fd6 floppy
+probe /dev/fd6H1722 fd6 floppy
+probe /dev/fd6h420 fd6 floppy
+probe /dev/fd6H830 fd6 floppy
+probe /dev/fd6h1494 fd6 floppy
+probe /dev/fd6H1743 fd6 floppy
+probe /dev/fd6h880 fd6 floppy
+probe /dev/fd6D1040 fd6 floppy
+probe /dev/fd6D1120 fd6 floppy
+probe /dev/fd6h1600 fd6 floppy
+probe /dev/fd6H1760 fd6 floppy
+probe /dev/fd6H1920 fd6 floppy
+probe /dev/fd6E3200 fd6 floppy
+probe /dev/fd6E3520 fd6 floppy
+probe /dev/fd6E3840 fd6 floppy
+probe /dev/fd6H1840 fd6 floppy
+probe /dev/fd6D800 fd6 floppy
+probe /dev/fd6H1600 fd6 floppy
+probe /dev/fd6 fd6 floppy
+probe /dev/fd7d360 fd7 floppy
+probe /dev/fd7h1200 fd7 floppy
+probe /dev/fd7D360 fd7 floppy
+probe /dev/fd7D720 fd7 floppy
+probe /dev/fd7h360 fd7 floppy
+probe /dev/fd7h720 fd7 floppy
+probe /dev/fd7H1440 fd7 floppy
+probe /dev/fd7E2880 fd7 floppy
+probe /dev/fd7CompaQ fd7 floppy
+probe /dev/fd7h1440 fd7 floppy
+probe /dev/fd7H1680 fd7 floppy
+probe /dev/fd7h410 fd7 floppy
+probe /dev/fd7H820 fd7 floppy
+probe /dev/fd7h1476 fd7 floppy
+probe /dev/fd7H1722 fd7 floppy
+probe /dev/fd7h420 fd7 floppy
+probe /dev/fd7H830 fd7 floppy
+probe /dev/fd7h1494 fd7 floppy
+probe /dev/fd7H1743 fd7 floppy
+probe /dev/fd7h880 fd7 floppy
+probe /dev/fd7D1040 fd7 floppy
+probe /dev/fd7D1120 fd7 floppy
+probe /dev/fd7h1600 fd7 floppy
+probe /dev/fd7H1760 fd7 floppy
+probe /dev/fd7H1920 fd7 floppy
+probe /dev/fd7E3200 fd7 floppy
+probe /dev/fd7E3520 fd7 floppy
+probe /dev/fd7E3840 fd7 floppy
+probe /dev/fd7H1840 fd7 floppy
+probe /dev/fd7D800 fd7 floppy
+probe /dev/fd7H1600 fd7 floppy
+probe /dev/fd7 fd7 floppy
+## Handle SCSI CD stuff
+alias /dev/sr0 sr_mod
+alias /dev/sr1 sr_mod
+alias /dev/sr2 sr_mod
+alias /dev/sr3 sr_mod
+alias /dev/sr4 sr_mod
+alias /dev/sr5 sr_mod
+alias /dev/sr6 sr_mod
+alias /dev/sr7 sr_mod
+alias /dev/sr8 sr_mod
+alias /dev/sr9 sr_mod
+## Serial ports
+alias /dev/ttyS0 serial
+alias /dev/ttyS1 serial
+alias /dev/ttyS2 serial
+alias /dev/ttyS3 serial
+## Parallel ports
+alias /dev/lp0 lp
+alias /dev/lp1 lp
+alias /dev/lp2 lp
+## Video4Linux
+alias /dev/video0 v4l
+alias /dev/video1 v4l
+alias /dev/video2 v4l
+alias /dev/video3 v4l
+alias /dev/video4 v4l
+alias /dev/video5 v4l
+alias /dev/video6 v4l
+alias /dev/video7 v4l
+alias /dev/video8 v4l
+alias /dev/video9 v4l
+alias /dev/video v4l
+alias /dev/vbi0 v4l
+alias /dev/vbi1 v4l
+alias /dev/vbi2 v4l
+alias /dev/vbi3 v4l
+alias /dev/vbi4 v4l
+alias /dev/vbi5 v4l
+alias /dev/vbi6 v4l
+alias /dev/vbi7 v4l
+alias /dev/vbi8 v4l
+alias /dev/vbi9 v4l
+alias /dev/vbi v4l
+# End of file.

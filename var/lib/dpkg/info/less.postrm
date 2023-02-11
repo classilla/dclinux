@@ -1,0 +1,4 @@
+#!/bin/sh -e
+# Automatically added by dh_installmime
+if [ -x /usr/sbin/update-mime ]; then update-mime; fi
+# End automatically added section

@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+install-info --remove --quiet /usr/share/info/m4.info
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/m4 ]; then
+  rm -f /usr/doc/m4
+fi

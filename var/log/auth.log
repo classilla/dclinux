@@ -1,0 +1,273 @@
+Jan  1 09:00:40 dreamcast PAM_unix[111]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:41 dreamcast login[111]: ROOT LOGIN on `tty1' 
+Jan  1 09:02:03 dreamcast PAM_unix[111]: check pass; user unknown
+Jan  1 09:02:03 dreamcast PAM_unix[111]: authentication failure; LOGIN(uid=0) -> **unknown** for login service
+Jan  1 09:02:05 dreamcast login[111]: FAILED LOGIN (1) on `tty1' FOR `UNKNOWN', Authentication service cannot retrieve authentication info.
+Jan  1 09:02:07 dreamcast PAM_unix[111]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:02:07 dreamcast login[111]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:52 dreamcast PAM_unix[111]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:52 dreamcast login[111]: ROOT LOGIN on `tty1' 
+Jan  1 09:02:37 dreamcast PAM_unix[119]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:02:37 dreamcast login[119]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:05:11 dreamcast PAM_unix[130]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:05:11 dreamcast login[130]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:06:33 dreamcast PAM_unix[137]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:06:33 dreamcast login[137]: ROOT LOGIN on `ttySC1' 
+Apr  9 04:34:58 dreamcast PAM_unix[116]: (login) session opened for user root by LOGIN(uid=0)
+Apr  9 04:34:58 dreamcast login[116]: ROOT LOGIN on `tty6' 
+Apr  9 05:10:05 dreamcast PAM_unix[381]: (login) session opened for user root by LOGIN(uid=0)
+Apr  9 05:10:05 dreamcast login[381]: ROOT LOGIN on `tty1' 
+Apr  9 05:15:47 dreamcast groupadd[564]: new group: name=telnetd, gid=101 
+Apr  9 05:15:47 dreamcast useradd[565]: new user: name=telnetd, uid=101, gid=101, home=/usr/lib/telnetd, shell=/bin/false 
+Apr  9 05:15:50 dreamcast gpasswd[567]: set members of utmp to telnetd 
+Apr  9 05:30:36 dreamcast PAM_unix[850]: (login) session opened for user root by LOGIN(uid=0)
+Apr  9 05:30:36 dreamcast login[850]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:40 dreamcast PAM_unix[130]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:40 dreamcast login[130]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:35 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:35 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:43 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:43 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:07:10 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:07:10 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:03 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:03 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:53 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:55 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:55 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:14 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:14 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:01 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:01 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:52 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:56 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:56 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:06 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:06 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:04 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:04 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:01 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:01 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:08 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:08 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:54 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:54 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:52 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:09 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:09 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:57 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:57 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:16 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:16 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:55 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:55 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:50 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:50 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:57 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:57 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:06 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:06 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:50 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:50 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:17 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:17 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:53 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:01 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:01 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:44 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:44 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:02 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:02 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:01 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:01 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:46 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:46 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:52 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:56 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:56 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:15 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:15 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:59 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:59 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:27 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:27 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:59 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:59 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:08 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:08 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:59 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:59 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:56 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:56 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:01 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:01 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:56 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:56 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:50 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:50 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:31 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:32 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:08:43 dreamcast PAM_unix[156]: check pass; user unknown
+Jan  1 09:08:43 dreamcast PAM_unix[156]: authentication failure; (uid=0) -> **unknown** for login service
+Jan  1 09:08:46 dreamcast login[156]: FAILED LOGIN (1) on `ttyp0' from `aragorn.ta.keshi.org' FOR `UNKNOWN', Authentication service cannot retrieve authentication info.
+Jan  1 09:08:49 dreamcast PAM-securetty[156]: access denied: tty 'ttyp0' is not secure!
+Jan  1 09:08:53 dreamcast login[156]: FAILED LOGIN (2) on `ttyp0' from `aragorn.ta.keshi.org' FOR `root', Authentication failure
+Jan  1 09:00:56 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:56 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:03:27 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:03:27 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:55 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:55 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:23:18 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:23:18 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:01:59 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:59 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:02:17 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:02:17 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:52 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:52 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+Jan  1 09:00:51 dreamcast PAM_unix[134]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:00:51 dreamcast login[134]: ROOT LOGIN on `ttySC1' 
+May 21 06:25:02 dreamcast PAM_unix[1342]: (cron) session opened for user root by (uid=0)
+May 21 06:25:06 dreamcast su[1363]: + ??? root-nobody 
+May 21 06:25:06 dreamcast PAM_unix[1363]: (su) session opened for user nobody by (uid=0)
+May 21 06:30:25 dreamcast PAM_unix[1342]: (cron) session closed for user root
+May 21 12:28:14 dreamcast PAM_unix[2891]: (login) session opened for user root by (uid=0)
+May 21 12:28:14 dreamcast login[2891]: ROOT LOGIN on `ttyp0' from `aragorn.ta.keshi.org' 
+May 21 12:29:19 dreamcast PAM_unix[2898]: (login) session opened for user root by (uid=0)
+May 21 12:29:19 dreamcast login[2898]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+May 21 12:31:07 dreamcast ftpd[2928]: PAM-listfile: Refused user root for service ftp
+May 21 12:31:15 dreamcast PAM_unix[2931]: (login) session opened for user root by (uid=0)
+May 21 12:31:15 dreamcast login[2931]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+May 21 12:33:57 dreamcast PAM_unix[2943]: (login) session opened for user root by (uid=0)
+May 21 12:33:57 dreamcast login[2943]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+May 21 13:18:54 dreamcast PAM_unix[3064]: bad username []
+May 21 13:18:57 dreamcast login[3064]: FAILED LOGIN (1) on `ttyp0' from `elbereth.ta.keshi.org' FOR `UNKNOWN', User not known to the underlying authentication module
+May 21 13:18:59 dreamcast PAM_unix[3064]: (login) session opened for user root by (uid=0)
+May 21 13:18:59 dreamcast login[3064]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+May 21 14:00:00 dreamcast PAM_unix[3087]: (login) session opened for user root by (uid=0)
+May 21 14:00:00 dreamcast login[3087]: ROOT LOGIN on `ttyp0' from `aragorn.ta.keshi.org' 
+May 21 16:15:09 dreamcast PAM_unix[3098]: (login) session opened for user root by (uid=0)
+May 21 16:15:10 dreamcast login[3098]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+May 21 16:21:44 dreamcast PAM_unix[3168]: (login) session opened for user root by (uid=0)
+May 21 16:21:44 dreamcast login[3168]: ROOT LOGIN on `ttyp0' from `elbereth.ta.keshi.org' 
+Jan  1 09:01:22 dreamcast /sbin/getty[182]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:33 dreamcast /sbin/getty[185]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:43 dreamcast /sbin/getty[187]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:54 dreamcast /sbin/getty[189]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:04 dreamcast /sbin/getty[191]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:15 dreamcast /sbin/getty[193]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:25 dreamcast /sbin/getty[195]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:19 dreamcast /sbin/getty[183]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:30 dreamcast /sbin/getty[186]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:40 dreamcast /sbin/getty[188]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:51 dreamcast /sbin/getty[190]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:01 dreamcast /sbin/getty[192]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:12 dreamcast /sbin/getty[194]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:22 dreamcast /sbin/getty[196]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:33 dreamcast /sbin/getty[198]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:44 dreamcast /sbin/getty[200]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:54 dreamcast /sbin/getty[202]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:05 dreamcast /sbin/getty[204]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:19 dreamcast /sbin/getty[183]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:30 dreamcast /sbin/getty[186]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:40 dreamcast /sbin/getty[188]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:51 dreamcast /sbin/getty[190]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:12 dreamcast /sbin/getty[183]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:23 dreamcast /sbin/getty[185]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:33 dreamcast /sbin/getty[187]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:44 dreamcast /sbin/getty[189]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:54 dreamcast /sbin/getty[191]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:16 dreamcast /sbin/getty[184]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:26 dreamcast /sbin/getty[187]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:37 dreamcast /sbin/getty[189]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:47 dreamcast /sbin/getty[191]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:58 dreamcast /sbin/getty[193]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:09 dreamcast /sbin/getty[195]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:16 dreamcast /sbin/getty[184]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:24 dreamcast PAM_unix[183]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:24 dreamcast login[183]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:27 dreamcast /sbin/getty[189]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:37 dreamcast /sbin/getty[192]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:48 dreamcast /sbin/getty[195]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:58 dreamcast /sbin/getty[201]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:09 dreamcast /sbin/getty[203]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:19 dreamcast /sbin/getty[206]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:30 dreamcast /sbin/getty[209]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:40 dreamcast /sbin/getty[211]: /dev/ttySC1: No such file or directory
+Jan  1 09:02:51 dreamcast /sbin/getty[213]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:01 dreamcast /sbin/getty[215]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:12 dreamcast /sbin/getty[217]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:23 dreamcast /sbin/getty[220]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:33 dreamcast /sbin/getty[222]: /dev/ttySC1: No such file or directory
+Jan  1 09:03:44 dreamcast /sbin/getty[228]: /dev/ttySC1: No such file or directory
+Jan  1 09:08:55 dreamcast /sbin/getty[236]: /dev/ttySC1: No such file or directory
+Jan  1 09:01:36 dreamcast PAM_unix[184]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:36 dreamcast login[184]: ROOT LOGIN on `tty1' 
+Jan  1 09:03:21 dreamcast PAM_unix[207]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:03:22 dreamcast login[207]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:03:29 dreamcast PAM_unix[213]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:03:29 dreamcast login[213]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:21 dreamcast PAM_unix[183]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:21 dreamcast login[183]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:20 dreamcast PAM_unix[184]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:20 dreamcast login[184]: ROOT LOGIN on `tty1' 
+Jan  1 09:02:40 dreamcast PAM_unix[183]: (login) session opened for user root by (uid=0)
+Jan  1 09:02:40 dreamcast login[183]: ROOT LOGIN on `tty1' 
+Jan  1 09:16:22 dreamcast PAM_unix[184]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:16:22 dreamcast login[184]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:26 dreamcast PAM_unix[187]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:26 dreamcast login[187]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:56 dreamcast PAM_unix[185]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:56 dreamcast login[185]: ROOT LOGIN on `tty1' 
+Jan  1 09:02:01 dreamcast PAM_unix[196]: (login) session opened for user root by (uid=0)
+Jan  1 09:02:01 dreamcast login[196]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:20 dreamcast PAM_unix[183]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:20 dreamcast login[183]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:15 dreamcast PAM_unix[184]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:15 dreamcast login[184]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:37:36 dreamcast PAM_unix[249]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:37:36 dreamcast login[249]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:36 dreamcast PAM_unix[182]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:36 dreamcast login[182]: ROOT LOGIN on `tty1' 
+Jan  1 09:14:53 dreamcast PAM_unix[183]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:14:53 dreamcast login[183]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:42 dreamcast PAM_unix[191]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:42 dreamcast login[191]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:22 dreamcast PAM_unix[193]: (login) session opened for user root by (uid=0)
+Jan  1 09:01:22 dreamcast login[193]: ROOT LOGIN on `tty1' 
+Jan  1 09:12:00 dreamcast PAM_unix[194]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:12:00 dreamcast login[194]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:02:23 dreamcast PAM_unix[196]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:02:23 dreamcast login[196]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:06:46 dreamcast PAM_unix[195]: (login) session opened for user root by (uid=0)
+Jan  1 09:06:46 dreamcast login[195]: ROOT LOGIN on `tty1' 
+Jan  1 09:01:37 dreamcast PAM_unix[189]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:37 dreamcast login[189]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:04:44 dreamcast PAM_unix[189]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:04:44 dreamcast login[189]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:28 dreamcast PAM_unix[194]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:28 dreamcast login[194]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:01:23 dreamcast PAM_unix[188]: (login) session opened for user root by LOGIN(uid=0)
+Jan  1 09:01:23 dreamcast login[188]: ROOT LOGIN on `ttsc/1' 
+Jan  1 09:02:44 dreamcast PAM_unix[187]: (login) session opened for user root by (uid=0)
+Jan  1 09:02:44 dreamcast login[187]: ROOT LOGIN on `tty1' 

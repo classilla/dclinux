@@ -1,0 +1,37 @@
+This is the Debian prepackaged version of the GNU gettext utilities.
+GNU gettext was written by Ulrich Drepper <drepper@gnu.org>.
+emacs po-mode was written by François Pinard <pinard@iro.umontreal.ca>.
+
+This package was first created by Erick Branderhorst <branderh@debian.org>,
+and is currently maintained by Santiago Vila <sanvila@debian.org>.
+
+This release has been built using the sources from:
+
+ftp://ftp.gnu.org/pub/gnu/gettext/gettext-0.10.36.tar.gz
+
+The changes were fairly minimal, and consisted solely of adding
+various debian/* files to the distribution.
+
+
+This is a test release of GNU gettext. Please do not send reports about
+this release to any GNU mailing list or newsgroup. Use the Debian bug
+tracking system, as usual :-) Of course you can still send comments and
+problems to the upstream maintainers, Ulrich Drepper <drepper@gnu.org>
+and Bruno Haible <haible@clisp.cons.org>, if you think the problem has
+nothing to do with the Debian packaging.
+
+
+Copyright (C) 1995-1999, 2000, 2001 Free Software Foundation, Inc.
+
+This program is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2, or (at your option) any
+later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+On Debian systems, the complete text of the GNU General
+Public License can be found in `/usr/share/common-licenses/GPL'.

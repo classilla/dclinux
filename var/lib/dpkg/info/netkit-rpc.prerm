@@ -1,0 +1,6 @@
+#!/bin/sh -e
+# Automatically added by dh_installdocs
+if [ \( "$1" = "upgrade" -o "$1" = "remove" \) -a -L /usr/doc/netkit-rpc ]; then
+	rm -f /usr/doc/netkit-rpc
+fi
+# End automatically added section

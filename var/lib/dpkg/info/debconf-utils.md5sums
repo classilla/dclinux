@@ -1,0 +1,12 @@
+3b942acdabf67ea51371e94790f904d4  usr/bin/debconf-communicate
+bb3072891c95d58830dc8a33e1b7abab  usr/bin/debconf-getlang
+e0d11513d1fe9ec209e1089956b1a60e  usr/bin/debconf-loadtemplate
+7af16cddb5bec9771ffb719bf3f9ea6b  usr/bin/debconf-mergetemplate
+00dac0c83ce445fad9c63f95c650f82b  usr/bin/debconf-copydb
+4c2dd5edd67169ef2d40666e9de9e333  usr/share/man/man1/debconf-getlang.1.gz
+d622887625f9cb9f6337dc2148fd58a5  usr/share/man/man1/debconf-mergetemplate.1.gz
+d3c5de673c1eff6292964abe3d6456c8  usr/share/man/man1/debconf-copydb.1.gz
+e86ae33ee089da3fb96c2454c59c5266  usr/share/man/man1/debconf-communicate.1.gz
+343bb68b6b0e22bb5ba2747b6fea7936  usr/share/man/man1/debconf-loadtemplate.1.gz
+1160b5c18736803cb814455d17288ce8  usr/share/doc/debconf-utils/copyright
+40cf0a5d621500cda6a1570546edbf66  usr/share/doc/debconf-utils/changelog.gz

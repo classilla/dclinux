@@ -1,0 +1,7 @@
+OpenLDAP for DEBIAN
+----------------------
+
+For general information on setting up SLAPD/SLURPD please install the
+openldap-guide package.
+
+Ben Collins <bcollins@debian.org>, Tue, 22 Dec 1998 13:11:36 -0500

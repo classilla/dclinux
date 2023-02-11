@@ -1,0 +1,15 @@
+2eea6be32d5562a9bea60d408aa4ae40  sbin/ipchains
+bf6be614a546eb671cdc2ae1dccba691  sbin/ipchains-restore
+3be91a964ee5f8812a018713d053d7ad  sbin/ipchains-save
+97f39fbda9d2c9dc4ffd1d793d0a6097  sbin/ipfwadm-wrapper
+74a391b56e1af00cd1b8dfdb52ef3743  usr/share/doc/ipchains/changelog.gz
+9f6a1caf9f380959d529209ec9421466  usr/share/doc/ipchains/copyright
+bd86a545af90a279ea6a6dc6c3577195  usr/share/doc/ipchains/quickref.ps.gz
+f4348536506c3243e2bbf19ec57b3773  usr/share/doc/ipchains/changelog.Debian.gz
+06395922e9884ad9d8fdd93c681ec461  usr/share/man/man4/ipfw_chains.4.gz
+57a33b4c1f8cd474abbdde4c069044e4  usr/share/man/man4/ipfw-ipchainsalternative.4.gz
+a145891b2af8a4737a70e7fa899dc72b  usr/share/man/man8/ipchains-save.8.gz
+0adf85aba1aa56a9883f6e9c30985ff4  usr/share/man/man8/ipfwadm-wrapper.8.gz
+70f427f66d0ad755a25f7bccf7e01fa5  usr/share/man/man8/ipfwadm-ipchainsalternative.8.gz
+87d871ee3d8cfd85145d2f205c84e9f0  usr/share/man/man8/ipchains.8.gz
+7ec9aa10c732340f286fc11aaa789d0c  usr/share/man/man8/ipchains-restore.8.gz

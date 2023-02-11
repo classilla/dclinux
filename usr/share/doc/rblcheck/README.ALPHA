@@ -1,0 +1,22 @@
+**** WARNING: ABANDON HOPE, ALL YE WHO ENTER HERE ****
+
+This is a beta release. It might not work. It might not compile. It might
+make pink and blue polka-dot lizards leap forth from your computer. Your
+entire house could catch fire, just because you downloaded this. So, as
+you can guess, no warranty. If you're still willing to use this, put the
+lizards back in your computer, and read on.
+
+The major change to this version is the use of automake to automate the
+configuration process. I'm expecting this to initially cause serious
+portability problems, but should improve the ease-of-use of rblcheck for
+end users in the long run.
+
+THIS IS PUT OUT STRICTLY AS A TRIAL RELEASE, in the hopes that people will
+beat on it a bit. If it works for you, please let me know what platform
+you're on, so I can add it to the "supported platforms" listing. If it
+doesn't work for you, please let me know what compiler errors you received
+(an -exact- capture is preferred) or what behavior you found odd. If you
+have a patch for your problem, even better.
+
+-- 
+Edward S. Marshall <emarshal@logic.net>

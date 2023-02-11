@@ -1,0 +1,4 @@
+LoadModule mime_magic_module /usr/lib/apache/1.3/mod_mime_magic.so
+Directives:
+ MimeMagicFile
+Description: Support for determining types automagically

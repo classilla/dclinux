@@ -1,0 +1,7 @@
+LoadModule: db_auth_module /usr/lib/apache/modules/mod_auth_db.so
+LoadModule: db_auth_module /usr/lib/apache/1.3/mod_auth_db.so
+Directives:
+ AuthDBGroupFile
+ AuthDBUserFile
+ AuthDBAuthoritative
+Description: Support for db-file authentication

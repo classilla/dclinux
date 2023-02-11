@@ -1,0 +1,5 @@
+LoadModule: userdir_module /usr/lib/apache/modules/mod_userdir.so
+LoadModule: userdir_module /usr/lib/apache/1.3/mod_userdir.so
+Directives:
+ UserDir
+Description: Support for user home directories

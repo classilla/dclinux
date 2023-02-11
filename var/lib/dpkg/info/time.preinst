@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# This is the preinst script for the Debian GNU/Linux time package
+#
+# Written by Dirk Eddelbuettel <edd@debian.org>   
+
+set -e
+
+
+
+case "$1" in
+    upgrade)
+	# This is needed for time_1.7-4 as it calls update-menus only on
+	# remove or purge. As dhelp drops this file here which is outside the 
+	# package manager's scope, and hence not removed unless update-menus is 
+	# called, but this happens too late 
+	if [ -f /usr/doc/time/.dhelp ]
+	then
+	    rm /usr/doc/time/.dhelp
+	fi
+	;;
+    remove|purge)
+	;;
+    install|failed-upgrade|abort-install|abort-upgrade|disappear)
+	;;
+    *)
+	echo "preinst called with unknown argument \`$1'" >&2
+	;;
+esac
+
+exit 0

@@ -1,0 +1,59 @@
+
+Copyright for elvis 1.4 (elvis-tiny)
+
+This file contains the copyright part from the original README,
+and a clarification by the author
+
+==================== original copyright ===========================
+
+Elvis is a clone of vi/ex, the standard UNIX editor.  Elvis supports nearly
+all of the vi/ex commands, in both visual mode and colon mode.
+
+Elvis is freely redistributable, in either source form or executable form.
+There are no restrictions on how you may use it.
+
+Author: Steve Kirkendall
+
+E-mail:	kirkenda@cs.pdx.edu
+
+Snail	14407 SW Teal Blvd.  Apt.C
+ Mail:	Beaverton, OR   97005
+
+Phone:	(503) 643-6980
+
+==================== clarification ================================
+
+From: Steve Kirkendall <skirkendall@uswest.net>
+Reply-To: kirkenda@cs.pdx.edu
+To: Miquel van Smoorenburg <miquels@cistron.nl>
+Subject: Re: elvis 1.4
+Message-ID: <3A21A76D.CE7C4D2@uswest.net>
+Date: Sun, 26 Nov 2000 16:14:37 -0800
+Organization: Elvis
+References: <20001122144219.A6118@cistron.nl>
+
+Miquel van Smoorenburg wrote:
+> 
+> Hello,
+> 
+>         I've packaged elvis 1.4 up as "elvis tiny" to have a small
+> vi clone for use on bootfloppies etc for the Debian/Linux distribution.
+> 
+> The README says:
+> 
+>   Elvis is freely redistributable, in either source form or executable form.
+>   There are no restrictions on how you may use it.
+> 
+> Did you mean that it is allright to distribute modified versions
+> without any restrictions as well (I assume so, but someone filed
+> a bugreport against the elvis-tiny package claiming it wasn't
+> DFSG-free)
+
+Yes, modified versions can be freely redistributed.
+
+Elvis 2.0 was distributed with a slightly more restrictive license,
+which made some people uncomfortable; that's probably where the bug
+report came from.  Elvis 2.1 and later are distributed under the Perl
+"Artistic" license.
+
+

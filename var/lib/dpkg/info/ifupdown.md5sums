@@ -1,0 +1,13 @@
+e6ef6281dc83e8404a8af900aa07df7c  sbin/ifup
+e6ef6281dc83e8404a8af900aa07df7c  sbin/ifdown
+e57d652f05b7fe7a1f8b2975133b231d  usr/share/doc/ifupdown/examples/check-mac-address.sh
+573a422eb785ffef1753e93ab66b50ac  usr/share/doc/ifupdown/examples/get-mac-address.sh
+e8bb6daaf2f8a4f0e0e819a64612772d  usr/share/doc/ifupdown/examples/pcmcia-compat.sh
+454af30058df74ecf37a10832b6729d0  usr/share/doc/ifupdown/examples/ping-places.sh
+e456bba93acd12087fc8ee18b2b1d3f5  usr/share/doc/ifupdown/examples/network-interfaces.gz
+1c410a56af8a5dbfb2ac9d7e5cd6dad2  usr/share/doc/ifupdown/copyright
+66ecbe51e1a5d114ca1b2e21819b3f35  usr/share/doc/ifupdown/changelog.gz
+3f4b77b2c0f72db7116d8ec5acf34ca4  usr/share/doc/ifupdown/changelog.Debian.gz
+5e06d39dd6d5b4bd799adfbdbe6289ef  usr/share/ifupdown/upgrade-from-0.5.x.pl
+edcb98605caf6016cc416753285ea526  usr/share/man/man5/interfaces.5.gz
+f6a8e433dc55b311be874dee66f7092f  usr/share/man/man8/ifup.8.gz

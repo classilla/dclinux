@@ -1,0 +1,11 @@
+Document: packet-filter
+Title: Linux 2.4 Packet Filtering HOWTO
+Author: Rusty Russell
+Abstract: This document describes how to use iptables to filter 
+ out bad packets for the 2.4 Linux kernels.
+Section: Apps/System
+
+Format: HTML
+Index: /usr/share/doc/iptables/html/packet-filtering-HOWTO.html
+Files: /usr/share/doc/iptables/html/packet-filtering-HOWTO*.html
+

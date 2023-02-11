@@ -1,0 +1,11 @@
+faaedf52e146134b6d48ca0083998234  sbin/lspci
+659ccc3dd503e9743c60f6bd8318fddb  sbin/setpci
+cca5b402762b8b94b07569fe1dcd1001  usr/share/misc/pci.ids
+c6094c2bbc73d712a41c80588ba1b7aa  usr/share/man/man8/lspci.8.gz
+9b1113ba593037dcac50873134824555  usr/share/man/man8/setpci.8.gz
+7b7b2a9e29419a73f8fbe66cbc98af96  usr/share/doc/pciutils/README
+399c11d9abe2589379595b405d8c1d6b  usr/share/doc/pciutils/pciutils.lsm
+089a2245a6cdc33b164ae425019f06c5  usr/share/doc/pciutils/README.Debian
+79d63c8fee4c873ae77ddfef9957f461  usr/share/doc/pciutils/copyright
+b2e32203fcff4997885d733af6c7ff41  usr/share/doc/pciutils/changelog.gz
+3cba04047c797e6672acd5cac0e81cbf  usr/share/doc/pciutils/changelog.Debian.gz

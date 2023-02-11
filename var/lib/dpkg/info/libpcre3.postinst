@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure)
+
+	# Make sure ld knows about new library
+	ldconfig
+
+	# Create /usr/doc symlink
+        if [ -d /usr/doc -a ! -e /usr/doc/libpcre3 ]; then
+            ln -sf ../share/doc/libpcre3 /usr/doc/libpcre3
+        fi
+
+	;;
+esac
