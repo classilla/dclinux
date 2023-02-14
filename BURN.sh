@@ -20,5 +20,6 @@ dd if=/dev/zero bs=2352 count=300 | \
 	$WODIM -multi -audio -dao tsize=705600 - || exit 1
 
 # some drives may need 11702 instead: if you're burning coasters try that
-$MKISOFS -v -l -r -f -C 0,11700 -G $IPBIN . \
+# original mkisofs may need -f; this is using "fake" genisoimage
+$MKISOFS -v -l -r -C 0,11700 -G $IPBIN . \
 	| $WODIM -tao -overburn -xa -eject -
