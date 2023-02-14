@@ -4,6 +4,8 @@
 auto lo
 iface lo inet loopback
 
+# Linux 2.4 uses mii-tool, not eth-tool. To force 10baseT, consider something
+# like, in the |iface| stanza, |<TAB>pre-up mii-tool -A 10baseT-HD eth0|
 auto eth0
 iface eth0 inet dhcp
-	hostname sadie.floodgap.com
+	hostname sadie

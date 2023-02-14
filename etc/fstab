@@ -1,3 +1,5 @@
 /dev/ram / ext2 defaults 0 0
 proc /proc proc defaults 0 0
 /dev/gdrom /gdrom iso9660 ro,noauto 0 0
+nfs:/netfs/dreamcast/linux /netfs nfs rw,hard,intr,rsize=4096,wsize=4096 0 0
+nfs:/netfs/dreamcast/linux/tmp /tmp nfs rw,hard,intr,rsize=4096,wsize=4096 0 0
