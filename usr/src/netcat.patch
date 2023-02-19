@@ -1,0 +1,22 @@
+diff -U 8 netcat.c.OLD netcat.c
+--- netcat.c.OLD        Thu Feb 16 12:03:06 2023
++++ netcat.c    Thu Feb 16 11:34:44 2023
+@@ -69,16 +69,18 @@
+ #include <netdb.h>             /* hostent, gethostby*, getservby* */
+ #include <arpa/inet.h>         /* inet_ntoa */
+ #include <stdio.h>
+ #include <string.h>            /* strcpy, strchr, yadda yadda */
+ #include <errno.h>
+ #include <signal.h>
+ #include <fcntl.h>             /* O_WRONLY et al */
+ 
++#include <resolv.h>
++
+ /* handy stuff: */
+ #define SA struct sockaddr     /* socket overgeneralization braindeath */
+ #define SAI struct sockaddr_in /* ... whoever came up with this model */
+ #define IA struct in_addr      /* ... should be taken out and shot, */
+                                /* ... not that TLI is any better.  sigh.. */
+ #define SLEAZE_PORT 31337      /* for UDP-scan RTT trick, change if ya want */
+ #define USHORT unsigned short  /* use these for options an' stuff */
+ #define BIGSIZ 8192            /* big buffers */

@@ -1,0 +1,48 @@
+diff -U 8 socat.c.OLD socat.c
+--- socat.c.OLD 2023-02-16 09:52:28.000000000 -0800
++++ socat.c     2023-02-16 09:44:53.000000000 -0800
+@@ -824,17 +824,17 @@
+ #endif /* WITH_FILAN */
+ 
+    /* when converting nl to crnl, size might double */
+    if (socat_opts.bufsiz > (SIZE_MAX-1)/2) {
+       Error2("buffer size option (-b) to big - "F_Zu" (max is "F_Zu")", socat_opts.bufsiz, (SIZE_MAX-1)/2);
+       socat_opts.bufsiz = (SIZE_MAX-1)/2;
+    }
+ 
+-#if HAVE_PROTOTYPE_LIB_posix_memalign
++#if 0 // HAVE_PROTOTYPE_LIB_posix_memalign
+    /* Operations on files with flag O_DIRECT might need buffer alignment.
+       Without this, eg.read() fails with "Invalid argument" */
+    {
+       int _errno;
+       if ((_errno = Posix_memalign((void **)&buff, getpagesize(), 2*socat_opts.bufsiz+1)) != 0) {
+         Error1("posix_memalign(): %s", strerror(_errno));
+         return -1;
+       }
+diff -U 8 xio-ip.c.OLD xio-ip.c
+--- xio-ip.c.OLD        2023-02-16 09:05:58.000000000 -0800
++++ xio-ip.c    2023-02-16 09:06:15.000000000 -0800
+@@ -516,22 +516,18 @@
+ #else
+               "",
+ #endif
+               '\0',
+               inet4addr_info(ntohl(pktinfo->ipi_addr.s_addr),
+                              scratch3, sizeof(scratch3)));
+       Notice3("Ancillary message: interface \"%s\", locaddr=%s, dstaddr=%s",
+              xiogetifname(pktinfo->ipi_ifindex, scratch1, -1),
+-#if HAVE_PKTINFO_IPI_SPEC_DST
+              inet4addr_info(ntohl(pktinfo->ipi_spec_dst.s_addr),
+                             scratch2, sizeof(scratch2)),
+-#else
+-             "",
+-#endif
+              inet4addr_info(ntohl(pktinfo->ipi_addr.s_addr),
+                             scratch3, sizeof(scratch3)));
+    }
+       return STAT_OK;
+ #endif /* defined(IP_PKTINFO) && HAVE_STRUCT_IN_PKTINFO */
+ #endif /* WITH_IP4 */
+ #if defined(IP_RECVERR) && HAVE_STRUCT_SOCK_EXTENDED_ERR
+    case IP_RECVERR: {
