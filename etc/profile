@@ -16,3 +16,8 @@ fi
 export PATH PS1
 
 umask 022
+
+# if /netfs/profile exists, run it now
+
+test -x /netfs/profile && . /netfs/profile
+

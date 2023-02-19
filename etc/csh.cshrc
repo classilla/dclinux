@@ -19,3 +19,6 @@ if (( $?prompt ) && ( $?tcsh )) then
   	set prompt = "%U%m%u:%B%~%b%# "
   endif
 endif
+
+test -x /netfs/csh.cshrc && source /netfs/csh.cshrc
+
