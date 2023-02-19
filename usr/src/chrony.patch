@@ -1,0 +1,44 @@
+diff -U 8 client.c.OLD client.c
+--- client.c.OLD        2022-08-29 06:04:33.000000000 -0700
++++ client.c    2023-02-16 11:01:14.000000000 -0800
+@@ -3307,17 +3307,17 @@
+            CHRONY_VERSION);
+ }
+ 
+ /* ================================================== */
+ 
+ static void
+ print_help(const char *progname)
+ {
+-      printf("Usage: %s [OPTION]... [COMMAND]...\n\n"
++      fprintf(stdout, "Usage: %s [OPTION]... [COMMAND]...\n\n"
+              "Options:\n"
+              "  -4\t\tUse IPv4 addresses only\n"
+              "  -6\t\tUse IPv6 addresses only\n"
+              "  -n\t\tDon't resolve hostnames\n"
+              "  -N\t\tPrint original source names\n"
+              "  -c\t\tEnable CSV format\n"
+ #if DEBUG > 0
+              "  -d\t\tEnable debug messages\n"
+diff -U 8 main.c.OLD main.c
+--- main.c.OLD  2022-08-29 06:04:33.000000000 -0700
++++ main.c      2023-02-16 10:15:36.000000000 -0800
+@@ -381,17 +381,17 @@
+   }
+ }
+ 
+ /* ================================================== */
+ 
+ static void
+ print_help(const char *progname)
+ {
+-      printf("Usage: %s [OPTION]... [DIRECTIVE]...\n\n"
++      fprintf(stdout, "Usage: %s [OPTION]... [DIRECTIVE]...\n\n"
+              "Options:\n"
+              "  -4\t\tUse IPv4 addresses only\n"
+              "  -6\t\tUse IPv6 addresses only\n"
+              "  -f FILE\tSpecify configuration file (%s)\n"
+              "  -n\t\tDon't run as daemon\n"
+              "  -d\t\tDon't run as daemon and log to stderr\n"
+ #if DEBUG > 0
+              "  -d -d\t\tEnable debug messages\n"

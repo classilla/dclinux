@@ -1,25 +1,28 @@
-# ISO 3166 2-letter country codes
+# ISO 3166 alpha-2 country codes
 #
-# @(#)iso3166.tab	1.8
+# This file is in the public domain, so clarified as of
+# 2009-05-17 by Arthur David Olson.
 #
-# From Paul Eggert <eggert@twinsun.com> (1999-10-13):
+# From Paul Eggert (2022-11-18):
+# This file contains a table of two-letter country codes.  Columns are
+# separated by a single tab.  Lines beginning with '#' are comments.
+# All text uses UTF-8 encoding.  The columns of the table are as follows:
 #
-# This file contains a table with the following columns:
-# 1.  ISO 3166-1:1999 2-character country code.  See:
-#	<a href="http://www.din.de/gremien/nas/nabd/iso3166ma/codlstp1.html">
-#	ISO 3166-1: The Code List
-#	</a>.
-# 2.  The usual English name for the country,
-#	chosen so that alphabetic sorting of subsets produces helpful lists.
-#	This is not the same as the English name in the ISO 3166 tables.
+# 1.  ISO 3166-1 alpha-2 country code, current as of
+#     ISO 3166-1 N1087 (2022-09-02).  See: Updates on ISO 3166-1
+#     https://isotc.iso.org/livelink/livelink/Open/16944257
+# 2.  The usual English name for the coded region,
+#     chosen so that alphabetic sorting of subsets produces helpful lists.
+#     This is not the same as the English name in the ISO 3166 tables.
 #
-# Columns are separated by a single tab.
 # The table is sorted by country code.
 #
-# Lines beginning with `#' are comments.
+# This table is intended as an aid for users, to help them select time
+# zone data appropriate for their practical needs.  It is not intended
+# to take or endorse any position on legal or territorial claims.
 #
 #country-
-#code	country name
+#code	name of country, territory, area, or subdivision
 AD	Andorra
 AE	United Arab Emirates
 AF	Afghanistan
@@ -27,7 +30,6 @@ AG	Antigua & Barbuda
 AI	Anguilla
 AL	Albania
 AM	Armenia
-AN	Netherlands Antilles
 AO	Angola
 AQ	Antarctica
 AR	Argentina
@@ -35,6 +37,7 @@ AS	Samoa (American)
 AT	Austria
 AU	Australia
 AW	Aruba
+AX	Åland Islands
 AZ	Azerbaijan
 BA	Bosnia & Herzegovina
 BB	Barbados
@@ -45,9 +48,11 @@ BG	Bulgaria
 BH	Bahrain
 BI	Burundi
 BJ	Benin
+BL	St Barthelemy
 BM	Bermuda
 BN	Brunei
 BO	Bolivia
+BQ	Caribbean NL
 BR	Brazil
 BS	Bahamas
 BT	Bhutan
@@ -61,7 +66,7 @@ CD	Congo (Dem. Rep.)
 CF	Central African Rep.
 CG	Congo (Rep.)
 CH	Switzerland
-CI	Cote d'Ivoire
+CI	Côte d'Ivoire
 CK	Cook Islands
 CL	Chile
 CM	Cameroon
@@ -70,6 +75,7 @@ CO	Colombia
 CR	Costa Rica
 CU	Cuba
 CV	Cape Verde
+CW	Curaçao
 CX	Christmas Island
 CY	Cyprus
 CZ	Czech Republic
@@ -90,13 +96,14 @@ FI	Finland
 FJ	Fiji
 FK	Falkland Islands
 FM	Micronesia
-FO	Faeroe Islands
+FO	Faroe Islands
 FR	France
 GA	Gabon
 GB	Britain (UK)
 GD	Grenada
 GE	Georgia
 GF	French Guiana
+GG	Guernsey
 GH	Ghana
 GI	Gibraltar
 GL	Greenland
@@ -119,12 +126,14 @@ HU	Hungary
 ID	Indonesia
 IE	Ireland
 IL	Israel
+IM	Isle of Man
 IN	India
 IO	British Indian Ocean Territory
 IQ	Iraq
 IR	Iran
 IS	Iceland
 IT	Italy
+JE	Jersey
 JM	Jamaica
 JO	Jordan
 JP	Japan
@@ -153,13 +162,15 @@ LY	Libya
 MA	Morocco
 MC	Monaco
 MD	Moldova
+ME	Montenegro
+MF	St Martin (French)
 MG	Madagascar
 MH	Marshall Islands
-MK	Macedonia
+MK	North Macedonia
 ML	Mali
 MM	Myanmar (Burma)
 MN	Mongolia
-MO	Macao
+MO	Macau
 MP	Northern Mariana Islands
 MQ	Martinique
 MR	Mauritania
@@ -199,8 +210,9 @@ PT	Portugal
 PW	Palau
 PY	Paraguay
 QA	Qatar
-RE	Reunion
+RE	Réunion
 RO	Romania
+RS	Serbia
 RU	Russia
 RW	Rwanda
 SA	Saudi Arabia
@@ -218,21 +230,23 @@ SM	San Marino
 SN	Senegal
 SO	Somalia
 SR	Suriname
+SS	South Sudan
 ST	Sao Tome & Principe
 SV	El Salvador
+SX	St Maarten (Dutch)
 SY	Syria
-SZ	Swaziland
+SZ	Eswatini (Swaziland)
 TC	Turks & Caicos Is
 TD	Chad
-TF	French Southern & Antarctic Lands
+TF	French Southern Territories
 TG	Togo
 TH	Thailand
 TJ	Tajikistan
 TK	Tokelau
+TL	East Timor
 TM	Turkmenistan
 TN	Tunisia
 TO	Tonga
-TP	East Timor
 TR	Turkey
 TT	Trinidad & Tobago
 TV	Tuvalu
@@ -252,10 +266,9 @@ VI	Virgin Islands (US)
 VN	Vietnam
 VU	Vanuatu
 WF	Wallis & Futuna
-WS	Samoa (Western)
+WS	Samoa (western)
 YE	Yemen
 YT	Mayotte
-YU	Yugoslavia
 ZA	South Africa
 ZM	Zambia
 ZW	Zimbabwe
