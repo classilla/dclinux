@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Intended for Dreamcast consoles on NTSC CRT TVs.
+# Clears the screen window, preserving Tux, and fixing bottom scroll.
+# Public domain. Cameron Kaiser <ckaiser@floodgap.com>
+
+ESC=""
+echo -n "$ESC[1;1H"
+echo -n "$ESC[5B"
+echo -n "$ESC[J"
+echo -n "$ESC[6;28r"
+echo -n "$ESC[1;1H"
+echo -n "$ESC[5B"
+
