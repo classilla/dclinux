@@ -61,7 +61,7 @@ Don't file issues about these.
 * BBA prone to dropouts under high activity (see the section on NFS below)
 * No support for the hardware clock (see the section on NTP below)
 
-Some of these things can't be fixed until we get the source code. Unfortunately the source for 2K1 DC Linux and its boot components was stored on a now-defunct FTP server, but we're still looking. For everything that *we* built, we include the source (or patches against source) in `/usr/src`.
+Some of these things can't be fixed until we get the source code. Unfortunately the source for 2K1 DC Linux and its boot components was stored on a now-defunct FTP server, but we're still looking. Some components such as the kernel and SH-Boot (but not eCos) are still available from the [LinuxSH CVS server](http://linuxsh.cvs.sourceforge.net/). For everything that *we* built, we include the source (or patches against source) in `/usr/src`.
 
 ## How to use the disc
 
