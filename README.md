@@ -1,6 +1,6 @@
 # Dusted-off Dreamcast Linux (DODCL)
 
-[Another Old VCR Revival!](http://oldvcr.blogspot.com)
+[Another Old VCR Revival!](https://oldvcr.blogspot.com/2023/02/dusting-off-dreamcast-linux.html)
 
 This is a revised version of the [the original 2001 Dreamcast Linux](http://web.archive.org/web/20060714170358/http://www.m17n.org/linux-sh/dreamcast/) with QoL improvements for modern users and a more straightforward build-burn process. Its primary purpose is to serve as a historical reconstruction, not necessarily a production-ready standard distribution. It exists under the same license as Linux.
 
