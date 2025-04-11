@@ -21,5 +21,6 @@ dd if=/dev/zero bs=2352 count=300 | \
 
 # some drives may need 11702 instead: if you're burning coasters try that
 # original mkisofs may need -f; this is using "fake" genisoimage
-$MKISOFS -v -l -r -C 0,11700 -G $IPBIN . \
+# ignore our source staging directories
+$MKISOFS -v -l -r -m '*-sources*' -C 0,11700 -G $IPBIN . \
 	| $WODIM -tao -overburn -xa -eject -
